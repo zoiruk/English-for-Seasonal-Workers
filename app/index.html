@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>English from Zero — тренажёр</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>🇬🇧 English from Zero</h1>
+    <p class="subtitle">Интерактивный тренажёр курса A1</p>
+  </header>
+
+  <nav class="tabs">
+    <button class="tab active" data-view="flashcards">🃏 Карточки</button>
+    <button class="tab" data-view="quizzes">📝 Квизы</button>
+    <button class="tab" data-view="progress">📊 Прогресс</button>
+  </nav>
+
+  <main id="app">
+    <!-- ===== FLASHCARDS ===== -->
+    <section id="view-flashcards" class="view active">
+      <div id="deck-picker" class="picker"></div>
+
+      <div id="flashcard-area" class="hidden">
+        <div class="card-counter"><span id="card-pos">1</span> / <span id="card-total">10</span></div>
+        <div id="flashcard" class="flashcard">
+          <div class="flashcard-inner">
+            <div class="flashcard-face front">
+              <div class="word" id="card-front">Hello</div>
+              <div class="hint" id="card-hint">[хэлоу]</div>
+              <div class="tap-hint">нажмите, чтобы перевернуть</div>
+            </div>
+            <div class="flashcard-face back">
+              <div class="word" id="card-back">Привет</div>
+            </div>
+          </div>
+        </div>
+        <div class="card-controls">
+          <button id="btn-again" class="btn btn-ghost">↺ Не знаю</button>
+          <button id="btn-know" class="btn btn-primary">✓ Знаю</button>
+        </div>
+        <div class="card-nav">
+          <button id="btn-prev" class="btn-small">← Назад</button>
+          <button id="btn-back-decks" class="btn-small">К списку колод</button>
+          <button id="btn-next" class="btn-small">Вперёд →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== QUIZZES ===== -->
+    <section id="view-quizzes" class="view">
+      <div id="quiz-picker" class="picker"></div>
+
+      <div id="quiz-area" class="hidden">
+        <h2 id="quiz-title"></h2>
+        <div class="quiz-progress"><span id="quiz-pos">1</span> / <span id="quiz-total">5</span></div>
+        <div id="quiz-question" class="quiz-question"></div>
+        <div id="quiz-options" class="quiz-options"></div>
+        <div id="quiz-feedback" class="quiz-feedback"></div>
+        <button id="btn-quiz-next" class="btn btn-primary hidden">Дальше →</button>
+        <button id="btn-quiz-exit" class="btn-small">К списку квизов</button>
+      </div>
+
+      <div id="quiz-result" class="hidden result">
+        <h2>Результат</h2>
+        <div class="score" id="quiz-score">0 / 0</div>
+        <div id="quiz-message"></div>
+        <button id="btn-quiz-retry" class="btn btn-primary">Пройти снова</button>
+        <button id="btn-quiz-result-exit" class="btn-small">К списку квизов</button>
+      </div>
+    </section>
+
+    <!-- ===== PROGRESS ===== -->
+    <section id="view-progress" class="view">
+      <h2>Ваш прогресс</h2>
+      <div class="progress-grid" id="progress-cards"></div>
+      <button id="btn-reset" class="btn-small danger">Сбросить весь прогресс</button>
+      <p class="note">Прогресс сохраняется в этом браузере (localStorage).</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    Учитесь каждый день 20 минут — и результат придёт. 💪
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

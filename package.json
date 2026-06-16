@@ -1,0 +1,11 @@
+{
+  "name": "english-for-seasonal-workers",
+  "version": "0.1.0",
+  "description": "Free offline RU-only A0-A1 English course for CIS seasonal farm workers in the UK",
+  "private": true,
+  "scripts": {
+    "audit": "node scripts/audit.js && node scripts/dedup.js && node scripts/snowball.js",
+    "serve": "python -m http.server 8000"
+  },
+  "license": "MIT"
+}
