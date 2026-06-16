@@ -125,8 +125,9 @@
 
   function renderLesson(les, tab) {
     tab = tab || "grammar";
-    var h = '<div class="l-head"><button class="back" id="back">‹</button>' +
-      '<div><div class="ttl">' + esc(les.title_ru) + '</div><div class="sub">' + esc(les.cefr) + "</div></div></div>";
+    var h = '<div class="l-head"><span class="pos">' + les.id + "/" + LESSONS.length + "</span>" +
+      '<div class="htitle"><div class="ttl">' + esc(les.title_ru) + '</div><div class="sub">' + esc(les.cefr) + "</div></div>" +
+      '<button class="back" id="back">‹ Назад</button></div>';
     h += '<div class="tabs">' + TABS.map(function (x) {
       return '<button class="tab' + (x === tab ? " on" : "") + '" data-tab="' + x + '">' + tabLabel(x) + "</button>";
     }).join("") + "</div>";
@@ -166,12 +167,14 @@
     return h;
   }
   function formTable(form) {
-    var h = form.rule_ru + '<table class="g-table" style="margin-top:10px">';
+    var h = form.rule_ru + '<div class="g-table-wrap"><table class="g-table" style="margin-top:10px">' +
+      "<thead><tr><td>Кто</td><td>Глагол</td><td>Пример</td><td></td></tr></thead><tbody>";
     form.table.forEach(function (r) {
-      h += "<tr><td>" + spkBtn(r.example) + '</td><td><div class="ex">' + esc(r.example) +
-        '</div><div class="tr">' + esc(r.transcr) + '</div><div class="rt">' + esc(r.tr_ru) + "</div></td></tr>";
+      h += '<tr><td class="sj">' + esc(r.subj) + '</td><td class="vb">' + esc(r.verb) + "</td>" +
+        '<td><div class="ex">' + esc(r.example) + '</div><div class="tr">' + esc(r.transcr) +
+        '</div><div class="rt">' + esc(r.tr_ru) + "</div></td><td>" + spkBtn(r.example) + "</td></tr>";
     });
-    return h + "</table>";
+    return h + "</tbody></table></div>";
   }
 
   function wordsBody(les) {

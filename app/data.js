@@ -38,7 +38,8 @@
               '<div><code>You are</code> <span class="g-transcr">[ю ар]</span> (ты/вы)</div>' +
               '<div><code>They are</code> <span class="g-transcr">[зэй ар]</span> (они)</div>' +
               '<div><code>He is</code> <span class="g-transcr">[хи из]</span> (он)</div>' +
-              '<div><code>She is</code> <span class="g-transcr">[ши из]</span> (она)</div></div>',
+              '<div><code>She is</code> <span class="g-transcr">[ши из]</span> (она)</div>' +
+              '<div><code>It is</code> <span class="g-transcr">[ит из]</span> (оно)</div></div>',
             table: [
               { subj: "I", verb: "am", example: "I am a worker", transcr: "Ай эм э вёкэ", tr_ru: "Я — рабочий" },
               { subj: "You", verb: "are", example: "You are a farmer", transcr: "Ю ар э фармэ", tr_ru: "Ты — фермер" },

@@ -48,7 +48,7 @@ body {
   display: flex; align-items: center; gap: 12px; background: var(--card);
   border: 1px solid var(--border); border-left: 4px solid var(--accent);
   border-radius: var(--radius); padding: 14px; margin-bottom: 10px;
-  cursor: pointer; transition: transform .1s;
+  cursor: pointer; transition: transform .1s; box-shadow: 0 1px 3px rgba(20,20,46,.05);
 }
 .lesson-card:active { transform: scale(0.98); }
 .lesson-card .num {
@@ -63,10 +63,12 @@ body {
 
 /* ---------- Lesson ---------- */
 .l-head { display: flex; align-items: center; gap: 10px; padding: 16px 0 8px; }
+.pos { background: var(--accent); color: #fff; border-radius: 99px; padding: 4px 10px; font-size: 12px; font-weight: 700; flex: none; }
+.l-head .htitle { flex: 1; min-width: 0; }
 .back {
-  width: 40px; height: 40px; flex: none; border-radius: 50%; border: none;
-  background: var(--card); border: 1px solid var(--border); color: var(--accent);
-  font-size: 20px; cursor: pointer;
+  flex: none; border-radius: 99px; border: 1px solid var(--border);
+  background: var(--card); color: var(--accent); font-size: 13px; font-weight: 600;
+  padding: 8px 13px; cursor: pointer;
 }
 .l-head .ttl { font-weight: 700; font-size: 17px; }
 .l-head .sub { font-size: 11px; color: var(--text3); }
@@ -78,7 +80,7 @@ body {
 }
 .tab.on { background: #fff; color: var(--accent); box-shadow: 0 1px 3px rgba(0,0,0,.08); }
 
-.card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px; margin-bottom: 12px; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; margin-bottom: 12px; box-shadow: 0 1px 3px rgba(20,20,46,.05); }
 .g-transcr { color: var(--text3); font-size: .85em; font-style: italic; }
 code { background: var(--accent-soft); color: var(--text); padding: 1px 5px; border-radius: 5px; font-weight: 700; }
 
@@ -87,11 +89,16 @@ code { background: var(--accent-soft); color: var(--text); padding: 1px 5px; bor
 .formbtn { flex: 1; border: 1px solid var(--border); background: var(--card); border-radius: 10px; padding: 9px 4px; font-size: 13px; font-weight: 600; cursor: pointer; }
 .formbtn.on { background: var(--accent); color: #fff; border-color: var(--accent); }
 
+.g-table-wrap { overflow-x: auto; }
 .g-table { width: 100%; border-collapse: collapse; }
-.g-table td { border-bottom: 1px solid var(--border); padding: 8px 6px; vertical-align: top; font-size: 14px; }
+.g-table td { border-bottom: 1px solid var(--border); padding: 9px 6px; vertical-align: top; font-size: 14px; }
+.g-table thead td { background: var(--bg); color: var(--text3); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; border-bottom: 1px solid var(--border); }
+.g-table .sj { font-weight: 700; white-space: nowrap; }
+.g-table .vb { color: var(--accent); font-weight: 700; white-space: nowrap; }
 .g-table .ex { font-weight: 600; }
 .g-table .tr { color: var(--text3); font-size: 11px; }
 .g-table .rt { color: var(--text2); font-size: 12px; }
+.g-table .spk { width: 34px; height: 34px; min-width: 34px; }
 
 .note { background: var(--hint-bg); color: var(--hint-tx); border-radius: 10px; padding: 10px 12px; font-size: 13px; }
 .cultural { background: #fffbe6; border-radius: 10px; padding: 10px 12px; font-size: 13px; }
