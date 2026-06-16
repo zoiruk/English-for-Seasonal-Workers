@@ -43,6 +43,19 @@ function tokenize(text) {
     .filter(Boolean);
 }
 
+/* crude English stemmer so snowball matches word forms (picking->pick, boxes->box) */
+function stem(w) {
+  if (w.length <= 3) return w;
+  return w
+    .replace(/ies$/, "y")
+    .replace(/(ches|shes|xes|sses)$/, (m) => m.slice(0, -2))
+    .replace(/([^s])s$/, "$1")
+    .replace(/ing$/, "")
+    .replace(/ed$/, "");
+}
+
+function escapeRe(s) { return String(s).replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }
+
 function report(name, errors) {
   if (!errors.length) {
     console.log(`[${name}] OK — 0 errors`);
@@ -53,4 +66,4 @@ function report(name, errors) {
   return 1;
 }
 
-module.exports = { loadLessons, activeWhitelist, tokenize, report, WHITELIST, NAMES };
+module.exports = { loadLessons, activeWhitelist, tokenize, stem, escapeRe, report, WHITELIST, NAMES };

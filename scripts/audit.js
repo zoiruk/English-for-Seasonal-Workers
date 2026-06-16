@@ -1,5 +1,5 @@
 /* Structure & completeness audit. Exit 1 if any lesson is incomplete. */
-const { loadLessons, report } = require("./lib");
+const { loadLessons, escapeRe, report } = require("./lib");
 const L = loadLessons();
 const errors = [];
 const TAGS = ["[COMPLETE]", "[TRANSLATE]", "[NEGATIVE]", "[CORRECT]", "[QUESTION]"];
@@ -17,15 +17,19 @@ for (const les of L) {
     if (x.en && /[,/]/.test(x.en)) errors.push({ lesson: id, field: `words[${i}].en`, msg: `grouped word "${x.en}"` });
   });
 
-  // --- dialogue: >=10, speakers, alternation, length, transcr ---
+  // --- dialogue: >=10, speakers, alternation, length, transcr, no repeated lines ---
   const d = les.dialogue || [];
   if (d.length < 10) errors.push({ lesson: id, field: "dialogue", msg: `need >=10, got ${d.length}` });
+  const seenLine = {};
   d.forEach((x, i) => {
     if (!["m", "w", "c", "d"].includes(x.s)) errors.push({ lesson: id, field: `dialogue[${i}].s`, msg: `bad speaker "${x.s}"` });
     if (!x.transcr) errors.push({ lesson: id, field: `dialogue[${i}].transcr`, msg: "missing" });
     const wc = String(x.en || "").trim().split(/\s+/).filter(Boolean).length;
     if (x.en && (wc < 3 || wc > 15)) errors.push({ lesson: id, field: `dialogue[${i}]`, msg: `length ${wc} not in 3-15` });
     if (i > 0 && d[i - 1].s === x.s) errors.push({ lesson: id, field: `dialogue[${i}].s`, msg: "no alternation" });
+    const k = String(x.en || "").trim().toLowerCase();
+    if (k && seenLine[k] !== undefined) errors.push({ lesson: id, field: `dialogue[${i}]`, msg: `repeats line ${seenLine[k]}` });
+    else seenLine[k] = i;
   });
 
   // --- grammar: 3 forms with tables, >=10 examples total, intro/cultural/note, transcr ---
@@ -49,10 +53,22 @@ for (const les of L) {
   const q = les.quiz || [];
   if (q.length < 10) errors.push({ lesson: id, field: "quiz", msg: `need >=10, got ${q.length}` });
   q.forEach((x, i) => {
-    if (!TAGS.some((t) => String(x.q || "").includes(t))) errors.push({ lesson: id, field: `quiz[${i}].q`, msg: "missing [TAG]" });
+    const qs = String(x.q || "");
+    if (!TAGS.some((t) => qs.includes(t))) errors.push({ lesson: id, field: `quiz[${i}].q`, msg: "missing [TAG]" });
     if (!Array.isArray(x.opts) || x.opts.length !== 4) errors.push({ lesson: id, field: `quiz[${i}].opts`, msg: "need 4 options" });
+    else if (new Set(x.opts.map((o) => String(o).trim().toLowerCase())).size !== 4)
+      errors.push({ lesson: id, field: `quiz[${i}].opts`, msg: "duplicate options" });
     if (typeof x.c !== "number") errors.push({ lesson: id, field: `quiz[${i}].c`, msg: "missing correct index" });
+    else if (Array.isArray(x.opts) && (x.c < 0 || x.c >= x.opts.length))
+      errors.push({ lesson: id, field: `quiz[${i}].c`, msg: `index ${x.c} out of range` });
     if (!x.expl) errors.push({ lesson: id, field: `quiz[${i}].expl`, msg: "missing" });
+    // answer-leak: correct answer must not appear verbatim in the question (TRANSLATE is exempt)
+    if (Array.isArray(x.opts) && typeof x.c === "number" && x.opts[x.c] && !qs.includes("[TRANSLATE]")) {
+      const ans = String(x.opts[x.c]);
+      const body = qs.replace(/\[[A-Z]+\]/g, "");
+      if (new RegExp("\\b" + escapeRe(ans) + "\\b", "i").test(body))
+        errors.push({ lesson: id, field: `quiz[${i}].q`, msg: `answer "${ans}" leaks into question` });
+    }
   });
 }
 

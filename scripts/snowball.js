@@ -1,15 +1,17 @@
 /* Snowball rule: every English word used in grammar/dialogue/quiz of lesson N
    must come from words of lessons 1..N or the active function-word whitelist. */
-const { loadLessons, activeWhitelist, tokenize, report } = require("./lib");
+const { loadLessons, activeWhitelist, tokenize, stem, report } = require("./lib");
 const L = loadLessons();
 const errors = [];
-const known = new Set();
+const known = new Set(); // holds both raw and stemmed vocabulary tokens
 
 for (const les of L) {
   // current lesson's vocabulary becomes known before its own checks
-  (les.words || []).forEach((x) => tokenize(x.en).forEach((t) => known.add(t)));
+  (les.words || []).forEach((x) =>
+    tokenize(x.en).forEach((t) => { known.add(t); known.add(stem(t)); })
+  );
   const wl = activeWhitelist(les.id);
-  const allowed = (t) => known.has(t) || wl.has(t) || /^\d+$/.test(t);
+  const allowed = (t) => known.has(t) || known.has(stem(t)) || wl.has(t) || /^\d+$/.test(t);
   const check = (text, field) =>
     tokenize(text).forEach((t) => {
       if (!allowed(t)) errors.push({ lesson: les.id, field, msg: `unknown word "${t}"` });
