@@ -34,6 +34,7 @@
       done_banner: "Урок пройден! 🎉",
       done_low: "Повторите урок и попробуйте снова.",
       no_voice: "Нет голоса или интернета — звук недоступен",
+      storage_full: "Не удалось сохранить прогресс (память браузера заполнена)",
       tags: {
         "[COMPLETE]": "✍️ Заполните пропуск",
         "[TRANSLATE]": "🗣️ Переведите",
@@ -52,7 +53,10 @@
   /* ---------- storage ---------- */
   var KEY = "esw_progress_v1";
   function load() { try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { return {}; } }
-  function save(s) { try { localStorage.setItem(KEY, JSON.stringify(s)); } catch (e) {} }
+  function save(s) {
+    try { localStorage.setItem(KEY, JSON.stringify(s)); return true; }
+    catch (e) { if (typeof toast === "function") toast(t("storage_full")); return false; }
+  }
   var store = load();
   store.done = store.done || {};       // lessonId -> true
   store.words = store.words || 0;
