@@ -20,7 +20,7 @@ function loadLessons() {
 /* Function/grammar words INTRODUCED at each lesson (snowball whitelist).
    Cumulative: a word stays known from the lesson where its grammar appears. */
 const WHITELIST = {
-  1: ["i","you","he","she","it","we","they","am","is","are","not","a","an","the",
+  1: ["i","you","he","she","it","we","they","am","is","are","be","not","a","an","the",
       "this","that","what","where","and","from","good","my","your","me","to"],
   2: ["his","her","our","their","its"],
   3: ["him","us","them","these","those"],
