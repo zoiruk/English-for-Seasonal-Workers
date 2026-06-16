@@ -62,16 +62,24 @@ body {
 .lesson-card .done { color: var(--ok); font-size: 20px; }
 
 /* ---------- Lesson ---------- */
-.l-head { display: flex; align-items: center; gap: 10px; padding: 16px 0 8px; }
+.l-head { display: flex; align-items: center; gap: 10px; padding: 16px 96px 8px 0; }
 .pos { background: var(--accent); color: #fff; border-radius: 99px; padding: 4px 10px; font-size: 12px; font-weight: 700; flex: none; }
 .l-head .htitle { flex: 1; min-width: 0; }
-.back {
-  flex: none; border-radius: 99px; border: 1px solid var(--border);
-  background: var(--card); color: var(--accent); font-size: 13px; font-weight: 600;
-  padding: 8px 13px; cursor: pointer;
-}
 .l-head .ttl { font-weight: 700; font-size: 17px; }
 .l-head .sub { font-size: 11px; color: var(--text3); }
+
+/* floating frosted-glass back button (iOS chevron) */
+.float-back {
+  position: fixed; top: 10px; right: max(10px, calc(50% - 205px)); z-index: 30;
+  display: inline-flex; align-items: center; gap: 5px;
+  background: rgba(255, 255, 255, .72);
+  -webkit-backdrop-filter: saturate(180%) blur(12px); backdrop-filter: saturate(180%) blur(12px);
+  border: 1px solid var(--border); color: var(--accent); font-weight: 600; font-size: 13px;
+  padding: 8px 14px 8px 11px; border-radius: 99px; box-shadow: 0 2px 10px rgba(20, 20, 46, .12);
+  cursor: pointer;
+}
+.float-back:active { transform: scale(0.97); }
+.float-back .fb-arrow { display: block; }
 
 .tabs { display: flex; gap: 3px; background: var(--border); padding: 3px; border-radius: 12px; margin-bottom: 14px; }
 .tab {

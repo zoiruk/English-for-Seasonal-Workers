@@ -125,9 +125,12 @@
 
   function renderLesson(les, tab) {
     tab = tab || "grammar";
-    var h = '<div class="l-head"><span class="pos">' + les.id + "/" + LESSONS.length + "</span>" +
-      '<div class="htitle"><div class="ttl">' + esc(les.title_ru) + '</div><div class="sub">' + esc(les.cefr) + "</div></div>" +
-      '<button class="back" id="back">‹ Назад</button></div>';
+    var h = '<button class="float-back" id="back" type="button" aria-label="Назад">' +
+      '<svg class="fb-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" ' +
+      'stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>' +
+      "<span>Назад</span></button>" +
+      '<div class="l-head"><span class="pos">' + les.id + "/" + LESSONS.length + "</span>" +
+      '<div class="htitle"><div class="ttl">' + esc(les.title_ru) + '</div><div class="sub">' + esc(les.cefr) + "</div></div></div>";
     h += '<div class="tabs">' + TABS.map(function (x) {
       return '<button class="tab' + (x === tab ? " on" : "") + '" data-tab="' + x + '">' + tabLabel(x) + "</button>";
     }).join("") + "</div>";
