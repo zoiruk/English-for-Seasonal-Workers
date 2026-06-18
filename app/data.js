@@ -83,6 +83,7 @@
           { en: "I am from Uzbekistan.", transcr: "Ай эм фром узбекистан.", ru: "Я из Узбекистана." },
           { en: "He is a farmer.", transcr: "Хи из э фармэ.", ru: "Он — фермер." },
           { en: "We are a good team.", transcr: "Уи ар э гуд тим.", ru: "Мы — хорошая бригада." },
+          { en: "She is British.", transcr: "Ши из бритиш.", ru: "Она — британка." },
         ],
       },
 
@@ -117,6 +118,11 @@
         { e: "🇬🇧", en: "Britain", transcr: "бритн", ru: "Британия", pn: "/ˈbrɪtn/" },
         { e: "🗣️", en: "English", transcr: "инглиш", ru: "английский", pn: "/ˈɪŋɡlɪʃ/" },
         { e: "🙌", en: "welcome", transcr: "вэлкэм", ru: "добро пожаловать", pn: "/ˈwelkəm/" },
+        { e: "🇺🇿", en: "Uzbek", transcr: "узбэк", ru: "узбек (из Узбекистана)", pn: "/ˈʊzbek/" },
+        { e: "🇹🇯", en: "Tajik", transcr: "таджик", ru: "таджик (из Таджикистана)", pn: "/tɑːˈdʒiːk/" },
+        { e: "🇰🇬", en: "Kyrgyz", transcr: "кёгиз", ru: "киргиз (из Кыргызстана)", pn: "/ˈkɪəɡɪz/" },
+        { e: "🇰🇿", en: "Kazakh", transcr: "кэзэк", ru: "казах (из Казахстана)", pn: "/ˈkæzæk/" },
+        { e: "🇬🇧", en: "British", transcr: "бритиш", ru: "британец (из Британии)", pn: "/ˈbrɪtɪʃ/" },
       ],
 
       dialogue: [
@@ -145,6 +151,7 @@
         { q: "[CORRECT] Где правильно?", opts: ["He am a farmer", "He is a farmer", "He are a farmer", "He a farmer"], c: 1, expl: "He → is. Глагол нельзя пропускать.", hint_ru: "Он — фермер." },
         { q: "[LISTEN] I am a packer.", opts: ["Я упаковщик.", "Я сборщик.", "Я менеджер.", "Я водитель."], c: 0, expl: "packer — упаковщик. Не путать с picker — сборщик." },
         { q: "[GIST] Откуда Ахмад и кем он работает?", opts: ["Из Таджикистана, упаковщик", "Из Узбекистана, сборщик", "Из Британии, водитель", "Из Казахстана, менеджер"], c: 0, expl: "Ахмад говорит: \"I am from Tajikistan\" и \"I am a packer\".", hint_ru: "Вспомните диалог." },
+        { q: '[TRANSLATE] "британец / британский"', opts: ["British", "English", "Uzbek", "Kazakh"], c: 0, expl: "British — британец. Не путать: English — только язык.", hint_ru: "British." },
       ],
 
       everyday: {
