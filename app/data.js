@@ -743,6 +743,156 @@
         ],
       },
     },
+
+    {
+      id: 6,
+      mod: 4,
+      title_ru: "Что я делаю на работе",
+      cefr: "Present Simple · Object pronouns",
+
+      grammar: {
+        title_ru: "Я собираю, она собирает: Present Simple",
+        intro_ru:
+          '<div style="line-height:1.6">Так говорить — ошибка:<br>❌ <b>I working</b> / ❌ <b>She pick</b><br>Правильно:<br>✅ <b>I pick</b> <span class="g-transcr">[ай пик]</span> (я собираю)<br>✅ <b>She picks</b> <span class="g-transcr">[ши пикс]</span> (она собирает)<br>👉 С <b>he/she/it</b> к глаголу добавляем <b>-s</b>.</div>',
+        cultural_ru:
+          'После глагола местоимение МЕНЯЕТСЯ:' +
+          '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:6px">' +
+          '<div><code>I → me</code> <span class="g-transcr">[ми]</span> (меня/мне)</div>' +
+          '<div><code>we → us</code> <span class="g-transcr">[ас]</span> (нас/нам)</div>' +
+          '<div><code>he → him</code> <span class="g-transcr">[хим]</span> (его/ему)</div>' +
+          '<div><code>they → them</code> <span class="g-transcr">[зэм]</span> (их/им)</div>' +
+          '<div><code>she → her</code> <span class="g-transcr">[хё]</span> (её/ей)</div></div>' +
+          '<div style="margin-top:4px">Напр.: <b>Give me</b> (дай мне), <b>I carry them</b> (я ношу их).</div>',
+        note_ru:
+          '⚠️ Отрицание: <b>do not</b> / <b>does not</b>. После <b>does</b> глагол БЕЗ -s — и в отрицании, и в вопросе: <b>He does not pick</b>, <b>Does she pack?</b> Слова <b>always</b> (всегда) / <b>sometimes</b> (иногда) / <b>never</b> (никогда) ставим ПЕРЕД глаголом: <b>I always work</b>.',
+        forms: {
+          positive: {
+            label_ru: "✅ Утверждение",
+            rule_ru:
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>I / you / we / they</code> + глагол</div>' +
+              '<div><code>he / she / it</code> + глагол<b>+s</b></div>' +
+              '<div><code>I pick</code> <span class="g-transcr">[ай пик]</span></div>' +
+              '<div><code>She picks</code> <span class="g-transcr">[ши пикс]</span></div></div>',
+            table: [
+              { subj: "I", verb: "pick", example: "I pick berries", transcr: "Ай пик бэриз", tr_ru: "Я собираю ягоды" },
+              { subj: "You", verb: "pack", example: "You pack boxes", transcr: "Ю пэк боксиз", tr_ru: "Ты упаковываешь коробки" },
+              { subj: "She", verb: "packs", example: "She packs the punnets", transcr: "Ши пэкс зэ панитс", tr_ru: "Она упаковывает корзинки" },
+              { subj: "We", verb: "carry", example: "We carry the crates", transcr: "Уи кэри зэ крэйтс", tr_ru: "Мы носим ящики" },
+            ],
+          },
+          negative: {
+            label_ru: "❌ Отрицание",
+            rule_ru:
+              'I/you/we/they → <b>do not</b>; he/she/it → <b>does not</b>:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>I do not work</code></div>' +
+              '<div><code>He does not pick</code></div></div>',
+            table: [
+              { subj: "I", verb: "do not", example: "I do not work on Sunday", transcr: "Ай ду нот вёк он сандэй", tr_ru: "Я не работаю в воскресенье" },
+              { subj: "He", verb: "does not", example: "He does not pick", transcr: "Хи даз нот пик", tr_ru: "Он не собирает" },
+              { subj: "They", verb: "do not", example: "They do not sort the berries", transcr: "Зэй ду нот сот зэ бэриз", tr_ru: "Они не сортируют ягоды" },
+            ],
+          },
+          question: {
+            label_ru: "❓ Вопрос",
+            rule_ru:
+              'Впереди ставим <b>Do</b> или <b>Does</b>:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>Do you pick?</code> <span class="g-transcr">[ду ю пик]</span></div>' +
+              '<div><code>Does she pack?</code> <span class="g-transcr">[даз ши пэк]</span></div></div>',
+            table: [
+              { subj: "Do", verb: "you", example: "Do you pick berries?", transcr: "Ду ю пик бэриз", tr_ru: "Ты собираешь ягоды?" },
+              { subj: "Does", verb: "she", example: "Does she pack boxes?", transcr: "Даз ши пэк боксиз", tr_ru: "Она упаковывает коробки?" },
+              { subj: "Do", verb: "they", example: "Do they carry crates?", transcr: "Ду зэй кэри крэйтс", tr_ru: "Они носят ящики?" },
+            ],
+          },
+        },
+        examples: [
+          { en: "I always work on the farm.", transcr: "Ай олуэйз вёк он зэ фарм.", ru: "Я всегда работаю на ферме." },
+          { en: "She gives me the box.", transcr: "Ши гивз ми зэ бокс.", ru: "Она даёт мне коробку." },
+          { en: "We carry them to the shed.", transcr: "Уи кэри зэм ту зэ шед.", ru: "Мы носим их в сарай." },
+          { en: "He never washes the van.", transcr: "Хи нэвэ уошиз зэ ван.", ru: "Он никогда не моет фургон." },
+          { en: "Tom checks us.", transcr: "Том чекс ас.", ru: "Том проверяет нас." },
+          { en: "I sometimes work on Saturday.", transcr: "Ай самтаймз вёк он сэтэдэй.", ru: "Я иногда работаю в субботу." },
+        ],
+      },
+
+      words: [
+        { e: "🛠️", en: "work", transcr: "вёк", ru: "работать", pn: "/wɜːk/" },
+        { e: "✋", en: "pick", transcr: "пик", ru: "собирать", pn: "/pɪk/" },
+        { e: "📦", en: "pack", transcr: "пэк", ru: "упаковывать", pn: "/pæk/" },
+        { e: "🛍️", en: "carry", transcr: "кэри", ru: "носить", pn: "/ˈkæri/" },
+        { e: "⚖️", en: "weigh", transcr: "уэй", ru: "взвешивать", pn: "/weɪ/" },
+        { e: "🗂️", en: "sort", transcr: "сот", ru: "сортировать", pn: "/sɔːt/" },
+        { e: "💦", en: "wash", transcr: "уош", ru: "мыть", pn: "/wɒʃ/" },
+        { e: "✂️", en: "cut", transcr: "кат", ru: "резать", pn: "/kʌt/" },
+        { e: "🏋️", en: "lift", transcr: "лифт", ru: "поднимать", pn: "/lɪft/" },
+        { e: "🫸", en: "push", transcr: "пуш", ru: "толкать", pn: "/pʊʃ/" },
+        { e: "🫷", en: "pull", transcr: "пул", ru: "тянуть", pn: "/pʊl/" },
+        { e: "🪣", en: "fill", transcr: "фил", ru: "наполнять", pn: "/fɪl/" },
+        { e: "🔢", en: "count", transcr: "каунт", ru: "считать", pn: "/kaʊnt/" },
+        { e: "🧽", en: "clean", transcr: "клин", ru: "чистить, убирать", pn: "/kliːn/" },
+        { e: "✔️", en: "check", transcr: "чек", ru: "проверять", pn: "/tʃek/" },
+        { e: "🚚", en: "load", transcr: "лоуд", ru: "грузить", pn: "/ləʊd/" },
+        { e: "↔️", en: "move", transcr: "мув", ru: "перемещать", pn: "/muːv/" },
+        { e: "📚", en: "stack", transcr: "стэк", ru: "складывать стопкой", pn: "/stæk/" },
+        { e: "🫴", en: "give", transcr: "гив", ru: "давать", pn: "/ɡɪv/" },
+        { e: "🤲", en: "take", transcr: "тэйк", ru: "брать", pn: "/teɪk/" },
+        { e: "🔓", en: "open", transcr: "оупэн", ru: "открывать", pn: "/ˈəʊpən/" },
+        { e: "🔒", en: "close", transcr: "клоуз", ru: "закрывать", pn: "/kləʊz/" },
+        { e: "⏳", en: "wait", transcr: "уэйт", ru: "ждать", pn: "/weɪt/" },
+        { e: "👀", en: "look", transcr: "лук", ru: "смотреть", pn: "/lʊk/" },
+        { e: "▶️", en: "start", transcr: "старт", ru: "начинать", pn: "/stɑːt/" },
+        { e: "🏁", en: "finish", transcr: "финиш", ru: "заканчивать", pn: "/ˈfɪnɪʃ/" },
+        { e: "⛏️", en: "dig", transcr: "диг", ru: "копать", pn: "/dɪɡ/" },
+        { e: "🪢", en: "tie", transcr: "тай", ru: "завязывать", pn: "/taɪ/" },
+        { e: "🔧", en: "fix", transcr: "фикс", ru: "чинить", pn: "/fɪks/" },
+        { e: "🫐", en: "berry", transcr: "бэри", ru: "ягода", pn: "/ˈberi/" },
+      ],
+
+      dialogue: [
+        { s: "m", en: "Good morning! Do you pick berries?", transcr: "Гуд монинг! Ду ю пик бэриз?", ru: "Доброе утро! Ты собираешь ягоды?" },
+        { s: "w", en: "Yes. I pick berries.", transcr: "Йес. Ай пик бэриз.", ru: "Да. Я собираю ягоды." },
+        { s: "m", en: "Good. You pack them in punnets.", transcr: "Гуд. Ю пэк зэм ин панитс.", ru: "Хорошо. Ты упаковываешь их в корзинки." },
+        { s: "w", en: "Do I weigh the punnets?", transcr: "Ду ай уэй зэ панитс?", ru: "Я взвешиваю корзинки?" },
+        { s: "m", en: "Yes. You weigh them on the scale.", transcr: "Йес. Ю уэй зэм он зэ скэйл.", ru: "Да. Ты взвешиваешь их на весах." },
+        { s: "w", en: "Does Sara sort the berries?", transcr: "Даз Сара сот зэ бэриз?", ru: "Сара сортирует ягоды?" },
+        { s: "m", en: "Yes. She sorts the berries.", transcr: "Йес. Ши сотс зэ бэриз.", ru: "Да. Она сортирует ягоды." },
+        { s: "w", en: "Do we start work?", transcr: "Ду уи старт вёк?", ru: "Мы начинаем работу?" },
+        { s: "m", en: "Yes. We start. Carry the crates.", transcr: "Йес. Уи старт. Кэри зэ крэйтс.", ru: "Да. Начинаем. Неси ящики." },
+        { s: "w", en: "I carry them to the field.", transcr: "Ай кэри зэм ту зэ филд.", ru: "Я несу их в поле." },
+      ],
+
+      quiz: [
+        { q: '[TRANSLATE] "собирать (ягоды)"', opts: ["pick", "pack", "sort", "weigh"], c: 0, expl: "pick — собирать. pack — упаковывать.", hint_ru: "pick." },
+        { q: '[TRANSLATE] "упаковывать"', opts: ["pack", "pick", "carry", "wash"], c: 0, expl: "pack — упаковывать.", hint_ru: "pack." },
+        { q: '[COMPLETE] "She ___ boxes." (она)', opts: ["packs", "pack", "packing", "packed"], c: 0, expl: "he/she/it → глагол +s: packs.", hint_ru: "Она упаковывает коробки." },
+        { q: '[COMPLETE] "I ___ berries." (я)', opts: ["pick", "picks", "picking", "picked"], c: 0, expl: "I → глагол без -s: pick.", hint_ru: "Я собираю ягоды." },
+        { q: "[NEGATIVE] Где отрицание?", opts: ["He picks berries", "He does not pick berries", "Does he pick berries?", "He pick berries"], c: 1, expl: "Отрицание = does not + глагол без -s.", hint_ru: "Он не собирает ягоды." },
+        { q: '[QUESTION] "___ you pick berries?"', opts: ["Do", "Does", "Are", "Is"], c: 0, expl: "I/you/we/they → Do в начале.", hint_ru: "Ты собираешь ягоды?" },
+        { q: '[COMPLETE] "___ she pack boxes?"', opts: ["Does", "Do", "Is", "Are"], c: 0, expl: "he/she/it → Does + глагол без -s.", hint_ru: "Она упаковывает коробки?" },
+        { q: '[COMPLETE] "Give ___ the punnet." (мне)', opts: ["me", "I", "my", "you"], c: 0, expl: "После глагола: I → me. Give me — дай мне.", hint_ru: "Дай мне корзинку." },
+        { q: '[COMPLETE] "Give ___ the box." (ему)', opts: ["him", "he", "his", "me"], c: 0, expl: "После глагола: he → him. Give him — дай ему.", hint_ru: "Дай ему коробку." },
+        { q: "[CORRECT] Где правильно?", opts: ["She packs boxes", "She pack boxes", "She packing boxes", "Boxes she packs"], c: 0, expl: "She + глагол +s: packs. Порядок: кто + глагол + что.", hint_ru: "Она упаковывает коробки." },
+        { q: "[LISTEN] She packs the boxes.", opts: ["Она упаковывает коробки.", "Она собирает ягоды.", "Она носит ящики.", "Она моет фургон."], c: 0, expl: "pack — упаковывать, box — коробка." },
+        { q: "[GIST] Что рабочий делает с корзинками (punnets) по диалогу?", opts: ["Взвешивает их на весах", "Моет их", "Считает деньги", "Чинит их"], c: 0, expl: "В диалоге: \"You weigh them on the scale\" — взвешиваешь на весах.", hint_ru: "Вспомните про корзинки." },
+      ],
+
+      everyday: {
+        title_ru: "Понять задание и попросить о помощи",
+        phrases: [
+          { en: "What do I do?", transcr: "Уот ду ай ду?", ru: "Что мне делать?" },
+          { en: "Show me, please.", transcr: "Шоу ми, плиз.", ru: "Покажите мне, пожалуйста." },
+          { en: "Is this OK?", transcr: "Из зис оукэй?", ru: "Так нормально?" },
+          { en: "Can you help me?", transcr: "Кэн ю хэлп ми?", ru: "Можете мне помочь?" },
+          { en: "It is too heavy.", transcr: "Ит из ту хэви.", ru: "Это слишком тяжело." },
+          { en: "I need a break.", transcr: "Ай нид э брэйк.", ru: "Мне нужен перерыв." },
+          { en: "How many boxes?", transcr: "Хау мэни боксиз?", ru: "Сколько коробок?" },
+          { en: "Faster or slower?", transcr: "Фастэ о слоуэ?", ru: "Быстрее или медленнее?" },
+        ],
+      },
+    },
   ];
 
   if (typeof module !== "undefined" && module.exports) module.exports = LESSONS;
