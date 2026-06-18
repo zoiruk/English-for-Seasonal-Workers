@@ -25,7 +25,7 @@ const WHITELIST = {
   2: ["his","her","our","their","its"],
   3: ["him","us","them","these","those"],
 };
-const NAMES = ["ahmad","tom","sara","anna","john","ali","omar"];
+const NAMES = ["ahmad","tom","sara","anna","john","ali","omar","rustam","fatima"];
 
 function activeWhitelist(lessonId) {
   const set = new Set(NAMES);
@@ -37,6 +37,7 @@ function tokenize(text) {
   return String(text)
     .replace(/<[^>]*>/g, " ")
     .toLowerCase()
+    .replace(/'s\b/g, "")
     .replace(/[^a-z'\s-]/g, " ")
     .split(/\s+/)
     .map((w) => w.replace(/^['-]+|['-]+$/g, ""))

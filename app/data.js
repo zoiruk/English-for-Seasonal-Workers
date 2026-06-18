@@ -145,6 +145,132 @@
         { q: "[CORRECT] Где правильно?", opts: ["He am a farmer", "He is a farmer", "He are a farmer", "He a farmer"], c: 1, expl: "He → is. Глагол нельзя пропускать.", hint_ru: "Он — фермер." },
       ],
     },
+
+    {
+      id: 2,
+      mod: 1,
+      title_ru: "Моя работа, моя команда",
+      cefr: "Possessives my/your/his/her · 's",
+
+      grammar: {
+        title_ru: "Притяжательные: my / your / his / her",
+        intro_ru:
+          '<div style="line-height:1.6">Так говорить — ошибка:<br>❌ <b>bag my</b><br>Правильно:<br>✅ <b>my bag</b> <span class="g-transcr">[май бэг]</span> (моя сумка)<br>👉 Слово «чей» всегда ставим <b>перед</b> предметом.</div>',
+        cultural_ru:
+          "В английском <b>his</b> = принадлежит мужчине, <b>her</b> = женщине — независимо от самого предмета. В русском «его/её» мы выбираем иначе.",
+        note_ru: '⚠️ Не путать: <b>his</b> (его — о мужчине) и <b>her</b> (её — о женщине).',
+        forms: {
+          positive: {
+            label_ru: "✅ Утверждение",
+            rule_ru:
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>my</code> <span class="g-transcr">[май]</span> (мой)</div>' +
+              '<div><code>our</code> <span class="g-transcr">[ауэ]</span> (наш)</div>' +
+              '<div><code>your</code> <span class="g-transcr">[ё]</span> (твой/ваш)</div>' +
+              '<div><code>their</code> <span class="g-transcr">[зэа]</span> (их)</div>' +
+              '<div><code>his</code> <span class="g-transcr">[хиз]</span> (его)</div>' +
+              '<div><code>her</code> <span class="g-transcr">[хё]</span> (её)</div></div>',
+            table: [
+              { subj: "I", verb: "my", example: "my bag", transcr: "май бэг", tr_ru: "моя сумка" },
+              { subj: "You", verb: "your", example: "your locker", transcr: "ё локэ", tr_ru: "твой шкафчик" },
+              { subj: "He", verb: "his", example: "his badge", transcr: "хиз бэдж", tr_ru: "его бейдж" },
+              { subj: "She", verb: "her", example: "her phone", transcr: "хё фоун", tr_ru: "её телефон" },
+            ],
+          },
+          negative: {
+            label_ru: "❌ Отрицание",
+            rule_ru:
+              'Добавляем <b>not</b> к глаголу <b>is/are</b>:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>This is not my bag</code></div>' +
+              '<div><code>That is not his locker</code></div></div>',
+            table: [
+              { subj: "This", verb: "is not", example: "This is not my bag", transcr: "Зис из нот май бэг", tr_ru: "Это не моя сумка" },
+              { subj: "That", verb: "is not", example: "That is not his locker", transcr: "Зэт из нот хиз локэ", tr_ru: "Тот шкафчик не его" },
+              { subj: "They", verb: "are not", example: "They are not our colleagues", transcr: "Зэй ар нот ауэ колигз", tr_ru: "Они не наши коллеги" },
+            ],
+          },
+          question: {
+            label_ru: "❓ Вопрос",
+            rule_ru:
+              'Глагол выходит вперёд:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>Is this your bag?</code></div>' +
+              '<div><code>Is that her badge?</code></div></div>',
+            table: [
+              { subj: "Is", verb: "this", example: "Is this your phone?", transcr: "Из зис ё фоун", tr_ru: "Это твой телефон?" },
+              { subj: "Is", verb: "that", example: "Is that her badge?", transcr: "Из зэт хё бэдж", tr_ru: "Это её бейдж?" },
+              { subj: "Is", verb: "Tom", example: "Is this Tom's bag?", transcr: "Из зис Томз бэг", tr_ru: "Это сумка Тома?" },
+            ],
+          },
+        },
+        examples: [
+          { en: "This is my family.", transcr: "Зис из май фэмили.", ru: "Это моя семья." },
+          { en: "Her son is a picker.", transcr: "Хё сан из э пикэ.", ru: "Её сын — сборщик." },
+          { en: "This is Tom's bag.", transcr: "Зис из Томз бэг.", ru: "Это сумка Тома." },
+          { en: "Our colleague is a mechanic.", transcr: "Ауэ колиг из э мэкэник.", ru: "Наш коллега — механик." },
+        ],
+      },
+
+      words: [
+        { e: "👨‍👩‍👧", en: "family", transcr: "фэмили", ru: "семья", pn: "/ˈfæmɪli/" },
+        { e: "👰", en: "wife", transcr: "уайф", ru: "жена", pn: "/waɪf/" },
+        { e: "🤵", en: "husband", transcr: "хазбэнд", ru: "муж", pn: "/ˈhʌzbənd/" },
+        { e: "👩", en: "mother", transcr: "мазэ", ru: "мать", pn: "/ˈmʌðə/" },
+        { e: "👨", en: "father", transcr: "фазэ", ru: "отец", pn: "/ˈfɑːðə/" },
+        { e: "👦", en: "son", transcr: "сан", ru: "сын", pn: "/sʌn/" },
+        { e: "👧", en: "daughter", transcr: "дотэ", ru: "дочь", pn: "/ˈdɔːtə/" },
+        { e: "👬", en: "brother", transcr: "бразэ", ru: "брат", pn: "/ˈbrʌðə/" },
+        { e: "👭", en: "sister", transcr: "систэ", ru: "сестра", pn: "/ˈsɪstə/" },
+        { e: "🧒", en: "child", transcr: "чайлд", ru: "ребёнок", pn: "/tʃaɪld/" },
+        { e: "👪", en: "parents", transcr: "пэрэнтс", ru: "родители", pn: "/ˈpeərənts/" },
+        { e: "👶", en: "baby", transcr: "бэйби", ru: "малыш", pn: "/ˈbeɪbi/" },
+        { e: "🤝", en: "colleague", transcr: "колиг", ru: "коллега", pn: "/ˈkɒliːɡ/" },
+        { e: "🧑‍🔧", en: "mechanic", transcr: "мэкэник", ru: "механик", pn: "/mɪˈkænɪk/" },
+        { e: "🧹", en: "cleaner", transcr: "клинэ", ru: "уборщик", pn: "/ˈkliːnə/" },
+        { e: "🏠", en: "neighbour", transcr: "нэйбэ", ru: "сосед", pn: "/ˈneɪbə/" },
+        { e: "📱", en: "phone", transcr: "фоун", ru: "телефон", pn: "/fəʊn/" },
+        { e: "🎒", en: "bag", transcr: "бэг", ru: "сумка", pn: "/bæɡ/" },
+        { e: "🗄️", en: "locker", transcr: "локэ", ru: "шкафчик", pn: "/ˈlɒkə/" },
+        { e: "🪪", en: "badge", transcr: "бэдж", ru: "бейдж", pn: "/bædʒ/" },
+        { e: "🧻", en: "towel", transcr: "тауэл", ru: "полотенце", pn: "/ˈtaʊəl/" },
+        { e: "🧼", en: "soap", transcr: "соуп", ru: "мыло", pn: "/səʊp/" },
+        { e: "🔦", en: "torch", transcr: "точ", ru: "фонарь", pn: "/tɔːtʃ/" },
+        { e: "🔌", en: "charger", transcr: "чаджэ", ru: "зарядка", pn: "/ˈtʃɑːdʒə/" },
+        { e: "🪥", en: "brush", transcr: "браш", ru: "щётка", pn: "/brʌʃ/" },
+        { e: "🪞", en: "mirror", transcr: "мирэ", ru: "зеркало", pn: "/ˈmɪrə/" },
+        { e: "👛", en: "wallet", transcr: "уолит", ru: "кошелёк", pn: "/ˈwɒlɪt/" },
+        { e: "🖊️", en: "pen", transcr: "пэн", ru: "ручка", pn: "/pen/" },
+        { e: "💼", en: "job", transcr: "джоб", ru: "работа", pn: "/dʒɒb/" },
+        { e: "☕", en: "break", transcr: "брэйк", ru: "перерыв", pn: "/breɪk/" },
+      ],
+
+      dialogue: [
+        { s: "m", en: "Good morning! This is your colleague, Ahmad.", transcr: "Гуд монинг! Зис из ё колиг, Ахмад.", ru: "Доброе утро! Это твой коллега, Ахмад." },
+        { s: "w", en: "Hello! My name is Rustam.", transcr: "Хэлоу! Май нэйм из Рустам.", ru: "Привет! Меня зовут Рустам." },
+        { s: "m", en: "Rustam is a picker. Ahmad is a packer.", transcr: "Рустам из э пикэ. Ахмад из э пэкэ.", ru: "Рустам — сборщик. Ахмад — упаковщик." },
+        { s: "w", en: "Is Anna our supervisor?", transcr: "Из Анна ауэ съюпэвайзэ?", ru: "Анна — наш бригадир?" },
+        { s: "m", en: "Yes. Anna is your supervisor.", transcr: "Йес. Анна из ё съюпэвайзэ.", ru: "Да. Анна — ваш бригадир." },
+        { s: "w", en: "Where is my locker?", transcr: "Уэа из май локэ?", ru: "Где мой шкафчик?" },
+        { s: "m", en: "This is your locker. This is her bag.", transcr: "Зис из ё локэ. Зис из хё бэг.", ru: "Это твой шкафчик. Это её сумка." },
+        { s: "w", en: "Is this my badge?", transcr: "Из зис май бэдж?", ru: "Это мой бейдж?" },
+        { s: "m", en: "Yes. This is your badge.", transcr: "Йес. Зис из ё бэдж.", ru: "Да. Это твой бейдж." },
+        { s: "w", en: "Thanks! We are a team.", transcr: "Сэнкс! Уи ар э тим.", ru: "Спасибо! Мы — бригада." },
+      ],
+
+      quiz: [
+        { q: '[COMPLETE] "This is ___ bag." (я)', opts: ["my", "your", "his", "her"], c: 0, expl: "my — мой/моя.", hint_ru: "Это моя сумка." },
+        { q: '[COMPLETE] "___ name is Anna." (она)', opts: ["His", "Her", "My", "Your"], c: 1, expl: "her — её, о женщине.", hint_ru: "Её зовут Анна." },
+        { q: '[COMPLETE] "___ name is Tom." (он)', opts: ["Her", "His", "My", "Their"], c: 1, expl: "his — его, о мужчине.", hint_ru: "Его зовут Том." },
+        { q: '[TRANSLATE] "наша бригада"', opts: ["our team", "your team", "their team", "my team"], c: 0, expl: "our — наш.", hint_ru: "our team." },
+        { q: '[TRANSLATE] "сумка Тома"', opts: ["Tom's bag", "Tom bag", "her bag", "his bag"], c: 0, expl: "'s = принадлежность: Tom's bag.", hint_ru: "Tom's bag." },
+        { q: '[COMPLETE] "Is this ___ phone?" (ты)', opts: ["his", "her", "your", "my"], c: 2, expl: "your — твой.", hint_ru: "Это твой телефон?" },
+        { q: "[NEGATIVE] Где отрицание?", opts: ["This is my locker", "This is not my locker", "Is this my locker?", "My locker"], c: 1, expl: "Отрицание = is + not.", hint_ru: "Это не мой шкафчик." },
+        { q: '[COMPLETE] "This is ___ job." (его)', opts: ["her", "his", "my", "your"], c: 1, expl: "his job — его работа.", hint_ru: "Это его работа." },
+        { q: '[COMPLETE] "___ colleague is Rustam." (мой)', opts: ["Her", "His", "My", "Their"], c: 2, expl: "my — мой.", hint_ru: "Мой коллега — Рустам." },
+        { q: "[CORRECT] Где правильно?", opts: ["Her name is Anna", "Her name are Anna", "Her name Anna", "Name her is Anna"], c: 0, expl: "her + name + is.", hint_ru: "Её зовут Анна." },
+      ],
+    },
   ];
 
   if (typeof module !== "undefined" && module.exports) module.exports = LESSONS;

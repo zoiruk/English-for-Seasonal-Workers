@@ -85,7 +85,7 @@ CEFR-объём и галлюцинации IPA. Одобряется владе
 
 | # | Грамматика | CEFR-области | Фермерский домен слов (30) |
 |---|-----------|--------------|----------------------------|
-| 2 | possessive adj + 's | jobs, family | роли в бригаде, экипировка (vest, gloves…), «чья смена» |
+| 2 | possessive adj + 's | family relations, jobs, everyday objects | семья (wife/son/brother), личные вещи (phone/bag/towel/locker), коллеги (colleague/mechanic/cleaner), job/break |
 | 3 | this is + a/an + object pron | everyday objects | инструменты: punnet, crate, trolley, row, box |
 | 4 | numbers 1-100 + time + days | numbers, telling time | числа, дни недели, время смены, деньги (£) |
 | 5 | where/what + prepositions | places in a village | места: canteen, toilet, gate, office, store |
