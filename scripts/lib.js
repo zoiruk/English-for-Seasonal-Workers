@@ -21,9 +21,9 @@ function loadLessons() {
    Cumulative: a word stays known from the lesson where its grammar appears. */
 const WHITELIST = {
   1: ["i","you","he","she","it","we","they","am","is","are","be","not","a","an","the",
-      "this","that","what","where","and","from","good","my","your","me","to"],
-  2: ["his","her","our","their","its"],
-  3: ["him","us","them","these","those"],
+      "this","that","what","where","and","from","good","to"],
+  2: ["my","your","his","her","our","their","its"],
+  3: ["me","him","us","them","these","those"],
 };
 const NAMES = ["ahmad","tom","sara","anna","john","ali","omar","rustam","fatima"];
 
