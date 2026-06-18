@@ -116,7 +116,7 @@
         { e: "🇰🇿", en: "Kazakhstan", transcr: "казахстан", ru: "Казахстан", pn: "/ˌkæzəkˈstɑːn/" },
         { e: "🇬🇧", en: "Britain", transcr: "бритн", ru: "Британия", pn: "/ˈbrɪtn/" },
         { e: "🗣️", en: "English", transcr: "инглиш", ru: "английский", pn: "/ˈɪŋɡlɪʃ/" },
-        { e: "🧑‍💼", en: "boss", transcr: "бос", ru: "начальник", pn: "/bɒs/" },
+        { e: "🙌", en: "welcome", transcr: "вэлкэм", ru: "добро пожаловать", pn: "/ˈwelkəm/" },
       ],
 
       dialogue: [
@@ -140,7 +140,7 @@
         { q: "[NEGATIVE] Где отрицание?", opts: ["I am a worker", "I am not a worker", "Am I a worker?", "I a worker"], c: 1, expl: "Отрицание = am/is/are + not.", hint_ru: "Я не рабочий." },
         { q: '[QUESTION] "___ you from Tajikistan?"', opts: ["Am", "Is", "Are", "Be"], c: 2, expl: "Вопрос с you → Are в начале.", hint_ru: "Ты из Таджикистана?" },
         { q: '[TRANSLATE] "Доброе утро"', opts: ["Good morning", "Goodbye", "Hello", "Thanks"], c: 0, expl: "morning — утро.", hint_ru: "Good morning." },
-        { q: '[COMPLETE] "My ___ is Ahmad."', opts: ["name", "team", "boss", "friend"], c: 0, expl: "name — имя.", hint_ru: "Меня зовут Ахмад." },
+        { q: '[COMPLETE] "My ___ is Ahmad."', opts: ["name", "team", "manager", "friend"], c: 0, expl: "name — имя.", hint_ru: "Меня зовут Ахмад." },
         { q: '[COMPLETE] "She ___ a packer."', opts: ["are", "am", "is", "be"], c: 2, expl: "She → is.", hint_ru: "Она — упаковщица." },
         { q: "[CORRECT] Где правильно?", opts: ["He am a farmer", "He is a farmer", "He are a farmer", "He a farmer"], c: 1, expl: "He → is. Глагол нельзя пропускать.", hint_ru: "Он — фермер." },
       ],
