@@ -24,6 +24,7 @@ const WHITELIST = {
       "this","that","what","where","and","from","good","to"],
   2: ["my","your","his","her","our","their","its"],
   3: ["these","those"],
+  4: ["how","much","past"],
 };
 const NAMES = ["ahmad","tom","sara","anna","john","ali","omar","rustam","fatima"];
 

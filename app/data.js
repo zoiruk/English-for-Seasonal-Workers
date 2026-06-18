@@ -455,6 +455,149 @@
         ],
       },
     },
+
+    {
+      id: 4,
+      mod: 3,
+      title_ru: "Время, дни и деньги",
+      cefr: "Numbers · Time · Days · Money",
+
+      grammar: {
+        title_ru: "Который час? It is seven o'clock",
+        intro_ru:
+          '<div style="line-height:1.6">Так говорить — ошибка:<br>❌ <b>It seven o\'clock</b><br>Правильно:<br>✅ <b>It is seven o\'clock</b> <span class="g-transcr">[ит из сэвн эклок]</span> (сейчас 7 часов)<br>👉 О времени, дне и цене всегда говорим <b>It is…</b> — глагол <b>is</b> нельзя пропускать.</div>',
+        cultural_ru:
+          "Дни недели в английском всегда с <b>большой буквы</b>: <b>Monday</b>, не monday. Деньги: значок <b>£</b> ставится ПЕРЕД числом (£10), а говорим «ten pounds».",
+        note_ru:
+          '⚠️ <b>half past seven</b> = 7:30. Англичане называют час, который УЖЕ прошёл (<b>seven</b>), и прибавляют 30 минут → по-русски это «половина восьмого». Не переводите дословно «половина семи».',
+        forms: {
+          positive: {
+            label_ru: "✅ Утверждение",
+            rule_ru:
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>It is … o\'clock</code> <span class="g-transcr">[ит из … эклок]</span> (ровно час)</div>' +
+              '<div><code>half past …</code> <span class="g-transcr">[хаф паст …]</span> (:30)</div>' +
+              '<div><code>It is Monday</code> <span class="g-transcr">[ит из мандэй]</span> (день)</div>' +
+              '<div><code>It is … pounds</code> <span class="g-transcr">[ит из … паундз]</span> (цена)</div></div>',
+            table: [
+              { subj: "It", verb: "is", example: "It is seven o'clock", transcr: "Ит из сэвн эклок", tr_ru: "Сейчас 7 часов (7:00)" },
+              { subj: "It", verb: "is", example: "It is half past eight", transcr: "Ит из хаф паст эйт", tr_ru: "Сейчас 8:30 (половина девятого)" },
+              { subj: "It", verb: "is", example: "It is Monday today", transcr: "Ит из мандэй тудэй", tr_ru: "Сегодня понедельник" },
+              { subj: "It", verb: "is", example: "It is ten pounds", transcr: "Ит из тэн паундз", tr_ru: "Это десять фунтов" },
+            ],
+          },
+          negative: {
+            label_ru: "❌ Отрицание",
+            rule_ru:
+              'Добавляем <b>not</b> после <b>is/are</b>:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>It is not Friday</code></div>' +
+              '<div><code>It is not nine o\'clock</code></div></div>',
+            table: [
+              { subj: "It", verb: "is not", example: "It is not Friday", transcr: "Ит из нот фрайдэй", tr_ru: "Сегодня не пятница" },
+              { subj: "It", verb: "is not", example: "It is not nine o'clock", transcr: "Ит из нот найн эклок", tr_ru: "Сейчас не девять часов" },
+              { subj: "It", verb: "is not", example: "It is not ten pounds", transcr: "Ит из нот тэн паундз", tr_ru: "Это не десять фунтов" },
+            ],
+          },
+          question: {
+            label_ru: "❓ Вопрос",
+            rule_ru:
+              'Спрашиваем через <b>What</b> и <b>How much</b>:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>What time is it?</code> <span class="g-transcr">[уот тайм из ит]</span></div>' +
+              '<div><code>What day is it?</code> <span class="g-transcr">[уот дэй из ит]</span></div>' +
+              '<div><code>How much is it?</code> <span class="g-transcr">[хау мач из ит]</span></div></div>',
+            table: [
+              { subj: "What", verb: "time", example: "What time is it?", transcr: "Уот тайм из ит", tr_ru: "Который час?" },
+              { subj: "What", verb: "day", example: "What day is it?", transcr: "Уот дэй из ит", tr_ru: "Какой сегодня день?" },
+              { subj: "How", verb: "much", example: "How much is it?", transcr: "Хау мач из ит", tr_ru: "Сколько это стоит?" },
+            ],
+          },
+        },
+        examples: [
+          { en: "It is six o'clock.", transcr: "Ит из сикс эклок.", ru: "Сейчас шесть часов." },
+          { en: "It is half past four.", transcr: "Ит из хаф паст фо.", ru: "Сейчас 4:30 (половина пятого)." },
+          { en: "Today is Wednesday.", transcr: "Тудэй из уэнздэй.", ru: "Сегодня среда." },
+          { en: "Tomorrow is Sunday.", transcr: "Тэмороу из сандэй.", ru: "Завтра воскресенье." },
+          { en: "How much money is it?", transcr: "Хау мач мани из ит?", ru: "Сколько это денег?" },
+        ],
+      },
+
+      words: [
+        { e: "1️⃣", en: "one", transcr: "уан", ru: "один", pn: "/wʌn/" },
+        { e: "2️⃣", en: "two", transcr: "ту", ru: "два", pn: "/tuː/" },
+        { e: "3️⃣", en: "three", transcr: "сри", ru: "три", pn: "/θriː/" },
+        { e: "4️⃣", en: "four", transcr: "фо", ru: "четыре", pn: "/fɔː/" },
+        { e: "5️⃣", en: "five", transcr: "файв", ru: "пять", pn: "/faɪv/" },
+        { e: "6️⃣", en: "six", transcr: "сикс", ru: "шесть", pn: "/sɪks/" },
+        { e: "7️⃣", en: "seven", transcr: "сэвн", ru: "семь", pn: "/ˈsevn/" },
+        { e: "8️⃣", en: "eight", transcr: "эйт", ru: "восемь", pn: "/eɪt/" },
+        { e: "9️⃣", en: "nine", transcr: "найн", ru: "девять", pn: "/naɪn/" },
+        { e: "🔟", en: "ten", transcr: "тэн", ru: "десять", pn: "/ten/" },
+        { e: "📅", en: "Monday", transcr: "мандэй", ru: "понедельник", pn: "/ˈmʌndeɪ/" },
+        { e: "📅", en: "Tuesday", transcr: "тьюздэй", ru: "вторник", pn: "/ˈtjuːzdeɪ/" },
+        { e: "📅", en: "Wednesday", transcr: "уэнздэй", ru: "среда", pn: "/ˈwenzdeɪ/" },
+        { e: "📅", en: "Thursday", transcr: "сёздэй", ru: "четверг", pn: "/ˈθɜːzdeɪ/" },
+        { e: "📅", en: "Friday", transcr: "фрайдэй", ru: "пятница", pn: "/ˈfraɪdeɪ/" },
+        { e: "📅", en: "Saturday", transcr: "сэтэдэй", ru: "суббота", pn: "/ˈsætədeɪ/" },
+        { e: "📅", en: "Sunday", transcr: "сандэй", ru: "воскресенье", pn: "/ˈsʌndeɪ/" },
+        { e: "⏰", en: "time", transcr: "тайм", ru: "время", pn: "/taɪm/" },
+        { e: "⏳", en: "hour", transcr: "ауэ", ru: "час (60 минут)", pn: "/ˈaʊə/" },
+        { e: "☀️", en: "day", transcr: "дэй", ru: "день", pn: "/deɪ/" },
+        { e: "🗓️", en: "week", transcr: "уик", ru: "неделя", pn: "/wiːk/" },
+        { e: "📆", en: "today", transcr: "тудэй", ru: "сегодня", pn: "/təˈdeɪ/" },
+        { e: "🔜", en: "tomorrow", transcr: "тэмороу", ru: "завтра", pn: "/təˈmɒrəʊ/" },
+        { e: "🕖", en: "o'clock", transcr: "эклок", ru: "часов (ровно)", pn: "/əˈklɒk/" },
+        { e: "🕧", en: "half", transcr: "хаф", ru: "половина (:30)", pn: "/hɑːf/" },
+        { e: "💰", en: "money", transcr: "мани", ru: "деньги", pn: "/ˈmʌni/" },
+        { e: "💷", en: "pound", transcr: "паунд", ru: "фунт (£)", pn: "/paʊnd/" },
+        { e: "🪙", en: "pence", transcr: "пэнс", ru: "пенсы (мелочь)", pn: "/pens/" },
+        { e: "💵", en: "cash", transcr: "кэш", ru: "наличные", pn: "/kæʃ/" },
+        { e: "🧾", en: "payslip", transcr: "пэйслип", ru: "расчётный лист", pn: "/ˈpeɪslɪp/" },
+      ],
+
+      dialogue: [
+        { s: "m", en: "Good morning! What time is it?", transcr: "Гуд монинг! Уот тайм из ит?", ru: "Доброе утро! Который час?" },
+        { s: "w", en: "It is half past seven.", transcr: "Ит из хаф паст сэвн.", ru: "Половина восьмого (7:30)." },
+        { s: "m", en: "What day is it today?", transcr: "Уот дэй из ит тудэй?", ru: "Какой сегодня день?" },
+        { s: "w", en: "It is Friday today.", transcr: "Ит из фрайдэй тудэй.", ru: "Сегодня пятница." },
+        { s: "m", en: "Friday is good. This is your money.", transcr: "Фрайдэй из гуд. Зис из ё мани.", ru: "Пятница — хорошо. Вот твои деньги." },
+        { s: "w", en: "Thank you, Tom! This is my payslip.", transcr: "Сэнк ю, Том! Зис из май пэйслип.", ru: "Спасибо, Том! Это мой расчётный лист." },
+        { s: "m", en: "Yes. Pounds and pence.", transcr: "Йес. Паундз энд пэнс.", ru: "Да. Фунты и пенсы." },
+        { s: "w", en: "What time is it, Tom?", transcr: "Уот тайм из ит, Том?", ru: "Который час, Том?" },
+        { s: "m", en: "It is nine o'clock.", transcr: "Ит из найн эклок.", ru: "Сейчас девять часов." },
+        { s: "w", en: "Nine o'clock! Goodbye, Tom.", transcr: "Найн эклок! Гудбай, Том.", ru: "Девять часов! До свидания, Том." },
+      ],
+
+      quiz: [
+        { q: '[COMPLETE] "It is seven ___."', opts: ["o'clock", "pound", "day", "week"], c: 0, expl: "seven o'clock — 7 часов ровно.", hint_ru: "Сейчас 7 часов." },
+        { q: '[COMPLETE] "It is half ___ eight." (8:30)', opts: ["past", "to", "is", "not"], c: 0, expl: "half past eight = 8:30 (половина девятого).", hint_ru: "8:30." },
+        { q: '[TRANSLATE] "понедельник"', opts: ["Monday", "Sunday", "Friday", "Tuesday"], c: 0, expl: "Monday — понедельник. С большой буквы.", hint_ru: "Monday." },
+        { q: '[TRANSLATE] "фунт (£)"', opts: ["pound", "pence", "money", "cash"], c: 0, expl: "pound — фунт (£). pence — пенсы (мелочь).", hint_ru: "pound." },
+        { q: '[QUESTION] "___ time is it?"', opts: ["What", "How", "Where", "Is"], c: 0, expl: "What time is it? — Который час?", hint_ru: "Который час?" },
+        { q: '[QUESTION] "___ much is it?"', opts: ["How", "What", "Where", "This"], c: 0, expl: "How much is it? — Сколько это стоит?", hint_ru: "Сколько стоит?" },
+        { q: "[NEGATIVE] Где отрицание?", opts: ["It is Monday", "It is not Monday", "Is it Monday?", "It Monday"], c: 1, expl: "Отрицание = is + not.", hint_ru: "Сегодня не понедельник." },
+        { q: "[CORRECT] Где правильно?", opts: ["It is seven o'clock", "It seven o'clock", "It are seven o'clock", "Seven o'clock it"], c: 0, expl: "It + is + время. Глагол is нельзя пропускать.", hint_ru: "Сейчас 7 часов." },
+        { q: '[COMPLETE] "It is ___ pounds." (10)', opts: ["ten", "one", "five", "two"], c: 0, expl: "10 = ten.", hint_ru: "£10." },
+        { q: '[COMPLETE] "It is Friday. Tomorrow is ___."', opts: ["Saturday", "Monday", "Sunday", "Thursday"], c: 0, expl: "После пятницы (Friday) идёт суббота (Saturday).", hint_ru: "Завтра суббота." },
+        { q: "[LISTEN] It is half past six.", opts: ["Сейчас 6:30 (половина седьмого).", "Сейчас 5:30 (половина шестого).", "Сейчас 6:00 (шесть часов).", "Сейчас 7:00 (семь часов)."], c: 0, expl: "half past six = 6:30. По-русски это «половина седьмого»." },
+        { q: "[GIST] Какой день и время в начале диалога?", opts: ["Пятница, 7:30 (половина восьмого)", "Пятница, 9 часов", "Понедельник, 7:30", "Суббота, 8 часов"], c: 0, expl: "В диалоге: \"It is half past seven\" (7:30) и \"It is Friday today\". Нужно вспомнить и день, и время.", hint_ru: "Вспомните начало диалога." },
+      ],
+
+      everyday: {
+        title_ru: "Спросить время, день и про оплату",
+        phrases: [
+          { en: "What time is it?", transcr: "Уот тайм из ит?", ru: "Который час?" },
+          { en: "What time do we start?", transcr: "Уот тайм ду уи старт?", ru: "Во сколько мы начинаем?" },
+          { en: "What time do we finish?", transcr: "Уот тайм ду уи финиш?", ru: "Во сколько мы заканчиваем?" },
+          { en: "When is payday?", transcr: "Уэн из пэйдэй?", ru: "Когда день зарплаты?" },
+          { en: "How much is it?", transcr: "Хау мач из ит?", ru: "Сколько это стоит?" },
+          { en: "Can I see my payslip?", transcr: "Кэн ай си май пэйслип?", ru: "Можно посмотреть мой расчётный лист?" },
+          { en: "Today is my day off.", transcr: "Тудэй из май дэй оф.", ru: "Сегодня мой выходной." },
+          { en: "See you on Monday.", transcr: "Си ю он мандэй.", ru: "Увидимся в понедельник." },
+        ],
+      },
+    },
   ];
 
   if (typeof module !== "undefined" && module.exports) module.exports = LESSONS;
