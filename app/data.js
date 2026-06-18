@@ -285,6 +285,23 @@
         { q: '[COMPLETE] "___ colleague is Rustam." (мой)', opts: ["Her", "His", "My", "Their"], c: 2, expl: "my — мой.", hint_ru: "Мой коллега — Рустам." },
         { q: "[CORRECT] Где правильно?", opts: ["Her name is Anna", "Her name are Anna", "Her name Anna", "Name her is Anna"], c: 0, expl: "her + name + is.", hint_ru: "Её зовут Анна." },
       ],
+
+      everyday: {
+        title_ru: "Знакомство и вежливое общение в команде",
+        phrases: [
+          { en: "Nice to meet you.", transcr: "Найс ту мит ю.", ru: "Приятно познакомиться." },
+          { en: "How are you?", transcr: "Хау ар ю?", ru: "Как дела?" },
+          { en: "I'm fine, thank you.", transcr: "Айм файн, сэнк ю.", ru: "Хорошо, спасибо." },
+          { en: "And you?", transcr: "Энд ю?", ru: "А вы? (в ответ на «как дела?»)" },
+          { en: "This is my friend.", transcr: "Зис из май фрэнд.", ru: "Это мой друг." },
+          { en: "This is my mate.", transcr: "Зис из май мэйт.", ru: "Это мой напарник / приятель." },
+          { en: "Excuse me.", transcr: "Икскьюз ми.", ru: "Извините." },
+          { en: "No problem.", transcr: "Ноу проблэм.", ru: "Без проблем. / Ничего страшного." },
+          { en: "Have a good day.", transcr: "Хэв э гуд дэй.", ru: "Хорошего дня." },
+          { en: "See you later.", transcr: "Си ю лэйтэ.", ru: "Увидимся позже. / До скорого." },
+          { en: "See you tomorrow.", transcr: "Си ю тэмороу.", ru: "До завтра." },
+        ],
+      },
     },
 
     {
@@ -408,6 +425,22 @@
         { q: '[COMPLETE] "Is ___ a tap?" (то, там)', opts: ["this", "that", "these", "those"], c: 1, expl: "that — то (дальше).", hint_ru: "То кран?" },
         { q: '[COMPLETE] "What ___ this?"', opts: ["is", "are", "am", "be"], c: 0, expl: "What is this? — Что это?", hint_ru: "Что это?" },
       ],
+
+      everyday: {
+        title_ru: "Фразы на работе: «что это?», попросить инструмент, сигналы",
+        phrases: [
+          { en: "What is this?", transcr: "Уот из зис?", ru: "Что это?" },
+          { en: "Where is the trolley?", transcr: "Уэа из зэ троли?", ru: "Где тележка?" },
+          { en: "Can I have a crate, please?", transcr: "Кэн ай хэв э крэйт, плиз?", ru: "Можно мне ящик, пожалуйста?" },
+          { en: "Pass me the knife, please.", transcr: "Пас ми зэ найф, плиз.", ru: "Передайте мне нож, пожалуйста." },
+          { en: "Here you are.", transcr: "Хиэ ю ар.", ru: "Вот, держите." },
+          { en: "Like this?", transcr: "Лайк зис?", ru: "Вот так?" },
+          { en: "Yes, like this.", transcr: "Йес, лайк зис.", ru: "Да, вот так." },
+          { en: "Is this right?", transcr: "Из зис райт?", ru: "Так правильно?" },
+          { en: "Be careful!", transcr: "Би кэйфул!", ru: "Осторожно! (будьте внимательны)" },
+          { en: "Watch out!", transcr: "Уотч аут!", ru: "Берегитесь! (срочно)" },
+        ],
+      },
     },
   ];
 
