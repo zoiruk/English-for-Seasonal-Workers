@@ -598,6 +598,151 @@
         ],
       },
     },
+
+    {
+      id: 5,
+      mod: 3,
+      title_ru: "Где это? Места на ферме",
+      cefr: "Where is…? · Prepositions of place",
+
+      grammar: {
+        title_ru: "Где это? Where is… + in / on / under",
+        intro_ru:
+          '<div style="line-height:1.6">Так спрашивать — ошибка:<br>❌ <b>Toilet where?</b><br>Правильно:<br>✅ <b>Where is the toilet?</b> <span class="g-transcr">[уэа из зэ тойлет]</span> (где туалет?)<br>👉 Вопрос о месте всегда начинаем с <b>Where is…?</b></div>',
+        cultural_ru:
+          "Маленькие слова <b>in</b> (внутри), <b>on</b> (на), <b>under</b> (под) показывают, ГДЕ предмет. В английском они идут ПЕРЕД местом: <b>in the camp</b> (в лагере). Учитесь читать таблички-<b>signs</b> — это безопасность.",
+        note_ru:
+          '⚠️ Не путать: <b>in</b> (внутри) · <b>on</b> (на поверхности) · <b>under</b> (под). <b>next to</b> = рядом (два слова вместе), <b>behind</b> = позади.',
+        forms: {
+          positive: {
+            label_ru: "✅ Утверждение",
+            rule_ru:
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>in</code> <span class="g-transcr">[ин]</span> (внутри)</div>' +
+              '<div><code>on</code> <span class="g-transcr">[он]</span> (на)</div>' +
+              '<div><code>under</code> <span class="g-transcr">[андэ]</span> (под)</div>' +
+              '<div><code>behind</code> <span class="g-transcr">[бихайнд]</span> (позади)</div>' +
+              '<div><code>near</code> <span class="g-transcr">[ниэ]</span> (рядом)</div>' +
+              '<div><code>next to</code> <span class="g-transcr">[нэкст ту]</span> (рядом с)</div></div>',
+            table: [
+              { subj: "The canteen", verb: "is", example: "The canteen is near the gate", transcr: "Зэ кэнтин из ниэ зэ гейт", tr_ru: "Столовая рядом с воротами" },
+              { subj: "The toilet", verb: "is", example: "The toilet is in the camp", transcr: "Зэ тойлет из ин зэ кэмп", tr_ru: "Туалет в лагере" },
+              { subj: "The shop", verb: "is", example: "The shop is on the road", transcr: "Зэ шоп из он зэ роуд", tr_ru: "Магазин на дороге" },
+              { subj: "The van", verb: "is", example: "The van is behind the shed", transcr: "Зэ ван из бихайнд зэ шед", tr_ru: "Фургон за сараем" },
+            ],
+          },
+          negative: {
+            label_ru: "❌ Отрицание",
+            rule_ru:
+              'Добавляем <b>not</b> после <b>is</b>:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>The office is not near the field</code></div>' +
+              '<div><code>The bike is not under the tree</code></div></div>',
+            table: [
+              { subj: "The office", verb: "is not", example: "The office is not near the field", transcr: "Зэ офис из нот ниэ зэ филд", tr_ru: "Контора не рядом с полем" },
+              { subj: "The bank", verb: "is not", example: "The bank is not in the camp", transcr: "Зэ бэнк из нот ин зэ кэмп", tr_ru: "Банк не в лагере" },
+              { subj: "The bike", verb: "is not", example: "The bike is not under the tree", transcr: "Зэ байк из нот андэ зэ три", tr_ru: "Велосипед не под деревом" },
+            ],
+          },
+          question: {
+            label_ru: "❓ Вопрос",
+            rule_ru:
+              'Спрашиваем через <b>Where</b> или ставим <b>is</b> вперёд:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>Where is the toilet?</code> <span class="g-transcr">[уэа из зэ тойлет]</span></div>' +
+              '<div><code>Is the shop near the bank?</code> <span class="g-transcr">[из зэ шоп ниэ зэ бэнк]</span></div></div>',
+            table: [
+              { subj: "Where", verb: "is", example: "Where is the toilet?", transcr: "Уэа из зэ тойлет", tr_ru: "Где туалет?" },
+              { subj: "Where", verb: "is", example: "Where is the office?", transcr: "Уэа из зэ офис", tr_ru: "Где контора?" },
+              { subj: "Is", verb: "the shop", example: "Is the shop near the bank?", transcr: "Из зэ шоп ниэ зэ бэнк", tr_ru: "Магазин рядом с банком?" },
+            ],
+          },
+        },
+        examples: [
+          { en: "Where is the canteen?", transcr: "Уэа из зэ кэнтин?", ru: "Где столовая?" },
+          { en: "It is next to the office.", transcr: "Ит из нэкст ту зэ офис.", ru: "Она рядом с конторой." },
+          { en: "The sign is on the wall.", transcr: "Зэ сайн из он зэ уол.", ru: "Табличка на стене." },
+          { en: "The van is near the gate.", transcr: "Зэ ван из ниэ зэ гейт.", ru: "Фургон у ворот." },
+          { en: "The market is on the road.", transcr: "Зэ макит из он зэ роуд.", ru: "Рынок на дороге." },
+        ],
+      },
+
+      words: [
+        { e: "🍽️", en: "canteen", transcr: "кэнтин", ru: "столовая", pn: "/kænˈtiːn/" },
+        { e: "🚽", en: "toilet", transcr: "тойлет", ru: "туалет", pn: "/ˈtɔɪlɪt/" },
+        { e: "🍳", en: "kitchen", transcr: "китчин", ru: "кухня", pn: "/ˈkɪtʃɪn/" },
+        { e: "🏢", en: "office", transcr: "офис", ru: "контора", pn: "/ˈɒfɪs/" },
+        { e: "🏪", en: "shop", transcr: "шоп", ru: "магазин", pn: "/ʃɒp/" },
+        { e: "🏠", en: "house", transcr: "хаус", ru: "дом", pn: "/haʊs/" },
+        { e: "⛺", en: "camp", transcr: "кэмп", ru: "лагерь (жильё)", pn: "/kæmp/" },
+        { e: "🏦", en: "bank", transcr: "бэнк", ru: "банк", pn: "/bæŋk/" },
+        { e: "🏥", en: "hospital", transcr: "хоспитл", ru: "больница", pn: "/ˈhɒspɪtl/" },
+        { e: "🚧", en: "gate", transcr: "гейт", ru: "ворота", pn: "/ɡeɪt/" },
+        { e: "🚪", en: "door", transcr: "до", ru: "дверь", pn: "/dɔː/" },
+        { e: "🪟", en: "window", transcr: "уиндоу", ru: "окно", pn: "/ˈwɪndəʊ/" },
+        { e: "🧱", en: "wall", transcr: "уол", ru: "стена", pn: "/wɔːl/" },
+        { e: "💡", en: "light", transcr: "лайт", ru: "свет (лампа)", pn: "/laɪt/" },
+        { e: "🛣️", en: "road", transcr: "роуд", ru: "дорога", pn: "/rəʊd/" },
+        { e: "🌉", en: "bridge", transcr: "бридж", ru: "мост", pn: "/brɪdʒ/" },
+        { e: "🚗", en: "car", transcr: "ка", ru: "машина", pn: "/kɑː/" },
+        { e: "🚐", en: "van", transcr: "ван", ru: "фургон", pn: "/væn/" },
+        { e: "🚲", en: "bike", transcr: "байк", ru: "велосипед", pn: "/baɪk/" },
+        { e: "🪑", en: "chair", transcr: "чэа", ru: "стул", pn: "/tʃeə/" },
+        { e: "🗺️", en: "map", transcr: "мэп", ru: "карта", pn: "/mæp/" },
+        { e: "🪧", en: "sign", transcr: "сайн", ru: "табличка, указатель", pn: "/saɪn/" },
+        { e: "🕐", en: "clock", transcr: "клок", ru: "часы (настенные)", pn: "/klɒk/" },
+        { e: "🌳", en: "tree", transcr: "три", ru: "дерево", pn: "/triː/" },
+        { e: "⛰️", en: "hill", transcr: "хил", ru: "холм", pn: "/hɪl/" },
+        { e: "🏞️", en: "river", transcr: "ривэ", ru: "река", pn: "/ˈrɪvə/" },
+        { e: "🌿", en: "grass", transcr: "грас", ru: "трава", pn: "/ɡrɑːs/" },
+        { e: "🚜", en: "tractor", transcr: "трэктэ", ru: "трактор", pn: "/ˈtræktə/" },
+        { e: "🏬", en: "market", transcr: "макит", ru: "рынок", pn: "/ˈmɑːkɪt/" },
+        { e: "🛖", en: "shed", transcr: "шед", ru: "сарай, навес", pn: "/ʃed/" },
+      ],
+
+      dialogue: [
+        { s: "m", en: "Welcome! This is the camp.", transcr: "Вэлкэм! Зис из зэ кэмп.", ru: "Добро пожаловать! Это лагерь." },
+        { s: "w", en: "Thank you! Where is the toilet?", transcr: "Сэнк ю! Уэа из зэ тойлет?", ru: "Спасибо! Где туалет?" },
+        { s: "m", en: "The toilet is near the kitchen.", transcr: "Зэ тойлет из ниэ зэ китчин.", ru: "Туалет рядом с кухней." },
+        { s: "w", en: "And where is the canteen?", transcr: "Энд уэа из зэ кэнтин?", ru: "А где столовая?" },
+        { s: "m", en: "The canteen is next to the office.", transcr: "Зэ кэнтин из нэкст ту зэ офис.", ru: "Столовая рядом с конторой." },
+        { s: "w", en: "Is the shop in the camp?", transcr: "Из зэ шоп ин зэ кэмп?", ru: "Магазин в лагере?" },
+        { s: "m", en: "No. The shop is on the road.", transcr: "Ноу. Зэ шоп из он зэ роуд.", ru: "Нет. Магазин на дороге." },
+        { s: "w", en: "Where is my bike?", transcr: "Уэа из май байк?", ru: "Где мой велосипед?" },
+        { s: "m", en: "It is behind the shed, there.", transcr: "Ит из бихайнд зэ шед, зэа.", ru: "Он за сараем, вон там." },
+        { s: "w", en: "Thank you! The camp is good.", transcr: "Сэнк ю! Зэ кэмп из гуд.", ru: "Спасибо! Лагерь хороший." },
+      ],
+
+      quiz: [
+        { q: '[TRANSLATE] "столовая"', opts: ["canteen", "toilet", "kitchen", "office"], c: 0, expl: "canteen — столовая. kitchen — кухня.", hint_ru: "canteen." },
+        { q: '[TRANSLATE] "туалет"', opts: ["toilet", "shop", "gate", "wall"], c: 0, expl: "toilet — туалет.", hint_ru: "toilet." },
+        { q: '[COMPLETE] "The toilet is ___ the kitchen." (рядом с)', opts: ["next to", "under", "behind", "on"], c: 0, expl: "next to — рядом с (вплотную).", hint_ru: "Туалет рядом с кухней." },
+        { q: '[COMPLETE] "The shop is ___ the road." (на)', opts: ["on", "in", "under", "behind"], c: 0, expl: "on — на (поверхности).", hint_ru: "Магазин на дороге." },
+        { q: '[QUESTION] "___ is the office?"', opts: ["Where", "What", "How", "Is"], c: 0, expl: "Where is…? — Где…?", hint_ru: "Где контора?" },
+        { q: '[COMPLETE] "The bike is ___ the shed." (за)', opts: ["behind", "on", "in", "near"], c: 0, expl: "behind — позади, за.", hint_ru: "Велосипед за сараем." },
+        { q: "[NEGATIVE] Где отрицание?", opts: ["The shop is in the camp", "The shop is not in the camp", "Is the shop in the camp?", "The shop in the camp"], c: 1, expl: "Отрицание = is + not.", hint_ru: "Магазин не в лагере." },
+        { q: "[CORRECT] Где правильно?", opts: ["Where is the gate?", "Where the gate is?", "Where gate is?", "Gate where is?"], c: 0, expl: "Where + is + the + место.", hint_ru: "Где ворота?" },
+        { q: '[COMPLETE] "The office is ___ the camp." (внутри)', opts: ["in", "on", "under", "behind"], c: 0, expl: "in — внутри. Контора внутри лагеря.", hint_ru: "Контора в лагере." },
+        { q: '[TRANSLATE] "магазин"', opts: ["shop", "market", "bank", "house"], c: 0, expl: "shop — магазин. market — рынок.", hint_ru: "shop." },
+        { q: "[LISTEN] The toilet is near the gate.", opts: ["Туалет рядом с воротами.", "Туалет в столовой.", "Туалет за сараем.", "Туалет на дороге."], c: 0, expl: "near — рядом, gate — ворота." },
+        { q: "[GIST] Где магазин по словам менеджера?", opts: ["На дороге, не в лагере", "В лагере, рядом с кухней", "За сараем", "Рядом с конторой"], c: 0, expl: "В диалоге: \"Is the shop in the camp? — No. The shop is on the road.\"", hint_ru: "Вспомните про магазин." },
+      ],
+
+      everyday: {
+        title_ru: "Спросить дорогу и найти место",
+        phrases: [
+          { en: "Where is the toilet?", transcr: "Уэа из зэ тойлет?", ru: "Где туалет?" },
+          { en: "Where is the canteen?", transcr: "Уэа из зэ кэнтин?", ru: "Где столовая?" },
+          { en: "How do I get to the shop?", transcr: "Хау ду ай гет ту зэ шоп?", ru: "Как пройти к магазину?" },
+          { en: "Is it far?", transcr: "Из ит фа?", ru: "Это далеко?" },
+          { en: "Turn left.", transcr: "Тён лэфт.", ru: "Поверните налево." },
+          { en: "Turn right.", transcr: "Тён райт.", ru: "Поверните направо." },
+          { en: "Go straight.", transcr: "Гоу стрэйт.", ru: "Идите прямо." },
+          { en: "It is over there.", transcr: "Ит из оувэ зэа.", ru: "Это вон там." },
+          { en: "Excuse me, where is the office?", transcr: "Икскьюз ми, уэа из зэ офис?", ru: "Извините, где контора?" },
+        ],
+      },
+    },
   ];
 
   if (typeof module !== "undefined" && module.exports) module.exports = LESSONS;
