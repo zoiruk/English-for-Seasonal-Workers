@@ -52,7 +52,10 @@ RU-only, фермерская тема, снежный ком, аудит пер
    - [x] **L4** «Время, дни и деньги» (numbers 1-10 · time/days · money £) — grammar на `It is…`
      (What time/day · How much) + [LISTEN]/[GIST] + everyday (время/payday/payslip). Деньги без
      зарплатных цифр. Аудит зелёный, адверсариальная проверка (язык+педагогика). Коммит `375c57c`.
-   - [ ] L5–L15 — далее по одному за сессию.
+   - [x] **L5** «Где это? Места на ферме» (where/what · предлоги места in/on/under/behind/near/next to) —
+     30 мест (canteen/toilet/office/shop/camp/gate/shed/road/market/river…) + [LISTEN]/[GIST] +
+     everyday (спросить дорогу: turn left/right, go straight). Коммит `a3de20c`.
+   - [ ] L6–L15 — далее по одному за сессию. **L6 = Present Simple + объектные me/him/us/them.**
 
 ### Выбранный владельцем порядок (2026-06-18): фазы 1 → 2 → 3 (контент-дыры → навыки),
 последовательно, с приёмкой; тираж 4-15 (вариант 4) пока не запускать.
