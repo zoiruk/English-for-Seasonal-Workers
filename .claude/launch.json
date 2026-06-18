@@ -3,8 +3,8 @@
   "configurations": [
     {
       "name": "app",
-      "runtimeExecutable": "python",
-      "runtimeArgs": ["-m", "http.server", "8000", "--directory", "app"],
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["scripts/serve.js"],
       "port": 8000
     }
   ]

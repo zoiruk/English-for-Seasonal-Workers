@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "audit": "node scripts/audit.js && node scripts/dedup.js && node scripts/snowball.js",
-    "serve": "python -m http.server 8000"
+    "serve": "node scripts/serve.js"
   },
   "license": "MIT"
 }
