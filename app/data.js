@@ -149,7 +149,7 @@
     {
       id: 2,
       mod: 1,
-      title_ru: "Моя работа, моя команда",
+      title_ru: "Моя семья и моя работа",
       cefr: "Possessives my/your/his/her · 's",
 
       grammar: {
@@ -223,12 +223,12 @@
         { e: "👬", en: "brother", transcr: "бразэ", ru: "брат", pn: "/ˈbrʌðə/" },
         { e: "👭", en: "sister", transcr: "систэ", ru: "сестра", pn: "/ˈsɪstə/" },
         { e: "🧒", en: "child", transcr: "чайлд", ru: "ребёнок", pn: "/tʃaɪld/" },
-        { e: "👪", en: "parents", transcr: "пэрэнтс", ru: "родители", pn: "/ˈpeərənts/" },
+        { e: "👪", en: "parents", transcr: "пэарэнтс", ru: "родители", pn: "/ˈpeərənts/" },
         { e: "👶", en: "baby", transcr: "бэйби", ru: "малыш", pn: "/ˈbeɪbi/" },
         { e: "🤝", en: "colleague", transcr: "колиг", ru: "коллега", pn: "/ˈkɒliːɡ/" },
         { e: "🧑‍🔧", en: "mechanic", transcr: "мэкэник", ru: "механик", pn: "/mɪˈkænɪk/" },
         { e: "🧹", en: "cleaner", transcr: "клинэ", ru: "уборщик", pn: "/ˈkliːnə/" },
-        { e: "🏠", en: "neighbour", transcr: "нэйбэ", ru: "сосед", pn: "/ˈneɪbə/" },
+        { e: "🧑‍🤝‍🧑", en: "neighbour", transcr: "нэйбэ", ru: "сосед", pn: "/ˈneɪbə/" },
         { e: "📱", en: "phone", transcr: "фоун", ru: "телефон", pn: "/fəʊn/" },
         { e: "🎒", en: "bag", transcr: "бэг", ru: "сумка", pn: "/bæɡ/" },
         { e: "🗄️", en: "locker", transcr: "локэ", ru: "шкафчик", pn: "/ˈlɒkə/" },
@@ -246,7 +246,7 @@
       ],
 
       dialogue: [
-        { s: "m", en: "Good morning! This is your colleague, Ahmad.", transcr: "Гуд монинг! Зис из ё колиг, Ахмад.", ru: "Доброе утро! Это твой коллега, Ахмад." },
+        { s: "m", en: "Good morning! This is Ahmad, your colleague.", transcr: "Гуд монинг! Зис из Ахмад, ё колиг.", ru: "Доброе утро! Это Ахмад, ваш коллега." },
         { s: "w", en: "Hello! My name is Rustam.", transcr: "Хэлоу! Май нэйм из Рустам.", ru: "Привет! Меня зовут Рустам." },
         { s: "m", en: "Rustam is a picker. Ahmad is a packer.", transcr: "Рустам из э пикэ. Ахмад из э пэкэ.", ru: "Рустам — сборщик. Ахмад — упаковщик." },
         { s: "w", en: "Is Anna our supervisor?", transcr: "Из Анна ауэ съюпэвайзэ?", ru: "Анна — наш бригадир?" },
