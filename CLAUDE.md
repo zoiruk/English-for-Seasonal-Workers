@@ -38,7 +38,7 @@
   проверены (вкл. safety health/SOS/documents).
 - **Режим повторения (SRS)** — флешкарты из пройденных слов (хаб 🔁). **Сертификат** 🏆
   (имя + статистика + print).
-- Git ~20 коммитов, чистая история; грамматика подтверждена 5 курсами (`coverage-matrix.md`).
+- Git ~30 коммитов, чистая история; грамматика подтверждена 5 курсами (`coverage-matrix.md`).
 
 **НЕ построено / дальше (`plans/2026-06-18-full-a0a1-scope.md` — актуальный чек-лист):**
 - **Уроки 4–15** (тираж). Грамм/лекс-дыры вшиваются при их создании: объектные me/him/us → L6,
@@ -81,7 +81,8 @@
 ## Карта файлов
 
 - `app/` — `index.html`, `app.js` (движок: хаб/урок/квиз/streak + экраны review-SRS,
-  сертификат), `data.js` (`window.LESSONS`), `phrasebook.js` (разговорник), `style.css`,
+  сертификат), `data.js` (`window.LESSONS`), `phrasebook.js` (`window.PHRASEBOOK` — разговорник,
+  6 категорий `{cat, icon, title_ru, phrases:[{en,transcr,ru}]}`, **вне аудита/снежка**), `style.css`,
   `sw.js` (PWA), `manifest.json`, `icon.svg`.
 - `scripts/` — `audit.js`/`dedup.js`/`snowball.js` + `lib.js` (whitelist+NAMES+токенайзер+стеммер),
   `serve.js` (dev-сервер no-store).
@@ -216,7 +217,9 @@ TikTok. Планка качества высокая: каждый урок пр
 - Системный sans-serif (`-apple-system, 'Segoe UI', Roboto`), без Google Fonts-зависимостей.
 - Контейнер `max-width:430px; margin:0 auto` (мобильный приоритет, 320–430px).
 - Навигация Hub-and-Spoke: главная-хаб + плавающая frosted-glass кнопка «‹ Назад» (iOS-chevron,
-  `position:fixed`). Внутри урока — табы Grammar/Words/Dialogue/(Phrases)/Quiz; общая кнопка
+  `position:fixed`). Из хаба, кроме уроков, ведут плитки-входы: Разговорник 📒, Повторение 🔁
+  (SRS, виден когда есть слова к повтору), Сертификат 🏆 — у каждого экрана своя frosted «Назад».
+  Внутри урока — табы Grammar/Words/Dialogue/(Phrases)/Quiz; общая кнопка
   «Далее ➔» ведёт к следующему табу. В шапке урока — пилюля «N/всего».
 - Карточки `border-radius:12–16px`; чипы pill `99px`; прогресс-бар `transition:width .5s`;
   нажатие `scale(0.98)`. Словарь — сетка 2 колонки (моб.) / 3 (широкий).
