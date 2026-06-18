@@ -10,7 +10,9 @@ RU-only, фермерская тема, снежный ком, аудит пер
 
 ## A. Грамматика/лексика — дыры закрыть внутри уроков
 - [ ] **Объектные местоимения me/him/us/them** — дать дом в **L6** (после Present Simple: «I pick them», «give me the crate»). Сейчас в whitelist отложены, но без урока.
-- [ ] **be going to** (2-я форма будущего, 4/4 книги) — в **L7** рядом с Present Continuous for future.
+- [ ] **L7 обязан явно учить функцию «планы на будущее»** через Present Continuous for future
+  (так делает и English File Beginner). **`be going to` — опционально** (нюанс из 5-го источника:
+  форма варьируется, функция универсальна; EF/Headway используют Present Continuous).
 - [ ] **like/love/hate + -ing** (явно) — в **L15** («I like picking», «I hate the cold»).
 - [ ] **Прилагательные** (фермерские) — расширить **L8** за пределы цветов: wet/dry/full/empty/heavy/light/broken/clean/dirty/cold/hot/ready.
 - [ ] **Национальности** (Uzbek/Tajik/Kyrgyz/Kazakh/British) — добавить в **L1**.

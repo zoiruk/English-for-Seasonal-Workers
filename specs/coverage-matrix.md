@@ -183,3 +183,29 @@ Right now we exercise **recognition only** (MCQ). All four reference books balan
 Items 1-4 are mostly LOW/MED effort and reuse existing content. With them, the project moves from "a well-structured grammar syllabus with quizzes" to "a complete, recommendable A0-A1 survival course." The **tap-to-build production task (#14)** and **certificate (#16)** are the next tier — high value for credibility and the TikTok funnel, but not strictly required for an A0-A1 completeness claim.
 
 **Relevant files:** `C:\Projects\Claude Code\6_\specs\structure.md` (grammar map + unbuilt phrasebook target), `C:\Projects\Claude Code\6_\specs\master-lexicon.md` (object-pronoun deferral, snowball whitelist), `C:\Projects\Claude Code\6_\app\data.js` (3 built lessons), `C:\Projects\Claude Code\6_\app\app.js` (TTS engine; confirmed no phrasebook/certificate/flashcard/speech-recognition/text-input).
+
+---
+
+## 7. Addendum — 5th source: English File Beginner (Oxford)
+
+Verified from the OUP student portal + official contents (topic labels only). 12 Files, A0-A1.
+
+- **Grammar spine — CONFIRMED 1:1** (5th independent corroboration): to be → a/an/plurals →
+  this/that/these/those → present simple → can → present continuous → there is/are →
+  was/were → past simple → **present continuous for future**.
+- **`be going to` — REVISED:** EF teaches the future-plans function via **Present Continuous
+  for future** (File 12), NOT `be going to`. So `be going to` is **NOT 5/5** — the *function*
+  (talking about plans) is universal, the *form* varies. **Our L7 (Present Continuous for
+  future) is a legitimate, EF-aligned choice. `be going to` downgraded from "should add" to
+  "optional nice-to-have".** What matters: L7 must clearly teach the future-plans *use*.
+- **Practical English strand — CONFIRMED our #1 gap is real & first-class:** a dedicated
+  functional component every 2 Files (hotel/spelling, prices, telling time + feelings, coffee
+  shop, shopping/clothes, directions) + "Social English". 5/5 sources now → strongest signal
+  to keep building our `everyday` layer.
+- **Pronunciation strand (new minor gap):** EF runs a systematic per-lesson pronunciation
+  focus (vowel sounds, word stress, sentence rhythm, -ed endings). Our fade-out transcr +
+  TTS is lighter. *Optional* future add: a one-line "звук урока" focus per lesson.
+- **Writing bank (new minor gap):** EF has a structured writing strand; aligns with our
+  planned tap-to-build production task.
+- **Net:** English File changes ONE conclusion (be going to: mandatory → optional) and
+  reinforces everything else, especially the functional-layer priority.
