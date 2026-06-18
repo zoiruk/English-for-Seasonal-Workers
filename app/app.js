@@ -153,14 +153,14 @@
 
   function grammarBody(les) {
     var g = les.grammar;
-    var h = '<div class="card"><b>' + esc(g.title_ru) + "</b><div style='margin-top:8px'>" + g.intro_ru + "</div></div>";
+    var h = '<div class="card"><div class="g-h">' + esc(g.title_ru) + "</div>" + g.intro_ru + "</div>";
     h += '<div class="forms">' + ["positive", "negative", "question"].map(function (f, i) {
       return '<button class="formbtn' + (i === 0 ? " on" : "") + '" data-form="' + f + '">' + esc(g.forms[f].label_ru) + "</button>";
     }).join("") + "</div>";
     h += '<div class="card" id="formbox"></div>';
     h += '<div class="card cultural"><b>' + t("cultural") + "</b><div>" + g.cultural_ru + "</div></div>";
     h += '<div class="card note">' + g.note_ru + "</div>";
-    h += '<div class="card"><b>' + t("examples") + "</b>";
+    h += '<div class="card"><div class="g-h">' + t("examples") + "</div>";
     g.examples.forEach(function (ex) {
       h += '<div class="ex-row">' + spkBtn(ex.en) + '<div><div class="en">' + esc(ex.en) +
         '</div><div class="tr">' + esc(ex.transcr) + '</div><div class="ru">' + esc(ex.ru) + "</div></div></div>";
