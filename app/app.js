@@ -3,12 +3,17 @@
   "use strict";
 
   var LESSONS = window.LESSONS || [];
+  var PHRASEBOOK = window.PHRASEBOOK || [];
 
   /* ---------- UI strings (localization-ready: add UI.uz later) ---------- */
   var UI = {
     ru: {
       app_title: "English for Seasonal Workers",
       app_subtitle: "Английский с нуля — для работы на ферме",
+      phrasebook_title: "Разговорник выживания",
+      phrasebook_sub: "Готовые фразы на каждый день",
+      phrasebook_hint: "👇 Выберите ситуацию. Нажмите 🔊, чтобы услышать.",
+      phrasebook_count: "{0} фраз",
       words_learned: "слов выучено",
       streak: "дней подряд",
       lessons_done: "уроков пройдено",
@@ -102,6 +107,12 @@
   var app = document.getElementById("app");
   function esc(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
   function spkBtn(text) { return '<button class="spk" data-spk="' + esc(text) + '">🔊</button>'; }
+  function backBtnHTML() {
+    return '<button class="float-back" id="back" type="button" aria-label="Назад">' +
+      '<svg class="fb-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" ' +
+      'stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>' +
+      "<span>Назад</span></button>";
+  }
 
   /* ---------- HUB ---------- */
   function renderHub() {
@@ -111,6 +122,12 @@
       '<div class="stat"><div class="v">' + store.words + '</div><div class="l">' + t("words_learned") + "</div></div>" +
       '<div class="stat"><div class="v">🔥 ' + store.streak + '</div><div class="l">' + t("streak") + "</div></div>" +
       '<div class="stat"><div class="v">' + done + "/" + LESSONS.length + '</div><div class="l">' + t("lessons_done") + "</div></div></div>";
+    if (PHRASEBOOK.length) {
+      h += '<div class="lesson-card pb-entry" data-nav="phrasebook">' +
+        '<div class="num">📒</div>' +
+        '<div class="body"><div class="t">' + t("phrasebook_title") + '</div><div class="s">' + t("phrasebook_sub") + "</div></div>" +
+        '<div class="done" style="color:var(--text3)">›</div></div>';
+    }
     LESSONS.forEach(function (les) {
       var isDone = store.done[les.id];
       h += '<div class="lesson-card" data-lesson="' + les.id + '">' +
@@ -119,6 +136,43 @@
         (isDone ? '<div class="done">✓</div>' : '<div class="done" style="color:var(--text3)">›</div>') + "</div>";
     });
     app.innerHTML = h;
+  }
+
+  /* ---------- PHRASEBOOK (reference, snowball-exempt) ---------- */
+  function renderPhrasebook() {
+    var h = backBtnHTML() +
+      '<div class="hub-head" style="padding-top:46px"><h1>📒 ' + t("phrasebook_title") + "</h1><p>" + t("phrasebook_sub") + "</p></div>";
+    h += '<div class="card note">' + t("phrasebook_hint") + "</div>";
+    PHRASEBOOK.forEach(function (c) {
+      h += '<div class="lesson-card" data-cat="' + esc(c.cat) + '">' +
+        '<div class="num">' + c.icon + "</div>" +
+        '<div class="body"><div class="t">' + esc(c.title_ru) + '</div><div class="s">' + t("phrasebook_count", c.phrases.length) + "</div></div>" +
+        '<div class="done" style="color:var(--text3)">›</div></div>';
+    });
+    app.innerHTML = h;
+    document.getElementById("back").onclick = function () { renderHub(); };
+    app.querySelectorAll("[data-cat]").forEach(function (el) {
+      el.onclick = function () { renderPhraseCategory(el.dataset.cat); };
+    });
+  }
+
+  function renderPhraseCategory(cat) {
+    var c = PHRASEBOOK.filter(function (x) { return x.cat === cat; })[0];
+    if (!c) return renderPhrasebook();
+    var h = backBtnHTML() +
+      '<div class="l-head"><span class="pos">' + c.icon + '</span>' +
+      '<div class="htitle"><div class="ttl">' + esc(c.title_ru) + '</div><div class="sub">' + t("phrasebook_title") + "</div></div></div>";
+    h += '<div class="card">';
+    c.phrases.forEach(function (p) {
+      h += '<div class="ex-row">' + spkBtn(p.en) + '<div><div class="en">' + esc(p.en) +
+        '</div><div class="tr">' + esc(p.transcr) + '</div><div class="ru">' + esc(p.ru) + "</div></div></div>";
+    });
+    h += "</div>";
+    app.innerHTML = h;
+    document.getElementById("back").onclick = function () { renderPhrasebook(); };
+    app.querySelectorAll("[data-spk]").forEach(function (el) {
+      el.addEventListener("click", function () { speak(el.dataset.spk); });
+    });
   }
 
   /* ---------- LESSON ---------- */
@@ -132,10 +186,7 @@
   function renderLesson(les, tab) {
     tab = tab || "grammar";
     var tabs = tabsFor(les);
-    var h = '<button class="float-back" id="back" type="button" aria-label="Назад">' +
-      '<svg class="fb-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" ' +
-      'stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>' +
-      "<span>Назад</span></button>" +
+    var h = backBtnHTML() +
       '<div class="l-head"><span class="pos">' + les.id + "/" + LESSONS.length + "</span>" +
       '<div class="htitle"><div class="ttl">' + esc(les.title_ru) + '</div><div class="sub">' + esc(les.cefr) + "</div></div></div>";
     h += '<div class="tabs">' + tabs.map(function (x) {
@@ -320,6 +371,8 @@
 
   /* ---------- start ---------- */
   app.addEventListener("click", function (e) {
+    var nav = e.target.closest("[data-nav]");
+    if (nav) { if (nav.dataset.nav === "phrasebook") renderPhrasebook(); return; }
     var card = e.target.closest("[data-lesson]");
     if (card) { var id = +card.dataset.lesson; var les = LESSONS.filter(function (x) { return x.id === id; })[0]; if (les) renderLesson(les); }
   });
