@@ -48,7 +48,10 @@
         "[NEGATIVE]": "❌ Найдите отрицание",
         "[CORRECT]": "✅ Что правильно?",
         "[QUESTION]": "❓ Выберите вопрос",
+        "[LISTEN]": "🎧 Прослушайте и выберите",
+        "[GIST]": "📖 Понимание диалога",
       },
+      listen_play: "▶ Слушать",
     },
   };
   var LANG = "ru";
@@ -332,14 +335,23 @@
       var tag = (q.q.match(/\[[A-Z]+\]/) || [""])[0];
       var label = (UI[LANG].tags && UI[LANG].tags[tag]) || "";
       var text = q.q.replace(/\[[A-Z]+\]\s*/, "");
+      var isListen = tag === "[LISTEN]";
+      var qBody = isListen
+        ? '<div class="q-label">' + esc(label) + "</div>" +
+          '<button class="btn ghost spk-listen" id="listen-play" type="button">' + t("listen_play") + "</button>"
+        : '<div class="q-text">' + esc(label ? label + ": " : "") + esc(text) + "</div>" +
+          (q.hint_ru ? '<div class="q-hint">' + esc(q.hint_ru) + "</div>" : "");
       var h = '<div class="card"><div class="q-hint">' + t("q_of", idx + 1, qs.length) + "</div>" +
-        '<div class="q-text">' + esc(label ? label + ": " : "") + esc(text) + "</div>" +
-        (q.hint_ru ? '<div class="q-hint">' + esc(q.hint_ru) + "</div>" : "") +
+        qBody +
         '<div class="opts">' + q.opts.map(function (o, i) {
           return '<button class="opt" data-i="' + i + '">' + esc(o) + "</button>";
         }).join("") + '</div><div class="q-fb hidden" id="fb"></div>' +
         '<button class="btn hidden" id="nextq"></button></div>';
       root.innerHTML = h;
+      if (isListen) {
+        var lp = document.getElementById("listen-play");
+        if (lp) lp.onclick = function () { speak(text); };
+      }
       var answered = false;
       root.querySelectorAll(".opt").forEach(function (b) {
         b.onclick = function () {

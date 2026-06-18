@@ -148,6 +148,8 @@ code { background: var(--accent-soft); color: var(--text); padding: 1px 5px; bor
 .q-fb { margin-top: 12px; font-size: 14px; padding: 10px 12px; border-radius: 10px; }
 .q-fb.ok { background: var(--ok-soft); color: var(--ok); }
 .q-fb.no { background: var(--no-soft); color: var(--no); }
+.q-label { font-size: 15px; font-weight: 600; color: var(--accent); text-align: center; padding: 6px 0 8px; }
+.spk-listen { font-size: 18px; padding: 20px 14px; margin-top: 8px; letter-spacing: .02em; }
 
 /* buttons */
 .btn { display: block; width: 100%; border: none; background: var(--accent); color: #fff; font-size: 15px; font-weight: 700; padding: 14px; border-radius: 12px; cursor: pointer; margin-top: 14px; }

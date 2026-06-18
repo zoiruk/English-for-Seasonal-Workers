@@ -2,7 +2,7 @@
 const { loadLessons, escapeRe, report } = require("./lib");
 const L = loadLessons();
 const errors = [];
-const TAGS = ["[COMPLETE]", "[TRANSLATE]", "[NEGATIVE]", "[CORRECT]", "[QUESTION]"];
+const TAGS = ["[COMPLETE]", "[TRANSLATE]", "[NEGATIVE]", "[CORRECT]", "[QUESTION]", "[LISTEN]", "[GIST]"];
 
 for (const les of L) {
   const id = les.id;
@@ -63,7 +63,7 @@ for (const les of L) {
       errors.push({ lesson: id, field: `quiz[${i}].c`, msg: `index ${x.c} out of range` });
     if (!x.expl) errors.push({ lesson: id, field: `quiz[${i}].expl`, msg: "missing" });
     // answer-leak: correct answer must not appear verbatim in the question (TRANSLATE is exempt)
-    if (Array.isArray(x.opts) && typeof x.c === "number" && x.opts[x.c] && !qs.includes("[TRANSLATE]")) {
+    if (Array.isArray(x.opts) && typeof x.c === "number" && x.opts[x.c] && !qs.includes("[TRANSLATE]") && !qs.includes("[LISTEN]")) {
       const ans = String(x.opts[x.c]);
       const body = qs.replace(/\[[A-Z]+\]/g, "");
       if (new RegExp("\\b" + escapeRe(ans) + "\\b", "i").test(body))
