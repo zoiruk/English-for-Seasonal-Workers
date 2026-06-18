@@ -23,7 +23,7 @@ const WHITELIST = {
   1: ["i","you","he","she","it","we","they","am","is","are","be","not","a","an","the",
       "this","that","what","where","and","from","good","to"],
   2: ["my","your","his","her","our","their","its"],
-  3: ["me","him","us","them","these","those"],
+  3: ["these","those"],
 };
 const NAMES = ["ahmad","tom","sara","anna","john","ali","omar","rustam","fatima"];
 

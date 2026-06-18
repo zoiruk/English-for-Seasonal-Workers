@@ -21,9 +21,10 @@ CEFR-объём и галлюцинации IPA. Одобряется владе
 слов урока. Снежок-аудит считает их «известными» с урока, где введена их грамматика.
 
 - **Урок 1 (вводит):** I, you, he, she, it, we, they · am, is, are, not · a, an, the ·
-  this, that · what, where · and, from · good (good morning) · question-форма (Am I…?).
+  this, that · what, where · and, from, to · good (good morning) · question-форма (Am I…?).
 - **Урок 2:** my, your, his, her, our, their · 's (possessive).
-- **Урок 3:** me, him, her, us, them · these, those.
+- **Урок 3:** these, those (демонстративы). Объектные me/him/us/them — отложены до урока
+  с глаголами (на A0 без глагола их не отработать естественно).
 - Далее каждый урок добавляет служебные слова своей грамм-темы (have/has, do/does, can,
   was/were, some/any, much/many, would, will…). Полный список ведём по мере уроков.
 - **Имена собственные** (Ahmad, Tom, Sara, Anna, Rustam, Fatima) и топонимы из словарей

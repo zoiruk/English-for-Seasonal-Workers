@@ -271,6 +271,129 @@
         { q: "[CORRECT] Где правильно?", opts: ["Her name is Anna", "Her name are Anna", "Her name Anna", "Name her is Anna"], c: 0, expl: "her + name + is.", hint_ru: "Её зовут Анна." },
       ],
     },
+
+    {
+      id: 3,
+      mod: 2,
+      title_ru: "Что это? — Это ящик",
+      cefr: "This is / These are · a/an",
+
+      grammar: {
+        title_ru: "Это и эти: This is a / These are",
+        intro_ru:
+          '<div style="line-height:1.6">Так говорить — ошибка:<br>❌ <b>This crate</b><br>Правильно:<br>✅ <b>This is a crate</b> <span class="g-transcr">[зис из э крэйт]</span> (это ящик)<br>👉 С предметом всегда <b>is</b> + артикль <b>a</b>.</div>',
+        cultural_ru:
+          "В русском «это ящик» — без глагола. В английском нужны <b>is</b> и артикль <b>a/an</b>. Много предметов → <b>These are</b> (эти).",
+        note_ru: '⚠️ Перед гласным звуком — <b>an</b>, а не <b>a</b>. И: <b>this</b> (один) → <b>these</b> (много).',
+        forms: {
+          positive: {
+            label_ru: "✅ Утверждение",
+            rule_ru:
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>This is a</code> <span class="g-transcr">[зис из э]</span> (это…)</div>' +
+              '<div><code>These are</code> <span class="g-transcr">[зиз ар]</span> (эти…)</div></div>',
+            table: [
+              { subj: "This", verb: "is", example: "This is a crate", transcr: "Зис из э крэйт", tr_ru: "Это ящик" },
+              { subj: "This", verb: "is", example: "This is a trolley", transcr: "Зис из э троли", tr_ru: "Это тележка" },
+              { subj: "These", verb: "are", example: "These are punnets", transcr: "Зиз ар панитс", tr_ru: "Это корзинки" },
+              { subj: "These", verb: "are", example: "These are tools", transcr: "Зиз ар тулз", tr_ru: "Это инструменты" },
+            ],
+          },
+          negative: {
+            label_ru: "❌ Отрицание",
+            rule_ru:
+              'Добавляем <b>not</b> после <b>is/are</b>:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>This is not a box</code></div>' +
+              '<div><code>These are not crates</code></div></div>',
+            table: [
+              { subj: "This", verb: "is not", example: "This is not a box", transcr: "Зис из нот э бокс", tr_ru: "Это не коробка" },
+              { subj: "That", verb: "is not", example: "That is not a bucket", transcr: "Зэт из нот э бакит", tr_ru: "То не ведро" },
+              { subj: "These", verb: "are not", example: "These are not crates", transcr: "Зиз ар нот крэйтс", tr_ru: "Это не ящики" },
+            ],
+          },
+          question: {
+            label_ru: "❓ Вопрос",
+            rule_ru:
+              'Глагол вперёд, или <b>What</b> для «что?»:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>Is this a tray?</code></div>' +
+              '<div><code>What is this?</code></div></div>',
+            table: [
+              { subj: "Is", verb: "this", example: "Is this a ladder?", transcr: "Из зис э лэдэ", tr_ru: "Это лестница?" },
+              { subj: "Is", verb: "that", example: "Is that a hose?", transcr: "Из зэт э хоуз", tr_ru: "То шланг?" },
+              { subj: "What", verb: "is", example: "What is this?", transcr: "Уот из зис", tr_ru: "Что это?" },
+            ],
+          },
+        },
+        examples: [
+          { en: "This is a punnet.", transcr: "Зис из э панит.", ru: "Это корзинка." },
+          { en: "These are crates.", transcr: "Зиз ар крэйтс.", ru: "Это ящики." },
+          { en: "Is this your trolley?", transcr: "Из зис ё троли?", ru: "Это твоя тележка?" },
+          { en: "That is not a knife.", transcr: "Зэт из нот э найф.", ru: "То не нож." },
+          { en: "This is an axe.", transcr: "Зис из эн экс.", ru: "Это топор." },
+        ],
+      },
+
+      words: [
+        { e: "🧺", en: "punnet", transcr: "панит", ru: "корзинка для ягод", pn: "/ˈpʌnɪt/" },
+        { e: "📦", en: "crate", transcr: "крэйт", ru: "ящик", pn: "/kreɪt/" },
+        { e: "🛒", en: "trolley", transcr: "троли", ru: "тележка", pn: "/ˈtrɒli/" },
+        { e: "🗃️", en: "box", transcr: "бокс", ru: "коробка", pn: "/bɒks/" },
+        { e: "🌾", en: "row", transcr: "роу", ru: "ряд", pn: "/rəʊ/" },
+        { e: "🥡", en: "tray", transcr: "трэй", ru: "лоток", pn: "/treɪ/" },
+        { e: "🪣", en: "bucket", transcr: "бакит", ru: "ведро", pn: "/ˈbʌkɪt/" },
+        { e: "🔪", en: "knife", transcr: "найф", ru: "нож", pn: "/naɪf/" },
+        { e: "✂️", en: "scissors", transcr: "сизэз", ru: "ножницы", pn: "/ˈsɪzəz/" },
+        { e: "🪜", en: "ladder", transcr: "лэдэ", ru: "лестница", pn: "/ˈlædə/" },
+        { e: "💧", en: "hose", transcr: "хоуз", ru: "шланг", pn: "/həʊz/" },
+        { e: "🗑️", en: "bin", transcr: "бин", ru: "бак", pn: "/bɪn/" },
+        { e: "🏷️", en: "label", transcr: "лэйбл", ru: "этикетка", pn: "/ˈleɪbl/" },
+        { e: "⚖️", en: "scale", transcr: "скэйл", ru: "весы", pn: "/skeɪl/" },
+        { e: "🥅", en: "net", transcr: "нэт", ru: "сетка", pn: "/net/" },
+        { e: "🛢️", en: "barrel", transcr: "бэрэл", ru: "бочка", pn: "/ˈbærəl/" },
+        { e: "🔨", en: "hammer", transcr: "хэмэ", ru: "молоток", pn: "/ˈhæmə/" },
+        { e: "🪢", en: "rope", transcr: "роуп", ru: "верёвка", pn: "/rəʊp/" },
+        { e: "🧷", en: "tape", transcr: "тэйп", ru: "лента", pn: "/teɪp/" },
+        { e: "🔧", en: "tool", transcr: "тул", ru: "инструмент", pn: "/tuːl/" },
+        { e: "⚙️", en: "machine", transcr: "мэшин", ru: "станок", pn: "/məˈʃiːn/" },
+        { e: "🪴", en: "plant", transcr: "плант", ru: "растение", pn: "/plɑːnt/" },
+        { e: "🍃", en: "leaf", transcr: "лиф", ru: "лист", pn: "/liːf/" },
+        { e: "🖊️", en: "marker", transcr: "макэ", ru: "маркер", pn: "/ˈmɑːkə/" },
+        { e: "🧵", en: "string", transcr: "стринг", ru: "бечёвка", pn: "/strɪŋ/" },
+        { e: "🪝", en: "hook", transcr: "хук", ru: "крюк", pn: "/hʊk/" },
+        { e: "🧹", en: "broom", transcr: "брум", ru: "метла", pn: "/bruːm/" },
+        { e: "🛞", en: "wheel", transcr: "уил", ru: "колесо", pn: "/wiːl/" },
+        { e: "📋", en: "clipboard", transcr: "клипбод", ru: "планшет для бумаг", pn: "/ˈklɪpbɔːd/" },
+        { e: "🪓", en: "axe", transcr: "экс", ru: "топор", pn: "/æks/" },
+      ],
+
+      dialogue: [
+        { s: "m", en: "Good morning! Welcome to the farm.", transcr: "Гуд монинг! Вэлкэм ту зэ фарм.", ru: "Доброе утро! Добро пожаловать на ферму." },
+        { s: "w", en: "Thanks! What is this?", transcr: "Сэнкс! Уот из зис?", ru: "Спасибо! Что это?" },
+        { s: "m", en: "This is a crate. These are punnets.", transcr: "Зис из э крэйт. Зиз ар панитс.", ru: "Это ящик. Это корзинки." },
+        { s: "w", en: "Is this a trolley?", transcr: "Из зис э троли?", ru: "Это тележка?" },
+        { s: "m", en: "Yes. This is your trolley.", transcr: "Йес. Зис из ё троли.", ru: "Да. Это твоя тележка." },
+        { s: "w", en: "What is that?", transcr: "Уот из зэт?", ru: "А то что?" },
+        { s: "m", en: "That is a scale.", transcr: "Зэт из э скэйл.", ru: "Это весы." },
+        { s: "w", en: "Are these your tools?", transcr: "Ар зиз ё тулз?", ru: "Это твои инструменты?" },
+        { s: "m", en: "Yes. These are your tools.", transcr: "Йес. Зиз ар ё тулз.", ru: "Да. Это твои инструменты." },
+        { s: "w", en: "Thanks! This is a good farm.", transcr: "Сэнкс! Зис из э гуд фарм.", ru: "Спасибо! Это хорошая ферма." },
+      ],
+
+      quiz: [
+        { q: '[COMPLETE] "This ___ a crate."', opts: ["am", "is", "are", "be"], c: 1, expl: "This is — это (один предмет).", hint_ru: "Это ящик." },
+        { q: '[COMPLETE] "These ___ punnets."', opts: ["are", "is", "am", "be"], c: 0, expl: "These are — эти (много).", hint_ru: "Это корзинки." },
+        { q: '[COMPLETE] "This is ___ trolley."', opts: ["the", "an", "a", "is"], c: 2, expl: "a — один предмет.", hint_ru: "Это тележка." },
+        { q: '[TRANSLATE] "нож"', opts: ["tool", "scissors", "knife", "hose"], c: 2, expl: "knife — нож.", hint_ru: "knife." },
+        { q: '[TRANSLATE] "ведро"', opts: ["bucket", "crate", "box", "bin"], c: 0, expl: "bucket — ведро.", hint_ru: "bucket." },
+        { q: '[QUESTION] "___ this a ladder?"', opts: ["Am", "Are", "Is", "Be"], c: 2, expl: "Вопрос: Is this…?", hint_ru: "Это лестница?" },
+        { q: "[NEGATIVE] Где отрицание?", opts: ["This is a box", "Is this a box?", "This is not a box", "This box"], c: 2, expl: "Отрицание = is + not.", hint_ru: "Это не коробка." },
+        { q: "[CORRECT] Где правильно (много)?", opts: ["This are tools", "These are tools", "These is tools", "These am tools"], c: 1, expl: "These + are.", hint_ru: "Это инструменты." },
+        { q: '[COMPLETE] "Is ___ a hose?" (то, там)', opts: ["this", "that", "these", "those"], c: 1, expl: "that — то (дальше).", hint_ru: "То шланг?" },
+        { q: '[COMPLETE] "What ___ this?"', opts: ["is", "are", "am", "be"], c: 0, expl: "What is this? — Что это?", hint_ru: "Что это?" },
+      ],
+    },
   ];
 
   if (typeof module !== "undefined" && module.exports) module.exports = LESSONS;
