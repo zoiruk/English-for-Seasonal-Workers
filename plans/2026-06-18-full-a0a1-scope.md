@@ -55,7 +55,11 @@ RU-only, фермерская тема, снежный ком, аудит пер
    - [x] **L5** «Где это? Места на ферме» (where/what · предлоги места in/on/under/behind/near/next to) —
      30 мест (canteen/toilet/office/shop/camp/gate/shed/road/market/river…) + [LISTEN]/[GIST] +
      everyday (спросить дорогу: turn left/right, go straight). Коммит `a3de20c`.
-   - [ ] L6–L15 — далее по одному за сессию. **L6 = Present Simple + объектные me/him/us/them.**
+   - [x] **L6** «Что я делаю на работе» (Present Simple + 3-е лицо -s + do/does + наречия частоты +
+     объектные me/him/her/us/them — закрыта отложенная дыра). 30 глаголов работы (pick/pack/carry/
+     weigh/sort/load…) + berry. everyday (понять задание, попросить помощь). Коммит `e5800d8`.
+   - [ ] L7–L15 — далее по одному за сессию. **L7 = Present Continuous (планы на будущее),
+     переиспользует глаголы L6 в форме -ing (running/waiting/loading…).**
 
 ### Выбранный владельцем порядок (2026-06-18): фазы 1 → 2 → 3 (контент-дыры → навыки),
 последовательно, с приёмкой; тираж 4-15 (вариант 4) пока не запускать.
