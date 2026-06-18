@@ -144,6 +144,21 @@
         { q: '[COMPLETE] "She ___ a packer."', opts: ["are", "am", "is", "be"], c: 2, expl: "She → is.", hint_ru: "Она — упаковщица." },
         { q: "[CORRECT] Где правильно?", opts: ["He am a farmer", "He is a farmer", "He are a farmer", "He a farmer"], c: 1, expl: "He → is. Глагол нельзя пропускать.", hint_ru: "Он — фермер." },
       ],
+
+      everyday: {
+        title_ru: "Первые фразы: знакомство и «не понимаю»",
+        phrases: [
+          { en: "Hello!", transcr: "Хэлоу!", ru: "Здравствуйте!" },
+          { en: "My name is Ahmad.", transcr: "Май нэйм из Ахмад.", ru: "Меня зовут Ахмад." },
+          { en: "Sorry?", transcr: "Сори?", ru: "Простите? / Что?" },
+          { en: "Again, please.", transcr: "Эгэн, плиз.", ru: "Повторите, пожалуйста." },
+          { en: "Slowly, please.", transcr: "Слоули, плиз.", ru: "Медленнее, пожалуйста." },
+          { en: "I don't understand.", transcr: "Ай доунт андэстэнд.", ru: "Я не понимаю." },
+          { en: "How do you spell it?", transcr: "Хау ду ю спэл ит?", ru: "Как это пишется по буквам?" },
+          { en: "Thank you!", transcr: "Сэнк ю!", ru: "Спасибо!" },
+          { en: "Goodbye!", transcr: "Гудбай!", ru: "До свидания!" },
+        ],
+      },
     },
 
     {

@@ -16,7 +16,9 @@
       tab_grammar: "Грамматика",
       tab_words: "Слова",
       tab_dialogue: "Диалог",
+      tab_phrases: "Фразы",
       tab_quiz: "Тест",
+      everyday_hint: "👇 Готовые фразы — выучите наизусть, нужны с первого дня. Нажмите 🔊.",
       next: "Далее: {0} ➔",
       to_quiz: "Перейти к тесту ➔",
       tap_word: "👇 Нажмите на слово, чтобы услышать",
@@ -120,18 +122,23 @@
   }
 
   /* ---------- LESSON ---------- */
-  var TABS = ["grammar", "words", "dialogue", "quiz"];
+  function tabsFor(les) {
+    return les.everyday
+      ? ["grammar", "words", "dialogue", "phrases", "quiz"]
+      : ["grammar", "words", "dialogue", "quiz"];
+  }
   function tabLabel(x) { return t("tab_" + x); }
 
   function renderLesson(les, tab) {
     tab = tab || "grammar";
+    var tabs = tabsFor(les);
     var h = '<button class="float-back" id="back" type="button" aria-label="Назад">' +
       '<svg class="fb-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" ' +
       'stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>' +
       "<span>Назад</span></button>" +
       '<div class="l-head"><span class="pos">' + les.id + "/" + LESSONS.length + "</span>" +
       '<div class="htitle"><div class="ttl">' + esc(les.title_ru) + '</div><div class="sub">' + esc(les.cefr) + "</div></div></div>";
-    h += '<div class="tabs">' + TABS.map(function (x) {
+    h += '<div class="tabs">' + tabs.map(function (x) {
       return '<button class="tab' + (x === tab ? " on" : "") + '" data-tab="' + x + '">' + tabLabel(x) + "</button>";
     }).join("") + "</div>";
     h += '<div id="tabbody"></div>';
@@ -140,15 +147,38 @@
     app.querySelectorAll(".tab").forEach(function (b) {
       b.onclick = function () { renderLesson(les, b.dataset.tab); };
     });
-    document.getElementById("tabbody").innerHTML = bodyFor(les, tab);
+    var body = document.getElementById("tabbody");
+    body.innerHTML = bodyFor(les, tab);
     wireBody(les, tab);
+    // generic "Далее" button to the next tab (quiz manages its own flow)
+    var idx = tabs.indexOf(tab);
+    if (tab !== "quiz" && idx > -1 && idx < tabs.length - 1) {
+      var nextTab = tabs[idx + 1];
+      var nb = document.createElement("button");
+      nb.className = "btn";
+      nb.textContent = t("next", t("tab_" + nextTab));
+      nb.onclick = function () { renderLesson(les, nextTab); };
+      body.appendChild(nb);
+    }
   }
 
   function bodyFor(les, tab) {
     if (tab === "grammar") return grammarBody(les);
     if (tab === "words") return wordsBody(les);
     if (tab === "dialogue") return dialogueBody(les);
+    if (tab === "phrases") return everydayBody(les);
     return quizBody(les);
+  }
+
+  function everydayBody(les) {
+    var e = les.everyday;
+    var h = '<div class="card note">' + t("everyday_hint") + "</div>";
+    h += '<div class="card"><div class="g-h">' + esc(e.title_ru) + "</div>";
+    e.phrases.forEach(function (p) {
+      h += '<div class="ex-row">' + spkBtn(p.en) + '<div><div class="en">' + esc(p.en) +
+        '</div><div class="tr">' + esc(p.transcr) + '</div><div class="ru">' + esc(p.ru) + "</div></div></div>";
+    });
+    return h + "</div>";
   }
 
   function grammarBody(les) {
@@ -166,7 +196,6 @@
         '</div><div class="tr">' + esc(ex.transcr) + '</div><div class="ru">' + esc(ex.ru) + "</div></div></div>";
     });
     h += "</div>";
-    h += '<button class="btn" id="gowords">' + t("next", t("tab_words")) + "</button>";
     return h;
   }
   function formTable(form) {
@@ -186,7 +215,7 @@
       h += '<div class="word" data-spk="' + esc(w.en) + '"><div class="e">' + w.e + '</div><div class="en">' +
         esc(w.en) + '</div><div class="tr">' + esc(w.transcr) + '</div><div class="ru">' + esc(w.ru) + "</div></div>";
     });
-    h += "</div><button class='btn' id='godlg'>" + t("next", t("tab_dialogue")) + "</button>";
+    h += "</div>";
     return h;
   }
 
@@ -196,7 +225,6 @@
       h += '<div class="line ' + d.s + '">' + spkBtn(d.en) + '<div class="bubble"><div class="en">' + esc(d.en) +
         '</div><div class="tr">' + esc(d.transcr) + '</div><div class="ru">' + esc(d.ru) + "</div></div></div>";
     });
-    h += "<button class='btn' id='goquiz'>" + t("to_quiz") + "</button>";
     return h;
   }
 
@@ -221,15 +249,11 @@
           b.classList.add("on"); showForm(b.dataset.form);
         };
       });
-      document.getElementById("gowords") ; var gw = document.getElementById("gowords");
-      if (gw) gw.onclick = function () { renderLesson(les, "words"); };
     }
     if (tab === "words") {
       countWords(les);
-      document.getElementById("godlg").onclick = function () { renderLesson(les, "dialogue"); };
     }
     if (tab === "dialogue") {
-      document.getElementById("goquiz").onclick = function () { renderLesson(les, "quiz"); };
       document.getElementById("playall").onclick = function () { playAll(les.dialogue); };
     }
     if (tab === "quiz") runQuiz(les);

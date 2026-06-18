@@ -70,6 +70,19 @@ for (const les of L) {
         errors.push({ lesson: id, field: `quiz[${i}].q`, msg: `answer "${ans}" leaks into question` });
     }
   });
+
+  // --- everyday functional block (optional; not snowball-checked — fixed survival chunks) ---
+  if (les.everyday) {
+    const ev = les.everyday;
+    if (!ev.title_ru) errors.push({ lesson: id, field: "everyday.title_ru", msg: "missing" });
+    if (!Array.isArray(ev.phrases) || ev.phrases.length < 3)
+      errors.push({ lesson: id, field: "everyday.phrases", msg: `need >=3, got ${(ev.phrases || []).length}` });
+    else ev.phrases.forEach((p, i) =>
+      ["en", "transcr", "ru"].forEach((k) => {
+        if (!p[k]) errors.push({ lesson: id, field: `everyday.phrases[${i}].${k}`, msg: "missing" });
+      })
+    );
+  }
 }
 
 process.exit(report("audit", errors));
