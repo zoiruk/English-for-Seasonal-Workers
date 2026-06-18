@@ -42,6 +42,20 @@
       done_low: "Повторите урок и попробуйте снова.",
       no_voice: "Нет голоса или интернета — звук недоступен",
       storage_full: "Не удалось сохранить прогресс (память браузера заполнена)",
+      review_title: "Повторение слов",
+      review_count: "{0} слов для повторения",
+      review_progress: "Осталось: {0}",
+      review_done: "Все слова повторены! 🎉",
+      show_card: "Показать перевод",
+      know: "✓ Знаю",
+      again: "🔄 Ещё раз",
+      cert_hub_title: "Мой прогресс",
+      cert_hub_sub: "{0} из {1} уроков пройдено",
+      cert_title: "Сертификат A0-A1",
+      cert_body_done: "Курс успешно завершён ✓",
+      cert_body_progress: "Пройдено уроков: {0} из {1}",
+      cert_name_hint: "Введите ваше имя",
+      cert_print: "🖨️ Распечатать",
       tags: {
         "[COMPLETE]": "✍️ Заполните пропуск",
         "[TRANSLATE]": "🗣️ Переведите",
@@ -131,6 +145,19 @@
         '<div class="body"><div class="t">' + t("phrasebook_title") + '</div><div class="s">' + t("phrasebook_sub") + "</div></div>" +
         '<div class="done" style="color:var(--text3)">›</div></div>';
     }
+    var pool = reviewPool();
+    if (pool.length) {
+      h += '<div class="lesson-card" data-nav="review">' +
+        '<div class="num">🔁</div>' +
+        '<div class="body"><div class="t">' + t("review_title") + '</div>' +
+        '<div class="s">' + t("review_count", pool.length) + '</div></div>' +
+        '<div class="done" style="color:var(--text3)">›</div></div>';
+    }
+    h += '<div class="lesson-card" data-nav="cert">' +
+      '<div class="num">🏆</div>' +
+      '<div class="body"><div class="t">' + t("cert_hub_title") + '</div>' +
+      '<div class="s">' + t("cert_hub_sub", Object.keys(store.done).length, LESSONS.length) + '</div></div>' +
+      '<div class="done" style="color:var(--text3)">›</div></div>';
     LESSONS.forEach(function (les) {
       var isDone = store.done[les.id];
       h += '<div class="lesson-card" data-lesson="' + les.id + '">' +
@@ -176,6 +203,97 @@
     app.querySelectorAll("[data-spk]").forEach(function (el) {
       el.addEventListener("click", function () { speak(el.dataset.spk); });
     });
+  }
+
+  /* ---------- REVIEW ---------- */
+  function renderReview() {
+    var queue = shuffle(reviewPool());
+    if (!queue.length) { renderHub(); return; }
+    var total = queue.length;
+
+    function draw() {
+      var w = queue[0];
+      var pct = Math.round((total - queue.length) / total * 100);
+      var h = backBtnHTML() +
+        '<div class="hub-head" style="padding-top:46px"><h1>🔁 ' + t("review_title") + '</h1>' +
+        '<p>' + t("review_progress", queue.length) + '</p></div>' +
+        '<div class="bar"><i style="width:' + pct + '%"></i></div>' +
+        '<div class="flashcard"><div class="fc-e">' + w.e + '</div>' +
+        '<div class="fc-ru">' + esc(w.ru) + '</div></div>' +
+        '<button class="btn" id="fc-show">' + t("show_card") + '</button>';
+      app.innerHTML = h;
+      document.getElementById("back").onclick = renderHub;
+      document.getElementById("fc-show").onclick = function () {
+        app.querySelector(".flashcard").innerHTML =
+          '<div class="fc-e">' + w.e + '</div>' +
+          '<button class="spk" id="fc-spk" style="margin:0 auto">🔊</button>' +
+          '<div class="fc-en">' + esc(w.en) + '</div>' +
+          '<div class="fc-tr">' + esc(w.transcr) + '</div>' +
+          '<div class="fc-ru">' + esc(w.ru) + '</div>';
+        document.getElementById("fc-spk").onclick = function () { speak(w.en); };
+        speak(w.en);
+        var showBtn = document.getElementById("fc-show");
+        var btns = document.createElement("div");
+        btns.className = "review-btns";
+        btns.innerHTML =
+          '<button class="btn" id="fc-know">' + t("know") + '</button>' +
+          '<button class="btn ghost" id="fc-again">' + t("again") + '</button>';
+        showBtn.replaceWith(btns);
+        document.getElementById("fc-know").onclick = function () {
+          queue.shift();
+          if (queue.length) draw(); else showDone();
+        };
+        document.getElementById("fc-again").onclick = function () {
+          queue.push(queue.shift());
+          draw();
+        };
+      };
+    }
+
+    function showDone() {
+      app.innerHTML = backBtnHTML() +
+        '<div class="hub-head" style="padding-top:46px"><h1>🎉</h1>' +
+        '<p>' + t("review_done") + '</p></div>' +
+        '<div class="bar"><i style="width:100%"></i></div>' +
+        '<button class="btn" id="rv-hub" style="margin-top:24px">' + t("to_hub") + '</button>';
+      document.getElementById("back").onclick = renderHub;
+      document.getElementById("rv-hub").onclick = renderHub;
+    }
+
+    draw();
+  }
+
+  /* ---------- CERTIFICATE ---------- */
+  function renderCertificate() {
+    var done = Object.keys(store.done).length;
+    var total = LESSONS.length;
+    var isComplete = total > 0 && done === total;
+    var nameVal = store.certName || "";
+    var h = backBtnHTML() +
+      '<div class="cert">' +
+        '<div class="cert-top">🌿</div>' +
+        '<div class="cert-title">' + esc(t("app_title")) + '</div>' +
+        '<input class="cert-name" id="cert-name" type="text" ' +
+          'placeholder="' + esc(t("cert_name_hint")) + '" value="' + esc(nameVal) + '">' +
+        '<div class="cert-body">' +
+          (isComplete ? t("cert_body_done") : t("cert_body_progress", done, total)) +
+        '</div>' +
+        '<div class="cert-stats">' +
+          '<span>' + store.words + ' ' + t("words_learned") + '</span>' +
+          '<span>🔥 ' + store.streak + ' ' + t("streak") + '</span>' +
+        '</div>' +
+        '<div class="cert-cefr">CEFR · A0–A1</div>' +
+      '</div>' +
+      '<button class="btn" id="cert-print" style="margin-top:14px">' + t("cert_print") + '</button>' +
+      '<button class="btn ghost" id="cert-hub" style="margin-top:8px">' + t("to_hub") + '</button>';
+    app.innerHTML = h;
+    document.getElementById("back").onclick = renderHub;
+    document.getElementById("cert-hub").onclick = renderHub;
+    document.getElementById("cert-name").oninput = function (e) {
+      store.certName = e.target.value;
+      save(store);
+    };
+    document.getElementById("cert-print").onclick = function () { window.print(); };
   }
 
   /* ---------- LESSON ---------- */
@@ -326,6 +444,24 @@
     setTimeout(function () { playAll(lines, i + 1); }, delay);
   }
 
+  /* ---------- review helpers ---------- */
+  function shuffle(arr) {
+    var a = arr.slice();
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+    }
+    return a;
+  }
+  function reviewPool() {
+    var pool = [];
+    if (!store.seen) return pool;
+    LESSONS.forEach(function (les) {
+      if (store.seen[les.id]) pool = pool.concat(les.words);
+    });
+    return pool;
+  }
+
   /* ---------- quiz trainer ---------- */
   function runQuiz(les) {
     var root = document.getElementById("quizroot");
@@ -384,7 +520,12 @@
   /* ---------- start ---------- */
   app.addEventListener("click", function (e) {
     var nav = e.target.closest("[data-nav]");
-    if (nav) { if (nav.dataset.nav === "phrasebook") renderPhrasebook(); return; }
+    if (nav) {
+      if (nav.dataset.nav === "phrasebook") renderPhrasebook();
+      else if (nav.dataset.nav === "review") renderReview();
+      else if (nav.dataset.nav === "cert") renderCertificate();
+      return;
+    }
     var card = e.target.closest("[data-lesson]");
     if (card) { var id = +card.dataset.lesson; var les = LESSONS.filter(function (x) { return x.id === id; })[0]; if (les) renderLesson(les); }
   });
