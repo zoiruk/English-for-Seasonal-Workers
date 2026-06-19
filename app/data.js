@@ -1011,7 +1011,7 @@
           { en: "Are you reading the label?", transcr: "Ар ю ридинг зэ лэйбл?", ru: "Ты читаешь этикетку?" },
           { en: "Tom is walking to the field.", transcr: "Том из уокинг ту зэ филд.", ru: "Том идёт в поле (сейчас)." },
           { en: "I am finishing today.", transcr: "Ай эм финишинг тудэй.", ru: "Я заканчиваю сегодня (план)." },
-          { en: "We are starting tomorrow.", transcr: "Уи ар стартинг тумороу.", ru: "Мы начинаем завтра (план)." },
+          { en: "We are starting tomorrow.", transcr: "Уи ар стартинг тэмороу.", ru: "Мы начинаем завтра (план)." },
         ],
         simple_ru: {
           formula: 'Прямо сейчас → <b>am / is / are</b> + глагол<b>+ing</b>.<br><span class="g-transcr">I am work<b>ing</b> · She is pick<b>ing</b></span>',
@@ -1068,7 +1068,7 @@
         { s: "m", en: "Are you resting now?", transcr: "Ар ю рэстинг нау?", ru: "Ты сейчас отдыхаешь?" },
         { s: "w", en: "No. I am not resting.", transcr: "Ноу. Ай эм нот рэстинг.", ru: "Нет. Я не отдыхаю." },
         { s: "m", en: "Good. We are finishing soon.", transcr: "Гуд. Уи ар финишинг суун.", ru: "Хорошо. Мы скоро заканчиваем." },
-        { s: "w", en: "I am starting tomorrow.", transcr: "Ай эм стартинг тумороу.", ru: "Я начинаю завтра." },
+        { s: "w", en: "I am starting tomorrow.", transcr: "Ай эм стартинг тэмороу.", ru: "Я начинаю завтра." },
       ],
 
       quiz: [
