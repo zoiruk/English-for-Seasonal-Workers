@@ -88,6 +88,8 @@ RU-only, фермерская тема, снежный ком, аудит пер
      проблеме в вагончике» + [LISTEN]×2/[GIST] + 12 quiz. Плейн `is not`/`are not` (без сокращений — токенайзер).
      `WHITELIST[9]=some/any/here`. Аудит зелёный, verify-ipa/transcr по L9 чисты, превью-рендер OK, адверсариально
      проверено (язык/IPA SHIP + педагогика SHIP); фикс: present-simple-future → Present Continuous (как L7). Коммит L9.
+     **Source-cited сверка 5 источников (метод `0ab5e1f`, скилл `/lesson-naturalness-check`): SHIP — 0 флагов от
+     3 ревьюеров (коллокации · BrE/A0 · CEFR+safety), слой-4 гейт пройден.**
      ⚠️ Грабли стеммера: `bed`≤3 не стеммится, а `beds`→`b` → плюрал не матчится в снежке; в проверяемых полях
      использовать `chairs`/`blankets`, не `beds` (в `rule_ru` снежок не сканирует — там натуральный `beds` ок).
    - [ ] L10–L15 — далее по одному за сессию. **L10 = how much/many + would like + еда/напитки (Tesco).**
