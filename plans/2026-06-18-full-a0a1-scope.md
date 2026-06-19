@@ -10,9 +10,9 @@ RU-only, фермерская тема, снежный ком, аудит пер
 
 ## A. Грамматика/лексика — дыры закрыть внутри уроков
 - [x] **Объектные местоимения me/him/us/them** — введены в **L6** (Present Simple): таблица I→me… в `cultural`, quiz «Give me/him». Коммит `e5800d8`.
-- [ ] **L7 обязан явно учить функцию «планы на будущее»** через Present Continuous for future
-  (так делает и English File Beginner). **`be going to` — опционально** (нюанс из 5-го источника:
-  форма варьируется, функция универсальна; EF/Headway используют Present Continuous).
+- [x] **L7 явно учит функцию «планы на будущее»** через Present Continuous for future
+  (как English File Beginner): rule + примеры «I am finishing today / starting tomorrow» + реплика
+  диалога + [TRANSLATE]-quiz на future. **`be going to` НЕ делаем** (опционально; функция покрыта). Коммит L7.
 - [ ] **like/love/hate + -ing** (явно) — в **L15** («I like picking», «I hate the cold»).
 - [ ] **Прилагательные** (фермерские) — расширить **L8** за пределы цветов: wet/dry/full/empty/heavy/light/broken/clean/dirty/cold/hot/ready.
 - [x] **Национальности** (Uzbek/Tajik/Kyrgyz/Kazakh/British) — добавлены в **L1** words (35 слов), пример «She is British.» в grammar.examples, [TRANSLATE] в quiz (L1 → 13 вопросов).
@@ -65,8 +65,12 @@ RU-only, фермерская тема, снежный ком, аудит пер
    - [x] **L6** «Что я делаю на работе» (Present Simple + 3-е лицо -s + do/does + наречия частоты +
      объектные me/him/her/us/them — закрыта отложенная дыра). 30 глаголов работы (pick/pack/carry/
      weigh/sort/load…) + berry. everyday (понять задание, попросить помощь). Коммит `e5800d8`.
-   - [ ] L7–L15 — далее по одному за сессию. **L7 = Present Continuous (планы на будущее),
-     переиспользует глаголы L6 в форме -ing (running/waiting/loading…).**
+   - [x] **L7** «Что я делаю прямо сейчас» (Present Continuous + будущее-план). 30 новых -ing-глаголов
+     (go/walk/spray/grow/read/climb/feed/sweep/hold…); grammar/dialogue/quiz спрягают НОВЫЕ глаголы (не L6);
+     future-план учится (rule+примеры+диалог) И проверяется в quiz; everyday «сказать, что делаешь сейчас».
+     Снежок-ловушки -ing (удвоение/немое -e) обойдены; `WHITELIST[7]=now/today/tomorrow/soon/doing`.
+     Адверсариально проверено (язык+педагогика). Коммит L7.
+   - [ ] L8–L15 — далее по одному за сессию. **L8 = have/has + фермерские прилагательные/цвета (PPE).**
 
 ### Выбранный владельцем порядок (2026-06-18): фазы 1 → 2 → 3 (контент-дыры → навыки),
 последовательно, с приёмкой; тираж 4-15 (вариант 4) пока не запускать.
