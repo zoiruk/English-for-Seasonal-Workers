@@ -29,6 +29,7 @@ const WHITELIST = {
   6: ["do","does","me","him","us","them","always","sometimes","never"],
   7: ["now","today","tomorrow","soon","doing"],
   8: ["have","has","got"],
+  9: ["some","any","here"],
 };
 const NAMES = ["ahmad","tom","sara","anna","john","ali","omar","rustam","fatima"];
 

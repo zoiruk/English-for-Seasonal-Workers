@@ -1257,6 +1257,167 @@
         ],
       },
     },
+    {
+      id: 9,
+      mod: 5,
+      title_ru: "Что есть в вагончике: комната и кэмп",
+      cefr: "there is / there are · some / any · rooms & furniture",
+
+      grammar: {
+        title_ru: "Есть / находится: there is / there are",
+        intro_ru:
+          '<div style="line-height:1.6">Так сказать нельзя:<br>❌ <b>In the room a bed</b> / ❌ <b>The room has a bed</b><br>Правильно:<br>✅ <b>There is a bed in the room</b> <span class="g-transcr">[зэа из э бэд ин зэ рум]</span> (в комнате есть кровать)<br>👉 «Есть / находится» = <b>There is</b> (один предмет) / <b>There are</b> (много).</div>',
+        cultural_ru:
+          'В русском «в комнате кровать» — без глагола. В английском всегда нужно <b>There is / There are</b>:' +
+          '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:6px">' +
+          '<div><b>один предмет:</b> There is a bed <span class="g-transcr">[зэа из э бэд]</span></div>' +
+          '<div><b>много:</b> There are some beds <span class="g-transcr">[зэа а сам бэдз]</span></div></div>' +
+          '<div style="margin-top:6px"><b>some</b> <span class="g-transcr">[сам]</span> — в утверждении («есть несколько»). <b>any</b> <span class="g-transcr">[эни]</span> — в вопросе и отрицании.</div>',
+        note_ru:
+          '⚠️ Один предмет → <b>is</b>, много → <b>are</b>: «There <b>is</b> a bed», «There <b>are</b> beds». В вопросе и отрицании — <b>any</b>, не some: «Are there <b>any</b> blankets?», «There are <b>not any</b> towels.»',
+        forms: {
+          positive: {
+            label_ru: "✅ Утверждение",
+            rule_ru:
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>There is</code> + один предмет</div>' +
+              '<div><code>There are</code> + много</div>' +
+              '<div><code>There is a bed</code> <span class="g-transcr">[зэа из э бэд]</span></div>' +
+              '<div><code>There are some beds</code> <span class="g-transcr">[зэа а сам бэдз]</span></div></div>',
+            table: [
+              { subj: "There", verb: "is", example: "There is a bed", transcr: "Зэа из э бэд", tr_ru: "Есть кровать (в комнате)" },
+              { subj: "There", verb: "is", example: "There is a heater", transcr: "Зэа из э хитэ", tr_ru: "Есть обогреватель" },
+              { subj: "There", verb: "are", example: "There are some blankets", transcr: "Зэа а сам блэнкитс", tr_ru: "Есть одеяла" },
+              { subj: "There", verb: "are", example: "There are some chairs", transcr: "Зэа а сам чэаз", tr_ru: "Есть стулья" },
+            ],
+          },
+          negative: {
+            label_ru: "❌ Отрицание",
+            rule_ru:
+              'Отрицание — <b>is not / are not</b>; во множественном — с <b>any</b>:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>There is not a shower</code></div>' +
+              '<div><code>There are not any towels</code></div></div>',
+            table: [
+              { subj: "There", verb: "is not", example: "There is not a shower", transcr: "Зэа из нот э шауэ", tr_ru: "Душа нет" },
+              { subj: "There", verb: "are not", example: "There are not any towels", transcr: "Зэа а нот эни тауэлз", tr_ru: "Полотенец нет" },
+              { subj: "There", verb: "is not", example: "There is not a key", transcr: "Зэа из нот э ки", tr_ru: "Ключа нет" },
+            ],
+          },
+          question: {
+            label_ru: "❓ Вопрос",
+            rule_ru:
+              '<b>Is / Are</b> ставим ВПЕРЁД; во множественном — <b>any</b>:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>Is there a bed?</code> <span class="g-transcr">[из зэа э бэд]</span></div>' +
+              '<div><code>Are there any beds?</code> <span class="g-transcr">[а зэа эни бэдз]</span></div></div>',
+            table: [
+              { subj: "Is", verb: "there a bed?", example: "Is there a bed?", transcr: "Из зэа э бэд?", tr_ru: "Есть кровать?" },
+              { subj: "Are", verb: "there any chairs?", example: "Are there any chairs?", transcr: "А зэа эни чэаз?", tr_ru: "Есть стулья?" },
+              { subj: "Is", verb: "there a heater?", example: "Is there a heater?", transcr: "Из зэа э хитэ?", tr_ru: "Есть обогреватель?" },
+            ],
+          },
+        },
+        examples: [
+          { en: "There is a bed in the room.", transcr: "Зэа из э бэд ин зэ рум.", ru: "В комнате есть кровать." },
+          { en: "There is a heater near the bed.", transcr: "Зэа из э хитэ ниэ зэ бэд.", ru: "Рядом с кроватью есть обогреватель." },
+          { en: "There are some blankets on the bed.", transcr: "Зэа а сам блэнкитс он зэ бэд.", ru: "На кровати есть одеяла." },
+          { en: "There are some chairs in the kitchen.", transcr: "Зэа а сам чэаз ин зэ китчин.", ru: "На кухне есть стулья." },
+          { en: "There is not a shower here.", transcr: "Зэа из нот э шауэ хиэ.", ru: "Здесь нет душа." },
+          { en: "There are not any towels.", transcr: "Зэа а нот эни тауэлз.", ru: "Полотенец нет." },
+          { en: "Is there a key? Yes, there is.", transcr: "Из зэа э ки? Йес, зэа из.", ru: "Есть ключ? Да, есть." },
+          { en: "Are there any chairs? Yes, there are.", transcr: "А зэа эни чэаз? Йес, зэа а.", ru: "Есть стулья? Да, есть." },
+          { en: "The heater is broken.", transcr: "Зэ хитэ из броукэн.", ru: "Обогреватель сломан." },
+          { en: "The bed is wet.", transcr: "Зэ бэд из уэт.", ru: "Кровать мокрая." },
+          { en: "The fridge is empty.", transcr: "Зэ фридж из эмпти.", ru: "Холодильник пустой." },
+          { en: "The crate is heavy.", transcr: "Зэ крэйт из хэви.", ru: "Ящик тяжёлый." },
+          { en: "The kettle is full.", transcr: "Зэ кэтл из фул.", ru: "Чайник полный." },
+          { en: "The room is ready.", transcr: "Зэ рум из рэди.", ru: "Комната готова." },
+        ],
+        simple_ru: {
+          formula: 'Один предмет → <b>There is</b>. Много → <b>There are</b>.<br>Вопрос: <b>Is there…? / Are there…?</b><br><b>some</b> — в утверждении, <b>any</b> — в вопросе и отрицании.<br><span class="g-transcr">There is a bed · There are some beds</span>',
+          examples: [
+            { en: "There is a bed.", transcr: "Зэа из э бэд.", ru: "Есть (один) + кровать (bed)." },
+            { en: "There are some chairs.", transcr: "Зэа а сам чэаз.", ru: "Есть (много) + стулья (chairs)." },
+          ],
+        },
+        ytQuery: "there is there are some any английский для начинающих на русском",
+      },
+
+      words: [
+        { e: "🛋️", en: "room", transcr: "рум", ru: "комната", pn: "/ruːm/" },
+        { e: "🛏️", en: "bed", transcr: "бэд", ru: "кровать", pn: "/bed/" },
+        { e: "🚿", en: "shower", transcr: "шауэ", ru: "душ", pn: "/ˈʃaʊə/" },
+        { e: "🛁", en: "bath", transcr: "бас", ru: "ванна", pn: "/bɑːθ/" },
+        { e: "🔑", en: "key", transcr: "ки", ru: "ключ", pn: "/kiː/" },
+        { e: "🔥", en: "heater", transcr: "хитэ", ru: "обогреватель", pn: "/ˈhiːtə/" },
+        { e: "🫖", en: "kettle", transcr: "кэтл", ru: "чайник (электрический)", pn: "/ˈketl/" },
+        { e: "🧊", en: "fridge", transcr: "фридж", ru: "холодильник", pn: "/frɪdʒ/" },
+        { e: "🍳", en: "cooker", transcr: "кукэ", ru: "плита", pn: "/ˈkʊkə/" },
+        { e: "🚰", en: "sink", transcr: "синк", ru: "раковина", pn: "/sɪŋk/" },
+        { e: "☕", en: "mug", transcr: "маг", ru: "кружка", pn: "/mʌɡ/" },
+        { e: "🍽️", en: "plate", transcr: "плэйт", ru: "тарелка", pn: "/pleɪt/" },
+        { e: "🥄", en: "spoon", transcr: "спун", ru: "ложка", pn: "/spuːn/" },
+        { e: "🍴", en: "fork", transcr: "фок", ru: "вилка", pn: "/fɔːk/" },
+        { e: "🥣", en: "bowl", transcr: "боул", ru: "миска", pn: "/bəʊl/" },
+        { e: "🔌", en: "socket", transcr: "сокит", ru: "розетка", pn: "/ˈsɒkɪt/" },
+        { e: "💡", en: "lamp", transcr: "лэмп", ru: "лампа", pn: "/læmp/" },
+        { e: "🛌", en: "blanket", transcr: "блэнкит", ru: "одеяло", pn: "/ˈblæŋkɪt/" },
+        { e: "🕯️", en: "candle", transcr: "кэндл", ru: "свеча", pn: "/ˈkændl/" },
+        { e: "📚", en: "shelf", transcr: "шэлф", ru: "полка", pn: "/ʃelf/" },
+        { e: "🗄️", en: "drawer", transcr: "дро", ru: "ящик (выдвижной)", pn: "/drɔː/" },
+        { e: "🪟", en: "curtain", transcr: "кётэн", ru: "штора", pn: "/ˈkɜːtn/" },
+        { e: "💔", en: "broken", transcr: "броукэн", ru: "сломан", pn: "/ˈbrəʊkən/" },
+        { e: "💧", en: "wet", transcr: "уэт", ru: "мокрый", pn: "/wet/" },
+        { e: "❄️", en: "cold", transcr: "коулд", ru: "холодный", pn: "/kəʊld/" },
+        { e: "♨️", en: "hot", transcr: "хот", ru: "горячий", pn: "/hɒt/" },
+        { e: "🏋️", en: "heavy", transcr: "хэви", ru: "тяжёлый", pn: "/ˈhevi/" },
+        { e: "🪫", en: "empty", transcr: "эмпти", ru: "пустой", pn: "/ˈempti/" },
+        { e: "🔋", en: "full", transcr: "фул", ru: "полный", pn: "/fʊl/" },
+        { e: "✅", en: "ready", transcr: "рэди", ru: "готовый", pn: "/ˈredi/" },
+      ],
+
+      dialogue: [
+        { s: "m", en: "Hello! This is your room.", transcr: "Хэлоу! Зис из ё рум.", ru: "Здравствуй! Это твоя комната." },
+        { s: "w", en: "Thank you. Where is the bed?", transcr: "Сэнк ю. Уэа из зэ бэд?", ru: "Спасибо. Где кровать?" },
+        { s: "m", en: "There is a bed near the window.", transcr: "Зэа из э бэд ниэ зэ уиндоу.", ru: "Кровать у окна." },
+        { s: "w", en: "Is there a heater? The room is cold.", transcr: "Из зэа э хитэ? Зэ рум из коулд.", ru: "Есть обогреватель? В комнате холодно." },
+        { s: "m", en: "Yes. The heater is here. It is broken.", transcr: "Йес. Зэ хитэ из хиэ. Ит из броукэн.", ru: "Да. Обогреватель здесь. Он сломан." },
+        { s: "w", en: "It is broken? The room is cold.", transcr: "Ит из броукэн? Зэ рум из коулд.", ru: "Сломан? В комнате холодно." },
+        { s: "m", en: "Tom is fixing the heater today.", transcr: "Том из фиксинг зэ хитэ тудэй.", ru: "Том чинит обогреватель сегодня." },
+        { s: "w", en: "Good. Are there any blankets?", transcr: "Гуд. А зэа эни блэнкитс?", ru: "Хорошо. Есть одеяла?" },
+        { s: "m", en: "Yes, there are some blankets on the bed.", transcr: "Йес, зэа а сам блэнкитс он зэ бэд.", ru: "Да, на кровати есть одеяла." },
+        { s: "w", en: "Is there a shower?", transcr: "Из зэа э шауэ?", ru: "Есть душ?" },
+        { s: "m", en: "Yes. The shower is there. The key is here.", transcr: "Йес. Зэ шауэ из зэа. Зэ ки из хиэ.", ru: "Да. Душ там. Ключ здесь." },
+        { s: "w", en: "Thank you. The room is good now.", transcr: "Сэнк ю. Зэ рум из гуд нау.", ru: "Спасибо. Комната теперь хорошая." },
+      ],
+
+      quiz: [
+        { q: '[COMPLETE] "There ___ a bed in the room." (один предмет)', opts: ["is", "are", "have", "do"], c: 0, expl: "Один предмет → there is.", hint_ru: "В комнате есть кровать." },
+        { q: '[COMPLETE] "There ___ some blankets." (много)', opts: ["are", "is", "has", "do"], c: 0, expl: "Много предметов → there are.", hint_ru: "Есть несколько одеял." },
+        { q: '[QUESTION] "___ there a heater?"', opts: ["Is", "Are", "Do", "Have"], c: 0, expl: "Один предмет в вопросе → Is there…?", hint_ru: "Есть обогреватель?" },
+        { q: '[COMPLETE] "Are there ___ chairs?" (в вопросе)', opts: ["any", "some", "a", "is"], c: 0, expl: "В вопросе и отрицании → any, не some.", hint_ru: "Есть стулья?" },
+        { q: "[NEGATIVE] Где отрицание?", opts: ["There is not a shower", "There is a shower", "Is there a shower?", "There a shower"], c: 0, expl: "Отрицание = is/are + not.", hint_ru: "Душа нет." },
+        { q: "[CORRECT] Где правильно?", opts: ["There are some chairs", "There is some chairs", "There are a chairs", "There are some chair"], c: 0, expl: "There are + some + множественное число.", hint_ru: "Есть стулья." },
+        { q: '[TRANSLATE] "кровать"', opts: ["bed", "key", "shower", "blanket"], c: 0, expl: "bed — кровать.", hint_ru: "bed." },
+        { q: '[TRANSLATE] "сломан"', opts: ["broken", "cold", "wet", "empty"], c: 0, expl: "broken — сломан.", hint_ru: "broken." },
+        { q: "[LISTEN] The room is cold.", opts: ["Комната холодная.", "Комната готова.", "Кровать мокрая.", "Холодильник пустой."], c: 0, expl: "room — комната, cold — холодный." },
+        { q: "[LISTEN] There is a key on the bed.", opts: ["На кровати есть ключ.", "Под кроватью одеяло.", "В комнате есть душ.", "На полке есть лампа."], c: 0, expl: "there is — есть; key — ключ; bed — кровать." },
+        { q: "[GIST] Что сломано в комнате (по диалогу)?", opts: ["Обогреватель", "Душ", "Кровать", "Окно"], c: 0, expl: 'В диалоге: «The heater is broken.»', hint_ru: "Смотрите реплику про heater." },
+        { q: "[CORRECT] Где правильно (вопрос)?", opts: ["Is there a key?", "Are there a key?", "Is there any key?", "There is a key?"], c: 0, expl: "Один предмет → Is there a key?", hint_ru: "Есть ключ?" },
+      ],
+
+      everyday: {
+        title_ru: "Сообщить о проблеме в вагончике",
+        phrases: [
+          { en: "There is no hot water.", transcr: "Зэа из ноу хот уотэ.", ru: "Нет горячей воды." },
+          { en: "The heater is broken.", transcr: "Зэ хитэ из броукэн.", ru: "Обогреватель не работает." },
+          { en: "The toilet is blocked.", transcr: "Зэ тойлет из блокт.", ru: "Туалет засорился." },
+          { en: "There are no blankets.", transcr: "Зэа а ноу блэнкитс.", ru: "Нет одеял." },
+          { en: "Can you fix it, please?", transcr: "Кэн ю фикс ит, плиз?", ru: "Можете починить, пожалуйста?" },
+        ],
+      },
+    },
   ];
 
   if (typeof module !== "undefined" && module.exports) module.exports = LESSONS;
