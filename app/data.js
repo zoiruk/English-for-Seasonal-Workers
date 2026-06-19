@@ -893,6 +893,156 @@
         ],
       },
     },
+
+    {
+      id: 7,
+      mod: 4,
+      title_ru: "Что я делаю прямо сейчас",
+      cefr: "Present Continuous · Future plans",
+
+      grammar: {
+        title_ru: "Я работаю СЕЙЧАС: am / is / are + …ing",
+        intro_ru:
+          '<div style="line-height:1.6">Так говорить — ошибка:<br>❌ <b>I working</b> / ❌ <b>I work now</b><br>Правильно:<br>✅ <b>I am working</b> <span class="g-transcr">[ай эм уёкинг]</span> (я работаю прямо сейчас)<br>👉 Действие ПРЯМО СЕЙЧАС = <b>am / is / are</b> + глагол + <b>-ing</b>.</div>',
+        cultural_ru:
+          'В русском «я работаю» — и «вообще», и «сейчас». В английском это РАЗНЫЕ времена:' +
+          '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:6px">' +
+          '<div><b>Сейчас:</b> I am working <span class="g-transcr">[ай эм уёкинг]</span></div>' +
+          '<div><b>Всегда (Урок 6):</b> I work <span class="g-transcr">[ай уёк]</span></div></div>' +
+          '<div style="margin-top:6px">Это же время говорит о <b>планах</b>: <b>I am finishing today</b> <span class="g-transcr">[ай эм финишинг тудэй]</span> — я заканчиваю сегодня (план на день).</div>',
+        note_ru:
+          '⚠️ Не забывай <b>am/is/are</b> — нельзя «I working». Помни: <b>I → am</b>, <b>he/she/it → is</b>, <b>you/we/they → are</b>. К глаголу всегда добавляй <b>-ing</b>: work → work<b>ing</b>, pick → pick<b>ing</b>.',
+        forms: {
+          positive: {
+            label_ru: "✅ Утверждение",
+            rule_ru:
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>I am</code> + …ing</div>' +
+              '<div><code>He/She/It is</code> + …ing</div>' +
+              '<div><code>You/We/They are</code> + …ing</div>' +
+              '<div><code>I am picking</code> <span class="g-transcr">[ай эм пикинг]</span></div></div>',
+            table: [
+              { subj: "I", verb: "am picking", example: "I am picking berries", transcr: "Ай эм пикинг бэриз", tr_ru: "Я собираю ягоды (сейчас)" },
+              { subj: "He", verb: "is spraying", example: "He is spraying the plants", transcr: "Хи из спрэйинг зэ плантс", tr_ru: "Он опрыскивает растения (сейчас)" },
+              { subj: "We", verb: "are sweeping", example: "We are sweeping the shed", transcr: "Уи ар суипинг зэ шед", tr_ru: "Мы подметаем сарай (сейчас)" },
+              { subj: "They", verb: "are reading", example: "They are reading the label", transcr: "Зэй ар ридинг зэ лэйбл", tr_ru: "Они читают этикетку (сейчас)" },
+            ],
+          },
+          negative: {
+            label_ru: "❌ Отрицание",
+            rule_ru:
+              'После <b>am/is/are</b> ставим <b>not</b>:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>I am not working</code></div>' +
+              '<div><code>She is not picking</code></div></div>',
+            table: [
+              { subj: "I", verb: "am not", example: "I am not resting", transcr: "Ай эм нот рэстинг", tr_ru: "Я не отдыхаю (сейчас)" },
+              { subj: "She", verb: "is not", example: "She is not feeding", transcr: "Ши из нот фидинг", tr_ru: "Она не кормит (сейчас)" },
+              { subj: "They", verb: "are not", example: "They are not pouring", transcr: "Зэй ар нот поринг", tr_ru: "Они не наливают (сейчас)" },
+            ],
+          },
+          question: {
+            label_ru: "❓ Вопрос",
+            rule_ru:
+              '<b>am/is/are</b> ставим ВПЕРЁД:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>Are you working?</code> <span class="g-transcr">[ар ю уёкинг]</span></div>' +
+              '<div><code>Is she picking?</code> <span class="g-transcr">[из ши пикинг]</span></div></div>',
+            table: [
+              { subj: "Are", verb: "you", example: "Are you reading the label?", transcr: "Ар ю ридинг зэ лэйбл?", tr_ru: "Ты читаешь этикетку (сейчас)?" },
+              { subj: "Is", verb: "he", example: "Is he climbing the ladder?", transcr: "Из хи клаймбинг зэ лэдэ?", tr_ru: "Он залезает на лестницу (сейчас)?" },
+              { subj: "What", verb: "are", example: "What are you doing?", transcr: "Уот ар ю дуинг?", tr_ru: "Что ты делаешь?" },
+            ],
+          },
+        },
+        examples: [
+          { en: "I am holding the box.", transcr: "Ай эм хоулдинг зэ бокс.", ru: "Я держу коробку (сейчас)." },
+          { en: "She is spraying the plants.", transcr: "Ши из спрэйинг зэ плантс.", ru: "Она опрыскивает растения (сейчас)." },
+          { en: "We are mixing it now.", transcr: "Уи ар миксинг ит нау.", ru: "Мы сейчас это смешиваем." },
+          { en: "He is not resting.", transcr: "Хи из нот рэстинг.", ru: "Он не отдыхает." },
+          { en: "Are you reading the label?", transcr: "Ар ю ридинг зэ лэйбл?", ru: "Ты читаешь этикетку?" },
+          { en: "Tom is walking to the field.", transcr: "Том из уокинг ту зэ филд.", ru: "Том идёт в поле (сейчас)." },
+          { en: "I am finishing today.", transcr: "Ай эм финишинг тудэй.", ru: "Я заканчиваю сегодня (план)." },
+          { en: "We are starting tomorrow.", transcr: "Уи ар стартинг тумороу.", ru: "Мы начинаем завтра (план)." },
+        ],
+      },
+
+      words: [
+        { e: "➡️", en: "go", transcr: "гоу", ru: "идти", pn: "/ɡəʊ/" },
+        { e: "🚶", en: "walk", transcr: "уок", ru: "ходить пешком", pn: "/wɔːk/" },
+        { e: "🌧️", en: "rain", transcr: "рэйн", ru: "идти (о дожде)", pn: "/reɪn/" },
+        { e: "💬", en: "talk", transcr: "ток", ru: "говорить", pn: "/tɔːk/" },
+        { e: "📞", en: "call", transcr: "кол", ru: "звать", pn: "/kɔːl/" },
+        { e: "🤝", en: "help", transcr: "хэлп", ru: "помогать", pn: "/help/" },
+        { e: "😌", en: "rest", transcr: "рэст", ru: "отдыхать", pn: "/rest/" },
+        { e: "🔘", en: "press", transcr: "прэс", ru: "нажимать", pn: "/pres/" },
+        { e: "🧴", en: "spray", transcr: "спрэй", ru: "опрыскивать", pn: "/spreɪ/" },
+        { e: "🌿", en: "grow", transcr: "гроу", ru: "расти", pn: "/ɡrəʊ/" },
+        { e: "🧍", en: "stand", transcr: "стэнд", ru: "стоять", pn: "/stænd/" },
+        { e: "📖", en: "read", transcr: "рид", ru: "читать", pn: "/riːd/" },
+        { e: "🧎", en: "kneel", transcr: "нил", ru: "вставать на колени", pn: "/niːl/" },
+        { e: "🎨", en: "paint", transcr: "пэйнт", ru: "красить", pn: "/peɪnt/" },
+        { e: "🪜", en: "climb", transcr: "клайм", ru: "залезать", pn: "/klaɪm/" },
+        { e: "🪝", en: "hang", transcr: "хэнг", ru: "вешать", pn: "/hæŋ/" },
+        { e: "🫗", en: "pour", transcr: "по", ru: "наливать", pn: "/pɔː/" },
+        { e: "🥣", en: "mix", transcr: "микс", ru: "смешивать", pn: "/mɪks/" },
+        { e: "🔥", en: "burn", transcr: "бён", ru: "жечь", pn: "/bɜːn/" },
+        { e: "🔄", en: "turn", transcr: "тён", ru: "поворачивать", pn: "/tɜːn/" },
+        { e: "🤾", en: "throw", transcr: "сроу", ru: "бросать", pn: "/θrəʊ/" },
+        { e: "🧤", en: "catch", transcr: "кэч", ru: "ловить", pn: "/kætʃ/" },
+        { e: "🌬️", en: "dry", transcr: "драй", ru: "сушить", pn: "/draɪ/" },
+        { e: "🐑", en: "feed", transcr: "фид", ru: "кормить", pn: "/fiːd/" },
+        { e: "🧹", en: "sweep", transcr: "суип", ru: "подметать", pn: "/swiːp/" },
+        { e: "🔐", en: "lock", transcr: "лок", ru: "запирать", pn: "/lɒk/" },
+        { e: "👉", en: "point", transcr: "пойнт", ru: "показывать пальцем", pn: "/pɔɪnt/" },
+        { e: "📢", en: "shout", transcr: "шаут", ru: "кричать", pn: "/ʃaʊt/" },
+        { e: "📤", en: "send", transcr: "сэнд", ru: "отправлять", pn: "/send/" },
+        { e: "✊", en: "hold", transcr: "хоулд", ru: "держать", pn: "/həʊld/" },
+      ],
+
+      dialogue: [
+        { s: "m", en: "Good morning! What are you doing?", transcr: "Гуд монинг! Уот ар ю дуинг?", ru: "Доброе утро! Что ты делаешь?" },
+        { s: "w", en: "I am spraying the plants now.", transcr: "Ай эм спрэйинг зэ плантс нау.", ru: "Я опрыскиваю растения сейчас." },
+        { s: "m", en: "Good. Sara is reading the label.", transcr: "Гуд. Сара из ридинг зэ лэйбл.", ru: "Хорошо. Сара читает этикетку." },
+        { s: "w", en: "Is Tom climbing the ladder?", transcr: "Из Том клаймбинг зэ лэдэ?", ru: "Том залезает на лестницу?" },
+        { s: "m", en: "Yes. He is climbing it now.", transcr: "Йес. Хи из клаймбинг ит нау.", ru: "Да. Он сейчас на неё залезает." },
+        { s: "w", en: "We are sweeping the shed.", transcr: "Уи ар суипинг зэ шед.", ru: "Мы подметаем сарай." },
+        { s: "m", en: "Look! It is raining now.", transcr: "Лук! Ит из рэйнинг нау.", ru: "Смотри! Сейчас идёт дождь." },
+        { s: "w", en: "I am helping Sara.", transcr: "Ай эм хэлпинг Сара.", ru: "Я помогаю Саре." },
+        { s: "m", en: "Are you resting now?", transcr: "Ар ю рэстинг нау?", ru: "Ты сейчас отдыхаешь?" },
+        { s: "w", en: "No. I am not resting.", transcr: "Ноу. Ай эм нот рэстинг.", ru: "Нет. Я не отдыхаю." },
+        { s: "m", en: "Good. We are finishing soon.", transcr: "Гуд. Уи ар финишинг суун.", ru: "Хорошо. Мы скоро заканчиваем." },
+        { s: "w", en: "I am starting tomorrow.", transcr: "Ай эм стартинг тумороу.", ru: "Я начинаю завтра." },
+      ],
+
+      quiz: [
+        { q: '[COMPLETE] "I ___ picking berries." (я)', opts: ["am", "is", "are", "be"], c: 0, expl: "I → am. Сейчас = am/is/are + глагол-ing.", hint_ru: "Я собираю ягоды сейчас." },
+        { q: '[COMPLETE] "She ___ spraying the plants." (она)', opts: ["is", "am", "are", "be"], c: 0, expl: "he/she/it → is.", hint_ru: "Она опрыскивает растения." },
+        { q: '[COMPLETE] "They ___ sweeping the shed." (они)', opts: ["are", "am", "is", "be"], c: 0, expl: "you/we/they → are.", hint_ru: "Они подметают сарай." },
+        { q: '[COMPLETE] "I am ___ Sara now." (помогать)', opts: ["helping", "help", "helps", "helped"], c: 0, expl: "Сейчас = am + глагол-ing: helping.", hint_ru: "Я помогаю Саре сейчас." },
+        { q: '[TRANSLATE] "кормить"', opts: ["feed", "press", "grow", "throw"], c: 0, expl: "feed — кормить.", hint_ru: "feed." },
+        { q: '[TRANSLATE] "отдыхать"', opts: ["rest", "help", "talk", "walk"], c: 0, expl: "rest — отдыхать.", hint_ru: "rest." },
+        { q: "[NEGATIVE] Где отрицание?", opts: ["She is reading", "She is not reading", "Is she reading?", "She reading"], c: 1, expl: "Отрицание = am/is/are + not + глагол-ing.", hint_ru: "Она не читает." },
+        { q: '[QUESTION] "___ you climbing the ladder?"', opts: ["Are", "Is", "Am", "Do"], c: 0, expl: "you → Are в начале вопроса.", hint_ru: "Ты залезаешь на лестницу сейчас?" },
+        { q: "[CORRECT] Где правильно?", opts: ["He is holding the box", "He holding the box", "He is hold the box", "He are holding the box"], c: 0, expl: "He → is + глагол-ing: He is holding.", hint_ru: "Он держит коробку сейчас." },
+        { q: "[LISTEN] I am feeding now.", opts: ["Я кормлю животных.", "Я сажаю растения.", "Я отдыхаю.", "Я собираю ягоды."], c: 0, expl: "feed — кормить; am + feeding = сейчас." },
+        { q: '[TRANSLATE] "Мы начинаем завтра (план)"', opts: ["We are starting tomorrow", "We start tomorrow", "We started tomorrow", "We are start tomorrow"], c: 0, expl: "Present Continuous = и план на будущее: am/is/are + -ing + tomorrow.", hint_ru: "Будущий план тоже через -ing." },
+        { q: "[GIST] Что рабочий делает, когда идёт дождь (по диалогу)?", opts: ["Помогает Саре", "Грузит ящики", "Считает деньги", "Идёт спать"], c: 0, expl: 'После «It is raining» рабочий говорит: I am helping Sara.', hint_ru: "Смотрите реплику после дождя." },
+      ],
+
+      everyday: {
+        title_ru: "Сказать, что ты делаешь сейчас",
+        phrases: [
+          { en: "I am coming!", transcr: "Ай эм каминг!", ru: "Иду! (сейчас приду)" },
+          { en: "I am working now.", transcr: "Ай эм уёкинг нау.", ru: "Я сейчас работаю." },
+          { en: "Wait, I am finishing.", transcr: "Уэйт, ай эм финишинг.", ru: "Подождите, я заканчиваю." },
+          { en: "What are you doing?", transcr: "Уот ар ю дуинг?", ru: "Что ты делаешь?" },
+          { en: "I am going to the field.", transcr: "Ай эм гоуинг ту зэ филд.", ru: "Я иду в поле." },
+          { en: "We are starting soon.", transcr: "Уи ар стартинг суун.", ru: "Мы скоро начинаем." },
+          { en: "I am not ready yet.", transcr: "Ай эм нот рэди йет.", ru: "Я ещё не готов." },
+        ],
+      },
+    },
   ];
 
   if (typeof module !== "undefined" && module.exports) module.exports = LESSONS;
