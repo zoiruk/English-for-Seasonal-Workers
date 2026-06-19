@@ -94,7 +94,9 @@
   `sw.js` (PWA), `manifest.json`, `icon.svg`.
 - `scripts/` — `audit.js`/`dedup.js`/`snowball.js` + `lib.js` (whitelist+NAMES+токенайзер+стеммер),
   `serve.js` (dev-сервер no-store), `verify-ipa.js` (`npm run verify-ipa` — внешний Wiktionary-RP якорь
-  для `pn`; снапшот `ref-ipa-wiktionary.json`, отчёт `ipa-verify-report.md`; вне аудита).
+  для `pn`; снапшот `ref-ipa-wiktionary.json`, отчёт `ipa-verify-report.md`; вне аудита),
+  `verify-transcr.js` (`npm run verify-transcr` — сверка кириллической `transcr` с IPA-производным
+  звуком по конвенции курса; отчёт `transcr-verify-report.md`; ловит несогласованности крутки).
 - `specs/` — CEFR-PDF (источник правды), `coverage-matrix.md`, `master-lexicon.md`
   (слова+IPA+whitelist), прочие `*.md` — спеки чужого проекта (только принципы).
 - `plans/2026-06-18-full-a0a1-scope.md` — дорожная карта. `_legacy/` — старый курс (архив).
