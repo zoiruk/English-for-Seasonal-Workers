@@ -242,6 +242,14 @@
           { en: "This is Tom's bag.", transcr: "Зис из Томз бэг.", ru: "Это сумка Тома." },
           { en: "Our colleague is a mechanic.", transcr: "Ауэ колиг из э мэкэник.", ru: "Наш коллега — механик." },
         ],
+        simple_ru: {
+          formula: 'Чей + предмет.<br><span class="g-transcr">мой → my · твой → your · его → his · её → her</span>',
+          examples: [
+            { en: "my bag", transcr: "май бэг", ru: "мой (my) + сумка (bag)." },
+            { en: "her phone", transcr: "хё фоун", ru: "её (her) + телефон (phone)." },
+          ],
+        },
+        ytQuery: "притяжательные местоимения my your his her английский для начинающих",
       },
 
       words: [
@@ -384,6 +392,14 @@
           { en: "That is not a knife.", transcr: "Зэт из нот э найф.", ru: "То не нож." },
           { en: "This is an axe.", transcr: "Зис из эн экс.", ru: "Это топор." },
         ],
+        simple_ru: {
+          formula: 'Один предмет → <b>This is a</b> + предмет.<br>Много → <b>These are</b> + предметы.',
+          examples: [
+            { en: "This is a punnet.", transcr: "Зис из э панит.", ru: "Это один (This is a) + корзинка (punnet)." },
+            { en: "These are crates.", transcr: "Зиз ар крэйтс.", ru: "Это много (These are) + ящики (crates)." },
+          ],
+        },
+        ytQuery: "this is these are английский простыми словами для начинающих",
       },
 
       words: [
@@ -529,6 +545,14 @@
           { en: "Tomorrow is Sunday.", transcr: "Тэмороу из сандэй.", ru: "Завтра воскресенье." },
           { en: "How much money is it?", transcr: "Хау мач мани из ит?", ru: "Сколько это денег?" },
         ],
+        simple_ru: {
+          formula: 'О времени, дне и цене → <b>It is</b> + …<br><span class="g-transcr">[ит из]</span>',
+          examples: [
+            { en: "It is six o'clock.", transcr: "Ит из сикс эклок.", ru: "Сейчас (It is) + 6 часов (six o'clock)." },
+            { en: "It is ten pounds.", transcr: "Ит из тэн паундз.", ru: "Это (It is) + 10 фунтов (ten pounds)." },
+          ],
+        },
+        ytQuery: "it is время день и цена английский для начинающих",
       },
 
       words: [
@@ -673,6 +697,14 @@
           { en: "The van is near the gate.", transcr: "Зэ вэн из ниэ зэ гейт.", ru: "Фургон у ворот." },
           { en: "The market is on the road.", transcr: "Зэ макит из он зэ роуд.", ru: "Рынок на дороге." },
         ],
+        simple_ru: {
+          formula: 'Где? → <b>Where is</b> + место?<br>Предлог перед местом: <b>in</b> (в) · <b>on</b> (на) · <b>under</b> (под)',
+          examples: [
+            { en: "Where is the canteen?", transcr: "Уэа из зэ кэнтин?", ru: "Где (Where is) + столовая (canteen)?" },
+            { en: "The sign is on the wall.", transcr: "Зэ сайн из он зэ уол.", ru: "Табличка (sign) + на (on) + стене (wall)." },
+          ],
+        },
+        ytQuery: "where is предлоги места in on under английский для начинающих",
       },
 
       words: [
@@ -824,6 +856,14 @@
           { en: "Tom checks us.", transcr: "Том чекс ас.", ru: "Том проверяет нас." },
           { en: "I sometimes work on Saturday.", transcr: "Ай самтаймз уёк он сэтэдэй.", ru: "Я иногда работаю в субботу." },
         ],
+        simple_ru: {
+          formula: 'I / you / we / they + глагол.<br>he / she / it + глагол<b>+s</b>.<br><span class="g-transcr">I pick · She pick<b>s</b></span>',
+          examples: [
+            { en: "I pick berries.", transcr: "Ай пик бэриз.", ru: "Я (I) + собираю (pick) + ягоды (berries)." },
+            { en: "She packs the punnets.", transcr: "Ши пэкс зэ панитс.", ru: "Она (She) + упаковывает (pack+s) + корзинки (punnets)." },
+          ],
+        },
+        ytQuery: "present simple он она оно глагол с окончанием s английский для начинающих",
       },
 
       words: [
@@ -973,6 +1013,14 @@
           { en: "I am finishing today.", transcr: "Ай эм финишинг тудэй.", ru: "Я заканчиваю сегодня (план)." },
           { en: "We are starting tomorrow.", transcr: "Уи ар стартинг тумороу.", ru: "Мы начинаем завтра (план)." },
         ],
+        simple_ru: {
+          formula: 'Прямо сейчас → <b>am / is / are</b> + глагол<b>+ing</b>.<br><span class="g-transcr">I am work<b>ing</b> · She is pick<b>ing</b></span>',
+          examples: [
+            { en: "I am picking berries.", transcr: "Ай эм пикинг бэриз.", ru: "Я (I) + am + собираю сейчас (pick+ing) + ягоды (berries)." },
+            { en: "She is spraying the plants.", transcr: "Ши из спрэйинг зэ плантс.", ru: "Она (She) + is + опрыскивает сейчас (spray+ing) + растения (plants)." },
+          ],
+        },
+        ytQuery: "present continuous am is are ing английский прямо сейчас для начинающих",
       },
 
       words: [
