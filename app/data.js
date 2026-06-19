@@ -526,7 +526,7 @@
       words: [
         { e: "1️⃣", en: "one", transcr: "уан", ru: "один", pn: "/wʌn/" },
         { e: "2️⃣", en: "two", transcr: "ту", ru: "два", pn: "/tuː/" },
-        { e: "3️⃣", en: "three", transcr: "сри", ru: "три", pn: "/θriː/" },
+        { e: "3️⃣", en: "three", transcr: "фри", ru: "три", pn: "/θriː/" },
         { e: "4️⃣", en: "four", transcr: "фо", ru: "четыре", pn: "/fɔː/" },
         { e: "5️⃣", en: "five", transcr: "файв", ru: "пять", pn: "/faɪv/" },
         { e: "6️⃣", en: "six", transcr: "сикс", ru: "шесть", pn: "/sɪks/" },
