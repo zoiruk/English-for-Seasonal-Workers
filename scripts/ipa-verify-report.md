@@ -1,6 +1,6 @@
 # IPA verification report (Wiktionary RP anchor)
 
-Total words: 245 · matched: 213 · divergent: 21 · not found: 11
+Total words: 275 · matched: 238 · divergent: 26 · not found: 11
 
 Normalized away (kept length ː): ɹ↔r, ɡ↔g, ɛ↔e (DRESS vowel), tie-bars & allophonic diacritics, optional (…) segments, stress, syllable dots.
 Divergences below are for OWNER ACCEPTANCE — review each: is our `pn` wrong, or a valid variant?
@@ -30,17 +30,22 @@ Divergences below are for OWNER ACCEPTANCE — review each: is our `pn` wrong, o
 | 7 | read | `/riːd/` | `/ɹɛd/` |
 | 7 | catch | `/kætʃ/` | `/kat͡ʃ/` |
 | 8 | goggles | `/ˈɡɒɡlz/` | `/ˈɡɑ.ɡəlz/` |
+| 9 | room | `/ruːm/` | `/ɹʊm/` |
+| 9 | shower | `/ˈʃaʊə/` | `/ˈʃəʊ.ə(ɹ)/` |
+| 9 | kettle | `/ˈketl/` | `/ˈkɛ.təl/` |
+| 9 | candle | `/ˈkændl/` | `/ˈkæn.dəl/` |
+| 9 | broken | `/ˈbrəʊkən/` | `/ˈbɹəʊ.kn̩/` |
 
 ## Not found on Wiktionary (no en RP IPA parsed — verify manually)
 
 - L3 **trolley** (`/ˈtrɒli/`)
 - L3 **clipboard** (`/ˈklɪpbɔːd/`)
 - L4 **payslip** (`/ˈpeɪslɪp/`)
-- L8 **shirt** (`/ʃɜːt/`)
-- L8 **socks** (`/sɒks/`)
-- L8 **scarf** (`/skɑːf/`)
 - L8 **sunglasses** (`/ˈsʌnɡlɑːsɪz/`)
-- L8 **black** (`/blæk/`)
-- L8 **white** (`/waɪt/`)
-- L8 **orange** (`/ˈɒrɪndʒ/`)
 - L8 **colour** (`/ˈkʌlə/`)
+- L9 **key** (`/kiː/`)
+- L9 **socket** (`/ˈsɒkɪt/`)
+- L9 **lamp** (`/læmp/`)
+- L9 **empty** (`/ˈempti/`)
+- L9 **full** (`/fʊl/`)
+- L9 **ready** (`/ˈredi/`)
