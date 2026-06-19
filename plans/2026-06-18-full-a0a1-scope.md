@@ -14,10 +14,10 @@ RU-only, фермерская тема, снежный ком, аудит пер
   (как English File Beginner): rule + примеры «I am finishing today / starting tomorrow» + реплика
   диалога + [TRANSLATE]-quiz на future. **`be going to` НЕ делаем** (опционально; функция покрыта). Коммит L7.
 - [ ] **like/love/hate + -ing** (явно) — в **L15** («I like picking», «I hate the cold»).
-- [~] **Прилагательные** (фермерские) — цвета закрыты в **L8** (10 цветов через `have got`/описание). State-прилагательные
-  (wet/full/empty/heavy/light/broken/dirty/cold/hot/ready) **сознательно перенесены из L8** (грилл 2026-06-19):
-  они грамматически идут через is/are-предикатив («The crate is heavy»), а не через `have` — родной дом в
-  описательном уроке (L9 there is/are: «The heater is broken») или отдельном describing-блоке. `clean`/`dry` заняты L6/L7.
+- [x] **Прилагательные** (фермерские) — цвета закрыты в **L8** (10 цветов через `have got`/описание). State-прилагательные
+  закрыты в **L9** (broken/wet/cold/hot/heavy/empty/full/ready через is/are-предикатив: «The heater is broken»,
+  «The crate is heavy»). `dirty`/`light` сознательно НЕ взяты (light занят L5-словом, dirty без честного эмодзи;
+  `clean`/`dry` заняты L6/L7). 8 состояний-прилагательных в words[] + якоря использования в examples/quiz.
 - [x] **Национальности** (Uzbek/Tajik/Kyrgyz/Kazakh/British) — добавлены в **L1** words (35 слов), пример «She is British.» в grammar.examples, [TRANSLATE] в quiz (L1 → 13 вопросов).
 - [ ] **Чувства/welfare** (tired/cold/hungry/sick/happy) — добавить в **L14** (здоровье).
 - [ ] **Числа 11–100 + множественное число (-s как тема)** — найдено doc-аудитом 2026-06-19: L4
@@ -81,7 +81,16 @@ RU-only, фермерская тема, снежный ком, аудит пер
      Адверсариально проверено (язык/IPA + педагогика); 2 эмодзи-обманки исправлены (earmuffs🎧→sunglasses🕶️,
      overalls🥼→wellies🥾). Аудит зелёный, превью-рендер OK. `WHITELIST[8]=have/has/got`. Коммит L8.
      ⚠️ Известный риск: `pink`🩷/`grey`🩶 — Unicode-15 hearts, могут не отрендериться на старых Android (LOW).
-   - [ ] L9–L15 — далее по одному за сессию. **L9 = there is/are + кэмп/мебель (+ сюда state-прилагательные).**
+   - [x] **L9** «Что есть в вагончике: комната и кэмп» (there is / there are + some/any + комната/мебель/техника
+     + state-прилагательные). 30 слов: 22 камп/мебель/техника (room/bed/shower/bath/key/heater/kettle/fridge/cooker/
+     sink/mug/plate/spoon/fork/bowl/socket/lamp/blanket/candle/shelf/drawer/curtain) + 8 состояний (broken/wet/cold/
+     hot/heavy/empty/full/ready). grammar на there is/are + some/any (3 формы, 14 примеров) + everyday «сообщить о
+     проблеме в вагончике» + [LISTEN]×2/[GIST] + 12 quiz. Плейн `is not`/`are not` (без сокращений — токенайзер).
+     `WHITELIST[9]=some/any/here`. Аудит зелёный, verify-ipa/transcr по L9 чисты, превью-рендер OK, адверсариально
+     проверено (язык/IPA SHIP + педагогика SHIP); фикс: present-simple-future → Present Continuous (как L7). Коммит L9.
+     ⚠️ Грабли стеммера: `bed`≤3 не стеммится, а `beds`→`b` → плюрал не матчится в снежке; в проверяемых полях
+     использовать `chairs`/`blankets`, не `beds` (в `rule_ru` снежок не сканирует — там натуральный `beds` ок).
+   - [ ] L10–L15 — далее по одному за сессию. **L10 = how much/many + would like + еда/напитки (Tesco).**
 
 ### Выбранный владельцем порядок (2026-06-18): фазы 1 → 2 → 3 (контент-дыры → навыки),
 последовательно, с приёмкой; тираж 4-15 (вариант 4) пока не запускать.
