@@ -85,6 +85,14 @@
           { en: "We are a good team.", transcr: "Уи ар э гуд тим.", ru: "Мы — хорошая бригада." },
           { en: "She is British.", transcr: "Ши из бритиш.", ru: "Она — британка." },
         ],
+        simple_ru: {
+          formula: 'Кто + <b>am / is / are</b> + слово.<br><span class="g-transcr">я → am · он/она → is · ты/мы/они → are</span>',
+          examples: [
+            { en: "I am a worker.", transcr: "Ай эм э уёкэ.", ru: "Я (I) + am + рабочий (worker)." },
+            { en: "He is a farmer.", transcr: "Хи из э фармэ.", ru: "Он (he) + is + фермер (farmer)." },
+          ],
+        },
+        ytQuery: "глагол to be am is are простыми словами для начинающих",
       },
 
       words: [

@@ -18,6 +18,7 @@ for (const les of L) {
     });
 
   (les.grammar && les.grammar.examples || []).forEach((x, i) => check(x.en, `grammar.examples[${i}]`));
+  (les.grammar && les.grammar.simple_ru && les.grammar.simple_ru.examples || []).forEach((x, i) => check(x.en, `grammar.simple_ru.examples[${i}]`));
   ["positive", "negative", "question"].forEach((f) => {
     const table = (les.grammar && les.grammar.forms && les.grammar.forms[f] && les.grammar.forms[f].table) || [];
     table.forEach((r, i) => check(r.example, `grammar.${f}.table[${i}]`));

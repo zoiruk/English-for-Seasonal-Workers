@@ -109,6 +109,17 @@ code { background: var(--accent-soft); color: var(--text); padding: 1px 5px; bor
 .g-table .rt { color: var(--text2); font-size: 12px; }
 .g-table .spk { width: 40px; height: 40px; min-width: 40px; }
 
+/* grammar "explain simpler" help (collapsed escalation) */
+.help-block { margin-top: 4px; }
+.help-toggle { display: block; width: 100%; border: 1px solid var(--accent); background: var(--accent-soft); color: var(--accent); font-size: 15px; font-weight: 700; padding: 14px; border-radius: 12px; cursor: pointer; }
+.help-toggle:active { transform: scale(0.99); }
+.help-panel { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; margin-top: 10px; box-shadow: 0 1px 3px rgba(20,20,46,.05); }
+.help-formula { background: var(--ok-soft); color: var(--text); border-radius: 10px; padding: 12px; font-size: 17px; font-weight: 700; text-align: center; margin-bottom: 6px; }
+.help-formula-lbl { display: block; color: var(--ok); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; margin-bottom: 4px; }
+.help-yt { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; margin-top: 14px; min-height: 44px; font-size: 13px; font-weight: 600; color: var(--text2); text-decoration: none; }
+.help-yt-hint { color: var(--text3); font-weight: 400; font-size: 11px; }
+.help-return { font-size: 12px; color: var(--text3); line-height: 1.4; margin-top: 2px; }
+
 .note { background: var(--hint-bg); color: var(--hint-tx); border-radius: 10px; padding: 10px 12px; font-size: 13px; }
 .cultural { background: #fffbe6; border-radius: 10px; padding: 10px 12px; font-size: 13px; }
 .ex-row { display: flex; align-items: flex-start; gap: 8px; padding: 8px 0; border-bottom: 1px solid var(--border); }

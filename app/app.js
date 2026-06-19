@@ -66,6 +66,11 @@
         "[GIST]": "📖 Понимание диалога",
       },
       listen_play: "▶ Слушать",
+      help_toggle: "🤔 Не поняли? Нажмите — объясню проще",
+      help_formula: "Запомните формулу:",
+      help_yt: "Всё ещё непонятно? Видео на YouTube ▶",
+      help_yt_offline_hint: "(нужен интернет)",
+      help_return: "Посмотрите видео и вернитесь: нажмите «‹ Назад» и продолжайте урок.",
     },
   };
   var LANG = "ru";
@@ -368,7 +373,30 @@
         '</div><div class="tr">' + esc(ex.transcr) + '</div><div class="ru">' + esc(ex.ru) + "</div></div></div>";
     });
     h += "</div>";
+    h += helpBlock(g);
     return h;
+  }
+
+  /* collapsed "explain simpler" escalation: formula + mini-examples + YouTube last resort */
+  function helpBlock(g) {
+    var s = g.simple_ru;
+    if (!s) return "";
+    var h = '<div class="help-block">' +
+      '<button class="help-toggle" id="help-toggle" type="button" aria-expanded="false" aria-controls="help-panel">' +
+      esc(t("help_toggle")) + "</button>" +
+      '<div class="help-panel hidden" id="help-panel">' +
+      '<div class="help-formula"><span class="help-formula-lbl">' + esc(t("help_formula")) + "</span>" + s.formula + "</div>";
+    (s.examples || []).forEach(function (ex) {
+      h += '<div class="ex-row">' + spkBtn(ex.en) + '<div><div class="en">' + esc(ex.en) +
+        '</div><div class="tr">' + esc(ex.transcr) + '</div><div class="ru">' + esc(ex.ru) + "</div></div></div>";
+    });
+    if (g.ytQuery) {
+      h += '<a class="help-yt" href="https://www.youtube.com/results?search_query=' +
+        esc(encodeURIComponent(g.ytQuery)) + '" target="_blank" rel="noopener">' +
+        esc(t("help_yt")) + ' <span class="help-yt-hint">' + esc(t("help_yt_offline_hint")) + "</span></a>" +
+        '<div class="help-return">' + esc(t("help_return")) + "</div>";
+    }
+    return h + "</div></div>";
   }
   function formTable(form) {
     var h = form.rule_ru + '<div class="g-table-wrap"><table class="g-table" style="margin-top:10px">' +
@@ -421,6 +449,12 @@
           b.classList.add("on"); showForm(b.dataset.form);
         };
       });
+      var ht = document.getElementById("help-toggle");
+      if (ht) ht.onclick = function () {
+        var panel = document.getElementById("help-panel");
+        var nowHidden = panel.classList.toggle("hidden");
+        ht.setAttribute("aria-expanded", nowHidden ? "false" : "true");
+      };
     }
     if (tab === "words") {
       countWords(les);

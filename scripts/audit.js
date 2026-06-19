@@ -49,6 +49,21 @@ for (const les of L) {
     if (!x.transcr) errors.push({ lesson: id, field: `grammar.examples[${i}].transcr`, msg: "missing" });
   });
 
+  // --- grammar "explain simpler" help (optional): formula + >=1 mini-example, ytQuery a string ---
+  if (g.simple_ru) {
+    const s = g.simple_ru;
+    if (!s.formula) errors.push({ lesson: id, field: "grammar.simple_ru.formula", msg: "missing" });
+    if (!Array.isArray(s.examples) || s.examples.length < 1)
+      errors.push({ lesson: id, field: "grammar.simple_ru.examples", msg: `need >=1, got ${(s.examples || []).length}` });
+    else s.examples.forEach((x, i) =>
+      ["en", "transcr", "ru"].forEach((k) => {
+        if (!x[k]) errors.push({ lesson: id, field: `grammar.simple_ru.examples[${i}].${k}`, msg: "missing" });
+      })
+    );
+  }
+  if (g.ytQuery !== undefined && typeof g.ytQuery !== "string")
+    errors.push({ lesson: id, field: "grammar.ytQuery", msg: "must be a string" });
+
   // --- quiz: >=10, [TAG], 4 opts, correct index, expl ---
   const q = les.quiz || [];
   if (q.length < 10) errors.push({ lesson: id, field: "quiz", msg: `need >=10, got ${q.length}` });
