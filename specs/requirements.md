@@ -1,3 +1,8 @@
+> ⚠️ **Импортировано из мультиязычного родственного проекта — только источник ПРИНЦИПОВ.**
+> Пути (`a1.html`, `translations.js`, `scratch/`, `fe_*`), 5-язычность (UZ/TJ/KG/KZ) и тёмная тема
+> к нашему RU-only репозиторию НЕ относятся. Чекбоксы `[x]` и «CRITICAL/hard-enforced» здесь — про
+> чужой проект, не про нас. Источник правды: `CLAUDE.md` + `specs/coverage-matrix.md` + `specs/master-lexicon.md`.
+
 # ✅ Requirements — FarmEnglish
 
 ## Функциональные требования
