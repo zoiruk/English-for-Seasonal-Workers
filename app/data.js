@@ -1099,6 +1099,164 @@
         ],
       },
     },
+    {
+      id: 8,
+      mod: 5,
+      title_ru: "Что у меня есть: одежда и цвета",
+      cefr: "have / has · clothes · colours",
+
+      grammar: {
+        title_ru: "У меня есть…: have / has",
+        intro_ru:
+          '<div style="line-height:1.6">Так говорить — ошибка:<br>❌ <b>I has boots</b> / ❌ <b>He have a cap</b><br>Правильно:<br>✅ <b>I have boots</b> <span class="g-transcr">[ай хэв бутс]</span> (у меня есть ботинки)<br>✅ <b>He has a cap</b> <span class="g-transcr">[хи хэз э кэп]</span> (у него есть кепка)<br>👉 «У меня есть…» = <b>have</b>. Для <b>he / she / it</b> → <b>has</b>.</div>',
+        cultural_ru:
+          'В русском «у меня есть ботинки» — без глагола. В английском всегда нужен <b>have / has</b>:' +
+          '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:6px">' +
+          '<div><b>я / ты / мы / они:</b> I have <span class="g-transcr">[ай хэв]</span></div>' +
+          '<div><b>он / она / оно:</b> He has <span class="g-transcr">[хи хэз]</span></div></div>' +
+          '<div style="margin-top:6px">Британцы часто спрашивают через <b>Have you got…?</b> <span class="g-transcr">[хэв ю гот]</span> — это то же «У тебя есть…?». Отвечать можно просто: <b>Yes, I have.</b></div>',
+        note_ru:
+          '⚠️ Частая ошибка: <b>he have</b>. Правильно <b>he has</b>. В вопросе и отрицании — <b>do / does</b>, а <b>have</b> остаётся в базовой форме: <b>Does he have…?</b> (не «does he has»), <b>I do not have…</b>',
+        forms: {
+          positive: {
+            label_ru: "✅ Утверждение",
+            rule_ru:
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>I / You / We / They</code> → have</div>' +
+              '<div><code>He / She / It</code> → has</div>' +
+              '<div><code>I have black boots</code> <span class="g-transcr">[ай хэв блэк бутс]</span></div>' +
+              '<div><code>He has a blue cap</code> <span class="g-transcr">[хи хэз э блу кэп]</span></div></div>',
+            table: [
+              { subj: "I", verb: "have", example: "I have black boots", transcr: "Ай хэв блэк бутс", tr_ru: "У меня чёрные ботинки" },
+              { subj: "He", verb: "has", example: "He has a blue cap", transcr: "Хи хэз э блу кэп", tr_ru: "У него синяя кепка" },
+              { subj: "She", verb: "has", example: "She has a yellow vest", transcr: "Ши хэз э йелоу вэст", tr_ru: "На ней жёлтый жилет" },
+              { subj: "We", verb: "have", example: "We have green gloves", transcr: "Уи хэв грин главз", tr_ru: "У нас зелёные перчатки" },
+            ],
+          },
+          negative: {
+            label_ru: "❌ Отрицание",
+            rule_ru:
+              'Отрицание — через <b>do not / does not</b>, <b>have</b> не меняется:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>I do not have a helmet</code></div>' +
+              '<div><code>He does not have gloves</code></div></div>',
+            table: [
+              { subj: "I", verb: "do not have", example: "I do not have a helmet", transcr: "Ай ду нот хэв э хэлмит", tr_ru: "У меня нет каски" },
+              { subj: "He", verb: "does not have", example: "He does not have gloves", transcr: "Хи даз нот хэв главз", tr_ru: "У него нет перчаток" },
+              { subj: "We", verb: "do not have", example: "We do not have masks", transcr: "Уи ду нот хэв маскс", tr_ru: "У нас нет масок" },
+            ],
+          },
+          question: {
+            label_ru: "❓ Вопрос",
+            rule_ru:
+              '<b>Do / Does</b> ставим ВПЕРЁД, <b>have</b> — в базовой форме:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>Do you have boots?</code> <span class="g-transcr">[ду ю хэв бутс]</span></div>' +
+              '<div><code>Does she have a cap?</code> <span class="g-transcr">[даз ши хэв э кэп]</span></div></div>',
+            table: [
+              { subj: "Do", verb: "you have", example: "Do you have your boots?", transcr: "Ду ю хэв ё бутс?", tr_ru: "У тебя есть ботинки?" },
+              { subj: "Does", verb: "she have", example: "Does she have a scarf?", transcr: "Даз ши хэв э скаф?", tr_ru: "У неё есть шарф?" },
+              { subj: "What", verb: "colour", example: "What colour is your jacket?", transcr: "Уот калэ из ё джэкит?", tr_ru: "Какого цвета твоя куртка?" },
+            ],
+          },
+        },
+        examples: [
+          { en: "I have black boots.", transcr: "Ай хэв блэк бутс.", ru: "У меня чёрные ботинки." },
+          { en: "He has a blue cap.", transcr: "Хи хэз э блу кэп.", ru: "У него синяя кепка." },
+          { en: "She has a yellow vest.", transcr: "Ши хэз э йелоу вэст.", ru: "На ней жёлтый жилет." },
+          { en: "We have green gloves.", transcr: "Уи хэв грин главз.", ru: "У нас зелёные перчатки." },
+          { en: "They have wellies.", transcr: "Зэй хэв уэлиз.", ru: "У них резиновые сапоги." },
+          { en: "I do not have a helmet.", transcr: "Ай ду нот хэв э хэлмит.", ru: "У меня нет каски." },
+          { en: "He does not have gloves.", transcr: "Хи даз нот хэв главз.", ru: "У него нет перчаток." },
+          { en: "Do you have your boots?", transcr: "Ду ю хэв ё бутс?", ru: "У тебя есть ботинки?" },
+          { en: "Does she have a scarf?", transcr: "Даз ши хэв э скаф?", ru: "У неё есть шарф?" },
+          { en: "What colour is your jacket?", transcr: "Уот калэ из ё джэкит?", ru: "Какого цвета твоя куртка?" },
+          { en: "My trousers are brown.", transcr: "Май траузэз а браун.", ru: "Мои брюки коричневые." },
+        ],
+        simple_ru: {
+          formula: 'я / ты / мы / они → <b>have</b>. он / она / оно → <b>has</b>.<br>Вопрос и отрицание — через <b>do / does</b>.<br><span class="g-transcr">I have · He has · Do you have?</span>',
+          examples: [
+            { en: "I have black boots.", transcr: "Ай хэв блэк бутс.", ru: "Я (I) + have + чёрные (black) + ботинки (boots)." },
+            { en: "He has a blue cap.", transcr: "Хи хэз э блу кэп.", ru: "Он (He) + has + синяя (blue) + кепка (cap)." },
+          ],
+        },
+        ytQuery: "have has do does английский у меня есть для начинающих на русском",
+      },
+
+      words: [
+        { e: "🥾", en: "boots", transcr: "бутс", ru: "ботинки, сапоги", pn: "/buːts/" },
+        { e: "🧤", en: "gloves", transcr: "главз", ru: "перчатки", pn: "/ɡlʌvz/" },
+        { e: "🦺", en: "vest", transcr: "вэст", ru: "жилет (светоотражающий)", pn: "/vest/" },
+        { e: "🧥", en: "jacket", transcr: "джэкит", ru: "куртка", pn: "/ˈdʒækɪt/" },
+        { e: "🧢", en: "cap", transcr: "кэп", ru: "кепка", pn: "/kæp/" },
+        { e: "⛑️", en: "helmet", transcr: "хэлмит", ru: "каска", pn: "/ˈhelmɪt/" },
+        { e: "😷", en: "mask", transcr: "маск", ru: "маска", pn: "/mɑːsk/" },
+        { e: "🥽", en: "goggles", transcr: "гоглз", ru: "защитные очки", pn: "/ˈɡɒɡlz/" },
+        { e: "👖", en: "trousers", transcr: "траузэз", ru: "брюки", pn: "/ˈtraʊzəz/" },
+        { e: "👕", en: "shirt", transcr: "шёт", ru: "рубашка", pn: "/ʃɜːt/" },
+        { e: "🧦", en: "socks", transcr: "сокс", ru: "носки", pn: "/sɒks/" },
+        { e: "🧣", en: "scarf", transcr: "скаф", ru: "шарф", pn: "/skɑːf/" },
+        { e: "👟", en: "trainers", transcr: "трэйнэз", ru: "кроссовки", pn: "/ˈtreɪnəz/" },
+        { e: "🥾", en: "wellies", transcr: "уэлиз", ru: "резиновые сапоги", pn: "/ˈweliz/" },
+        { e: "🕶️", en: "sunglasses", transcr: "сангласиз", ru: "солнцезащитные очки", pn: "/ˈsʌnɡlɑːsɪz/" },
+        { e: "🩳", en: "shorts", transcr: "шотс", ru: "шорты", pn: "/ʃɔːts/" },
+        { e: "👓", en: "glasses", transcr: "гласиз", ru: "очки", pn: "/ˈɡlɑːsɪz/" },
+        { e: "🧥", en: "coat", transcr: "коут", ru: "пальто, плащ", pn: "/kəʊt/" },
+        { e: "🔴", en: "red", transcr: "рэд", ru: "красный", pn: "/red/" },
+        { e: "🔵", en: "blue", transcr: "блу", ru: "синий", pn: "/bluː/" },
+        { e: "🟢", en: "green", transcr: "грин", ru: "зелёный", pn: "/ɡriːn/" },
+        { e: "🟡", en: "yellow", transcr: "йелоу", ru: "жёлтый", pn: "/ˈjeləʊ/" },
+        { e: "⚫", en: "black", transcr: "блэк", ru: "чёрный", pn: "/blæk/" },
+        { e: "⚪", en: "white", transcr: "уайт", ru: "белый", pn: "/waɪt/" },
+        { e: "🟠", en: "orange", transcr: "ориндж", ru: "оранжевый", pn: "/ˈɒrɪndʒ/" },
+        { e: "🟤", en: "brown", transcr: "браун", ru: "коричневый", pn: "/braʊn/" },
+        { e: "🩶", en: "grey", transcr: "грэй", ru: "серый", pn: "/ɡreɪ/" },
+        { e: "🩷", en: "pink", transcr: "пинк", ru: "розовый", pn: "/pɪŋk/" },
+        { e: "🟣", en: "purple", transcr: "пёпл", ru: "фиолетовый", pn: "/ˈpɜːpl/" },
+        { e: "🎨", en: "colour", transcr: "калэ", ru: "цвет", pn: "/ˈkʌlə/" },
+      ],
+
+      dialogue: [
+        { s: "m", en: "Good morning! Do you have your boots?", transcr: "Гуд монинг! Ду ю хэв ё бутс?", ru: "Доброе утро! У тебя есть ботинки?" },
+        { s: "w", en: "Yes, I have my boots. They are black.", transcr: "Йес, ай хэв май бутс. Зэй а блэк.", ru: "Да, ботинки у меня есть. Они чёрные." },
+        { s: "m", en: "Good. Do you have gloves?", transcr: "Гуд. Ду ю хэв главз?", ru: "Хорошо. У тебя есть перчатки?" },
+        { s: "w", en: "No, I do not have gloves.", transcr: "Ноу, ай ду нот хэв главз.", ru: "Нет, перчаток у меня нет." },
+        { s: "m", en: "These gloves are blue. Now you have gloves.", transcr: "Зиз главз а блу. Нау ю хэв главз.", ru: "Эти перчатки синие. Теперь перчатки у тебя есть." },
+        { s: "w", en: "Thanks. They are good.", transcr: "Сэнкс. Зэй а гуд.", ru: "Спасибо. Они хорошие." },
+        { s: "m", en: "Do you have a vest?", transcr: "Ду ю хэв э вэст?", ru: "У тебя есть жилет?" },
+        { s: "w", en: "No, I do not. Where is my vest?", transcr: "Ноу, ай ду нот. Уэа из май вэст?", ru: "Нет. Где мой жилет?" },
+        { s: "m", en: "Your vest is yellow. You have it now.", transcr: "Ё вэст из йелоу. Ю хэв ит нау.", ru: "Твой жилет жёлтый. Теперь он у тебя есть." },
+        { s: "w", en: "I have my boots, my gloves and my vest.", transcr: "Ай хэв май бутс, май главз энд май вэст.", ru: "У меня есть ботинки, перчатки и жилет." },
+        { s: "m", en: "Good. Does Ahmad have his cap?", transcr: "Гуд. Даз Ахмад хэв хиз кэп?", ru: "Хорошо. У Ахмада есть кепка?" },
+        { s: "w", en: "Yes, he has a green cap.", transcr: "Йес, хи хэз э грин кэп.", ru: "Да, у него зелёная кепка." },
+      ],
+
+      quiz: [
+        { q: '[COMPLETE] "He ___ a blue cap." (он)', opts: ["has", "have", "do", "is"], c: 0, expl: "he/she/it → has.", hint_ru: "У него синяя кепка." },
+        { q: '[COMPLETE] "I ___ black boots." (я)', opts: ["have", "has", "does", "am"], c: 0, expl: "I/you/we/they → have.", hint_ru: "У меня чёрные ботинки." },
+        { q: "[CORRECT] Где правильно?", opts: ["He has a vest", "He have a vest", "He has got vest", "He do have a vest"], c: 0, expl: "he → has + слово.", hint_ru: "У него жилет." },
+        { q: '[QUESTION] "___ you have boots?"', opts: ["Do", "Does", "Are", "Have"], c: 0, expl: "you → Do в начале вопроса; have не меняется.", hint_ru: "У тебя есть ботинки?" },
+        { q: "[NEGATIVE] Где отрицание?", opts: ["She does not have a cap", "She has a cap", "Does she have a cap?", "She a cap"], c: 0, expl: "Отрицание = do/does + not + have.", hint_ru: "У неё нет кепки." },
+        { q: '[TRANSLATE] "перчатки"', opts: ["gloves", "boots", "socks", "cap"], c: 0, expl: "gloves — перчатки.", hint_ru: "gloves." },
+        { q: '[TRANSLATE] "жёлтый"', opts: ["yellow", "blue", "green", "brown"], c: 0, expl: "yellow — жёлтый.", hint_ru: "yellow." },
+        { q: "[LISTEN] He has a green jacket.", opts: ["У него зелёная куртка.", "У него синяя кепка.", "На ней жёлтый жилет.", "У меня чёрные ботинки."], c: 0, expl: "green — зелёный, jacket — куртка." },
+        { q: "[LISTEN] I do not have gloves.", opts: ["У меня нет перчаток.", "У меня есть перчатки.", "У тебя есть носки.", "У него есть каска."], c: 0, expl: "do not have — нет; gloves — перчатки." },
+        { q: '[COMPLETE] "Does she ___ a scarf?" (есть)', opts: ["have", "has", "does", "got"], c: 0, expl: "После does — базовая форма have (не has).", hint_ru: "У неё есть шарф?" },
+        { q: "[GIST] Какого цвета жилет у рабочего (по диалогу)?", opts: ["Жёлтый", "Чёрный", "Синий", "Зелёный"], c: 0, expl: 'В диалоге: «Your vest is yellow.»', hint_ru: "Смотрите реплику про vest." },
+        { q: "[CORRECT] Где правильно?", opts: ["Do you have a mask?", "Do you has a mask?", "Does you have a mask?", "You have mask?"], c: 0, expl: "Do + you + have (базовая форма).", hint_ru: "У тебя есть маска?" },
+      ],
+
+      everyday: {
+        title_ru: "Экипировка: попросить, чего нет",
+        phrases: [
+          { en: "Have you got your gloves?", transcr: "Хэв ю гот ё главз?", ru: "У тебя есть перчатки? (так спросит бригадир)" },
+          { en: "I have my boots.", transcr: "Ай хэв май бутс.", ru: "Сапоги у меня есть." },
+          { en: "I do not have a hi-vis vest.", transcr: "Ай ду нот хэв э хай-вис вэст.", ru: "У меня нет светоотражающего жилета." },
+          { en: "Can I have new gloves, please?", transcr: "Кэн ай хэв нью главз, плиз?", ru: "Можно новые перчатки, пожалуйста?" },
+          { en: "These boots are too small.", transcr: "Зиз бутс а ту смол.", ru: "Эти сапоги малы." },
+        ],
+      },
+    },
   ];
 
   if (typeof module !== "undefined" && module.exports) module.exports = LESSONS;
