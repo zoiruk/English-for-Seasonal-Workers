@@ -416,7 +416,7 @@
         { e: "🚰", en: "tap", transcr: "тэп", ru: "кран", pn: "/tæp/" },
         { e: "🗑️", en: "bin", transcr: "бин", ru: "бак", pn: "/bɪn/" },
         { e: "🏷️", en: "label", transcr: "лэйбл", ru: "этикетка", pn: "/ˈleɪbl/" },
-        { e: "⚖️", en: "scale", transcr: "скэйл", ru: "весы", pn: "/skeɪl/" },
+        { e: "⚖️", en: "scales", transcr: "скэйлз", ru: "весы", pn: "/skeɪlz/" },
         { e: "🪛", en: "screwdriver", transcr: "скрудрайвэ", ru: "отвёртка", pn: "/ˈskruːdraɪvə/" },
         { e: "🛢️", en: "barrel", transcr: "бэрэл", ru: "бочка", pn: "/ˈbærəl/" },
         { e: "🔨", en: "hammer", transcr: "хэмэ", ru: "молоток", pn: "/ˈhæmə/" },
@@ -441,8 +441,8 @@
         { s: "m", en: "This is a crate. These are punnets.", transcr: "Зис из э крэйт. Зиз ар панитс.", ru: "Это ящик. Это корзинки." },
         { s: "w", en: "Is this a trolley?", transcr: "Из зис э троли?", ru: "Это тележка?" },
         { s: "m", en: "Yes. This is your trolley.", transcr: "Йес. Зис из ё троли.", ru: "Да. Это твоя тележка." },
-        { s: "w", en: "What is that?", transcr: "Уот из зэт?", ru: "А то что?" },
-        { s: "m", en: "That is a scale.", transcr: "Зэт из э скэйл.", ru: "Это весы." },
+        { s: "w", en: "What are those?", transcr: "Уот ар зоуз?", ru: "А что это?" },
+        { s: "m", en: "Those are scales.", transcr: "Зоуз ар скэйлз.", ru: "Это весы." },
         { s: "w", en: "Are these your tools?", transcr: "Ар зиз ё тулз?", ru: "Это твои инструменты?" },
         { s: "m", en: "Yes. These are your tools.", transcr: "Йес. Зиз ар ё тулз.", ru: "Да. Это твои инструменты." },
         { s: "w", en: "Thanks! This is a good farm.", transcr: "Сэнкс! Зис из э гуд фарм.", ru: "Спасибо! Это хорошая ферма." },
@@ -460,7 +460,7 @@
         { q: '[COMPLETE] "Is ___ a tap?" (то, там)', opts: ["this", "that", "these", "those"], c: 1, expl: "that — то (дальше).", hint_ru: "То кран?" },
         { q: '[COMPLETE] "What ___ this?"', opts: ["is", "are", "am", "be"], c: 0, expl: "What is this? — Что это?", hint_ru: "Что это?" },
         { q: "[LISTEN] These are punnets.", opts: ["Это корзинки.", "Это ящики.", "Это инструменты.", "Это тележки."], c: 0, expl: "punnets — корзинки для ягод. crates — ящики. tools — инструменты. trolleys — тележки." },
-        { q: "[GIST] Что показывает менеджер рабочему в диалоге?", opts: ["Ящик, корзинки, тележку, весы, инструменты", "Нож, ножницы и молоток", "Семью и коллег", "Паспорт и визу"], c: 0, expl: "Менеджер показывает: crate (ящик), punnets (корзинки), trolley (тележка), scale (весы), tools (инструменты).", hint_ru: "Вспомните диалог." },
+        { q: "[GIST] Что показывает менеджер рабочему в диалоге?", opts: ["Ящик, корзинки, тележку, весы, инструменты", "Нож, ножницы и молоток", "Семью и коллег", "Паспорт и визу"], c: 0, expl: "Менеджер показывает: crate (ящик), punnets (корзинки), trolley (тележка), scales (весы), tools (инструменты).", hint_ru: "Вспомните диалог." },
       ],
 
       everyday: {
@@ -543,7 +543,7 @@
           { en: "It is half past four.", transcr: "Ит из хаф паст фо.", ru: "Сейчас 4:30 (половина пятого)." },
           { en: "Today is Wednesday.", transcr: "Тудэй из уэнздэй.", ru: "Сегодня среда." },
           { en: "Tomorrow is Sunday.", transcr: "Тэмороу из сандэй.", ru: "Завтра воскресенье." },
-          { en: "How much money is it?", transcr: "Хау мач мани из ит?", ru: "Сколько это денег?" },
+          { en: "It is five pounds.", transcr: "Ит из файв паундз.", ru: "Это пять фунтов." },
         ],
         simple_ru: {
           formula: 'О времени, дне и цене → <b>It is</b> + …<br><span class="g-transcr">[ит из]</span>',
@@ -904,7 +904,7 @@
         { s: "w", en: "Yes. I pick berries.", transcr: "Йес. Ай пик бэриз.", ru: "Да. Я собираю ягоды." },
         { s: "m", en: "Good. You pack them in punnets.", transcr: "Гуд. Ю пэк зэм ин панитс.", ru: "Хорошо. Ты упаковываешь их в корзинки." },
         { s: "w", en: "Do I weigh the punnets?", transcr: "Ду ай уэй зэ панитс?", ru: "Я взвешиваю корзинки?" },
-        { s: "m", en: "Yes. You weigh them on the scale.", transcr: "Йес. Ю уэй зэм он зэ скэйл.", ru: "Да. Ты взвешиваешь их на весах." },
+        { s: "m", en: "Yes. You weigh them on the scales.", transcr: "Йес. Ю уэй зэм он зэ скэйлз.", ru: "Да. Ты взвешиваешь их на весах." },
         { s: "w", en: "Does Sara sort the berries?", transcr: "Даз Сара сот зэ бэриз?", ru: "Сара сортирует ягоды?" },
         { s: "m", en: "Yes. She sorts the berries.", transcr: "Йес. Ши сотс зэ бэриз.", ru: "Да. Она сортирует ягоды." },
         { s: "w", en: "Do we start work?", transcr: "Ду уи старт уёк?", ru: "Мы начинаем работу?" },
@@ -924,7 +924,7 @@
         { q: '[COMPLETE] "Give ___ the box." (ему)', opts: ["him", "he", "his", "me"], c: 0, expl: "После глагола: he → him. Give him — дай ему.", hint_ru: "Дай ему коробку." },
         { q: "[CORRECT] Где правильно?", opts: ["She packs boxes", "She pack boxes", "She packing boxes", "Boxes she packs"], c: 0, expl: "She + глагол +s: packs. Порядок: кто + глагол + что.", hint_ru: "Она упаковывает коробки." },
         { q: "[LISTEN] She packs the boxes.", opts: ["Она упаковывает коробки.", "Она собирает ягоды.", "Она носит ящики.", "Она моет фургон."], c: 0, expl: "pack — упаковывать, box — коробка." },
-        { q: "[GIST] Что рабочий делает с корзинками (punnets) по диалогу?", opts: ["Взвешивает их на весах", "Моет их", "Считает деньги", "Чинит их"], c: 0, expl: "В диалоге: \"You weigh them on the scale\" — взвешиваешь на весах.", hint_ru: "Вспомните про корзинки." },
+        { q: "[GIST] Что рабочий делает с корзинками (punnets) по диалогу?", opts: ["Взвешивает их на весах", "Моет их", "Считает деньги", "Чинит их"], c: 0, expl: "В диалоге: \"You weigh them on the scales\" — взвешиваешь на весах.", hint_ru: "Вспомните про корзинки." },
       ],
 
       everyday: {
