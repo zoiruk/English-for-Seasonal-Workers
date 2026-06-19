@@ -6,6 +6,7 @@
   "scripts": {
     "audit": "node scripts/audit.js && node scripts/dedup.js && node scripts/snowball.js",
     "verify-ipa": "node scripts/verify-ipa.js",
+    "verify-transcr": "node scripts/verify-transcr.js",
     "serve": "node scripts/serve.js"
   },
   "license": "MIT"
