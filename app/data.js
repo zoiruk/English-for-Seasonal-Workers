@@ -24,7 +24,7 @@
       grammar: {
         title_ru: "Глагол TO BE: am / is / are",
         intro_ru:
-          '<div style="line-height:1.6">Так говорить — ошибка:<br>❌ <b>I worker</b><br>Правильно:<br>✅ <b>I am a worker</b> <span class="g-transcr">[ай эм э вёкэ]</span><br>👉 Между «кто» и «какой» всегда ставим <b>am / is / are</b>.</div>',
+          '<div style="line-height:1.6">Так говорить — ошибка:<br>❌ <b>I worker</b><br>Правильно:<br>✅ <b>I am a worker</b> <span class="g-transcr">[ай эм э уёкэ]</span><br>👉 Между «кто» и «какой» всегда ставим <b>am / is / are</b>.</div>',
         cultural_ru:
           "В русском мы говорим «Я рабочий» без глагола. В английском глагол <b>am/is/are</b> (быть) ОБЯЗАТЕЛЕН — его нельзя пропускать.",
         note_ru: '⚠️ НЕ говорите «I is» или «He am». I → <b>am</b>, he/she/it → <b>is</b>, you/we/they → <b>are</b>.',
@@ -41,7 +41,7 @@
               '<div><code>She is</code> <span class="g-transcr">[ши из]</span> (она)</div>' +
               '<div><code>It is</code> <span class="g-transcr">[ит из]</span> (оно)</div></div>',
             table: [
-              { subj: "I", verb: "am", example: "I am a worker", transcr: "Ай эм э вёкэ", tr_ru: "Я — рабочий" },
+              { subj: "I", verb: "am", example: "I am a worker", transcr: "Ай эм э уёкэ", tr_ru: "Я — рабочий" },
               { subj: "You", verb: "are", example: "You are a farmer", transcr: "Ю ар э фармэ", tr_ru: "Ты — фермер" },
               { subj: "He", verb: "is", example: "He is a picker", transcr: "Хи из э пикэ", tr_ru: "Он — сборщик" },
               { subj: "We", verb: "are", example: "We are a team", transcr: "Уи ар э тим", tr_ru: "Мы — бригада" },
@@ -72,7 +72,7 @@
               '<div><code>Are you?</code> <span class="g-transcr">[ар ю]</span> (ты?)</div>' +
               '<div><code>Are they?</code> <span class="g-transcr">[ар зэй]</span> (они?)</div></div>',
             table: [
-              { subj: "Am", verb: "I", example: "Am I a worker?", transcr: "Эм ай э вёкэ", tr_ru: "Я рабочий?" },
+              { subj: "Am", verb: "I", example: "Am I a worker?", transcr: "Эм ай э уёкэ", tr_ru: "Я рабочий?" },
               { subj: "Is", verb: "he", example: "Is he a packer?", transcr: "Из хи э пэкэ", tr_ru: "Он упаковщик?" },
               { subj: "Are", verb: "you", example: "Are you from Kazakhstan?", transcr: "Ар ю фром казахстан", tr_ru: "Ты из Казахстана?" },
             ],
@@ -96,7 +96,7 @@
         { e: "🙏", en: "thanks", transcr: "сэнкс", ru: "спасибо", pn: "/θæŋks/" },
         { e: "😔", en: "sorry", transcr: "сори", ru: "извините", pn: "/ˈsɒri/" },
         { e: "🪪", en: "name", transcr: "нэйм", ru: "имя", pn: "/neɪm/" },
-        { e: "👷", en: "worker", transcr: "вёкэ", ru: "рабочий", pn: "/ˈwɜːkə/" },
+        { e: "👷", en: "worker", transcr: "уёкэ", ru: "рабочий", pn: "/ˈwɜːkə/" },
         { e: "🚜", en: "farm", transcr: "фарм", ru: "ферма", pn: "/fɑːm/" },
         { e: "🌾", en: "field", transcr: "филд", ru: "поле", pn: "/fiːld/" },
         { e: "👨‍🌾", en: "farmer", transcr: "фармэ", ru: "фермер", pn: "/ˈfɑːmə/" },
@@ -117,7 +117,7 @@
         { e: "🇰🇿", en: "Kazakhstan", transcr: "казахстан", ru: "Казахстан", pn: "/ˌkæzəkˈstɑːn/" },
         { e: "🇬🇧", en: "Britain", transcr: "бритн", ru: "Британия", pn: "/ˈbrɪtn/" },
         { e: "🗣️", en: "English", transcr: "инглиш", ru: "английский", pn: "/ˈɪŋɡlɪʃ/" },
-        { e: "🙌", en: "welcome", transcr: "вэлкэм", ru: "добро пожаловать", pn: "/ˈwelkəm/" },
+        { e: "🙌", en: "welcome", transcr: "уэлкэм", ru: "добро пожаловать", pn: "/ˈwelkəm/" },
         { e: "🇺🇿", en: "Uzbek", transcr: "узбэк", ru: "узбек (из Узбекистана)", pn: "/ˈʊzbek/" },
         { e: "🇹🇯", en: "Tajik", transcr: "таджик", ru: "таджик (из Таджикистана)", pn: "/tɑːˈdʒiːk/" },
         { e: "🇰🇬", en: "Kyrgyz", transcr: "кёгиз", ru: "киргиз (из Кыргызстана)", pn: "/ˈkɪəɡɪz/" },
@@ -412,7 +412,7 @@
       ],
 
       dialogue: [
-        { s: "m", en: "Good morning! Welcome to the farm.", transcr: "Гуд монинг! Вэлкэм ту зэ фарм.", ru: "Доброе утро! Добро пожаловать на ферму." },
+        { s: "m", en: "Good morning! Welcome to the farm.", transcr: "Гуд монинг! Уэлкэм ту зэ фарм.", ru: "Доброе утро! Добро пожаловать на ферму." },
         { s: "w", en: "Thanks! What is this?", transcr: "Сэнкс! Уот из зис?", ru: "Спасибо! Что это?" },
         { s: "m", en: "This is a crate. These are punnets.", transcr: "Зис из э крэйт. Зиз ар панитс.", ru: "Это ящик. Это корзинки." },
         { s: "w", en: "Is this a trolley?", transcr: "Из зис э троли?", ru: "Это тележка?" },
@@ -628,7 +628,7 @@
               { subj: "The canteen", verb: "is", example: "The canteen is near the gate", transcr: "Зэ кэнтин из ниэ зэ гейт", tr_ru: "Столовая рядом с воротами" },
               { subj: "The toilet", verb: "is", example: "The toilet is in the camp", transcr: "Зэ тойлет из ин зэ кэмп", tr_ru: "Туалет в лагере" },
               { subj: "The shop", verb: "is", example: "The shop is on the road", transcr: "Зэ шоп из он зэ роуд", tr_ru: "Магазин на дороге" },
-              { subj: "The van", verb: "is", example: "The van is behind the shed", transcr: "Зэ ван из бихайнд зэ шед", tr_ru: "Фургон за сараем" },
+              { subj: "The van", verb: "is", example: "The van is behind the shed", transcr: "Зэ вэн из бихайнд зэ шед", tr_ru: "Фургон за сараем" },
             ],
           },
           negative: {
@@ -662,7 +662,7 @@
           { en: "Where is the canteen?", transcr: "Уэа из зэ кэнтин?", ru: "Где столовая?" },
           { en: "It is next to the office.", transcr: "Ит из нэкст ту зэ офис.", ru: "Она рядом с конторой." },
           { en: "The sign is on the wall.", transcr: "Зэ сайн из он зэ уол.", ru: "Табличка на стене." },
-          { en: "The van is near the gate.", transcr: "Зэ ван из ниэ зэ гейт.", ru: "Фургон у ворот." },
+          { en: "The van is near the gate.", transcr: "Зэ вэн из ниэ зэ гейт.", ru: "Фургон у ворот." },
           { en: "The market is on the road.", transcr: "Зэ макит из он зэ роуд.", ru: "Рынок на дороге." },
         ],
       },
@@ -685,7 +685,7 @@
         { e: "🛣️", en: "road", transcr: "роуд", ru: "дорога", pn: "/rəʊd/" },
         { e: "🌉", en: "bridge", transcr: "бридж", ru: "мост", pn: "/brɪdʒ/" },
         { e: "🚗", en: "car", transcr: "ка", ru: "машина", pn: "/kɑː/" },
-        { e: "🚐", en: "van", transcr: "ван", ru: "фургон", pn: "/væn/" },
+        { e: "🚐", en: "van", transcr: "вэн", ru: "фургон", pn: "/væn/" },
         { e: "🚲", en: "bike", transcr: "байк", ru: "велосипед", pn: "/baɪk/" },
         { e: "🪑", en: "chair", transcr: "чэа", ru: "стул", pn: "/tʃeə/" },
         { e: "🗺️", en: "map", transcr: "мэп", ru: "карта", pn: "/mæp/" },
@@ -701,7 +701,7 @@
       ],
 
       dialogue: [
-        { s: "m", en: "Welcome! This is the camp.", transcr: "Вэлкэм! Зис из зэ кэмп.", ru: "Добро пожаловать! Это лагерь." },
+        { s: "m", en: "Welcome! This is the camp.", transcr: "Уэлкэм! Зис из зэ кэмп.", ru: "Добро пожаловать! Это лагерь." },
         { s: "w", en: "Thank you! Where is the toilet?", transcr: "Сэнк ю! Уэа из зэ тойлет?", ru: "Спасибо! Где туалет?" },
         { s: "m", en: "The toilet is near the kitchen.", transcr: "Зэ тойлет из ниэ зэ китчин.", ru: "Туалет рядом с кухней." },
         { s: "w", en: "And where is the canteen?", transcr: "Энд уэа из зэ кэнтин?", ru: "А где столовая?" },
@@ -789,7 +789,7 @@
               '<div><code>I do not work</code></div>' +
               '<div><code>He does not pick</code></div></div>',
             table: [
-              { subj: "I", verb: "do not", example: "I do not work on Sunday", transcr: "Ай ду нот вёк он сандэй", tr_ru: "Я не работаю в воскресенье" },
+              { subj: "I", verb: "do not", example: "I do not work on Sunday", transcr: "Ай ду нот уёк он сандэй", tr_ru: "Я не работаю в воскресенье" },
               { subj: "He", verb: "does not", example: "He does not pick", transcr: "Хи даз нот пик", tr_ru: "Он не собирает" },
               { subj: "They", verb: "do not", example: "They do not sort the berries", transcr: "Зэй ду нот сот зэ бэриз", tr_ru: "Они не сортируют ягоды" },
             ],
@@ -809,17 +809,17 @@
           },
         },
         examples: [
-          { en: "I always work on the farm.", transcr: "Ай олуэйз вёк он зэ фарм.", ru: "Я всегда работаю на ферме." },
+          { en: "I always work on the farm.", transcr: "Ай олуэйз уёк он зэ фарм.", ru: "Я всегда работаю на ферме." },
           { en: "She gives me the box.", transcr: "Ши гивз ми зэ бокс.", ru: "Она даёт мне коробку." },
           { en: "We carry them to the shed.", transcr: "Уи кэри зэм ту зэ шед.", ru: "Мы носим их в сарай." },
-          { en: "He never washes the van.", transcr: "Хи нэвэ уошиз зэ ван.", ru: "Он никогда не моет фургон." },
+          { en: "He never washes the van.", transcr: "Хи нэвэ уошиз зэ вэн.", ru: "Он никогда не моет фургон." },
           { en: "Tom checks us.", transcr: "Том чекс ас.", ru: "Том проверяет нас." },
-          { en: "I sometimes work on Saturday.", transcr: "Ай самтаймз вёк он сэтэдэй.", ru: "Я иногда работаю в субботу." },
+          { en: "I sometimes work on Saturday.", transcr: "Ай самтаймз уёк он сэтэдэй.", ru: "Я иногда работаю в субботу." },
         ],
       },
 
       words: [
-        { e: "🛠️", en: "work", transcr: "вёк", ru: "работать", pn: "/wɜːk/" },
+        { e: "🛠️", en: "work", transcr: "уёк", ru: "работать", pn: "/wɜːk/" },
         { e: "✋", en: "pick", transcr: "пик", ru: "собирать", pn: "/pɪk/" },
         { e: "📦", en: "pack", transcr: "пэк", ru: "упаковывать", pn: "/pæk/" },
         { e: "🛍️", en: "carry", transcr: "кэри", ru: "носить", pn: "/ˈkæri/" },
@@ -859,7 +859,7 @@
         { s: "m", en: "Yes. You weigh them on the scale.", transcr: "Йес. Ю уэй зэм он зэ скэйл.", ru: "Да. Ты взвешиваешь их на весах." },
         { s: "w", en: "Does Sara sort the berries?", transcr: "Даз Сара сот зэ бэриз?", ru: "Сара сортирует ягоды?" },
         { s: "m", en: "Yes. She sorts the berries.", transcr: "Йес. Ши сотс зэ бэриз.", ru: "Да. Она сортирует ягоды." },
-        { s: "w", en: "Do we start work?", transcr: "Ду уи старт вёк?", ru: "Мы начинаем работу?" },
+        { s: "w", en: "Do we start work?", transcr: "Ду уи старт уёк?", ru: "Мы начинаем работу?" },
         { s: "m", en: "Yes. We start. Carry the crates.", transcr: "Йес. Уи старт. Кэри зэ крэйтс.", ru: "Да. Начинаем. Неси ящики." },
         { s: "w", en: "I carry them to the field.", transcr: "Ай кэри зэм ту зэ филд.", ru: "Я несу их в поле." },
       ],
