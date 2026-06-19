@@ -1,6 +1,6 @@
 # IPA verification report (Wiktionary RP anchor)
 
-Total words: 185 · matched: 164 · divergent: 18 · not found: 3
+Total words: 215 · matched: 187 · divergent: 19 · not found: 9
 
 Normalized away (kept length ː): ɹ↔r, ɡ↔g, ɛ↔e (DRESS vowel), tie-bars & allophonic diacritics, optional (…) segments, stress, syllable dots.
 Divergences below are for OWNER ACCEPTANCE — review each: is our `pn` wrong, or a valid variant?
@@ -27,9 +27,16 @@ Divergences below are for OWNER ACCEPTANCE — review each: is our `pn` wrong, o
 | 5 | toilet | `/ˈtɔɪlɪt/` | `/ˈtɔɪ.lət/` |
 | 5 | kitchen | `/ˈkɪtʃɪn/` | `/ˈkɪt͡ʃ(ɪ)n/` |
 | 5 | river | `/ˈrɪvə/` | `/ˈɹɪvəː/` |
+| 7 | catch | `/kætʃ/` | `/kat͡ʃ/` |
 
 ## Not found on Wiktionary (no en RP IPA parsed — verify manually)
 
 - L3 **trolley** (`/ˈtrɒli/`)
 - L3 **clipboard** (`/ˈklɪpbɔːd/`)
 - L4 **payslip** (`/ˈpeɪslɪp/`)
+- L7 **stand** (`/stænd/`)
+- L7 **read** (`/riːd/`)
+- L7 **kneel** (`/niːl/`)
+- L7 **feed** (`/fiːd/`)
+- L7 **sweep** (`/swiːp/`)
+- L7 **lock** (`/lɒk/`)
