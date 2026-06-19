@@ -1,6 +1,6 @@
 # IPA verification report (Wiktionary RP anchor)
 
-Total words: 215 · matched: 187 · divergent: 19 · not found: 9
+Total words: 245 · matched: 213 · divergent: 21 · not found: 11
 
 Normalized away (kept length ː): ɹ↔r, ɡ↔g, ɛ↔e (DRESS vowel), tie-bars & allophonic diacritics, optional (…) segments, stress, syllable dots.
 Divergences below are for OWNER ACCEPTANCE — review each: is our `pn` wrong, or a valid variant?
@@ -27,16 +27,20 @@ Divergences below are for OWNER ACCEPTANCE — review each: is our `pn` wrong, o
 | 5 | toilet | `/ˈtɔɪlɪt/` | `/ˈtɔɪ.lət/` |
 | 5 | kitchen | `/ˈkɪtʃɪn/` | `/ˈkɪt͡ʃ(ɪ)n/` |
 | 5 | river | `/ˈrɪvə/` | `/ˈɹɪvəː/` |
+| 7 | read | `/riːd/` | `/ɹɛd/` |
 | 7 | catch | `/kætʃ/` | `/kat͡ʃ/` |
+| 8 | goggles | `/ˈɡɒɡlz/` | `/ˈɡɑ.ɡəlz/` |
 
 ## Not found on Wiktionary (no en RP IPA parsed — verify manually)
 
 - L3 **trolley** (`/ˈtrɒli/`)
 - L3 **clipboard** (`/ˈklɪpbɔːd/`)
 - L4 **payslip** (`/ˈpeɪslɪp/`)
-- L7 **stand** (`/stænd/`)
-- L7 **read** (`/riːd/`)
-- L7 **kneel** (`/niːl/`)
-- L7 **feed** (`/fiːd/`)
-- L7 **sweep** (`/swiːp/`)
-- L7 **lock** (`/lɒk/`)
+- L8 **shirt** (`/ʃɜːt/`)
+- L8 **socks** (`/sɒks/`)
+- L8 **scarf** (`/skɑːf/`)
+- L8 **sunglasses** (`/ˈsʌnɡlɑːsɪz/`)
+- L8 **black** (`/blæk/`)
+- L8 **white** (`/waɪt/`)
+- L8 **orange** (`/ˈɒrɪndʒ/`)
+- L8 **colour** (`/ˈkʌlə/`)

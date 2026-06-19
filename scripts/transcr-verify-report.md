@@ -1,6 +1,6 @@
 # Transcr self-consistency report (cyrillic vs IPA-derived)
 
-Total: 215 · consistent: 196 · divergent: 19
+Total: 245 · consistent: 225 · divergent: 20
 
 Expected = mechanical phoneme→cyrillic from our `pn` (course convention).
 Divergences are for OWNER ACCEPTANCE: a real transcr error, or a deliberate
@@ -28,3 +28,4 @@ map doesn't cover. Not a pass/fail — a review list of where crutch ≠ sound.
 | 5 | shed | `/ʃed/` | шед | шэд |
 | 6 | check | `/tʃek/` | чек | чэк |
 | 6 | start | `/stɑːt/` | старт | стат |
+| 8 | yellow | `/ˈjeləʊ/` | йелоу | йэлоу |
