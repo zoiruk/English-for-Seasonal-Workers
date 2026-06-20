@@ -28,13 +28,15 @@
 3. **5 эталонных курсов = якорь натуральности и охвата** (НЕ забывать при любом контенте):
    New Headway Beginner (Oxford), Speakout Starter (Pearson), face2face Starter (Cambridge),
    English File Beginner (Oxford, `elt.oup.com/student/englishfile`) + CEFR A0-A1 PDF. Их
-   scope-and-sequence сведён в `specs/coverage-matrix.md`. **Правило: натуральность и охват
-   любого нового/правимого текста сверять с этими источниками (и цитируемыми ELT/UK: British
-   Council, Cambridge/Oxford, NHS/gov.uk), НЕ с суждением владельца** — владелец с нулевым
-   английским не может быть приёмщиком натуральности (риск №1). Метод доказан: source-cited
-   multi-agent сверка 246 строк текста → 2 правки (`0ab5e1f`); см. [[lesson-content-naturalness-anchor]].
+   scope-and-sequence сведён в `specs/coverage-matrix.md`; источники с URL + процедура —
+   `specs/reference-sources.md`. **Правило: натуральность и охват любого нового/правимого текста
+   сверять с этими источниками (и цитируемыми ELT/UK: British Council, Cambridge/Oxford, NHS/gov.uk),
+   НЕ с суждением владельца** — владелец с нулевым английским не может быть приёмщиком натуральности
+   (риск №1). Метод доказан: source-cited multi-agent сверка 246 строк текста → 2 правки (`0ab5e1f`).
+   Гейт исполняемый: скилл `/lesson-naturalness-check <Ln>` = обязательный слой-4 проверки (см.
+   «Процесс работы»). См. [[lesson-content-naturalness-anchor]], [[naturalness-check-is-mandatory-gate]].
 
-## Текущее состояние (2026-06-19)
+## Текущее состояние (2026-06-20)
 
 **Построено и проверено (аудит зелёный):**
 - Движок: хаб + экран урока (табы Grammar/Words/Dialogue/Phrases/Quiz) + Web Speech +
@@ -55,7 +57,7 @@
   проверены (вкл. safety health/SOS/documents).
 - **Режим повторения (SRS)** — флешкарты из пройденных слов (хаб 🔁). **Сертификат** 🏆
   (имя + статистика + print).
-- Git ~65 коммитов, чистая история; грамматика подтверждена 5 курсами (`coverage-matrix.md`).
+- Git ~71 коммит, чистая история; грамматика подтверждена 5 курсами (`coverage-matrix.md`).
   Всего 275 слов в 9 уроках (L1=35, L2–L9 ≈30).
 - **Сверка IPA внешним якорем:** `npm run verify-ipa` тянет Received Pronunciation из Wiktionary
   для всех слов и сверяет с `pn` (238/275 совпали, вкл. L9; остаток — нотация, US-варианты снапшота,
@@ -75,6 +77,9 @@
   Проверяет естественность ФРАЗ (коллокации/идиоматика/BrE) — ось, которую verify-ipa/verify-transcr
   (только фонетика `words[]`) не видят. Третий внешний якорь против ИИ-петли №1. Вне `npm run audit`
   (сеть/агенты); живой носитель остаётся гейтом перед публичным запуском (B1–B2).
+  **Метод кодифицирован в скилл `/lesson-naturalness-check` (`.claude/skills/`, `4dd1f68`) = обязательный
+  слой-4 гейт каждого урока; источники с URL — `specs/reference-sources.md`. L9 прогнан им: SHIP, 0 флагов
+  (3 ревьюера, `e165775`).**
 - **Помощь «ещё проще» + YouTube-резерв** (движок `01e9ed1` + ретрофит L2–L7 `7920693`): свёрнутый
   блок в конце grammar-таба для тех, кто не понял правило. Опц. поля `grammar.simple_ru` (`formula` +
   1–2 мини-примера) и `grammar.ytQuery` (ручной RU-запрос). UX: тоггл (closed по умолчанию) → формула +
@@ -155,10 +160,14 @@
   для `pn`; снапшот `ref-ipa-wiktionary.json`, отчёт `ipa-verify-report.md`; вне аудита),
   `verify-transcr.js` (`npm run verify-transcr` — сверка кириллической `transcr` с IPA-производным
   звуком по конвенции курса; отчёт `transcr-verify-report.md`; ловит несогласованности крутки).
-- `specs/` — CEFR-PDF (источник правды), `coverage-matrix.md`, `master-lexicon.md`
-  (слова+IPA+whitelist), прочие `*.md` — спеки чужого проекта (только принципы).
+- `specs/` — CEFR-PDF (источник правды), `coverage-matrix.md`, `reference-sources.md` (5 эталонных
+  источников + URL + процедура source-cited сверки), `master-lexicon.md` (слова+IPA+whitelist),
+  прочие `*.md` — спеки чужого проекта (только принципы).
+- `.claude/skills/` — `lesson-naturalness-check/` (скилл: source-cited сверка урока против 5 источников,
+  метод `0ab5e1f`; обязательный слой-4 гейт перед коммитом урока).
 - `plans/` — `2026-06-18-full-a0a1-scope.md` (дорожная карта A0-A1); `2026-06-19-grammar-help-youtube.md`
-  (спека «ещё проще» + YouTube-резерв). `_legacy/` — старый курс (архив).
+  (спека «ещё проще» + YouTube-резерв); `2026-06-19-phrasebook-youglish-check.md` (ручной YouGlish-чеклист
+  разговорника — прослушка владельцем, не закоммичен). `_legacy/` — старый курс (архив).
 
 ## Референс-проект (НЕ пивотить)
 
