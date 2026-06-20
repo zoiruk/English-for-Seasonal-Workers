@@ -14,7 +14,7 @@
       phrasebook_sub: "Готовые фразы на каждый день",
       phrasebook_hint: "👇 Выберите ситуацию. Нажмите 🔊, чтобы услышать.",
       phrasebook_count: "{0} фраз",
-      words_learned: "слов выучено",
+      words_learned: "слов изучено",
       streak: "дней подряд",
       lessons_done: "уроков пройдено",
       cefr: "Уровень {0}",
@@ -141,7 +141,7 @@
     var done = Object.keys(store.done).length;
     var h = '<div class="hub-head"><h1>🌿 ' + t("app_title") + "</h1><p>" + t("app_subtitle") + "</p></div>";
     h += '<div class="stats">' +
-      '<div class="stat"><div class="v">' + store.words + '</div><div class="l">' + t("words_learned") + "</div></div>" +
+      '<div class="stat"><div class="v">' + studiedWords() + '</div><div class="l">' + t("words_learned") + "</div></div>" +
       '<div class="stat"><div class="v">🔥 ' + store.streak + '</div><div class="l">' + t("streak") + "</div></div>" +
       '<div class="stat"><div class="v">' + done + "/" + LESSONS.length + '</div><div class="l">' + t("lessons_done") + "</div></div></div>";
     if (PHRASEBOOK.length) {
@@ -167,7 +167,7 @@
       var isDone = store.done[les.id];
       h += '<div class="lesson-card" data-lesson="' + les.id + '">' +
         '<div class="num">' + les.id + "</div>" +
-        '<div class="body"><div class="t">' + esc(les.title_ru) + '</div><div class="s">' + esc(les.cefr) + "</div></div>" +
+        '<div class="body"><div class="t">' + esc(les.title_ru) + "</div></div>" +
         (isDone ? '<div class="done">✓</div>' : '<div class="done" style="color:var(--text3)">›</div>') + "</div>";
     });
     app.innerHTML = h;
@@ -284,7 +284,7 @@
           (isComplete ? t("cert_body_done") : t("cert_body_progress", done, total)) +
         '</div>' +
         '<div class="cert-stats">' +
-          '<span>' + store.words + ' ' + t("words_learned") + '</span>' +
+          '<span>' + studiedWords() + ' ' + t("words_learned") + '</span>' +
           '<span>🔥 ' + store.streak + ' ' + t("streak") + '</span>' +
         '</div>' +
         '<div class="cert-cefr">CEFR · A0–A1</div>' +
@@ -468,6 +468,11 @@
   function countWords(les) {
     if (!store.seen) store.seen = {};
     if (!store.seen[les.id]) { store.seen[les.id] = true; store.words += les.words.length; save(store); }
+  }
+  // Headline counter = words from COMPLETED lessons (derived), so finishing a
+  // lesson visibly moves it — independent of which tabs were opened.
+  function studiedWords() {
+    return LESSONS.reduce(function (n, les) { return n + (store.done[les.id] ? les.words.length : 0); }, 0);
   }
 
   function playAll(lines, i) {
