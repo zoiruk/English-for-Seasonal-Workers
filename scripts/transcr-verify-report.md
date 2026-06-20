@@ -1,6 +1,6 @@
 # Transcr self-consistency report (cyrillic vs IPA-derived)
 
-Total: 305 · consistent: 283 · divergent: 22
+Total: 335 · consistent: 312 · divergent: 23
 
 Expected = mechanical phoneme→cyrillic from our `pn` (course convention).
 Divergences are for OWNER ACCEPTANCE: a real transcr error, or a deliberate
@@ -31,3 +31,4 @@ map doesn't cover. Not a pass/fail — a review list of where crutch ≠ sound.
 | 8 | yellow | `/ˈjeləʊ/` | йелоу | йэлоу |
 | 9 | curtain | `/ˈkɜːtn/` | кётэн | кётн |
 | 10 | onion | `/ˈʌnjən/` | аньэн | анйэн |
+| 11 | queue | `/kjuː/` | кью | кйу |

@@ -1579,6 +1579,167 @@
         ],
       },
     },
+    {
+      id: 11,
+      mod: 6,
+      title_ru: "В пути: автобус, поезд, билет",
+      cefr: "this / that / these / those · transport & travel",
+
+      grammar: {
+        title_ru: "Это / то: this · that · these · those",
+        intro_ru:
+          '<div style="line-height:1.6">Указываем на предмет:<br>👉 <b>This</b> <span class="g-transcr">[зис]</span> — один, РЯДОМ. <b>That</b> <span class="g-transcr">[зэт]</span> — один, ДАЛЕКО.<br>👉 <b>These</b> <span class="g-transcr">[зиз]</span> — много, РЯДОМ. <b>Those</b> <span class="g-transcr">[зоуз]</span> — много, ДАЛЕКО.<br>👉 Один → <b>is</b>, много → <b>are</b>: «This <b>is</b> a bus», «These <b>are</b> tickets».</div>',
+        cultural_ru:
+          'В русском «это/то» не меняется по числу. В английском — 4 слова (близко/далеко × один/много):' +
+          '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:6px">' +
+          '<div><b>один, рядом:</b> this bus <span class="g-transcr">[зис бас]</span></div>' +
+          '<div><b>один, далеко:</b> that bus <span class="g-transcr">[зэт бас]</span></div>' +
+          '<div><b>много, рядом:</b> these buses <span class="g-transcr">[зиз басиз]</span></div>' +
+          '<div><b>много, далеко:</b> those buses <span class="g-transcr">[зоуз басиз]</span></div></div>',
+        note_ru:
+          '⚠️ <b>this / that</b> — для ОДНОГО предмета (с <b>is</b>). <b>these / those</b> — для МНОГИХ (с <b>are</b>): «this seat», но «these seats». Близко → this / these, далеко → that / those.',
+        forms: {
+          positive: {
+            label_ru: "✅ Это / то",
+            rule_ru:
+              '<b>this / that</b> (один) + is · <b>these / those</b> (много) + are:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>This is a bus</code> <span class="g-transcr">[зис из э бас]</span></div>' +
+              '<div><code>These are tickets</code> <span class="g-transcr">[зиз ар тикитс]</span></div></div>',
+            table: [
+              { subj: "This", verb: "is", example: "This is a bus", transcr: "Зис из э бас", tr_ru: "Это (рядом) автобус" },
+              { subj: "That", verb: "is", example: "That is a train", transcr: "Зэт из э трэйн", tr_ru: "То (далеко) поезд" },
+              { subj: "These", verb: "are", example: "These are tickets", transcr: "Зиз ар тикитс", tr_ru: "Это (рядом) билеты" },
+              { subj: "Those", verb: "are", example: "Those are seats", transcr: "Зоуз ар ситс", tr_ru: "Те (далеко) места" },
+            ],
+          },
+          negative: {
+            label_ru: "❌ Это не…",
+            rule_ru:
+              'Отрицание — <b>is not / are not</b>:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>This is not my seat</code></div>' +
+              '<div><code>Those are not my bags</code></div></div>',
+            table: [
+              { subj: "This", verb: "is not", example: "This is not my seat", transcr: "Зис из нот май сит", tr_ru: "Это не моё место" },
+              { subj: "That", verb: "is not", example: "That is not my ticket", transcr: "Зэт из нот май тикит", tr_ru: "То не мой билет" },
+              { subj: "These", verb: "are not", example: "These are not my bags", transcr: "Зиз ар нот май бэгз", tr_ru: "Это не мои сумки" },
+              { subj: "Those", verb: "are not", example: "Those are not my seats", transcr: "Зоуз ар нот май ситс", tr_ru: "Те не мои места" },
+            ],
+          },
+          question: {
+            label_ru: "❓ Это…?",
+            rule_ru:
+              '<b>Is / Are</b> ставим ВПЕРЁД:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>Is this the bus?</code> <span class="g-transcr">[из зис зэ бас]</span></div>' +
+              '<div><code>Are these your tickets?</code> <span class="g-transcr">[ар зиз ё тикитс]</span></div></div>',
+            table: [
+              { subj: "Is", verb: "this…?", example: "Is this the bus to the camp?", transcr: "Из зис зэ бас ту зэ кэмп?", tr_ru: "Это автобус до лагеря?" },
+              { subj: "Is", verb: "that…?", example: "Is that the station?", transcr: "Из зэт зэ стэйшн?", tr_ru: "То — станция?" },
+              { subj: "Are", verb: "these…?", example: "Are these your tickets?", transcr: "Ар зиз ё тикитс?", tr_ru: "Это ваши билеты?" },
+              { subj: "Are", verb: "those…?", example: "Are those your bags?", transcr: "Ар зоуз ё бэгз?", tr_ru: "Те — ваши сумки?" },
+            ],
+          },
+        },
+        examples: [
+          { en: "This is the bus to the camp.", transcr: "Зис из зэ бас ту зэ кэмп.", ru: "Это автобус до лагеря." },
+          { en: "That is the train to the farm.", transcr: "Зэт из зэ трэйн ту зэ фарм.", ru: "То — поезд до фермы." },
+          { en: "These are my tickets.", transcr: "Зиз ар май тикитс.", ru: "Это мои билеты." },
+          { en: "Those are not my seats.", transcr: "Зоуз ар нот май ситс.", ru: "Те — не мои места." },
+          { en: "Is this the bus stop?", transcr: "Из зис зэ бас стоп?", ru: "Это автобусная остановка?" },
+          { en: "Where is the station?", transcr: "Уэа из зэ стэйшн?", ru: "Где станция?" },
+          { en: "What time is the train?", transcr: "Уот тайм из зэ трэйн?", ru: "Во сколько поезд?" },
+          { en: "This is my ticket.", transcr: "Зис из май тикит.", ru: "Это мой билет." },
+          { en: "Which platform is it?", transcr: "Уич плэтфом из ит?", ru: "С какой платформы?" },
+          { en: "The taxi is at the airport.", transcr: "Зэ тэкси из эт зэ эапот.", ru: "Такси у аэропорта." },
+          { en: "Is that the ferry?", transcr: "Из зэт зэ фэри?", ru: "То — паром?" },
+          { en: "I am at the bus stop.", transcr: "Ай эм эт зэ бас стоп.", ru: "Я на автобусной остановке." },
+        ],
+        simple_ru: {
+          formula: 'Рядом → <b>this</b> (1) / <b>these</b> (много). Далеко → <b>that</b> (1) / <b>those</b> (много).<br>Один → is, много → are.<br><span class="g-transcr">This is a bus · These are tickets</span>',
+          examples: [
+            { en: "This is a bus.", transcr: "Зис из э бас.", ru: "Это (рядом) + автобус (bus)." },
+            { en: "These are tickets.", transcr: "Зиз ар тикитс.", ru: "Это (рядом, много) + билеты (tickets)." },
+          ],
+        },
+        ytQuery: "this that these those английский для начинающих на русском",
+      },
+
+      words: [
+        { e: "🚌", en: "bus", transcr: "бас", ru: "автобус", pn: "/bʌs/" },
+        { e: "🚍", en: "coach", transcr: "коуч", ru: "междугородний автобус", pn: "/kəʊtʃ/" },
+        { e: "🚆", en: "train", transcr: "трэйн", ru: "поезд", pn: "/treɪn/" },
+        { e: "🚕", en: "taxi", transcr: "тэкси", ru: "такси", pn: "/ˈtæksi/" },
+        { e: "🚚", en: "lorry", transcr: "лори", ru: "грузовик", pn: "/ˈlɒri/" },
+        { e: "🏍️", en: "motorbike", transcr: "моутэбайк", ru: "мотоцикл", pn: "/ˈməʊtəbaɪk/" },
+        { e: "✈️", en: "plane", transcr: "плэйн", ru: "самолёт", pn: "/pleɪn/" },
+        { e: "⛴️", en: "ferry", transcr: "фэри", ru: "паром", pn: "/ˈferi/" },
+        { e: "🚤", en: "boat", transcr: "боут", ru: "лодка", pn: "/bəʊt/" },
+        { e: "🎫", en: "ticket", transcr: "тикит", ru: "билет", pn: "/ˈtɪkɪt/" },
+        { e: "🚉", en: "station", transcr: "стэйшн", ru: "станция", pn: "/ˈsteɪʃn/" },
+        { e: "🛤️", en: "platform", transcr: "плэтфом", ru: "платформа", pn: "/ˈplætfɔːm/" },
+        { e: "🛑", en: "stop", transcr: "стоп", ru: "остановка", pn: "/stɒp/" },
+        { e: "💺", en: "seat", transcr: "сит", ru: "место (сиденье)", pn: "/siːt/" },
+        { e: "🛫", en: "airport", transcr: "эапот", ru: "аэропорт", pn: "/ˈeəpɔːt/" },
+        { e: "🛬", en: "flight", transcr: "флайт", ru: "рейс", pn: "/flaɪt/" },
+        { e: "🧳", en: "suitcase", transcr: "суткэйс", ru: "чемодан", pn: "/ˈsuːtkeɪs/" },
+        { e: "🎒", en: "backpack", transcr: "бэкпэк", ru: "рюкзак", pn: "/ˈbækpæk/" },
+        { e: "🕑", en: "timetable", transcr: "таймтэйбл", ru: "расписание", pn: "/ˈtaɪmteɪbl/" },
+        { e: "🧭", en: "journey", transcr: "джёни", ru: "поездка", pn: "/ˈdʒɜːni/" },
+        { e: "🛣️", en: "street", transcr: "стрит", ru: "улица", pn: "/striːt/" },
+        { e: "↪️", en: "corner", transcr: "конэ", ru: "угол", pn: "/ˈkɔːnə/" },
+        { e: "🚦", en: "traffic", transcr: "трэфик", ru: "движение (транспорт)", pn: "/ˈtræfɪk/" },
+        { e: "⛽", en: "petrol", transcr: "пэтрэл", ru: "бензин", pn: "/ˈpetrəl/" },
+        { e: "🔧", en: "garage", transcr: "гэраж", ru: "автосервис/гараж", pn: "/ˈɡærɑːʒ/" },
+        { e: "🚶", en: "pavement", transcr: "пэйвмэнт", ru: "тротуар", pn: "/ˈpeɪvmənt/" },
+        { e: "🚸", en: "crossing", transcr: "кросинг", ru: "пешеходный переход", pn: "/ˈkrɒsɪŋ/" },
+        { e: "👥", en: "queue", transcr: "кью", ru: "очередь", pn: "/kjuː/" },
+        { e: "💷", en: "fare", transcr: "фэа", ru: "плата за проезд", pn: "/feə/" },
+        { e: "🚪", en: "exit", transcr: "эксит", ru: "выход", pn: "/ˈeksɪt/" },
+      ],
+
+      dialogue: [
+        { s: "w", en: "Hello. Is this the bus to the camp?", transcr: "Хэлоу. Из зис зэ бас ту зэ кэмп?", ru: "Здравствуйте. Это автобус до лагеря?" },
+        { s: "c", en: "No. That is the bus to the camp.", transcr: "Ноу. Зэт из зэ бас ту зэ кэмп.", ru: "Нет. Вон тот автобус до лагеря." },
+        { s: "w", en: "Thank you. Where is the station?", transcr: "Сэнк ю. Уэа из зэ стэйшн?", ru: "Спасибо. Где станция?" },
+        { s: "c", en: "The station is here. This is platform two.", transcr: "Зэ стэйшн из хиэ. Зис из плэтфом ту.", ru: "Станция здесь. Это платформа два." },
+        { s: "w", en: "What time is the train?", transcr: "Уот тайм из зэ трэйн?", ru: "Во сколько поезд?" },
+        { s: "c", en: "The train is at nine o'clock.", transcr: "Зэ трэйн из эт найн эклок.", ru: "Поезд в девять часов." },
+        { s: "w", en: "How much is the ticket?", transcr: "Хау мач из зэ тикит?", ru: "Сколько стоит билет?" },
+        { s: "c", en: "It is three pounds. Here is your ticket.", transcr: "Ит из фри паундз. Хиэ из ё тикит.", ru: "Три фунта. Вот ваш билет." },
+        { s: "w", en: "Thank you. Is this my seat?", transcr: "Сэнк ю. Из зис май сит?", ru: "Спасибо. Это моё место?" },
+        { s: "c", en: "No. That is your seat. This is my seat.", transcr: "Ноу. Зэт из ё сит. Зис из май сит.", ru: "Нет. Вон ваше место. Это моё место." },
+        { s: "w", en: "These are my bags. Where is the exit?", transcr: "Зиз ар май бэгз. Уэа из зэ эксит?", ru: "Это мои сумки. Где выход?" },
+        { s: "c", en: "The exit is there. Goodbye!", transcr: "Зэ эксит из зэа. Гудбай!", ru: "Выход там. До свидания!" },
+      ],
+
+      quiz: [
+        { q: '[COMPLETE] "___ is a bus." (один, рядом)', opts: ["This", "These", "Those", "Are"], c: 0, expl: "Один + рядом → This.", hint_ru: "Один предмет рядом." },
+        { q: '[COMPLETE] "___ are my tickets." (много, рядом)', opts: ["These", "This", "That", "Is"], c: 0, expl: "Много + рядом → These.", hint_ru: "Много предметов рядом." },
+        { q: '[COMPLETE] "___ is the train." (один, далеко)', opts: ["That", "This", "These", "Am"], c: 0, expl: "Один + далеко → That.", hint_ru: "Один предмет далеко." },
+        { q: '[TRANSLATE] "билет"', opts: ["ticket", "seat", "station", "bus"], c: 0, expl: "ticket — билет.", hint_ru: "ticket." },
+        { q: '[TRANSLATE] "поезд"', opts: ["train", "plane", "taxi", "ferry"], c: 0, expl: "train — поезд.", hint_ru: "train." },
+        { q: "[CORRECT] Где правильно (много, далеко)?", opts: ["Those are seats", "That are seats", "Those is seats", "These is seats"], c: 0, expl: "Много + далеко → Those are.", hint_ru: "those + are." },
+        { q: "[QUESTION] Как спросить «это автобус до лагеря?»", opts: ["Is this the bus to the camp?", "This is the bus?", "Bus to the camp?", "Are this bus camp?"], c: 0, expl: "Вопрос: Is this…?", hint_ru: "Is this…?" },
+        { q: "[NEGATIVE] Где отрицание?", opts: ["That is not my seat", "That is my seat", "Is that my seat?", "That my seat"], c: 0, expl: "Отрицание = is + not.", hint_ru: "is not." },
+        { q: "[LISTEN] These are my bags.", opts: ["Это мои сумки.", "Это твоя сумка.", "Где станция?", "Это мой билет."], c: 0, expl: "these — эти (рядом, много); bags — сумки." },
+        { q: "[LISTEN] What time is the train?", opts: ["Во сколько поезд?", "Где поезд?", "Сколько стоит поезд?", "Это поезд?"], c: 0, expl: "what time — во сколько; train — поезд." },
+        { q: "[GIST] Сколько стоит билет (по диалогу)?", opts: ["Три фунта", "Два фунта", "Девять фунтов", "Билет бесплатный"], c: 0, expl: 'В диалоге: «It is three pounds».', hint_ru: "Смотрите ответ про цену." },
+        { q: "[GIST] Во сколько поезд (по диалогу)?", opts: ["В девять", "В три", "В два", "Утром"], c: 0, expl: "В диалоге: «The train is at nine o'clock».", hint_ru: "Смотрите ответ про время." },
+      ],
+
+      everyday: {
+        title_ru: "На станции: купить билет",
+        phrases: [
+          { en: "Excuse me, where is the bus stop?", transcr: "Икскьюз ми, уэа из зэ бас стоп?", ru: "Извините, где автобусная остановка?" },
+          { en: "A single ticket, please.", transcr: "Э сингл тикит, плиз.", ru: "Билет в один конец, пожалуйста." },
+          { en: "What time is the next bus?", transcr: "Уот тайм из зэ нэкст бас?", ru: "Во сколько следующий автобус?" },
+          { en: "Which platform, please?", transcr: "Уич плэтфом, плиз?", ru: "С какой платформы, пожалуйста?" },
+          { en: "Does this bus go to town?", transcr: "Даз зис бас гоу ту таун?", ru: "Этот автобус идёт в город?" },
+        ],
+      },
+    },
   ];
 
   if (typeof module !== "undefined" && module.exports) module.exports = LESSONS;

@@ -107,7 +107,18 @@ RU-only, фермерская тема, снежный ком, аудит пер
      ценовые вопросы переведены на cheese/that/it; «Good.» как реакция на отказ «no soup today» → дроп; несходящийся
      итог корзины «£10» → «£3» (bread £1 + eggs £2; деньги = зона повышенной ответственности). Отклонён ложный флаг:
      «I would not like X» — валидный A0-негатив (урок уже учит «No, thank you» в rule_ru/note_ru). Коммит L10.
-   - [ ] L11–L15 — далее по одному за сессию. **L11 = this/that/these/those + транспорт (bus/ticket/station/stop).**
+   - [x] **L11** «В пути: автобус, поезд, билет» (this/that/these/those + транспорт/поездка). 30 новых BrE-слов:
+     транспорт (bus/coach/train/taxi/lorry/motorbike/plane/ferry/boat) + станция (ticket/station/platform/stop/seat/
+     airport/flight/suitcase/backpack/timetable/journey) + улица (street/corner/traffic/petrol/garage/pavement/
+     crossing/queue/fare/exit). grammar: 3 формы демонстративов (this/that=is · these/those=are; близко/далеко ×
+     один/много) + 12 примеров + «ещё проще» + ytQuery. Диалог «станция» worker↔staff (спросить автобус, купить
+     билет, найти место/выход), everyday «На станции» (single ticket/which platform/next bus). `WHITELIST[11]=which/at`
+     (демонстративы уже в whitelist L1/L3). Грабли учтены: «bus» ≤3+на -s → «buses» только в `cultural_ru` (вне снежка).
+     Аудит зелёный; verify-ipa (3 нотации/варианта: station/garage/pavement, приняты)/verify-transcr (1: queue) чисты;
+     превью 5 табов, 0 ошибок. **Слой-3+4 (объединённый workflow): SHIP после 4 правок** — o'clock «оклок»→«эклок»
+     (дрейф как L7 tomorrow), «are» крутка «а»→«ар» (регрессия от конвенции L1/L3, ~14 мест), 2 эмодзи-обманки
+     (corner 📐→↪️, queue 🧍→👥). Scope сверен с реальным CEFR A0-A1-текстом. Коммит L11.
+   - [ ] L12–L15 — далее по одному за сессию. **L12 = was/were born + даты + личные данные/документы (DOB/NI/form/sign).**
 
 ### Выбранный владельцем порядок (2026-06-18): фазы 1 → 2 → 3 (контент-дыры → навыки),
 последовательно, с приёмкой; тираж 4-15 (вариант 4) пока не запускать.
