@@ -118,7 +118,17 @@ RU-only, фермерская тема, снежный ком, аудит пер
      превью 5 табов, 0 ошибок. **Слой-3+4 (объединённый workflow): SHIP после 4 правок** — o'clock «оклок»→«эклок»
      (дрейф как L7 tomorrow), «are» крутка «а»→«ар» (регрессия от конвенции L1/L3, ~14 мест), 2 эмодзи-обманки
      (corner 📐→↪️, queue 🧍→👥). Scope сверен с реальным CEFR A0-A1-текстом. Коммит L11.
-   - [ ] L12–L15 — далее по одному за сессию. **L12 = was/were born + даты + личные данные/документы (DOB/NI/form/sign).**
+   - [x] **L12** «Личные данные: дата рождения и форма» (was/were + was/were born + даты + личные данные/документы).
+     30 новых слов: 12 месяцев (January–December) + year/date/born/birthday/age/old/address/number/form/email/card/
+     contract/married/single/signature/photo/tick/postcode. grammar: was (I/he/she/it) / were (you/we/they) + was born,
+     3 формы + 12 примеров + «ещё проще» + ytQuery. Диалог «регистрация» manager↔worker, everyday «Заполнить форму»
+     (date of birth/sign here/NI number/fill in this form). `WHITELIST[12]=was/were/when`. Зона повышенной
+     ответственности (документы): без юр./визовых утверждений. Аудит зелёный (поймал и убрал `write` — нет в L6/L7);
+     verify-ipa (April выровнен к RP /ˈeɪprɪl/; January/February/birthday/number — нотация/артефакты)/verify-transcr
+     (1: January, осознанно) чисты; превью «12/12», 0 ошибок. **Слой-3+4 (safety-акцент): контент SHIP** — отклонён
+     ложный флаг (12× 🗓️ месяцев = честно, как L4 дни). Ревью выявило системный баг ассессмента (во всех уроках
+     quiz `c:0` → тык первой кнопки = 100%) → отдельный фикс движка (shuffle опций). Коммит L12.
+   - [ ] L13–L15 — далее по одному за сессию. **L13 = Past Simple reg/irreg + отчёт смены (yesterday/last week/ago/boxes).**
 
 ### Выбранный владельцем порядок (2026-06-18): фазы 1 → 2 → 3 (контент-дыры → навыки),
 последовательно, с приёмкой; тираж 4-15 (вариант 4) пока не запускать.

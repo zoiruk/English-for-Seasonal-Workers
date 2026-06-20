@@ -1,6 +1,6 @@
 # IPA verification report (Wiktionary RP anchor)
 
-Total words: 335 · matched: 294 · divergent: 30 · not found: 11
+Total words: 365 · matched: 323 · divergent: 37 · not found: 5
 
 Normalized away (kept length ː): ɹ↔r, ɡ↔g, ɛ↔e (DRESS vowel), tie-bars & allophonic diacritics, optional (…) segments, stress, syllable dots.
 Divergences below are for OWNER ACCEPTANCE — review each: is our `pn` wrong, or a valid variant?
@@ -37,8 +37,15 @@ Divergences below are for OWNER ACCEPTANCE — review each: is our `pn` wrong, o
 | 9 | broken | `/ˈbrəʊkən/` | `/ˈbɹəʊ.kn̩/` |
 | 9 | empty | `/ˈempti/` | `/ˈɛm(p).ti/` |
 | 11 | station | `/ˈsteɪʃn/` | `/ˈsteɪʃən/` |
+| 11 | timetable | `/ˈtaɪmteɪbl/` | `/ˈtaɪmˌteɪbəl/` |
 | 11 | garage | `/ˈɡærɑːʒ/` | `/ˈɡæ.ɹɪdʒ/` |
 | 11 | pavement | `/ˈpeɪvmənt/` | `/ˈpeɪvm(ə)nt/` |
+| 12 | January | `/ˈdʒænjuəri/` | `/ˈd͡ʒæn.jʊ.ə.ɹi/` |
+| 12 | February | `/ˈfebruəri/` | `/ˈfɛb.ɹʊ.ə.ɹi/` |
+| 12 | July | `/dʒuˈlaɪ/` | `/d͡ʒʊˈlaɪ/` |
+| 12 | birthday | `/ˈbɜːθdeɪ/` | `/ˈbɜːθ.dei/` |
+| 12 | number | `/ˈnʌmbə/` | `/ˈnʌmə/` |
+| 12 | postcode | `/ˈpəʊstkəʊd/` | `/ˈpəʊs(t)kəʊd/` |
 
 ## Not found on Wiktionary (no en RP IPA parsed — verify manually)
 
@@ -47,9 +54,3 @@ Divergences below are for OWNER ACCEPTANCE — review each: is our `pn` wrong, o
 - L4 **payslip** (`/ˈpeɪslɪp/`)
 - L8 **sunglasses** (`/ˈsʌnɡlɑːsɪz/`)
 - L8 **colour** (`/ˈkʌlə/`)
-- L11 **lorry** (`/ˈlɒri/`)
-- L11 **motorbike** (`/ˈməʊtəbaɪk/`)
-- L11 **plane** (`/pleɪn/`)
-- L11 **backpack** (`/ˈbækpæk/`)
-- L11 **timetable** (`/ˈtaɪmteɪbl/`)
-- L11 **journey** (`/ˈdʒɜːni/`)

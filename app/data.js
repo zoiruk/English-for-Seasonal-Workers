@@ -1740,6 +1740,164 @@
         ],
       },
     },
+    {
+      id: 12,
+      mod: 7,
+      title_ru: "Личные данные: дата рождения и форма",
+      cefr: "was / were · was/were born · dates & personal information",
+
+      grammar: {
+        title_ru: "Прошлое от be: was / were · was born",
+        intro_ru:
+          '<div style="line-height:1.6">Прошлое от <b>am/is/are</b>:<br>👉 <b>was</b> <span class="g-transcr">[уоз]</span> — был/была (I, he, she, it).<br>👉 <b>were</b> <span class="g-transcr">[уё]</span> — были (you, we, they).<br>👉 <b>was born</b> <span class="g-transcr">[уоз бон]</span> — родился: «I was born in May».</div>',
+        cultural_ru:
+          'В русском «был / была / были». В английском прошлое от be — всего 2 слова:' +
+          '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:6px">' +
+          '<div><b>I / he / she / it →</b> was <span class="g-transcr">[уоз]</span></div>' +
+          '<div><b>you / we / they →</b> were <span class="g-transcr">[уё]</span></div></div>' +
+          '<div style="margin-top:6px"><b>was / were born</b> <span class="g-transcr">[уоз бон]</span> = «родился». Дата рождения: <b>in May</b>, <b>in 1995</b>.</div>',
+        note_ru:
+          '⚠️ <b>I / he / she / it → was</b>, <b>you / we / they → were</b>. Дата рождения: <b>was / were born in</b> + месяц или год: «I was born <b>in</b> May», «She was born <b>in</b> 1990».',
+        forms: {
+          positive: {
+            label_ru: "✅ Был / были",
+            rule_ru:
+              '<b>was</b> (I/he/she/it) · <b>were</b> (you/we/they) · <b>was born</b> = родился:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>I was a picker</code> <span class="g-transcr">[ай уоз э пикэ]</span></div>' +
+              '<div><code>I was born in May</code> <span class="g-transcr">[ай уоз бон ин мэй]</span></div></div>',
+            table: [
+              { subj: "I", verb: "was", example: "I was a picker", transcr: "Ай уоз э пикэ", tr_ru: "Я был сборщиком" },
+              { subj: "He", verb: "was", example: "He was on the farm", transcr: "Хи уоз он зэ фарм", tr_ru: "Он был на ферме" },
+              { subj: "We", verb: "were", example: "We were a team", transcr: "Уи уё э тим", tr_ru: "Мы были бригадой" },
+              { subj: "I", verb: "was born", example: "I was born in May", transcr: "Ай уоз бон ин мэй", tr_ru: "Я родился в мае" },
+            ],
+          },
+          negative: {
+            label_ru: "❌ Не был / не были",
+            rule_ru:
+              'Отрицание — <b>was not / were not</b>:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>I was not here</code></div>' +
+              '<div><code>They were not on the farm</code></div></div>',
+            table: [
+              { subj: "I", verb: "was not", example: "I was not here", transcr: "Ай уоз нот хиэ", tr_ru: "Меня здесь не было" },
+              { subj: "They", verb: "were not", example: "They were not on the farm", transcr: "Зэй уё нот он зэ фарм", tr_ru: "Их не было на ферме" },
+              { subj: "She", verb: "was not", example: "She was not a packer", transcr: "Ши уоз нот э пэкэ", tr_ru: "Она не была упаковщицей" },
+            ],
+          },
+          question: {
+            label_ru: "❓ Был…? Когда…?",
+            rule_ru:
+              '<b>Was / Were</b> ставим ВПЕРЁД; «когда родился» — <b>When were you born?</b>:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>Were you born in May?</code> <span class="g-transcr">[уё ю бон ин мэй]</span></div>' +
+              '<div><code>When were you born?</code> <span class="g-transcr">[уэн уё ю бон]</span></div></div>',
+            table: [
+              { subj: "Was", verb: "she…?", example: "Was she a picker?", transcr: "Уоз ши э пикэ?", tr_ru: "Она была сборщицей?" },
+              { subj: "Were", verb: "you…?", example: "Were you born in May?", transcr: "Уё ю бон ин мэй?", tr_ru: "Ты родился в мае?" },
+              { subj: "When", verb: "were you born?", example: "When were you born?", transcr: "Уэн уё ю бон?", tr_ru: "Когда ты родился?" },
+            ],
+          },
+        },
+        examples: [
+          { en: "I was a picker.", transcr: "Ай уоз э пикэ.", ru: "Я был сборщиком." },
+          { en: "We were on the farm.", transcr: "Уи уё он зэ фарм.", ru: "Мы были на ферме." },
+          { en: "I was born in May.", transcr: "Ай уоз бон ин мэй.", ru: "Я родился в мае." },
+          { en: "She was born in June.", transcr: "Ши уоз бон ин джун.", ru: "Она родилась в июне." },
+          { en: "When were you born?", transcr: "Уэн уё ю бон?", ru: "Когда ты родился?" },
+          { en: "He was born in April.", transcr: "Хи уоз бон ин эйприл.", ru: "Он родился в апреле." },
+          { en: "Were you a packer?", transcr: "Уё ю э пэкэ?", ru: "Ты был упаковщиком?" },
+          { en: "They were not here.", transcr: "Зэй уё нот хиэ.", ru: "Их здесь не было." },
+          { en: "How old are you?", transcr: "Хау оулд ар ю?", ru: "Сколько тебе лет?" },
+          { en: "My birthday is in July.", transcr: "Май бёсдэй из ин джулай.", ru: "Мой день рождения в июле." },
+          { en: "What is your address?", transcr: "Уот из ё эдрэс?", ru: "Какой у тебя адрес?" },
+          { en: "My address is on the card.", transcr: "Май эдрэс из он зэ кад.", ru: "Мой адрес — на карте." },
+        ],
+        simple_ru: {
+          formula: 'Прошлое от be: <b>I / he / she / it → was</b>, <b>you / we / they → were</b>.<br>Родился = <b>was born</b>.<br><span class="g-transcr">I was a picker · I was born in May</span>',
+          examples: [
+            { en: "I was a picker.", transcr: "Ай уоз э пикэ.", ru: "Я был (was) + сборщик (picker)." },
+            { en: "I was born in May.", transcr: "Ай уоз бон ин мэй.", ru: "Я родился (was born) + в мае (in May)." },
+          ],
+        },
+        ytQuery: "was were past of be английский для начинающих на русском",
+      },
+
+      words: [
+        { e: "🗓️", en: "January", transcr: "джэньюэри", ru: "январь", pn: "/ˈdʒænjuəri/" },
+        { e: "🗓️", en: "February", transcr: "фэбруэри", ru: "февраль", pn: "/ˈfebruəri/" },
+        { e: "🗓️", en: "March", transcr: "мач", ru: "март", pn: "/mɑːtʃ/" },
+        { e: "🗓️", en: "April", transcr: "эйприл", ru: "апрель", pn: "/ˈeɪprɪl/" },
+        { e: "🗓️", en: "May", transcr: "мэй", ru: "май", pn: "/meɪ/" },
+        { e: "🗓️", en: "June", transcr: "джун", ru: "июнь", pn: "/dʒuːn/" },
+        { e: "🗓️", en: "July", transcr: "джулай", ru: "июль", pn: "/dʒuˈlaɪ/" },
+        { e: "🗓️", en: "August", transcr: "огэст", ru: "август", pn: "/ˈɔːɡəst/" },
+        { e: "🗓️", en: "September", transcr: "сэптэмбэ", ru: "сентябрь", pn: "/sepˈtembə/" },
+        { e: "🗓️", en: "October", transcr: "октоубэ", ru: "октябрь", pn: "/ɒkˈtəʊbə/" },
+        { e: "🗓️", en: "November", transcr: "ноувэмбэ", ru: "ноябрь", pn: "/nəʊˈvembə/" },
+        { e: "🗓️", en: "December", transcr: "дисэмбэ", ru: "декабрь", pn: "/dɪˈsembə/" },
+        { e: "📆", en: "year", transcr: "йиэ", ru: "год", pn: "/jɪə/" },
+        { e: "📅", en: "date", transcr: "дэйт", ru: "дата", pn: "/deɪt/" },
+        { e: "👶", en: "born", transcr: "бон", ru: "рождён (родился)", pn: "/bɔːn/" },
+        { e: "🎂", en: "birthday", transcr: "бёсдэй", ru: "день рождения", pn: "/ˈbɜːθdeɪ/" },
+        { e: "🔢", en: "age", transcr: "эйдж", ru: "возраст", pn: "/eɪdʒ/" },
+        { e: "👴", en: "old", transcr: "оулд", ru: "старый (возраст)", pn: "/əʊld/" },
+        { e: "📍", en: "address", transcr: "эдрэс", ru: "адрес", pn: "/əˈdres/" },
+        { e: "#️⃣", en: "number", transcr: "намбэ", ru: "номер", pn: "/ˈnʌmbə/" },
+        { e: "📋", en: "form", transcr: "фом", ru: "анкета (форма)", pn: "/fɔːm/" },
+        { e: "📧", en: "email", transcr: "имэйл", ru: "имейл", pn: "/ˈiːmeɪl/" },
+        { e: "💳", en: "card", transcr: "кад", ru: "карта", pn: "/kɑːd/" },
+        { e: "📄", en: "contract", transcr: "контрэкт", ru: "контракт", pn: "/ˈkɒntrækt/" },
+        { e: "💍", en: "married", transcr: "мэрид", ru: "женат/замужем", pn: "/ˈmærɪd/" },
+        { e: "🧍", en: "single", transcr: "сингл", ru: "не женат/холост", pn: "/ˈsɪŋɡl/" },
+        { e: "✍️", en: "signature", transcr: "сигнэчэ", ru: "подпись", pn: "/ˈsɪɡnətʃə/" },
+        { e: "📷", en: "photo", transcr: "фоутоу", ru: "фото", pn: "/ˈfəʊtəʊ/" },
+        { e: "✅", en: "tick", transcr: "тик", ru: "галочка", pn: "/tɪk/" },
+        { e: "📮", en: "postcode", transcr: "поусткоуд", ru: "почтовый индекс", pn: "/ˈpəʊstkəʊd/" },
+      ],
+
+      dialogue: [
+        { s: "m", en: "Hello. What is your name, please?", transcr: "Хэлоу. Уот из ё нэйм, плиз?", ru: "Здравствуйте. Как вас зовут?" },
+        { s: "w", en: "My name is Ahmad. I am a picker.", transcr: "Май нэйм из Ахмад. Ай эм э пикэ.", ru: "Меня зовут Ахмад. Я сборщик." },
+        { s: "m", en: "When were you born, Ahmad?", transcr: "Уэн уё ю бон, Ахмад?", ru: "Когда вы родились, Ахмад?" },
+        { s: "w", en: "I was born in May. Here is my passport.", transcr: "Ай уоз бон ин мэй. Хиэ из май паспорт.", ru: "Я родился в мае. Вот мой паспорт." },
+        { s: "m", en: "Thank you. What is your address?", transcr: "Сэнк ю. Уот из ё эдрэс?", ru: "Спасибо. Какой ваш адрес?" },
+        { s: "w", en: "This is my address and postcode.", transcr: "Зис из май эдрэс энд поусткоуд.", ru: "Вот мой адрес и индекс." },
+        { s: "m", en: "Good. What is your job now?", transcr: "Гуд. Уот из ё джоб нау?", ru: "Хорошо. Кем вы работаете сейчас?" },
+        { s: "w", en: "I am a picker. This is my contract.", transcr: "Ай эм э пикэ. Зис из май контрэкт.", ru: "Я сборщик. Вот мой контракт." },
+        { s: "m", en: "Please fill in the form here.", transcr: "Плиз фил ин зэ фом хиэ.", ru: "Заполните здесь форму, пожалуйста." },
+        { s: "w", en: "Is this my email and number?", transcr: "Из зис май имэйл энд намбэ?", ru: "Это мой имейл и номер?" },
+        { s: "m", en: "Yes. Are you married?", transcr: "Йес. Ар ю мэрид?", ru: "Да. Вы женаты?" },
+        { s: "w", en: "No, I am single. Thank you!", transcr: "Ноу, ай эм сингл. Сэнк ю!", ru: "Нет, я не женат. Спасибо!" },
+      ],
+
+      quiz: [
+        { q: '[COMPLETE] "I ___ a picker." (прошлое: я)', opts: ["was", "were", "am", "is"], c: 0, expl: "I → was (прошлое).", hint_ru: "I + was." },
+        { q: '[COMPLETE] "They ___ on the farm." (прошлое: они)', opts: ["were", "was", "are", "be"], c: 0, expl: "they → were (прошлое).", hint_ru: "they + were." },
+        { q: '[COMPLETE] "I was ___ in May." (родился)', opts: ["born", "old", "year", "date"], c: 0, expl: "was born — родился.", hint_ru: "was born." },
+        { q: '[TRANSLATE] "год"', opts: ["year", "date", "form", "card"], c: 0, expl: "year — год.", hint_ru: "year." },
+        { q: '[TRANSLATE] "адрес"', opts: ["address", "number", "email", "card"], c: 0, expl: "address — адрес.", hint_ru: "address." },
+        { q: "[CORRECT] Где правильно (прошлое: мы)?", opts: ["We were here", "We was here", "We are here", "We be here"], c: 0, expl: "we → were.", hint_ru: "we + were." },
+        { q: "[QUESTION] Как спросить, когда человек родился?", opts: ["When were you born?", "When you born?", "When was you born?", "Where you born?"], c: 0, expl: "When were you born?", hint_ru: "When were…?" },
+        { q: "[NEGATIVE] Где отрицание?", opts: ["They were not here", "They were here", "Were they here?", "They not here"], c: 0, expl: "Отрицание = were + not.", hint_ru: "were not." },
+        { q: "[LISTEN] I was born in May.", opts: ["Я родился в мае.", "Я родился в июне.", "Где ты родился?", "Это мой адрес."], c: 0, expl: "was born — родился; May — май." },
+        { q: "[LISTEN] What is your address?", opts: ["Какой ваш адрес?", "Как вас зовут?", "Сколько вам лет?", "Где форма?"], c: 0, expl: "address — адрес." },
+        { q: "[GIST] Кем работает Ахмад (по диалогу)?", opts: ["Сборщик (picker)", "Упаковщик", "Водитель", "Менеджер"], c: 0, expl: "В диалоге: «I am a picker».", hint_ru: "Смотрите вторую реплику." },
+        { q: "[GIST] Ахмад женат (по диалогу)?", opts: ["Нет, не женат (single)", "Да, женат", "Не сказано", "Он вдовец"], c: 0, expl: "В диалоге: «I am single».", hint_ru: "Смотрите последнюю реплику." },
+      ],
+
+      everyday: {
+        title_ru: "Заполнить форму (документы)",
+        phrases: [
+          { en: "What is your date of birth?", transcr: "Уот из ё дэйт ов бёс?", ru: "Какая у вас дата рождения?" },
+          { en: "Please sign here.", transcr: "Плиз сайн хиэ.", ru: "Подпишите здесь, пожалуйста." },
+          { en: "What is your National Insurance number?", transcr: "Уот из ё нэшнл иншуэрэнс намбэ?", ru: "Какой у вас номер нацстраховки (NI)?" },
+          { en: "Please fill in this form.", transcr: "Плиз фил ин зис фом.", ru: "Заполните эту форму, пожалуйста." },
+          { en: "Is this your signature?", transcr: "Из зис ё сигнэчэ?", ru: "Это ваша подпись?" },
+        ],
+      },
+    },
   ];
 
   if (typeof module !== "undefined" && module.exports) module.exports = LESSONS;
