@@ -502,6 +502,11 @@
     var qs = les.quiz, idx = 0, score = 0;
     function show() {
       var q = qs[idx];
+      // Shuffle options per render so the correct answer isn't always c:0
+      // (otherwise tapping the first button passes every quiz). Remap c -> cIdx.
+      var order = shuffle(q.opts.map(function (_, i) { return i; }));
+      var opts = order.map(function (k) { return q.opts[k]; });
+      var cIdx = order.indexOf(q.c);
       var tag = (q.q.match(/\[[A-Z]+\]/) || [""])[0];
       var label = (UI[LANG].tags && UI[LANG].tags[tag]) || "";
       var text = q.q.replace(/\[[A-Z]+\]\s*/, "");
@@ -513,7 +518,7 @@
           (q.hint_ru ? '<div class="q-hint">' + esc(q.hint_ru) + "</div>" : "");
       var h = '<div class="card"><div class="q-hint">' + t("q_of", idx + 1, qs.length) + "</div>" +
         qBody +
-        '<div class="opts">' + q.opts.map(function (o, i) {
+        '<div class="opts">' + opts.map(function (o, i) {
           return '<button class="opt" data-i="' + i + '">' + esc(o) + "</button>";
         }).join("") + '</div><div class="q-fb hidden" id="fb"></div>' +
         '<button class="btn hidden" id="nextq"></button></div>';
@@ -528,9 +533,9 @@
           if (answered) return; answered = true;
           var i = +b.dataset.i, fb = document.getElementById("fb");
           root.querySelectorAll(".opt").forEach(function (x) { x.style.pointerEvents = "none"; });
-          root.querySelectorAll(".opt")[q.c].classList.add("correct");
-          if (i === q.c) { score++; fb.className = "q-fb ok"; fb.textContent = t("correct") + " " + (q.expl || ""); }
-          else { b.classList.add("wrong"); fb.className = "q-fb no"; fb.textContent = t("wrong", q.opts[q.c]) + " " + (q.expl || ""); }
+          root.querySelectorAll(".opt")[cIdx].classList.add("correct");
+          if (i === cIdx) { score++; fb.className = "q-fb ok"; fb.textContent = t("correct") + " " + (q.expl || ""); }
+          else { b.classList.add("wrong"); fb.className = "q-fb no"; fb.textContent = t("wrong", opts[cIdx]) + " " + (q.expl || ""); }
           var nb = document.getElementById("nextq");
           nb.textContent = idx + 1 < qs.length ? t("next_q") : t("finish");
           nb.classList.remove("hidden");
