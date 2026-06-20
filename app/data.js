@@ -163,14 +163,48 @@
       ],
 
       everyday: {
-        title_ru: "Первые фразы: знакомство и «не понимаю»",
+        title_ru: "Алфавит, знакомство и «не понимаю»",
+        html:
+          '<div class="g-h">🔤 Алфавит — буквы и их английские названия</div>' +
+          '<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:4px;text-align:center">' +
+          '<div><b>A</b> <span class="g-transcr">эй</span></div>' +
+          '<div><b>B</b> <span class="g-transcr">би</span></div>' +
+          '<div><b>C</b> <span class="g-transcr">си</span></div>' +
+          '<div><b>D</b> <span class="g-transcr">ди</span></div>' +
+          '<div><b>E</b> <span class="g-transcr">и</span></div>' +
+          '<div><b>F</b> <span class="g-transcr">эф</span></div>' +
+          '<div><b>G</b> <span class="g-transcr">джи</span></div>' +
+          '<div><b>H</b> <span class="g-transcr">эйч</span></div>' +
+          '<div><b>I</b> <span class="g-transcr">ай</span></div>' +
+          '<div><b>J</b> <span class="g-transcr">джей</span></div>' +
+          '<div><b>K</b> <span class="g-transcr">кей</span></div>' +
+          '<div><b>L</b> <span class="g-transcr">эл</span></div>' +
+          '<div><b>M</b> <span class="g-transcr">эм</span></div>' +
+          '<div><b>N</b> <span class="g-transcr">эн</span></div>' +
+          '<div><b>O</b> <span class="g-transcr">оу</span></div>' +
+          '<div><b>P</b> <span class="g-transcr">пи</span></div>' +
+          '<div><b>Q</b> <span class="g-transcr">кью</span></div>' +
+          '<div><b>R</b> <span class="g-transcr">ар</span></div>' +
+          '<div><b>S</b> <span class="g-transcr">эс</span></div>' +
+          '<div><b>T</b> <span class="g-transcr">ти</span></div>' +
+          '<div><b>U</b> <span class="g-transcr">ю</span></div>' +
+          '<div><b>V</b> <span class="g-transcr">ви</span></div>' +
+          '<div><b>W</b> <span class="g-transcr">дабл-ю</span></div>' +
+          '<div><b>X</b> <span class="g-transcr">экс</span></div>' +
+          '<div><b>Y</b> <span class="g-transcr">уай</span></div>' +
+          '<div><b>Z</b> <span class="g-transcr">зэд</span></div></div>' +
+          '<div style="margin-top:8px">👉 Своё имя называют <b>по буквам</b>: <b>Ahmad</b> = эй–эйч–эм–эй–ди.<br>Так диктуют имя менеджеру и пишут в форму. ⚠️ <b>Z</b> по-британски — «зэд» (не «зи»).</div>',
         phrases: [
           { en: "Hello!", transcr: "Хэлоу!", ru: "Здравствуйте!" },
           { en: "My name is Ahmad.", transcr: "Май нэйм из Ахмад.", ru: "Меня зовут Ахмад." },
+          { en: "How do you spell your name?", transcr: "Хау ду ю спэл ё нэйм?", ru: "Как пишется ваше имя по буквам?" },
+          { en: "My name is Ahmad: A-H-M-A-D.", transcr: "Май нэйм из Ахмад: эй-эйч-эм-эй-ди.", ru: "Меня зовут Ахмад: A-H-M-A-D." },
           { en: "Sorry?", transcr: "Сори?", ru: "Простите? / Что?" },
           { en: "Again, please.", transcr: "Эгэн, плиз.", ru: "Повторите, пожалуйста." },
           { en: "Slowly, please.", transcr: "Слоули, плиз.", ru: "Медленнее, пожалуйста." },
           { en: "I don't understand.", transcr: "Ай доунт андэстэнд.", ru: "Я не понимаю." },
+          { en: "I speak a little English.", transcr: "Ай спик э литл инглиш.", ru: "Я немного говорю по-английски." },
+          { en: "Do you speak Russian?", transcr: "Ду ю спик рашэн?", ru: "Вы говорите по-русски?" },
           { en: "How do you spell it?", transcr: "Хау ду ю спэл ит?", ru: "Как это пишется по буквам?" },
           { en: "Thank you!", transcr: "Сэнк ю!", ru: "Спасибо!" },
           { en: "Goodbye!", transcr: "Гудбай!", ru: "До свидания!" },
@@ -342,7 +376,14 @@
         intro_ru:
           '<div style="line-height:1.6">Так говорить — ошибка:<br>❌ <b>This crate</b><br>Правильно:<br>✅ <b>This is a crate</b> <span class="g-transcr">[зис из э крэйт]</span> (это ящик)<br>👉 С предметом всегда <b>is</b> + артикль <b>a</b>.</div>',
         cultural_ru:
-          "В русском «это ящик» — без глагола. В английском нужны <b>is</b> и артикль <b>a/an</b>. Много предметов → <b>These are</b> (эти).",
+          "В русском «это ящик» — без глагола. В английском нужны <b>is</b> и артикль <b>a/an</b>. Много предметов → <b>These are</b> (эти)." +
+          '<br><br>📦 <b>Много чего-то — добавь <span class="g-transcr">-s</span> к слову:</b>' +
+          '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:4px">' +
+          "<div>crate → crate<b>s</b> (ящики)</div>" +
+          "<div>tool → tool<b>s</b> (инструменты)</div>" +
+          "<div>punnet → punnet<b>s</b> (корзинки)</div>" +
+          "<div>tray → tray<b>s</b> (лотки)</div></div>" +
+          "👉 После <b>-s, -x, -ch, -sh</b> добавляем <b>-es</b>: box → box<b>es</b> (коробки), glass → glass<b>es</b> (стаканы).",
         note_ru: '⚠️ Перед гласным звуком — <b>an</b>, а не <b>a</b>. И: <b>this</b> (один) → <b>these</b> (много).',
         forms: {
           positive: {
@@ -461,6 +502,8 @@
         { q: '[COMPLETE] "What ___ this?"', opts: ["is", "are", "am", "be"], c: 0, expl: "What is this? — Что это?", hint_ru: "Что это?" },
         { q: "[LISTEN] These are punnets.", opts: ["Это корзинки.", "Это ящики.", "Это инструменты.", "Это тележки."], c: 0, expl: "punnets — корзинки для ягод. crates — ящики. tools — инструменты. trolleys — тележки." },
         { q: "[GIST] Что показывает менеджер рабочему в диалоге?", opts: ["Ящик, корзинки, тележку, весы, инструменты", "Нож, ножницы и молоток", "Семью и коллег", "Паспорт и визу"], c: 0, expl: "Менеджер показывает: crate (ящик), punnets (корзинки), trolley (тележка), scales (весы), tools (инструменты).", hint_ru: "Вспомните диалог." },
+        { q: "[CORRECT] Много ящиков — где правильно?", opts: ["These are crates", "This is crates", "These are crate", "This are crates"], c: 0, expl: "Много → These are + слово с -s: crate → crates.", hint_ru: "Это ящики." },
+        { q: '[TRANSLATE] "коробки" (много)', opts: ["boxes", "box", "crates", "trays"], c: 0, expl: "box → boxes. После -x добавляем -es.", hint_ru: "boxes." },
       ],
 
       everyday: {
@@ -617,11 +660,38 @@
       ],
 
       everyday: {
-        title_ru: "Спросить время, день и про оплату",
+        title_ru: "Числа 11–100, спросить время, день и про оплату",
+        html:
+          '<div class="g-h">🔢 Числа 11–100</div>' +
+          '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:4px">' +
+          '<div><b>11</b> eleven <span class="g-transcr">илэвн</span></div>' +
+          '<div><b>12</b> twelve <span class="g-transcr">туэлв</span></div>' +
+          '<div><b>13</b> thirteen <span class="g-transcr">сётин</span></div>' +
+          '<div><b>14</b> fourteen <span class="g-transcr">фотин</span></div>' +
+          '<div><b>15</b> fifteen <span class="g-transcr">фифтин</span></div>' +
+          '<div><b>16</b> sixteen <span class="g-transcr">сикстин</span></div>' +
+          '<div><b>17</b> seventeen <span class="g-transcr">сэвэнтин</span></div>' +
+          '<div><b>18</b> eighteen <span class="g-transcr">эйтин</span></div>' +
+          '<div><b>19</b> nineteen <span class="g-transcr">найнтин</span></div></div>' +
+          '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin-top:4px">' +
+          '<div><b>20</b> twenty <span class="g-transcr">туэнти</span></div>' +
+          '<div><b>30</b> thirty <span class="g-transcr">сёти</span></div>' +
+          '<div><b>40</b> forty <span class="g-transcr">фоти</span></div>' +
+          '<div><b>50</b> fifty <span class="g-transcr">фифти</span></div>' +
+          '<div><b>60</b> sixty <span class="g-transcr">сиксти</span></div>' +
+          '<div><b>70</b> seventy <span class="g-transcr">сэвэнти</span></div>' +
+          '<div><b>80</b> eighty <span class="g-transcr">эйти</span></div>' +
+          '<div><b>90</b> ninety <span class="g-transcr">найнти</span></div>' +
+          '<div><b>100</b> one hundred <span class="g-transcr">уан хандрэд</span></div></div>' +
+          '<div style="margin-top:8px">👉 <b>13–19</b> = число + <b>-teen</b> <span class="g-transcr">(тин)</span>. <b>20–90</b> = число + <b>-ty</b> <span class="g-transcr">(ти)</span>.<br>Между ними — через дефис: <b>21</b> = twenty-one <span class="g-transcr">туэнти-уан</span>, <b>25</b> = twenty-five <span class="g-transcr">туэнти-файв</span>.</div>',
         phrases: [
           { en: "What time is it?", transcr: "Уот тайм из ит?", ru: "Который час?" },
           { en: "What time do we start?", transcr: "Уот тайм ду уи старт?", ru: "Во сколько мы начинаем?" },
           { en: "What time do we finish?", transcr: "Уот тайм ду уи финиш?", ru: "Во сколько мы заканчиваем?" },
+          { en: "How old are you?", transcr: "Хау оулд ар ю?", ru: "Сколько тебе лет?" },
+          { en: "I am twenty-five.", transcr: "Ай эм туэнти-файв.", ru: "Мне 25 (лет)." },
+          { en: "It is fifteen pounds.", transcr: "Ит из фифтин паундз.", ru: "Это 15 фунтов." },
+          { en: "Forty hours a week.", transcr: "Фоти ауэз э уик.", ru: "40 часов в неделю." },
           { en: "When is payday?", transcr: "Уэн из пэйдэй?", ru: "Когда день зарплаты?" },
           { en: "How much is it?", transcr: "Хау мач из ит?", ru: "Сколько это стоит?" },
           { en: "Can I see my payslip?", transcr: "Кэн ай си май пэйслип?", ru: "Можно посмотреть мой расчётный лист?" },
@@ -2205,13 +2275,16 @@
       ],
 
       everyday: {
-        title_ru: "У врача и экстренная помощь",
+        title_ru: "У врача, совет и экстренная помощь",
         phrases: [
           { en: "I feel sick.", transcr: "Ай фил сик.", ru: "Мне плохо / тошнит." },
           { en: "I need a doctor.", transcr: "Ай нид э доктэ.", ru: "Мне нужен врач." },
           { en: "Call an ambulance!", transcr: "Кол эн эмбьюлэнс!", ru: "Вызовите скорую!" },
           { en: "It is an emergency.", transcr: "Ит из эн имёджэнси.", ru: "Это экстренный случай." },
           { en: "Where is the chemist?", transcr: "Уэа из зэ кэмист?", ru: "Где аптека?" },
+          { en: "Why don't you see a doctor?", transcr: "Уай доунт ю си э доктэ?", ru: "Почему бы тебе не сходить к врачу? (совет)" },
+          { en: "Why don't you rest?", transcr: "Уай доунт ю рэст?", ru: "Почему бы тебе не отдохнуть? (совет)" },
+          { en: "You should drink water.", transcr: "Ю шуд дринк уотэ.", ru: "Тебе стоит попить воды. (совет)" },
         ],
       },
     },
@@ -2364,9 +2437,13 @@
       ],
 
       everyday: {
-        title_ru: "Перерыв и общение",
+        title_ru: "Перерыв, общение и заказ в столовой",
         phrases: [
           { en: "Do you want a cup of tea?", transcr: "Ду ю уонт э кап ов ти?", ru: "Хочешь чашку чая?" },
+          { en: "Can I have a tea, please?", transcr: "Кэн ай хэв э ти, плиз?", ru: "Можно мне чай, пожалуйста? (в столовой)" },
+          { en: "Can I have a sandwich, please?", transcr: "Кэн ай хэв э сэнуич, плиз?", ru: "Можно мне сэндвич, пожалуйста?" },
+          { en: "Anything else?", transcr: "Энисинг элс?", ru: "Что-нибудь ещё? (спрашивает кассир)" },
+          { en: "That is all, thank you.", transcr: "Зэт из ол, сэнк ю.", ru: "Это всё, спасибо." },
           { en: "Cheers, mate!", transcr: "Чиэз, мэйт!", ru: "Спасибо / пока, друг! (брит.)" },
           { en: "That is lovely.", transcr: "Зэт из лавли.", ru: "Это прекрасно. (брит.)" },
           { en: "I like working here.", transcr: "Ай лайк уёкин хиэ.", ru: "Мне нравится здесь работать." },

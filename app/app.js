@@ -351,6 +351,8 @@
     var e = les.everyday;
     var h = '<div class="card note">' + t("everyday_hint") + "</div>";
     h += '<div class="card"><div class="g-h">' + esc(e.title_ru) + "</div>";
+    // optional raw-HTML reference block (alphabet / numbers grid); not snowball/audit-checked
+    if (e.html) h += '<div class="ev-ref">' + e.html + "</div>";
     e.phrases.forEach(function (p) {
       h += '<div class="ex-row">' + spkBtn(p.en) + '<div><div class="en">' + esc(p.en) +
         '</div><div class="tr">' + esc(p.transcr) + '</div><div class="ru">' + esc(p.ru) + "</div></div></div>";
