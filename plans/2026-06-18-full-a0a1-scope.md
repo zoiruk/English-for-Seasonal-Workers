@@ -138,7 +138,16 @@ RU-only, фермерская тема, снежный ком, аудит пер
      BrE верны)/verify-transcr (1: yesterday, как `yes`) чисты; превью «13/13», 0 ошибок. **Слой-3+4: SHIP после
      2 правок** на реплике «I asked the mechanic» — RU-глосс «позвал»→«спросил» (карточка `ask=спрашивать`) и transcr
      `мэканик`→`мэкэник` (канон L2). ⚠️ Построен как override совета — живой тест Б всё ещё не проведён. Коммит L13.
-   - [ ] L14–L15 — далее по одному за сессию. **L14 = can/can't + здоровье/чувства (NHS, зона повышенной ответственности).**
+   - [x] **L14** «Здоровье: «я не могу», у врача» (can/cannot + здоровье/тело/болезнь + чувства/welfare). 30 новых:
+     10 частей тела (hand/arm/leg/foot/eye/ear/tooth/finger/nose/mouth) + 12 болезнь (sick/ill/pain/hurt/cough/fever/
+     headache/medicine/doctor/nurse/chemist/plaster) + 8 чувства/SOS (tired/hungry/thirsty/happy/better/emergency/
+     ambulance/appointment). grammar: can+база ✅ · cannot/can not ❌ · Can you/Can I ❓. Диалог worker↔ВРАЧ (спикер
+     `d` впервые), everyday «У врача» (I feel sick/Call an ambulance/999-111). `WHITELIST[14]=can/cannot`; `can't`
+     только в прозе (ломает снежок). Аудит зелёный (поймал дистрактор `cans` — whitelist не стеммится); verify-ipa
+     (medicine BrE 2-слога, appointment — приняты)/verify-transcr (1: ambulance, как January) чисты; превью «14/14»,
+     0 ошибок. **Слой-3+4 (NHS-safety): SHIP после 1 правки** — эмодзи chemist 🏥→🧴 (аптека≠больница). Safety чисто:
+     999/111 точны (gov.uk), без мед. советов приложения. ⚠️ override совета — живой тест Б не проведён. Коммит L14.
+   - [ ] L15 — последний урок. **L15 = want/like/would like + like/love/hate + -ing + досуг/соц.** → курс 15/15.
 
 ### Выбранный владельцем порядок (2026-06-18): фазы 1 → 2 → 3 (контент-дыры → навыки),
 последовательно, с приёмкой; тираж 4-15 (вариант 4) пока не запускать.

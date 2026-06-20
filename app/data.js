@@ -2058,6 +2058,163 @@
         ],
       },
     },
+    {
+      id: 14,
+      mod: 8,
+      title_ru: "Здоровье: «я не могу», у врача",
+      cefr: "can / cannot · ability & requests · health",
+
+      grammar: {
+        title_ru: "Умею / могу: can / cannot",
+        intro_ru:
+          '<div style="line-height:1.6"><b>can</b> <span class="g-transcr">[кэн]</span> — «умею / могу»: I <b>can</b> lift the box.<br><b>cannot</b> <span class="g-transcr">[кэнот]</span> (= can not) — «не могу»: I <b>cannot</b> work.<br>👉 После can/cannot — <b>база</b> глагола (без -s, без to): «She <b>can help</b>».<br>👉 Просьба: <b>Can you…?</b>. Разрешение: <b>Can I…?</b></div>',
+        cultural_ru:
+          '<b>can</b> не меняется по лицам: I / he / she <b>can</b> (не «cans»), после него — база:' +
+          '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:6px">' +
+          '<div><b>могу:</b> I can work <span class="g-transcr">[ай кэн уёк]</span></div>' +
+          '<div><b>не могу:</b> I cannot work <span class="g-transcr">[ай кэнот уёк]</span></div></div>' +
+          '<div style="margin-top:6px">🇬🇧 Экстренно: <b>999</b> — скорая / полиция; <b>111</b> — совет NHS (не экстренно). В речи «не могу» сокращают: <b>can\'t</b> <span class="g-transcr">[кант]</span>.</div>',
+        note_ru:
+          '⚠️ После <b>can / cannot</b> — глагол в БАЗЕ: «She can <b>help</b>» (не «helps»), «I cannot <b>work</b>». Вопрос — <b>Can</b> вперёд: «<b>Can</b> you help?». В письме «не могу» чаще слитно: <b>cannot</b>.',
+        forms: {
+          positive: {
+            label_ru: "✅ Могу / умею",
+            rule_ru:
+              '<b>can</b> + база глагола (одинаково для всех):<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>I can work</code> <span class="g-transcr">[ай кэн уёк]</span></div>' +
+              '<div><code>She can help</code> <span class="g-transcr">[ши кэн хэлп]</span></div></div>',
+            table: [
+              { subj: "I", verb: "can work", example: "I can work today", transcr: "Ай кэн уёк тудэй", tr_ru: "Я могу работать сегодня" },
+              { subj: "She", verb: "can help", example: "She can help you", transcr: "Ши кэн хэлп ю", tr_ru: "Она может помочь тебе" },
+              { subj: "I", verb: "can lift", example: "I can lift the box", transcr: "Ай кэн лифт зэ бокс", tr_ru: "Я могу поднять ящик" },
+            ],
+          },
+          negative: {
+            label_ru: "❌ Не могу",
+            rule_ru:
+              '<b>cannot</b> (= can not) + база:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>I cannot work</code> <span class="g-transcr">[ай кэнот уёк]</span></div>' +
+              '<div><code>I cannot lift the box</code></div></div>',
+            table: [
+              { subj: "I", verb: "cannot work", example: "I cannot work, I am sick", transcr: "Ай кэнот уёк, ай эм сик", tr_ru: "Я не могу работать, я болен" },
+              { subj: "I", verb: "cannot lift", example: "I cannot lift the box", transcr: "Ай кэнот лифт зэ бокс", tr_ru: "Я не могу поднять ящик" },
+              { subj: "He", verb: "can not walk", example: "He can not walk", transcr: "Хи кэн нот уок", tr_ru: "Он не может идти" },
+            ],
+          },
+          question: {
+            label_ru: "❓ Можешь…? / Можно…?",
+            rule_ru:
+              '<b>Can</b> вперёд + кто + база:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>Can you help me?</code> <span class="g-transcr">[кэн ю хэлп ми]</span></div>' +
+              '<div><code>Can I rest?</code> <span class="g-transcr">[кэн ай рэст]</span></div></div>',
+            table: [
+              { subj: "Can", verb: "you help?", example: "Can you help me?", transcr: "Кэн ю хэлп ми?", tr_ru: "Можешь мне помочь?" },
+              { subj: "Can", verb: "you call?", example: "Can you call a doctor?", transcr: "Кэн ю кол э доктэ?", tr_ru: "Можешь вызвать врача?" },
+              { subj: "Can", verb: "I rest?", example: "Can I rest now?", transcr: "Кэн ай рэст нау?", tr_ru: "Можно мне отдохнуть сейчас?" },
+            ],
+          },
+        },
+        examples: [
+          { en: "I can work today.", transcr: "Ай кэн уёк тудэй.", ru: "Я могу работать сегодня." },
+          { en: "I cannot work. I am sick.", transcr: "Ай кэнот уёк. Ай эм сик.", ru: "Я не могу работать. Я болен." },
+          { en: "My arm hurts.", transcr: "Май ам хётс.", ru: "У меня болит рука." },
+          { en: "Can you help me?", transcr: "Кэн ю хэлп ми?", ru: "Можешь мне помочь?" },
+          { en: "I can not lift the box.", transcr: "Ай кэн нот лифт зэ бокс.", ru: "Я не могу поднять ящик." },
+          { en: "Can you call a doctor?", transcr: "Кэн ю кол э доктэ?", ru: "Можешь вызвать врача?" },
+          { en: "My leg hurts. I cannot walk.", transcr: "Май лэг хётс. Ай кэнот уок.", ru: "У меня болит нога. Я не могу идти." },
+          { en: "I am tired and hungry.", transcr: "Ай эм тайэд энд хангри.", ru: "Я устал и голоден." },
+          { en: "Can I help you?", transcr: "Кэн ай хэлп ю?", ru: "Могу я помочь?" },
+          { en: "He cannot lift the pallet.", transcr: "Хи кэнот лифт зэ пэлит.", ru: "Он не может поднять паллет." },
+          { en: "I have a headache.", transcr: "Ай хэв э хэдэйк.", ru: "У меня болит голова." },
+          { en: "Can you give me the medicine?", transcr: "Кэн ю гив ми зэ мэдсэн?", ru: "Можешь дать мне лекарство?" },
+        ],
+        simple_ru: {
+          formula: '<b>can</b> = могу/умею, <b>cannot</b> = не могу. После — база глагола.<br>Просьба: <b>Can you…?</b><br><span class="g-transcr">I can work · I cannot work · Can you help?</span>',
+          examples: [
+            { en: "I can work.", transcr: "Ай кэн уёк.", ru: "Я могу (can) + работать (work)." },
+            { en: "I cannot work today.", transcr: "Ай кэнот уёк тудэй.", ru: "Я не могу (cannot) + работать сегодня." },
+          ],
+        },
+        ytQuery: "can can't ability английский для начинающих на русском",
+      },
+
+      words: [
+        { e: "✋", en: "hand", transcr: "хэнд", ru: "рука (кисть)", pn: "/hænd/" },
+        { e: "💪", en: "arm", transcr: "ам", ru: "рука", pn: "/ɑːm/" },
+        { e: "🦵", en: "leg", transcr: "лэг", ru: "нога", pn: "/leɡ/" },
+        { e: "🦶", en: "foot", transcr: "фут", ru: "ступня", pn: "/fʊt/" },
+        { e: "👁️", en: "eye", transcr: "ай", ru: "глаз", pn: "/aɪ/" },
+        { e: "👂", en: "ear", transcr: "иэ", ru: "ухо", pn: "/ɪə/" },
+        { e: "🦷", en: "tooth", transcr: "тус", ru: "зуб", pn: "/tuːθ/" },
+        { e: "☝️", en: "finger", transcr: "фингэ", ru: "палец", pn: "/ˈfɪŋɡə/" },
+        { e: "👃", en: "nose", transcr: "ноуз", ru: "нос", pn: "/nəʊz/" },
+        { e: "👄", en: "mouth", transcr: "маус", ru: "рот", pn: "/maʊθ/" },
+        { e: "🤢", en: "sick", transcr: "сик", ru: "больной (тошнит)", pn: "/sɪk/" },
+        { e: "🤒", en: "ill", transcr: "ил", ru: "больной", pn: "/ɪl/" },
+        { e: "😖", en: "pain", transcr: "пэйн", ru: "боль", pn: "/peɪn/" },
+        { e: "🤕", en: "hurt", transcr: "хёт", ru: "болеть (ранить)", pn: "/hɜːt/" },
+        { e: "😷", en: "cough", transcr: "коф", ru: "кашель", pn: "/kɒf/" },
+        { e: "🌡️", en: "fever", transcr: "фивэ", ru: "температура (жар)", pn: "/ˈfiːvə/" },
+        { e: "🤯", en: "headache", transcr: "хэдэйк", ru: "головная боль", pn: "/ˈhedeɪk/" },
+        { e: "💊", en: "medicine", transcr: "мэдсэн", ru: "лекарство", pn: "/ˈmedsən/" },
+        { e: "👨‍⚕️", en: "doctor", transcr: "доктэ", ru: "врач", pn: "/ˈdɒktə/" },
+        { e: "👩‍⚕️", en: "nurse", transcr: "нёс", ru: "медсестра", pn: "/nɜːs/" },
+        { e: "🧴", en: "chemist", transcr: "кэмист", ru: "аптека", pn: "/ˈkemɪst/" },
+        { e: "🩹", en: "plaster", transcr: "пластэ", ru: "пластырь", pn: "/ˈplɑːstə/" },
+        { e: "😫", en: "tired", transcr: "тайэд", ru: "усталый", pn: "/ˈtaɪəd/" },
+        { e: "🍽️", en: "hungry", transcr: "хангри", ru: "голодный", pn: "/ˈhʌŋɡri/" },
+        { e: "🥤", en: "thirsty", transcr: "сёсти", ru: "хочу пить", pn: "/ˈθɜːsti/" },
+        { e: "😊", en: "happy", transcr: "хэпи", ru: "счастливый", pn: "/ˈhæpi/" },
+        { e: "👍", en: "better", transcr: "бэтэ", ru: "лучше", pn: "/ˈbetə/" },
+        { e: "🚨", en: "emergency", transcr: "имёджэнси", ru: "экстренный случай", pn: "/ɪˈmɜːdʒənsi/" },
+        { e: "🚑", en: "ambulance", transcr: "эмбьюлэнс", ru: "скорая помощь", pn: "/ˈæmbjələns/" },
+        { e: "📅", en: "appointment", transcr: "эпойнтмэнт", ru: "приём (запись)", pn: "/əˈpɔɪntmənt/" },
+      ],
+
+      dialogue: [
+        { s: "w", en: "Hello. I am sick. I cannot work.", transcr: "Хэлоу. Ай эм сик. Ай кэнот уёк.", ru: "Здравствуйте. Я болен. Не могу работать." },
+        { s: "d", en: "Hello. What is the problem?", transcr: "Хэлоу. Уот из зэ проблэм?", ru: "Здравствуйте. В чём проблема?" },
+        { s: "w", en: "My arm hurts. I have a fever.", transcr: "Май ам хётс. Ай хэв э фивэ.", ru: "У меня болит рука. У меня температура." },
+        { s: "d", en: "Can you move your arm?", transcr: "Кэн ю мув ё ам?", ru: "Можете двигать рукой?" },
+        { s: "w", en: "No, I cannot. It hurts.", transcr: "Ноу, ай кэнот. Ит хётс.", ru: "Нет, не могу. Болит." },
+        { s: "d", en: "You have a cough. Take this medicine.", transcr: "Ю хэв э коф. Тэйк зис мэдсэн.", ru: "У вас кашель. Принимайте это лекарство." },
+        { s: "w", en: "Thank you. Can I work tomorrow?", transcr: "Сэнк ю. Кэн ай уёк тэмороу?", ru: "Спасибо. Можно мне работать завтра?" },
+        { s: "d", en: "No. You can not work today. Rest.", transcr: "Ноу. Ю кэн нот уёк тудэй. Рэст.", ru: "Нет. Сегодня работать нельзя. Отдыхайте." },
+        { s: "w", en: "Can I have a plaster?", transcr: "Кэн ай хэв э пластэ?", ru: "Можно мне пластырь?" },
+        { s: "d", en: "Yes. Here is a plaster.", transcr: "Йес. Хиэ из э пластэ.", ru: "Да. Вот пластырь." },
+        { s: "w", en: "I am tired. Can I rest now?", transcr: "Ай эм тайэд. Кэн ай рэст нау?", ru: "Я устал. Можно отдохнуть сейчас?" },
+        { s: "d", en: "Yes. You can rest now.", transcr: "Йес. Ю кэн рэст нау.", ru: "Да. Можете отдохнуть сейчас." },
+      ],
+
+      quiz: [
+        { q: '[COMPLETE] "I ___ lift the box." (могу)', opts: ["can", "is", "am", "do"], c: 0, expl: "can + база = умею/могу.", hint_ru: "I can lift." },
+        { q: '[COMPLETE] "I ___ work, I am sick." (не могу)', opts: ["cannot", "can", "do not", "am not"], c: 0, expl: "cannot = не могу.", hint_ru: "cannot." },
+        { q: '[COMPLETE] "She can ___ the box." (база после can)', opts: ["lift", "lifts", "lifted", "lifting"], c: 0, expl: "После can — база (lift), без -s.", hint_ru: "can + база." },
+        { q: '[TRANSLATE] "врач"', opts: ["doctor", "nurse", "medicine", "fever"], c: 0, expl: "doctor — врач.", hint_ru: "doctor." },
+        { q: '[TRANSLATE] "больной"', opts: ["sick", "tired", "happy", "hungry"], c: 0, expl: "sick — больной.", hint_ru: "sick." },
+        { q: "[CORRECT] Где правильно (просьба)?", opts: ["Can you help me?", "You can help me?", "Can you helps me?", "Do you can help?"], c: 0, expl: "Просьба: Can you + база?", hint_ru: "Can you…?" },
+        { q: "[QUESTION] Как попросить вызвать врача?", opts: ["Can you call a doctor?", "Can you calls a doctor?", "You can call doctor?", "Do you can call?"], c: 0, expl: "Просьба: Can you + база (call).", hint_ru: "Can you call…?" },
+        { q: "[NEGATIVE] Где «не могу»?", opts: ["I cannot work", "I can work", "Can I work?", "I work not"], c: 0, expl: "Отрицание: cannot / can not.", hint_ru: "cannot." },
+        { q: "[LISTEN] My arm hurts.", opts: ["У меня болит рука.", "У меня болит нога.", "Я устал.", "Где врач?"], c: 0, expl: "arm — рука; hurts — болит." },
+        { q: "[LISTEN] Can you call a doctor?", opts: ["Можешь вызвать врача?", "Можешь мне помочь?", "Где лекарство?", "Я болен."], c: 0, expl: "can you call — можешь вызвать; doctor — врач." },
+        { q: "[GIST] Что болит у рабочего (по диалогу)?", opts: ["Рука", "Нога", "Голова", "Зуб"], c: 0, expl: "В диалоге: «My arm hurts».", hint_ru: "Смотрите вторую реплику рабочего." },
+        { q: "[GIST] Можно рабочему работать завтра (по диалогу)?", opts: ["Нет, нужно отдыхать", "Да", "Только утром", "Не сказано"], c: 0, expl: "Врач: «You can not work today. Rest».", hint_ru: "Смотрите ответ врача." },
+      ],
+
+      everyday: {
+        title_ru: "У врача и экстренная помощь",
+        phrases: [
+          { en: "I feel sick.", transcr: "Ай фил сик.", ru: "Мне плохо / тошнит." },
+          { en: "I need a doctor.", transcr: "Ай нид э доктэ.", ru: "Мне нужен врач." },
+          { en: "Call an ambulance!", transcr: "Кол эн эмбьюлэнс!", ru: "Вызовите скорую!" },
+          { en: "It is an emergency.", transcr: "Ит из эн имёджэнси.", ru: "Это экстренный случай." },
+          { en: "Where is the chemist?", transcr: "Уэа из зэ кэмист?", ru: "Где аптека?" },
+        ],
+      },
+    },
   ];
 
   if (typeof module !== "undefined" && module.exports) module.exports = LESSONS;

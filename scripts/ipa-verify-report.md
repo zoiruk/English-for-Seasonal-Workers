@@ -1,6 +1,6 @@
 # IPA verification report (Wiktionary RP anchor)
 
-Total words: 395 · matched: 346 · divergent: 40 · not found: 9
+Total words: 425 · matched: 371 · divergent: 42 · not found: 12
 
 Normalized away (kept length ː): ɹ↔r, ɡ↔g, ɛ↔e (DRESS vowel), tie-bars & allophonic diacritics, optional (…) segments, stress, syllable dots.
 Divergences below are for OWNER ACCEPTANCE — review each: is our `pn` wrong, or a valid variant?
@@ -49,6 +49,8 @@ Divergences below are for OWNER ACCEPTANCE — review each: is our `pn` wrong, o
 | 13 | collect | `/kəˈlekt/` | `/ˈkɒlɪkt/` |
 | 13 | park | `/pɑːk/` | `/pɑɹk/` |
 | 13 | mistake | `/mɪˈsteɪk/` | `/mɪˈstʊk/` |
+| 14 | medicine | `/ˈmedsən/` | `/ˈmɛd.ɪ.s(ɪ)n/` |
+| 14 | appointment | `/əˈpɔɪntmənt/` | `/əˈpɔɪnt.mɛnt/` |
 
 ## Not found on Wiktionary (no en RP IPA parsed — verify manually)
 
@@ -57,7 +59,10 @@ Divergences below are for OWNER ACCEPTANCE — review each: is our `pn` wrong, o
 - L4 **payslip** (`/ˈpeɪslɪp/`)
 - L8 **sunglasses** (`/ˈsʌnɡlɑːsɪz/`)
 - L8 **colour** (`/ˈkʌlə/`)
-- L13 **ask** (`/ɑːsk/`)
-- L13 **accident** (`/ˈæksɪdənt/`)
-- L13 **late** (`/leɪt/`)
-- L13 **early** (`/ˈɜːli/`)
+- L14 **tooth** (`/tuːθ/`)
+- L14 **finger** (`/ˈfɪŋɡə/`)
+- L14 **nose** (`/nəʊz/`)
+- L14 **doctor** (`/ˈdɒktə/`)
+- L14 **nurse** (`/nɜːs/`)
+- L14 **chemist** (`/ˈkemɪst/`)
+- L14 **tired** (`/ˈtaɪəd/`)
