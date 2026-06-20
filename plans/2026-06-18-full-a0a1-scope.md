@@ -147,7 +147,15 @@ RU-only, фермерская тема, снежный ком, аудит пер
      (medicine BrE 2-слога, appointment — приняты)/verify-transcr (1: ambulance, как January) чисты; превью «14/14»,
      0 ошибок. **Слой-3+4 (NHS-safety): SHIP после 1 правки** — эмодзи chemist 🏥→🧴 (аптека≠больница). Safety чисто:
      999/111 точны (gov.uk), без мед. советов приложения. ⚠️ override совета — живой тест Б не проведён. Коммит L14.
-   - [ ] L15 — последний урок. **L15 = want/like/would like + like/love/hate + -ing + досуг/соц.** → курс 15/15.
+   - [x] **L15** «Свободное время: что я люблю» (want + like/love/hate + -ing/предмет + досуг/соц.). 30 новых:
+     досуг (music/football/sport/film/game/song/dance/swim/run/cook/party/holiday/hobby/picture/radio/news/story) +
+     BrE-соц. (cheers/lovely/mate) + качества (fun/bored/busy/favourite/free/nice/great/relax/enjoy/joke). grammar:
+     like/love/hate + -ing/предмет ✅ · do not like ❌ · Do you like…? ❓ + want. Диалог «болтовня в перерыве» (m↔w),
+     everyday «Перерыв и общение». `WHITELIST[15]=love/hate/want`. Ловушки обойдены: инфлексии whitelist-глаголов
+     (loves/likes) и небезопасные -ing (dancing/running) ломают снежок → база + безопасные -ing (picking/cooking).
+     Аудит зелёный; verify-ipa (favourite выровнен, enjoy en-in-вариант)/verify-transcr (music/news/game — нотации)
+     чисты; превью «15/15», 0 ошибок. **Слой-3+4: SHIP после 1 правки** — «I hate work»→«I hate **working** on
+     Sunday» (правило like+ing). ⚠️ override совета — живой тест Б не проведён. Коммит L15. **→ КУРС A0–A1 ПОЛОН 15/15.**
 
 ### Выбранный владельцем порядок (2026-06-18): фазы 1 → 2 → 3 (контент-дыры → навыки),
 последовательно, с приёмкой; тираж 4-15 (вариант 4) пока не запускать.

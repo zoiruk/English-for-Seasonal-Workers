@@ -35,6 +35,7 @@ const WHITELIST = {
   12: ["was","were","when"],
   13: ["did","last","ate","drank","left","bought","paid","drove"],
   14: ["can","cannot"],
+  15: ["love","hate","want"],
 };
 const NAMES = ["ahmad","tom","sara","anna","john","ali","omar","rustam","fatima"];
 

@@ -2215,6 +2215,165 @@
         ],
       },
     },
+    {
+      id: 15,
+      mod: 8,
+      title_ru: "Свободное время: что я люблю",
+      cefr: "want · like / love / hate + -ing · leisure",
+
+      grammar: {
+        title_ru: "Нравится / хочу: like · love · hate · want",
+        intro_ru:
+          '<div style="line-height:1.6">Что нравится / хочется:<br>👉 <b>like / love / hate</b> + предмет ИЛИ глагол с <b>-ing</b>: «I <b>like</b> football», «I <b>love</b> <b>picking</b>», «I <b>hate</b> the cold».<br>👉 <b>want</b> <span class="g-transcr">[уонт]</span> — «хочу» + предмет: «I <b>want</b> a break».<br>👉 Вопрос / отрицание — через <b>do</b>: «<b>Do</b> you like…?», «I <b>do not</b> like…».</div>',
+        cultural_ru:
+          'В английском сила чувства — три слова:' +
+          '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;margin-top:6px">' +
+          '<div>😍 <b>love</b> <span class="g-transcr">[лав]</span> — обожаю</div>' +
+          '<div>🙂 <b>like</b> <span class="g-transcr">[лайк]</span> — нравится</div>' +
+          '<div>😣 <b>hate</b> <span class="g-transcr">[хэйт]</span> — ненавижу</div></div>' +
+          '<div style="margin-top:6px">После них — предмет (football) или глагол с <b>-ing</b> (picking). <b>want</b> = «хочу» прямо; <b>would like</b> (урок 10) — то же, но вежливее.</div>',
+        note_ru:
+          '⚠️ После <b>like / love / hate</b> — предмет ИЛИ глагол с <b>-ing</b>, не голый глагол: «I like <b>picking</b>» (не «I like pick»). Вопрос и отрицание — через <b>do / do not</b>: «<b>Do</b> you like…?», «I <b>do not</b> like…».',
+        forms: {
+          positive: {
+            label_ru: "✅ Нравится / хочу",
+            rule_ru:
+              '<b>like / love / hate</b> + предмет или <b>-ing</b>:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>I love football</code> <span class="g-transcr">[ай лав футбол]</span></div>' +
+              '<div><code>I like picking</code> <span class="g-transcr">[ай лайк пикинг]</span></div></div>',
+            table: [
+              { subj: "I", verb: "love", example: "I love football", transcr: "Ай лав футбол", tr_ru: "Я люблю футбол" },
+              { subj: "I", verb: "like", example: "I like picking", transcr: "Ай лайк пикинг", tr_ru: "Мне нравится собирать" },
+              { subj: "I", verb: "hate", example: "I hate the cold", transcr: "Ай хэйт зэ коулд", tr_ru: "Я ненавижу холод" },
+              { subj: "I", verb: "want", example: "I want a break", transcr: "Ай уонт э брэйк", tr_ru: "Я хочу перерыв" },
+            ],
+          },
+          negative: {
+            label_ru: "❌ Не нравится",
+            rule_ru:
+              '<b>do not</b> + like / love / hate:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>I do not like films</code></div>' +
+              '<div><code>I do not like the cold</code></div></div>',
+            table: [
+              { subj: "I", verb: "do not like", example: "I do not like films", transcr: "Ай ду нот лайк филмз", tr_ru: "Мне не нравятся фильмы" },
+              { subj: "I", verb: "do not like", example: "I do not like the cold", transcr: "Ай ду нот лайк зэ коулд", tr_ru: "Я не люблю холод" },
+              { subj: "She", verb: "does not like", example: "She does not like cooking", transcr: "Ши даз нот лайк кукинг", tr_ru: "Ей не нравится готовить" },
+            ],
+          },
+          question: {
+            label_ru: "❓ Нравится…?",
+            rule_ru:
+              '<b>Do</b> + you + like / love / hate:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>Do you like football?</code> <span class="g-transcr">[ду ю лайк футбол]</span></div>' +
+              '<div><code>Do you like music?</code></div></div>',
+            table: [
+              { subj: "Do", verb: "you like…?", example: "Do you like football?", transcr: "Ду ю лайк футбол?", tr_ru: "Ты любишь футбол?" },
+              { subj: "Do", verb: "you like…?", example: "Do you like music?", transcr: "Ду ю лайк мьюзик?", tr_ru: "Тебе нравится музыка?" },
+              { subj: "What", verb: "do you want?", example: "What do you want?", transcr: "Уот ду ю уонт?", tr_ru: "Что ты хочешь?" },
+            ],
+          },
+        },
+        examples: [
+          { en: "I like football.", transcr: "Ай лайк футбол.", ru: "Мне нравится футбол." },
+          { en: "I love music.", transcr: "Ай лав мьюзик.", ru: "Я люблю музыку." },
+          { en: "I hate the cold.", transcr: "Ай хэйт зэ коулд.", ru: "Я ненавижу холод." },
+          { en: "I like picking.", transcr: "Ай лайк пикинг.", ru: "Мне нравится собирать." },
+          { en: "I do not like films.", transcr: "Ай ду нот лайк филмз.", ru: "Мне не нравятся фильмы." },
+          { en: "Do you like football?", transcr: "Ду ю лайк футбол?", ru: "Ты любишь футбол?" },
+          { en: "I want a break.", transcr: "Ай уонт э брэйк.", ru: "Я хочу перерыв." },
+          { en: "I want tea.", transcr: "Ай уонт ти.", ru: "Я хочу чай." },
+          { en: "We love cooking.", transcr: "Уи лав кукинг.", ru: "Мы любим готовить." },
+          { en: "I hate cleaning.", transcr: "Ай хэйт клинин.", ru: "Я ненавижу убирать." },
+          { en: "Do you like music?", transcr: "Ду ю лайк мьюзик?", ru: "Тебе нравится музыка?" },
+          { en: "We like sport.", transcr: "Уи лайк спот.", ru: "Мы любим спорт." },
+        ],
+        simple_ru: {
+          formula: '<b>like / love / hate</b> + предмет или глагол с <b>-ing</b>. <b>want</b> = хочу + предмет.<br>Вопрос: <b>Do you like…?</b><br><span class="g-transcr">I love football · I like picking · I want tea</span>',
+          examples: [
+            { en: "I love football.", transcr: "Ай лав футбол.", ru: "Я люблю (love) + футбол (football)." },
+            { en: "I like picking.", transcr: "Ай лайк пикинг.", ru: "Мне нравится (like) + собирать (picking)." },
+          ],
+        },
+        ytQuery: "like love hate ing want английский для начинающих на русском",
+      },
+
+      words: [
+        { e: "🎵", en: "music", transcr: "мьюзик", ru: "музыка", pn: "/ˈmjuːzɪk/" },
+        { e: "⚽", en: "football", transcr: "футбол", ru: "футбол", pn: "/ˈfʊtbɔːl/" },
+        { e: "🏅", en: "sport", transcr: "спот", ru: "спорт", pn: "/spɔːt/" },
+        { e: "🎬", en: "film", transcr: "филм", ru: "фильм", pn: "/fɪlm/" },
+        { e: "🎮", en: "game", transcr: "гейм", ru: "игра", pn: "/ɡeɪm/" },
+        { e: "🎶", en: "song", transcr: "сонг", ru: "песня", pn: "/sɒŋ/" },
+        { e: "💃", en: "dance", transcr: "данс", ru: "танец", pn: "/dɑːns/" },
+        { e: "🏊", en: "swim", transcr: "суим", ru: "плавать", pn: "/swɪm/" },
+        { e: "🏃", en: "run", transcr: "ран", ru: "бегать", pn: "/rʌn/" },
+        { e: "🍳", en: "cook", transcr: "кук", ru: "готовить", pn: "/kʊk/" },
+        { e: "🎉", en: "party", transcr: "пати", ru: "вечеринка", pn: "/ˈpɑːti/" },
+        { e: "🏖️", en: "holiday", transcr: "холидэй", ru: "отпуск/каникулы", pn: "/ˈhɒlɪdeɪ/" },
+        { e: "🎨", en: "hobby", transcr: "хоби", ru: "хобби", pn: "/ˈhɒbi/" },
+        { e: "🖼️", en: "picture", transcr: "пикчэ", ru: "картинка/фото", pn: "/ˈpɪktʃə/" },
+        { e: "📻", en: "radio", transcr: "рэйдиоу", ru: "радио", pn: "/ˈreɪdiəʊ/" },
+        { e: "📰", en: "news", transcr: "ньюз", ru: "новости", pn: "/njuːz/" },
+        { e: "📖", en: "story", transcr: "стори", ru: "история (рассказ)", pn: "/ˈstɔːri/" },
+        { e: "🍻", en: "cheers", transcr: "чиэз", ru: "спасибо/будем (брит.)", pn: "/tʃɪəz/" },
+        { e: "😍", en: "lovely", transcr: "лавли", ru: "прекрасно (брит.)", pn: "/ˈlʌvli/" },
+        { e: "👫", en: "mate", transcr: "мэйт", ru: "друг/приятель (брит.)", pn: "/meɪt/" },
+        { e: "🎈", en: "fun", transcr: "фан", ru: "весело", pn: "/fʌn/" },
+        { e: "😑", en: "bored", transcr: "бод", ru: "скучно", pn: "/bɔːd/" },
+        { e: "😓", en: "busy", transcr: "бизи", ru: "занятый", pn: "/ˈbɪzi/" },
+        { e: "⭐", en: "favourite", transcr: "фэйврит", ru: "любимый", pn: "/ˈfeɪvrɪt/" },
+        { e: "🆓", en: "free", transcr: "фри", ru: "свободный", pn: "/friː/" },
+        { e: "🙂", en: "nice", transcr: "найс", ru: "приятный/хороший", pn: "/naɪs/" },
+        { e: "🌟", en: "great", transcr: "грэйт", ru: "отлично", pn: "/ɡreɪt/" },
+        { e: "😌", en: "relax", transcr: "рилэкс", ru: "отдыхать (расслабиться)", pn: "/rɪˈlæks/" },
+        { e: "😊", en: "enjoy", transcr: "инджой", ru: "наслаждаться", pn: "/ɪnˈdʒɔɪ/" },
+        { e: "😄", en: "joke", transcr: "джоук", ru: "шутка", pn: "/dʒəʊk/" },
+      ],
+
+      dialogue: [
+        { s: "m", en: "Hello! Do you like football?", transcr: "Хэлоу! Ду ю лайк футбол?", ru: "Привет! Любишь футбол?" },
+        { s: "w", en: "Yes, I love football. And you?", transcr: "Йес, ай лав футбол. Энд ю?", ru: "Да, я обожаю футбол. А ты?" },
+        { s: "m", en: "I like music. I have a radio.", transcr: "Ай лайк мьюзик. Ай хэв э рэйдиоу.", ru: "Мне нравится музыка. У меня есть радио." },
+        { s: "w", en: "Lovely! What do you do at the weekend?", transcr: "Лавли! Уот ду ю ду эт зэ уикэнд?", ru: "Здорово! Что ты делаешь на выходных?" },
+        { s: "m", en: "I cook and rest. I hate working on Sunday.", transcr: "Ай кук энд рэст. Ай хэйт уёкин он сандэй.", ru: "Готовлю и отдыхаю. Ненавижу работать в воскресенье." },
+        { s: "w", en: "I want a break now.", transcr: "Ай уонт э брэйк нау.", ru: "Я хочу перерыв сейчас." },
+        { s: "m", en: "Do you like films?", transcr: "Ду ю лайк филмз?", ru: "Ты любишь фильмы?" },
+        { s: "w", en: "Yes, I like films. And music.", transcr: "Йес, ай лайк филмз. Энд мьюзик.", ru: "Да, люблю фильмы. И музыку." },
+        { s: "m", en: "Do you want tea?", transcr: "Ду ю уонт ти?", ru: "Хочешь чаю?" },
+        { s: "w", en: "Yes, please. Cheers, mate!", transcr: "Йес, плиз. Чиэз, мэйт!", ru: "Да, пожалуйста. Спасибо, друг!" },
+        { s: "m", en: "Time to work now.", transcr: "Тайм ту уёк нау.", ru: "Пора работать." },
+        { s: "w", en: "Yes. I am happy now.", transcr: "Йес. Ай эм хэпи нау.", ru: "Да. Я доволен." },
+      ],
+
+      quiz: [
+        { q: '[COMPLETE] "I ___ football." (люблю)', opts: ["love", "am", "is", "do"], c: 0, expl: "love — люблю.", hint_ru: "I love football." },
+        { q: '[COMPLETE] "I like ___." (нравится собирать)', opts: ["picking", "pick", "picked", "picks"], c: 0, expl: "like + -ing: picking.", hint_ru: "like + -ing." },
+        { q: '[COMPLETE] "Do you ___ films?" (нравятся)', opts: ["like", "am", "is", "are"], c: 0, expl: "Do you like…? (база like).", hint_ru: "Do you like…?" },
+        { q: '[TRANSLATE] "музыка"', opts: ["music", "film", "game", "song"], c: 0, expl: "music — музыка.", hint_ru: "music." },
+        { q: '[TRANSLATE] "хочу"', opts: ["want", "like", "love", "hate"], c: 0, expl: "want — хотеть.", hint_ru: "want." },
+        { q: "[CORRECT] Где правильно (нравится делать)?", opts: ["I like cooking", "I like cook", "I am like cooking", "I like to cooking"], c: 0, expl: "like + -ing: cooking.", hint_ru: "like + -ing." },
+        { q: "[QUESTION] Как спросить «ты любишь футбол?»", opts: ["Do you like football?", "You like football?", "Like you football?", "Are you like football?"], c: 0, expl: "Do you like…?", hint_ru: "Do you like…?" },
+        { q: "[NEGATIVE] Где «не люблю холод»?", opts: ["I do not like the cold", "I not like the cold", "I am not like the cold", "Do not I like the cold"], c: 0, expl: "Отрицание: do not + like.", hint_ru: "do not like." },
+        { q: "[LISTEN] I love music.", opts: ["Я люблю музыку.", "Я люблю футбол.", "Я хочу чай.", "Мне нравятся фильмы."], c: 0, expl: "love — люблю; music — музыка." },
+        { q: "[LISTEN] Do you want tea?", opts: ["Хочешь чаю?", "Любишь чай?", "Где чай?", "Это твой чай?"], c: 0, expl: "do you want — хочешь; tea — чай." },
+        { q: "[GIST] Что любит рабочий (по диалогу)?", opts: ["Футбол", "Танцы", "Рыбалку", "Сон"], c: 0, expl: "В диалоге: «I love football».", hint_ru: "Смотрите вторую реплику." },
+        { q: "[GIST] Что предложил мейт в конце (по диалогу)?", opts: ["Чай", "Кофе", "Фильм", "Игру"], c: 0, expl: "В диалоге: «Do you want tea?»", hint_ru: "Смотрите конец диалога." },
+      ],
+
+      everyday: {
+        title_ru: "Перерыв и общение",
+        phrases: [
+          { en: "Do you want a cup of tea?", transcr: "Ду ю уонт э кап ов ти?", ru: "Хочешь чашку чая?" },
+          { en: "Cheers, mate!", transcr: "Чиэз, мэйт!", ru: "Спасибо / пока, друг! (брит.)" },
+          { en: "That is lovely.", transcr: "Зэт из лавли.", ru: "Это прекрасно. (брит.)" },
+          { en: "I like working here.", transcr: "Ай лайк уёкин хиэ.", ru: "Мне нравится здесь работать." },
+          { en: "See you tomorrow!", transcr: "Си ю тэмороу!", ru: "Увидимся завтра!" },
+        ],
+      },
+    },
   ];
 
   if (typeof module !== "undefined" && module.exports) module.exports = LESSONS;

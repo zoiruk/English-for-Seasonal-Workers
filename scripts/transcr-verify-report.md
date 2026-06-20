@@ -1,6 +1,6 @@
 # Transcr self-consistency report (cyrillic vs IPA-derived)
 
-Total: 425 · consistent: 399 · divergent: 26
+Total: 455 · consistent: 426 · divergent: 29
 
 Expected = mechanical phoneme→cyrillic from our `pn` (course convention).
 Divergences are for OWNER ACCEPTANCE: a real transcr error, or a deliberate
@@ -35,3 +35,6 @@ map doesn't cover. Not a pass/fail — a review list of where crutch ≠ sound.
 | 12 | January | `/ˈdʒænjuəri/` | джэньюэри | джэнйуэри |
 | 13 | yesterday | `/ˈjestədeɪ/` | йестэдэй | йэстэдэй |
 | 14 | ambulance | `/ˈæmbjələns/` | эмбьюлэнс | эмбйэлэнс |
+| 15 | music | `/ˈmjuːzɪk/` | мьюзик | мйузик |
+| 15 | game | `/ɡeɪm/` | гейм | гэйм |
+| 15 | news | `/njuːz/` | ньюз | нйуз |
