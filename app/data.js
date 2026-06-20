@@ -1898,6 +1898,166 @@
         ],
       },
     },
+    {
+      id: 13,
+      mod: 7,
+      title_ru: "Прошлая смена: что я делал",
+      cefr: "Past Simple · regular & irregular · shift report",
+
+      grammar: {
+        title_ru: "Прошлое: Past Simple (правильные и неправильные)",
+        intro_ru:
+          '<div style="line-height:1.6">Прошлое (вчера, на прошлой смене):<br>👉 <b>Правильные</b> глаголы: + <b>-ed</b> — work → <b>worked</b> <span class="g-transcr">[уёкт]</span>, pack → <b>packed</b> <span class="g-transcr">[пэкт]</span>.<br>👉 <b>Неправильные</b> — форма меняется: eat → <b>ate</b> <span class="g-transcr">[эйт]</span>, buy → <b>bought</b> <span class="g-transcr">[бот]</span>.<br>👉 Отрицание/вопрос: <b>did</b> + БАЗА: «I <b>did not work</b>», «<b>Did</b> you work?».</div>',
+        cultural_ru:
+          'В русском «делал / сделал» — одна форма меняется. В английском прошлое от глагола двух видов:' +
+          '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:6px">' +
+          '<div><b>правильные (+ed):</b> work → worked <span class="g-transcr">[уёкт]</span></div>' +
+          '<div><b>неправильные:</b> eat → ate <span class="g-transcr">[эйт]</span></div>' +
+          '<div>pack → packed <span class="g-transcr">[пэкт]</span></div>' +
+          '<div>buy → bought <span class="g-transcr">[бот]</span></div></div>' +
+          '<div style="margin-top:6px">Отрицание и вопрос — через <b>did</b> + база (не прошедшая форма): «I <b>did not</b> work», «<b>Did</b> you work?».</div>',
+        note_ru:
+          '⚠️ В ОТРИЦАНИИ и ВОПРОСЕ глагол в БАЗЕ, не в прошедшей форме: «I did not <b>work</b>» (НЕ «did not worked»), «Did you <b>eat</b>?» (НЕ «Did you ate?»). Прошедшая форма (worked, ate) — только в утверждении.',
+        forms: {
+          positive: {
+            label_ru: "✅ Утверждение (прошлое)",
+            rule_ru:
+              'Правильные + <b>-ed</b>; неправильные меняются:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>I worked yesterday</code> <span class="g-transcr">[ай уёкт йестэдэй]</span></div>' +
+              '<div><code>I ate lunch</code> <span class="g-transcr">[ай эйт ланч]</span></div></div>',
+            table: [
+              { subj: "I", verb: "worked", example: "I worked yesterday", transcr: "Ай уёкт йестэдэй", tr_ru: "Я работал вчера" },
+              { subj: "I", verb: "packed", example: "I packed the boxes", transcr: "Ай пэкт зэ боксиз", tr_ru: "Я упаковал ящики" },
+              { subj: "I", verb: "ate", example: "I ate lunch", transcr: "Ай эйт ланч", tr_ru: "Я пообедал" },
+              { subj: "I", verb: "bought", example: "I bought a ticket", transcr: "Ай бот э тикит", tr_ru: "Я купил билет" },
+            ],
+          },
+          negative: {
+            label_ru: "❌ Отрицание (did not + база)",
+            rule_ru:
+              '<b>did not</b> + БАЗА глагола:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>I did not work</code></div>' +
+              '<div><code>I did not eat lunch</code></div></div>',
+            table: [
+              { subj: "I", verb: "did not work", example: "I did not work yesterday", transcr: "Ай дид нот уёк йестэдэй", tr_ru: "Я не работал вчера" },
+              { subj: "I", verb: "did not eat", example: "I did not eat lunch", transcr: "Ай дид нот ит ланч", tr_ru: "Я не обедал" },
+              { subj: "We", verb: "did not finish", example: "We did not finish", transcr: "Уи дид нот финиш", tr_ru: "Мы не закончили" },
+            ],
+          },
+          question: {
+            label_ru: "❓ Вопрос (Did + база)",
+            rule_ru:
+              '<b>Did</b> + кто + БАЗА глагола:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>Did you work?</code> <span class="g-transcr">[дид ю уёк]</span></div>' +
+              '<div><code>Did you eat lunch?</code> <span class="g-transcr">[дид ю ит ланч]</span></div></div>',
+            table: [
+              { subj: "Did", verb: "you work?", example: "Did you work yesterday?", transcr: "Дид ю уёк йестэдэй?", tr_ru: "Ты работал вчера?" },
+              { subj: "Did", verb: "you eat?", example: "Did you eat lunch?", transcr: "Дид ю ит ланч?", tr_ru: "Ты пообедал?" },
+              { subj: "Did", verb: "she drive?", example: "Did she drive?", transcr: "Дид ши драйв?", tr_ru: "Она водила?" },
+            ],
+          },
+        },
+        examples: [
+          { en: "I worked hard last week.", transcr: "Ай уёкт хад ласт уик.", ru: "Я тяжело работал на прошлой неделе." },
+          { en: "I packed the boxes.", transcr: "Ай пэкт зэ боксиз.", ru: "Я упаковал ящики." },
+          { en: "I ate lunch at one o'clock.", transcr: "Ай эйт ланч эт уан эклок.", ru: "Я пообедал в час." },
+          { en: "I left work at six.", transcr: "Ай лэфт уёк эт сикс.", ru: "Я ушёл с работы в шесть." },
+          { en: "I bought a ticket.", transcr: "Ай бот э тикит.", ru: "Я купил билет." },
+          { en: "I paid ten pounds.", transcr: "Ай пэйд тэн паундз.", ru: "Я заплатил десять фунтов." },
+          { en: "Did you work yesterday?", transcr: "Дид ю уёк йестэдэй?", ru: "Ты работал вчера?" },
+          { en: "I did not work yesterday.", transcr: "Ай дид нот уёк йестэдэй.", ru: "Я не работал вчера." },
+          { en: "I drove the tractor.", transcr: "Ай дроув зэ трэктэ.", ru: "Я водил трактор." },
+          { en: "I drank tea at lunch.", transcr: "Ай дрэнк ти эт ланч.", ru: "Я выпил чай в обед." },
+          { en: "We finished two hours ago.", transcr: "Уи финишт ту ауэз эгоу.", ru: "Мы закончили два часа назад." },
+          { en: "I cleaned the pallet.", transcr: "Ай клинд зэ пэлит.", ru: "Я почистил паллет." },
+        ],
+        simple_ru: {
+          formula: 'Прошлое: правильные + <b>-ed</b> (worked), неправильные меняются (ate, bought).<br>Отрицание/вопрос: <b>did</b> + база.<br><span class="g-transcr">I worked yesterday · Did you work?</span>',
+          examples: [
+            { en: "I worked yesterday.", transcr: "Ай уёкт йестэдэй.", ru: "Я работал (worked) + вчера (yesterday)." },
+            { en: "Did you work?", transcr: "Дид ю уёк?", ru: "did + ты + работа (база): Ты работал?" },
+          ],
+        },
+        ytQuery: "past simple regular irregular английский для начинающих на русском",
+      },
+
+      words: [
+        { e: "🍽️", en: "eat", transcr: "ит", ru: "есть (кушать)", pn: "/iːt/" },
+        { e: "🥤", en: "drink", transcr: "дринк", ru: "пить", pn: "/drɪŋk/" },
+        { e: "🚶", en: "leave", transcr: "лив", ru: "уходить", pn: "/liːv/" },
+        { e: "🛒", en: "buy", transcr: "бай", ru: "покупать", pn: "/baɪ/" },
+        { e: "💷", en: "pay", transcr: "пэй", ru: "платить", pn: "/peɪ/" },
+        { e: "🚗", en: "drive", transcr: "драйв", ru: "водить (машину)", pn: "/draɪv/" },
+        { e: "📥", en: "collect", transcr: "кэлэкт", ru: "собирать (забирать)", pn: "/kəˈlekt/" },
+        { e: "🚚", en: "deliver", transcr: "диливэ", ru: "доставлять", pn: "/dɪˈlɪvə/" },
+        { e: "📤", en: "unload", transcr: "анлоуд", ru: "разгружать", pn: "/ˌʌnˈləʊd/" },
+        { e: "🔧", en: "repair", transcr: "рипэа", ru: "чинить", pn: "/rɪˈpeə/" },
+        { e: "🙋", en: "ask", transcr: "аск", ru: "спрашивать", pn: "/ɑːsk/" },
+        { e: "💬", en: "answer", transcr: "ансэ", ru: "отвечать", pn: "/ˈɑːnsə/" },
+        { e: "↩️", en: "return", transcr: "ритён", ru: "возвращать(ся)", pn: "/rɪˈtɜːn/" },
+        { e: "🅿️", en: "park", transcr: "пак", ru: "парковать", pn: "/pɑːk/" },
+        { e: "📅", en: "yesterday", transcr: "йестэдэй", ru: "вчера", pn: "/ˈjestədeɪ/" },
+        { e: "⏪", en: "ago", transcr: "эгоу", ru: "назад (тому)", pn: "/əˈɡəʊ/" },
+        { e: "📋", en: "report", transcr: "рипот", ru: "отчёт", pn: "/rɪˈpɔːt/" },
+        { e: "🕐", en: "shift", transcr: "шифт", ru: "смена", pn: "/ʃɪft/" },
+        { e: "👔", en: "boss", transcr: "бос", ru: "начальник", pn: "/bɒs/" },
+        { e: "⚠️", en: "problem", transcr: "проблэм", ru: "проблема", pn: "/ˈprɒbləm/" },
+        { e: "❌", en: "mistake", transcr: "мистэйк", ru: "ошибка", pn: "/mɪˈsteɪk/" },
+        { e: "🚑", en: "accident", transcr: "эксидэнт", ru: "несчастный случай", pn: "/ˈæksɪdənt/" },
+        { e: "⏰", en: "late", transcr: "лэйт", ru: "поздно (опоздал)", pn: "/leɪt/" },
+        { e: "🌅", en: "early", transcr: "ёли", ru: "рано", pn: "/ˈɜːli/" },
+        { e: "📦", en: "pallet", transcr: "пэлит", ru: "паллет (поддон)", pn: "/ˈpælɪt/" },
+        { e: "🛌", en: "weekend", transcr: "уикэнд", ru: "выходные", pn: "/ˌwiːkˈend/" },
+        { e: "🍴", en: "lunch", transcr: "ланч", ru: "обед", pn: "/lʌntʃ/" },
+        { e: "⏱️", en: "minute", transcr: "минит", ru: "минута", pn: "/ˈmɪnɪt/" },
+        { e: "💪", en: "hard", transcr: "хад", ru: "тяжело (усердно)", pn: "/hɑːd/" },
+        { e: "⏳", en: "overtime", transcr: "оувэтайм", ru: "переработка", pn: "/ˈəʊvətaɪm/" },
+      ],
+
+      dialogue: [
+        { s: "m", en: "Hello. How was your shift?", transcr: "Хэлоу. Хау уоз ё шифт?", ru: "Здравствуй. Как прошла смена?" },
+        { s: "w", en: "Good. I packed many boxes.", transcr: "Гуд. Ай пэкт мэни боксиз.", ru: "Хорошо. Я упаковал много ящиков." },
+        { s: "m", en: "Did you finish the pallets?", transcr: "Дид ю финиш зэ пэлитс?", ru: "Ты закончил паллеты?" },
+        { s: "w", en: "Yes. I finished two hours ago.", transcr: "Йес. Ай финишт ту ауэз эгоу.", ru: "Да. Я закончил два часа назад." },
+        { s: "m", en: "Did you have a problem?", transcr: "Дид ю хэв э проблэм?", ru: "Была проблема?" },
+        { s: "w", en: "Yes. The tractor was broken.", transcr: "Йес. Зэ трэктэ уоз броукэн.", ru: "Да. Трактор был сломан." },
+        { s: "m", en: "Did you repair it?", transcr: "Дид ю рипэа ит?", ru: "Ты починил его?" },
+        { s: "w", en: "No. I asked the mechanic.", transcr: "Ноу. Ай аскт зэ мэкэник.", ru: "Нет. Я спросил механика." },
+        { s: "m", en: "Good. Did you eat lunch?", transcr: "Гуд. Дид ю ит ланч?", ru: "Хорошо. Ты пообедал?" },
+        { s: "w", en: "Yes. I ate lunch at one.", transcr: "Йес. Ай эйт ланч эт уан.", ru: "Да. Я пообедал в час." },
+        { s: "m", en: "When did you leave?", transcr: "Уэн дид ю лив?", ru: "Когда ты ушёл?" },
+        { s: "w", en: "I left at six. The shift was hard.", transcr: "Ай лэфт эт сикс. Зэ шифт уоз хад.", ru: "Я ушёл в шесть. Смена была тяжёлой." },
+      ],
+
+      quiz: [
+        { q: '[COMPLETE] "I ___ yesterday." (работал — прошлое)', opts: ["worked", "work", "working", "works"], c: 0, expl: "Правильный глагол в прошлом: work + ed.", hint_ru: "work + ed." },
+        { q: '[COMPLETE] "I ___ lunch." (ел — неправильный)', opts: ["ate", "eat", "eated", "eating"], c: 0, expl: "eat → ate (неправильный глагол).", hint_ru: "eat → ate." },
+        { q: '[COMPLETE] "I did not ___ yesterday." (после did — база)', opts: ["work", "worked", "working", "works"], c: 0, expl: "После did not — база (work), не worked.", hint_ru: "did not + база." },
+        { q: '[TRANSLATE] "вчера"', opts: ["yesterday", "today", "tomorrow", "week"], c: 0, expl: "yesterday — вчера.", hint_ru: "yesterday." },
+        { q: '[TRANSLATE] "смена"', opts: ["shift", "report", "pallet", "boss"], c: 0, expl: "shift — смена.", hint_ru: "shift." },
+        { q: "[CORRECT] Где правильно (вопрос в прошлом)?", opts: ["Did you work yesterday?", "Did you worked yesterday?", "You worked yesterday?", "Do you work yesterday?"], c: 0, expl: "Вопрос в прошлом: Did + база.", hint_ru: "Did + база." },
+        { q: "[QUESTION] Как спросить «ты поел?»", opts: ["Did you eat?", "Did you ate?", "You did eat?", "Do you ate?"], c: 0, expl: "Did you + база (eat).", hint_ru: "Did you eat?" },
+        { q: "[NEGATIVE] Где отрицание в прошлом?", opts: ["I did not work", "I do not work", "I was not work", "I not worked"], c: 0, expl: "Прошлое отрицание: did not + база.", hint_ru: "did not + база." },
+        { q: "[LISTEN] I left work at six.", opts: ["Я ушёл с работы в шесть.", "Я пришёл на работу в шесть.", "Я работал шесть часов.", "Где моя смена?"], c: 0, expl: "left — ушёл (leave); at six — в шесть." },
+        { q: "[LISTEN] Did you finish the pallets?", opts: ["Ты закончил паллеты?", "Ты упаковал ящики?", "Сколько паллет?", "Где паллеты?"], c: 0, expl: "did you finish — ты закончил; pallets — паллеты." },
+        { q: "[GIST] Что было сломано в смене (по диалогу)?", opts: ["Трактор", "Паллет", "Ящик", "Касса"], c: 0, expl: "В диалоге: «The tractor was broken».", hint_ru: "Смотрите про проблему." },
+        { q: "[GIST] Во сколько рабочий ушёл (по диалогу)?", opts: ["В шесть", "В час", "Два часа назад", "Рано утром"], c: 0, expl: "В диалоге: «I left at six».", hint_ru: "Смотрите последнюю реплику." },
+      ],
+
+      everyday: {
+        title_ru: "Отчёт о смене",
+        phrases: [
+          { en: "My shift is finished.", transcr: "Май шифт из финишт.", ru: "Моя смена закончена." },
+          { en: "I packed all the boxes.", transcr: "Ай пэкт ол зэ боксиз.", ru: "Я упаковал все ящики." },
+          { en: "There was a problem today.", transcr: "Зэа уоз э проблэм тудэй.", ru: "Сегодня была проблема." },
+          { en: "I had an accident at work.", transcr: "Ай хэд эн эксидэнт эт уёк.", ru: "У меня был несчастный случай на работе." },
+          { en: "Can I do overtime?", transcr: "Кэн ай ду оувэтайм?", ru: "Можно мне переработку?" },
+        ],
+      },
+    },
   ];
 
   if (typeof module !== "undefined" && module.exports) module.exports = LESSONS;

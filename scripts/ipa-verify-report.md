@@ -1,6 +1,6 @@
 # IPA verification report (Wiktionary RP anchor)
 
-Total words: 365 · matched: 323 · divergent: 37 · not found: 5
+Total words: 395 · matched: 346 · divergent: 40 · not found: 9
 
 Normalized away (kept length ː): ɹ↔r, ɡ↔g, ɛ↔e (DRESS vowel), tie-bars & allophonic diacritics, optional (…) segments, stress, syllable dots.
 Divergences below are for OWNER ACCEPTANCE — review each: is our `pn` wrong, or a valid variant?
@@ -46,6 +46,9 @@ Divergences below are for OWNER ACCEPTANCE — review each: is our `pn` wrong, o
 | 12 | birthday | `/ˈbɜːθdeɪ/` | `/ˈbɜːθ.dei/` |
 | 12 | number | `/ˈnʌmbə/` | `/ˈnʌmə/` |
 | 12 | postcode | `/ˈpəʊstkəʊd/` | `/ˈpəʊs(t)kəʊd/` |
+| 13 | collect | `/kəˈlekt/` | `/ˈkɒlɪkt/` |
+| 13 | park | `/pɑːk/` | `/pɑɹk/` |
+| 13 | mistake | `/mɪˈsteɪk/` | `/mɪˈstʊk/` |
 
 ## Not found on Wiktionary (no en RP IPA parsed — verify manually)
 
@@ -54,3 +57,7 @@ Divergences below are for OWNER ACCEPTANCE — review each: is our `pn` wrong, o
 - L4 **payslip** (`/ˈpeɪslɪp/`)
 - L8 **sunglasses** (`/ˈsʌnɡlɑːsɪz/`)
 - L8 **colour** (`/ˈkʌlə/`)
+- L13 **ask** (`/ɑːsk/`)
+- L13 **accident** (`/ˈæksɪdənt/`)
+- L13 **late** (`/leɪt/`)
+- L13 **early** (`/ˈɜːli/`)
