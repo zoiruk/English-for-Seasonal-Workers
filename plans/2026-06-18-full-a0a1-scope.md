@@ -92,7 +92,22 @@ RU-only, фермерская тема, снежный ком, аудит пер
      3 ревьюеров (коллокации · BrE/A0 · CEFR+safety), слой-4 гейт пройден.**
      ⚠️ Грабли стеммера: `bed`≤3 не стеммится, а `beds`→`b` → плюрал не матчится в снежке; в проверяемых полях
      использовать `chairs`/`blankets`, не `beds` (в `rule_ru` снежок не сканирует — там натуральный `beds` ок).
-   - [ ] L10–L15 — далее по одному за сессию. **L10 = how much/many + would like + еда/напитки (Tesco).**
+   - [x] **L10** «В магазине: еда и цены (Tesco)» (how much / how many + would like + еда/напитки/покупки).
+     30 новых BrE-слов: 17 неисчисляемых (food/bread/milk/rice/pasta/meat/fish/cheese/butter/honey/sugar/salt/
+     water/juice/tea/coffee/soup) + 8 исчисляемых (egg/potato/onion/tomato/carrot/banana/biscuit/chicken) +
+     5 шопинг (shopping/list/price/tin/kilo). grammar: 3 формы (would like ✅ / would not like + «No, thank you» ❌ /
+     how much·how many·Would you like ❓) + 12 примеров + «ещё проще» + ytQuery. **Все ценовые вопросы — на
+     неисчисляемых/ед.ч.** (much↔many без скрытого price-исключения, чтобы не конфликтовать с ключом quiz).
+     everyday «В магазине и на кассе (Tesco)» (Excuse me / Can I have / How much is it / Have you got).
+     [LISTEN]×2/[GIST]×2/[QUESTION] + 13 quiz. Числа словами (one–ten из L4; токенайзер срезает цифры → «£2»
+     нельзя в снежок-полях). `WHITELIST[10]=many/would/like/of`. Аудит зелёный, verify-ipa (0 расхождений)/
+     verify-transcr (1 нотация: onion) по L10 чисты, превью-рендер OK (5 табов, 0 ошибок консоли).
+     **Слой-3 (адверс.) + слой-4 (`/lesson-naturalness-check`, source-cited 5 источников): SHIP после 5 правок** —
+     поймано: «how much are the bananas/eggs» (исчисляемые → правило much/many, противоречие ключу quiz[7]) →
+     ценовые вопросы переведены на cheese/that/it; «Good.» как реакция на отказ «no soup today» → дроп; несходящийся
+     итог корзины «£10» → «£3» (bread £1 + eggs £2; деньги = зона повышенной ответственности). Отклонён ложный флаг:
+     «I would not like X» — валидный A0-негатив (урок уже учит «No, thank you» в rule_ru/note_ru). Коммит L10.
+   - [ ] L11–L15 — далее по одному за сессию. **L11 = this/that/these/those + транспорт (bus/ticket/station/stop).**
 
 ### Выбранный владельцем порядок (2026-06-18): фазы 1 → 2 → 3 (контент-дыры → навыки),
 последовательно, с приёмкой; тираж 4-15 (вариант 4) пока не запускать.

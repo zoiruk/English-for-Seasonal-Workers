@@ -1418,6 +1418,167 @@
         ],
       },
     },
+    {
+      id: 10,
+      mod: 6,
+      title_ru: "В магазине: еда и цены (Tesco)",
+      cefr: "how much / how many · would like · food & drink",
+
+      grammar: {
+        title_ru: "Сколько? и вежливое «я хочу»: how much / many · would like",
+        intro_ru:
+          '<div style="line-height:1.6">Чтобы спросить «сколько?», выбираем слово:<br>❓ <b>How much</b> <span class="g-transcr">[хау мач]</span> — для того, что НЕ считают по штукам (milk, rice, bread).<br>❓ <b>How many</b> <span class="g-transcr">[хау мэни]</span> — для того, что считают (eggs, bananas).<br>👉 Вежливо «я хочу» = <b>I would like</b> <span class="g-transcr">[ай уд лайк]</span> (а не грубое «I want»).</div>',
+        cultural_ru:
+          'В русском «сколько молока?» и «сколько яиц?» — одно слово «сколько». В английском два:' +
+          '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:6px">' +
+          '<div><b>не по штукам:</b> How much milk? <span class="g-transcr">[хау мач милк]</span></div>' +
+          '<div><b>по штукам:</b> How many eggs? <span class="g-transcr">[хау мэни эгз]</span></div></div>' +
+          '<div style="margin-top:6px"><b>I want</b> звучит грубо. В магазине говорят вежливо: <b>I would like…</b> <span class="g-transcr">[ай уд лайк]</span> или <b>Can I have…?</b></div>',
+        note_ru:
+          '⚠️ <b>much</b> — с неисчисляемыми (milk, rice, water: нет «milks»). <b>many</b> — с исчисляемыми во множественном (eggs, bananas). После <b>would like</b> ставим <b>a / some</b> + еду: «I would like <b>some</b> bread», «I would like <b>a</b> banana».',
+        forms: {
+          positive: {
+            label_ru: "✅ Я хочу (вежливо)",
+            rule_ru:
+              '<b>I would like</b> + <b>a / some</b> + еда:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>I would like some bread</code> <span class="g-transcr">[ай уд лайк сам брэд]</span></div>' +
+              '<div><code>I would like two eggs</code> <span class="g-transcr">[ай уд лайк ту эгз]</span></div></div>',
+            table: [
+              { subj: "I", verb: "would like", example: "I would like some bread", transcr: "Ай уд лайк сам брэд", tr_ru: "Я хочу хлеба" },
+              { subj: "I", verb: "would like", example: "I would like two eggs", transcr: "Ай уд лайк ту эгз", tr_ru: "Я хочу два яйца" },
+              { subj: "I", verb: "would like", example: "I would like some rice", transcr: "Ай уд лайк сам райс", tr_ru: "Я хочу риса" },
+              { subj: "She", verb: "would like", example: "She would like a banana", transcr: "Ши уд лайк э бэнанэ", tr_ru: "Она хочет банан" },
+            ],
+          },
+          negative: {
+            label_ru: "❌ Не хочу / отказ",
+            rule_ru:
+              'Отказ — <b>would not like</b>; вежливо в жизни говорят <b>No, thank you</b>:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>I would not like sugar</code></div>' +
+              '<div><code>No, thank you</code> <span class="g-transcr">[ноу, сэнк ю]</span></div></div>',
+            table: [
+              { subj: "I", verb: "would not like", example: "I would not like sugar", transcr: "Ай уд нот лайк шугэ", tr_ru: "Я не хочу сахар" },
+              { subj: "—", verb: "—", example: "No, thank you", transcr: "Ноу, сэнк ю", tr_ru: "Нет, спасибо" },
+              { subj: "I", verb: "would not like", example: "I would not like coffee", transcr: "Ай уд нот лайк кофи", tr_ru: "Я не хочу кофе" },
+              { subj: "We", verb: "would not like", example: "We would not like soup", transcr: "Уи уд нот лайк суп", tr_ru: "Мы не хотим суп" },
+            ],
+          },
+          question: {
+            label_ru: "❓ Сколько? / Хотите?",
+            rule_ru:
+              '<b>How much</b> (не по штукам) · <b>How many</b> (по штукам) · <b>Would you like…?</b>:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>How much is the milk?</code> <span class="g-transcr">[хау мач из зэ милк]</span></div>' +
+              '<div><code>How many eggs?</code> <span class="g-transcr">[хау мэни эгз]</span></div></div>',
+            table: [
+              { subj: "How much", verb: "is the milk?", example: "How much is the milk?", transcr: "Хау мач из зэ милк?", tr_ru: "Сколько стоит молоко?" },
+              { subj: "How many", verb: "eggs?", example: "How many eggs?", transcr: "Хау мэни эгз?", tr_ru: "Сколько яиц?" },
+              { subj: "Would", verb: "you like some tea?", example: "Would you like some tea?", transcr: "Уд ю лайк сам ти?", tr_ru: "Хотите чаю?" },
+              { subj: "How much", verb: "is the bread?", example: "How much is the bread?", transcr: "Хау мач из зэ брэд?", tr_ru: "Сколько стоит хлеб?" },
+            ],
+          },
+        },
+        examples: [
+          { en: "How much is the bread?", transcr: "Хау мач из зэ брэд?", ru: "Сколько стоит хлеб?" },
+          { en: "It is one pound.", transcr: "Ит из уан паунд.", ru: "Один фунт." },
+          { en: "How much is the milk?", transcr: "Хау мач из зэ милк?", ru: "Сколько стоит молоко?" },
+          { en: "It is two pounds.", transcr: "Ит из ту паундз.", ru: "Два фунта." },
+          { en: "How many eggs would you like?", transcr: "Хау мэни эгз уд ю лайк?", ru: "Сколько яиц вы хотите?" },
+          { en: "I would like six eggs.", transcr: "Ай уд лайк сикс эгз.", ru: "Я хочу шесть яиц." },
+          { en: "I would like some rice.", transcr: "Ай уд лайк сам райс.", ru: "Я хочу немного риса." },
+          { en: "Would you like some tea?", transcr: "Уд ю лайк сам ти?", ru: "Хотите чаю?" },
+          { en: "Yes, please.", transcr: "Йес, плиз.", ru: "Да, пожалуйста." },
+          { en: "I would like a tin of soup.", transcr: "Ай уд лайк э тин ов суп.", ru: "Я хочу банку супа." },
+          { en: "How much is the cheese?", transcr: "Хау мач из зэ чиз?", ru: "Сколько стоит сыр?" },
+          { en: "It is three pounds.", transcr: "Ит из фри паундз.", ru: "Три фунта." },
+        ],
+        simple_ru: {
+          formula: 'Не по штукам (milk, rice, bread) → <b>How much</b>. По штукам (eggs, bananas) → <b>How many</b>.<br>Вежливо «хочу» → <b>I would like…</b><br><span class="g-transcr">How much is the milk? · I would like some bread</span>',
+          examples: [
+            { en: "How much is the milk?", transcr: "Хау мач из зэ милк?", ru: "Сколько стоит молоко?" },
+            { en: "I would like some bread.", transcr: "Ай уд лайк сам брэд.", ru: "Я хочу (немного) хлеба." },
+          ],
+        },
+        ytQuery: "how much how many would like английский для начинающих на русском",
+      },
+
+      words: [
+        { e: "🥘", en: "food", transcr: "фуд", ru: "еда", pn: "/fuːd/" },
+        { e: "🍞", en: "bread", transcr: "брэд", ru: "хлеб", pn: "/bred/" },
+        { e: "🥛", en: "milk", transcr: "милк", ru: "молоко", pn: "/mɪlk/" },
+        { e: "🍚", en: "rice", transcr: "райс", ru: "рис", pn: "/raɪs/" },
+        { e: "🍝", en: "pasta", transcr: "пэстэ", ru: "макароны", pn: "/ˈpæstə/" },
+        { e: "🥩", en: "meat", transcr: "мит", ru: "мясо", pn: "/miːt/" },
+        { e: "🐟", en: "fish", transcr: "фиш", ru: "рыба", pn: "/fɪʃ/" },
+        { e: "🧀", en: "cheese", transcr: "чиз", ru: "сыр", pn: "/tʃiːz/" },
+        { e: "🧈", en: "butter", transcr: "батэ", ru: "масло (сливочное)", pn: "/ˈbʌtə/" },
+        { e: "🍯", en: "honey", transcr: "хани", ru: "мёд", pn: "/ˈhʌni/" },
+        { e: "🍬", en: "sugar", transcr: "шугэ", ru: "сахар", pn: "/ˈʃʊɡə/" },
+        { e: "🧂", en: "salt", transcr: "солт", ru: "соль", pn: "/sɒlt/" },
+        { e: "💧", en: "water", transcr: "уотэ", ru: "вода", pn: "/ˈwɔːtə/" },
+        { e: "🧃", en: "juice", transcr: "джус", ru: "сок", pn: "/dʒuːs/" },
+        { e: "🍵", en: "tea", transcr: "ти", ru: "чай", pn: "/tiː/" },
+        { e: "☕", en: "coffee", transcr: "кофи", ru: "кофе", pn: "/ˈkɒfi/" },
+        { e: "🍲", en: "soup", transcr: "суп", ru: "суп", pn: "/suːp/" },
+        { e: "🥚", en: "egg", transcr: "эг", ru: "яйцо", pn: "/eɡ/" },
+        { e: "🥔", en: "potato", transcr: "пэтэйтоу", ru: "картофель", pn: "/pəˈteɪtəʊ/" },
+        { e: "🧅", en: "onion", transcr: "аньэн", ru: "лук", pn: "/ˈʌnjən/" },
+        { e: "🍅", en: "tomato", transcr: "тэматоу", ru: "помидор", pn: "/təˈmɑːtəʊ/" },
+        { e: "🥕", en: "carrot", transcr: "кэрэт", ru: "морковь", pn: "/ˈkærət/" },
+        { e: "🍌", en: "banana", transcr: "бэнанэ", ru: "банан", pn: "/bəˈnɑːnə/" },
+        { e: "🍪", en: "biscuit", transcr: "бискит", ru: "печенье", pn: "/ˈbɪskɪt/" },
+        { e: "🍗", en: "chicken", transcr: "чикин", ru: "курица", pn: "/ˈtʃɪkɪn/" },
+        { e: "🛒", en: "shopping", transcr: "шопинг", ru: "покупки", pn: "/ˈʃɒpɪŋ/" },
+        { e: "📝", en: "list", transcr: "лист", ru: "список", pn: "/lɪst/" },
+        { e: "🏷️", en: "price", transcr: "прайс", ru: "цена", pn: "/praɪs/" },
+        { e: "🥫", en: "tin", transcr: "тин", ru: "банка (консервы)", pn: "/tɪn/" },
+        { e: "⚖️", en: "kilo", transcr: "килоу", ru: "килограмм", pn: "/ˈkiːləʊ/" },
+      ],
+
+      dialogue: [
+        { s: "w", en: "Hello. I would like some bread, please.", transcr: "Хэлоу. Ай уд лайк сам брэд, плиз.", ru: "Здравствуйте. Я хочу хлеба, пожалуйста." },
+        { s: "c", en: "Here is the bread. It is one pound.", transcr: "Хиэ из зэ брэд. Ит из уан паунд.", ru: "Вот хлеб. Один фунт." },
+        { s: "w", en: "Thank you. How much is the milk?", transcr: "Сэнк ю. Хау мач из зэ милк?", ru: "Спасибо. Сколько стоит молоко?" },
+        { s: "c", en: "The milk is two pounds.", transcr: "Зэ милк из ту паундз.", ru: "Молоко — два фунта." },
+        { s: "w", en: "I would like six eggs, please.", transcr: "Ай уд лайк сикс эгз, плиз.", ru: "Я хочу шесть яиц, пожалуйста." },
+        { s: "c", en: "We have some eggs. Here you are.", transcr: "Уи хэв сам эгз. Хиэ ю а.", ru: "У нас есть яйца. Вот, пожалуйста." },
+        { s: "w", en: "How much is that?", transcr: "Хау мач из зэт?", ru: "Сколько это стоит?" },
+        { s: "c", en: "Two pounds. Would you like a bag?", transcr: "Ту паундз. Уд ю лайк э бэг?", ru: "Два фунта. Хотите пакет?" },
+        { s: "w", en: "Yes, please. I would like a tin of soup.", transcr: "Йес, плиз. Ай уд лайк э тин ов суп.", ru: "Да, пожалуйста. Я хочу банку супа." },
+        { s: "c", en: "Sorry, there is no soup today.", transcr: "Сори, зэа из ноу суп тудэй.", ru: "Извините, супа сегодня нет." },
+        { s: "w", en: "How much is it?", transcr: "Хау мач из ит?", ru: "Сколько с меня?" },
+        { s: "c", en: "It is three pounds. Thank you.", transcr: "Ит из фри паундз. Сэнк ю.", ru: "Три фунта. Спасибо." },
+      ],
+
+      quiz: [
+        { q: '[COMPLETE] "How ___ is the milk?" (молоко — не по штукам)', opts: ["much", "many", "are", "some"], c: 0, expl: "milk неисчисляемое → how much.", hint_ru: "Молоко не считают по штукам." },
+        { q: '[COMPLETE] "How ___ eggs would you like?" (яйца — по штукам)', opts: ["many", "much", "is", "a"], c: 0, expl: "eggs исчисляемые → how many.", hint_ru: "Яйца считают по штукам." },
+        { q: '[TRANSLATE] "хлеб"', opts: ["bread", "milk", "rice", "cheese"], c: 0, expl: "bread — хлеб.", hint_ru: "bread." },
+        { q: '[TRANSLATE] "яйцо"', opts: ["egg", "fish", "meat", "soup"], c: 0, expl: "egg — яйцо.", hint_ru: "egg." },
+        { q: "[CORRECT] Где вежливая просьба?", opts: ["I would like some tea", "I would tea", "Like some tea", "I am like tea"], c: 0, expl: "Вежливо: I would like + еда.", hint_ru: "would like." },
+        { q: '[COMPLETE] "I ___ like some bread." (вежливо «хочу»)', opts: ["would", "does", "are", "has"], c: 0, expl: "I would like = вежливо «я хочу».", hint_ru: "would like." },
+        { q: "[NEGATIVE] Где вежливый отказ?", opts: ["No, thank you", "No, thank", "Not, thank you", "No thank me"], c: 0, expl: "Вежливый отказ: No, thank you.", hint_ru: "Нет, спасибо." },
+        { q: "[CORRECT] Где правильно (по штукам)?", opts: ["How many eggs?", "How much eggs?", "How many milk?", "How much many eggs?"], c: 0, expl: "Исчисляемые (eggs) → how many.", hint_ru: "many + штуки." },
+        { q: "[LISTEN] I would like some rice.", opts: ["Я хочу немного риса.", "Я хочу немного хлеба.", "Сколько стоит рис?", "У меня есть рис."], c: 0, expl: "would like — вежливо «хочу»; rice — рис." },
+        { q: "[LISTEN] How much is the chicken?", opts: ["Сколько стоит курица?", "Сколько яиц?", "Где курица?", "Курица готова."], c: 0, expl: "how much — сколько стоит; chicken — курица." },
+        { q: "[GIST] Что рабочий просит первым (по диалогу)?", opts: ["Хлеб", "Молоко", "Яйца", "Суп"], c: 0, expl: 'В диалоге первая просьба: «I would like some bread».', hint_ru: "Смотрите первую реплику." },
+        { q: "[GIST] Почему рабочий не купил суп (по диалогу)?", opts: ["Супа сегодня нет", "Суп дорогой", "Рабочий не любит суп", "Касса закрыта"], c: 0, expl: "Кассир: «there is no soup today».", hint_ru: "Смотрите ответ кассира." },
+        { q: "[QUESTION] Как спросить цену хлеба?", opts: ["How much is the bread?", "How many bread?", "How much bread is?", "Bread how much?"], c: 0, expl: "Цена неисчисляемого: How much is the + еда?", hint_ru: "How much is…?" },
+      ],
+
+      everyday: {
+        title_ru: "В магазине и на кассе (Tesco)",
+        phrases: [
+          { en: "Excuse me, where is the bread?", transcr: "Икскьюз ми, уэа из зэ брэд?", ru: "Извините, где хлеб?" },
+          { en: "Can I have a bag, please?", transcr: "Кэн ай хэв э бэг, плиз?", ru: "Можно пакет, пожалуйста?" },
+          { en: "How much is it?", transcr: "Хау мач из ит?", ru: "Сколько это стоит?" },
+          { en: "Have you got any milk?", transcr: "Хэв ю гот эни милк?", ru: "У вас есть молоко?" },
+          { en: "Here is five pounds.", transcr: "Хиэ из файв паундз.", ru: "Вот пять фунтов." },
+        ],
+      },
+    },
   ];
 
   if (typeof module !== "undefined" && module.exports) module.exports = LESSONS;

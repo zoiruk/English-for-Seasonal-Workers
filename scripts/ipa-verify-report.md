@@ -1,6 +1,6 @@
 # IPA verification report (Wiktionary RP anchor)
 
-Total words: 275 · matched: 238 · divergent: 26 · not found: 11
+Total words: 305 · matched: 267 · divergent: 27 · not found: 11
 
 Normalized away (kept length ː): ɹ↔r, ɡ↔g, ɛ↔e (DRESS vowel), tie-bars & allophonic diacritics, optional (…) segments, stress, syllable dots.
 Divergences below are for OWNER ACCEPTANCE — review each: is our `pn` wrong, or a valid variant?
@@ -35,6 +35,7 @@ Divergences below are for OWNER ACCEPTANCE — review each: is our `pn` wrong, o
 | 9 | kettle | `/ˈketl/` | `/ˈkɛ.təl/` |
 | 9 | candle | `/ˈkændl/` | `/ˈkæn.dəl/` |
 | 9 | broken | `/ˈbrəʊkən/` | `/ˈbɹəʊ.kn̩/` |
+| 9 | empty | `/ˈempti/` | `/ˈɛm(p).ti/` |
 
 ## Not found on Wiktionary (no en RP IPA parsed — verify manually)
 
@@ -43,9 +44,9 @@ Divergences below are for OWNER ACCEPTANCE — review each: is our `pn` wrong, o
 - L4 **payslip** (`/ˈpeɪslɪp/`)
 - L8 **sunglasses** (`/ˈsʌnɡlɑːsɪz/`)
 - L8 **colour** (`/ˈkʌlə/`)
-- L9 **key** (`/kiː/`)
-- L9 **socket** (`/ˈsɒkɪt/`)
-- L9 **lamp** (`/læmp/`)
-- L9 **empty** (`/ˈempti/`)
-- L9 **full** (`/fʊl/`)
-- L9 **ready** (`/ˈredi/`)
+- L10 **cheese** (`/tʃiːz/`)
+- L10 **butter** (`/ˈbʌtə/`)
+- L10 **honey** (`/ˈhʌni/`)
+- L10 **tomato** (`/təˈmɑːtəʊ/`)
+- L10 **carrot** (`/ˈkærət/`)
+- L10 **banana** (`/bəˈnɑːnə/`)

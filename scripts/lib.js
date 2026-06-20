@@ -30,6 +30,7 @@ const WHITELIST = {
   7: ["now","today","tomorrow","soon","doing"],
   8: ["have","has","got"],
   9: ["some","any","here"],
+  10: ["many","would","like","of"],
 };
 const NAMES = ["ahmad","tom","sara","anna","john","ali","omar","rustam","fatima"];
 
