@@ -29,7 +29,11 @@
    New Headway Beginner (Oxford), Speakout Starter (Pearson), face2face Starter (Cambridge),
    English File Beginner (Oxford, `elt.oup.com/student/englishfile`) + CEFR A0-A1 PDF. Их
    scope-and-sequence сведён в `specs/coverage-matrix.md`; источники с URL + процедура —
-   `specs/reference-sources.md`. **Правило: натуральность и охват любого нового/правимого текста
+   `specs/reference-sources.md`. **4 из 5 курсов теперь ЛОКАЛЬНО в `Book A0-A1/` (gitignored) +
+   CEFR-PDF в `specs/` → слой-4 сверяется с РЕАЛЬНЫМИ страницами книг, а не по памяти агентов (L10 так
+   сверен: Headway Beginner U12 «would like» p88-91, Speakout Starter food-юнит, CEFR A0-A1-текст; EF
+   Beginner в папке нет — остаётся по URL). См. [[coursebook-pdf-tooling]] (PDF — сканы, читать `_render/`).**
+   **Правило: натуральность и охват любого нового/правимого текста
    сверять с этими источниками (и цитируемыми ELT/UK: British Council, Cambridge/Oxford, NHS/gov.uk),
    НЕ с суждением владельца** — владелец с нулевым английским не может быть приёмщиком натуральности
    (риск №1). Метод доказан: source-cited multi-agent сверка 246 строк текста → 2 правки (`0ab5e1f`).
@@ -61,7 +65,7 @@
   проверены (вкл. safety health/SOS/documents).
 - **Режим повторения (SRS)** — флешкарты из пройденных слов (хаб 🔁). **Сертификат** 🏆
   (имя + статистика + print).
-- Git ~72 коммита, чистая история; грамматика подтверждена 5 курсами (`coverage-matrix.md`).
+- Git ~74 коммита, чистая история; грамматика подтверждена 5 курсами (`coverage-matrix.md`).
   Всего 305 слов в 10 уроках (L1=35, L2–L10 ≈30).
 - **Сверка IPA внешним якорем:** `npm run verify-ipa` тянет Received Pronunciation из Wiktionary
   для всех слов и сверяет с `pn` (267/305 совпали, вкл. L10; остаток — нотация, US-варианты снапшота,
@@ -170,9 +174,12 @@
   для `pn`; снапшот `ref-ipa-wiktionary.json`, отчёт `ipa-verify-report.md`; вне аудита),
   `verify-transcr.js` (`npm run verify-transcr` — сверка кириллической `transcr` с IPA-производным
   звуком по конвенции курса; отчёт `transcr-verify-report.md`; ловит несогласованности крутки).
-- `specs/` — CEFR-PDF (источник правды), `coverage-matrix.md`, `reference-sources.md` (5 эталонных
-  источников + URL + процедура source-cited сверки), `master-lexicon.md` (слова+IPA+whitelist),
-  прочие `*.md` — спеки чужого проекта (только принципы).
+- `specs/` — CEFR-PDF (источник правды, born-digital: `pdftotext` извлекает текст-канон),
+  `coverage-matrix.md`, `reference-sources.md` (5 эталонных источников + URL + процедура source-cited
+  сверки), `master-lexicon.md` (слова+IPA+whitelist), прочие `*.md` — спеки чужого проекта (только принципы).
+- `Book A0-A1/` — **gitignored** (~140МБ), локальные PDF 4 из 5 эталонных курсов (Headway Beginner,
+  Speakout Starter SB+WB, Face2Face Starter) для слоя-4 натуральности. PDF — **сканы без текстового слоя**
+  (`pdftotext`=0); читать через готовые рендеры в `Book A0-A1/_render/` (`pdftoppm`/`pdftocairo` в среде нет).
 - `.claude/skills/` — `lesson-naturalness-check/` (скилл: source-cited сверка урока против 5 источников,
   метод `0ab5e1f`; обязательный слой-4 гейт перед коммитом урока).
 - `plans/` — `2026-06-18-full-a0a1-scope.md` (дорожная карта A0-A1); `2026-06-19-grammar-help-youtube.md`
