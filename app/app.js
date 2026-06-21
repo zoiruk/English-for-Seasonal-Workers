@@ -43,9 +43,11 @@
       no_voice: "Нет голоса или интернета — звук недоступен",
       storage_full: "Не удалось сохранить прогресс (память браузера заполнена)",
       review_title: "Повторение слов",
-      review_count: "{0} слов для повторения",
+      review_count: "{0} слов на сегодня",
+      review_count_zero: "✓ На сегодня всё повторено",
       review_progress: "Осталось: {0}",
-      review_done: "Все слова повторены! 🎉",
+      review_done: "На сегодня всё повторено! 🎉",
+      review_none_due: "На сегодня всё повторено. Возвращайтесь завтра 👍",
       show_card: "Показать перевод",
       know: "✓ Знаю",
       again: "🔄 Ещё раз",
@@ -100,6 +102,7 @@
   store.words = store.words || 0;
   store.streak = store.streak || 0;
   store.last = store.last || "";
+  store.srs = store.srs || {};         // Leitner SRS per word: { "<en>": { box: 1-5, due: <epoch-day int> } }
 
   function todayStr() { var d = new Date(); return d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate(); }
   function bumpStreak() {
@@ -162,10 +165,11 @@
     }
     var pool = reviewPool();
     if (pool.length) {
+      var due = dueReviewWords().length;
       h += '<div class="lesson-card" data-nav="review">' +
         '<div class="num">🔁</div>' +
         '<div class="body"><div class="t">' + t("review_title") + '</div>' +
-        '<div class="s">' + t("review_count", pool.length) + '</div></div>' +
+        '<div class="s">' + (due ? t("review_count", due) : t("review_count_zero")) + '</div></div>' +
         '<div class="done" style="color:var(--text3)">›</div></div>';
     }
     h += '<div class="lesson-card" data-nav="cert">' +
@@ -223,9 +227,10 @@
 
   /* ---------- REVIEW ---------- */
   function renderReview() {
-    var queue = shuffle(reviewPool());
-    if (!queue.length) { renderHub(); return; }
     setRoute("review");
+    if (!reviewPool().length) { renderHub(); return; }
+    var queue = shuffle(dueReviewWords());
+    if (!queue.length) { showNothingDue(); return; }
     var total = queue.length;
 
     function draw() {
@@ -257,10 +262,12 @@
           '<button class="btn ghost" id="fc-again">' + t("again") + '</button>';
         showBtn.replaceWith(btns);
         document.getElementById("fc-know").onclick = function () {
+          srsRate(w.en, true);
           queue.shift();
           if (queue.length) draw(); else showDone();
         };
         document.getElementById("fc-again").onclick = function () {
+          srsRate(w.en, false);
           queue.push(queue.shift());
           draw();
         };
@@ -272,6 +279,15 @@
         '<div class="hub-head" style="padding-top:46px"><h1>🎉</h1>' +
         '<p>' + t("review_done") + '</p></div>' +
         '<div class="bar"><i style="width:100%"></i></div>' +
+        '<button class="btn" id="rv-hub" style="margin-top:24px">' + t("to_hub") + '</button>';
+      document.getElementById("back").onclick = renderHub;
+      document.getElementById("rv-hub").onclick = renderHub;
+    }
+
+    function showNothingDue() {
+      app.innerHTML = backBtnHTML() +
+        '<div class="hub-head" style="padding-top:46px"><h1>✅</h1>' +
+        '<p>' + t("review_none_due") + '</p></div>' +
         '<button class="btn" id="rv-hub" style="margin-top:24px">' + t("to_hub") + '</button>';
       document.getElementById("back").onclick = renderHub;
       document.getElementById("rv-hub").onclick = renderHub;
@@ -517,6 +533,23 @@
       if (store.seen[les.id]) pool = pool.concat(les.words);
     });
     return pool;
+  }
+  /* ---- Leitner spaced repetition: known -> box up (shown later), again -> box 1 (soon) ---- */
+  var SRS_INTERVAL = { 1: 1, 2: 2, 3: 4, 4: 7, 5: 14 }; // box -> days until due again
+  function todayNum() { return Math.floor(Date.now() / 86400000); }
+  function srsRate(en, known) {
+    var s = store.srs[en] || { box: 1 };
+    s.box = known ? Math.min((s.box || 1) + 1, 5) : 1;
+    s.due = todayNum() + SRS_INTERVAL[s.box];
+    store.srs[en] = s;
+    save(store);
+  }
+  function dueReviewWords() {
+    var today = todayNum();
+    return reviewPool().filter(function (w) {
+      var s = store.srs[w.en];
+      return !s || s.due <= today; // never-rated or due today/overdue
+    });
   }
 
   /* ---------- quiz trainer (mastery: drill your mistakes until none remain) ---------- */
