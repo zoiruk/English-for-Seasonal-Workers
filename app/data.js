@@ -344,6 +344,7 @@
         { q: '[COMPLETE] "This is ___ job." (его)', opts: ["her", "his", "my", "your"], c: 1, expl: "his job — его работа.", hint_ru: "Это его работа." },
         { q: '[COMPLETE] "___ colleague is Rustam." (мой)', opts: ["Her", "His", "My", "Their"], c: 2, expl: "my — мой.", hint_ru: "Мой коллега — Рустам." },
         { q: "[CORRECT] Где правильно?", opts: ["Her name is Anna", "Her name are Anna", "Her name Anna", "Name her is Anna"], c: 0, expl: "her + name + is.", hint_ru: "Её зовут Анна." },
+        { q: '[QUESTION] "___ this your locker?"', opts: ["Is", "Are", "Am", "Be"], c: 0, expl: "Вопрос об одном предмете: Is this…? — глагол is выходит вперёд.", hint_ru: "Это твой шкафчик?" },
         { q: "[LISTEN] This is your locker.", opts: ["Это твой шкафчик.", "Это твоя сумка.", "Это твой бейдж.", "Это твой телефон."], c: 0, expl: "locker — шкафчик. bag — сумка. badge — бейдж. phone — телефон." },
         { q: "[GIST] Кто бригадир у Рустама и Ахмада?", opts: ["Анна", "Том", "Рустам", "Ахмад"], c: 0, expl: "Том говорит: \"Anna is your supervisor\".", hint_ru: "Вспомните диалог." },
         { q: "[BUILD] Соберите: «Это мой шкафчик»", build: ["This","is","my","locker"], expl: "This is my locker — Это мой шкафчик.", hint_ru: "Это мой шкафчик." },
