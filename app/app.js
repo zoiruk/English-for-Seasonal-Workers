@@ -142,6 +142,7 @@
 
   /* ---------- HUB ---------- */
   function renderHub() {
+    setRoute("");
     var done = Object.keys(store.done).length;
     var h = '<div class="hub-head"><h1>🌿 ' + t("app_title") + "</h1><p>" + t("app_subtitle") + "</p></div>";
     h += '<div class="stats">' +
@@ -179,6 +180,7 @@
 
   /* ---------- PHRASEBOOK (reference, snowball-exempt) ---------- */
   function renderPhrasebook() {
+    setRoute("phrasebook");
     var h = backBtnHTML() +
       '<div class="hub-head" style="padding-top:46px"><h1>📒 ' + t("phrasebook_title") + "</h1><p>" + t("phrasebook_sub") + "</p></div>";
     h += '<div class="card note">' + t("phrasebook_hint") + "</div>";
@@ -218,6 +220,7 @@
   function renderReview() {
     var queue = shuffle(reviewPool());
     if (!queue.length) { renderHub(); return; }
+    setRoute("review");
     var total = queue.length;
 
     function draw() {
@@ -274,6 +277,7 @@
 
   /* ---------- CERTIFICATE ---------- */
   function renderCertificate() {
+    setRoute("cert");
     var done = Object.keys(store.done).length;
     var total = LESSONS.length;
     var isComplete = total > 0 && done === total;
@@ -315,6 +319,7 @@
 
   function renderLesson(les, tab) {
     tab = tab || "grammar";
+    setRoute("l" + les.id + "/" + tab);
     var tabs = tabsFor(les);
     var h = backBtnHTML() +
       '<div class="l-head"><span class="pos">' + les.id + "/" + LESSONS.length + "</span>" +
@@ -635,5 +640,26 @@
     var card = e.target.closest("[data-lesson]");
     if (card) { var id = +card.dataset.lesson; var les = LESSONS.filter(function (x) { return x.id === id; })[0]; if (les) renderLesson(les); }
   });
-  renderHub();
+
+  /* ---------- routing: keep current screen in the URL hash so a reload (or a
+     service-worker update / low-memory PWA reload) restores it instead of
+     dumping the user back to the hub. replaceState avoids history spam and
+     never fires hashchange, so render<->route can't loop. ---------- */
+  function setRoute(h) {
+    try { history.replaceState(null, "", h ? "#" + h : location.pathname + location.search); } catch (e) {}
+  }
+  function route() {
+    var h = (location.hash || "").replace(/^#/, "");
+    var m = h.match(/^l(\d+)(?:\/(\w+))?$/);
+    if (m) {
+      var les = LESSONS.filter(function (x) { return x.id === +m[1]; })[0];
+      if (les) { renderLesson(les, m[2] || "grammar"); return; }
+    }
+    if (h === "phrasebook") { renderPhrasebook(); return; }
+    if (h === "review") { renderReview(); return; }
+    if (h === "cert") { renderCertificate(); return; }
+    renderHub();
+  }
+  window.addEventListener("hashchange", route);
+  route();
 })();
