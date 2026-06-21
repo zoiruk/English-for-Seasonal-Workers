@@ -379,13 +379,14 @@
           '<div style="line-height:1.6">Так говорить — ошибка:<br>❌ <b>This crate</b><br>Правильно:<br>✅ <b>This is a crate</b> <span class="g-transcr">[зис из э крэйт]</span> (это ящик)<br>👉 С предметом всегда <b>is</b> + артикль <b>a</b>.</div>',
         cultural_ru:
           "В русском «это ящик» — без глагола. В английском нужны <b>is</b> и артикль <b>a/an</b>. Много предметов → <b>These are</b> (эти)." +
-          '<br><br>📦 <b>Много чего-то — добавь <span class="g-transcr">-s</span> к слову:</b>' +
-          '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:4px">' +
+          '<div style="margin-top:12px"><div style="font-weight:700;margin-bottom:4px">➕ Множественное число (много)</div>' +
+          '<div><b>Правило:</b> добавь <b>-s</b> к слову:</div>' +
+          '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin:6px 0">' +
           "<div>crate → crate<b>s</b> (ящики)</div>" +
           "<div>tool → tool<b>s</b> (инструменты)</div>" +
           "<div>punnet → punnet<b>s</b> (корзинки)</div>" +
           "<div>tray → tray<b>s</b> (лотки)</div></div>" +
-          "👉 После <b>-s, -x, -ch, -sh</b> добавляем <b>-es</b>: box → box<b>es</b> (коробки), glass → glass<b>es</b> (стаканы).",
+          '<div style="margin-top:6px"><b>Исключение:</b> после <b>-s, -x, -ch, -sh</b> → <b>-es</b>: box → box<b>es</b> (коробки), glass → glass<b>es</b> (стаканы).</div></div>',
         note_ru: '⚠️ Перед гласным звуком — <b>an</b>, а не <b>a</b>. И: <b>this</b> (один) → <b>these</b> (много).',
         forms: {
           positive: {
