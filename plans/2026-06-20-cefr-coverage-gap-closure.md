@@ -108,8 +108,12 @@ phrasebook/SRS/сертификат→готовы). Использован ка
   You should drink water» (Headway p103 «Why don't you…?»).
 - [x] **Языки** → L1 `everyday`: «I speak a little English / Do you speak Russian?».
 
-**Фаза 3 — Tier 3 (вне scope сейчас):**
-- [ ] **tap-to-build** — НЕ строим (решение владельца). Спека — отдельным планом при возврате к навыкам.
+**Фаза 3 — Tier 3 (продукция):** ✅ выполнено (2026-06-20, продолжение «шаг за шагом»)
+- [x] **tap-to-build** — новый quiz-тег `[BUILD]` (поле `build:[слова]` вместо `opts/c`): плитки
+  перемешиваются → собрать фразу → проверка порядка. Движок `app.js` `showBuild` + CSS `.tile`;
+  `audit.js`/`snowball.js` поддерживают `build`. По 1 заданию на все 15 уроков (снежок-чисто).
+  `CACHE_VERSION` v32→v33. Аудит зелёный; оба пути проверены в превью; слой-4 гейт SHIP. Закрывает
+  последнюю CEFR-дыру (продукция). Скилл-баланс: recognition + listening + reading + **production**.
 
 **После каждого шага:** `npm run audit` зелёный → чек-лист контракта → адверсариальные ревьюеры →
 **`/lesson-naturalness-check` (слой-4, обяз.)** → бамп `CACHE_VERSION` в `sw.js` → обновить `STATE.md`

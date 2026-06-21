@@ -161,6 +161,14 @@ code { background: var(--accent-soft); color: var(--text); padding: 1px 5px; bor
 .q-fb.no { background: var(--no-soft); color: var(--no); }
 .q-label { font-size: 15px; font-weight: 600; color: var(--accent); text-align: center; padding: 6px 0 8px; }
 .spk-listen { font-size: 18px; padding: 20px 14px; margin-top: 8px; letter-spacing: .02em; }
+/* tap-to-build production task */
+.build-line { min-height: 48px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; padding: 10px; margin: 4px 0 12px; border: 1.5px dashed var(--accent); border-radius: 12px; background: var(--accent-soft); }
+.build-ph { color: var(--text3); font-size: 14px; }
+.build-pool { display: flex; flex-wrap: wrap; gap: 8px; }
+.tile { border: 1px solid var(--border); background: var(--card); border-radius: 10px; padding: 12px 14px; font-size: 16px; font-weight: 600; cursor: pointer; min-height: 44px; }
+.tile:active { transform: scale(0.97); }
+.tile.placed { background: #fff; border-color: var(--accent); color: var(--accent); }
+.btn:disabled { opacity: .45; cursor: default; }
 
 /* buttons */
 .btn { display: block; width: 100%; border: none; background: var(--accent); color: #fff; font-size: 15px; font-weight: 700; padding: 14px; border-radius: 12px; cursor: pointer; margin-top: 14px; }

@@ -27,6 +27,7 @@ for (const les of L) {
   (les.quiz || []).forEach((x, i) => {
     check(String(x.q).replace(/\[[A-Z]+\]/g, ""), `quiz[${i}].q`);
     (x.opts || []).forEach((o) => check(o, `quiz[${i}].opt`));
+    (x.build || []).forEach((w) => check(w, `quiz[${i}].build`));
   });
 }
 

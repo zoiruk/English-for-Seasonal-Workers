@@ -64,8 +64,12 @@
         "[QUESTION]": "❓ Выберите вопрос",
         "[LISTEN]": "🎧 Прослушайте и выберите",
         "[GIST]": "📖 Понимание диалога",
+        "[BUILD]": "🧩 Соберите фразу из слов",
       },
       listen_play: "▶ Слушать",
+      build_ph: "👇 Нажимайте слова по порядку",
+      build_check: "Проверить",
+      build_wrong: "✗ Неверно. Правильно так:",
       help_toggle: "🤔 Не поняли? Нажмите — объясню проще",
       help_formula: "Запомните формулу:",
       help_yt: "Всё ещё непонятно? Видео на YouTube ▶",
@@ -509,6 +513,7 @@
     var qs = les.quiz, idx = 0, score = 0;
     function show() {
       var q = qs[idx];
+      if (/\[BUILD\]/.test(q.q)) { showBuild(q); return; }
       // Shuffle options per render so the correct answer isn't always c:0
       // (otherwise tapping the first button passes every quiz). Remap c -> cIdx.
       var order = shuffle(q.opts.map(function (_, i) { return i; }));
@@ -550,6 +555,59 @@
         };
       });
     }
+    /* tap-to-build production task: tap word tiles into the right order, then check */
+    function showBuild(q) {
+      var target = q.build || [];
+      var tiles = shuffle(target.map(function (w, i) { return { w: w, id: i }; }));
+      var placed = []; // tile ids in tap order
+      var answered = false;
+      var hint = (UI[LANG].tags && UI[LANG].tags["[BUILD]"]) || "";
+      function wordOf(id) { for (var i = 0; i < tiles.length; i++) if (tiles[i].id === id) return tiles[i].w; return ""; }
+      function render() {
+        var line = placed.map(function (id) {
+          return '<button class="tile placed" data-id="' + id + '">' + esc(wordOf(id)) + "</button>";
+        }).join("");
+        var pool = tiles.filter(function (tl) { return placed.indexOf(tl.id) < 0; })
+          .map(function (tl) { return '<button class="tile" data-id="' + tl.id + '">' + esc(tl.w) + "</button>"; }).join("");
+        var ready = placed.length === target.length;
+        root.innerHTML = '<div class="card"><div class="q-hint">' + t("q_of", idx + 1, qs.length) + "</div>" +
+          '<div class="q-text">' + esc(hint) + "</div>" +
+          (q.hint_ru ? '<div class="q-hint">' + esc(q.hint_ru) + "</div>" : "") +
+          '<div class="build-line" id="bline">' + (line || '<span class="build-ph">' + t("build_ph") + "</span>") + "</div>" +
+          '<div class="build-pool" id="bpool">' + pool + "</div>" +
+          '<button class="btn" id="bcheck"' + (ready ? "" : " disabled") + ">" + t("build_check") + "</button>" +
+          '<div class="q-fb hidden" id="fb"></div>' +
+          '<button class="btn hidden" id="nextq"></button></div>';
+        if (answered) return;
+        root.querySelectorAll("#bpool .tile").forEach(function (b) {
+          b.onclick = function () { placed.push(+b.dataset.id); render(); };
+        });
+        root.querySelectorAll("#bline .tile").forEach(function (b) {
+          b.onclick = function () { placed.splice(placed.indexOf(+b.dataset.id), 1); render(); };
+        });
+        var bc = document.getElementById("bcheck");
+        if (bc) bc.onclick = check;
+      }
+      function check() {
+        if (answered) return;
+        answered = true;
+        var assembled = placed.map(wordOf);
+        var ok = assembled.length === target.length && assembled.every(function (w, i) { return w === target[i]; });
+        var correctSentence = target.join(" ");
+        render(); // locks tiles (answered = true)
+        var fb = document.getElementById("fb");
+        if (ok) { score++; fb.className = "q-fb ok"; fb.textContent = t("correct") + " " + (q.expl || ""); speak(correctSentence); }
+        else { fb.className = "q-fb no"; fb.textContent = t("build_wrong") + " " + (q.expl || ""); }
+        var bc = document.getElementById("bcheck"); if (bc) bc.classList.add("hidden");
+        root.querySelectorAll(".tile").forEach(function (x) { x.style.pointerEvents = "none"; });
+        var nb = document.getElementById("nextq");
+        nb.textContent = idx + 1 < qs.length ? t("next_q") : t("finish");
+        nb.classList.remove("hidden");
+        nb.onclick = function () { idx++; idx < qs.length ? show() : finish(); };
+      }
+      render();
+    }
+
     function finish() {
       var pct = Math.round((score / qs.length) * 100);
       if (pct === 100) { store.done[les.id] = true; bumpStreak(); save(store); }

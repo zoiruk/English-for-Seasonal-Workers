@@ -2,7 +2,7 @@
 const { loadLessons, escapeRe, report } = require("./lib");
 const L = loadLessons();
 const errors = [];
-const TAGS = ["[COMPLETE]", "[TRANSLATE]", "[NEGATIVE]", "[CORRECT]", "[QUESTION]", "[LISTEN]", "[GIST]"];
+const TAGS = ["[COMPLETE]", "[TRANSLATE]", "[NEGATIVE]", "[CORRECT]", "[QUESTION]", "[LISTEN]", "[GIST]", "[BUILD]"];
 
 for (const les of L) {
   const id = les.id;
@@ -70,13 +70,22 @@ for (const les of L) {
   q.forEach((x, i) => {
     const qs = String(x.q || "");
     if (!TAGS.some((t) => qs.includes(t))) errors.push({ lesson: id, field: `quiz[${i}].q`, msg: "missing [TAG]" });
+    if (!x.expl) errors.push({ lesson: id, field: `quiz[${i}].expl`, msg: "missing" });
+    // [BUILD] (tap-to-build production): needs `build` = ordered word list (>=2), no opts/c
+    if (qs.includes("[BUILD]")) {
+      if (!Array.isArray(x.build) || x.build.length < 2)
+        errors.push({ lesson: id, field: `quiz[${i}].build`, msg: `need >=2 words, got ${(x.build || []).length}` });
+      else x.build.forEach((w, j) => {
+        if (typeof w !== "string" || !w.trim()) errors.push({ lesson: id, field: `quiz[${i}].build[${j}]`, msg: "empty/invalid word" });
+      });
+      return;
+    }
     if (!Array.isArray(x.opts) || x.opts.length !== 4) errors.push({ lesson: id, field: `quiz[${i}].opts`, msg: "need 4 options" });
     else if (new Set(x.opts.map((o) => String(o).trim().toLowerCase())).size !== 4)
       errors.push({ lesson: id, field: `quiz[${i}].opts`, msg: "duplicate options" });
     if (typeof x.c !== "number") errors.push({ lesson: id, field: `quiz[${i}].c`, msg: "missing correct index" });
     else if (Array.isArray(x.opts) && (x.c < 0 || x.c >= x.opts.length))
       errors.push({ lesson: id, field: `quiz[${i}].c`, msg: `index ${x.c} out of range` });
-    if (!x.expl) errors.push({ lesson: id, field: `quiz[${i}].expl`, msg: "missing" });
     // answer-leak: correct answer must not appear verbatim in the question (TRANSLATE is exempt)
     if (Array.isArray(x.opts) && typeof x.c === "number" && x.opts[x.c] && !qs.includes("[TRANSLATE]") && !qs.includes("[LISTEN]")) {
       const ans = String(x.opts[x.c]);

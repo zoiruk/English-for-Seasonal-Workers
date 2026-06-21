@@ -160,6 +160,7 @@
         { q: "[LISTEN] I am a packer.", opts: ["Я упаковщик.", "Я сборщик.", "Я менеджер.", "Я водитель."], c: 0, expl: "packer — упаковщик. Не путать с picker — сборщик." },
         { q: "[GIST] Откуда Ахмад и кем он работает?", opts: ["Из Таджикистана, упаковщик", "Из Узбекистана, сборщик", "Из Британии, водитель", "Из Казахстана, менеджер"], c: 0, expl: "Ахмад говорит: \"I am from Tajikistan\" и \"I am a packer\".", hint_ru: "Вспомните диалог." },
         { q: '[TRANSLATE] "британец / британский"', opts: ["British", "English", "Uzbek", "Kazakh"], c: 0, expl: "British — британец. Не путать: English — только язык.", hint_ru: "British." },
+        { q: "[BUILD] Соберите: «Я — рабочий»", build: ["I", "am", "a", "worker"], expl: "I am a worker — Я рабочий. Между «кто» и «какой» ставим am.", hint_ru: "Я — рабочий." },
       ],
 
       everyday: {
@@ -345,6 +346,7 @@
         { q: "[CORRECT] Где правильно?", opts: ["Her name is Anna", "Her name are Anna", "Her name Anna", "Name her is Anna"], c: 0, expl: "her + name + is.", hint_ru: "Её зовут Анна." },
         { q: "[LISTEN] This is your locker.", opts: ["Это твой шкафчик.", "Это твоя сумка.", "Это твой бейдж.", "Это твой телефон."], c: 0, expl: "locker — шкафчик. bag — сумка. badge — бейдж. phone — телефон." },
         { q: "[GIST] Кто бригадир у Рустама и Ахмада?", opts: ["Анна", "Том", "Рустам", "Ахмад"], c: 0, expl: "Том говорит: \"Anna is your supervisor\".", hint_ru: "Вспомните диалог." },
+        { q: "[BUILD] Соберите: «Это мой шкафчик»", build: ["This","is","my","locker"], expl: "This is my locker — Это мой шкафчик.", hint_ru: "Это мой шкафчик." },
       ],
 
       everyday: {
@@ -504,6 +506,7 @@
         { q: "[GIST] Что показывает менеджер рабочему в диалоге?", opts: ["Ящик, корзинки, тележку, весы, инструменты", "Нож, ножницы и молоток", "Семью и коллег", "Паспорт и визу"], c: 0, expl: "Менеджер показывает: crate (ящик), punnets (корзинки), trolley (тележка), scales (весы), tools (инструменты).", hint_ru: "Вспомните диалог." },
         { q: "[CORRECT] Много ящиков — где правильно?", opts: ["These are crates", "This is crates", "These are crate", "This are crates"], c: 0, expl: "Много → These are + слово с -s: crate → crates.", hint_ru: "Это ящики." },
         { q: '[TRANSLATE] "коробки" (много)', opts: ["boxes", "box", "crates", "trays"], c: 0, expl: "box → boxes. После -x добавляем -es.", hint_ru: "boxes." },
+        { q: "[BUILD] Соберите: «Это ящик»", build: ["This","is","a","crate"], expl: "This is a crate — Это ящик. С предметом — is + a.", hint_ru: "Это ящик." },
       ],
 
       everyday: {
@@ -657,6 +660,7 @@
         { q: '[COMPLETE] "It is Friday. Tomorrow is ___."', opts: ["Saturday", "Monday", "Sunday", "Thursday"], c: 0, expl: "После пятницы (Friday) идёт суббота (Saturday).", hint_ru: "Завтра суббота." },
         { q: "[LISTEN] It is half past six.", opts: ["Сейчас 6:30 (половина седьмого).", "Сейчас 5:30 (половина шестого).", "Сейчас 6:00 (шесть часов).", "Сейчас 7:00 (семь часов)."], c: 0, expl: "half past six = 6:30. По-русски это «половина седьмого»." },
         { q: "[GIST] Какой день и время в начале диалога?", opts: ["Пятница, 7:30 (половина восьмого)", "Пятница, 9 часов", "Понедельник, 7:30", "Суббота, 8 часов"], c: 0, expl: "В диалоге: \"It is half past seven\" (7:30) и \"It is Friday today\". Нужно вспомнить и день, и время.", hint_ru: "Вспомните начало диалога." },
+        { q: "[BUILD] Соберите: «Сейчас 7 часов»", build: ["It","is","seven","o'clock"], expl: "It is seven o'clock — Сейчас 7 часов.", hint_ru: "Сейчас 7 часов." },
       ],
 
       everyday: {
@@ -836,6 +840,7 @@
         { q: '[TRANSLATE] "магазин"', opts: ["shop", "market", "bank", "house"], c: 0, expl: "shop — магазин. market — рынок.", hint_ru: "shop." },
         { q: "[LISTEN] The toilet is near the gate.", opts: ["Туалет рядом с воротами.", "Туалет в столовой.", "Туалет за сараем.", "Туалет на дороге."], c: 0, expl: "near — рядом, gate — ворота." },
         { q: "[GIST] Где магазин по словам менеджера?", opts: ["На дороге, не в лагере", "В лагере, рядом с кухней", "За сараем", "Рядом с конторой"], c: 0, expl: "В диалоге: \"Is the shop in the camp? — No. The shop is on the road.\"", hint_ru: "Вспомните про магазин." },
+        { q: "[BUILD] Соберите: «Где столовая?»", build: ["Where","is","the","canteen"], expl: "Where is the canteen? — Где столовая?", hint_ru: "Где столовая?" },
       ],
 
       everyday: {
@@ -995,6 +1000,7 @@
         { q: "[CORRECT] Где правильно?", opts: ["She packs boxes", "She pack boxes", "She packing boxes", "Boxes she packs"], c: 0, expl: "She + глагол +s: packs. Порядок: кто + глагол + что.", hint_ru: "Она упаковывает коробки." },
         { q: "[LISTEN] She packs the boxes.", opts: ["Она упаковывает коробки.", "Она собирает ягоды.", "Она носит ящики.", "Она моет фургон."], c: 0, expl: "pack — упаковывать, box — коробка." },
         { q: "[GIST] Что рабочий делает с корзинками (punnets) по диалогу?", opts: ["Взвешивает их на весах", "Моет их", "Считает деньги", "Чинит их"], c: 0, expl: "В диалоге: \"You weigh them on the scales\" — взвешиваешь на весах.", hint_ru: "Вспомните про корзинки." },
+        { q: "[BUILD] Соберите: «Она упаковывает ящик»", build: ["She","packs","the","box"], expl: "She packs the box — Она упаковывает ящик. He/she/it → глагол с -s.", hint_ru: "Она упаковывает ящик." },
       ],
 
       everyday: {
@@ -1154,6 +1160,7 @@
         { q: "[LISTEN] I am feeding now.", opts: ["Я кормлю животных.", "Я сажаю растения.", "Я отдыхаю.", "Я собираю ягоды."], c: 0, expl: "feed — кормить; am + feeding = сейчас." },
         { q: '[TRANSLATE] "Мы начинаем завтра (план)"', opts: ["We are starting tomorrow", "We start tomorrow", "We started tomorrow", "We are start tomorrow"], c: 0, expl: "Present Continuous = и план на будущее: am/is/are + -ing + tomorrow.", hint_ru: "Будущий план тоже через -ing." },
         { q: "[GIST] Что рабочий делает, когда идёт дождь (по диалогу)?", opts: ["Помогает Саре", "Грузит ящики", "Считает деньги", "Идёт спать"], c: 0, expl: 'После «It is raining» рабочий говорит: I am helping Sara.', hint_ru: "Смотрите реплику после дождя." },
+        { q: "[BUILD] Соберите: «Я сейчас собираю»", build: ["I","am","picking","now"], expl: "I am picking now — Я сейчас собираю. am/is/are + …ing.", hint_ru: "Я сейчас собираю." },
       ],
 
       everyday: {
@@ -1314,6 +1321,7 @@
         { q: '[COMPLETE] "Does she ___ a scarf?" (есть)', opts: ["have", "has", "does", "got"], c: 0, expl: "После does — базовая форма have (не has).", hint_ru: "У неё есть шарф?" },
         { q: "[GIST] Какого цвета жилет у рабочего (по диалогу)?", opts: ["Жёлтый", "Чёрный", "Синий", "Зелёный"], c: 0, expl: 'В диалоге: «Your vest is yellow.»', hint_ru: "Смотрите реплику про vest." },
         { q: "[CORRECT] Где правильно?", opts: ["Do you have a mask?", "Do you has a mask?", "Does you have a mask?", "You have mask?"], c: 0, expl: "Do + you + have (базовая форма).", hint_ru: "У тебя есть маска?" },
+        { q: "[BUILD] Соберите: «У меня есть перчатки»", build: ["I","have","gloves"], expl: "I have gloves — У меня есть перчатки.", hint_ru: "У меня есть перчатки." },
       ],
 
       everyday: {
@@ -1475,6 +1483,7 @@
         { q: "[LISTEN] There is a key on the bed.", opts: ["На кровати есть ключ.", "Под кроватью одеяло.", "В комнате есть душ.", "На полке есть лампа."], c: 0, expl: "there is — есть; key — ключ; bed — кровать." },
         { q: "[GIST] Что сломано в комнате (по диалогу)?", opts: ["Обогреватель", "Душ", "Кровать", "Окно"], c: 0, expl: 'В диалоге: «The heater is broken.»', hint_ru: "Смотрите реплику про heater." },
         { q: "[CORRECT] Где правильно (вопрос)?", opts: ["Is there a key?", "Are there a key?", "Is there any key?", "There is a key?"], c: 0, expl: "Один предмет → Is there a key?", hint_ru: "Есть ключ?" },
+        { q: "[BUILD] Соберите: «Здесь есть обогреватель»", build: ["There","is","a","heater"], expl: "There is a heater — Здесь есть обогреватель.", hint_ru: "Здесь есть обогреватель." },
       ],
 
       everyday: {
@@ -1636,6 +1645,7 @@
         { q: "[GIST] Что рабочий просит первым (по диалогу)?", opts: ["Хлеб", "Молоко", "Яйца", "Суп"], c: 0, expl: 'В диалоге первая просьба: «I would like some bread».', hint_ru: "Смотрите первую реплику." },
         { q: "[GIST] Почему рабочий не купил суп (по диалогу)?", opts: ["Супа сегодня нет", "Суп дорогой", "Рабочий не любит суп", "Касса закрыта"], c: 0, expl: "Кассир: «there is no soup today».", hint_ru: "Смотрите ответ кассира." },
         { q: "[QUESTION] Как спросить цену хлеба?", opts: ["How much is the bread?", "How many bread?", "How much bread is?", "Bread how much?"], c: 0, expl: "Цена неисчисляемого: How much is the + еда?", hint_ru: "How much is…?" },
+        { q: "[BUILD] Соберите: «Я хотел бы хлеба»", build: ["I","would","like","some","bread"], expl: "I would like some bread — Я хотел бы хлеба (вежливо).", hint_ru: "Я хотел бы хлеба." },
       ],
 
       everyday: {
@@ -1797,6 +1807,7 @@
         { q: "[LISTEN] What time is the train?", opts: ["Во сколько поезд?", "Где поезд?", "Сколько стоит поезд?", "Это поезд?"], c: 0, expl: "what time — во сколько; train — поезд." },
         { q: "[GIST] Сколько стоит билет (по диалогу)?", opts: ["Три фунта", "Два фунта", "Девять фунтов", "Билет бесплатный"], c: 0, expl: 'В диалоге: «It is three pounds».', hint_ru: "Смотрите ответ про цену." },
         { q: "[GIST] Во сколько поезд (по диалогу)?", opts: ["В девять", "В три", "В два", "Утром"], c: 0, expl: "В диалоге: «The train is at nine o'clock».", hint_ru: "Смотрите ответ про время." },
+        { q: "[BUILD] Соберите: «Это мой билет»", build: ["This","is","my","ticket"], expl: "This is my ticket — Это мой билет.", hint_ru: "Это мой билет." },
       ],
 
       everyday: {
@@ -1955,6 +1966,7 @@
         { q: "[LISTEN] What is your address?", opts: ["Какой ваш адрес?", "Как вас зовут?", "Сколько вам лет?", "Где форма?"], c: 0, expl: "address — адрес." },
         { q: "[GIST] Кем работает Ахмад (по диалогу)?", opts: ["Сборщик (picker)", "Упаковщик", "Водитель", "Менеджер"], c: 0, expl: "В диалоге: «I am a picker».", hint_ru: "Смотрите вторую реплику." },
         { q: "[GIST] Ахмад женат (по диалогу)?", opts: ["Нет, не женат (single)", "Да, женат", "Не сказано", "Он вдовец"], c: 0, expl: "В диалоге: «I am single».", hint_ru: "Смотрите последнюю реплику." },
+        { q: "[BUILD] Соберите: «Я родился в мае»", build: ["I","was","born","in","May"], expl: "I was born in May — Я родился в мае.", hint_ru: "Я родился в мае." },
       ],
 
       everyday: {
@@ -2115,6 +2127,7 @@
         { q: "[LISTEN] Did you finish the pallets?", opts: ["Ты закончил паллеты?", "Ты упаковал ящики?", "Сколько паллет?", "Где паллеты?"], c: 0, expl: "did you finish — ты закончил; pallets — паллеты." },
         { q: "[GIST] Что было сломано в смене (по диалогу)?", opts: ["Трактор", "Паллет", "Ящик", "Касса"], c: 0, expl: "В диалоге: «The tractor was broken».", hint_ru: "Смотрите про проблему." },
         { q: "[GIST] Во сколько рабочий ушёл (по диалогу)?", opts: ["В шесть", "В час", "Два часа назад", "Рано утром"], c: 0, expl: "В диалоге: «I left at six».", hint_ru: "Смотрите последнюю реплику." },
+        { q: "[BUILD] Соберите: «Я работал вчера»", build: ["I","worked","yesterday"], expl: "I worked yesterday — Я работал вчера. Прошлое: глагол + -ed.", hint_ru: "Я работал вчера." },
       ],
 
       everyday: {
@@ -2272,6 +2285,7 @@
         { q: "[LISTEN] Can you call a doctor?", opts: ["Можешь вызвать врача?", "Можешь мне помочь?", "Где лекарство?", "Я болен."], c: 0, expl: "can you call — можешь вызвать; doctor — врач." },
         { q: "[GIST] Что болит у рабочего (по диалогу)?", opts: ["Рука", "Нога", "Голова", "Зуб"], c: 0, expl: "В диалоге: «My arm hurts».", hint_ru: "Смотрите вторую реплику рабочего." },
         { q: "[GIST] Можно рабочему работать завтра (по диалогу)?", opts: ["Нет, нужно отдыхать", "Да", "Только утром", "Не сказано"], c: 0, expl: "Врач: «You can not work today. Rest».", hint_ru: "Смотрите ответ врача." },
+        { q: "[BUILD] Соберите: «Я не могу работать сегодня»", build: ["I","cannot","work","today"], expl: "I cannot work today — Я не могу работать сегодня.", hint_ru: "Я не могу работать сегодня." },
       ],
 
       everyday: {
@@ -2434,6 +2448,7 @@
         { q: "[LISTEN] Do you want tea?", opts: ["Хочешь чаю?", "Любишь чай?", "Где чай?", "Это твой чай?"], c: 0, expl: "do you want — хочешь; tea — чай." },
         { q: "[GIST] Что любит рабочий (по диалогу)?", opts: ["Футбол", "Танцы", "Рыбалку", "Сон"], c: 0, expl: "В диалоге: «I love football».", hint_ru: "Смотрите вторую реплику." },
         { q: "[GIST] Что предложил мейт в конце (по диалогу)?", opts: ["Чай", "Кофе", "Фильм", "Игру"], c: 0, expl: "В диалоге: «Do you want tea?»", hint_ru: "Смотрите конец диалога." },
+        { q: "[BUILD] Соберите: «Я люблю музыку»", build: ["I","love","music"], expl: "I love music — Я люблю музыку.", hint_ru: "Я люблю музыку." },
       ],
 
       everyday: {
