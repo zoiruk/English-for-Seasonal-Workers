@@ -171,6 +171,8 @@ code { background: var(--accent-soft); color: var(--text); padding: 1px 5px; bor
 .btn:disabled { opacity: .45; cursor: default; }
 /* everyday reference card (alphabet / numbers grid) — tinted so it reads as reference, not practice */
 .card.ev-ref { background: var(--accent-soft); }
+/* number-key anchor inside reference cards: number > word > transcr hierarchy */
+.ev-ref .nk { font-weight: 700; color: var(--accent); font-size: 1.05em; }
 
 /* buttons */
 .btn { display: block; width: 100%; border: none; background: var(--accent); color: #fff; font-size: 15px; font-weight: 700; padding: 14px; border-radius: 12px; cursor: pointer; margin-top: 14px; }

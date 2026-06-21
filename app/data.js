@@ -667,27 +667,29 @@
         title_ru: "Числа 11–100, спросить время, день и про оплату",
         html:
           '<div class="g-h">🔢 Числа 11–100</div>' +
-          '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:4px">' +
-          '<div><b>11</b> eleven <span class="g-transcr">илэвн</span></div>' +
-          '<div><b>12</b> twelve <span class="g-transcr">туэлв</span></div>' +
-          '<div><b>13</b> thirteen <span class="g-transcr">сётин</span></div>' +
-          '<div><b>14</b> fourteen <span class="g-transcr">фотин</span></div>' +
-          '<div><b>15</b> fifteen <span class="g-transcr">фифтин</span></div>' +
-          '<div><b>16</b> sixteen <span class="g-transcr">сикстин</span></div>' +
-          '<div><b>17</b> seventeen <span class="g-transcr">сэвэнтин</span></div>' +
-          '<div><b>18</b> eighteen <span class="g-transcr">эйтин</span></div>' +
-          '<div><b>19</b> nineteen <span class="g-transcr">найнтин</span></div></div>' +
-          '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin-top:4px">' +
-          '<div><b>20</b> twenty <span class="g-transcr">туэнти</span></div>' +
-          '<div><b>30</b> thirty <span class="g-transcr">сёти</span></div>' +
-          '<div><b>40</b> forty <span class="g-transcr">фоти</span></div>' +
-          '<div><b>50</b> fifty <span class="g-transcr">фифти</span></div>' +
-          '<div><b>60</b> sixty <span class="g-transcr">сиксти</span></div>' +
-          '<div><b>70</b> seventy <span class="g-transcr">сэвэнти</span></div>' +
-          '<div><b>80</b> eighty <span class="g-transcr">эйти</span></div>' +
-          '<div><b>90</b> ninety <span class="g-transcr">найнти</span></div>' +
-          '<div><b>100</b> one hundred <span class="g-transcr">уан хандрэд</span></div></div>' +
-          '<div style="margin-top:8px">👉 <b>13–19</b> = число + <b>-teen</b> <span class="g-transcr">(тин)</span>. <b>20–90</b> = число + <b>-ty</b> <span class="g-transcr">(ти)</span>.<br>Между ними — через дефис: <b>21</b> = twenty-one <span class="g-transcr">туэнти-уан</span>, <b>25</b> = twenty-five <span class="g-transcr">туэнти-файв</span>.</div>',
+          '<div style="font-size:12px;color:var(--text3);margin-bottom:4px">11–19 — окончание <b>-teen</b>:</div>' +
+          '<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px 14px">' +
+          '<div><span class="nk">11</span> eleven<br><span class="g-transcr">илэвн</span></div>' +
+          '<div><span class="nk">12</span> twelve<br><span class="g-transcr">туэлв</span></div>' +
+          '<div><span class="nk">13</span> thirteen<br><span class="g-transcr">сётин</span></div>' +
+          '<div><span class="nk">14</span> fourteen<br><span class="g-transcr">фотин</span></div>' +
+          '<div><span class="nk">15</span> fifteen<br><span class="g-transcr">фифтин</span></div>' +
+          '<div><span class="nk">16</span> sixteen<br><span class="g-transcr">сикстин</span></div>' +
+          '<div><span class="nk">17</span> seventeen<br><span class="g-transcr">сэвэнтин</span></div>' +
+          '<div><span class="nk">18</span> eighteen<br><span class="g-transcr">эйтин</span></div>' +
+          '<div><span class="nk">19</span> nineteen<br><span class="g-transcr">найнтин</span></div></div>' +
+          '<div style="font-size:12px;color:var(--text3);margin:12px 0 4px">20–100 — десятки на <b>-ty</b>:</div>' +
+          '<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px 14px">' +
+          '<div><span class="nk">20</span> twenty<br><span class="g-transcr">туэнти</span></div>' +
+          '<div><span class="nk">30</span> thirty<br><span class="g-transcr">сёти</span></div>' +
+          '<div><span class="nk">40</span> forty<br><span class="g-transcr">фоти</span></div>' +
+          '<div><span class="nk">50</span> fifty<br><span class="g-transcr">фифти</span></div>' +
+          '<div><span class="nk">60</span> sixty<br><span class="g-transcr">сиксти</span></div>' +
+          '<div><span class="nk">70</span> seventy<br><span class="g-transcr">сэвэнти</span></div>' +
+          '<div><span class="nk">80</span> eighty<br><span class="g-transcr">эйти</span></div>' +
+          '<div><span class="nk">90</span> ninety<br><span class="g-transcr">найнти</span></div>' +
+          '<div><span class="nk">100</span> one hundred<br><span class="g-transcr">уан хандрэд</span></div></div>' +
+          '<div style="margin-top:12px">👉 Между десятками — через дефис: <b>21</b> = twenty-one <span class="g-transcr">туэнти-уан</span>, <b>25</b> = twenty-five <span class="g-transcr">туэнти-файв</span>.</div>',
         phrases: [
           { en: "What time is it?", transcr: "Уот тайм из ит?", ru: "Который час?" },
           { en: "What time do we start?", transcr: "Уот тайм ду уи старт?", ru: "Во сколько мы начинаем?" },
