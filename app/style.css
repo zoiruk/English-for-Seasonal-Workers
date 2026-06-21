@@ -95,7 +95,9 @@ code { background: var(--accent-soft); color: var(--text); padding: 1px 5px; bor
 
 /* form switcher */
 .forms { display: flex; gap: 6px; margin-bottom: 12px; }
-.formbtn { flex: 1; border: 1px solid var(--border); background: var(--card); border-radius: 10px; padding: 9px 4px; font-size: 13px; font-weight: 600; cursor: pointer; }
+.formbtn { flex: 1; border: 1px solid var(--border); background: var(--bg); border-radius: 10px; padding: 9px 4px; font-size: 13px; font-weight: 600; cursor: pointer; }
+/* grammar "rule" section: forms + table grouped in one labelled card */
+.rule-card #formbox { margin-top: 2px; }
 .formbtn.on { background: var(--accent); color: #fff; border-color: var(--accent); }
 
 .g-table-wrap { overflow-x: auto; }

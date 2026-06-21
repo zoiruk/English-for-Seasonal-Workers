@@ -29,6 +29,7 @@
       tap_word: "👇 Нажмите на слово, чтобы услышать",
       play_all: "▶ Прослушать весь диалог",
       cultural: "🌍 Культурная заметка",
+      grammar_rule: "📝 Как сказать",
       examples: "Примеры",
       q_of: "Вопрос {0} из {1}",
       correct: "✓ Верно!",
@@ -395,10 +396,11 @@
   function grammarBody(les) {
     var g = les.grammar;
     var h = '<div class="card"><div class="g-h">' + esc(g.title_ru) + "</div>" + g.intro_ru + "</div>";
-    h += '<div class="forms">' + ["positive", "negative", "question"].map(function (f, i) {
-      return '<button class="formbtn' + (i === 0 ? " on" : "") + '" data-form="' + f + '">' + esc(g.forms[f].label_ru) + "</button>";
-    }).join("") + "</div>";
-    h += '<div class="card" id="formbox"></div>';
+    h += '<div class="card rule-card"><div class="g-h">' + t("grammar_rule") + "</div>" +
+      '<div class="forms">' + ["positive", "negative", "question"].map(function (f, i) {
+        return '<button class="formbtn' + (i === 0 ? " on" : "") + '" data-form="' + f + '">' + esc(g.forms[f].label_ru) + "</button>";
+      }).join("") + "</div>" +
+      '<div id="formbox"></div></div>';
     h += '<div class="card cultural"><b>' + t("cultural") + "</b><div>" + g.cultural_ru + "</div></div>";
     h += '<div class="card note">' + g.note_ru + "</div>";
     h += '<div class="card"><div class="g-h">' + t("examples") + "</div>";
