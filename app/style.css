@@ -169,6 +169,8 @@ code { background: var(--accent-soft); color: var(--text); padding: 1px 5px; bor
 .tile:active { transform: scale(0.97); }
 .tile.placed { background: #fff; border-color: var(--accent); color: var(--accent); }
 .btn:disabled { opacity: .45; cursor: default; }
+/* everyday reference card (alphabet / numbers grid) — tinted so it reads as reference, not practice */
+.card.ev-ref { background: var(--accent-soft); }
 
 /* buttons */
 .btn { display: block; width: 100%; border: none; background: var(--accent); color: #fff; font-size: 15px; font-weight: 700; padding: 14px; border-radius: 12px; cursor: pointer; margin-top: 14px; }
