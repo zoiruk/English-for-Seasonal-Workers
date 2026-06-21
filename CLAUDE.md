@@ -158,11 +158,11 @@ L1–L15 готовы (🎉 **курс A0–A1 ПОЛОН, 15/15**), аудит 
 Без сервера, БД, внешних зависимостей (никаких JS/CSS-фреймворков).
 
 - **Стек:** HTML + CSS + vanilla JS. Хостинг — GitHub Pages: деплой `app/` через
-  `.github/workflows/pages.yml` (нужен ПУБЛИЧНЫЙ репо + Settings→Pages→Source «GitHub Actions»;
+  `.github/workflows/pages.yml` (публичный репо + Settings→Pages→Source «GitHub Actions»;
   пути относительные → работает на под-пути `user.github.io/<repo>/`). **Remote:** `origin` =
-  `github.com/zoiruk/English-for-Seasonal-Workers` (default-ветка `master`); код запушен (2026-06-20).
-  ⚠️ Pages-source («GitHub Actions») + публичность репо включаются владельцем в UI — без этого деплой не идёт.
-  Сайт: `https://zoiruk.github.io/English-for-Seasonal-Workers/`.
+  `github.com/zoiruk/English-for-Seasonal-Workers` (default-ветка `master`). **✅ ЖИВОЙ САЙТ
+  (2026-06-20):** `https://zoiruk.github.io/English-for-Seasonal-Workers/` — деплоится автоматически
+  на каждый push в `master` (отдаёт свежий билд: 15 `[BUILD]`, алфавит, числа, `esw-v33`).
 - **Аудио:** Web Speech API, `lang='en-GB'`, `rate=0.88`; всегда `speechSynthesis.cancel()` перед
   воспроизведением. Нет интернета → остановить и показать сообщение.
 - **Хранение:** localStorage (прогресс, счётчик слов, streak, сертификат). Сервера/аутентификации нет.
