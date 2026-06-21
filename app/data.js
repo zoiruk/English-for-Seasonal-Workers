@@ -882,7 +882,8 @@
           '<div><code>she → her</code> <span class="g-transcr">[хё]</span> (её/ей)</div></div>' +
           '<div style="margin-top:4px">Напр.: <b>Give me</b> (дай мне), <b>I carry them</b> (я ношу их).</div>',
         note_ru:
-          '⚠️ Отрицание: <b>do not</b> / <b>does not</b>. После <b>does</b> глагол БЕЗ -s — и в отрицании, и в вопросе: <b>He does not pick</b>, <b>Does she pack?</b> Слова <b>always</b> (всегда) / <b>sometimes</b> (иногда) / <b>never</b> (никогда) ставим ПЕРЕД глаголом: <b>I always work</b>.',
+          '⚠️ <b>Отрицание и вопрос:</b> через <b>do / does</b>, глагол — в БАЗЕ (без -s): <b>He does not pick</b>, <b>Does she pack?</b>' +
+          '<div style="margin-top:6px"><b>Наречия</b> always / sometimes / never — ПЕРЕД глаголом: <b>I always work</b>.</div>',
         forms: {
           positive: {
             label_ru: "✅ Утверждение",
@@ -1196,7 +1197,8 @@
           '<div><b>он / она / оно:</b> He has <span class="g-transcr">[хи хэз]</span></div></div>' +
           '<div style="margin-top:6px">Британцы часто спрашивают через <b>Have you got…?</b> <span class="g-transcr">[хэв ю гот]</span> — это то же «У тебя есть…?». Отвечать можно просто: <b>Yes, I have.</b></div>',
         note_ru:
-          '⚠️ Частая ошибка: <b>he have</b>. Правильно <b>he has</b>. В вопросе и отрицании — <b>do / does</b>, а <b>have</b> остаётся в базовой форме: <b>Does he have…?</b> (не «does he has»), <b>I do not have…</b>',
+          '⚠️ <b>Частая ошибка:</b> «he have» → правильно <b>he has</b>.' +
+          '<div style="margin-top:6px"><b>Вопрос и отрицание:</b> через <b>do / does</b>, <b>have</b> — в базовой форме: <b>Does he have…?</b> (не «does he has»), <b>I do not have…</b></div>',
         forms: {
           positive: {
             label_ru: "✅ Утверждение",
@@ -1355,7 +1357,8 @@
           '<div><b>много:</b> There are some beds <span class="g-transcr">[зэа а сам бэдз]</span></div></div>' +
           '<div style="margin-top:6px"><b>some</b> <span class="g-transcr">[сам]</span> — в утверждении («есть несколько»). <b>any</b> <span class="g-transcr">[эни]</span> — в вопросе и отрицании.</div>',
         note_ru:
-          '⚠️ Один предмет → <b>is</b>, много → <b>are</b>: «There <b>is</b> a bed», «There <b>are</b> beds». В вопросе и отрицании — <b>any</b>, не some: «Are there <b>any</b> blankets?», «There are <b>not any</b> towels.»',
+          '⚠️ <b>Число:</b> один → <b>is</b>, много → <b>are</b>: «There <b>is</b> a bed», «There <b>are</b> beds».' +
+          '<div style="margin-top:6px"><b>some / any:</b> <b>some</b> — в утверждении, <b>any</b> — в вопросе и отрицании: «Are there <b>any</b> blankets?», «There are <b>not any</b> towels.»</div>',
         forms: {
           positive: {
             label_ru: "✅ Утверждение",
@@ -2002,7 +2005,8 @@
           '<div>buy → bought <span class="g-transcr">[бот]</span></div></div>' +
           '<div style="margin-top:6px">Отрицание и вопрос — через <b>did</b> + база (не прошедшая форма): «I <b>did not</b> work», «<b>Did</b> you work?».</div>',
         note_ru:
-          '⚠️ В ОТРИЦАНИИ и ВОПРОСЕ глагол в БАЗЕ, не в прошедшей форме: «I did not <b>work</b>» (НЕ «did not worked»), «Did you <b>eat</b>?» (НЕ «Did you ate?»). Прошедшая форма (worked, ate) — только в утверждении.',
+          '⚠️ <b>Правило:</b> прошедшая форма (worked, ate) — только в УТВЕРЖДЕНИИ.' +
+          '<div style="margin-top:6px"><b>В отрицании и вопросе</b> — глагол в БАЗЕ: «I did not <b>work</b>» (не «did not worked»), «Did you <b>eat</b>?» (не «Did you ate?»).</div>',
         forms: {
           positive: {
             label_ru: "✅ Утверждение (прошлое)",
