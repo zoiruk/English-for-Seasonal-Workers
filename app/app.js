@@ -70,6 +70,11 @@
       build_ph: "👇 Нажимайте слова по порядку",
       build_check: "Проверить",
       build_wrong: "✗ Неверно. Правильно так:",
+      mistakes_title: "🔍 Разбор ошибок",
+      mistakes_sub: "Вы ответили {0} из {1}. Разберём то, что не получилось:",
+      mistakes_answer: "Правильно:",
+      drill_btn: "Потренировать ошибки ({0}) →",
+      mastered_note: "Все ответы верны — урок засчитан. 👏",
       help_toggle: "🤔 Не поняли? Нажмите — объясню проще",
       help_formula: "Запомните формулу:",
       help_yt: "Всё ещё непонятно? Видео на YouTube ▶",
@@ -514,12 +519,15 @@
     return pool;
   }
 
-  /* ---------- quiz trainer ---------- */
+  /* ---------- quiz trainer (mastery: drill your mistakes until none remain) ---------- */
   function runQuiz(les) {
     var root = document.getElementById("quizroot");
-    var qs = les.quiz, idx = 0, score = 0;
+    var fullQuiz = les.quiz, round, idx, wrong, roundCorrect;
+    function markWrong(q) { if (wrong.indexOf(q) < 0) wrong.push(q); }
+    function next() { idx++; if (idx < round.length) show(); else roundEnd(); }
+    function startRound(items) { round = items; idx = 0; wrong = []; roundCorrect = 0; show(); }
     function show() {
-      var q = qs[idx];
+      var q = round[idx];
       if (/\[BUILD\]/.test(q.q)) { showBuild(q); return; }
       // Shuffle options per render so the correct answer isn't always c:0
       // (otherwise tapping the first button passes every quiz). Remap c -> cIdx.
@@ -535,7 +543,7 @@
           '<button class="btn ghost spk-listen" id="listen-play" type="button">' + t("listen_play") + "</button>"
         : '<div class="q-text">' + esc(label ? label + ": " : "") + esc(text) + "</div>" +
           (q.hint_ru ? '<div class="q-hint">' + esc(q.hint_ru) + "</div>" : "");
-      var h = '<div class="card"><div class="q-hint">' + t("q_of", idx + 1, qs.length) + "</div>" +
+      var h = '<div class="card"><div class="q-hint">' + t("q_of", idx + 1, round.length) + "</div>" +
         qBody +
         '<div class="opts">' + opts.map(function (o, i) {
           return '<button class="opt" data-i="' + i + '">' + esc(o) + "</button>";
@@ -553,12 +561,12 @@
           var i = +b.dataset.i, fb = document.getElementById("fb");
           root.querySelectorAll(".opt").forEach(function (x) { x.style.pointerEvents = "none"; });
           root.querySelectorAll(".opt")[cIdx].classList.add("correct");
-          if (i === cIdx) { score++; fb.className = "q-fb ok"; fb.textContent = t("correct") + " " + (q.expl || ""); }
-          else { b.classList.add("wrong"); fb.className = "q-fb no"; fb.textContent = t("wrong", opts[cIdx]) + " " + (q.expl || ""); }
+          if (i === cIdx) { roundCorrect++; fb.className = "q-fb ok"; fb.textContent = t("correct") + " " + (q.expl || ""); }
+          else { b.classList.add("wrong"); markWrong(q); fb.className = "q-fb no"; fb.textContent = t("wrong", opts[cIdx]) + " " + (q.expl || ""); }
           var nb = document.getElementById("nextq");
-          nb.textContent = idx + 1 < qs.length ? t("next_q") : t("finish");
+          nb.textContent = idx + 1 < round.length ? t("next_q") : t("finish");
           nb.classList.remove("hidden");
-          nb.onclick = function () { idx++; idx < qs.length ? show() : finish(); };
+          nb.onclick = next;
         };
       });
     }
@@ -577,7 +585,7 @@
         var pool = tiles.filter(function (tl) { return placed.indexOf(tl.id) < 0; })
           .map(function (tl) { return '<button class="tile" data-id="' + tl.id + '">' + esc(tl.w) + "</button>"; }).join("");
         var ready = placed.length === target.length;
-        root.innerHTML = '<div class="card"><div class="q-hint">' + t("q_of", idx + 1, qs.length) + "</div>" +
+        root.innerHTML = '<div class="card"><div class="q-hint">' + t("q_of", idx + 1, round.length) + "</div>" +
           '<div class="q-text">' + esc(hint) + "</div>" +
           (q.hint_ru ? '<div class="q-hint">' + esc(q.hint_ru) + "</div>" : "") +
           '<div class="build-line" id="bline">' + (line || '<span class="build-ph">' + t("build_ph") + "</span>") + "</div>" +
@@ -603,29 +611,55 @@
         var correctSentence = target.join(" ");
         render(); // locks tiles (answered = true)
         var fb = document.getElementById("fb");
-        if (ok) { score++; fb.className = "q-fb ok"; fb.textContent = t("correct") + " " + (q.expl || ""); speak(correctSentence); }
-        else { fb.className = "q-fb no"; fb.textContent = t("build_wrong") + " " + (q.expl || ""); }
+        if (ok) { roundCorrect++; fb.className = "q-fb ok"; fb.textContent = t("correct") + " " + (q.expl || ""); speak(correctSentence); }
+        else { markWrong(q); fb.className = "q-fb no"; fb.textContent = t("build_wrong") + " " + (q.expl || ""); }
         var bc = document.getElementById("bcheck"); if (bc) bc.classList.add("hidden");
         root.querySelectorAll(".tile").forEach(function (x) { x.style.pointerEvents = "none"; });
         var nb = document.getElementById("nextq");
-        nb.textContent = idx + 1 < qs.length ? t("next_q") : t("finish");
+        nb.textContent = idx + 1 < round.length ? t("next_q") : t("finish");
         nb.classList.remove("hidden");
-        nb.onclick = function () { idx++; idx < qs.length ? show() : finish(); };
+        nb.onclick = next;
       }
       render();
     }
 
-    function finish() {
-      var pct = Math.round((score / qs.length) * 100);
-      if (pct === 100) { store.done[les.id] = true; bumpStreak(); save(store); }
-      root.innerHTML = '<div class="card result"><div class="score">' + score + "/" + qs.length + "</div>" +
-        "<h3>" + (pct === 100 ? t("done_banner") : t("done_low")) + "</h3>" +
-        '<button class="btn" id="rt">' + t("retry") + '</button>' +
+    function answerText(q) {
+      if (/\[BUILD\]/.test(q.q)) return (q.build || []).join(" ");
+      return (q.opts && typeof q.c === "number") ? q.opts[q.c] : "";
+    }
+    function roundEnd() {
+      if (!wrong.length) { finishMastered(); return; }
+      var missed = wrong.slice();
+      var h = '<div class="card"><div class="g-h">' + t("mistakes_title") + "</div>" +
+        '<div class="q-hint">' + t("mistakes_sub", roundCorrect, round.length) + "</div>";
+      missed.forEach(function (q) {
+        var qt = q.q.replace(/\[[A-Z]+\]\s*/, "");
+        h += '<div class="mistake"><div class="en">' + esc(qt) + "</div>" +
+          '<div class="ru"><b>' + t("mistakes_answer") + "</b> " + esc(answerText(q)) + "</div>" +
+          (q.expl ? '<div class="tr">' + esc(q.expl) + "</div>" : "") + "</div>";
+      });
+      h += "</div>" +
+        '<button class="btn" id="drill">' + t("drill_btn", missed.length) + "</button>" +
+        '<button class="btn ghost" id="hb">' + t("to_hub") + "</button>";
+      root.innerHTML = h;
+      document.getElementById("drill").onclick = function () {
+        var set = missed.concat(missed);           // drill each missed item twice
+        if (set.length > 12) set = missed.slice();  // cap when many mistakes
+        startRound(shuffle(set));
+      };
+      document.getElementById("hb").onclick = function () { renderHub(); };
+    }
+    function finishMastered() {
+      store.done[les.id] = true; bumpStreak(); save(store);
+      root.innerHTML = '<div class="card result"><div class="score">🎉</div>' +
+        "<h3>" + t("done_banner") + "</h3>" +
+        '<div class="q-hint">' + t("mastered_note") + "</div>" +
+        '<button class="btn" id="rt">' + t("retry") + "</button>" +
         '<button class="btn ghost" id="hb">' + t("to_hub") + "</button></div>";
       document.getElementById("rt").onclick = function () { runQuiz(les); };
       document.getElementById("hb").onclick = function () { renderHub(); };
     }
-    show();
+    startRound(fullQuiz.slice());
   }
 
   /* ---------- start ---------- */
