@@ -57,7 +57,9 @@
       cert_title: "Сертификат A0-A1",
       cert_body_done: "Курс успешно завершён ✓",
       cert_body_progress: "Пройдено уроков: {0} из {1}",
+      cert_locked: "🔒 Пройдите все {0} уроков — и получите именной сертификат на английском.",
       cert_name_hint: "Введите ваше имя",
+      cert_name_caption: "👇 Впишите своё имя — оно появится на сертификате. Затем нажмите «Распечатать» или сохраните как PDF.",
       cert_print: "🖨️ Распечатать",
       tags: {
         "[COMPLETE]": "✍️ Заполните пропуск",
@@ -104,6 +106,8 @@
   store.streak = store.streak || 0;
   store.last = store.last || "";
   store.srs = store.srs || {};         // Leitner SRS per word: { "<en>": { box: 1-5, due: <epoch-day int> } }
+  store.certName = store.certName || "";
+  store.certDate = store.certDate || ""; // YYYY-M-D, set once when the course is completed (15/15)
 
   function todayStr() { var d = new Date(); return d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate(); }
   function bumpStreak() {
@@ -298,30 +302,69 @@
   }
 
   /* ---------- CERTIFICATE ---------- */
+  var CERT_MONTHS = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"];
+  function fmtCertDate(s) {
+    var p = String(s || "").split("-");
+    if (p.length < 3) return s || "";
+    var d = parseInt(p[2], 10), m = parseInt(p[1], 10) - 1;
+    return d + " " + (CERT_MONTHS[m] || "") + " " + p[0];
+  }
+  function certSealSVG() {
+    return '<svg class="cert-seal" viewBox="0 0 120 132" width="88" height="97" role="img" aria-label="Seal">' +
+      '<path d="M46 96 L34 130 L52 118 L60 132 L60 100 Z" fill="#005bb0"/>' +
+      '<path d="M74 96 L86 130 L68 118 L60 132 L60 100 Z" fill="#0075de"/>' +
+      '<circle cx="60" cy="56" r="50" fill="#fff8e6" stroke="#c9a227" stroke-width="3"/>' +
+      '<circle cx="60" cy="56" r="40" fill="#c9a227"/>' +
+      '<circle cx="60" cy="56" r="40" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="1.5 4"/>' +
+      '<path d="M42 57 L54 70 L80 42" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>' +
+      '<text x="60" y="92" text-anchor="middle" font-size="13" font-weight="800" fill="#fff" letter-spacing="2" font-family="Georgia, serif">A0–A1</text>' +
+      '</svg>';
+  }
+
   function renderCertificate() {
     setRoute("cert");
     var done = Object.keys(store.done).length;
     var total = LESSONS.length;
     var isComplete = total > 0 && done === total;
+
+    // Before the whole course is finished: show a Russian progress screen, certificate locked.
+    if (!isComplete) {
+      var pct = total ? Math.round(done / total * 100) : 0;
+      app.innerHTML = backBtnHTML() +
+        '<div class="hub-head" style="padding-top:46px"><h1>🏆 ' + t("cert_hub_title") + '</h1></div>' +
+        '<div class="bar"><i style="width:' + pct + '%"></i></div>' +
+        '<div class="card note" style="text-align:center">' + t("cert_body_progress", done, total) + '</div>' +
+        '<div class="cert-locked">' + t("cert_locked", total) + '</div>' +
+        '<button class="btn ghost" id="cert-hub" style="margin-top:8px">' + t("to_hub") + '</button>';
+      document.getElementById("back").onclick = renderHub;
+      document.getElementById("cert-hub").onclick = renderHub;
+      return;
+    }
+
+    if (!store.certDate) { store.certDate = todayStr(); save(store); }
     var nameVal = store.certName || "";
-    var h = backBtnHTML() +
-      '<div class="cert">' +
-        '<div class="cert-top">🌿</div>' +
-        '<div class="cert-title">' + esc(t("app_title")) + '</div>' +
-        '<input class="cert-name" id="cert-name" type="text" ' +
+    var words = studiedWords();
+    app.innerHTML = backBtnHTML() +
+      '<div class="cert cert-full"><div class="cert-frame">' +
+        certSealSVG() +
+        '<div class="cert-kicker">Certificate of Completion</div>' +
+        '<div class="cert-present">This is to certify that</div>' +
+        '<input class="cert-name" id="cert-name" type="text" autocomplete="name" ' +
           'placeholder="' + esc(t("cert_name_hint")) + '" value="' + esc(nameVal) + '">' +
-        '<div class="cert-body">' +
-          (isComplete ? t("cert_body_done") : t("cert_body_progress", done, total)) +
-        '</div>' +
-        '<div class="cert-stats">' +
-          '<span>' + studiedWords() + ' ' + t("words_learned") + '</span>' +
-          '<span>🔥 ' + store.streak + ' ' + t("streak") + '</span>' +
-        '</div>' +
-        '<div class="cert-cefr">CEFR · A0–A1</div>' +
-      '</div>' +
+        '<div class="cert-present">has completed the beginner self-study course</div>' +
+        '<div class="cert-course">' + esc(t("app_title")) + '</div>' +
+        '<div class="cert-level">Beginner self-study course · CEFR A0–A1 level</div>' +
+        '<div class="cert-meta">' + total + ' lessons completed · ' + words + ' words learned</div>' +
+        '<div class="cert-foot"><div class="cert-foot-col"><div class="cert-foot-v">' + fmtCertDate(store.certDate) + '</div><div class="cert-foot-l">Date completed</div></div></div>' +
+        '<div class="cert-issuer">English for Seasonal Workers · Free self-study app</div>' +
+        '<div class="cert-disc">A record of completing a free self-study course. Not an official language qualification, exam, or proof of English level.</div>' +
+        '<div class="cert-disc cert-disc-ru">Отметка о прохождении бесплатного самостоятельного курса. Не официальная квалификация, не экзамен и не подтверждение уровня английского.</div>' +
+      '</div></div>' +
+      '<div class="cert-hint-ru">' + t("cert_name_caption") + '</div>' +
       '<button class="btn" id="cert-print" style="margin-top:14px">' + t("cert_print") + '</button>' +
       '<button class="btn ghost" id="cert-hub" style="margin-top:8px">' + t("to_hub") + '</button>';
-    app.innerHTML = h;
+
     document.getElementById("back").onclick = renderHub;
     document.getElementById("cert-hub").onclick = renderHub;
     document.getElementById("cert-name").oninput = function (e) {
