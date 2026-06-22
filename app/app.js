@@ -396,21 +396,35 @@
   /* wrap the "❌ wrong / ✅ right / 👉 tip" intro into tinted blocks (red/green). Only
      touches intros that use the ❌+✅ pattern; others (❓, 👉-lists) pass through unchanged. */
   function formatIntro(html) {
-    if (!/❌/.test(html) || !/✅/.test(html)) return html;
     var inner = html.replace(/^\s*<div[^>]*>/, "").replace(/<\/div>\s*$/, "");
-    var bad = [], good = [], tip = [], pre = [], cur = null;
-    inner.split(/<br\s*\/?>/).forEach(function (ln) {
-      if (/👉/.test(ln)) cur = tip;                              // tip first (may contain the word "ошибка")
-      else if (/✅/.test(ln) || /Правильно/i.test(ln)) cur = good;
-      else if (/❌/.test(ln) || /ошибк|нельзя/i.test(ln)) cur = bad;
-      (cur || pre).push(ln);
-    });
-    var out = "";
-    if (pre.join("").trim()) out += pre.join("<br>");
-    if (bad.length) out += '<div class="intro-bad">' + bad.join("<br>") + "</div>";
-    if (good.length) out += '<div class="intro-good">' + good.join("<br>") + "</div>";
-    if (tip.length) out += '<div class="intro-tip">' + tip.join("<br>") + "</div>";
-    return out;
+    var lines = inner.split(/<br\s*\/?>/);
+    if (/❌/.test(html) && /✅/.test(html)) {                     // "wrong vs right" pattern -> red/green/tip
+      var bad = [], good = [], tip = [], pre = [], cur = null;
+      lines.forEach(function (ln) {
+        if (/👉/.test(ln)) cur = tip;                            // tip first (may contain the word "ошибка")
+        else if (/✅/.test(ln) || /Правильно/i.test(ln)) cur = good;
+        else if (/❌/.test(ln) || /ошибк|нельзя/i.test(ln)) cur = bad;
+        (cur || pre).push(ln);
+      });
+      var out = "";
+      if (pre.join("").trim()) out += pre.join("<br>");
+      if (bad.length) out += '<div class="intro-bad">' + bad.join("<br>") + "</div>";
+      if (good.length) out += '<div class="intro-good">' + good.join("<br>") + "</div>";
+      if (tip.length) out += '<div class="intro-tip">' + tip.join("<br>") + "</div>";
+      return out;
+    }
+    if (/👉|❓/.test(html)) {                                     // bullet-list pattern -> lead + point blocks
+      var lead = [], points = [], inPts = false;
+      lines.forEach(function (ln) {
+        if (/👉|❓/.test(ln)) inPts = true;
+        (inPts ? points : lead).push(ln);
+      });
+      var o = "";
+      if (lead.join("").trim()) o += '<div class="intro-lead">' + lead.join("<br>") + "</div>";
+      points.forEach(function (p) { if (p.trim()) o += '<div class="intro-point">' + p + "</div>"; });
+      return o;
+    }
+    return html;
   }
   function grammarBody(les) {
     var g = les.grammar;
