@@ -1744,6 +1744,73 @@
         title_ru: "Это / то: this · that · these · those",
         intro_ru:
           '<div style="line-height:1.6">Указываем на предмет:<br>👉 <b>This</b> <span class="g-transcr">[зис]</span> — один, РЯДОМ.<br><b>That</b> <span class="g-transcr">[зэт]</span> — один, ДАЛЕКО.<br>👉 <b>These</b> <span class="g-transcr">[зиз]</span> — много, РЯДОМ.<br><b>Those</b> <span class="g-transcr">[зоуз]</span> — много, ДАЛЕКО.<br>👉 Один → <b>is</b>, много → <b>are</b>: «This <b>is</b> a bus», «These <b>are</b> tickets».</div>',
+        visual_ru:
+          '<svg viewBox="22 8 366 540" xmlns="http://www.w3.org/2000/svg" role="img" font-family="-apple-system, system-ui, Roboto, sans-serif" aria-label="this/that/these/those: близко-далеко × один-много">' +
+          '<title>this / that / these / those</title>' +
+          '<desc>Наблюдатель и автобусы: один рядом, один далеко, много рядом, много далеко.</desc>' +
+          '<defs>' +
+          '<symbol id="l11p" viewBox="0 0 30 46">' +
+          '<g stroke="#e0564a" stroke-width="4.5" stroke-linecap="round">' +
+          '<line x1="11" y1="19" x2="5" y2="26"/><line x1="19" y1="19" x2="25" y2="26"/>' +
+          '<line x1="12.5" y1="30" x2="10" y2="43"/><line x1="17.5" y1="30" x2="20" y2="43"/></g>' +
+          '<circle cx="15" cy="8" r="6" fill="#e0564a" stroke="#a83a30" stroke-width="1.5"/>' +
+          '<rect x="9.5" y="14" width="11" height="17" rx="5" fill="#e0564a" stroke="#a83a30" stroke-width="1.5"/>' +
+          '</symbol>' +
+          '<symbol id="l11bus" viewBox="0 0 64 34">' +
+          '<rect x="2" y="4" width="60" height="20" rx="5" fill="#3f7ec9" stroke="#2c5d96" stroke-width="1.5"/>' +
+          '<rect x="7" y="8" width="8" height="7" rx="1" fill="#d3e6f8"/>' +
+          '<rect x="18" y="8" width="8" height="7" rx="1" fill="#d3e6f8"/>' +
+          '<rect x="29" y="8" width="8" height="7" rx="1" fill="#d3e6f8"/>' +
+          '<rect x="40" y="8" width="8" height="7" rx="1" fill="#d3e6f8"/>' +
+          '<rect x="51" y="8" width="7" height="9" rx="1" fill="#bcdcff"/>' +
+          '<circle cx="16" cy="25" r="4.5" fill="#333"/><circle cx="16" cy="25" r="1.8" fill="#999"/>' +
+          '<circle cx="48" cy="25" r="4.5" fill="#333"/><circle cx="48" cy="25" r="1.8" fill="#999"/>' +
+          '<circle cx="61" cy="20" r="1.8" fill="#ffe08a"/>' +
+          '</symbol>' +
+          '</defs>' +
+          '<g transform="translate(0,0)">' +
+          '<polygon points="66,196 134,196 104,78 96,78" fill="#aeb6bf"/>' +
+          '<line x1="36" y1="78" x2="164" y2="78" stroke="#d6dbe0" stroke-width="1"/>' +
+          '<line x1="100" y1="194" x2="100" y2="80" stroke="#eef1f4" stroke-width="2" stroke-dasharray="5 7"/>' +
+          '<use href="#l11p" x="30" y="150" width="22" height="34"/>' +
+          '<use href="#l11bus" x="62" y="150" width="76" height="40"/>' +
+          '<text x="100" y="224" text-anchor="middle" font-weight="700" font-size="30" fill="var(--text)">this</text>' +
+          '<text x="100" y="246" text-anchor="middle" font-size="17" font-style="italic" fill="var(--text2)">[зис]</text>' +
+          '<text x="100" y="265" text-anchor="middle" font-size="16" fill="var(--text2)">этот — один, рядом</text>' +
+          '</g>' +
+          '<g transform="translate(210,0)">' +
+          '<polygon points="66,196 134,196 104,78 96,78" fill="#aeb6bf"/>' +
+          '<line x1="36" y1="78" x2="164" y2="78" stroke="#d6dbe0" stroke-width="1"/>' +
+          '<line x1="100" y1="194" x2="100" y2="80" stroke="#eef1f4" stroke-width="2" stroke-dasharray="5 7"/>' +
+          '<use href="#l11p" x="30" y="150" width="22" height="34"/>' +
+          '<use href="#l11bus" x="83" y="82" width="34" height="18"/>' +
+          '<text x="100" y="224" text-anchor="middle" font-weight="700" font-size="30" fill="var(--text)">that</text>' +
+          '<text x="100" y="246" text-anchor="middle" font-size="17" font-style="italic" fill="var(--text2)">[зэт]</text>' +
+          '<text x="100" y="265" text-anchor="middle" font-size="16" fill="var(--text2)">тот — один, далеко</text>' +
+          '</g>' +
+          '<g transform="translate(0,278)">' +
+          '<polygon points="66,196 134,196 104,78 96,78" fill="#aeb6bf"/>' +
+          '<line x1="36" y1="78" x2="164" y2="78" stroke="#d6dbe0" stroke-width="1"/>' +
+          '<line x1="100" y1="194" x2="100" y2="80" stroke="#eef1f4" stroke-width="2" stroke-dasharray="5 7"/>' +
+          '<use href="#l11p" x="28" y="150" width="22" height="34"/>' +
+          '<use href="#l11bus" x="90" y="128" width="56" height="30"/>' +
+          '<use href="#l11bus" x="52" y="154" width="70" height="37"/>' +
+          '<text x="100" y="224" text-anchor="middle" font-weight="700" font-size="30" fill="var(--text)">these</text>' +
+          '<text x="100" y="246" text-anchor="middle" font-size="17" font-style="italic" fill="var(--text2)">[зиз]</text>' +
+          '<text x="100" y="265" text-anchor="middle" font-size="16" fill="var(--text2)">эти — много, рядом</text>' +
+          '</g>' +
+          '<g transform="translate(210,278)">' +
+          '<polygon points="66,196 134,196 104,78 96,78" fill="#aeb6bf"/>' +
+          '<line x1="36" y1="78" x2="164" y2="78" stroke="#d6dbe0" stroke-width="1"/>' +
+          '<line x1="100" y1="194" x2="100" y2="80" stroke="#eef1f4" stroke-width="2" stroke-dasharray="5 7"/>' +
+          '<use href="#l11p" x="30" y="150" width="22" height="34"/>' +
+          '<use href="#l11bus" x="98" y="73" width="27" height="14"/>' +
+          '<use href="#l11bus" x="78" y="84" width="34" height="18"/>' +
+          '<text x="100" y="224" text-anchor="middle" font-weight="700" font-size="30" fill="var(--text)">those</text>' +
+          '<text x="100" y="246" text-anchor="middle" font-size="17" font-style="italic" fill="var(--text2)">[зоуз]</text>' +
+          '<text x="100" y="265" text-anchor="middle" font-size="16" fill="var(--text2)">те — много, далеко</text>' +
+          '</g>' +
+          '</svg>',
         cultural_ru:
           'В русском «это/то» не меняется по числу. В английском — 4 слова (близко/далеко × один/много):' +
           '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:6px">' +
