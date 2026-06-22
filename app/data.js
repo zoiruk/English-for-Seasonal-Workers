@@ -538,6 +538,42 @@
         title_ru: "Который час? It is seven o'clock",
         intro_ru:
           '<div style="line-height:1.6">Так говорить — ошибка:<br>❌ <b>It seven o\'clock</b><br>Правильно:<br>✅ <b>It is seven o\'clock</b> <span class="g-transcr">[ит из сэвн эклок]</span> (сейчас 7 часов)<br>👉 О времени, дне и цене всегда говорим <b>It is…</b> — глагол <b>is</b> нельзя пропускать.</div>',
+        visual_ru:
+          '<svg viewBox="0 0 280 528" xmlns="http://www.w3.org/2000/svg" role="img" font-family="-apple-system, system-ui, Roboto, sans-serif" aria-label="Время: o\'clock (ровно) и half past (:30)">' +
+          '<title>Время: o\'clock и half past</title>' +
+          '<desc>Два циферблата: 7:00 — seven o\'clock, и 8:30 — half past eight.</desc>' +
+          '<defs>' +
+          '<symbol id="l4face" viewBox="0 0 160 160">' +
+          '<circle cx="80" cy="80" r="72" fill="#ffffff" stroke="#3a3f4a" stroke-width="3.5"/>' +
+          '<g fill="#3a3f4a" font-size="15" font-weight="600" text-anchor="middle">' +
+          '<text x="80" y="29">12</text><text x="108" y="37">1</text><text x="129" y="57">2</text>' +
+          '<text x="136" y="85">3</text><text x="129" y="113">4</text><text x="108" y="134">5</text>' +
+          '<text x="80" y="141">6</text><text x="52" y="134">7</text><text x="31" y="113">8</text>' +
+          '<text x="24" y="85">9</text><text x="31" y="57">10</text><text x="52" y="37">11</text>' +
+          '</g>' +
+          '</symbol>' +
+          '</defs>' +
+          '<g transform="translate(52,12)">' +
+          '<use href="#l4face" x="0" y="0" width="160" height="160"/>' +
+          '<line x1="80" y1="80" x2="80" y2="30" stroke="#e0564a" stroke-width="3.5" stroke-linecap="round"/>' +
+          '<line x1="80" y1="80" x2="63" y2="109" stroke="#2c3340" stroke-width="5.5" stroke-linecap="round"/>' +
+          '<circle cx="80" cy="80" r="4.5" fill="#2c3340"/>' +
+          '<text x="80" y="186" text-anchor="middle" font-weight="700" font-size="22" fill="var(--text)">seven o\'clock</text>' +
+          '<text x="80" y="207" text-anchor="middle" font-size="15" font-style="italic" fill="var(--text2)">[сэвн эклок]</text>' +
+          '<text x="80" y="225" text-anchor="middle" font-size="14.5" fill="var(--text2)">7:00 · ровно</text>' +
+          '</g>' +
+          '<g transform="translate(52,252)">' +
+          '<use href="#l4face" x="0" y="0" width="160" height="160"/>' +
+          '<line x1="80" y1="80" x2="80" y2="130" stroke="#e0564a" stroke-width="3.5" stroke-linecap="round"/>' +
+          '<line x1="80" y1="80" x2="47" y2="89" stroke="#2c3340" stroke-width="5.5" stroke-linecap="round"/>' +
+          '<circle cx="80" cy="80" r="4.5" fill="#2c3340"/>' +
+          '<text x="80" y="186" text-anchor="middle" font-weight="700" font-size="22" fill="var(--text)">half past eight</text>' +
+          '<text x="80" y="207" text-anchor="middle" font-size="15" font-style="italic" fill="var(--text2)">[хаф паст эйт]</text>' +
+          '<text x="80" y="225" text-anchor="middle" font-size="14.5" fill="var(--text2)">8:30 · половина девятого</text>' +
+          '</g>' +
+          '<text x="132" y="500" text-anchor="middle" font-size="14" fill="var(--text2)">Короткая стрелка — часы,</text>' +
+          '<text x="132" y="518" text-anchor="middle" font-size="14" fill="var(--text2)">длинная (красная) — минуты</text>' +
+          '</svg>',
         cultural_ru:
           "Дни недели в английском всегда с <b>большой буквы</b>: <b>Monday</b>, не monday. Деньги: значок <b>£</b> ставится ПЕРЕД числом (£10), а говорим «ten pounds».",
         note_ru:
