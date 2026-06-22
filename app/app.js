@@ -414,14 +414,15 @@
       return out;
     }
     if (/👉|❓/.test(html)) {                                     // bullet-list pattern -> lead + point blocks
-      var lead = [], points = [], inPts = false;
+      var lead = [], points = [];                                 // points = array of line-groups
       lines.forEach(function (ln) {
-        if (/👉|❓/.test(ln)) inPts = true;
-        (inPts ? points : lead).push(ln);
+        if (/👉|❓/.test(ln)) points.push([ln]);                  // new point starts at each marker
+        else if (points.length) points[points.length - 1].push(ln); // continuation line stays in the same block
+        else lead.push(ln);                                       // preamble before the first marker
       });
       var o = "";
       if (lead.join("").trim()) o += '<div class="intro-lead">' + lead.join("<br>") + "</div>";
-      points.forEach(function (p) { if (p.trim()) o += '<div class="intro-point">' + p + "</div>"; });
+      points.forEach(function (grp) { o += '<div class="intro-point">' + grp.join("<br>") + "</div>"; });
       return o;
     }
     return html;

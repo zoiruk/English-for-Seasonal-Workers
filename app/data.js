@@ -1675,7 +1675,7 @@
       grammar: {
         title_ru: "Это / то: this · that · these · those",
         intro_ru:
-          '<div style="line-height:1.6">Указываем на предмет:<br>👉 <b>This</b> <span class="g-transcr">[зис]</span> — один, РЯДОМ. <b>That</b> <span class="g-transcr">[зэт]</span> — один, ДАЛЕКО.<br>👉 <b>These</b> <span class="g-transcr">[зиз]</span> — много, РЯДОМ. <b>Those</b> <span class="g-transcr">[зоуз]</span> — много, ДАЛЕКО.<br>👉 Один → <b>is</b>, много → <b>are</b>: «This <b>is</b> a bus», «These <b>are</b> tickets».</div>',
+          '<div style="line-height:1.6">Указываем на предмет:<br>👉 <b>This</b> <span class="g-transcr">[зис]</span> — один, РЯДОМ.<br><b>That</b> <span class="g-transcr">[зэт]</span> — один, ДАЛЕКО.<br>👉 <b>These</b> <span class="g-transcr">[зиз]</span> — много, РЯДОМ.<br><b>Those</b> <span class="g-transcr">[зоуз]</span> — много, ДАЛЕКО.<br>👉 Один → <b>is</b>, много → <b>are</b>: «This <b>is</b> a bus», «These <b>are</b> tickets».</div>',
         cultural_ru:
           'В русском «это/то» не меняется по числу. В английском — 4 слова (близко/далеко × один/много):' +
           '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:6px">' +
