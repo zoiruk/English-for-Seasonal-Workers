@@ -719,6 +719,68 @@
         title_ru: "Где это? Where is… + in / on / under",
         intro_ru:
           '<div style="line-height:1.6">Так спрашивать — ошибка:<br>❌ <b>Toilet where?</b><br>Правильно:<br>✅ <b>Where is the toilet?</b> <span class="g-transcr">[уэа из зэ тойлет]</span> (где туалет?)<br>👉 Вопрос о месте всегда начинаем с <b>Where is…?</b></div>',
+        visual_ru:
+          '<svg viewBox="0 0 480 556" xmlns="http://www.w3.org/2000/svg" role="img" font-family="-apple-system, system-ui, Roboto, sans-serif" aria-label="Предлоги места в 3D: in, on, under, behind, near, next to">' +
+          '<title>Предлоги места в 3D</title>' +
+          '<desc>Человечек и коробка: внутри, на, под (лёжа), за, рядом и вплотную.</desc>' +
+          '<defs>' +
+          '<symbol id="l5box" viewBox="0 0 80 100">' +
+          '<polygon points="10,30 40,15 70,30 40,45" fill="#e6bd8a" stroke="#8f5e30" stroke-width="1.5" stroke-linejoin="round"/>' +
+          '<polygon points="10,30 40,45 40,79 10,64" fill="#cf9b63" stroke="#8f5e30" stroke-width="1.5" stroke-linejoin="round"/>' +
+          '<polygon points="70,30 40,45 40,79 70,64" fill="#b58049" stroke="#8f5e30" stroke-width="1.5" stroke-linejoin="round"/>' +
+          '<line x1="40" y1="15" x2="40" y2="45" stroke="#c79a64" stroke-width="1.5"/>' +
+          '<line x1="40" y1="45" x2="40" y2="79" stroke="#9c6b3a" stroke-width="1.5"/>' +
+          '</symbol>' +
+          '<symbol id="l5p" viewBox="0 0 30 46">' +
+          '<g stroke="#e0564a" stroke-width="4.5" stroke-linecap="round">' +
+          '<line x1="11" y1="19" x2="5" y2="26"/><line x1="19" y1="19" x2="25" y2="26"/>' +
+          '<line x1="12.5" y1="30" x2="10" y2="43"/><line x1="17.5" y1="30" x2="20" y2="43"/></g>' +
+          '<circle cx="15" cy="8" r="6" fill="#e0564a" stroke="#a83a30" stroke-width="1.5"/>' +
+          '<rect x="9.5" y="14" width="11" height="17" rx="5" fill="#e0564a" stroke="#a83a30" stroke-width="1.5"/>' +
+          '</symbol>' +
+          '<symbol id="l5lie" viewBox="0 0 60 26">' +
+          '<g stroke="#e0564a" stroke-width="4.5" stroke-linecap="round">' +
+          '<line x1="22" y1="9" x2="17" y2="2"/><line x1="22" y1="17" x2="17" y2="24"/>' +
+          '<line x1="40" y1="10" x2="54" y2="5"/><line x1="40" y1="16" x2="54" y2="21"/></g>' +
+          '<circle cx="9" cy="13" r="6" fill="#e0564a" stroke="#a83a30" stroke-width="1.5"/>' +
+          '<rect x="14" y="7" width="26" height="12" rx="6" fill="#e0564a" stroke="#a83a30" stroke-width="1.5"/>' +
+          '</symbol>' +
+          '</defs>' +
+          '<g stroke="#8f5e30" stroke-width="1.5" stroke-linejoin="round">' +
+          '<polygon points="113,84 130,76 147,84 130,92" fill="#7a4f24"/>' +
+          '<polygon points="113,66 130,58 130,76 113,84" fill="#8a5a2c"/>' +
+          '<polygon points="130,58 147,66 147,84 130,76" fill="#956030"/>' +
+          '<polygon points="100,66 130,51 130,58 113,66" fill="#e6bd8a"/>' +
+          '<polygon points="130,51 160,66 147,66 130,58" fill="#e6bd8a"/></g>' +
+          '<use href="#l5p" x="115" y="41" width="30" height="46"/>' +
+          '<g stroke="#8f5e30" stroke-width="1.5" stroke-linejoin="round">' +
+          '<polygon points="100,66 130,81 130,115 100,100" fill="#cf9b63"/>' +
+          '<polygon points="160,66 130,81 130,115 160,100" fill="#b58049"/>' +
+          '<polygon points="100,66 130,81 130,74 113,66" fill="#dcb07d"/>' +
+          '<polygon points="130,81 160,66 147,66 130,74" fill="#dcb07d"/></g>' +
+          '<text x="130" y="166" text-anchor="middle"><tspan font-weight="700" font-size="20" fill="var(--text)">in</tspan> <tspan font-size="13" font-style="italic" fill="var(--text2)">[ин]</tspan></text>' +
+          '<text x="130" y="185" text-anchor="middle" font-size="12.5" fill="var(--text2)">в, внутри</text>' +
+          '<use href="#l5box" x="310" y="36" width="80" height="100"/>' +
+          '<use href="#l5p" x="335" y="23" width="30" height="46"/>' +
+          '<text x="350" y="166" text-anchor="middle"><tspan font-weight="700" font-size="20" fill="var(--text)">on</tspan> <tspan font-size="13" font-style="italic" fill="var(--text2)">[он]</tspan></text>' +
+          '<text x="350" y="185" text-anchor="middle" font-size="12.5" fill="var(--text2)">на</text>' +
+          '<use href="#l5box" x="90" y="216" width="80" height="100"/>' +
+          '<use href="#l5lie" x="100" y="300" width="60" height="26"/>' +
+          '<text x="130" y="346" text-anchor="middle"><tspan font-weight="700" font-size="20" fill="var(--text)">under</tspan> <tspan font-size="13" font-style="italic" fill="var(--text2)">[андэ]</tspan></text>' +
+          '<text x="130" y="365" text-anchor="middle" font-size="12.5" fill="var(--text2)">под</text>' +
+          '<use href="#l5p" x="335" y="211" width="30" height="46"/>' +
+          '<use href="#l5box" x="310" y="216" width="80" height="100"/>' +
+          '<text x="350" y="346" text-anchor="middle"><tspan font-weight="700" font-size="20" fill="var(--text)">behind</tspan> <tspan font-size="13" font-style="italic" fill="var(--text2)">[бихайнд]</tspan></text>' +
+          '<text x="350" y="365" text-anchor="middle" font-size="12.5" fill="var(--text2)">за, позади</text>' +
+          '<use href="#l5box" x="90" y="396" width="80" height="100"/>' +
+          '<use href="#l5p" x="188" y="424" width="30" height="46"/>' +
+          '<text x="130" y="526" text-anchor="middle"><tspan font-weight="700" font-size="20" fill="var(--text)">near</tspan> <tspan font-size="13" font-style="italic" fill="var(--text2)">[ниэ]</tspan></text>' +
+          '<text x="130" y="545" text-anchor="middle" font-size="12.5" fill="var(--text2)">рядом (с зазором)</text>' +
+          '<use href="#l5box" x="310" y="396" width="80" height="100"/>' +
+          '<use href="#l5p" x="384" y="424" width="30" height="46"/>' +
+          '<text x="350" y="526" text-anchor="middle"><tspan font-weight="700" font-size="20" fill="var(--text)">next to</tspan> <tspan font-size="13" font-style="italic" fill="var(--text2)">[нэкст ту]</tspan></text>' +
+          '<text x="350" y="545" text-anchor="middle" font-size="12.5" fill="var(--text2)">рядом, вплотную</text>' +
+          '</svg>',
         cultural_ru:
           "Маленькие слова <b>in</b> (внутри), <b>on</b> (на), <b>under</b> (под) показывают, ГДЕ предмет. В английском они идут ПЕРЕД местом: <b>in the camp</b> (в лагере). Учитесь читать таблички-<b>signs</b> — это безопасность.",
         note_ru:

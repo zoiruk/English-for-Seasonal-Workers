@@ -430,6 +430,7 @@
   function grammarBody(les) {
     var g = les.grammar;
     var h = '<div class="card"><div class="g-h">' + esc(g.title_ru) + "</div>" + formatIntro(g.intro_ru) + "</div>";
+    if (g.visual_ru) h += '<div class="card g-visual">' + g.visual_ru + "</div>";
     h += '<div class="card rule-card"><div class="g-h">' + t("grammar_rule") + "</div>" +
       '<div class="forms">' + ["positive", "negative", "question"].map(function (f, i) {
         return '<button class="formbtn' + (i === 0 ? " on" : "") + '" data-form="' + f + '">' + esc(g.forms[f].label_ru) + "</button>";
