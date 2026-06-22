@@ -101,6 +101,10 @@ code { background: var(--accent-soft); color: var(--text); padding: 1px 5px; bor
 /* rule formulas stack vertically: formula / transcription / translation each on its own line */
 #formbox code { display: block; width: fit-content; max-width: 100%; margin-bottom: 3px; }
 #formbox .g-transcr { display: block; }
+/* grammar intro: "wrong" (red) vs "right" (green) contrast blocks + takeaway tip */
+.intro-bad { background: var(--no-soft); border-left: 3px solid var(--no); border-radius: 8px; padding: 7px 10px; margin: 6px 0; line-height: 1.5; }
+.intro-good { background: var(--ok-soft); border-left: 3px solid var(--ok); border-radius: 8px; padding: 7px 10px; margin: 6px 0; line-height: 1.5; }
+.intro-tip { margin-top: 8px; line-height: 1.5; }
 .formbtn.on { background: var(--accent); color: #fff; border-color: var(--accent); }
 
 .g-table-wrap { overflow-x: auto; }

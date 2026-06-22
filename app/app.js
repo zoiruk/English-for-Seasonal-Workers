@@ -393,9 +393,28 @@
     return h + "</div>";
   }
 
+  /* wrap the "❌ wrong / ✅ right / 👉 tip" intro into tinted blocks (red/green). Only
+     touches intros that use the ❌+✅ pattern; others (❓, 👉-lists) pass through unchanged. */
+  function formatIntro(html) {
+    if (!/❌/.test(html) || !/✅/.test(html)) return html;
+    var inner = html.replace(/^\s*<div[^>]*>/, "").replace(/<\/div>\s*$/, "");
+    var bad = [], good = [], tip = [], pre = [], cur = null;
+    inner.split(/<br\s*\/?>/).forEach(function (ln) {
+      if (/👉/.test(ln)) cur = tip;                              // tip first (may contain the word "ошибка")
+      else if (/✅/.test(ln) || /Правильно/i.test(ln)) cur = good;
+      else if (/❌/.test(ln) || /ошибк|нельзя/i.test(ln)) cur = bad;
+      (cur || pre).push(ln);
+    });
+    var out = "";
+    if (pre.join("").trim()) out += pre.join("<br>");
+    if (bad.length) out += '<div class="intro-bad">' + bad.join("<br>") + "</div>";
+    if (good.length) out += '<div class="intro-good">' + good.join("<br>") + "</div>";
+    if (tip.length) out += '<div class="intro-tip">' + tip.join("<br>") + "</div>";
+    return out;
+  }
   function grammarBody(les) {
     var g = les.grammar;
-    var h = '<div class="card"><div class="g-h">' + esc(g.title_ru) + "</div>" + g.intro_ru + "</div>";
+    var h = '<div class="card"><div class="g-h">' + esc(g.title_ru) + "</div>" + formatIntro(g.intro_ru) + "</div>";
     h += '<div class="card rule-card"><div class="g-h">' + t("grammar_rule") + "</div>" +
       '<div class="forms">' + ["positive", "negative", "question"].map(function (f, i) {
         return '<button class="formbtn' + (i === 0 ? " on" : "") + '" data-form="' + f + '">' + esc(g.forms[f].label_ru) + "</button>";
