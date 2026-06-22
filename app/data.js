@@ -720,7 +720,7 @@
         intro_ru:
           '<div style="line-height:1.6">Так спрашивать — ошибка:<br>❌ <b>Toilet where?</b><br>Правильно:<br>✅ <b>Where is the toilet?</b> <span class="g-transcr">[уэа из зэ тойлет]</span> (где туалет?)<br>👉 Вопрос о месте всегда начинаем с <b>Where is…?</b></div>',
         visual_ru:
-          '<svg viewBox="0 0 480 556" xmlns="http://www.w3.org/2000/svg" role="img" font-family="-apple-system, system-ui, Roboto, sans-serif" aria-label="Предлоги места в 3D: in, on, under, behind, near, next to">' +
+          '<svg viewBox="56 12 364 550" xmlns="http://www.w3.org/2000/svg" role="img" font-family="-apple-system, system-ui, Roboto, sans-serif" aria-label="Предлоги места в 3D: in, on, under, behind, near, next to">' +
           '<title>Предлоги места в 3D</title>' +
           '<desc>Человечек и коробка: внутри, на, под (лёжа), за, рядом и вплотную.</desc>' +
           '<defs>' +
@@ -758,28 +758,34 @@
           '<polygon points="160,66 130,81 130,115 160,100" fill="#b58049"/>' +
           '<polygon points="100,66 130,81 130,74 113,66" fill="#dcb07d"/>' +
           '<polygon points="130,81 160,66 147,66 130,74" fill="#dcb07d"/></g>' +
-          '<text x="130" y="166" text-anchor="middle"><tspan font-weight="700" font-size="20" fill="var(--text)">in</tspan> <tspan font-size="13" font-style="italic" fill="var(--text2)">[ин]</tspan></text>' +
-          '<text x="130" y="185" text-anchor="middle" font-size="12.5" fill="var(--text2)">в, внутри</text>' +
+          '<text x="130" y="150" text-anchor="middle" font-weight="700" font-size="30" fill="var(--text)">in</text>' +
+          '<text x="130" y="172" text-anchor="middle" font-size="17" font-style="italic" fill="var(--text2)">[ин]</text>' +
+          '<text x="130" y="192" text-anchor="middle" font-size="16" fill="var(--text2)">в, внутри</text>' +
           '<use href="#l5box" x="310" y="36" width="80" height="100"/>' +
           '<use href="#l5p" x="335" y="23" width="30" height="46"/>' +
-          '<text x="350" y="166" text-anchor="middle"><tspan font-weight="700" font-size="20" fill="var(--text)">on</tspan> <tspan font-size="13" font-style="italic" fill="var(--text2)">[он]</tspan></text>' +
-          '<text x="350" y="185" text-anchor="middle" font-size="12.5" fill="var(--text2)">на</text>' +
+          '<text x="350" y="150" text-anchor="middle" font-weight="700" font-size="30" fill="var(--text)">on</text>' +
+          '<text x="350" y="172" text-anchor="middle" font-size="17" font-style="italic" fill="var(--text2)">[он]</text>' +
+          '<text x="350" y="192" text-anchor="middle" font-size="16" fill="var(--text2)">на</text>' +
           '<use href="#l5box" x="90" y="216" width="80" height="100"/>' +
           '<use href="#l5lie" x="100" y="300" width="60" height="26"/>' +
-          '<text x="130" y="346" text-anchor="middle"><tspan font-weight="700" font-size="20" fill="var(--text)">under</tspan> <tspan font-size="13" font-style="italic" fill="var(--text2)">[андэ]</tspan></text>' +
-          '<text x="130" y="365" text-anchor="middle" font-size="12.5" fill="var(--text2)">под</text>' +
+          '<text x="130" y="336" text-anchor="middle" font-weight="700" font-size="30" fill="var(--text)">under</text>' +
+          '<text x="130" y="358" text-anchor="middle" font-size="17" font-style="italic" fill="var(--text2)">[андэ]</text>' +
+          '<text x="130" y="378" text-anchor="middle" font-size="16" fill="var(--text2)">под</text>' +
           '<use href="#l5p" x="335" y="211" width="30" height="46"/>' +
           '<use href="#l5box" x="310" y="216" width="80" height="100"/>' +
-          '<text x="350" y="346" text-anchor="middle"><tspan font-weight="700" font-size="20" fill="var(--text)">behind</tspan> <tspan font-size="13" font-style="italic" fill="var(--text2)">[бихайнд]</tspan></text>' +
-          '<text x="350" y="365" text-anchor="middle" font-size="12.5" fill="var(--text2)">за, позади</text>' +
+          '<text x="350" y="336" text-anchor="middle" font-weight="700" font-size="30" fill="var(--text)">behind</text>' +
+          '<text x="350" y="358" text-anchor="middle" font-size="17" font-style="italic" fill="var(--text2)">[бихайнд]</text>' +
+          '<text x="350" y="378" text-anchor="middle" font-size="16" fill="var(--text2)">за, позади</text>' +
           '<use href="#l5box" x="90" y="396" width="80" height="100"/>' +
           '<use href="#l5p" x="188" y="424" width="30" height="46"/>' +
-          '<text x="130" y="526" text-anchor="middle"><tspan font-weight="700" font-size="20" fill="var(--text)">near</tspan> <tspan font-size="13" font-style="italic" fill="var(--text2)">[ниэ]</tspan></text>' +
-          '<text x="130" y="545" text-anchor="middle" font-size="12.5" fill="var(--text2)">рядом (с зазором)</text>' +
+          '<text x="130" y="510" text-anchor="middle" font-weight="700" font-size="30" fill="var(--text)">near</text>' +
+          '<text x="130" y="532" text-anchor="middle" font-size="17" font-style="italic" fill="var(--text2)">[ниэ]</text>' +
+          '<text x="130" y="552" text-anchor="middle" font-size="16" fill="var(--text2)">рядом (с зазором)</text>' +
           '<use href="#l5box" x="310" y="396" width="80" height="100"/>' +
           '<use href="#l5p" x="384" y="424" width="30" height="46"/>' +
-          '<text x="350" y="526" text-anchor="middle"><tspan font-weight="700" font-size="20" fill="var(--text)">next to</tspan> <tspan font-size="13" font-style="italic" fill="var(--text2)">[нэкст ту]</tspan></text>' +
-          '<text x="350" y="545" text-anchor="middle" font-size="12.5" fill="var(--text2)">рядом, вплотную</text>' +
+          '<text x="350" y="510" text-anchor="middle" font-weight="700" font-size="30" fill="var(--text)">next to</text>' +
+          '<text x="350" y="532" text-anchor="middle" font-size="17" font-style="italic" fill="var(--text2)">[нэкст ту]</text>' +
+          '<text x="350" y="552" text-anchor="middle" font-size="16" fill="var(--text2)">рядом, вплотную</text>' +
           '</svg>',
         cultural_ru:
           "Маленькие слова <b>in</b> (внутри), <b>on</b> (на), <b>under</b> (под) показывают, ГДЕ предмет. В английском они идут ПЕРЕД местом: <b>in the camp</b> (в лагере). Учитесь читать таблички-<b>signs</b> — это безопасность.",
