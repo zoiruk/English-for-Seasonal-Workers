@@ -1,0 +1,147 @@
+/*
+ * Graded reader for "English for Seasonal Workers" (RU-only, A0-A1).
+ * One running story about Ahmad (the L1 hero), split into chapters = lessons.
+ *
+ * Chapter N reuses ONLY the vocabulary of lessons 1..N + the function-word
+ * whitelist (scripts/lib.js activeWhitelist). A few NEW words per chapter are a
+ * conscious, dosed addition: each lives in `glossary` (<=5), is rendered BLUE in
+ * the text, and opens a popup with transcription + RU + audio on tap. The reader
+ * stays static, file://-safe, no runtime generation (offline, risk #1: unverified
+ * English). Dual export like data.js / phrasebook.js.
+ *
+ * Exported as window.BOOKS = [ { id, emoji, title_ru, title_en, sub_ru, chapters:[...] } ]
+ * — a shelf of books (one book now: "История Ахмада"; structure ready for more).
+ * Each chapter:
+ * Schema: chapter = {
+ *   id,                 // == lesson id (unlock gate: store.done[id])
+ *   emoji, title_ru, title_en,
+ *   sentences: [ { en, ru } ],       // body = lessons 1..N vocab + whitelist + glossary[].en
+ *   glossary:  [ { en, transcr, ru, pn } ],   // <=5; these tokens are coloured blue
+ *   quiz:      [ { q_ru, opts_ru:[4], c } ]   // 2-3 RU comprehension questions, all Russian
+ * } ]
+ *
+ * Glossary transcription is written by hand per the app's Cyrillic conventions
+ * (verify-transcr only covers lesson words[], not the reader). IPA verified
+ * against Wiktionary / Cambridge (RP).
+ *
+ * v1 = proof of 3 chapters (L1-L2-L3) only, NOT all 15 — conscious owner override
+ * pending the live A0 test B (priority #1). See plans/2026-06-22-reading-book-feature.md.
+ */
+(function (root) {
+  const READER = [
+    {
+      id: 1,
+      emoji: "✈️",
+      title_ru: "Ахмад приезжает",
+      title_en: "Ahmad arrives",
+      sentences: [
+        { en: "Hello! I am Ahmad.", ru: "Привет! Я — Ахмад." },
+        { en: "I am from Uzbekistan.", ru: "Я из Узбекистана." },
+        { en: "I am a worker.", ru: "Я рабочий." },
+        { en: "This is Britain.", ru: "Это Британия." },
+        { en: "This is a big farm.", ru: "Это большая ферма." },
+        { en: "Tom is the manager.", ru: "Том — менеджер." },
+        { en: "He is British.", ru: "Он британец." },
+        { en: '"Good morning, Ahmad! Welcome!"', ru: "«Доброе утро, Ахмад! Добро пожаловать!»" },
+        { en: "Ahmad is a new picker.", ru: "Ахмад — новый сборщик." },
+        { en: "Anna is a packer.", ru: "Анна — упаковщица." },
+        { en: "She is from Kazakhstan.", ru: "Она из Казахстана." },
+        { en: "Anna and Ahmad are a team.", ru: "Анна и Ахмад — одна команда." },
+        { en: "Ahmad is happy.", ru: "Ахмад рад." },
+        { en: '"You are welcome here, Ahmad!"', ru: "«Тебе здесь рады, Ахмад!»" },
+      ],
+      glossary: [
+        { en: "big", transcr: "биг", ru: "большой", pn: "/bɪɡ/" },
+        { en: "new", transcr: "нью", ru: "новый", pn: "/njuː/" },
+        { en: "happy", transcr: "хэпи", ru: "рад, счастлив", pn: "/ˈhæpi/" },
+        { en: "here", transcr: "хиэ", ru: "здесь", pn: "/hɪə/" },
+      ],
+      quiz: [
+        { q_ru: "Откуда приехал Ахмад?", opts_ru: ["Из Узбекистана", "Из Британии", "Из Казахстана", "Из Таджикистана"], c: 0 },
+        { q_ru: "Кто такой Том?", opts_ru: ["Менеджер", "Сборщик", "Водитель", "Механик"], c: 0 },
+        { q_ru: "Кем работает Ахмад?", opts_ru: ["Сборщик (picker)", "Упаковщик (packer)", "Водитель (driver)", "Уборщик (cleaner)"], c: 0 },
+      ],
+    },
+    {
+      id: 2,
+      emoji: "👨‍👩‍👦",
+      title_ru: "Семья и друзья Ахмада",
+      title_en: "Ahmad's family and friends",
+      sentences: [
+        { en: "This is my family.", ru: "Это моя семья." },
+        { en: "This is a photo.", ru: "Это фото." },
+        { en: "My wife is Fatima.", ru: "Моя жена — Фатима." },
+        { en: "She is from Uzbekistan.", ru: "Она из Узбекистана." },
+        { en: "This is my son, Ali.", ru: "Это мой сын, Али." },
+        { en: "He is a baby.", ru: "Он малыш." },
+        { en: "Sara is my colleague.", ru: "Сара — моя коллега." },
+        { en: "She is a cleaner.", ru: "Она уборщица." },
+        { en: "John is my friend.", ru: "Джон — мой друг." },
+        { en: "He is a mechanic.", ru: "Он механик." },
+        { en: "This is my locker.", ru: "Это мой шкафчик." },
+        { en: "My badge is here.", ru: "Мой бейдж здесь." },
+        { en: "Sara and John are good colleagues.", ru: "Сара и Джон — хорошие коллеги." },
+      ],
+      glossary: [
+        { en: "photo", transcr: "фоутоу", ru: "фото", pn: "/ˈfəʊtəʊ/" },
+        { en: "here", transcr: "хиэ", ru: "здесь", pn: "/hɪə/" },
+      ],
+      quiz: [
+        { q_ru: "Как зовут жену Ахмада?", opts_ru: ["Фатима", "Анна", "Сара", "Аиша"], c: 0 },
+        { q_ru: "Кто такой Али?", opts_ru: ["Сын Ахмада", "Брат Ахмада", "Друг Ахмада", "Менеджер"], c: 0 },
+        { q_ru: "Кем работает Сара?", opts_ru: ["Уборщица (cleaner)", "Механик (mechanic)", "Упаковщица (packer)", "Менеджер (manager)"], c: 0 },
+      ],
+    },
+    {
+      id: 3,
+      emoji: "🧰",
+      title_ru: "Вещи на ферме",
+      title_en: "Things on the farm",
+      sentences: [
+        { en: "Ahmad is a picker.", ru: "Ахмад — сборщик." },
+        { en: "This is his job.", ru: "Это его работа." },
+        { en: "Tom is the manager.", ru: "Том — менеджер." },
+        { en: "This is a crate.", ru: "Это ящик." },
+        { en: "These are punnets.", ru: "Это корзинки (для ягод)." },
+        { en: "These punnets are small.", ru: "Эти корзинки маленькие." },
+        { en: "This is a trolley.", ru: "Это тележка." },
+        { en: "That is a ladder.", ru: "То — лестница." },
+        { en: "These are tools.", ru: "Это инструменты." },
+        { en: "This is a knife.", ru: "Это нож." },
+        { en: "The knife is sharp.", ru: "Нож острый." },
+        { en: '"Be careful, Ahmad!"', ru: "«Осторожно, Ахмад!»" },
+        { en: "That is a hammer.", ru: "То — молоток." },
+        { en: "That is a saw.", ru: "То — пила." },
+        { en: "Those are boxes.", ru: "Те — коробки." },
+        { en: "Ahmad is a good picker.", ru: "Ахмад — хороший сборщик." },
+        { en: '"You are a good worker, Ahmad!"', ru: "«Ты хороший работник, Ахмад!»" },
+      ],
+      glossary: [
+        { en: "small", transcr: "смол", ru: "маленький", pn: "/smɔːl/" },
+        { en: "sharp", transcr: "шарп", ru: "острый", pn: "/ʃɑːp/" },
+        { en: "careful", transcr: "кэафул", ru: "осторожный, осторожно", pn: "/ˈkeəfəl/" },
+      ],
+      quiz: [
+        { q_ru: "Кем работает Ахмад?", opts_ru: ["Сборщик (picker)", "Механик (mechanic)", "Менеджер (manager)", "Водитель (driver)"], c: 0 },
+        { q_ru: "Какой нож?", opts_ru: ["Острый", "Тупой", "Большой", "Старый"], c: 0 },
+        { q_ru: "Что Том сказал Ахмаду в конце?", opts_ru: ["Ты хороший работник", "Осторожно", "Доброе утро", "До свидания"], c: 0 },
+      ],
+    },
+  ];
+
+  // Library = shelf of books. One book now ("История Ахмада"); the structure is
+  // ready to hold more later. Chapters keep id == lesson id (the unlock gate).
+  const BOOKS = [
+    {
+      id: "ahmad",
+      emoji: "📖",
+      title_ru: "История Ахмада",
+      title_en: "Ahmad's story",
+      sub_ru: "Сезон на ферме — глава за главой",
+      chapters: READER,
+    },
+  ];
+
+  if (typeof module !== "undefined" && module.exports) module.exports = BOOKS;
+  else root.BOOKS = BOOKS;
+})(typeof window !== "undefined" ? window : globalThis);

@@ -522,7 +522,7 @@
           { en: "Like this?", transcr: "Лайк зис?", ru: "Вот так?" },
           { en: "Yes, like this.", transcr: "Йес, лайк зис.", ru: "Да, вот так." },
           { en: "Is this right?", transcr: "Из зис райт?", ru: "Так правильно?" },
-          { en: "Be careful!", transcr: "Би кэйфул!", ru: "Осторожно! (будьте внимательны)" },
+          { en: "Be careful!", transcr: "Би кэафул!", ru: "Осторожно! (будьте внимательны)" },
           { en: "Watch out!", transcr: "Уотч аут!", ru: "Берегитесь! (срочно)" },
         ],
       },

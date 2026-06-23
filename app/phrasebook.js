@@ -107,7 +107,7 @@
         { en: "Help!", transcr: "Хэлп!", ru: "Помогите!" },
         { en: "Call 999!", transcr: "Кол найн-найн-найн!", ru: "Звоните 999! (экстренный номер в Британии)" },
         { en: "Call the police!", transcr: "Кол зэ полис!", ru: "Вызовите полицию!" },
-        { en: "Call an ambulance!", transcr: "Кол эн амбьюлэнс!", ru: "Вызовите скорую!" },
+        { en: "Call an ambulance!", transcr: "Кол эн эмбьюлэнс!", ru: "Вызовите скорую!" },
         { en: "Fire!", transcr: "Файэ!", ru: "Пожар!" },
         { en: "There's been an accident!", transcr: "Зэаз бин эн эксидэнт!", ru: "Произошёл несчастный случай." },
         { en: "I need help now.", transcr: "Ай нид хэлп нау.", ru: "Мне срочно нужна помощь." },

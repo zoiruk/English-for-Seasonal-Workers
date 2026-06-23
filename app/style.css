@@ -250,8 +250,35 @@ code { background: var(--accent-soft); color: var(--text); padding: 1px 5px; bor
 .cert-disc-ru { margin-top: 4px; }
 .cert-hint-ru { text-align: center; font-size: 13px; color: var(--text2); background: var(--accent-soft); border-radius: var(--radius); padding: 12px; margin-top: 14px; }
 
+/* ---------- Reader ("Книга про Ахмада") ---------- */
+.lesson-card.locked { border-left-color: var(--text3); opacity: .55; cursor: default; box-shadow: none; }
+.lesson-card.locked:active { transform: none; }
+.lesson-card.locked .num { background: var(--border); color: var(--text3); }
+
+.reader-text { padding: 4px 14px; }
+.read-sent { display: flex; align-items: flex-start; gap: 10px; padding: 12px 0; border-bottom: 1px solid var(--border); }
+.read-sent:last-child { border-bottom: none; }
+.rs-body { flex: 1; min-width: 0; cursor: pointer; padding: 4px 0; }
+.rs-en { font-size: 18px; font-weight: 600; line-height: 1.5; color: var(--text); }
+.rs-ru { margin-top: 6px; font-size: 14px; color: var(--text2); }
+
+/* dosed "new" words: blue + dotted underline, tap -> gloss popup. The only
+   tappable tokens in the body (known words are heard via the sentence 🔊). */
+.g-new { color: var(--accent); border-bottom: 2px dotted var(--accent); cursor: pointer; padding: 1px 1px; border-radius: 3px; }
+.g-new:active { background: var(--accent-soft); }
+
+.gloss-pop {
+  position: absolute; z-index: 50; display: flex; align-items: center; gap: 10px;
+  background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+  padding: 10px 12px; box-shadow: 0 6px 24px rgba(20, 20, 46, .22); max-width: 260px;
+}
+.gloss-pop .gp-body { min-width: 0; }
+.gloss-pop .gp-en { font-weight: 700; font-size: 16px; }
+.gloss-pop .gp-tr { color: var(--text3); font-size: 13px; }
+.gloss-pop .gp-ru { color: var(--text2); font-size: 13px; margin-top: 2px; }
+
 @media print {
-  .float-back, .btn, .toast, .cert-hint-ru { display: none !important; }
+  .float-back, .btn, .toast, .cert-hint-ru, .gloss-pop { display: none !important; }
   body { background: #fff; }
   .app { max-width: none; }
   .cert-frame {

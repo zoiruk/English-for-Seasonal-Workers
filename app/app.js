@@ -4,6 +4,8 @@
 
   var LESSONS = window.LESSONS || [];
   var PHRASEBOOK = window.PHRASEBOOK || [];
+  var BOOKS = window.BOOKS || [];
+  var READER = BOOKS.reduce(function (a, b) { return a.concat(b.chapters || []); }, []); // flat chapters (counts/lookups)
 
   /* ---------- UI strings (localization-ready: add UI.uz later) ---------- */
   var UI = {
@@ -61,6 +63,24 @@
       cert_name_hint: "Введите ваше имя",
       cert_name_caption: "👇 Впишите своё имя — оно появится на сертификате. Затем нажмите «Распечатать» или сохраните как PDF.",
       cert_print: "🖨️ Распечатать",
+      reader_title: "Книга про Ахмада",
+      reader_sub: "Читаем историю — глава за главой",
+      reader_hub_sub: "{0} из {1} глав открыто",
+      reader_hint_list: "👇 Главы открываются после уроков. Читайте по порядку.",
+      reader_chapter: "Глава {0}",
+      reader_read_badge: "прочитано",
+      reader_locked: "🔒 Сначала пройдите урок {0}",
+      reader_hint_read: "👇 Нажмите на предложение — покажу перевод. 🔊 — послушать. Синие слова новые — нажмите для подсказки.",
+      reader_to_quiz: "Вопросы по главе ➔",
+      reader_quiz_intro: "Проверим, что вы поняли:",
+      reader_finish: "Завершить главу",
+      reader_done: "Глава прочитана! 🎉",
+      reader_next_ch: "Дальше: {0} ➔",
+      reader_to_list: "К списку глав",
+      reader_lib_title: "Книги",
+      reader_lib_sub: "Истории для чтения",
+      reader_lib_hint: "👇 Выберите книгу. Главы открываются после уроков.",
+      reader_book_sub: "{0} из {1} глав открыто",
       tags: {
         "[COMPLETE]": "✍️ Заполните пропуск",
         "[TRANSLATE]": "🗣️ Переведите",
@@ -155,6 +175,7 @@
 
   /* ---------- HUB ---------- */
   function renderHub() {
+    closeGloss();
     setRoute("");
     var done = Object.keys(store.done).length;
     var h = '<div class="hub-head"><h1>🌿 ' + t("app_title") + "</h1><p>" + t("app_subtitle") + "</p></div>";
@@ -166,6 +187,13 @@
       h += '<div class="lesson-card pb-entry" data-nav="phrasebook">' +
         '<div class="num">📒</div>' +
         '<div class="body"><div class="t">' + t("phrasebook_title") + '</div><div class="s">' + t("phrasebook_sub") + "</div></div>" +
+        '<div class="done" style="color:var(--text3)">›</div></div>';
+    }
+    if (BOOKS.length) {
+      h += '<div class="lesson-card" data-nav="library">' +
+        '<div class="num">📚</div>' +
+        '<div class="body"><div class="t">' + t("reader_lib_title") + '</div>' +
+        '<div class="s">' + t("reader_lib_sub") + '</div></div>' +
         '<div class="done" style="color:var(--text3)">›</div></div>';
     }
     var pool = reviewPool();
@@ -228,6 +256,225 @@
     app.querySelectorAll("[data-spk]").forEach(function (el) {
       el.addEventListener("click", function () { speak(el.dataset.spk); });
     });
+  }
+
+  /* ---------- READER ("Книга про Ахмада") — graded story, snowball-bound ----------
+     Chapter N unlocks after lesson N (store.done[id]). English is the main, large
+     text; RU opens on tap; only the dosed "new" words (chapter.glossary) are blue
+     and tappable -> popup with transcription + RU + audio. Blue words never enter
+     store.words / SRS (passive recognition only). */
+  function bookById(id) { return BOOKS.filter(function (b) { return b.id === id; })[0]; }
+  function chapterIn(book, id) { return (book.chapters || []).filter(function (c) { return c.id === id; })[0]; }
+
+  /* gloss popup state (lives on <body>, so it survives app.innerHTML swaps -> close it explicitly) */
+  var glossPop = null, glossDismiss = null;
+  function closeGloss() {
+    if (glossPop && glossPop.parentNode) glossPop.parentNode.removeChild(glossPop);
+    glossPop = null;
+    if (glossDismiss) { document.removeEventListener("click", glossDismiss, true); glossDismiss = null; }
+  }
+  function glossWordRe(ch) {
+    var ws = (ch.glossary || []).map(function (g) { return String(g.en).toLowerCase().replace(/[^a-z']/g, ""); }).filter(Boolean);
+    if (!ws.length) return null;
+    return new RegExp("\\b(" + ws.join("|") + ")\\b", "gi");
+  }
+  // wrap glossary words (whole-word, case-insensitive) in blue tappable spans.
+  // esc() first so we never inject raw markup; glossary words are pure letters,
+  // so escaping can't break the word boundaries we match on.
+  function glossHTML(text, ch) {
+    var safe = esc(text);
+    var re = glossWordRe(ch);
+    if (!re) return safe;
+    return safe.replace(re, function (m) {
+      return '<span class="g-new" data-gloss="' + esc(m.toLowerCase()) + '">' + m + "</span>";
+    });
+  }
+  function showGloss(span, ch) {
+    closeGloss();
+    var key = span.dataset.gloss;
+    var g = (ch.glossary || []).filter(function (x) { return String(x.en).toLowerCase() === key; })[0];
+    if (!g) return;
+    var pop = document.createElement("div");
+    pop.className = "gloss-pop";
+    pop.innerHTML = spkBtn(g.en) +
+      '<div class="gp-body"><div class="gp-en">' + esc(g.en) + "</div>" +
+      '<div class="gp-tr">' + esc(g.transcr) + "</div>" +
+      '<div class="gp-ru">' + esc(g.ru) + "</div></div>";
+    document.body.appendChild(pop);
+    glossPop = pop;
+    // position above the tapped word, clamped to the viewport; flip below if no room
+    var r = span.getBoundingClientRect();
+    var pw = pop.offsetWidth, ph = pop.offsetHeight;
+    var left = r.left + r.width / 2 - pw / 2;
+    left = Math.max(8, Math.min(left, document.documentElement.clientWidth - pw - 8));
+    var top = r.top - ph - 8;
+    if (top < 8) top = r.bottom + 8;
+    pop.style.left = left + "px";
+    pop.style.top = (top + window.scrollY) + "px";
+    pop.querySelector("[data-spk]").onclick = function (e) { e.stopPropagation(); speak(g.en); };
+    speak(g.en);
+    glossDismiss = function (e) {
+      if (e.target.closest && (e.target.closest(".gloss-pop") || e.target.closest(".g-new"))) return;
+      closeGloss();
+    };
+    setTimeout(function () { if (glossDismiss) document.addEventListener("click", glossDismiss, true); }, 0);
+  }
+
+  // Library shelf: lists books (one now). Each card -> that book's chapter list.
+  function renderLibrary() {
+    closeGloss();
+    setRoute("library");
+    var h = backBtnHTML() +
+      '<div class="hub-head" style="padding-top:46px"><h1>📚 ' + t("reader_lib_title") + "</h1><p>" + t("reader_lib_sub") + "</p></div>";
+    h += '<div class="card note">' + t("reader_lib_hint") + "</div>";
+    BOOKS.forEach(function (bk) {
+      var chs = bk.chapters || [];
+      var open = chs.filter(function (c) { return store.done[c.id]; }).length;
+      var readN = chs.filter(function (c) { return store.read && store.read[c.id]; }).length;
+      var allRead = chs.length && readN === chs.length;
+      h += '<div class="lesson-card" data-book="' + esc(bk.id) + '">' +
+        '<div class="num">' + bk.emoji + "</div>" +
+        '<div class="body"><div class="t">' + esc(bk.title_ru) + "</div>" +
+        '<div class="s">' + t("reader_book_sub", open, chs.length) + "</div></div>" +
+        (allRead ? '<div class="done">✓</div>' : '<div class="done" style="color:var(--text3)">›</div>') + "</div>";
+    });
+    app.innerHTML = h;
+    document.getElementById("back").onclick = renderHub;
+    app.querySelectorAll("[data-book]").forEach(function (el) {
+      el.onclick = function () { var bk = bookById(el.dataset.book); if (bk) renderReaderList(bk); };
+    });
+  }
+
+  function renderReaderList(book) {
+    closeGloss();
+    if (!book) { renderLibrary(); return; }
+    setRoute("book/" + book.id);
+    var h = backBtnHTML() +
+      '<div class="hub-head" style="padding-top:46px"><h1>📖 ' + esc(book.title_ru) + "</h1><p>" + esc(book.sub_ru || "") + "</p></div>";
+    h += '<div class="card note">' + t("reader_hint_list") + "</div>";
+    (book.chapters || []).forEach(function (c) {
+      var unlocked = !!store.done[c.id];
+      var read = store.read && store.read[c.id];
+      if (unlocked) {
+        h += '<div class="lesson-card" data-reader="' + c.id + '">' +
+          '<div class="num">' + c.emoji + "</div>" +
+          '<div class="body"><div class="t">' + esc(c.title_ru) + "</div>" +
+          '<div class="s">' + t("reader_chapter", c.id) + (read ? " · ✓ " + t("reader_read_badge") : "") + "</div></div>" +
+          (read ? '<div class="done">✓</div>' : '<div class="done" style="color:var(--text3)">›</div>') + "</div>";
+      } else {
+        h += '<div class="lesson-card locked">' +
+          '<div class="num">🔒</div>' +
+          '<div class="body"><div class="t">' + esc(c.title_ru) + "</div>" +
+          '<div class="s">' + t("reader_locked", c.id) + "</div></div>" +
+          '<div class="done" style="color:var(--text3)">🔒</div></div>';
+      }
+    });
+    app.innerHTML = h;
+    document.getElementById("back").onclick = renderLibrary;
+    app.querySelectorAll("[data-reader]").forEach(function (el) {
+      el.onclick = function () { var c = chapterIn(book, +el.dataset.reader); if (c) renderChapter(c, book); };
+    });
+  }
+
+  function renderChapter(ch, book) {
+    closeGloss();
+    if (!store.done[ch.id]) { renderReaderList(book); return; }   // locked chapters can't be opened directly
+    setRoute("book/" + book.id + "/" + ch.id);
+    var h = backBtnHTML() +
+      '<div class="l-head"><span class="pos">' + ch.emoji + "</span>" +
+      '<div class="htitle"><div class="ttl">' + esc(ch.title_ru) + '</div><div class="sub">' +
+      esc(ch.title_en || "") + " · " + t("reader_chapter", ch.id) + "</div></div></div>";
+    h += '<div class="card note">' + t("reader_hint_read") + "</div>";
+    h += '<div class="card reader-text">';
+    ch.sentences.forEach(function (s, i) {
+      h += '<div class="read-sent">' + spkBtn(s.en) +
+        '<div class="rs-body" data-i="' + i + '">' +
+        '<div class="rs-en">' + glossHTML(s.en, ch) + "</div>" +
+        '<div class="rs-ru hidden">' + esc(s.ru) + "</div></div></div>";
+    });
+    h += "</div>";
+    h += '<button class="btn" id="r-quiz">' + t("reader_to_quiz") + "</button>";
+    app.innerHTML = h;
+    document.getElementById("back").onclick = function () { renderReaderList(book); };
+    app.querySelectorAll("[data-spk]").forEach(function (el) {
+      el.addEventListener("click", function (e) { e.stopPropagation(); speak(el.dataset.spk); });
+    });
+    app.querySelectorAll(".rs-body").forEach(function (b) {
+      b.onclick = function (e) {
+        if (e.target.closest(".g-new")) return;            // blue word -> popup, not RU toggle
+        b.querySelector(".rs-ru").classList.toggle("hidden");
+      };
+    });
+    app.querySelectorAll(".g-new").forEach(function (el) {
+      el.onclick = function (e) { e.stopPropagation(); showGloss(el, ch); };
+    });
+    document.getElementById("r-quiz").onclick = function () { renderChapterQuiz(ch, book); };
+  }
+
+  function renderChapterQuiz(ch, book) {
+    closeGloss();
+    var qs = ch.quiz || [];
+    if (!qs.length) { finishChapter(ch, book); return; }
+    setRoute("book/" + book.id + "/" + ch.id + "/q");
+    var h = backBtnHTML() +
+      '<div class="l-head"><span class="pos">' + ch.emoji + "</span>" +
+      '<div class="htitle"><div class="ttl">' + esc(ch.title_ru) + '</div><div class="sub">' + t("reader_quiz_intro") + "</div></div></div>" +
+      '<div id="rquizroot"></div>';
+    app.innerHTML = h;
+    document.getElementById("back").onclick = function () { renderChapter(ch, book); };
+    var root = document.getElementById("rquizroot");
+    var qIdx = 0;
+    function drawQ() {
+      var q = qs[qIdx];
+      var order = shuffle(q.opts_ru.map(function (_, i) { return i; }));
+      var opts = order.map(function (k) { return q.opts_ru[k]; });
+      var cIdx = order.indexOf(q.c);
+      root.innerHTML = '<div class="card"><div class="q-hint">' + t("q_of", qIdx + 1, qs.length) + "</div>" +
+        '<div class="q-text">' + esc(q.q_ru) + "</div>" +
+        '<div class="opts">' + opts.map(function (o, i) {
+          return '<button class="opt" data-i="' + i + '">' + esc(o) + "</button>";
+        }).join("") + '</div><div class="q-fb hidden" id="rfb"></div>' +
+        '<button class="btn hidden" id="rnext"></button></div>';
+      var answered = false;
+      root.querySelectorAll(".opt").forEach(function (b) {
+        b.onclick = function () {
+          if (answered) return; answered = true;
+          var i = +b.dataset.i, fb = document.getElementById("rfb");
+          root.querySelectorAll(".opt").forEach(function (x) { x.style.pointerEvents = "none"; });
+          root.querySelectorAll(".opt")[cIdx].classList.add("correct");
+          if (i === cIdx) { fb.className = "q-fb ok"; fb.textContent = t("correct"); }
+          else { b.classList.add("wrong"); fb.className = "q-fb no"; fb.textContent = t("wrong", opts[cIdx]); }
+          var nb = document.getElementById("rnext");
+          nb.textContent = qIdx + 1 < qs.length ? t("next_q") : t("reader_finish");
+          nb.classList.remove("hidden");
+          nb.onclick = function () { qIdx++; if (qIdx < qs.length) drawQ(); else finishChapter(ch, book); };
+        };
+      });
+    }
+    drawQ();
+  }
+
+  // Reading is a learning action -> bump the streak (first read only), but NEVER
+  // touch store.words / SRS: blue words stay passive (contract decision #10).
+  function finishChapter(ch, book) {
+    closeGloss();
+    store.read = store.read || {};
+    var first = !store.read[ch.id];
+    store.read[ch.id] = true;
+    if (first) bumpStreak();
+    save(store);
+    setRoute("book/" + book.id + "/" + ch.id);
+    var next = (book.chapters || []).filter(function (c) { return c.id > ch.id && store.done[c.id]; })
+      .sort(function (a, b) { return a.id - b.id; })[0];
+    var h = backBtnHTML() +
+      '<div class="hub-head" style="padding-top:46px"><h1>🎉</h1><p>' + t("reader_done") + "</p></div>" +
+      '<div class="bar"><i style="width:100%"></i></div>';
+    if (next) h += '<button class="btn" id="r-next-ch" style="margin-top:20px">' + t("reader_next_ch", esc(next.title_ru)) + "</button>";
+    h += '<button class="btn ghost" id="r-list" style="margin-top:8px">' + t("reader_to_list") + "</button>";
+    app.innerHTML = h;
+    document.getElementById("back").onclick = function () { renderReaderList(book); };
+    if (next) document.getElementById("r-next-ch").onclick = function () { renderChapter(next, book); };
+    document.getElementById("r-list").onclick = function () { renderReaderList(book); };
   }
 
   /* ---------- REVIEW ---------- */
@@ -780,6 +1027,7 @@
     var nav = e.target.closest("[data-nav]");
     if (nav) {
       if (nav.dataset.nav === "phrasebook") renderPhrasebook();
+      else if (nav.dataset.nav === "library") renderLibrary();
       else if (nav.dataset.nav === "review") renderReview();
       else if (nav.dataset.nav === "cert") renderCertificate();
       return;
@@ -801,6 +1049,17 @@
     if (m) {
       var les = LESSONS.filter(function (x) { return x.id === +m[1]; })[0];
       if (les) { renderLesson(les, m[2] || "grammar"); return; }
+    }
+    // library shelf -> book -> chapter -> quiz. Old #reader* hashes -> shelf.
+    if (h === "library" || h === "reader" || h.indexOf("reader/") === 0) { renderLibrary(); return; }
+    var bm = h.match(/^book\/([A-Za-z0-9_-]+)(?:\/(\d+)(?:\/(q))?)?$/);
+    if (bm) {
+      var bk = bookById(bm[1]);
+      if (!bk) { renderLibrary(); return; }
+      if (!bm[2]) { renderReaderList(bk); return; }
+      var ch = chapterIn(bk, +bm[2]);
+      if (ch && store.done[ch.id]) { bm[3] ? renderChapterQuiz(ch, bk) : renderChapter(ch, bk); return; }
+      renderReaderList(bk); return;
     }
     if (h === "phrasebook") { renderPhrasebook(); return; }
     if (h === "review") { renderReview(); return; }
