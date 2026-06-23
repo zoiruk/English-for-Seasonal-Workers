@@ -259,3 +259,15 @@
   глосс: small/dirty/nice). IPA сверены (RP). Слой-4 (2 ревьюера + скептик): 6 флагов, 6 отклонено — helmet/safe/do-you-have/
   I-have/dirty-room/good-worker все защищены как валидный BrE, соответствующий L8-грамматике (have≠have got) и нарративной логике.
   7 проверок зелёные. `CACHE_VERSION` esw-v54→**esw-v55**. Осталось: партии 10–12, 13–15.
+- **Партия 3 — главы 10–12 готовы:** ч10 «В магазине» (L10 would like/how much + еда; глосс fresh/sweet/cheap; цена товара £2
+  ОК, заработок не упоминается), ч11 «В город на автобусе» (L11 транспорт/which; глосс town/far), ч12 «Анкета в офисе»
+  (L12 was/were + месяцы/форма; глосс first; контракт — только владение, без юр-утверждений). IPA сверены с конвенцией
+  приложения (`/ɑː/→а`, `/ɜː/→ё`, `/iː/→и` — far→«фа» как car→«ка»).
+  - **⚠️ Исправлен анти-паттерн happy/photo в партии 2:** ч7 глоссила `busy`(=L15-слово) и ч9 `nice`(=L15-слово) — обе
+    замены на свободные: ч7 «Ahmad is busy»→«He is working in the rain» (глосс busy убран), ч9 «room is nice now»→«room is
+    warm now» (глосс nice→warm). Впредь glossary-слова сверять против ВСЕХ уроков, не только 1..N.
+  - Слой-4 (2 ревьюера + скептик): 2 правки внесены — `going to the town`/`in the town now`→`to town`/`in town now` (нулевой
+    артикль для town-центра, как `at work`; «The town is far» как подлежащее оставлено — Longman/LDOCE), `fills the form`→
+    `fills in the form` (BrE-коллокация; урок L11 уже использует «fill in the form», data.js:2128). Остальное (would like some,
+    How much is the cheese/honey — uncountable, queue, was/were) подтверждено валидным BrE.
+  - 7 проверок зелёные. `CACHE_VERSION` esw-v55→**esw-v56**. Осталось: партия 13–15.
