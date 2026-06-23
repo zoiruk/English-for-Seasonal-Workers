@@ -46,6 +46,10 @@ const WHITELIST = {
   // is a reader-glossary word (slowly/quickly/fast) are kept OUT (shown only in
   // prose) to avoid lesson/reader overlap; taught/used ones go here.
   18: ["could","well","carefully","safely","easily","badly","quietly","loudly"],
+  // L19 have got: have/has/got already in WHITELIST[8]; 've/'s and n't are stripped
+  // by the Phase 0 tokenizer (I've->i, haven't->have) so have got rides on known
+  // words. No new grammar words needed.
+  19: [],
 };
 const NAMES = ["ahmad","tom","sara","anna","john","ali","omar","rustam","fatima"];
 

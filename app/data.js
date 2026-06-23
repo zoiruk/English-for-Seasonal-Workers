@@ -3132,6 +3132,167 @@
         ],
       },
     },
+
+    {
+      id: 19,
+      mod: 10,
+      title_ru: "У меня есть… (have got) и самочувствие",
+      cefr: "A2 · have got (vs have) · body & feelings",
+
+      grammar: {
+        title_ru: "«Есть / у меня…»: have got = have",
+        intro_ru:
+          '<div style="line-height:1.6">«У меня есть» по-британски — <b>have got</b>:<br>✅ <b>I have got gloves</b> = <b>I’ve got gloves</b> <span class="g-transcr">[айв гот главз]</span> (у меня есть перчатки).<br>👉 <b>have got</b> = <b>have</b> (есть, иметь). Коротко: <b>I’ve got</b>, <b>he’s got</b>.<br>🩹 Так же про тело: <b>I’ve got a sore back</b> <span class="g-transcr">[айв гот э со бэк]</span> (у меня болит спина).</div>',
+        cultural_ru:
+          '<b>have got</b> и <b>have</b> — одно значение «есть / иметь». <b>have got</b> чаще в живой речи (Британия).' +
+          '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:6px">' +
+          '<div><b>Есть:</b> I’ve got a key <span class="g-transcr">[айв гот э ки]</span></div>' +
+          '<div><b>= то же:</b> I have a key <span class="g-transcr">[ай хэв э ки]</span></div>' +
+          '<div><b>Он/она:</b> She’s got a cold <span class="g-transcr">[шиз гот э коулд]</span></div>' +
+          '<div><b>Тело:</b> I’ve got a headache <span class="g-transcr">[айв гот э хэдэйк]</span></div></div>',
+        note_ru:
+          '⚠️ <b>have got</b> = <b>have</b> (НЕ два глагола подряд). Не говори «I have got got».<br>' +
+          '• Коротко: <b>I’ve got</b> <span class="g-transcr">[айв гот]</span>, <b>he’s / she’s got</b> <span class="g-transcr">[хиз / шиз гот]</span>.<br>' +
+          '• Вопрос: <b>Have you got…?</b> <span class="g-transcr">[хэв ю гот]</span> — НЕ «Do you have got».<br>' +
+          '• Нет: <b>I haven’t got…</b> <span class="g-transcr">[ай хэвнт гот]</span> (have not got).<br>' +
+          '⚠️ <b>he / she</b> → <b>has got</b> / <b>’s got</b> (не «have got»).',
+        forms: {
+          positive: {
+            label_ru: "✅ есть (have got)",
+            rule_ru:
+              '<b>have / has got</b> = есть, иметь. Коротко <b>’ve / ’s got</b>:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>I’ve got</code></div>' +
+              '<div><code>He’s got</code></div>' +
+              '<div><code>I’ve got gloves</code> <span class="g-transcr">[айв гот главз]</span></div></div>',
+            table: [
+              { subj: "I", verb: "have got", example: "I’ve got gloves", transcr: "Айв гот главз", tr_ru: "У меня есть перчатки" },
+              { subj: "He", verb: "has got", example: "He’s got a coat", transcr: "Хиз гот э коут", tr_ru: "У него есть куртка" },
+              { subj: "I", verb: "have got", example: "I have got a sore back", transcr: "Ай хэв гот э со бэк", tr_ru: "У меня болит спина" },
+              { subj: "She", verb: "has got", example: "She has got a headache", transcr: "Ши хэз гот э хэдэйк", tr_ru: "У неё болит голова" },
+            ],
+          },
+          negative: {
+            label_ru: "❌ нет (haven’t got)",
+            rule_ru:
+              'Нет = <b>haven’t / hasn’t got</b> (have / has not got):<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>I haven’t got…</code></div>' +
+              '<div><code>He hasn’t got…</code></div></div>',
+            table: [
+              { subj: "I", verb: "haven’t got", example: "I haven’t got my gloves", transcr: "Ай хэвнт гот май главз", tr_ru: "У меня нет перчаток" },
+              { subj: "He", verb: "hasn’t got", example: "He hasn’t got a coat", transcr: "Хи хэзнт гот э коут", tr_ru: "У него нет куртки" },
+              { subj: "We", verb: "haven’t got", example: "We haven’t got a key", transcr: "Уи хэвнт гот э ки", tr_ru: "У нас нет ключа" },
+            ],
+          },
+          question: {
+            label_ru: "❓ Have you got…?",
+            rule_ru:
+              'Вопрос: <b>Have / Has</b> вперёд + <b>got</b>:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>Have you got gloves?</code></div>' +
+              '<div><code>Has he got a coat?</code></div></div>',
+            table: [
+              { subj: "Have", verb: "you got…?", example: "Have you got gloves?", transcr: "Хэв ю гот главз?", tr_ru: "У тебя есть перчатки?" },
+              { subj: "Have", verb: "you got…?", example: "Have you got a coat?", transcr: "Хэв ю гот э коут?", tr_ru: "У тебя есть куртка?" },
+              { subj: "Has", verb: "he got…?", example: "Has he got a headache?", transcr: "Хэз хи гот э хэдэйк?", tr_ru: "У него болит голова?" },
+            ],
+          },
+        },
+        examples: [
+          { en: "I’ve got a sore back.", transcr: "Айв гот э со бэк.", ru: "У меня болит спина." },
+          { en: "Have you got your gloves?", transcr: "Хэв ю гот ё главз?", ru: "У тебя есть перчатки?" },
+          { en: "He’s got a headache.", transcr: "Хиз гот э хэдэйк.", ru: "У него болит голова." },
+          { en: "I haven’t got a coat.", transcr: "Ай хэвнт гот э коут.", ru: "У меня нет куртки." },
+          { en: "She’s got a cold.", transcr: "Шиз гот э коулд.", ru: "У неё простуда." },
+          { en: "We’ve got a problem.", transcr: "Уив гот э проблэм.", ru: "У нас проблема." },
+          { en: "Have you got a plaster?", transcr: "Хэв ю гот э пластэ?", ru: "У тебя есть пластырь?" },
+        ],
+        simple_ru: {
+          formula: '<b>have got</b> = <b>have</b> = «есть / у меня…». Коротко <b>’ve / ’s got</b>. Вопрос <b>Have you got…?</b>, нет — <b>haven’t got</b>.<br><span class="g-transcr">I’ve got gloves · Have you got a coat?</span>',
+          examples: [
+            { en: "I’ve got gloves.", transcr: "Айв гот главз.", ru: "I’ve got (у меня есть) + gloves (перчатки) = у меня есть перчатки." },
+            { en: "I’ve got a sore back.", transcr: "Айв гот э со бэк.", ru: "I’ve got (у меня) + a sore back (больная спина) = у меня болит спина." },
+          ],
+        },
+        ytQuery: "have got have you got British English elementary английский для начинающих",
+      },
+
+      words: [
+        { e: "👤", en: "head", transcr: "хэд", ru: "голова", pn: "/hed/" },
+        { e: "🦱", en: "hair", transcr: "хэа", ru: "волосы", pn: "/heə/" },
+        { e: "😐", en: "face", transcr: "фэйс", ru: "лицо", pn: "/feɪs/" },
+        { e: "💆", en: "neck", transcr: "нэк", ru: "шея", pn: "/nek/" },
+        { e: "🤷", en: "shoulder", transcr: "шоулдэ", ru: "плечо", pn: "/ˈʃəʊldə/" },
+        { e: "🧍", en: "back", transcr: "бэк", ru: "спина", pn: "/bæk/" },
+        { e: "🫁", en: "chest", transcr: "чэст", ru: "грудь (грудная клетка)", pn: "/tʃest/" },
+        { e: "🦵", en: "knee", transcr: "ни", ru: "колено", pn: "/niː/" },
+        { e: "🫀", en: "heart", transcr: "хат", ru: "сердце", pn: "/hɑːt/" },
+        { e: "🦴", en: "bone", transcr: "боун", ru: "кость", pn: "/bəʊn/" },
+        { e: "🩸", en: "blood", transcr: "блад", ru: "кровь", pn: "/blʌd/" },
+        { e: "💪", en: "muscle", transcr: "масл", ru: "мышца", pn: "/ˈmʌsl/" },
+        { e: "🗣️", en: "throat", transcr: "сроут", ru: "горло", pn: "/θrəʊt/" },
+        { e: "👍", en: "thumb", transcr: "сам", ru: "большой палец", pn: "/θʌm/" },
+        { e: "😣", en: "sore", transcr: "со", ru: "болезненный, ноющий", pn: "/sɔː/" },
+        { e: "😨", en: "scared", transcr: "скэад", ru: "испуганный", pn: "/skeəd/" },
+        { e: "😠", en: "angry", transcr: "энгри", ru: "злой", pn: "/ˈæŋɡri/" },
+        { e: "😟", en: "worried", transcr: "уарид", ru: "встревоженный", pn: "/ˈwʌrid/" },
+        { e: "😢", en: "sad", transcr: "сэд", ru: "грустный", pn: "/sæd/" },
+        { e: "😔", en: "lonely", transcr: "лоунли", ru: "одинокий", pn: "/ˈləʊnli/" },
+        { e: "😞", en: "upset", transcr: "апсэт", ru: "расстроенный", pn: "/ʌpˈset/" },
+        { e: "😌", en: "calm", transcr: "кам", ru: "спокойный", pn: "/kɑːm/" },
+        { e: "😰", en: "nervous", transcr: "нёвэс", ru: "нервный", pn: "/ˈnɜːvəs/" },
+        { e: "😄", en: "glad", transcr: "глэд", ru: "рад", pn: "/ɡlæd/" },
+        { e: "🫣", en: "afraid", transcr: "эфрэйд", ru: "боящийся", pn: "/əˈfreɪd/" },
+        { e: "😴", en: "sleepy", transcr: "слипи", ru: "сонный", pn: "/ˈsliːpi/" },
+        { e: "🙂", en: "fine", transcr: "файн", ru: "в порядке", pn: "/faɪn/" },
+        { e: "😩", en: "stress", transcr: "стрэс", ru: "стресс", pn: "/stres/" },
+        { e: "😤", en: "proud", transcr: "прауд", ru: "гордый", pn: "/praʊd/" },
+        { e: "😎", en: "relaxed", transcr: "рилэкст", ru: "расслабленный", pn: "/rɪˈlækst/" },
+      ],
+
+      dialogue: [
+        { s: "m", en: "Good morning. Have you got your gloves?", transcr: "Гуд монинг. Хэв ю гот ё главз?", ru: "Доброе утро. У тебя есть перчатки?" },
+        { s: "w", en: "No. I haven’t got my gloves today.", transcr: "Ноу. Ай хэвнт гот май главз тудэй.", ru: "Нет. Сегодня у меня нет перчаток." },
+        { s: "m", en: "Take these. Have you got a coat?", transcr: "Тэйк зиз. Хэв ю гот э коут?", ru: "Возьми эти. У тебя есть куртка?" },
+        { s: "w", en: "Yes. I’ve got a sore back.", transcr: "Йес. Айв гот э со бэк.", ru: "Да. У меня болит спина." },
+        { s: "m", en: "You look tired and sad.", transcr: "Ю лук тайэд энд сэд.", ru: "Ты выглядишь усталым и грустным." },
+        { s: "w", en: "I’m worried. I’ve got a headache.", transcr: "Айм уарид. Айв гот э хэдэйк.", ru: "Я переживаю. У меня болит голова." },
+        { s: "m", en: "Have you got any medicine?", transcr: "Хэв ю гот эни мэдсэн?", ru: "У тебя есть лекарство?" },
+        { s: "w", en: "No. My throat is sore.", transcr: "Ноу. Май сроут из со.", ru: "Нет. Горло болит." },
+        { s: "m", en: "Rest now. Call the nurse.", transcr: "Рэст нау. Кол зэ нёс.", ru: "Отдохни. Позвони медсестре." },
+        { s: "w", en: "Thank you. I am nervous.", transcr: "Сэнк ю. Ай эм нёвэс.", ru: "Спасибо. Я нервничаю." },
+        { s: "m", en: "We can help you. The nurse is here.", transcr: "Уи кэн хэлп ю. Зэ нёс из хиэ.", ru: "Мы тебе поможем. Медсестра здесь." },
+        { s: "w", en: "Good. I am calm now.", transcr: "Гуд. Ай эм кам нау.", ru: "Хорошо. Теперь я спокоен." },
+      ],
+
+      quiz: [
+        { q: '[COMPLETE] "I ___ got gloves." (есть — у меня)', opts: ["have", "has", "do", "is"], c: 0, expl: "I/you/we → have got. have got = есть.", hint_ru: "У меня есть." },
+        { q: '[COMPLETE] "He ___ got a coat." (есть — у него)', opts: ["has", "have", "is", "do"], c: 0, expl: "he/she → has got.", hint_ru: "У него есть." },
+        { q: '[QUESTION] "___ you got a plaster?" (есть ли у тебя)', opts: ["Have", "Has", "Do", "Are"], c: 0, expl: "Have you got…? — британский вопрос «есть ли у тебя…?»", hint_ru: "Вопрос: есть ли…?" },
+        { q: '[TRANSLATE] "спина"', opts: ["back", "neck", "knee", "chest"], c: 0, expl: "back — спина.", hint_ru: "back." },
+        { q: '[TRANSLATE] "сердце"', opts: ["heart", "bone", "blood", "muscle"], c: 0, expl: "heart — сердце.", hint_ru: "heart." },
+        { q: '[TRANSLATE] "встревоженный"', opts: ["worried", "calm", "glad", "proud"], c: 0, expl: "worried — встревоженный.", hint_ru: "worried." },
+        { q: "[CORRECT] Где правильно?", opts: ["I have got a coat", "I have got got a coat", "I am got a coat", "I do got a coat"], c: 0, expl: "have got = есть (один раз). Не «have got got».", hint_ru: "У меня есть куртка." },
+        { q: '[COMPLETE] "I ___ got my gloves." (нет — у меня)', opts: ["haven’t", "have", "has", "do"], c: 0, expl: "Нет = haven’t got (have not got).", hint_ru: "У меня нет перчаток." },
+        { q: "[LISTEN] I’ve got a sore back.", opts: ["У меня болит спина.", "У меня болит голова.", "У меня есть куртка.", "Я устал."], c: 0, expl: "sore back — больная спина.", hint_ru: "" },
+        { q: "[GIST] Что беспокоит рабочего (по диалогу)?", opts: ["Болит спина и голова", "Сломал руку", "Потерял ключ", "Голоден"], c: 0, expl: '«I’ve got a sore back», «I’ve got a headache».', hint_ru: "Слушай про back и headache." },
+        { q: "[BUILD] Соберите: «У меня есть перчатки»", build: ["I", "have", "got", "gloves"], expl: "I have got gloves — у меня есть перчатки. have got = есть.", hint_ru: "у меня есть." },
+        { q: '[TRANSLATE] "нервный"', opts: ["nervous", "sleepy", "sad", "fine"], c: 0, expl: "nervous — нервный.", hint_ru: "nervous." },
+      ],
+
+      everyday: {
+        title_ru: "Самочувствие на работе",
+        phrases: [
+          { en: "Have you got your gloves?", transcr: "Хэв ю гот ё главз?", ru: "У тебя есть перчатки?" },
+          { en: "I’ve got a sore back.", transcr: "Айв гот э со бэк.", ru: "У меня болит спина." },
+          { en: "I haven’t got a coat.", transcr: "Ай хэвнт гот э коут.", ru: "У меня нет куртки." },
+          { en: "She’s got a headache.", transcr: "Шиз гот э хэдэйк.", ru: "У неё болит голова." },
+          { en: "I am tired today.", transcr: "Ай эм тайэд тудэй.", ru: "Я сегодня устал." },
+          { en: "Are you okay?", transcr: "Ар ю оукэй?", ru: "Ты в порядке?" },
+        ],
+      },
+    },
   ];
 
   if (typeof module !== "undefined" && module.exports) module.exports = LESSONS;

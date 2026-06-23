@@ -369,3 +369,26 @@
     саморемонт электрики, HSE Safe Stop); в cultural добавлена брит. идиома `a flat battery` (осведомлённость; в снежок-полях
     оставлен прозрачный L17 `low`). Скептик-проход не нужен (фейл-флагов нет).
   - `CACHE_VERSION` esw-v61→**esw-v62**. Осталось A2: L19–L23 (have got/compounds/infinitive of purpose/take-get-have/Present Perfect).
+- **L19 готов (have got + have got vs have + тело/самочувствие) — 4-й урок A2.** Грамматика: британское `have/has got`
+  (владение + недомогание), `I’ve got`/`he’s got`, отрицание `haven’t/hasn’t got`, вопрос `Have you got…?` (НЕ «Do you have
+  got»); have got = have. Диалог «утро смены: нет перчаток → больная спина → голова → медсестра» (m↔w, welfare). 30 новых слов:
+  14 частей тела (head/hair/face/neck/shoulder/back/chest/knee/heart/bone/blood/muscle/throat/thumb) + 16 чувств/состояний
+  (sore/scared/angry/worried/sad/lonely/upset/calm/nervous/glad/afraid/sleepy/fine/stress/proud/relaxed).
+  - **Снежок:** `have/has/got` уже `WHITELIST[8]`; `'ve`/`'s`/`n't` снимает токенайзер Фазы 0 (`I've got`→i+got, `haven't`→have)
+    → **новых whitelist-слов не нужно** (`WHITELIST[19]=[]`). Это окупает правку токенайзера L16. Чувства подаются через `be`
+    (`I am worried/calm`) — `feel` в снежке нет (был только в everyday L14), заменён на be. `but/too` не вводились → убраны.
+  - **⚠️ Эмодзи частей тела:** тело-2 эмодзи-враждебно (L14 забрал hand/foot/eye/ear; остальное без спец-эмодзи). Взяты
+    ближайше-честные (политика CLAUDE.md): heart 🫀/bone 🦴/blood 🩸/muscle 💪/knee 🦵 точны; neck 💆/shoulder 🤷/back 🧍/
+    chest 🫁/throat 🗣️ — приближения (не антонимы). Оба слой-3/4 ревьюера приняли как «nearest honest», 0 активно-вводящих-в-заблуждение.
+  - **Слой 1 (audit):** 7/7 зелёные. **Слой 2:** verify-ipa — 1 нотация (`muscle` syllabic-l `/ˈmʌsl/`, мой верен); verify-transcr —
+    **0 флагов**. **Рендер:** 3 формы, 30 карточек, 0 ошибок консоли.
+  - **Слой 3 (ревьюеры):** 6 правок — RU-зеркало («тоже» убрано), `medicine` транскр «мэдсин»→«мэдсэн» (канон L14), 5-словный
+    минимум диалога (`any medicine`), **safety: реплика менеджера «You are not ill» (отмахивание от симптомов!) → «The nurse can
+    help»** (зона повышенной ответственности — менеджер не должен отрицать симптомы рабочего). proud 😤 — слабейшее эмодзи, принято.
+  - **🔴 Слой 4 (source-cited, 2 ревьюера, фокус welfare/NHS):** оба **SHIP**. R1: `I’ve got a sore back`/`My throat is sore`/
+    `She’s got a cold` — дословные коллокации Cambridge; `Have you got…?`/«NOT Do you have got»/have got=have — British Council
+    A1–A2; `plaster`/`nurse` = BrE. R2 (welfare): арка «рабочий говорит о недомогании → поддержка → сигналинг к медсестре»
+    выверена против **NHS Every Mind Matters + Mind**; достоинство соблюдено (Muslim CIS). Один soft-flag (Mind-цитата): императив
+    `Do not stress` = отмахивающийся регистр → заменён на `We can help you. The nurse is here.` (поддержка+сигналинг, без команды
+    «не чувствуй»). Скептик-проход не нужен.
+  - `CACHE_VERSION` esw-v62→**esw-v63**. Осталось A2: L20–L23 (compounds/infinitive of purpose/take-get-have/Present Perfect).
