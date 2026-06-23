@@ -1,6 +1,6 @@
 # IPA verification report (Wiktionary RP anchor)
 
-Total words: 455 · matched: 404 · divergent: 44 · not found: 7
+Total words: 485 · matched: 432 · divergent: 45 · not found: 8
 
 Normalized away (kept length ː): ɹ↔r, ɡ↔g, ɛ↔e (DRESS vowel), tie-bars & allophonic diacritics, optional (…) segments, stress, syllable dots.
 Divergences below are for OWNER ACCEPTANCE — review each: is our `pn` wrong, or a valid variant?
@@ -53,6 +53,7 @@ Divergences below are for OWNER ACCEPTANCE — review each: is our `pn` wrong, o
 | 14 | medicine | `/ˈmedsən/` | `/ˈmɛd.ɪ.s(ɪ)n/` |
 | 14 | appointment | `/əˈpɔɪntmənt/` | `/əˈpɔɪnt.mɛnt/` |
 | 15 | enjoy | `/ɪnˈdʒɔɪ/` | `/ɛnˈd͡ʒɔɪ/` |
+| 16 | cloudy | `/ˈklaʊdi/` | `/ˈklaʊ̯diː/` |
 
 ## Not found on Wiktionary (no en RP IPA parsed — verify manually)
 
@@ -63,3 +64,4 @@ Divergences below are for OWNER ACCEPTANCE — review each: is our `pn` wrong, o
 - L8 **colour** (`/ˈkʌlə/`)
 - L14 **nose** (`/nəʊz/`)
 - L14 **tired** (`/ˈtaɪəd/`)
+- L16 **season** (`/ˈsiːzn/`)
