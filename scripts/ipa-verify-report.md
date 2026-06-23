@@ -1,6 +1,6 @@
 # IPA verification report (Wiktionary RP anchor)
 
-Total words: 485 · matched: 432 · divergent: 45 · not found: 8
+Total words: 515 · matched: 454 · divergent: 48 · not found: 13
 
 Normalized away (kept length ː): ɹ↔r, ɡ↔g, ɛ↔e (DRESS vowel), tie-bars & allophonic diacritics, optional (…) segments, stress, syllable dots.
 Divergences below are for OWNER ACCEPTANCE — review each: is our `pn` wrong, or a valid variant?
@@ -54,6 +54,9 @@ Divergences below are for OWNER ACCEPTANCE — review each: is our `pn` wrong, o
 | 14 | appointment | `/əˈpɔɪntmənt/` | `/əˈpɔɪnt.mɛnt/` |
 | 15 | enjoy | `/ɪnˈdʒɔɪ/` | `/ɛnˈd͡ʒɔɪ/` |
 | 16 | cloudy | `/ˈklaʊdi/` | `/ˈklaʊ̯diː/` |
+| 17 | weak | `/wiːk/` | `/wi(ː)k/` |
+| 17 | dangerous | `/ˈdeɪndʒərəs/` | `/ˈdeɪn.ʒ(ə.)ɹəs/` |
+| 17 | useful | `/ˈjuːsfʊl/` | `/ˈjuːsfl̩/` |
 
 ## Not found on Wiktionary (no en RP IPA parsed — verify manually)
 
@@ -65,3 +68,8 @@ Divergences below are for OWNER ACCEPTANCE — review each: is our `pn` wrong, o
 - L14 **nose** (`/nəʊz/`)
 - L14 **tired** (`/ˈtaɪəd/`)
 - L16 **season** (`/ˈsiːzn/`)
+- L17 **quiet** (`/ˈkwaɪət/`)
+- L17 **loud** (`/laʊd/`)
+- L17 **ripe** (`/raɪp/`)
+- L17 **rough** (`/rʌf/`)
+- L17 **tight** (`/taɪt/`)

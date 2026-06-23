@@ -1,6 +1,6 @@
 # Transcr self-consistency report (cyrillic vs IPA-derived)
 
-Total: 485 · consistent: 456 · divergent: 29
+Total: 515 · consistent: 484 · divergent: 31
 
 Expected = mechanical phoneme→cyrillic from our `pn` (course convention).
 Divergences are for OWNER ACCEPTANCE: a real transcr error, or a deliberate
@@ -38,3 +38,5 @@ map doesn't cover. Not a pass/fail — a review list of where crutch ≠ sound.
 | 15 | music | `/ˈmjuːzɪk/` | мьюзик | мйузик |
 | 15 | game | `/ɡeɪm/` | гейм | гэйм |
 | 15 | news | `/njuːz/` | ньюз | нйуз |
+| 17 | young | `/jʌŋ/` | янг | йанг |
+| 17 | useful | `/ˈjuːsfʊl/` | юсфул | йусфул |
