@@ -1,6 +1,6 @@
 # Transcr self-consistency report (cyrillic vs IPA-derived)
 
-Total: 515 · consistent: 484 · divergent: 31
+Total: 545 · consistent: 512 · divergent: 33
 
 Expected = mechanical phoneme→cyrillic from our `pn` (course convention).
 Divergences are for OWNER ACCEPTANCE: a real transcr error, or a deliberate
@@ -40,3 +40,5 @@ map doesn't cover. Not a pass/fail — a review list of where crutch ≠ sound.
 | 15 | news | `/njuːz/` | ньюз | нйуз |
 | 17 | young | `/jʌŋ/` | янг | йанг |
 | 17 | useful | `/ˈjuːsfʊl/` | юсфул | йусфул |
+| 18 | fuel | `/ˈfjuːəl/` | фьюэл | фйуэл |
+| 18 | generator | `/ˈdʒenəreɪtə/` | дженэрэйтэ | джэнэрэйтэ |
