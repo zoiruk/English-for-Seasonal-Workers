@@ -3293,6 +3293,174 @@
         ],
       },
     },
+    {
+      id: 20,
+      title_ru: "В кэмпе: something / anything / nothing",
+      grammar: {
+        title_ru: "something / anything / nothing — неопределённые",
+        intro_ru:
+          '<div style="line-height:1.6">Три семейства неопределённых слов — по контексту:<br>' +
+          '✅ <b>some-</b>: утверждение → «там <b>что-то</b> есть».<br>' +
+          '❌ <b>no-</b>: отрицание <em>без</em> «not» → «там <b>ничего</b> нет».<br>' +
+          '❓ <b>any-</b>: вопрос и после «not» → «<b>что-нибудь</b> есть?».</div>',
+        cultural_ru:
+          'В BrE <b>someone</b> = <b>somebody</b>, <b>anyone</b> = <b>anybody</b> (оба правильны; -one чуть официальнее).' +
+          ' Та же схема с <b>every-</b>: <b>everything</b> <span class="g-transcr">[эврисинг]</span> (всё),' +
+          ' <b>everybody</b> <span class="g-transcr">[эврибэди]</span> (все),' +
+          ' <b>everywhere</b> <span class="g-transcr">[эвриуэа]</span> (везде) — всегда в утверждениях.',
+        note_ru:
+          '⚠️ Нельзя двойное отрицание: <b>There isn\'t nothing</b> — ошибка!<br>' +
+          'Только одно: ✅ <b>There <u>is</u> nothing</b> (nothing + положит. глагол)' +
+          ' <em>или</em> ✅ <b>There <u>isn\'t</u> anything</b> (not + anything).',
+        forms: {
+          positive: {
+            label_ru: "✅ some- → утверждение",
+            rule_ru:
+              '<b>some</b>thing / <b>some</b>one / <b>some</b>where — в утверждениях:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>something</code> <span class="g-transcr">[самсинг]</span></div><div>что-то</div>' +
+              '<div><code>someone</code> <span class="g-transcr">[самуан]</span></div><div>кто-то</div>' +
+              '<div><code>somewhere</code> <span class="g-transcr">[самуэа]</span></div><div>где-то</div>' +
+              '</div>',
+            table: [
+              { subj: "что?", verb: "something", example: "There is something on the floor.", transcr: "Зэа из самсинг он зэ фло.", tr_ru: "На полу что-то есть." },
+              { subj: "кто?", verb: "someone", example: "Someone is at the entrance.", transcr: "Самуан из эт зэ энтрэнс.", tr_ru: "На входе кто-то есть." },
+              { subj: "где?", verb: "somewhere", example: "I left my key somewhere.", transcr: "Ай лэфт май ки самуэа.", tr_ru: "Я оставил ключ где-то." },
+            ],
+          },
+          negative: {
+            label_ru: "❌ no- → ничего нет (глагол +!)",
+            rule_ru:
+              '<b>no</b>thing / <b>no</b>body / <b>no</b>where — отрицание <em>одним словом</em> + глагол <b>IS</b>:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>nothing</code> <span class="g-transcr">[насинг]</span></div><div>ничего</div>' +
+              '<div><code>nobody</code> <span class="g-transcr">[ноубэди]</span></div><div>никого</div>' +
+              '<div><code>nowhere</code> <span class="g-transcr">[ноуэа]</span></div><div>нигде</div>' +
+              '</div>',
+            table: [
+              { subj: "что?", verb: "nothing", example: "There is nothing in the wardrobe.", transcr: "Зэа из насинг ин зэ уодроуб.", tr_ru: "В шкафу ничего нет." },
+              { subj: "кто?", verb: "nobody", example: "Nobody is in the corridor.", transcr: "Ноубэди из ин зэ коридо.", tr_ru: "В коридоре никого нет." },
+              { subj: "где?", verb: "nowhere", example: "I have nowhere to go.", transcr: "Ай хэв ноуэа ту гоу.", tr_ru: "Мне некуда идти." },
+            ],
+          },
+          question: {
+            label_ru: "❓ any- → вопрос / после «not»",
+            rule_ru:
+              '<b>any</b>thing / <b>any</b>one / <b>any</b>where — в вопросах и после отрицания:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>anything</code> <span class="g-transcr">[энисинг]</span></div><div>что-нибудь</div>' +
+              '<div><code>anyone</code> <span class="g-transcr">[эниуан]</span></div><div>кто-нибудь</div>' +
+              '<div><code>anywhere</code> <span class="g-transcr">[эниуэа]</span></div><div>где-нибудь</div>' +
+              '</div>',
+            table: [
+              { subj: "вопрос", verb: "anything", example: "Is there anything in the cupboard?", transcr: "Из зэа энисинг ин зэ кабэд?", tr_ru: "В шкафчике что-нибудь есть?" },
+              { subj: "после not", verb: "anything", example: "I haven't got anything.", transcr: "Ай хэвнт гот энисинг.", tr_ru: "У меня ничего нет." },
+              { subj: "вопрос", verb: "anyone", example: "Is there anyone at the entrance?", transcr: "Из зэа эниуан эт зэ энтрэнс?", tr_ru: "На входе кто-нибудь есть?" },
+              { subj: "после not", verb: "anywhere", example: "I cannot go anywhere.", transcr: "Ай кэнот гоу эниуэа.", tr_ru: "Я не могу никуда пойти." },
+            ],
+          },
+        },
+        examples: [
+          { en: "There is something on the floor.", transcr: "Зэа из самсинг он зэ фло.", ru: "На полу что-то есть." },
+          { en: "Someone is in the corridor.", transcr: "Самуан из ин зэ коридо.", ru: "В коридоре кто-то есть." },
+          { en: "I left my coat somewhere.", transcr: "Ай лэфт май коут самуэа.", ru: "Я оставил куртку где-то." },
+          { en: "Everything is ready.", transcr: "Эврисинг из рэди.", ru: "Всё готово." },
+          { en: "Everybody is working.", transcr: "Эврибэди из уёкин.", ru: "Все работают." },
+          { en: "There is nothing in the wardrobe.", transcr: "Зэа из насинг ин зэ уодроуб.", ru: "В шкафу ничего нет." },
+          { en: "Nobody is here.", transcr: "Ноубэди из хиэ.", ru: "Здесь никого нет." },
+          { en: "I have nowhere to go.", transcr: "Ай хэв ноуэа ту гоу.", ru: "Мне некуда идти." },
+          { en: "Is there anything in the cupboard?", transcr: "Из зэа энисинг ин зэ кабэд?", ru: "В шкафчике что-нибудь есть?" },
+          { en: "Is there anyone at the entrance?", transcr: "Из зэа эниуан эт зэ энтрэнс?", ru: "На входе кто-нибудь есть?" },
+          { en: "I cannot go anywhere.", transcr: "Ай кэнот гоу эниуэа.", ru: "Я не могу никуда пойти." },
+          { en: "I haven't got anything.", transcr: "Ай хэвнт гот энисинг.", ru: "У меня ничего нет." },
+        ],
+        simple_ru: {
+          formula:
+            '<b>some-</b> → утверждение · <b>no-</b> → ничего нет (глагол +) · <b>any-</b> → вопрос / после not<br>' +
+            '<span class="g-transcr">There is something. / Is there anything? / There is nothing.</span>',
+          examples: [
+            { en: "There is something in the corridor.", transcr: "Зэа из самсинг ин зэ коридо.", ru: "some- (утверждение): something = что-то есть." },
+            { en: "Is there anything on the floor?", transcr: "Из зэа энисинг он зэ фло?", ru: "any- (вопрос): anything = что-нибудь? В вопросах — any-." },
+          ],
+        },
+        ytQuery: "something anything nothing разница английский A2 для начинающих",
+      },
+
+      words: [
+        { e: "🏠", en: "roof", transcr: "руф", ru: "крыша", pn: "/ruːf/" },
+        { e: "🪵", en: "floor", transcr: "фло", ru: "пол", pn: "/flɔː/" },
+        { e: "⬆️", en: "ceiling", transcr: "силинг", ru: "потолок", pn: "/ˈsiːlɪŋ/" },
+        { e: "🪜", en: "stairs", transcr: "стэаз", ru: "лестница", pn: "/steəz/" },
+        { e: "🗄️", en: "wardrobe", transcr: "уодроуб", ru: "гардероб", pn: "/ˈwɔːdrəʊb/" },
+        { e: "🗃️", en: "cupboard", transcr: "кабэд", ru: "шкафчик", pn: "/ˈkʌbəd/" },
+        { e: "🔥", en: "oven", transcr: "авн", ru: "духовка", pn: "/ˈʌvn/" },
+        { e: "⏱️", en: "microwave", transcr: "майкроуэйв", ru: "микроволновка", pn: "/ˈmaɪkrəʊweɪv/" },
+        { e: "🌡️", en: "heating", transcr: "хитинг", ru: "отопление", pn: "/ˈhiːtɪŋ/" },
+        { e: "😴", en: "pillow", transcr: "пилоу", ru: "подушка", pn: "/ˈpɪləʊ/" },
+        { e: "🛏️", en: "sheet", transcr: "шиит", ru: "простыня", pn: "/ʃiːt/" },
+        { e: "🛌", en: "mattress", transcr: "мэтрис", ru: "матрас", pn: "/ˈmætrɪs/" },
+        { e: "🧹", en: "mop", transcr: "моп", ru: "швабра", pn: "/mɒp/" },
+        { e: "🧽", en: "sponge", transcr: "спандж", ru: "губка", pn: "/spʌndʒ/" },
+        { e: "🧴", en: "detergent", transcr: "дитёджэнт", ru: "моющее средство", pn: "/dɪˈtɜːdʒənt/" },
+        { e: "🧺", en: "laundry", transcr: "лондри", ru: "стирка, бельё", pn: "/ˈlɔːndri/" },
+        { e: "🗑️", en: "rubbish", transcr: "рабиш", ru: "мусор", pn: "/ˈrʌbɪʃ/" },
+        { e: "🚶", en: "corridor", transcr: "коридо", ru: "коридор", pn: "/ˈkɒrɪdɔː/" },
+        { e: "🚪", en: "entrance", transcr: "энтрэнс", ru: "вход", pn: "/ˈentrəns/" },
+        { e: "🚿", en: "bathroom", transcr: "басрум", ru: "ванная комната", pn: "/ˈbɑːθruːm/" },
+        { e: "💤", en: "bedroom", transcr: "бэдрум", ru: "спальня, комната", pn: "/ˈbedrʊm/" },
+        { e: "👔", en: "iron", transcr: "айэн", ru: "утюг", pn: "/ˈaɪən/" },
+        { e: "🔊", en: "noise", transcr: "нойз", ru: "шум", pn: "/nɔɪz/" },
+        { e: "👃", en: "smell", transcr: "смэл", ru: "запах", pn: "/smel/" },
+        { e: "🟫", en: "mat", transcr: "мэт", ru: "коврик", pn: "/mæt/" },
+        { e: "📋", en: "notice", transcr: "ноутис", ru: "объявление", pn: "/ˈnəʊtɪs/" },
+        { e: "💡", en: "bulb", transcr: "балб", ru: "лампочка", pn: "/bʌlb/" },
+        { e: "🔧", en: "pipe", transcr: "пайп", ru: "труба", pn: "/paɪp/" },
+        { e: "❄️", en: "freezer", transcr: "фризэ", ru: "морозильник", pn: "/ˈfriːzə/" },
+        { e: "🧱", en: "tile", transcr: "тайл", ru: "плитка", pn: "/taɪl/" },
+      ],
+
+      dialogue: [
+        { s: "m", en: "Hello. Is there anything broken in your room?", transcr: "Хэлоу. Из зэа энисинг броукэн ин ё рум?", ru: "Привет. В твоей комнате что-нибудь сломано?" },
+        { s: "w", en: "Yes. The heating is broken.", transcr: "Йес. Зэ хитинг из броукэн.", ru: "Да. Отопление сломано." },
+        { s: "m", en: "Is there a sheet in the wardrobe?", transcr: "Из зэа э шиит ин зэ уодроуб?", ru: "В шкафу есть простыня?" },
+        { s: "w", en: "No. There is nothing in the wardrobe.", transcr: "Ноу. Зэа из насинг ин зэ уодроуб.", ru: "Нет. В шкафу ничего нет." },
+        { s: "m", en: "Is there anyone in room ten?", transcr: "Из зэа эниуан ин рум тэн?", ru: "В десятой комнате кто-нибудь есть?" },
+        { s: "w", en: "No. Nobody is there.", transcr: "Ноу. Ноубэди из зэа.", ru: "Нет. Там никого нет." },
+        { s: "m", en: "Is there a mop somewhere?", transcr: "Из зэа э моп самуэа?", ru: "Где-нибудь есть швабра?" },
+        { s: "w", en: "There is a mop near the entrance.", transcr: "Зэа из э моп ниэ зэ энтрэнс.", ru: "У входа есть швабра." },
+        { s: "m", en: "Good. Is there anything in the cupboard?", transcr: "Гуд. Из зэа энисинг ин зэ кабэд?", ru: "Хорошо. В шкафчике что-нибудь есть?" },
+        { s: "w", en: "There is something. A sponge and some detergent.", transcr: "Зэа из самсинг. Э спандж энд сам дитёджэнт.", ru: "Там что-то есть. Губка и немного моющего средства." },
+        { s: "m", en: "Good. Is there a noise in the corridor?", transcr: "Гуд. Из зэа э нойз ин зэ коридо?", ru: "Хорошо. В коридоре есть шум?" },
+        { s: "w", en: "Yes. Someone is walking in the corridor.", transcr: "Йес. Самуан из уокин ин зэ коридо.", ru: "Да. В коридоре кто-то ходит." },
+      ],
+
+      quiz: [
+        { q: '[COMPLETE] "There is ___ on the floor." (что-то есть)', opts: ["something", "anything", "nothing", "everything"], c: 0, expl: "something — в утверждении: что-то есть. some- = утвердительный контекст.", hint_ru: "утверждение → some-." },
+        { q: '[COMPLETE] "Is there ___ in the wardrobe?" (что-нибудь)', opts: ["anything", "something", "nothing", "nobody"], c: 0, expl: "anything — в вопросе: что-нибудь? any- = вопрос.", hint_ru: "вопрос → any-." },
+        { q: '[COMPLETE] "There is ___ in the cupboard." (ничего нет)', opts: ["nothing", "anything", "something", "nowhere"], c: 0, expl: "nothing + IS (положит.) = ничего нет. Без двойного отрицания.", hint_ru: "ничего нет → nothing + IS." },
+        { q: '[TRANSLATE] "шум"', opts: ["noise", "smell", "mat", "pipe"], c: 0, expl: "noise — шум.", hint_ru: "noise." },
+        { q: '[TRANSLATE] "матрас"', opts: ["mattress", "pillow", "sheet", "laundry"], c: 0, expl: "mattress — матрас.", hint_ru: "mattress." },
+        { q: '[TRANSLATE] "коридор"', opts: ["corridor", "entrance", "bathroom", "bedroom"], c: 0, expl: "corridor — коридор.", hint_ru: "corridor." },
+        { q: '[CORRECT] Где правильно? (ничего нет на кровати)', opts: ["There is nothing on my bed.", "There isn\'t nothing on my bed.", "There is no something on my bed.", "Nothing isn\'t on my bed."], c: 0, expl: "nothing + IS (положит.) = правильно. «There isn't nothing» — двойное отрицание, нельзя!", hint_ru: "nothing + IS." },
+        { q: '[QUESTION] "___ at the entrance?" (кто-нибудь)', opts: ["Is there anyone", "Is there someone", "Is there nobody", "Is anything"], c: 0, expl: "Is there anyone at the entrance? — кто-нибудь у входа? any- = вопрос.", hint_ru: "вопрос → any-." },
+        { q: "[LISTEN] Nobody is in the corridor.", opts: ["В коридоре никого нет.", "В коридоре что-то есть.", "В коридоре кто-то ходит.", "В шкафу ничего нет."], c: 0, expl: "nobody — никого нет. corridor — коридор.", hint_ru: "" },
+        { q: "[GIST] Что нашли в шкафчике (по диалогу)?", opts: ["Губку и моющее средство.", "Подушку и простыню.", "Швабру.", "Ничего не нашли."], c: 0, expl: "«There is something. A sponge and some detergent.» — губка и моющее.", hint_ru: "Слушай про cupboard и sponge." },
+        { q: "[BUILD] «Где-нибудь есть швабра?»", build: ["Is", "there", "a", "mop", "somewhere"], expl: "Is there a mop somewhere? — Где-нибудь есть швабра? somewhere = где-нибудь.", hint_ru: "где-нибудь." },
+        { q: '[COMPLETE] "I cannot go ___." (никуда)', opts: ["anywhere", "nowhere", "somewhere", "everything"], c: 0, expl: "anywhere — после cannot/not: никуда не могу. nowhere + положит. глагол: «I am going nowhere».", hint_ru: "после cannot → anywhere." },
+      ],
+
+      everyday: {
+        title_ru: "В кэмпе и общежитии",
+        phrases: [
+          { en: "Is there anything broken in your room?", transcr: "Из зэа энисинг броукэн ин ё рум?", ru: "В твоей комнате что-нибудь сломано?" },
+          { en: "There is nothing in the wardrobe.", transcr: "Зэа из насинг ин зэ уодроуб.", ru: "В шкафу ничего нет." },
+          { en: "Someone is in the corridor.", transcr: "Самуан из ин зэ коридо.", ru: "В коридоре кто-то есть." },
+          { en: "Is there anything wrong with the heating?", transcr: "Из зэа энисинг ронг уис зэ хитинг?", ru: "С отоплением что-то не так?" },
+          { en: "There is a notice near the entrance.", transcr: "Зэа из э ноутис ниэ зэ энтрэнс.", ru: "У входа есть объявление." },
+          { en: "Nothing works in my room.", transcr: "Насинг уёкс ин май рум.", ru: "В моей комнате ничего не работает." },
+        ],
+      },
+    },
   ];
 
   if (typeof module !== "undefined" && module.exports) module.exports = LESSONS;

@@ -392,3 +392,31 @@
     `Do not stress` = отмахивающийся регистр → заменён на `We can help you. The nurse is here.` (поддержка+сигналинг, без команды
     «не чувствуй»). Скептик-проход не нужен.
   - `CACHE_VERSION` esw-v62→**esw-v63**. Осталось A2: L20–L23 (compounds/infinitive of purpose/take-get-have/Present Perfect).
+- **L20 готов (something/anything/nothing + CAMP/HOME-2) — 5-й урок A2.** Грамматика: три семейства неопределённых
+  местоимений: `some-` (утверждение: something/someone/somewhere), `no-` (отрицание без «not»: nothing/nobody/nowhere),
+  `any-` (вопрос + после not: anything/anyone/anywhere) + `every-` (everything/everybody/everywhere) как бонус в `cultural`.
+  Ключевое правило: нельзя двойное отрицание (`There isn't nothing` → ошибка). 30 новых слов CAMP/HOME-2: 22 поля + 8 доп.
+  (noise/smell/mat/notice/bulb/pipe/freezer/tile — проверены против 455+30-словаря; стеммер-безопасны). Диалог
+  «проверка комнаты» (manager↔worker). 12 реплик, 12 grammar-примеров, 12 quiz.
+  - **Снежок:** `WHITELIST[20]` = 14 составных местоимений (something/anything/nothing/everything + someone/anyone/
+    nobody/everybody/everyone/somebody + somewhere/anywhere/nowhere/everywhere); 30 `words[]` — CAMP/HOME-2.
+  - **Слой 1 (audit):** 7/7 зелёные (audit/dedup/snowball/reader-audit/check-bre/check-transcr-safe/check-transcr-consistency).
+  - **Слой 2 (verify):** verify-ipa — L20: microwave IPA скорректирован `/ˈmaɪkrəweɪv/`→`/ˈmaɪkrəʊweɪv/` (Wiktionary RP
+    `/kɹəʊ/`); mattress `/ˈmætrəs/`→`/ˈmætrɪs/` (Cambridge BrE финальный /ɪ/); transcr обновлены соответственно.
+    verify-transcr — `microwave` расхождение устранено правкой IPA. 6 слов не найдено на Wiktionary
+    (mop/sponge/detergent/notice/bulb/pipe) — IPA проставлены вручную по Cambridge BrE; оба скрипта приняты.
+    **Добавлено «шит» в `check-transcr-safe.js`** (sheet /ʃiːt/→«шит» — грубое рус. слово; исправлено на «шиит»,
+    двойная-и передаёт /iː/ и разрывает совпадение; «шиит» НЕ содержит «шит» как подстроку).
+  - **Слой 3 (ревьюеры):** 4 правки — (1) `sheet` «шит»→«шиит» (check-transcr-safe); (2) `"My pillow is nowhere."`→
+    `"I have nowhere to go."` (русизм; замена — BrE A2 идиома); (3) диалог строка 2 «There is nothing on my bed»
+    (ответ на «broken?» = логический сбой) → «Yes. The heating is broken.» (прямой ответ на вопрос); (4) Q8 `[QUESTION]`
+    двойной глагол: `"___ is at the entrance?"`→`"___ at the entrance?"`. Отклонены: `cannot` (конвенция снежка),
+    `"There is something. A sponge..."` (реалистичная BrE-находка), `"Nobody is there"` (грамм. цель урока),
+    `"Nothing works"` (валидный BrE идиом), контракции в диалоге (конвенция проекта), safety-флаги D2/E6
+    (reporting-язык = защита, не риск).
+  - **🔴 Слой 4 (source-cited, 3 ревьюера + скептик):** **SHIP, 0 подтверждённых правок.** Все 8 флагов
+    от 3 ревьюеров отклонены скептиком: something/nothing/anything = A2-ядро (face2face/Headway/EF/British Council);
+    BrE-формы «I haven't got anything» (BrE vs AmE «I don't have anything») — подтверждены; «Is there anything wrong
+    with the heating?» = стандартная BrE-фраза (British Council workplace); «Nothing works» = валидный идиом;
+    safety-фразы («The heating is broken», «Nothing works») — reporting-язык, защищает рабочих, не создаёт риска.
+  - `CACHE_VERSION` esw-v63→**esw-v64**. Осталось A2: L21–L23 (infinitive of purpose/take-get-have/Present Perfect).

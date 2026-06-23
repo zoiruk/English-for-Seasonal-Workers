@@ -14,6 +14,9 @@ const RUDE = [
   "хуй", "хуе", "хуё", "хуя", "пизд", "бля", "ебл", "ёба", "ёбн", "еба", "ебу", "ебё",
   "ебан", "ебат", "заеб", "сра", "сри", "ссык", "говн", "гондон", "залуп", "пидор",
   "пидар", "мудак", "дроч", "сука",
+  // "sheet" /ʃiːt/ → «шит» is offensive; use «шиит» (double-i preserves /iː/ length
+  // and avoids the offensive sequence — «шиит» does NOT contain «шит» as substring).
+  "шит",
 ];
 
 const errors = [];

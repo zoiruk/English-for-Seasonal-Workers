@@ -50,6 +50,15 @@ const WHITELIST = {
   // by the Phase 0 tokenizer (I've->i, haven't->have) so have got rides on known
   // words. No new grammar words needed.
   19: [],
+  // L20 indefinite compounds: some-/any-/no-/every- with -thing/-one/-body/-where.
+  // All twelve base forms + "somebody" variant are grammar/function words; the 30
+  // words[] come from the CAMP/HOME-2 field. "no one" (2 words) is covered by
+  // no(L1 words) + one(L4 words) without a whitelist entry.
+  20: [
+    "something","anything","nothing","everything",
+    "someone","anyone","nobody","everybody","everyone","somebody",
+    "somewhere","anywhere","nowhere","everywhere",
+  ],
 };
 const NAMES = ["ahmad","tom","sara","anna","john","ali","omar","rustam","fatima"];
 

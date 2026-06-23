@@ -1,6 +1,6 @@
 # IPA verification report (Wiktionary RP anchor)
 
-Total words: 575 · matched: 507 · divergent: 55 · not found: 13
+Total words: 605 · matched: 530 · divergent: 61 · not found: 14
 
 Normalized away (kept length ː): ɹ↔r, ɡ↔g, ɛ↔e (DRESS vowel), tie-bars & allophonic diacritics, optional (…) segments, stress, syllable dots.
 Divergences below are for OWNER ACCEPTANCE — review each: is our `pn` wrong, or a valid variant?
@@ -64,6 +64,12 @@ Divergences below are for OWNER ACCEPTANCE — review each: is our `pn` wrong, o
 | 18 | cable | `/ˈkeɪbl/` | `/ˈkeɪ.bəl/` |
 | 18 | bolt | `/bəʊlt/` | `/bɒlt/` |
 | 19 | muscle | `/ˈmʌsl/` | `/ˈmʌs.əl/` |
+| 20 | microwave | `/ˈmaɪkrəweɪv/` | `/ˈmaɪkɹəʊˌweɪv/` |
+| 20 | mattress | `/ˈmætrəs/` | `/ˈmætɹɪs/` |
+| 20 | entrance | `/ˈentrəns/` | `/ɛnˈtɹɑːns/` |
+| 20 | bathroom | `/ˈbɑːθruːm/` | `/ˈbɑːθɹʊm/` |
+| 20 | bedroom | `/ˈbedrʊm/` | `/ˈbɛdɹuːm/` |
+| 20 | noise | `/nɔɪz/` | `/ˈnoɪ̯z/` |
 
 ## Not found on Wiktionary (no en RP IPA parsed — verify manually)
 
@@ -75,8 +81,9 @@ Divergences below are for OWNER ACCEPTANCE — review each: is our `pn` wrong, o
 - L14 **nose** (`/nəʊz/`)
 - L14 **tired** (`/ˈtaɪəd/`)
 - L16 **season** (`/ˈsiːzn/`)
-- L19 **back** (`/bæk/`)
-- L19 **angry** (`/ˈæŋɡri/`)
-- L19 **worried** (`/ˈwʌrid/`)
-- L19 **sad** (`/sæd/`)
-- L19 **relaxed** (`/rɪˈlækst/`)
+- L20 **mop** (`/mɒp/`)
+- L20 **sponge** (`/spʌndʒ/`)
+- L20 **detergent** (`/dɪˈtɜːdʒənt/`)
+- L20 **notice** (`/ˈnəʊtɪs/`)
+- L20 **bulb** (`/bʌlb/`)
+- L20 **pipe** (`/paɪp/`)
