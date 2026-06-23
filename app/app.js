@@ -81,6 +81,9 @@
       reader_lib_sub: "Истории для чтения",
       reader_lib_hint: "👇 Выберите книгу. Главы открываются после уроков.",
       reader_book_sub: "{0} из {1} глав открыто",
+      level_a1: "Уровень 1 · A0–A1 · с нуля",
+      level_a2: "Уровень 2 · A2 · продолжение",
+      level_a2_locked: "🔒 Откроется после Урока {0}",
       tags: {
         "[COMPLETE]": "✍️ Заполните пропуск",
         "[TRANSLATE]": "🗣️ Переведите",
@@ -112,6 +115,12 @@
     var s = (UI[LANG] && UI[LANG][key]) || (UI.ru[key]) || key;
     return s.replace("{0}", a).replace("{1}", b);
   }
+
+  /* Lessons 1..A1_MAX are the A0-A1 course (certificate scope); 16+ are A2,
+     unlocked only after the A0-A1 course is finished (store.done[A1_MAX]). */
+  var A1_MAX = 15;
+  function a1Done() { return Object.keys(store.done).filter(function (k) { return +k <= A1_MAX; }).length; }
+  function a1Complete() { return a1Done() >= Math.min(A1_MAX, LESSONS.length); }
 
   /* ---------- storage ---------- */
   var KEY = "esw_progress_v1";
@@ -208,9 +217,22 @@
     h += '<div class="lesson-card" data-nav="cert">' +
       '<div class="num">🏆</div>' +
       '<div class="body"><div class="t">' + t("cert_hub_title") + '</div>' +
-      '<div class="s">' + t("cert_hub_sub", Object.keys(store.done).length, LESSONS.length) + '</div></div>' +
+      '<div class="s">' + t("cert_hub_sub", a1Done(), Math.min(A1_MAX, LESSONS.length)) + '</div></div>' +
       '<div class="done" style="color:var(--text3)">›</div></div>';
+    var hasA2 = LESSONS.length > A1_MAX; // only group into levels once A2 lessons exist
+    var a2Open = a1Complete();
     LESSONS.forEach(function (les) {
+      if (hasA2 && les.id === 1) h += '<div class="level-head">' + t("level_a1") + "</div>";
+      if (hasA2 && les.id === A1_MAX + 1) {
+        h += '<div class="level-head">' + t("level_a2") +
+          (a2Open ? "" : ' <span class="level-lock">' + t("level_a2_locked", A1_MAX) + "</span>") + "</div>";
+      }
+      if (les.id > A1_MAX && !a2Open) {
+        h += '<div class="lesson-card locked">' +
+          '<div class="num">🔒</div>' +
+          '<div class="body"><div class="t">' + esc(les.title_ru) + "</div></div></div>";
+        return;
+      }
       var isDone = store.done[les.id];
       h += '<div class="lesson-card" data-lesson="' + les.id + '">' +
         '<div class="num">' + les.id + "</div>" +
@@ -571,9 +593,10 @@
 
   function renderCertificate() {
     setRoute("cert");
-    var done = Object.keys(store.done).length;
-    var total = LESSONS.length;
-    var isComplete = total > 0 && done === total;
+    // Certificate scope = the A0-A1 course (lessons 1..A1_MAX), independent of any A2 lessons.
+    var total = Math.min(A1_MAX, LESSONS.length);
+    var done = a1Done();
+    var isComplete = total > 0 && done >= total;
 
     // Before the whole course is finished: show a Russian progress screen, certificate locked.
     if (!isComplete) {

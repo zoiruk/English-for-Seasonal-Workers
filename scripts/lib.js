@@ -49,7 +49,14 @@ function tokenize(text) {
   return String(text)
     .replace(/<[^>]*>/g, " ")
     .toLowerCase()
-    .replace(/'s\b/g, "")
+    .replace(/’/g, "'") // normalise curly apostrophe
+    // contractions -> base form so snowball matches (A2: have got/Present Perfect/couldn't).
+    // irregular n't first, then generic n't, then verb contractions and 's.
+    .replace(/\bcan't\b/g, "can")
+    .replace(/\bwon't\b/g, "will")
+    .replace(/\bshan't\b/g, "shall")
+    .replace(/n't\b/g, "")
+    .replace(/'(ve|re|ll|m|d|s)\b/g, "")
     .replace(/[^a-z'\s-]/g, " ")
     .split(/\s+/)
     .map((w) => w.replace(/^['-]+|['-]+$/g, ""))
