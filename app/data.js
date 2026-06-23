@@ -2584,7 +2584,7 @@
         { e: "📻", en: "radio", transcr: "рэйдиоу", ru: "радио", pn: "/ˈreɪdiəʊ/" },
         { e: "📰", en: "news", transcr: "ньюз", ru: "новости", pn: "/njuːz/" },
         { e: "📖", en: "story", transcr: "стори", ru: "история (рассказ)", pn: "/ˈstɔːri/" },
-        { e: "🍻", en: "cheers", transcr: "чиэз", ru: "спасибо/будем (брит.)", pn: "/tʃɪəz/" },
+        { e: "🙏", en: "cheers", transcr: "чиэз", ru: "спасибо/пока (брит.)", pn: "/tʃɪəz/" },
         { e: "😍", en: "lovely", transcr: "лавли", ru: "прекрасно (брит.)", pn: "/ˈlʌvli/" },
         { e: "👫", en: "mate", transcr: "мэйт", ru: "друг/приятель (брит.)", pn: "/meɪt/" },
         { e: "🎈", en: "fun", transcr: "фан", ru: "весело", pn: "/fʌn/" },
