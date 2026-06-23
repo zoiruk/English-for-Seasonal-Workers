@@ -1,6 +1,6 @@
 # IPA verification report (Wiktionary RP anchor)
 
-Total words: 545 · matched: 479 · divergent: 53 · not found: 13
+Total words: 575 · matched: 507 · divergent: 55 · not found: 13
 
 Normalized away (kept length ː): ɹ↔r, ɡ↔g, ɛ↔e (DRESS vowel), tie-bars & allophonic diacritics, optional (…) segments, stress, syllable dots.
 Divergences below are for OWNER ACCEPTANCE — review each: is our `pn` wrong, or a valid variant?
@@ -61,7 +61,9 @@ Divergences below are for OWNER ACCEPTANCE — review each: is our `pn` wrong, o
 | 18 | battery | `/ˈbætəri/` | `/ˈbæt.(ə)ɹi/` |
 | 18 | diesel | `/ˈdiːzl/` | `/ˈdiːzəl/` |
 | 18 | button | `/ˈbʌtn/` | `/ˈbʌtən/` |
+| 18 | cable | `/ˈkeɪbl/` | `/ˈkeɪ.bəl/` |
 | 18 | bolt | `/bəʊlt/` | `/bɒlt/` |
+| 19 | muscle | `/ˈmʌsl/` | `/ˈmʌs.əl/` |
 
 ## Not found on Wiktionary (no en RP IPA parsed — verify manually)
 
@@ -73,8 +75,8 @@ Divergences below are for OWNER ACCEPTANCE — review each: is our `pn` wrong, o
 - L14 **nose** (`/nəʊz/`)
 - L14 **tired** (`/ˈtaɪəd/`)
 - L16 **season** (`/ˈsiːzn/`)
-- L18 **tank** (`/tæŋk/`)
-- L18 **chain** (`/tʃeɪn/`)
-- L18 **cable** (`/ˈkeɪbl/`)
-- L18 **plug** (`/plʌɡ/`)
-- L18 **pump** (`/pʌmp/`)
+- L19 **back** (`/bæk/`)
+- L19 **angry** (`/ˈæŋɡri/`)
+- L19 **worried** (`/ˈwʌrid/`)
+- L19 **sad** (`/sæd/`)
+- L19 **relaxed** (`/rɪˈlækst/`)
