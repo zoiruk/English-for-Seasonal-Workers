@@ -344,3 +344,28 @@
     `clever` предпочтительнее AmE `smart`). Сравнение людей — только нейтрально/позитивно (taller/strongest), никого не
     унижает. 2 мягкие эмодзи-заметки (short 📏, weak 🥀) — в рамках политики «ближайшее честное», не блокеры.
   - `CACHE_VERSION` esw-v60→**esw-v61**. Осталось A2: L18–L23 (could+adverbs/have got/compounds/infinitive of purpose/take-get-have/Present Perfect).
+- **L18 готов (could/couldn't + adverbs of manner + техника) — 3-й урок A2 (мердж 2 тонких блоков по плану).** Грамматика:
+  `could` (прошлое умение + вежливая просьба `Could you…?`) +/− ; наречия «как» = прилагательное + `-ly` (careful→carefully,
+  good→well особое, hard/fast без изменений). 3-форменный каркас: «✅ мог / ❌ не мог / 🛠️ Как?+-ly» (ярлыки свободны).
+  Диалог «утро смены: не завёлся двигатель → провод → лезвие → механик» (m↔w). 30 новых слов техники/оборудования
+  (trailer/engine/battery/fuel/diesel/tank/oil/switch/button/lever/blade/brake/gear/motor/crane/tyre/chain/cable/plug/wire/
+  generator/power/spanner/nut/bolt/screw/clamp/fan/horn/pump) — сверены против словаря/дедупа/ридер-глоссария.
+  - **Снежок:** наречия-manner + `could` = функц.-слова → `WHITELIST[18]=could/well/carefully/safely/easily/badly/quietly/loudly`
+    (по плану: тонкие блоки в whitelist, 30 words[] от парного поля). `couldn't`→`could` через токенайзер Фазы 0 (естественный
+    регистр). Reader-glossary `slowly/quickly/fast` НЕ в whitelist (только в note-прозе) — избегаем lesson/reader-оверлапа.
+    Базовый предлог `with` никогда не вводился → заменён на known `near` (WL5), не ретрофитил.
+  - **Слой 1 (audit):** 7/7 зелёные. **Слой 2:** verify-ipa — нотация/варианты (engine /e/, diesel/button syllabic, bolt
+    `/bəʊlt/` мой RP верен vs Wiktionary `/bɒlt/`-артефакт); verify-transcr — `fuel` «фьюэл» (конвенция /fj/→фь, как «мьюзик»),
+    `generator` выровнен «дженэрэйтэ»→«джэнэрэйтэ» (/e/→э, как engine→«энджин»). **Рендер:** 3 формы, 30 карточек, 0 ошибок консоли.
+  - **Слой 3 (адверсариальные ревьюеры):** 6 правок — `tyre` глосс «шина, колесо»→«шина» (false-synonym), эмодзи `pump`
+    🚰→💧, `The brake is bad`→`is broken` (естественнее для поломки), `+`good→well квиз (неправильное наречие не тестировалось),
+    cultural-мост глоссов (`start the engine`=завести, `battery is low`=сел). Отклонено: «mislabel forms» (движок=label_ru),
+    merge could+наречия (план), эмодзи switch/horn/blade (нет лучшей честной альтернативы).
+  - **🔴 Слой 4 (source-cited, 2 ревьюера, фокус safety):** Reviewer B **SHIP** — **безопасность техники выверена против HSE**
+    (gov.uk/hse.gov.uk «Using machines safely», «Safe maintenance»): все реплики = осведомлённость + «call the mechanic»
+    (competent-person principle), НЕ инструкции-как-оперировать опасным. BrE подтверждён (spanner/tyre/diesel/lever vs AmE).
+    `could`=A1–A2 (British Council). Reviewer A — FIX на коллокацию: `pump works easily`→`works well` (машина «works well»,
+    Oxford/Cambridge), внесено; + смягчена реплика `The wire is loose. I can do it.`→`The wire is loose here.` (убран
+    саморемонт электрики, HSE Safe Stop); в cultural добавлена брит. идиома `a flat battery` (осведомлённость; в снежок-полях
+    оставлен прозрачный L17 `low`). Скептик-проход не нужен (фейл-флагов нет).
+  - `CACHE_VERSION` esw-v61→**esw-v62**. Осталось A2: L19–L23 (have got/compounds/infinitive of purpose/take-get-have/Present Perfect).

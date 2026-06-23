@@ -40,6 +40,12 @@ const WHITELIST = {
   // whose strip!=base (good->best, bad->worse/worst, heavy->heavier, easy->easier);
   // regular -er/-est forms (taller/slower/strongest) collapse via the stemmer.
   17: ["than","more","most","best","worse","worst","heavier","heaviest","easier"],
+  // L18 could (past ability; couldn't->could via tokenizer) + adverbs of manner.
+  // Manner adverbs are grammar/function words (plan: thin blocks -> whitelist),
+  // the 30 words[] come from the machinery field. Regular -ly adverbs whose base
+  // is a reader-glossary word (slowly/quickly/fast) are kept OUT (shown only in
+  // prose) to avoid lesson/reader overlap; taught/used ones go here.
+  18: ["could","well","carefully","safely","easily","badly","quietly","loudly"],
 };
 const NAMES = ["ahmad","tom","sara","anna","john","ali","omar","rustam","fatima"];
 

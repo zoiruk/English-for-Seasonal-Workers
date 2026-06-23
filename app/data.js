@@ -2968,6 +2968,170 @@
         ],
       },
     },
+
+    {
+      id: 18,
+      mod: 10,
+      title_ru: "Мог / не смог + как работать",
+      cefr: "A2 · could/couldn't · adverbs of manner · machinery",
+
+      grammar: {
+        title_ru: "could (мог) + наречие «как»: -ly",
+        intro_ru:
+          '<div style="line-height:1.6">Прошлое от <b>can</b> (мочь, уметь) — это <b>could</b>:<br>❌ <b>Yesterday I can start it</b><br>✅ <b>Yesterday I could start it</b> <span class="g-transcr">[йестэдэй ай куд старт ит]</span> (вчера я смог это завести).<br>👉 <b>could</b> = мог / умел / смог (прошлое). Не смог = <b>could not / couldn’t</b>.<br>🛠️ А <b>как</b> ты делаешь работу? Прилагательное + <b>-ly</b>: careful → <b>carefully</b> <span class="g-transcr">[кэафул → кэафули]</span> (осторожно).</div>',
+        cultural_ru:
+          '<b>could</b> покрывает русские «мог», «умел», «смог». Это же слово — вежливая просьба: <b>Could you help me?</b> <span class="g-transcr">[куд ю хэлп ми]</span> (не могли бы вы помочь?).' +
+          '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:6px">' +
+          '<div><b>Умел в прошлом:</b> I could drive <span class="g-transcr">[ай куд драйв]</span></div>' +
+          '<div><b>Не смог:</b> I couldn’t start it <span class="g-transcr">[ай куднт старт ит]</span></div>' +
+          '<div><b>Как? (-ly):</b> work carefully <span class="g-transcr">[уёк кэафули]</span></div>' +
+          '<div><b>Особое наречие:</b> good → well <span class="g-transcr">[гуд → уэл]</span></div></div><div style="margin-top:6px">💡 <b>start the engine</b> = завести двигатель (не только «начинать»). <b>battery is low</b> = аккумулятор сел (брит. идиома: <b>a flat battery</b>).</div>',
+        note_ru:
+          '⚠️ Наречие «как» = прилагательное + <b>-ly</b>:<br>' +
+          '• <b>slow → slowly</b> <span class="g-transcr">[слоу → слоули]</span>, <b>quiet → quietly</b> <span class="g-transcr">[куайэт → куайэтли]</span>, <b>bad → badly</b> <span class="g-transcr">[бэд → бэдли]</span><br>' +
+          '• <b>-y → -ily</b>: <b>easy → easily</b> <span class="g-transcr">[изи → изили]</span><br>' +
+          '⭐ Особое: <b>good → well</b> <span class="g-transcr">[гуд → уэл]</span> (НЕ «goodly»). <b>hard</b> и <b>fast</b> не меняются: work <b>hard</b>, drive <b>fast</b>.<br>' +
+          '⚠️ <b>could</b> + глагол БЕЗ to и БЕЗ -s: I could <b>start</b> (не «could to start», не «could starts»).',
+        forms: {
+          positive: {
+            label_ru: "✅ мог (could)",
+            rule_ru:
+              '<b>could</b> + глагол (база) = умел / смог в прошлом:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>I could start</code></div>' +
+              '<div><code>He could drive</code></div>' +
+              '<div><code>I could start the engine</code> <span class="g-transcr">[ай куд старт зэ энджин]</span></div></div>',
+            table: [
+              { subj: "I", verb: "could start", example: "I could start the engine", transcr: "Ай куд старт зэ энджин", tr_ru: "Я смог завести двигатель" },
+              { subj: "He", verb: "could drive", example: "He could drive the tractor", transcr: "Хи куд драйв зэ трэктэ", tr_ru: "Он умел водить трактор" },
+              { subj: "We", verb: "could repair", example: "We could repair the motor", transcr: "Уи куд рипэа зэ моутэ", tr_ru: "Мы смогли починить мотор" },
+            ],
+          },
+          negative: {
+            label_ru: "❌ не мог (couldn’t)",
+            rule_ru:
+              'Не смог = <b>could not</b> / <b>couldn’t</b> + глагол:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>I couldn’t start it</code></div>' +
+              '<div><code>She couldn’t drive</code></div></div>',
+            table: [
+              { subj: "I", verb: "couldn’t start", example: "I couldn’t start the engine", transcr: "Ай куднт старт зэ энджин", tr_ru: "Я не смог завести двигатель" },
+              { subj: "She", verb: "couldn’t drive", example: "She couldn’t drive the trailer", transcr: "Ши куднт драйв зэ трэйлэ", tr_ru: "Она не смогла вести прицеп" },
+              { subj: "They", verb: "couldn’t repair", example: "They couldn’t repair the generator", transcr: "Зэй куднт рипэа зэ джэнэрэйтэ", tr_ru: "Они не смогли починить генератор" },
+            ],
+          },
+          question: {
+            label_ru: "🛠️ Как? + -ly",
+            rule_ru:
+              'Как ты делаешь? Прилагательное + <b>-ly</b>:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>careful → carefully</code></div>' +
+              '<div><code>good → well</code> (особое)</div>' +
+              '<div><code>Work carefully</code> <span class="g-transcr">[уёк кэафули]</span></div></div>',
+            table: [
+              { subj: "Work", verb: "carefully", example: "Work carefully near the blade", transcr: "Уёк кэафули ниэ зэ блэйд", tr_ru: "Работай осторожно с лезвием" },
+              { subj: "Work", verb: "safely", example: "Always work safely", transcr: "Олуэйз уёк сэйфли", tr_ru: "Всегда работай безопасно" },
+              { subj: "The engine", verb: "starts easily", example: "The engine starts easily", transcr: "Зэ энджин стартс изили", tr_ru: "Двигатель заводится легко" },
+              { subj: "The motor", verb: "works well", example: "The motor works well", transcr: "Зэ моутэ уёкс уэл", tr_ru: "Мотор работает хорошо" },
+            ],
+          },
+        },
+        examples: [
+          { en: "I could start the engine.", transcr: "Ай куд старт зэ энджин.", ru: "Я смог завести двигатель." },
+          { en: "He could drive the tractor.", transcr: "Хи куд драйв зэ трэктэ.", ru: "Он умел водить трактор." },
+          { en: "I couldn’t repair the brake.", transcr: "Ай куднт рипэа зэ брэйк.", ru: "Я не смог починить тормоз." },
+          { en: "Work carefully near the blade.", transcr: "Уёк кэафули ниэ зэ блэйд.", ru: "Работай осторожно с лезвием." },
+          { en: "The engine starts easily.", transcr: "Зэ энджин стартс изили.", ru: "Двигатель заводится легко." },
+          { en: "Could you help me, please?", transcr: "Куд ю хэлп ми, плиз?", ru: "Не могли бы вы помочь, пожалуйста?" },
+          { en: "The motor works well now.", transcr: "Зэ моутэ уёкс уэл нау.", ru: "Мотор теперь работает хорошо." },
+        ],
+        simple_ru: {
+          formula: '<b>could</b> + глагол (база) = мог / смог в прошлом. Не смог = <b>couldn’t</b>. Как? прилагательное + <b>-ly</b> (good → well).<br><span class="g-transcr">I could start · I couldn’t start · work carefully</span>',
+          examples: [
+            { en: "I could start the engine.", transcr: "Ай куд старт зэ энджин.", ru: "I (я) + could (смог) + start (завести) + the engine = я смог завести двигатель." },
+            { en: "Work carefully.", transcr: "Уёк кэафули.", ru: "work (работай) + carefully (осторожно) = работай осторожно (careful + ly)." },
+          ],
+        },
+        ytQuery: "could couldn't past ability adverbs of manner -ly английский для начинающих",
+      },
+
+      words: [
+        { e: "🚛", en: "trailer", transcr: "трэйлэ", ru: "прицеп", pn: "/ˈtreɪlə/" },
+        { e: "⚙️", en: "engine", transcr: "энджин", ru: "двигатель", pn: "/ˈendʒɪn/" },
+        { e: "🔋", en: "battery", transcr: "бэтэри", ru: "аккумулятор", pn: "/ˈbætəri/" },
+        { e: "⛽", en: "fuel", transcr: "фьюэл", ru: "топливо", pn: "/ˈfjuːəl/" },
+        { e: "🛢️", en: "diesel", transcr: "дизл", ru: "дизель", pn: "/ˈdiːzl/" },
+        { e: "🛢️", en: "tank", transcr: "тэнк", ru: "бак", pn: "/tæŋk/" },
+        { e: "🛢️", en: "oil", transcr: "ойл", ru: "масло", pn: "/ɔɪl/" },
+        { e: "🎚️", en: "switch", transcr: "суич", ru: "выключатель", pn: "/swɪtʃ/" },
+        { e: "🔘", en: "button", transcr: "батн", ru: "кнопка", pn: "/ˈbʌtn/" },
+        { e: "🕹️", en: "lever", transcr: "ливэ", ru: "рычаг", pn: "/ˈliːvə/" },
+        { e: "🔪", en: "blade", transcr: "блэйд", ru: "лезвие, нож (машины)", pn: "/bleɪd/" },
+        { e: "🛑", en: "brake", transcr: "брэйк", ru: "тормоз", pn: "/breɪk/" },
+        { e: "⚙️", en: "gear", transcr: "гиэ", ru: "передача, скорость", pn: "/ɡɪə/" },
+        { e: "⚙️", en: "motor", transcr: "моутэ", ru: "мотор", pn: "/ˈməʊtə/" },
+        { e: "🏗️", en: "crane", transcr: "крэйн", ru: "кран (подъёмный)", pn: "/kreɪn/" },
+        { e: "🛞", en: "tyre", transcr: "тайэ", ru: "шина", pn: "/ˈtaɪə/" },
+        { e: "⛓️", en: "chain", transcr: "чэйн", ru: "цепь", pn: "/tʃeɪn/" },
+        { e: "🔌", en: "cable", transcr: "кэйбл", ru: "кабель", pn: "/ˈkeɪbl/" },
+        { e: "🔌", en: "plug", transcr: "плаг", ru: "вилка, штекер", pn: "/plʌɡ/" },
+        { e: "🔌", en: "wire", transcr: "уайэ", ru: "провод", pn: "/ˈwaɪə/" },
+        { e: "🔌", en: "generator", transcr: "джэнэрэйтэ", ru: "генератор", pn: "/ˈdʒenəreɪtə/" },
+        { e: "⚡", en: "power", transcr: "пауэ", ru: "питание, мощность", pn: "/ˈpaʊə/" },
+        { e: "🔧", en: "spanner", transcr: "спэнэ", ru: "гаечный ключ", pn: "/ˈspænə/" },
+        { e: "🔩", en: "nut", transcr: "нат", ru: "гайка", pn: "/nʌt/" },
+        { e: "🔩", en: "bolt", transcr: "боулт", ru: "болт", pn: "/bəʊlt/" },
+        { e: "🪛", en: "screw", transcr: "скру", ru: "винт, шуруп", pn: "/skruː/" },
+        { e: "🗜️", en: "clamp", transcr: "клэмп", ru: "зажим, струбцина", pn: "/klæmp/" },
+        { e: "🌀", en: "fan", transcr: "фэн", ru: "вентилятор", pn: "/fæn/" },
+        { e: "📣", en: "horn", transcr: "хон", ru: "гудок, сигнал", pn: "/hɔːn/" },
+        { e: "💧", en: "pump", transcr: "памп", ru: "насос", pn: "/pʌmp/" },
+      ],
+
+      dialogue: [
+        { s: "m", en: "Good morning. Could you start the engine?", transcr: "Гуд монинг. Куд ю старт зэ энджин?", ru: "Доброе утро. Можешь завести двигатель?" },
+        { s: "w", en: "I couldn’t start it. The battery is low.", transcr: "Ай куднт старт ит. Зэ бэтэри из лоу.", ru: "Я не смог завести. Аккумулятор разряжен." },
+        { s: "m", en: "Look at the cable and the wire.", transcr: "Лук эт зэ кэйбл энд зэ уайэ.", ru: "Посмотри на кабель и провод." },
+        { s: "w", en: "The wire is loose here.", transcr: "Зэ уайэ из лус хиэ.", ru: "Провод здесь болтается." },
+        { s: "m", en: "Work carefully. The blade is dangerous.", transcr: "Уёк кэафули. Зэ блэйд из дэйнджэрэс.", ru: "Работай осторожно. Лезвие опасное." },
+        { s: "w", en: "Yes. I always work safely.", transcr: "Йес. Ай олуэйз уёк сэйфли.", ru: "Да. Я всегда работаю безопасно." },
+        { s: "m", en: "Could you drive the trailer carefully?", transcr: "Куд ю драйв зэ трэйлэ кэафули?", ru: "Можешь вести прицеп осторожно?" },
+        { s: "w", en: "Yes. The brake is broken.", transcr: "Йес. Зэ брэйк из броукэн.", ru: "Да. Тормоз сломан." },
+        { s: "m", en: "Call the mechanic. He works well.", transcr: "Кол зэ мэкэник. Хи уёкс уэл.", ru: "Позвони механику. Он хорошо работает." },
+        { s: "w", en: "Good. He could repair the motor yesterday.", transcr: "Гуд. Хи куд рипэа зэ моутэ йестэдэй.", ru: "Хорошо. Вчера он смог починить мотор." },
+        { s: "m", en: "This pump works well now.", transcr: "Зис памп уёкс уэл нау.", ru: "Этот насос теперь работает хорошо." },
+        { s: "w", en: "Good. The old pump was bad.", transcr: "Гуд. Зэ оулд памп уоз бэд.", ru: "Хорошо. Старый насос был плохой." },
+      ],
+
+      quiz: [
+        { q: '[COMPLETE] "Yesterday I ___ start the engine." (мог)', opts: ["could", "can", "do", "does"], c: 0, expl: "could = прошлое от can (мог/смог).", hint_ru: "Вчера — прошлое." },
+        { q: '[COMPLETE] "I ___ start it. The battery is low." (не смог)', opts: ["couldn’t", "could", "can", "do"], c: 0, expl: "couldn’t = could not (не смог).", hint_ru: "Не получилось." },
+        { q: '[COMPLETE] "Work ___ near the blade." (осторожно)', opts: ["carefully", "easily", "badly", "well"], c: 0, expl: "careful → carefully (осторожно). Прилагательное + -ly.", hint_ru: "Как? осторожно." },
+        { q: '[TRANSLATE] "двигатель"', opts: ["engine", "battery", "tyre", "cable"], c: 0, expl: "engine — двигатель.", hint_ru: "engine." },
+        { q: '[TRANSLATE] "тормоз"', opts: ["brake", "gear", "clamp", "fan"], c: 0, expl: "brake — тормоз.", hint_ru: "brake." },
+        { q: '[TRANSLATE] "гайка"', opts: ["nut", "bolt", "screw", "plug"], c: 0, expl: "nut — гайка.", hint_ru: "nut." },
+        { q: "[CORRECT] Где правильно?", opts: ["I could start it", "I could to start it", "I could started it", "I could starts it"], c: 0, expl: "could + глагол без to и без -s: could start.", hint_ru: "Я смог это завести." },
+        { q: '[COMPLETE] "The engine starts ___." (легко)', opts: ["easily", "easy", "badly", "well"], c: 0, expl: "easy → easily (легко). Как заводится?", hint_ru: "Как? легко." },
+        { q: '[COMPLETE] "The motor works ___." (хорошо — good)', opts: ["well", "good", "badly", "easy"], c: 0, expl: "good → well (особое наречие; НЕ goodly). Мотор работает хорошо.", hint_ru: "Как? хорошо." },
+        { q: '[QUESTION] "___ you help me, please?" (вежливая просьба)', opts: ["Could", "Does", "Is", "Are"], c: 0, expl: "Could you…? — вежливая просьба.", hint_ru: "Не могли бы вы…?" },
+        { q: "[LISTEN] I couldn’t start the engine.", opts: ["Я не смог завести двигатель.", "Я завёл двигатель.", "Двигатель работает хорошо.", "Тормоз сломан."], c: 0, expl: "couldn’t start — не смог завести.", hint_ru: "" },
+        { q: "[GIST] Почему рабочий не завёл двигатель (по диалогу)?", opts: ["Аккумулятор разряжен (low)", "Нет топлива", "Сломан тормоз", "Нет ключа"], c: 0, expl: '«I couldn’t start it. The battery is low».', hint_ru: "Слушай про battery." },
+        { q: "[BUILD] Соберите: «Я не смог завести двигатель»", build: ["I", "couldn’t", "start", "the", "engine"], expl: "I couldn’t start the engine — Я не смог завести двигатель. couldn’t + глагол без to.", hint_ru: "не смог завести." },
+        { q: '[COMPLETE] "He could ___ the tractor." (водить)', opts: ["drive", "drives", "driving", "drove"], c: 0, expl: "could + база глагола: could drive (без -s, без -ed).", hint_ru: "Он умел водить." },
+      ],
+
+      everyday: {
+        title_ru: "Техника и как работать",
+        phrases: [
+          { en: "Could you start the engine?", transcr: "Куд ю старт зэ энджин?", ru: "Можешь завести двигатель?" },
+          { en: "I couldn’t start it.", transcr: "Ай куднт старт ит.", ru: "Я не смог завести." },
+          { en: "The battery is low.", transcr: "Зэ бэтэри из лоу.", ru: "Аккумулятор разряжен." },
+          { en: "Work carefully near the blade.", transcr: "Уёк кэафули ниэ зэ блэйд.", ru: "Работай осторожно с лезвием." },
+          { en: "Call the mechanic, please.", transcr: "Кол зэ мэкэник, плиз.", ru: "Позвони механику, пожалуйста." },
+          { en: "The motor works well.", transcr: "Зэ моутэ уёкс уэл.", ru: "Мотор работает хорошо." },
+        ],
+      },
+    },
   ];
 
   if (typeof module !== "undefined" && module.exports) module.exports = LESSONS;
