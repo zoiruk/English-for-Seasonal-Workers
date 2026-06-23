@@ -254,3 +254,8 @@
   внесены: `Tom gives him a job`→`a crate` («give sb a job»=нанять, а Ахмад уже работает; цит. Collins/WordReference),
   `We pick berries`→`They pick berries` (скачок 1-го лица в 3-л. повествовании). 7 проверок зелёные, превью ок (ошибок нет).
 - `CACHE_VERSION` esw-v53→**esw-v54**. Осталось: партии 7–9, 10–12, 13–15.
+- **Партия 2 — главы 7–9 готовы:** ч7 «Что сейчас происходит» (L7 Present Continuous; глосс: slowly/quickly/busy),
+  ч8 «Одежда и цвета» (L8 have/has + PPE/цвета; глосс: warm/safe), ч9 «Комната Ахмада» (L9 there is/there are + комната;
+  глосс: small/dirty/nice). IPA сверены (RP). Слой-4 (2 ревьюера + скептик): 6 флагов, 6 отклонено — helmet/safe/do-you-have/
+  I-have/dirty-room/good-worker все защищены как валидный BrE, соответствующий L8-грамматике (have≠have got) и нарративной логике.
+  7 проверок зелёные. `CACHE_VERSION` esw-v54→**esw-v55**. Осталось: партии 10–12, 13–15.
