@@ -287,3 +287,31 @@
     (2026-06-23):** плитка `cheers` (L15, `data.js:2587`) переведена с «спасибо/будем (брит.)»+🍻 на «спасибо/пока (брит.)»+🙏 —
     совпадает с диалогом/everyday L15 и ридером (`reader.js:507` «Будь здоров, дружище!»); «будем» = алко-тост, неверен для
     мусульманской ЦА + 🍻 усиливал алко-прочтение. en/transcr/pn без изменений. 7 проверок зелёные. `CACHE_VERSION` esw-v57→**esw-v58**.
+
+**2026-06-23 — 🚀 СТАРТ УРОВНЯ A2 (Elementary). План — `plans/2026-06-23-a2-scope.md` (grilled).**
+Решение владельца: после A0–A1 (15/15) строить фермерское подмножество A2 (~8 уроков L16–L23). **Риск №1 (живой A0-тест Б
+не проведён) сохраняется — A2 строится как осознанный override, как L11–L15/ридер.** Дизайн зафиксирован гриллом: грамматику A2
+берём целиком, лексику — фермерский срез (туристический жир режем); правило ≥30 новых слов держим, грамм-блок паруем со свежим
+фермерским полем (запас слов проверен — домен не исчерпан, ~250+ свободных); токенайзер расширен под сокращения; хаб — секции-уровни.
+- **Фаза 0 — правка движка (`be17262`):** (1) `lib.js tokenize()` снимает `'ve/'re/'ll/'m/'d/n't` (+ `can't→can`, `won't→will`) →
+  снежок матчит естественные A2-формы (have got/Present Perfect/couldn't); аддитивно, L1–L15 без регрессии (в их снежок-полях
+  сокращений нет). (2) `app.js renderHub` — группировка по уровням (A0–A1 / A2), A2-карточки заперты до `store.done[15]`; сертификат
+  A0-A1 развязан от `LESSONS.length` (scope = первые 15, иначе допиши A2 → молча «23/23»); инертно пока A2-уроков нет; CSS
+  `.level-head`/`.level-lock`; UI-строки `level_a1/a2/a2_locked`. Проверено в превью: заперто+открыто рендерятся, 0 ошибок консоли.
+  Стеммер `-er/-est` (comparatives) отложен в L17 (контекстный). `CACHE_VERSION` esw-v58→**esw-v59**.
+- **L16 готов (going to + погода) — первый урок A2.** Грамматика: be going to (план + прогноз) +/−/?; диалог «погода и план смены»
+  (manager↔worker); 30 новых слов погоды/сезонов (weather/forecast/sun/sunny/cloud(y)/wind(y)/rainy/storm/lightning/fog(gy)/mist/
+  frost/ice/snow/warm/freeze/degree/breeze/season/spring/summer/autumn/winter/mud/soil/puddle/harvest). Снежок: going→стем go (L7),
+  am/is/are/to/not — whitelist; **новых whitelist-слов не понадобилось** (going to едет на знакомых глаголах). `WHITELIST[16]` пуст.
+  - **Слой 1 (audit):** 7/7 зелёные с первого прогона. **Слой 2:** verify-ipa — 1 флаг `cloudy` (нотация Wiktionary tie-bar, моя
+    `/ˈklaʊdi/` стандартна, как sunny/windy), принят; verify-transcr — 0 флагов по L16. **Рендер:** превью — 5 табов, 30 карточек слов,
+    квиз, 12 реплик диалога, 0 ошибок консоли.
+  - **🔴 Слой 4 (source-cited натуральность, 2 адверсариальных ревьюера + инлайн-скептик):** 1 подтверждённая правка, внесена —
+    `What is the weather today?`→`What is the weather **like** today?` (×2: диалог.1 + everyday; цит. Longman/British Council/Cambridge:
+    `What's the weather like?` = стандартная BrE-коллокация, без `like` — калька). Защищены как корректные: прогноз через going-to от
+    очевидности («Look at the clouds…» — British Council/Test-English A1), going to be + прилагательное, смешение план/прогноз в одном
+    уроке (Test-English «plans and predictions» A1), дистракторы квиза (going to working / go to work / It going to rain), реплика про
+    сарай (safety-нейтральна). Снежок `drive/wait` — в scope (зелёный). Скептик: `like` = ложный друг (учили «нравиться»), но курсы
+    подают чанком с глоссом «какая погода» — флаг реальный, не ложный.
+  - 7 проверок зелёные после фикса (`words[]` не менялись → verify-* не перегонял). `CACHE_VERSION` esw-v59→**esw-v60**.
+  - Осталось A2: L17–L23 (comparatives/have got/could+adverbs/compounds/infinitive of purpose/take-get-have/Present Perfect).

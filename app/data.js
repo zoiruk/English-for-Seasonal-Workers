@@ -2645,6 +2645,160 @@
         ],
       },
     },
+    {
+      id: 16,
+      mod: 9,
+      title_ru: "Планы и погода: be going to",
+      cefr: "A2 · be going to (future) · weather",
+
+      grammar: {
+        title_ru: "План и прогноз: am / is / are + going to + глагол",
+        intro_ru:
+          '<div style="line-height:1.6">Так сказать про план — ошибка:<br>❌ <b>I go to work tomorrow</b><br>Правильно:<br>✅ <b>I am going to work tomorrow</b> <span class="g-transcr">[ай эм гоуинг ту уёк тэмороу]</span> (я собираюсь работать завтра).<br>👉 План на будущее или прогноз = <b>am / is / are</b> + <b>going to</b> + глагол.</div>',
+        cultural_ru:
+          'В русском «собираюсь» — это намерение. В английском <b>going to</b> — и план, и прогноз (когда уже видно, что будет):' +
+          '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:6px">' +
+          '<div><b>План:</b> I am going to work <span class="g-transcr">[ай эм гоуинг ту уёк]</span></div>' +
+          '<div><b>Прогноз:</b> It is going to rain <span class="g-transcr">[ит из гоуинг ту рэйн]</span></div></div>' +
+          '<div style="margin-top:6px">⚠️ Не путай: <b>going to the field</b> <span class="g-transcr">[гоуинг ту зэ филд]</span> — иду В поле (место). <b>going to work</b> <span class="g-transcr">[гоуинг ту уёк]</span> — собираюсь работать (план). После going to + <b>место</b> = идти; + <b>глагол</b> = план.</div>',
+        note_ru:
+          '⚠️ После <b>going to</b> — глагол в простой форме (база), без -ing и без -s: <b>going to work</b>, не «going to working». И не забывай <b>am/is/are</b>: <b>I am going to</b>, <b>he is going to</b>, <b>we are going to</b>.',
+        forms: {
+          positive: {
+            label_ru: "✅ Утверждение",
+            rule_ru:
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>I am going to</code> + глагол</div>' +
+              '<div><code>He/She/It is going to</code> + глагол</div>' +
+              '<div><code>You/We/They are going to</code> + глагол</div>' +
+              '<div><code>I am going to work</code> <span class="g-transcr">[ай эм гоуинг ту уёк]</span></div></div>',
+            table: [
+              { subj: "I", verb: "am going to", example: "I am going to work", transcr: "Ай эм гоуинг ту уёк", tr_ru: "Я собираюсь работать" },
+              { subj: "It", verb: "is going to", example: "It is going to rain", transcr: "Ит из гоуинг ту рэйн", tr_ru: "Сейчас пойдёт дождь (прогноз)" },
+              { subj: "We", verb: "are going to", example: "We are going to start", transcr: "Уи ар гоуинг ту старт", tr_ru: "Мы собираемся начать" },
+              { subj: "They", verb: "are going to", example: "They are going to pick", transcr: "Зэй ар гоуинг ту пик", tr_ru: "Они собираются собирать" },
+            ],
+          },
+          negative: {
+            label_ru: "❌ Отрицание",
+            rule_ru:
+              'После <b>am/is/are</b> ставим <b>not</b>:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>I am not going to rest</code></div>' +
+              '<div><code>It is not going to rain</code></div></div>',
+            table: [
+              { subj: "I", verb: "am not going to", example: "I am not going to rest", transcr: "Ай эм нот гоуинг ту рэст", tr_ru: "Я не собираюсь отдыхать" },
+              { subj: "He", verb: "is not going to", example: "He is not going to drive", transcr: "Хи из нот гоуинг ту драйв", tr_ru: "Он не собирается ехать" },
+              { subj: "We", verb: "are not going to", example: "We are not going to wait", transcr: "Уи ар нот гоуинг ту уэйт", tr_ru: "Мы не собираемся ждать" },
+            ],
+          },
+          question: {
+            label_ru: "❓ Вопрос",
+            rule_ru:
+              '<b>am/is/are</b> ставим ВПЕРЁД:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>Are you going to work?</code> <span class="g-transcr">[ар ю гоуинг ту уёк]</span></div>' +
+              '<div><code>Is it going to rain?</code> <span class="g-transcr">[из ит гоуинг ту рэйн]</span></div></div>',
+            table: [
+              { subj: "Are", verb: "you", example: "Are you going to work?", transcr: "Ар ю гоуинг ту уёк?", tr_ru: "Ты собираешься работать?" },
+              { subj: "Is", verb: "it", example: "Is it going to rain?", transcr: "Из ит гоуинг ту рэйн?", tr_ru: "Будет дождь?" },
+              { subj: "What", verb: "are", example: "What are you going to do?", transcr: "Уот ар ю гоуинг ту ду?", tr_ru: "Что ты собираешься делать?" },
+            ],
+          },
+        },
+        examples: [
+          { en: "It is going to rain.", transcr: "Ит из гоуинг ту рэйн.", ru: "Сейчас пойдёт дождь." },
+          { en: "I am going to work in the shed.", transcr: "Ай эм гоуинг ту уёк ин зэ шед.", ru: "Я буду работать в сарае." },
+          { en: "It is going to be cold tomorrow.", transcr: "Ит из гоуинг ту би коулд тэмороу.", ru: "Завтра будет холодно." },
+          { en: "We are going to pick the berries.", transcr: "Уи ар гоуинг ту пик зэ бэриз.", ru: "Мы будем собирать ягоды." },
+          { en: "Are you going to start early?", transcr: "Ар ю гоуинг ту старт ёли?", ru: "Ты собираешься начать рано?" },
+          { en: "It is not going to be sunny.", transcr: "Ит из нот гоуинг ту би сани.", ru: "Солнечно не будет." },
+        ],
+        simple_ru: {
+          formula: 'Планы и прогноз → <b>am / is / are</b> + <b>going to</b> + глагол.<br><span class="g-transcr">I am going to work · It is going to rain</span>',
+          examples: [
+            { en: "I am going to work.", transcr: "Ай эм гоуинг ту уёк.", ru: "Я (I) + am going to + работать (work) = я собираюсь работать." },
+            { en: "It is going to rain.", transcr: "Ит из гоуинг ту рэйн.", ru: "Оно (It) + is going to + дождь (rain) = сейчас пойдёт дождь." },
+          ],
+        },
+        ytQuery: "be going to future plans английский для начинающих погода",
+      },
+
+      words: [
+        { e: "🌦️", en: "weather", transcr: "уэзэ", ru: "погода", pn: "/ˈweðə/" },
+        { e: "📋", en: "forecast", transcr: "фокаст", ru: "прогноз погоды", pn: "/ˈfɔːkɑːst/" },
+        { e: "☀️", en: "sun", transcr: "сан", ru: "солнце", pn: "/sʌn/" },
+        { e: "🌞", en: "sunny", transcr: "сани", ru: "солнечно", pn: "/ˈsʌni/" },
+        { e: "☁️", en: "cloud", transcr: "клауд", ru: "облако, туча", pn: "/klaʊd/" },
+        { e: "🌥️", en: "cloudy", transcr: "клауди", ru: "облачно", pn: "/ˈklaʊdi/" },
+        { e: "💨", en: "wind", transcr: "уинд", ru: "ветер", pn: "/wɪnd/" },
+        { e: "🌬️", en: "windy", transcr: "уинди", ru: "ветрено", pn: "/ˈwɪndi/" },
+        { e: "🌧️", en: "rainy", transcr: "рэйни", ru: "дождливо", pn: "/ˈreɪni/" },
+        { e: "⛈️", en: "storm", transcr: "стом", ru: "буря, гроза", pn: "/stɔːm/" },
+        { e: "🌩️", en: "lightning", transcr: "лайтнинг", ru: "молния", pn: "/ˈlaɪtnɪŋ/" },
+        { e: "🌫️", en: "fog", transcr: "фог", ru: "туман", pn: "/fɒɡ/" },
+        { e: "🌁", en: "foggy", transcr: "фоги", ru: "туманно", pn: "/ˈfɒɡi/" },
+        { e: "🌁", en: "mist", transcr: "мист", ru: "дымка, лёгкий туман", pn: "/mɪst/" },
+        { e: "❄️", en: "frost", transcr: "фрост", ru: "мороз, иней", pn: "/frɒst/" },
+        { e: "🧊", en: "ice", transcr: "айс", ru: "лёд", pn: "/aɪs/" },
+        { e: "🌨️", en: "snow", transcr: "сноу", ru: "снег", pn: "/snəʊ/" },
+        { e: "🌡️", en: "warm", transcr: "уом", ru: "тёплый", pn: "/wɔːm/" },
+        { e: "🥶", en: "freeze", transcr: "фриз", ru: "замерзать", pn: "/friːz/" },
+        { e: "🌡️", en: "degree", transcr: "дигри", ru: "градус", pn: "/dɪˈɡriː/" },
+        { e: "🍃", en: "breeze", transcr: "бриз", ru: "лёгкий ветер", pn: "/briːz/" },
+        { e: "🍂", en: "season", transcr: "сизн", ru: "сезон, время года", pn: "/ˈsiːzn/" },
+        { e: "🌱", en: "spring", transcr: "спринг", ru: "весна", pn: "/sprɪŋ/" },
+        { e: "🏖️", en: "summer", transcr: "самэ", ru: "лето", pn: "/ˈsʌmə/" },
+        { e: "🍁", en: "autumn", transcr: "отэм", ru: "осень", pn: "/ˈɔːtəm/" },
+        { e: "⛄", en: "winter", transcr: "уинтэ", ru: "зима", pn: "/ˈwɪntə/" },
+        { e: "🟫", en: "mud", transcr: "мад", ru: "грязь", pn: "/mʌd/" },
+        { e: "🪴", en: "soil", transcr: "сойл", ru: "почва, земля", pn: "/sɔɪl/" },
+        { e: "💧", en: "puddle", transcr: "падл", ru: "лужа", pn: "/ˈpʌdl/" },
+        { e: "🌾", en: "harvest", transcr: "хавист", ru: "урожай, сбор урожая", pn: "/ˈhɑːvɪst/" },
+      ],
+
+      dialogue: [
+        { s: "m", en: "Good morning! What is the weather like today?", transcr: "Гуд монинг! Уот из зэ уэзэ лайк тудэй?", ru: "Доброе утро! Какая сегодня погода?" },
+        { s: "w", en: "It is cold and windy now.", transcr: "Ит из коулд энд уинди нау.", ru: "Сейчас холодно и ветрено." },
+        { s: "m", en: "Look at the clouds. It is going to rain.", transcr: "Лук эт зэ клаудз. Ит из гоуинг ту рэйн.", ru: "Посмотри на тучи. Сейчас пойдёт дождь." },
+        { s: "w", en: "Are we going to work in the field?", transcr: "Ар уи гоуинг ту уёк ин зэ филд?", ru: "Мы будем работать в поле?" },
+        { s: "m", en: "No. We are going to work in the shed.", transcr: "Ноу. Уи ар гоуинг ту уёк ин зэ шед.", ru: "Нет. Будем работать в сарае." },
+        { s: "w", en: "Good. The field is full of mud.", transcr: "Гуд. Зэ филд из фул ов мад.", ru: "Хорошо. Поле всё в грязи." },
+        { s: "m", en: "Tomorrow it is going to be sunny.", transcr: "Тэмороу ит из гоуинг ту би сани.", ru: "Завтра будет солнечно." },
+        { s: "w", en: "Is it going to be warm?", transcr: "Из ит гоуинг ту би уом?", ru: "Будет тепло?" },
+        { s: "m", en: "Yes. The forecast is good.", transcr: "Йес. Зэ фокаст из гуд.", ru: "Да. Прогноз хороший." },
+        { s: "w", en: "We are going to pick the berries.", transcr: "Уи ар гоуинг ту пик зэ бэриз.", ru: "Будем собирать ягоды." },
+        { s: "m", en: "Yes. The harvest is ready.", transcr: "Йес. Зэ хавист из рэди.", ru: "Да. Урожай готов." },
+        { s: "w", en: "I am going to start early tomorrow.", transcr: "Ай эм гоуинг ту старт ёли тэмороу.", ru: "Я начну рано завтра." },
+      ],
+
+      quiz: [
+        { q: '[COMPLETE] "It ___ going to rain." (оно/it)', opts: ["is", "am", "are", "be"], c: 0, expl: "it → is. Прогноз = am/is/are + going to + глагол.", hint_ru: "Сейчас пойдёт дождь." },
+        { q: '[COMPLETE] "We ___ going to work." (мы)', opts: ["are", "am", "is", "be"], c: 0, expl: "you/we/they → are going to.", hint_ru: "Мы собираемся работать." },
+        { q: '[COMPLETE] "I am going to ___ the berries." (собирать)', opts: ["pick", "picks", "picking", "picked"], c: 0, expl: "После going to — глагол в базовой форме: pick.", hint_ru: "Я буду собирать ягоды." },
+        { q: '[TRANSLATE] "погода"', opts: ["weather", "forecast", "season", "harvest"], c: 0, expl: "weather — погода.", hint_ru: "weather." },
+        { q: '[TRANSLATE] "снег"', opts: ["snow", "rain", "frost", "wind"], c: 0, expl: "snow — снег.", hint_ru: "snow." },
+        { q: "[NEGATIVE] Где отрицание?", opts: ["It is going to rain", "It is not going to rain", "Is it going to rain?", "It going to rain"], c: 1, expl: "Отрицание = am/is/are + not + going to + глагол.", hint_ru: "Дождя не будет." },
+        { q: '[QUESTION] "___ you going to start early?"', opts: ["Are", "Is", "Am", "Do"], c: 0, expl: "you → Are в начале вопроса.", hint_ru: "Ты собираешься начать рано?" },
+        { q: "[CORRECT] Где правильно?", opts: ["I am going to work", "I going to work", "I am going to working", "I am go to work"], c: 0, expl: "going to + база глагола: I am going to work.", hint_ru: "Я собираюсь работать." },
+        { q: "[LISTEN] It is going to be sunny.", opts: ["Будет солнечно.", "Идёт дождь.", "Сейчас холодно.", "Дует сильный ветер."], c: 0, expl: "sunny — солнечно; going to be = будет.", hint_ru: "" },
+        { q: '[TRANSLATE] "Завтра будет холодно"', opts: ["It is going to be cold tomorrow", "It is cold tomorrow", "It was cold tomorrow", "Tomorrow is cold"], c: 0, expl: "Прогноз = is going to be + cold + tomorrow.", hint_ru: "Прогноз на завтра." },
+        { q: "[GIST] Какая погода будет завтра (по диалогу)?", opts: ["Солнечно и тепло", "Дождь и ветер", "Снег", "Туман"], c: 0, expl: 'Менеджер говорит: «Tomorrow it is going to be sunny» и «Is it going to be warm? — The forecast is good».', hint_ru: "Слушайте про завтра." },
+        { q: "[BUILD] Соберите: «Сейчас пойдёт дождь»", build: ["It", "is", "going", "to", "rain"], expl: "It is going to rain — Сейчас пойдёт дождь. am/is/are + going to + глагол.", hint_ru: "Прогноз: дождь." },
+      ],
+
+      everyday: {
+        title_ru: "Говорить про погоду и планы",
+        phrases: [
+          { en: "What is the weather like today?", transcr: "Уот из зэ уэзэ лайк тудэй?", ru: "Какая сегодня погода?" },
+          { en: "It is going to rain.", transcr: "Ит из гоуинг ту рэйн.", ru: "Сейчас пойдёт дождь." },
+          { en: "Is it going to be cold tomorrow?", transcr: "Из ит гоуинг ту би коулд тэмороу?", ru: "Завтра будет холодно?" },
+          { en: "Take your coat. It is windy.", transcr: "Тэйк ё коут. Ит из уинди.", ru: "Возьми куртку. Ветрено." },
+          { en: "The forecast is good for tomorrow.", transcr: "Зэ фокаст из гуд фо тэмороу.", ru: "Прогноз на завтра хороший." },
+          { en: "We are going to finish early today.", transcr: "Уи ар гоуинг ту финиш ёли тудэй.", ru: "Сегодня мы закончим рано." },
+        ],
+      },
+    },
   ];
 
   if (typeof module !== "undefined" && module.exports) module.exports = LESSONS;
