@@ -36,6 +36,10 @@ const WHITELIST = {
   13: ["did","last","ate","drank","left","bought","paid","drove"],
   14: ["can","cannot"],
   15: ["love","hate","want"],
+  // L17 comparatives: grammar words (than/more/most) + irregular comparison forms
+  // whose strip!=base (good->best, bad->worse/worst, heavy->heavier, easy->easier);
+  // regular -er/-est forms (taller/slower/strongest) collapse via the stemmer.
+  17: ["than","more","most","best","worse","worst","heavier","heaviest","easier"],
 };
 const NAMES = ["ahmad","tom","sara","anna","john","ali","omar","rustam","fatima"];
 
@@ -66,12 +70,20 @@ function tokenize(text) {
 /* crude English stemmer so snowball matches word forms (picking->pick, boxes->box) */
 function stem(w) {
   if (w.length <= 3) return w;
-  return w
+  w = w
     .replace(/ies$/, "y")
     .replace(/(ches|shes|xes|sses)$/, (m) => m.slice(0, -2))
     .replace(/([^s])s$/, "$1")
     .replace(/ing$/, "")
     .replace(/ed$/, "");
+  // A2 comparatives/superlatives: strip -er/-est so REGULAR forms collapse to the
+  // base in words[] (slower->slow, tallest->tall, stronger->strong). Guard length>4
+  // to protect her/per/over/user. This only ever shortens a stem, and raw forms stay
+  // in `known`, so it cannot drop an existing L1-L16 match (regression-safe; verified
+  // by `npm run audit`). Irregular forms where strip!=base — doubling (bigger),
+  // -y (heavier/easier), silent-e (wider) — are handled via WHITELIST[17] instead.
+  if (w.length > 4) w = w.replace(/est$/, "").replace(/er$/, "");
+  return w;
 }
 
 function escapeRe(s) { return String(s).replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }

@@ -314,4 +314,33 @@
     сарай (safety-нейтральна). Снежок `drive/wait` — в scope (зелёный). Скептик: `like` = ложный друг (учили «нравиться»), но курсы
     подают чанком с глоссом «какая погода» — флаг реальный, не ложный.
   - 7 проверок зелёные после фикса (`words[]` не менялись → verify-* не перегонял). `CACHE_VERSION` esw-v59→**esw-v60**.
-  - Осталось A2: L17–L23 (comparatives/have got/could+adverbs/compounds/infinitive of purpose/take-get-have/Present Perfect).
+- **L17 готов (comparatives & superlatives + описание) — 2-й урок A2.** Грамматика: короткое слово + `-er` + `than`,
+  длинное → `more`/`the most`, превосходное `the …-est`, особые `good→better→best` / `bad→worse→worst`; 3-форменный
+  каркас переиспользован под «📏 Короткое / 📐 Длинное / ⭐ Самый·особые» (ярлыки свободны, движок рендерит только
+  `label_ru`). Диалог «сравниваем работу/ящики/погоду» (m↔w, переиспользует `going to` из L16). 30 новых прилагательных
+  (slow/short/tall/strong/weak/wide/narrow/deep/high/low/quiet/loud/expensive/dangerous/easy/difficult/thin/young/clever/
+  friendly/soft/thick/ripe/rough/tight/loose/bright/useful/bad/dark) — сверены против 455+30-словаря, дедупа, ридер-глоссария
+  (исключены reader-gloss big/small/cheap/fast/long/safe/kind… → выбраны regular-сравнительные).
+  - **🔧 Развилка стеммера `-er/-est` (план Фаза 0 #2) РЕШЕНА в пользу умного стеммирования:** `lib.js stem()` теперь
+    снимает `-er/-est` для слов длиной >4 (guard защищает her/per/over/user). **Регрессионно-безопасно ПО ПОСТРОЕНИЮ:**
+    стем только укорачивается, сырые формы остаются в `known`, поэтому ни один матч L1–L16 не теряется (доказано +
+    подтверждено регрешн-прогоном `npm run audit` ДО и ПОСЛЕ). Регулярные формы (slower/taller/strongest/coldest)
+    коллапсируют к базе автоматически; неправильные (где strip≠base) — в `WHITELIST[17]`: `than/more/most/best/worse/
+    worst/heavier/heaviest/easier` (по аналогии с неправильными прошедшими L13). Удвоение/-y/silent-e (bigger/wider) —
+    показаны в `note_ru` (вне снежка), практика на in-vocab `thin→thinner`.
+  - **Слой 1 (audit):** 7/7 зелёные (регрессия L1–L16 чистая + L17). **Слой 2:** verify-ipa — 3 нотационных флага
+    (weak `/wi(ː)k/`, dangerous Wiktionary-`/ʒ/`-артефакт, useful syllabic-`/l̩/`), мои RP верны; verify-transcr — 2 флага
+    (young «янг», useful «юсфул») = конвенция /j/+гласная→я/ю (как music «мьюзик»), приняты. **Рендер (превью, A2 разблокирован
+    через localStorage):** хаб-секция A2 + карточка L17, 3 кнопки форм + таблицы, 30 карточек слов, квиз — 0 ошибок консоли.
+  - **Слой 3 (адверсариальные ревьюеры язык/IPA + педагогика/контракт):** внесено 5 правок — `thin` глосс «тонкий, худой»→
+    «тонкий (предмет)» (достоинство: «худой» провоцировал сравнение тел коллег); эмодзи `loose` 🪢(узел=антоним)→〰️;
+    в note удвоение `hot→hotter`→in-vocab `thin→thinner`; в `cultural_ru` добавлено различение «-er+than = ДВА / the…-est =
+    из ВСЕХ»; +2 квиза на неправильные формы (good→better, bad→worse). **Отклонены ложные флаги:** `tomorrow`→«тэмороу»
+    (это канон, фикс `ced0a86` был «тумороу»→«тэмороу»; совпадает с L16), «mislabel forms» (движок рендерит только `label_ru`),
+    `clever/friendly` off-topic (план прямо включает «описание людей»).
+  - **🔴 Слой 4 (source-cited натуральность, 2 ревьюера):** **SHIP, 0 подтверждённых правок.** Все сравнит./превосх.
+    подтверждены против EF/Headway/Speakout/face2face Elementary + British Council/Cambridge (comparatives = A1–A2 grammar;
+    `taller than`/`the strongest`/`more expensive`/`worse weather` — textbook BrE; `clever`/`ripe`/`loose` = BrE A1/A2 core,
+    `clever` предпочтительнее AmE `smart`). Сравнение людей — только нейтрально/позитивно (taller/strongest), никого не
+    унижает. 2 мягкие эмодзи-заметки (short 📏, weak 🥀) — в рамках политики «ближайшее честное», не блокеры.
+  - `CACHE_VERSION` esw-v60→**esw-v61**. Осталось A2: L18–L23 (could+adverbs/have got/compounds/infinitive of purpose/take-get-have/Present Perfect).

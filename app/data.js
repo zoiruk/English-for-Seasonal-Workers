@@ -2799,6 +2799,175 @@
         ],
       },
     },
+
+    {
+      id: 17,
+      mod: 9,
+      title_ru: "Сравнение: тяжелее, самый сильный",
+      cefr: "A2 · comparatives & superlatives · describing",
+
+      grammar: {
+        title_ru: "Сравнить: -er + than / the -est / more · most",
+        intro_ru:
+          '<div style="line-height:1.6">Сравнить два предмета — ошибка:<br>❌ <b>This crate is more heavy</b><br>Правильно:<br>✅ <b>This crate is heavier</b> <span class="g-transcr">[зис крэйт из хэвиэ]</span> (этот ящик тяжелее).<br>👉 Короткое слово + <b>-er</b> + <b>than</b> (чем). Длинное слово + <b>more</b>. «Самый» = <b>the</b> + <b>-est</b>.</div>',
+        cultural_ru:
+          'В русском «тяжелее / самый сильный» — одно слово. В английском два пути по длине слова:' +
+          '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:6px">' +
+          '<div><b>Короткое:</b> heavy → heavier <span class="g-transcr">[хэви → хэвиэ]</span></div>' +
+          '<div><b>Длинное:</b> expensive → more expensive <span class="g-transcr">[икспэнсив → мор икспэнсив]</span></div>' +
+          '<div><b>Самый:</b> the strongest <span class="g-transcr">[зэ стронгэст]</span></div>' +
+          '<div><b>«чем» = than:</b> taller than Ali <span class="g-transcr">[толэ зэн Али]</span></div></div>' +
+          '<div style="margin-top:6px">📊 <b>-er + than</b> — сравниваем <b>ДВА</b> (heavier <b>than</b>). <b>the …-est</b> — самый из <b>ВСЕХ</b> (без than).</div>',
+        note_ru:
+          '⚠️ Правописание короткого слова + <b>-er/-est</b>:<br>' +
+          '• удвоить букву: <b>big → bigger</b> <span class="g-transcr">[биг → бигэ]</span>, <b>thin → thinner</b> <span class="g-transcr">[син → синэ]</span><br>' +
+          '• <b>-y → -ier</b>: <b>heavy → heavier</b> <span class="g-transcr">[хэви → хэвиэ]</span>, <b>easy → easier</b> <span class="g-transcr">[изи → изиэ]</span><br>' +
+          '• кончается на <b>-e</b> → просто <b>+r</b>: <b>wide → wider</b> <span class="g-transcr">[уайд → уайдэ]</span><br>' +
+          '⭐ Особые формы: <b>good → better → the best</b> <span class="g-transcr">[гуд → бэтэ → зэ бэст]</span>, <b>bad → worse → the worst</b> <span class="g-transcr">[бэд → уёс → зэ уёст]</span>.<br>' +
+          '❌ Не говори «more big» или «more heavy» — у короткого слова только <b>-er</b>.',
+        forms: {
+          positive: {
+            label_ru: "📏 Короткое: -er",
+            rule_ru:
+              'Короткое слово + <b>-er</b> + <b>than</b> (чем):<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>tall → taller</code></div>' +
+              '<div><code>strong → stronger</code></div>' +
+              '<div><code>Tom is taller than Ali</code> <span class="g-transcr">[том из толэ зэн Али]</span></div></div>',
+            table: [
+              { subj: "Tom", verb: "is taller", example: "Tom is taller than Ali", transcr: "Том из толэ зэн Али", tr_ru: "Том выше, чем Али" },
+              { subj: "This crate", verb: "is heavier", example: "This crate is heavier than the box", transcr: "Зис крэйт из хэвиэ зэн зэ бокс", tr_ru: "Этот ящик тяжелее коробки" },
+              { subj: "This van", verb: "is slower", example: "This van is slower than the lorry", transcr: "Зис вэн из слоуэ зэн зэ лори", tr_ru: "Этот фургон медленнее грузовика" },
+              { subj: "The shed", verb: "is colder", example: "The shed is colder than the field", transcr: "Зэ шед из колдэ зэн зэ филд", tr_ru: "В сарае холоднее, чем в поле" },
+            ],
+          },
+          negative: {
+            label_ru: "📐 Длинное: more",
+            rule_ru:
+              'Длинное слово (2+ части) + <b>more</b> / <b>the most</b>:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>expensive → more expensive</code></div>' +
+              '<div><code>difficult → the most difficult</code></div></div>',
+            table: [
+              { subj: "This shop", verb: "is more expensive", example: "This shop is more expensive", transcr: "Зис шоп из мор икспэнсив", tr_ru: "Этот магазин дороже" },
+              { subj: "This work", verb: "is more dangerous", example: "This work is more dangerous", transcr: "Зис уёк из мор дэйнджэрэс", tr_ru: "Эта работа опаснее" },
+              { subj: "This job", verb: "is the most difficult", example: "This job is the most difficult", transcr: "Зис джоб из зэ моуст дификэлт", tr_ru: "Это самая трудная работа" },
+              { subj: "This tool", verb: "is more useful", example: "This tool is more useful than that one", transcr: "Зис тул из мор юсфул зэн зэт уан", tr_ru: "Этот инструмент полезнее того" },
+            ],
+          },
+          question: {
+            label_ru: "⭐ Самый / особые",
+            rule_ru:
+              '<b>the + -est</b> = самый; особые формы:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><code>strong → the strongest</code></div>' +
+              '<div><code>good → better → the best</code></div>' +
+              '<div><code>bad → worse → the worst</code></div></div>',
+            table: [
+              { subj: "Ahmad", verb: "is the strongest", example: "Ahmad is the strongest worker", transcr: "Ахмад из зэ стронгэст уёкэ", tr_ru: "Ахмад — самый сильный рабочий" },
+              { subj: "He", verb: "is the tallest", example: "He is the tallest worker", transcr: "Хи из зэ толэст уёкэ", tr_ru: "Он самый высокий рабочий" },
+              { subj: "This box", verb: "is better", example: "This box is better than that one", transcr: "Зис бокс из бэтэ зэн зэт уан", tr_ru: "Эта коробка лучше той (good → better)" },
+              { subj: "The weather", verb: "is worse", example: "The weather is worse today", transcr: "Зэ уэзэ из уёс тудэй", tr_ru: "Погода сегодня хуже (bad → worse)" },
+            ],
+          },
+        },
+        examples: [
+          { en: "This crate is heavier than the box.", transcr: "Зис крэйт из хэвиэ зэн зэ бокс.", ru: "Этот ящик тяжелее коробки." },
+          { en: "Today is colder than yesterday.", transcr: "Тудэй из колдэ зэн йестэдэй.", ru: "Сегодня холоднее, чем вчера." },
+          { en: "This job is easier than that job.", transcr: "Зис джоб из изиэ зэн зэт джоб.", ru: "Эта работа легче, чем та." },
+          { en: "He is the strongest worker.", transcr: "Хи из зэ стронгэст уёкэ.", ru: "Он самый сильный рабочий." },
+          { en: "This shop is more expensive.", transcr: "Зис шоп из мор икспэнсив.", ru: "Этот магазин дороже." },
+          { en: "The weather is worse today.", transcr: "Зэ уэзэ из уёс тудэй.", ru: "Погода сегодня хуже." },
+          { en: "My room is the warmest.", transcr: "Май рум из зэ уомэст.", ru: "Моя комната самая тёплая." },
+        ],
+        simple_ru: {
+          formula: 'Короткое слово + <b>-er</b> (+ than) = сравнение. <b>the + -est</b> = самый. Длинное слово → <b>more / the most</b>.<br><span class="g-transcr">taller than · the strongest · more expensive</span>',
+          examples: [
+            { en: "Tom is taller than Ali.", transcr: "Том из толэ зэн Али.", ru: "Tom (Том) + taller (выше) + than (чем) + Ali = Том выше, чем Али." },
+            { en: "He is the strongest worker.", transcr: "Хи из зэ стронгэст уёкэ.", ru: "the strongest (самый сильный) + worker = он самый сильный рабочий." },
+          ],
+        },
+        ytQuery: "comparative superlative adjectives -er than the most английский для начинающих",
+      },
+
+      words: [
+        { e: "🐌", en: "slow", transcr: "слоу", ru: "медленный", pn: "/sləʊ/" },
+        { e: "📏", en: "short", transcr: "шот", ru: "короткий", pn: "/ʃɔːt/" },
+        { e: "🦒", en: "tall", transcr: "тол", ru: "высокий (рост)", pn: "/tɔːl/" },
+        { e: "💪", en: "strong", transcr: "стронг", ru: "сильный", pn: "/strɒŋ/" },
+        { e: "🥀", en: "weak", transcr: "уик", ru: "слабый", pn: "/wiːk/" },
+        { e: "↔️", en: "wide", transcr: "уайд", ru: "широкий", pn: "/waɪd/" },
+        { e: "🛤️", en: "narrow", transcr: "нэроу", ru: "узкий", pn: "/ˈnærəʊ/" },
+        { e: "🕳️", en: "deep", transcr: "дип", ru: "глубокий", pn: "/diːp/" },
+        { e: "⬆️", en: "high", transcr: "хай", ru: "высокий, высоко", pn: "/haɪ/" },
+        { e: "⬇️", en: "low", transcr: "лоу", ru: "низкий", pn: "/ləʊ/" },
+        { e: "🤫", en: "quiet", transcr: "куайэт", ru: "тихий", pn: "/ˈkwaɪət/" },
+        { e: "🔊", en: "loud", transcr: "лауд", ru: "громкий", pn: "/laʊd/" },
+        { e: "💸", en: "expensive", transcr: "икспэнсив", ru: "дорогой", pn: "/ɪkˈspensɪv/" },
+        { e: "⚠️", en: "dangerous", transcr: "дэйнджэрэс", ru: "опасный", pn: "/ˈdeɪndʒərəs/" },
+        { e: "👌", en: "easy", transcr: "изи", ru: "лёгкий, простой", pn: "/ˈiːzi/" },
+        { e: "🧩", en: "difficult", transcr: "дификэлт", ru: "трудный", pn: "/ˈdɪfɪkəlt/" },
+        { e: "➖", en: "thin", transcr: "син", ru: "тонкий (предмет)", pn: "/θɪn/" },
+        { e: "🧒", en: "young", transcr: "янг", ru: "молодой", pn: "/jʌŋ/" },
+        { e: "🧠", en: "clever", transcr: "клэвэ", ru: "умный", pn: "/ˈklevə/" },
+        { e: "🤝", en: "friendly", transcr: "фрэндли", ru: "дружелюбный", pn: "/ˈfrendli/" },
+        { e: "🧸", en: "soft", transcr: "софт", ru: "мягкий", pn: "/sɒft/" },
+        { e: "📚", en: "thick", transcr: "сик", ru: "толстый (толщина)", pn: "/θɪk/" },
+        { e: "🍓", en: "ripe", transcr: "райп", ru: "спелый", pn: "/raɪp/" },
+        { e: "🪨", en: "rough", transcr: "раф", ru: "шершавый, грубый", pn: "/rʌf/" },
+        { e: "🔩", en: "tight", transcr: "тайт", ru: "тугой, тесный", pn: "/taɪt/" },
+        { e: "〰️", en: "loose", transcr: "лус", ru: "слабо затянутый", pn: "/luːs/" },
+        { e: "💡", en: "bright", transcr: "брайт", ru: "яркий", pn: "/braɪt/" },
+        { e: "🛠️", en: "useful", transcr: "юсфул", ru: "полезный", pn: "/ˈjuːsfʊl/" },
+        { e: "👎", en: "bad", transcr: "бэд", ru: "плохой", pn: "/bæd/" },
+        { e: "🌑", en: "dark", transcr: "дак", ru: "тёмный", pn: "/dɑːk/" },
+      ],
+
+      dialogue: [
+        { s: "m", en: "This crate is heavier than that one.", transcr: "Зис крэйт из хэвиэ зэн зэт уан.", ru: "Этот ящик тяжелее того." },
+        { s: "w", en: "Yes. These crates are heavy.", transcr: "Йес. Зиз крэйтс ар хэви.", ru: "Да. Эти ящики тяжёлые." },
+        { s: "m", en: "Take the lighter boxes, please.", transcr: "Тэйк зэ лайтэ боксиз, плиз.", ru: "Бери коробки полегче, пожалуйста." },
+        { s: "w", en: "Which work is easier today?", transcr: "Уич уёк из изиэ тудэй?", ru: "Какая работа легче сегодня?" },
+        { s: "m", en: "The shed is easier than the field.", transcr: "Зэ шед из изиэ зэн зэ филд.", ru: "В сарае легче, чем в поле." },
+        { s: "w", en: "Good. The field is colder and the mud is deep.", transcr: "Гуд. Зэ филд из колдэ энд зэ мад из дип.", ru: "Хорошо. В поле холоднее, и грязь глубокая." },
+        { s: "m", en: "Tomorrow it is going to be warmer.", transcr: "Тэмороу ит из гоуинг ту би уомэ.", ru: "Завтра будет теплее." },
+        { s: "w", en: "Is this worker stronger than Ali?", transcr: "Из зис уёкэ стронгэ зэн Али?", ru: "Этот рабочий сильнее Али?" },
+        { s: "m", en: "Yes. Ahmad is the strongest.", transcr: "Йес. Ахмад из зэ стронгэст.", ru: "Да. Ахмад самый сильный." },
+        { s: "w", en: "These gloves are better than my old gloves.", transcr: "Зиз главз ар бэтэ зэн май оулд главз.", ru: "Эти перчатки лучше моих старых." },
+        { s: "m", en: "Tomorrow is going to be a hard day.", transcr: "Тэмороу из гоуинг ту би э хад дэй.", ru: "Завтра будет тяжёлый день." },
+        { s: "w", en: "I am going to start early today.", transcr: "Ай эм гоуинг ту старт ёли тудэй.", ru: "Я начну рано сегодня." },
+      ],
+
+      quiz: [
+        { q: '[COMPLETE] "Tom is ___ than Ali." (выше ростом)', opts: ["taller", "tall", "tallest", "more tall"], c: 0, expl: "Короткое слово + -er + than: taller than.", hint_ru: "Том выше." },
+        { q: '[COMPLETE] "This crate is ___ than the box." (тяжелее)', opts: ["heavier", "heavy", "heaviest", "more heavy"], c: 0, expl: "heavy → heavier (короткое слово на -y → -ier).", hint_ru: "тяжелее." },
+        { q: '[COMPLETE] "This shop is ___ expensive." (длинное слово)', opts: ["more", "most", "the", "than"], c: 0, expl: "Длинное слово (expensive) → more expensive.", hint_ru: "дороже." },
+        { q: '[COMPLETE] "He is the ___ worker." (самый сильный)', opts: ["strongest", "stronger", "strong", "most strong"], c: 0, expl: "the + -est = самый: the strongest.", hint_ru: "самый сильный." },
+        { q: '[TRANSLATE] "опасный"', opts: ["dangerous", "difficult", "dark", "deep"], c: 0, expl: "dangerous — опасный.", hint_ru: "dangerous." },
+        { q: '[TRANSLATE] "спелый"', opts: ["ripe", "dark", "thin", "soft"], c: 0, expl: "ripe — спелый.", hint_ru: "ripe." },
+        { q: '[TRANSLATE] "трудный"', opts: ["difficult", "easy", "useful", "quiet"], c: 0, expl: "difficult — трудный.", hint_ru: "difficult." },
+        { q: "[CORRECT] Где правильно?", opts: ["This box is heavier", "This box is more heavy", "This box is heavyer", "This box is heavy than"], c: 0, expl: "heavy → heavier; короткое слово берёт -er, не more.", hint_ru: "тяжелее." },
+        { q: '[COMPLETE] "Today is ___ than yesterday." (холоднее)', opts: ["colder", "cold", "coldest", "more cold"], c: 0, expl: "cold → colder (+ -er).", hint_ru: "холоднее." },
+        { q: '[TRANSLATE] "тихий"', opts: ["quiet", "loud", "low", "clever"], c: 0, expl: "quiet — тихий.", hint_ru: "quiet." },
+        { q: '[COMPLETE] "This box is ___ than that one." (лучше — good)', opts: ["better", "good", "best", "more good"], c: 0, expl: "good → better (особая форма; не «more good»). the best = самый лучший.", hint_ru: "лучше." },
+        { q: '[COMPLETE] "The weather is ___ today." (хуже — bad)', opts: ["worse", "bad", "worst", "more bad"], c: 0, expl: "bad → worse (особая форма; не «more bad»). the worst = самый плохой.", hint_ru: "хуже." },
+        { q: "[LISTEN] This crate is heavier than the box.", opts: ["Этот ящик тяжелее коробки.", "Эта коробка тяжелее ящика.", "Этот ящик лёгкий.", "Коробка пустая."], c: 0, expl: "heavier than — тяжелее, чем.", hint_ru: "" },
+        { q: "[GIST] Кто самый сильный рабочий (по диалогу)?", opts: ["Ахмад", "Али", "Том", "Менеджер"], c: 0, expl: 'В диалоге: «Ahmad is the strongest».', hint_ru: "Слушай про strongest." },
+        { q: "[BUILD] Соберите: «Этот ящик тяжелее, чем коробка»", build: ["This", "crate", "is", "heavier", "than", "the", "box"], expl: "This crate is heavier than the box — Этот ящик тяжелее коробки. Короткое слово + -er + than.", hint_ru: "тяжелее, чем." },
+      ],
+
+      everyday: {
+        title_ru: "Сравнивать на работе",
+        phrases: [
+          { en: "This crate is heavier than that box.", transcr: "Зис крэйт из хэвиэ зэн зэт бокс.", ru: "Этот ящик тяжелее той коробки." },
+          { en: "Which job is easier?", transcr: "Уич джоб из изиэ?", ru: "Какая работа легче?" },
+          { en: "This shop is more expensive.", transcr: "Зис шоп из мор икспэнсив.", ru: "Этот магазин дороже." },
+          { en: "He is the strongest worker here.", transcr: "Хи из зэ стронгэст уёкэ хиэ.", ru: "Он самый сильный рабочий здесь." },
+          { en: "Today is colder than yesterday.", transcr: "Тудэй из колдэ зэн йестэдэй.", ru: "Сегодня холоднее, чем вчера." },
+          { en: "This tool is better than that one.", transcr: "Зис тул из бэтэ зэн зэт уан.", ru: "Этот инструмент лучше того." },
+        ],
+      },
+    },
   ];
 
   if (typeof module !== "undefined" && module.exports) module.exports = LESSONS;
