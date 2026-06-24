@@ -1,6 +1,6 @@
 # IPA verification report (Wiktionary RP anchor)
 
-Total words: 665 · matched: 586 · divergent: 66 · not found: 13
+Total words: 695 · matched: 611 · divergent: 71 · not found: 13
 
 Normalized away (kept length ː): ɹ↔r, ɡ↔g, ɛ↔e (DRESS vowel), tie-bars & allophonic diacritics, optional (…) segments, stress, syllable dots.
 Divergences below are for OWNER ACCEPTANCE — review each: is our `pn` wrong, or a valid variant?
@@ -75,6 +75,11 @@ Divergences below are for OWNER ACCEPTANCE — review each: is our `pn` wrong, o
 | 22 | strawberry | `/ˈstrɔːbəri/` | `/ˈstɹɔːb(ə)ɹi/` |
 | 22 | mushroom | `/ˈmʌʃrʊm/` | `/ˈmʌʃˌɹuːm/` |
 | 22 | breakfast | `/ˈbrekfəst/` | `/ˈbreɪkˌfɑːst/` |
+| 23 | transfer | `/ˈtrænsfɜː/` | `/tɹɑːnsˈfɜː/` |
+| 23 | statement | `/ˈsteɪtmənt/` | `/ˈsteɪtm(ə)nt/` |
+| 23 | insurance | `/ɪnˈʃʊərəns/` | `/ɪnˈʃɔː.ɹəns/` |
+| 23 | document | `/ˈdɒkjumənt/` | `/ˈdɒkjʊmənt/` |
+| 23 | parcel | `/ˈpɑːsl/` | `/ˈpɑɹsəl/` |
 
 ## Not found on Wiktionary (no en RP IPA parsed — verify manually)
 
