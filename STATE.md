@@ -482,3 +482,34 @@
     cashpoint (BrE), A2-объём коллокаций have/take/get (British Council «delexical verbs» + English File Elementary).
     Отклонено: «I'll take the cabbage» (идиоматичнее, но `'ll` ломает токенайзер — конвенция проекта).
   - `CACHE_VERSION` esw-v65→**esw-v66**. Осталось A2: **L23** (Present Perfect — ever/never/yet/just + BANKING/ADMIN).
+- **L23 готов (Present Perfect ever/never/yet/just + BANKING/ADMIN) — 8-й и ФИНАЛЬНЫЙ урок A2. 🎉 A2 (L16–L23) ПОЛОН.**
+  Грамматика: `have/has + 3-я форма` (опыт + недавнее), 3 настоящие формы +/−/?; маркеры ever (когда-либо?), never,
+  just (только что), already (уже), yet (ещё нет). Ключевая survival-структура — Present Perfect passive
+  `I have not been paid yet` (подаётся чанком). 30 слов BANKING/ADMIN: account/pin/balance/wage/salary/tax/payment/
+  receipt/bonus/note/transfer/fee/deposit/statement/insurance/rent/bill/deadline/document/copy/envelope/letter/
+  parcel/agency/employer/hours/receive/earn/spend/save. `WHITELIST[23]=["ever","yet","just","already","been"]`
+  (have/has — WL8, never — WL6, paid — WL13; since/for намеренно опущены — фокус опыт+недавнее). Диалог
+  «найм: контракт→форма→оплата→документы» (m↔w, 12 реплик). 12 grammar-примеров, 12 quiz.
+  - **⚠️ Снейк-стратегия причастий:** использованы только чисто-стеммящиеся причастия (worked→work, signed→sign,
+    filled→fill, finished→finish, started→start; paid — WL13; been — whitelist). Избегнуты silent-e (`received`→`receiv`
+    ≠receive) и иррегуляры (`spent`≠spend) в снейк-полях — `receive/spend` поданы как словарные базы. `before`/`course`
+    вне scope → убраны из диалога. emoji ≤Unicode 11 (Android 9+): `coin` 🪙 (U13, tofu-риск) заменён на `bonus` 🎁;
+    `purse` отвергнут (transcr «пёс» = рус. собака).
+  - **Слой 1 (audit):** 7/7 зелёные. **Слой 2 (verify):** verify-ipa — 4 валидных дивергенции: `transfer` /ˈtrænsfɜː/
+    (СУЩ., ударение 1-й слог, Cambridge; Wiktionary дал глагол), `statement` (опц. шва), `insurance` /ɪnˈʃʊərəns/
+    (валидный RP-вариант + консистентно с phrasebook «National Insurance»), `document` (/u/ редукция). verify-transcr —
+    `document` «докьюмэнт» (/kj/→кью). 0 not-found.
+  - **Слой 3 (адверсариальные ревьюеры):** Reviewer B (педагогика/**safety**) — **SHIP**: ни одной небезопасной
+    денежной строки (всё нейтральное «спрашиваю/сообщаю», без обещаний/claims/юр.-налог. утверждений). Reviewer A
+    (язык/IPA) — **FIX, внесено:** `fill the form`→`fill in the form` (BrE фразовый глагол; курс уже учит «fill in»
+    в L12 — саморассогласование; ×2). Подтверждены: Present Perfect формы/причастия, silent-p `receipt` «рисит»,
+    noun-stress `transfer`, emoji ≤2018.
+  - **🔴 Слой 4 (source-cited, 2 ревьюера + скептик):** **SHIP после 1 правки.** R1 (PP-коллокации) — 0 правок,
+    всё natural с цитатами British Council/Cambridge («have you ever worked», PP passive «haven't been paid yet»,
+    `today` с PP = незавершённый период, «fill in»=BrE). R2 (деньги/safety) — **SAFETY = SAFE** (cross-check
+    gov.uk/payslips + ACAS: все pay-строки нейтральны); BrE-термины верны (note=банкнота≠bill, payslip≠pay-stub,
+    нет check/cheque). Правка: gloss `deposit` «взнос, депозит»→«внесение на счёт; депозит» (с emoji 📥 банковский
+    смысл; рус. «взнос» уводил в аренду/instalment). wage(недельн.)/salary(месячн.) — подтверждены Cambridge/Collins.
+  - `CACHE_VERSION` esw-v66→**esw-v67**. **🎉 A2 ЗАВЕРШЁН (8/8, L16–L23).** Дальше по плану A2 (отдельными пакетами,
+    в идеале после живого A0-теста Б): ридер-главы 16+, A2-разговорник, A2-сертификат/веха. 🔴 Приоритет №1 (живой
+    A0-тест Б, `plans/2026-06-20-validation-criteria.md`) — по-прежнему НЕ проведён; весь A2 — осознанный override.

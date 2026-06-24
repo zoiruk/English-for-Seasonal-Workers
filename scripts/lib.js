@@ -66,6 +66,11 @@ const WHITELIST = {
   // is a words[] item from an earlier lesson; only "get" (obtain/arrive/become)
   // is new here. The 30 words[] come from the FOOD/COOKING-2 field.
   22: ["get"],
+  // L23 Present Perfect (ever/never/yet/just): have/has are WL8; "never" is WL6.
+  // New grammar markers + the participle "been" (be->been). Regular participles
+  // (worked/signed/filled/finished/started) stem to known bases; "paid" is WL13.
+  // since/for (duration) deliberately omitted — focus is experience + recent.
+  23: ["ever", "yet", "just", "already", "been"],
 };
 const NAMES = ["ahmad","tom","sara","anna","john","ali","omar","rustam","fatima"];
 

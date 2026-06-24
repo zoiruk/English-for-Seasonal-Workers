@@ -3801,6 +3801,177 @@
         ],
       },
     },
+
+    // ─── L23 ──────────────────────────────────────────────────────────────────
+    {
+      id: 23,
+      title_ru: "Опыт и оплата: Present Perfect",
+      cefr: "A2 · Present Perfect (ever/never/yet/just) · banking & admin",
+      grammar: {
+        title_ru: "Present Perfect: have + 3-я форма (опыт и «только что»)",
+        intro_ru:
+          '<b>have / has + 3-я форма глагола</b> — связь прошлого с настоящим (опыт или недавнее):<br>' +
+          'I <b>have worked</b> on a farm. — Я работал на ферме (есть такой опыт).<br>' +
+          'I <b>have not been paid</b> yet. — Мне ещё не заплатили.<br>' +
+          '3-я форма: обычно <b>+ed</b> (work→worked, sign→signed); особые: <b>be→been</b>, <b>pay→paid</b>.',
+        cultural_ru:
+          'В русском нет точного аналога. Present Perfect = <b>опыт «когда-либо»</b> ' +
+          '(<span class="g-transcr">Have you ever worked…?</span>) и <b>«только что / уже / ещё нет»</b>. ' +
+          'Время-маркеры: <b>ever</b> <span class="g-transcr">[эвэ]</span> (когда-либо?), <b>never</b> (никогда), ' +
+          '<b>just</b> <span class="g-transcr">[джаст]</span> (только что), <b>already</b> <span class="g-transcr">[олрэди]</span> (уже), ' +
+          '<b>yet</b> <span class="g-transcr">[йет]</span> (ещё нет — в вопросе/отрицании).',
+        note_ru:
+          '⚠️ Present Perfect — без точного времени (НЕ «yesterday»). ' +
+          'Точное «когда» (yesterday, last week) → Past Simple (L13). ' +
+          'Здесь важно ЧТО случилось к сейчас, а не когда.',
+        forms: {
+          positive: {
+            label_ru: "✅ have / has + 3-я форма",
+            rule_ru:
+              '<b>I/you/we/they have</b> + 3-я форма · <b>he/she/it has</b> + 3-я форма:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div>I <b>have worked</b> here</div><div>я (уже) работал здесь</div>' +
+              '<div>She <b>has signed</b> the form</div><div>она подписала форму</div>' +
+              '<div>I <b>have just paid</b> the rent</div><div>я только что оплатил аренду</div>' +
+              '</div>',
+            table: [
+              { subj: "я", verb: "have worked", example: "I have worked on a farm.", transcr: "Ай хэв уёкт он э фам.", tr_ru: "Я работал на ферме (есть опыт)." },
+              { subj: "она", verb: "has signed", example: "She has signed the contract.", transcr: "Ши хэз сайнд зэ контрэкт.", tr_ru: "Она подписала контракт." },
+              { subj: "я", verb: "have paid", example: "I have already paid the rent.", transcr: "Ай хэв олрэди пэйд зэ рэнт.", tr_ru: "Я уже оплатил аренду." },
+            ],
+          },
+          negative: {
+            label_ru: "❌ have not / has not + 3-я форма",
+            rule_ru:
+              '<b>haven\'t / hasn\'t</b> + 3-я форма. С <b>yet</b> = «ещё не…»:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div>I <b>have not been paid</b> yet</div><div>мне ещё не заплатили</div>' +
+              '<div>He <b>has not signed</b> it</div><div>он это не подписал</div>' +
+              '<div>I <b>have not finished</b> yet</div><div>я ещё не закончил</div>' +
+              '</div>',
+            table: [
+              { subj: "я", verb: "have not been paid", example: "I have not been paid yet.", transcr: "Ай хэв нот бин пэйд йет.", tr_ru: "Мне ещё не заплатили." },
+              { subj: "он", verb: "has not signed", example: "He has not signed the document.", transcr: "Хи хэз нот сайнд зэ докьюмэнт.", tr_ru: "Он не подписал документ." },
+              { subj: "я", verb: "have not finished", example: "I have not finished yet.", transcr: "Ай хэв нот финишт йет.", tr_ru: "Я ещё не закончил." },
+            ],
+          },
+          question: {
+            label_ru: "❓ Have / Has …? (часто с ever)",
+            rule_ru:
+              '<b>Have you ever…?</b> = есть ли опыт? Краткий ответ: <b>Yes, I have / No, I have not</b>:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><b>Have</b> you <b>ever worked</b> on a farm?</div><div>ты когда-нибудь работал на ферме?</div>' +
+              '<div><b>Have</b> you <b>been paid</b> yet?</div><div>тебе уже заплатили?</div>' +
+              '<div><b>Has</b> she <b>signed</b> the form?</div><div>она подписала форму?</div>' +
+              '</div>',
+            table: [
+              { subj: "ты", verb: "Have … ever…?", example: "Have you ever worked on a farm?", transcr: "Хэв ю эвэ уёкт он э фам?", tr_ru: "Ты когда-нибудь работал на ферме?" },
+              { subj: "ты", verb: "Have … been paid?", example: "Have you been paid yet?", transcr: "Хэв ю бин пэйд йет?", tr_ru: "Тебе уже заплатили?" },
+              { subj: "она", verb: "Has … signed?", example: "Has she signed the form?", transcr: "Хэз ши сайнд зэ форм?", tr_ru: "Она подписала форму?" },
+            ],
+          },
+        },
+        examples: [
+          { en: "Have you ever worked on a farm?", transcr: "Хэв ю эвэ уёкт он э фам?", ru: "Ты когда-нибудь работал на ферме?" },
+          { en: "Yes, I have worked on a farm.", transcr: "Йес, ай хэв уёкт он э фам.", ru: "Да, я работал на ферме." },
+          { en: "I have never worked in an office.", transcr: "Ай хэв нэвэ уёкт ин эн офис.", ru: "Я никогда не работал в офисе." },
+          { en: "I have just signed the contract.", transcr: "Ай хэв джаст сайнд зэ контрэкт.", ru: "Я только что подписал контракт." },
+          { en: "She has just started work.", transcr: "Ши хэз джаст статид уёк.", ru: "Она только что начала работу." },
+          { en: "I have not been paid yet.", transcr: "Ай хэв нот бин пэйд йет.", ru: "Мне ещё не заплатили." },
+          { en: "Have you been paid yet?", transcr: "Хэв ю бин пэйд йет?", ru: "Тебе уже заплатили?" },
+          { en: "I have already filled in the form.", transcr: "Ай хэв олрэди филд ин зэ форм.", ru: "Я уже заполнил форму." },
+          { en: "He has paid the rent.", transcr: "Хи хэз пэйд зэ рэнт.", ru: "Он оплатил аренду." },
+          { en: "I have finished my work today.", transcr: "Ай хэв финишт май уёк тудэй.", ru: "Я закончил работу сегодня." },
+          { en: "Have you signed the document?", transcr: "Хэв ю сайнд зэ докьюмэнт?", ru: "Ты подписал документ?" },
+          { en: "I have not started yet.", transcr: "Ай хэв нот статид йет.", ru: "Я ещё не начал." },
+        ],
+        simple_ru: {
+          formula:
+            '<b>have / has + 3-я форма</b> (work→worked, be→been, pay→paid) = опыт ИЛИ «только что».<br>' +
+            '<span class="g-transcr">ever</span> когда-либо? · <span class="g-transcr">never</span> никогда · <span class="g-transcr">just</span> только что · <span class="g-transcr">yet</span> ещё нет',
+          examples: [
+            { en: "Have you ever worked on a farm?", transcr: "Хэв ю эвэ уёкт он э фам?", ru: "ever = когда-либо? Вопрос об опыте." },
+            { en: "I have not been paid yet.", transcr: "Ай хэв нот бин пэйд йет.", ru: "yet = ещё нет. «Мне ещё не заплатили»." },
+          ],
+        },
+        ytQuery: "present perfect ever never yet just английский A2 для начинающих",
+      },
+
+      words: [
+        { e: "📒", en: "account", transcr: "экаунт", ru: "счёт (банковский)", pn: "/əˈkaʊnt/" },
+        { e: "🔢", en: "pin", transcr: "пин", ru: "пин-код", pn: "/pɪn/" },
+        { e: "🏦", en: "balance", transcr: "бэлэнс", ru: "остаток на счёте", pn: "/ˈbæləns/" },
+        { e: "💰", en: "wage", transcr: "уэйдж", ru: "зарплата (недельная)", pn: "/weɪdʒ/" },
+        { e: "💵", en: "salary", transcr: "сэлэри", ru: "зарплата (месячная)", pn: "/ˈsæləri/" },
+        { e: "💸", en: "tax", transcr: "тэкс", ru: "налог", pn: "/tæks/" },
+        { e: "💳", en: "payment", transcr: "пэймэнт", ru: "платёж, оплата", pn: "/ˈpeɪmənt/" },
+        { e: "🧾", en: "receipt", transcr: "рисит", ru: "чек, квитанция", pn: "/rɪˈsiːt/" },
+        { e: "🎁", en: "bonus", transcr: "боунэс", ru: "премия, бонус", pn: "/ˈbəʊnəs/" },
+        { e: "💷", en: "note", transcr: "ноут", ru: "банкнота, купюра", pn: "/nəʊt/" },
+        { e: "🔁", en: "transfer", transcr: "трэнсфё", ru: "перевод (денег)", pn: "/ˈtrænsfɜː/" },
+        { e: "💲", en: "fee", transcr: "фи", ru: "комиссия, сбор", pn: "/fiː/" },
+        { e: "📥", en: "deposit", transcr: "дипозит", ru: "внесение на счёт; депозит", pn: "/dɪˈpɒzɪt/" },
+        { e: "📊", en: "statement", transcr: "стэйтмэнт", ru: "выписка (по счёту)", pn: "/ˈsteɪtmənt/" },
+        { e: "🛡️", en: "insurance", transcr: "иншуэрэнс", ru: "страховка", pn: "/ɪnˈʃʊərəns/" },
+        { e: "🏠", en: "rent", transcr: "рэнт", ru: "аренда, квартплата", pn: "/rent/" },
+        { e: "📃", en: "bill", transcr: "бил", ru: "счёт (к оплате)", pn: "/bɪl/" },
+        { e: "⏰", en: "deadline", transcr: "дэдлайн", ru: "крайний срок", pn: "/ˈdedlaɪn/" },
+        { e: "📄", en: "document", transcr: "докьюмэнт", ru: "документ", pn: "/ˈdɒkjumənt/" },
+        { e: "📋", en: "copy", transcr: "копи", ru: "копия", pn: "/ˈkɒpi/" },
+        { e: "✉️", en: "envelope", transcr: "энвэлоуп", ru: "конверт", pn: "/ˈenvələʊp/" },
+        { e: "📨", en: "letter", transcr: "лэтэ", ru: "письмо", pn: "/ˈletə/" },
+        { e: "📦", en: "parcel", transcr: "пасл", ru: "посылка", pn: "/ˈpɑːsl/" },
+        { e: "🏢", en: "agency", transcr: "эйджэнси", ru: "агентство (по найму)", pn: "/ˈeɪdʒənsi/" },
+        { e: "👔", en: "employer", transcr: "имплойэ", ru: "работодатель", pn: "/ɪmˈplɔɪə/" },
+        { e: "🕐", en: "hours", transcr: "ауэз", ru: "часы (рабочие)", pn: "/ˈaʊəz/" },
+        { e: "📬", en: "receive", transcr: "рисив", ru: "получать", pn: "/rɪˈsiːv/" },
+        { e: "📈", en: "earn", transcr: "ён", ru: "зарабатывать", pn: "/ɜːn/" },
+        { e: "🛒", en: "spend", transcr: "спэнд", ru: "тратить", pn: "/spend/" },
+        { e: "🐷", en: "save", transcr: "сэйв", ru: "копить, экономить", pn: "/seɪv/" },
+      ],
+
+      dialogue: [
+        { s: "m", en: "Hello. Have you ever worked on a farm?", transcr: "Хэлоу. Хэв ю эвэ уёкт он э фам?", ru: "Здравствуйте. Вы когда-нибудь работали на ферме?" },
+        { s: "w", en: "Yes, I have worked on a farm.", transcr: "Йес, ай хэв уёкт он э фам.", ru: "Да, я работал на ферме." },
+        { s: "m", en: "Good. Have you signed the contract?", transcr: "Гуд. Хэв ю сайнд зэ контрэкт?", ru: "Хорошо. Вы подписали контракт?" },
+        { s: "w", en: "Yes, I have just signed it.", transcr: "Йес, ай хэв джаст сайнд ит.", ru: "Да, я только что его подписал." },
+        { s: "m", en: "Have you filled in the form?", transcr: "Хэв ю филд ин зэ форм?", ru: "Вы заполнили форму?" },
+        { s: "w", en: "Not yet. Can you help me, please?", transcr: "Нот йет. Кэн ю хэлп ми, плиз?", ru: "Ещё нет. Можете помочь, пожалуйста?" },
+        { s: "m", en: "Yes, I can help. Have you been paid yet?", transcr: "Йес, ай кэн хэлп. Хэв ю бин пэйд йет?", ru: "Да, помогу. Вам уже заплатили?" },
+        { s: "w", en: "No, I have not been paid yet.", transcr: "Ноу, ай хэв нот бин пэйд йет.", ru: "Нет, мне ещё не заплатили." },
+        { s: "m", en: "Check your account and your payslip.", transcr: "Чек ё экаунт энд ё пэйслип.", ru: "Проверьте свой счёт и расчётный лист." },
+        { s: "w", en: "I have a bill. I pay the rent now.", transcr: "Ай хэв э бил. Ай пэй зэ рэнт нау.", ru: "У меня счёт. Я плачу аренду сейчас." },
+        { s: "m", en: "Have you got your document and letter?", transcr: "Хэв ю гот ё докьюмэнт энд лэтэ?", ru: "У вас есть документ и письмо?" },
+        { s: "w", en: "Yes. I have everything now. Thank you.", transcr: "Йес. Ай хэв эврисин нау. Сэнк ю.", ru: "Да. У меня всё есть. Спасибо." },
+      ],
+
+      quiz: [
+        { q: '[COMPLETE] "Have you ___ worked on a farm?" (когда-либо)', opts: ["ever", "never", "yet", "just"], c: 0, expl: "Have you ever worked…? — ever = когда-либо? Вопрос об опыте.", hint_ru: "когда-либо? → ever." },
+        { q: '[COMPLETE] "I ___ been paid yet." (ещё не)', opts: ["have not", "have", "has", "did"], c: 0, expl: "I have not been paid yet. — «ещё не» = have not + yet. Present Perfect.", hint_ru: "ещё не → have not … yet." },
+        { q: '[COMPLETE] "I have ___ signed the contract." (только что)', opts: ["just", "yet", "ever", "never"], c: 0, expl: "I have just signed — just = только что. Недавнее действие.", hint_ru: "только что → just." },
+        { q: '[CORRECT] «Я работал на ферме (есть опыт).»', opts: ["I have worked on a farm.", "I have work on a farm.", "I has worked on a farm.", "I have working on a farm."], c: 0, expl: "have + 3-я форма (worked). I → have (не has), форма worked (не work/working).", hint_ru: "have + worked." },
+        { q: '[COMPLETE] "She ___ signed the form." (она, уже)', opts: ["has", "have", "did", "is"], c: 0, expl: "She has signed — he/she/it → has. Present Perfect, 3-е лицо.", hint_ru: "she → has." },
+        { q: '[TRANSLATE] "зарплата (недельная)"', opts: ["wage", "rent", "tax", "fee"], c: 0, expl: "wage — недельная зарплата. rent — аренда, tax — налог, fee — комиссия.", hint_ru: "wage." },
+        { q: '[TRANSLATE] "налог"', opts: ["tax", "fee", "bill", "bonus"], c: 0, expl: "tax — налог. fee — комиссия, bill — счёт, bonus — премия.", hint_ru: "tax." },
+        { q: '[TRANSLATE] "счёт (банковский)"', opts: ["account", "receipt", "statement", "deposit"], c: 0, expl: "account — банковский счёт. receipt — чек, statement — выписка, deposit — взнос.", hint_ru: "account." },
+        { q: '[QUESTION] "___ you been paid yet?" (тебе заплатили?)', opts: ["Have", "Did", "Do", "Are"], c: 0, expl: "Have you been paid yet? — Present Perfect: Have + you + been + paid.", hint_ru: "Present Perfect → Have…?" },
+        { q: "[LISTEN] I have not been paid yet.", opts: ["Мне ещё не заплатили.", "Мне уже заплатили.", "Я заплатил налог.", "Я получил премию."], c: 0, expl: "have not been paid yet — мне ещё не заплатили.", hint_ru: "" },
+        { q: "[GIST] По диалогу: заплатили ли рабочему?", opts: ["Нет, ещё не заплатили.", "Да, уже заплатили.", "Заплатили премию.", "Заплатили вчера."], c: 0, expl: "«No, I have not been paid yet.» — рабочему ещё не заплатили.", hint_ru: "Слушай реплику про paid." },
+        { q: '[BUILD] «Я только что подписал контракт.»', build: ["I", "have", "just", "signed", "the", "contract"], expl: "I have just signed the contract. — have + just + 3-я форма (signed) = только что подписал.", hint_ru: "I have just signed…" },
+      ],
+
+      everyday: {
+        title_ru: "Деньги и документы",
+        phrases: [
+          { en: "I haven't been paid.", transcr: "Ай хэвнт бин пэйд.", ru: "Мне не заплатили." },
+          { en: "When do I get paid?", transcr: "Уэн ду ай гет пэйд?", ru: "Когда мне заплатят?" },
+          { en: "Can I have a payslip, please?", transcr: "Кэн ай хэв э пэйслип, плиз?", ru: "Можно расчётный лист, пожалуйста?" },
+          { en: "I don't understand this bill.", transcr: "Ай доунт андэстэнд зис бил.", ru: "Я не понимаю этот счёт." },
+          { en: "Is this my wage?", transcr: "Из зис май уэйдж?", ru: "Это моя зарплата?" },
+          { en: "Can you help me with this form?", transcr: "Кэн ю хэлп ми уиз зис форм?", ru: "Поможете мне с этой формой?" },
+        ],
+      },
+    },
   ];
 
   if (typeof module !== "undefined" && module.exports) module.exports = LESSONS;
