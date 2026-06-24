@@ -1,6 +1,6 @@
 # Transcr self-consistency report (cyrillic vs IPA-derived)
 
-Total: 635 · consistent: 599 · divergent: 36
+Total: 665 · consistent: 628 · divergent: 37
 
 Expected = mechanical phoneme→cyrillic from our `pn` (course convention).
 Divergences are for OWNER ACCEPTANCE: a real transcr error, or a deliberate
@@ -45,3 +45,4 @@ map doesn't cover. Not a pass/fail — a review list of where crutch ≠ sound.
 | 20 | sheet | `/ʃiːt/` | шиит | шит |
 | 21 | restaurant | `/ˈrestrɒnt/` | рэстрэнт | рэстронт |
 | 21 | change | `/tʃeɪndʒ/` | чейндж | чэйндж |
+| 22 | cucumber | `/ˈkjuːkʌmbə/` | кьюкамбэ | кйукамбэ |

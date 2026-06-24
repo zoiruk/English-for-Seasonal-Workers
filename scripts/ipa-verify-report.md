@@ -1,6 +1,6 @@
 # IPA verification report (Wiktionary RP anchor)
 
-Total words: 635 · matched: 557 · divergent: 62 · not found: 16
+Total words: 665 · matched: 586 · divergent: 66 · not found: 13
 
 Normalized away (kept length ː): ɹ↔r, ɡ↔g, ɛ↔e (DRESS vowel), tie-bars & allophonic diacritics, optional (…) segments, stress, syllable dots.
 Divergences below are for OWNER ACCEPTANCE — review each: is our `pn` wrong, or a valid variant?
@@ -71,6 +71,10 @@ Divergences below are for OWNER ACCEPTANCE — review each: is our `pn` wrong, o
 | 21 | city | `/ˈsɪti/` | `/sɪtɪ/` |
 | 21 | centre | `/ˈsentə/` | `/ˈsɛntəː/` |
 | 21 | launderette | `/ˌlɔːndəˈret/` | `/lɔːnˈdɹɛt/` |
+| 22 | apple | `/ˈæpl/` | `/ˈæpəl/` |
+| 22 | strawberry | `/ˈstrɔːbəri/` | `/ˈstɹɔːb(ə)ɹi/` |
+| 22 | mushroom | `/ˈmʌʃrʊm/` | `/ˈmʌʃˌɹuːm/` |
+| 22 | breakfast | `/ˈbrekfəst/` | `/ˈbreɪkˌfɑːst/` |
 
 ## Not found on Wiktionary (no en RP IPA parsed — verify manually)
 
@@ -82,11 +86,8 @@ Divergences below are for OWNER ACCEPTANCE — review each: is our `pn` wrong, o
 - L14 **nose** (`/nəʊz/`)
 - L14 **tired** (`/ˈtaɪəd/`)
 - L16 **season** (`/ˈsiːzn/`)
-- L21 **library** (`/ˈlaɪbrəri/`)
 - L21 **cashpoint** (`/ˈkæʃpɔɪnt/`)
-- L21 **warehouse** (`/ˈweəhaʊs/`)
-- L21 **barn** (`/bɑːn/`)
-- L21 **fence** (`/fens/`)
+- L21 **bus stop** (`/bʌs stɒp/`)
+- L21 **town hall** (`/taʊn hɔːl/`)
 - L21 **hairdresser** (`/ˈheəˌdresə/`)
-- L21 **currency** (`/ˈkʌrənsi/`)
-- L21 **stamp** (`/stæmp/`)
+- L22 **sweetcorn** (`/ˈswiːtkɔːn/`)
