@@ -62,6 +62,10 @@ const WHITELIST = {
   // L21 infinitive of purpose: "to" already in WHITELIST[1]; "why" (purpose
   // question word) is introduced here for the first time.
   21: ["why"],
+  // L22 take/get/have collocations: have/has/got already WHITELIST[8], "take"
+  // is a words[] item from an earlier lesson; only "get" (obtain/arrive/become)
+  // is new here. The 30 words[] come from the FOOD/COOKING-2 field.
+  22: ["get"],
 };
 const NAMES = ["ahmad","tom","sara","anna","john","ali","omar","rustam","fatima"];
 

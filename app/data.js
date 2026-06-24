@@ -3632,6 +3632,175 @@
         ],
       },
     },
+
+    // ─── L22 ──────────────────────────────────────────────────────────────────
+    {
+      id: 22,
+      title_ru: "Еда и кухня: take / get / have",
+      cefr: "A2 · take / get / have collocations · food & cooking",
+      grammar: {
+        title_ru: "take / get / have: глаголы на каждый день",
+        intro_ru:
+          'Три глагола, которые часто путают. Это <b>устойчивые пары</b> — учим целиком:<br>' +
+          '🍽️ <b>have</b> = есть/пить, принимать: <span class="g-transcr">have breakfast</span> (завтракать), <span class="g-transcr">have a shower</span> (принять душ).<br>' +
+          '🔑 <b>get</b> <span class="g-transcr">[гэт]</span> = получить / добраться / стать: <span class="g-transcr">get money</span>, <span class="g-transcr">get to work</span>, <span class="g-transcr">get tired</span>.<br>' +
+          '✋ <b>take</b> = взять / ехать на / принять: <span class="g-transcr">take the bus</span>, <span class="g-transcr">take medicine</span>.',
+        cultural_ru:
+          'В русском один глагол часто покрывает разное, в английском — разные. ' +
+          '«Принять душ» = <b>have</b> a shower (НЕ take, в BrE). «Сделать фото» = <b>take</b> a photo (НЕ make). ' +
+          '«Добраться до работы» = <b>get</b> to work. Слушай пару «глагол + слово» как одно целое.',
+        note_ru:
+          '⚠️ Частые ошибки:<br>' +
+          '«сделать фото» → <b>take</b> a photo (не <em>make a photo</em>).<br>' +
+          '<b>get</b> — самый гибкий: get money (получить), get to work (добраться), get tired (стать). Смотри по смыслу.',
+        forms: {
+          positive: {
+            label_ru: "🍽️ have — есть / пить / принимать",
+            rule_ru:
+              '<b>have</b> + еда / отдых:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div>I <b>have</b> breakfast</div><div>завтракаю</div>' +
+              '<div>We <b>have</b> a break</div><div>делаем перерыв</div>' +
+              '<div>I <b>have</b> a shower</div><div>принимаю душ</div>' +
+              '</div>',
+            table: [
+              { subj: "я", verb: "have", example: "I have breakfast at six.", transcr: "Ай хэв брэкфэст эт сикс.", tr_ru: "Я завтракаю в шесть." },
+              { subj: "мы", verb: "have", example: "We have lunch in the field.", transcr: "Уи хэв ланч ин зэ филд.", tr_ru: "Мы обедаем в поле." },
+              { subj: "я", verb: "have", example: "I have a cup of tea now.", transcr: "Ай хэв э кап ов ти нау.", tr_ru: "Я пью чашку чая сейчас." },
+            ],
+          },
+          negative: {
+            label_ru: "🔑 get — получить / добраться / стать",
+            rule_ru:
+              '<b>get</b> = получить, добраться, стать:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div>I <b>get</b> to work</div><div>добираюсь до работы</div>' +
+              '<div>I <b>get</b> money</div><div>получаю деньги</div>' +
+              '<div>I <b>get</b> tired</div><div>устаю (становлюсь)</div>' +
+              '</div>',
+            table: [
+              { subj: "я", verb: "get", example: "I get to work early.", transcr: "Ай гэт ту уёк ёли.", tr_ru: "Я добираюсь до работы рано." },
+              { subj: "я", verb: "get", example: "I get money at the cashpoint.", transcr: "Ай гэт мани эт зэ кэшпойнт.", tr_ru: "Я получаю деньги в банкомате." },
+              { subj: "я", verb: "get", example: "I get cold in the rain.", transcr: "Ай гэт коулд ин зэ рэйн.", tr_ru: "Я мёрзну под дождём." },
+            ],
+          },
+          question: {
+            label_ru: "✋ take — взять / ехать на / принять",
+            rule_ru:
+              '<b>take</b> = взять, ехать на, принять:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div>I <b>take</b> the bus</div><div>еду на автобусе</div>' +
+              '<div>I <b>take</b> medicine</div><div>принимаю лекарство</div>' +
+              '<div>I <b>take</b> a photo</div><div>делаю фото</div>' +
+              '</div>',
+            table: [
+              { subj: "я", verb: "take", example: "I take the bus to town.", transcr: "Ай тэйк зэ бас ту таун.", tr_ru: "Я еду на автобусе в город." },
+              { subj: "я", verb: "take", example: "I take my medicine now.", transcr: "Ай тэйк май мэдсэн нау.", tr_ru: "Я принимаю лекарство сейчас." },
+              { subj: "я", verb: "take", example: "I take a photo of the field.", transcr: "Ай тэйк э фоутоу ов зэ филд.", tr_ru: "Я делаю фото поля." },
+            ],
+          },
+        },
+        examples: [
+          { en: "I have breakfast at six.", transcr: "Ай хэв брэкфэст эт сикс.", ru: "Я завтракаю в шесть." },
+          { en: "We have lunch in the field.", transcr: "Уи хэв ланч ин зэ филд.", ru: "Мы обедаем в поле." },
+          { en: "Have a break and have a cup of tea.", transcr: "Хэв э брэйк энд хэв э кап ов ти.", ru: "Сделай перерыв и выпей чашку чая." },
+          { en: "I get to work early.", transcr: "Ай гэт ту уёк ёли.", ru: "Я добираюсь до работы рано." },
+          { en: "Get some bread from the shop.", transcr: "Гэт сам брэд фром зэ шоп.", ru: "Возьми хлеба в магазине." },
+          { en: "I get cold in the rain.", transcr: "Ай гэт коулд ин зэ рэйн.", ru: "Я мёрзну под дождём." },
+          { en: "Take the bus to town.", transcr: "Тэйк зэ бас ту таун.", ru: "Поезжай в город на автобусе." },
+          { en: "Take your medicine now.", transcr: "Тэйк ё мэдсэн нау.", ru: "Прими лекарство сейчас." },
+          { en: "I take a photo of the field.", transcr: "Ай тэйк э фоутоу ов зэ филд.", ru: "Я делаю фото поля." },
+          { en: "Fry the eggs in the pan.", transcr: "Фрай зэ эгз ин зэ пэн.", ru: "Пожарь яйца на сковороде." },
+          { en: "Peel the carrots and boil them.", transcr: "Пил зэ кэротс энд бойл зэм.", ru: "Почисти морковь и свари её." },
+          { en: "Slice the cabbage and the cucumber.", transcr: "Слайс зэ кэбидж энд зэ кьюкамбэ.", ru: "Нарежь капусту и огурец." },
+        ],
+        simple_ru: {
+          formula:
+            '🍽️ <b>have</b> = есть/принимать · 🔑 <b>get</b> = получить/добраться/стать · ✋ <b>take</b> = взять/ехать/принять<br>' +
+            '<span class="g-transcr">have lunch · get to work · take the bus</span>',
+          examples: [
+            { en: "I have lunch at one.", transcr: "Ай хэв ланч эт уан.", ru: "have lunch = обедать. В час дня." },
+            { en: "I take the bus to work.", transcr: "Ай тэйк зэ бас ту уёк.", ru: "take the bus = ехать на автобусе." },
+          ],
+        },
+        ytQuery: "take get have collocations английский A2 для начинающих разница",
+      },
+
+      words: [
+        { e: "🍎", en: "apple", transcr: "эпл", ru: "яблоко", pn: "/ˈæpl/" },
+        { e: "🍐", en: "pear", transcr: "пэа", ru: "груша", pn: "/peə/" },
+        { e: "🍇", en: "grape", transcr: "грэйп", ru: "виноград", pn: "/ɡreɪp/" },
+        { e: "🍓", en: "strawberry", transcr: "стробэри", ru: "клубника", pn: "/ˈstrɔːbəri/" },
+        { e: "🍒", en: "cherry", transcr: "чэри", ru: "вишня, черешня", pn: "/ˈtʃeri/" },
+        { e: "🥬", en: "cabbage", transcr: "кэбидж", ru: "капуста", pn: "/ˈkæbɪdʒ/" },
+        { e: "🥗", en: "lettuce", transcr: "лэтис", ru: "салат (листовой)", pn: "/ˈletɪs/" },
+        { e: "🍄", en: "mushroom", transcr: "машрум", ru: "гриб", pn: "/ˈmʌʃrʊm/" },
+        { e: "🌶️", en: "pepper", transcr: "пэпэ", ru: "перец", pn: "/ˈpepə/" },
+        { e: "🥒", en: "cucumber", transcr: "кьюкамбэ", ru: "огурец", pn: "/ˈkjuːkʌmbə/" },
+        { e: "🌽", en: "sweetcorn", transcr: "суиткон", ru: "кукуруза (сахарная)", pn: "/ˈswiːtkɔːn/" },
+        { e: "🥩", en: "beef", transcr: "биф", ru: "говядина", pn: "/biːf/" },
+        { e: "🐑", en: "lamb", transcr: "лэм", ru: "баранина", pn: "/læm/" },
+        { e: "🍖", en: "ham", transcr: "хэм", ru: "ветчина", pn: "/hæm/" },
+        { e: "🌭", en: "sausage", transcr: "сосидж", ru: "колбаса, сосиска", pn: "/ˈsɒsɪdʒ/" },
+        { e: "🌾", en: "flour", transcr: "флауэ", ru: "мука", pn: "/ˈflaʊə/" },
+        { e: "🍯", en: "jam", transcr: "джэм", ru: "джем, варенье", pn: "/dʒæm/" },
+        { e: "🥫", en: "sauce", transcr: "сос", ru: "соус", pn: "/sɔːs/" },
+        { e: "🥛", en: "yoghurt", transcr: "йогэт", ru: "йогурт", pn: "/ˈjɒɡət/" },
+        { e: "🥘", en: "pan", transcr: "пэн", ru: "сковорода", pn: "/pæn/" },
+        { e: "🍲", en: "pot", transcr: "пот", ru: "кастрюля", pn: "/pɒt/" },
+        { e: "☕", en: "cup", transcr: "кап", ru: "чашка", pn: "/kʌp/" },
+        { e: "🍳", en: "fry", transcr: "фрай", ru: "жарить", pn: "/fraɪ/" },
+        { e: "♨️", en: "boil", transcr: "бойл", ru: "кипятить, варить", pn: "/bɔɪl/" },
+        { e: "🥖", en: "bake", transcr: "бэйк", ru: "печь (в духовке)", pn: "/beɪk/" },
+        { e: "🥔", en: "peel", transcr: "пил", ru: "чистить (кожуру)", pn: "/piːl/" },
+        { e: "🔪", en: "slice", transcr: "слайс", ru: "резать (ломтиками)", pn: "/slaɪs/" },
+        { e: "🍽️", en: "meal", transcr: "мил", ru: "приём пищи, еда", pn: "/miːl/" },
+        { e: "🥣", en: "breakfast", transcr: "брэкфэст", ru: "завтрак", pn: "/ˈbrekfəst/" },
+        { e: "🍛", en: "dinner", transcr: "динэ", ru: "ужин (главная еда)", pn: "/ˈdɪnə/" },
+      ],
+
+      dialogue: [
+        { s: "m", en: "Dinner time. What do we have today?", transcr: "Динэ тайм. Уот ду уи хэв тудэй?", ru: "Время ужина. Что у нас сегодня?" },
+        { s: "w", en: "We have sausage, eggs and bread.", transcr: "Уи хэв сосидж, эгз энд брэд.", ru: "У нас колбаса, яйца и хлеб." },
+        { s: "m", en: "Good. Get a pan. I can fry the eggs.", transcr: "Гуд. Гэт э пэн. Ай кэн фрай зэ эгз.", ru: "Хорошо. Возьми сковороду. Я пожарю яйца." },
+        { s: "w", en: "Do we have carrots?", transcr: "Ду уи хэв кэротс?", ru: "У нас есть морковь?" },
+        { s: "m", en: "Yes. Peel them and boil them in the pot.", transcr: "Йес. Пил зэм энд бойл зэм ин зэ пот.", ru: "Да. Почисти и свари их в кастрюле." },
+        { s: "w", en: "I take the cabbage. I can slice it.", transcr: "Ай тэйк зэ кэбидж. Ай кэн слайс ит.", ru: "Я беру капусту. Я её нарежу." },
+        { s: "m", en: "Get some water. We boil the sweetcorn now.", transcr: "Гэт сам уотэ. Уи бойл зэ суиткон нау.", ru: "Возьми воды. Сварим кукурузу сейчас." },
+        { s: "w", en: "Do we have sauce and yoghurt?", transcr: "Ду уи хэв сос энд йогэт?", ru: "У нас есть соус и йогурт?" },
+        { s: "m", en: "Yes. And we have apples and grapes.", transcr: "Йес. Энд уи хэв эплз энд грэйпс.", ru: "Да. И есть яблоки и виноград." },
+        { s: "w", en: "I am tired. I want a cup of tea.", transcr: "Ай эм тайэд. Ай уонт э кап ов ти.", ru: "Я устал. Хочу чашку чая." },
+        { s: "m", en: "Take a cup. The tea is hot.", transcr: "Тэйк э кап. Зэ ти из хот.", ru: "Возьми чашку. Чай горячий." },
+        { s: "w", en: "Good. Dinner is ready now.", transcr: "Гуд. Динэ из рэди нау.", ru: "Хорошо. Ужин готов." },
+      ],
+
+      quiz: [
+        { q: '[COMPLETE] "I ___ breakfast at six." (завтракаю)', opts: ["have", "get", "take", "do"], c: 0, expl: "have breakfast — завтракать. С едой — have. Не get/take.", hint_ru: "еда → have." },
+        { q: '[COMPLETE] "I ___ the bus to town." (еду на автобусе)', opts: ["take", "have", "get", "do"], c: 0, expl: "take the bus — ехать на автобусе. Транспорт — take.", hint_ru: "транспорт → take." },
+        { q: '[COMPLETE] "I ___ to work early." (добираюсь)', opts: ["get", "have", "take", "do"], c: 0, expl: "get to work — добраться до работы. «Добраться» — get.", hint_ru: "добраться → get." },
+        { q: '[CORRECT] «Я делаю фото поля.»', opts: ["I take a photo of the field.", "I have a photo of the field.", "I get a photo of the field.", "I do a photo of the field."], c: 0, expl: "take a photo — делать фото. По-русски «сделать фото», но в английском — take a photo (НЕ make, НЕ do).", hint_ru: "фото → take a photo." },
+        { q: '[COMPLETE] "I ___ tired at work." (устаю)', opts: ["get", "take", "have", "do"], c: 0, expl: "get tired — уставать (становиться усталым). «Стать» — get.", hint_ru: "стать → get." },
+        { q: '[TRANSLATE] "колбаса, сосиска"', opts: ["sausage", "beef", "ham", "lamb"], c: 0, expl: "sausage — колбаса. beef — говядина, ham — ветчина, lamb — баранина.", hint_ru: "sausage." },
+        { q: '[TRANSLATE] "яблоко"', opts: ["apple", "pear", "grape", "cherry"], c: 0, expl: "apple — яблоко. pear — груша, grape — виноград.", hint_ru: "apple." },
+        { q: '[TRANSLATE] "жарить"', opts: ["fry", "boil", "bake", "peel"], c: 0, expl: "fry — жарить (на сковороде). boil — варить, bake — печь, peel — чистить.", hint_ru: "fry." },
+        { q: '[TRANSLATE] "кипятить, варить"', opts: ["boil", "fry", "bake", "slice"], c: 0, expl: "boil — варить в воде. fry — жарить, bake — печь, slice — резать.", hint_ru: "boil." },
+        { q: "[LISTEN] I have a cup of tea.", opts: ["Я пью чашку чая.", "Я беру автобус.", "Я мою чашку.", "Я готовлю ужин."], c: 0, expl: "have a cup of tea — пить чашку чая.", hint_ru: "" },
+        { q: "[GIST] По диалогу: что рабочий делает с морковью?", opts: ["Чистит и варит.", "Жарит на сковороде.", "Режет ломтиками.", "Печёт в духовке."], c: 0, expl: "«Peel them and boil them in the pot.» — морковь чистят и варят.", hint_ru: "Слушай реплику про carrots." },
+        { q: '[BUILD] «Я пью чашку чая.»', build: ["I", "have", "a", "cup", "of", "tea"], expl: "I have a cup of tea. — have a cup of tea = пить чашку чая. С едой и питьём — have.", hint_ru: "I have a cup of tea." },
+      ],
+
+      everyday: {
+        title_ru: "Еда и кухня",
+        phrases: [
+          { en: "What's for dinner?", transcr: "Уотс фо динэ?", ru: "Что на ужин?" },
+          { en: "I'm hungry.", transcr: "Айм хангри.", ru: "Я голоден." },
+          { en: "Can I have some water, please?", transcr: "Кэн ай хэв сам уотэ, плиз?", ru: "Можно воды, пожалуйста?" },
+          { en: "Dinner is ready.", transcr: "Динэ из рэди.", ru: "Ужин готов." },
+          { en: "Have a cup of tea.", transcr: "Хэв э кап ов ти.", ru: "Выпей чашку чая." },
+          { en: "Help yourself.", transcr: "Хэлп йосэлф.", ru: "Угощайся." },
+        ],
+      },
+    },
   ];
 
   if (typeof module !== "undefined" && module.exports) module.exports = LESSONS;

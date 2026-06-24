@@ -450,3 +450,35 @@
     (survival vocab), `town hall` A2+ (пассивный запас). В cultural_ru добавлена пометка: `not to` BrE понятно,
     формальнее `in order not to`/`so as not to` (B1).
   - `CACHE_VERSION` esw-v64→**esw-v65**. Осталось A2: L22–L23 (take-get-have/Present Perfect).
+  - **Доделка (сессия 2026-06-24):** пойман баг — карточка L21 в хабе и шапка урока показывали «undefined»
+    (отсутствовали верхнеуровневые `title_ru`+`cefr`; хаб читает `les.title_ru`, не `grammar.title_ru`). Добавлены
+    оба + бэкфилл пропущенного `cefr` у L20. Убран невведённый `goes` из rule-сеток (рассинхрон с таблицами).
+    Превью-верификация (текстовые срезы): 5 табов, 3 формы, 30 слов, тест — 0 ошибок консоли.
+- **L22 готов (take / get / have + FOOD/COOKING-2) — 7-й урок A2.** Открытый вопрос плана #2 (standalone vs влить
+  в L23) решён: **standalone** — еда/готовка в кэмпе = высокая survival-ценность; влитие в L23 перегрузило бы
+  Present Perfect. Грамматика: коллокации трёх «часто путаемых» глаголов на свободных ярлыках 3-форменного каркаса:
+  🍽️ **have** (есть/принимать: have breakfast/lunch/a shower/a break), 🔑 **get** (получить/добраться/стать: get to
+  work/money/tired/cold), ✋ **take** (взять/ехать/принять: take the bus/medicine/a photo). Каждая коллокация-слово
+  под ОДНИМ глаголом (без пересечений — урок про различение). 30 новых слов FOOD/COOKING-2: apple/pear/grape/
+  strawberry/cherry/cabbage/lettuce/mushroom/pepper/cucumber/sweetcorn/beef/lamb/ham/sausage/flour/jam/sauce/
+  yoghurt/pan/pot/cup/fry/boil/bake/peel/slice/meal/breakfast/dinner. `WHITELIST[22]=["get"]` (have/has/got — WL8,
+  take — прежнее words[]). Диалог «готовим ужин в кэмпе» (m↔w, 12 реплик). 12 grammar-примеров, 12 quiz.
+  - **⚠️ Снежок:** `potatoes`→`potatoe`≠`potato` (нерегулярный -oes плюрал) → заменено на `carrots` (известное,
+    стеммится чисто). `make` (ловушка «не make a photo») вне scope → дистракторы quiz на известных глаголах,
+    ловушка осталась в `note_ru` (не сканируется). `every`/`evening` вне scope → убраны. emoji: только ≤Unicode 11
+    (Android 9+) — pea/bean/plum (Unicode 14, «тофу» на бюджетных Android ЦА) заменены на cherry/grape/sweetcorn.
+  - **Слой 1 (audit):** 7/7 зелёные. **Слой 2 (verify):** verify-ipa — 3 нотационных флага (apple слоговой-l,
+    strawberry ɹ-нотация, breakfast `/ˈbrekfəst/` = Cambridge/Oxford BrE vs Wiktionary компаунд-вариант) — приняты;
+    verify-transcr — cucumber «кьюкамбэ» (конвенция /kj/→кью, как music/fuel) — принят. `sweetcorn` /ˈswiːtkɔːn/
+    проставлен по Cambridge (Wiktionary single-entry нет).
+  - **Слой 3 (адверсариальные ревьюеры язык/IPA + педагогика/контракт):** оба **SHIP**, 0 правок. Ключевая адъюдикация:
+    **apple/food-лексика defensible** (контракт: «CEFR = области, фермерское подмножество»; для fruit/veg-пикеров
+    продукты — объект труда + еда в кэмпе, не абстрактный ELT-проп). Whitelist-интент проверен (только `get` нов).
+  - **🔴 Слой 4 (source-cited, 2 ревьюера + инлайн-скептик):** **SHIP после 2 подтверждённых правок.**
+    (1) **`corn` → `sweetcorn`**: в BrE «corn» = зерновые вообще (на ферме = злак), съедобный початок = «sweetcorn»
+    (Cambridge: отдельные статьи) — для ЦА «corn» вводит в заблуждение. (2) **«The dinner is ready» → «Dinner is
+    ready»** (диалог+everyday): без артикля идиоматичнее для анонса еды (Cambridge/Headway register). Подтверждены как
+    natural с цитатами Cambridge: have a shower (BrE vs AmE take), take medicine (safe, без дозировок), yoghurt/
+    cashpoint (BrE), A2-объём коллокаций have/take/get (British Council «delexical verbs» + English File Elementary).
+    Отклонено: «I'll take the cabbage» (идиоматичнее, но `'ll` ломает токенайзер — конвенция проекта).
+  - `CACHE_VERSION` esw-v65→**esw-v66**. Осталось A2: **L23** (Present Perfect — ever/never/yet/just + BANKING/ADMIN).
