@@ -241,6 +241,62 @@
         },
       },
     },
+
+    /* ---------- 5) Camp / housing problem (camp manager) ---------- */
+    {
+      id: "camp",
+      icon: "🏠",
+      title_ru: "Проблема в кэмпе",
+      sub_ru: "Холодно, не работает обогреватель",
+      intro_ru: "В вагончике холодно: обогреватель не работает и нет горячей воды. Вы идёте к менеджеру кэмпа — спокойно попросить починить.",
+      start: "n1",
+      nodes: {
+        n1: {
+          speaker: "m", en: "Hello. How can I help you?", transcr: "Хэлоу. Хау кэн ай хэлп ю?", tr_ru: "Здравствуйте. Чем могу помочь?",
+          choices: [
+            { en: "I have a problem. My heater is broken.", transcr: "Ай хэв э проблэм. Май хитэ из броукэн.", tr_ru: "У меня проблема. Мой обогреватель сломан.",
+              ok: true, fb_ru: "✅ Спокойно и конкретно — назвали, что сломано.", next: "n2" },
+            { en: "My room is bad.", transcr: "Май рум из бэд.", tr_ru: "Моя комната плохая.",
+              ok: false, fb_ru: "⚠️ Слишком общо. Скажите конкретно: что сломано.", next: "n1" },
+          ],
+        },
+        n2: {
+          speaker: "m", en: "I am sorry. What is broken?", transcr: "Ай эм сори. Уот из броукэн?", tr_ru: "Извините. Что сломано?",
+          choices: [
+            { en: "The heater is broken. My room is cold.", transcr: "Зэ хитэ из броукэн. Май рум из коулд.", tr_ru: "Обогреватель сломан. В комнате холодно.",
+              ok: true, fb_ru: "✅ Чётко: обогреватель, в комнате холодно.", next: "n3" },
+            { en: "Everything is cold.", transcr: "Эврисинг из коулд.", tr_ru: "Всё холодное.",
+              ok: false, fb_ru: "⚠️ Слишком общо. Скажите точнее: что именно сломано — обогреватель.", next: "n2" },
+          ],
+        },
+        n3: {
+          speaker: "m", en: "I am sorry. Is there hot water?", transcr: "Ай эм сори. Из зэа хот уотэ?", tr_ru: "Извините. Есть ли горячая вода?",
+          choices: [
+            { en: "No. There is no hot water.", transcr: "Ноу. Зэа из ноу хот уотэ.", tr_ru: "Нет. Горячей воды нет.",
+              ok: true, fb_ru: "✅ Ответили чётко на вопрос.", next: "n4" },
+            { en: "My room is cold.", transcr: "Май рум из коулд.", tr_ru: "В комнате холодно.",
+              ok: false, fb_ru: "⚠️ Ответьте на вопрос: есть ли горячая вода?", next: "n3" },
+          ],
+        },
+        n4: {
+          speaker: "m", en: "I can send someone today. Can you wait?", transcr: "Ай кэн сэнд самуан тудэй. Кэн ю уэйт?", tr_ru: "Я могу прислать мастера сегодня. Можете подождать?",
+          choices: [
+            { en: "Yes, please. Thank you.", transcr: "Йес, плиз. Сэнк ю.", tr_ru: "Да, пожалуйста. Спасибо.",
+              ok: true, fb_ru: "✅ Поблагодарили — договорились.", next: "end_good" },
+            { en: "No! Fix it now! I am angry.", transcr: "Ноу! Фикс ит нау! Ай эм энгри.", tr_ru: "Нет! Почините сейчас! Я зол.",
+              ok: false, fb_ru: "⚠️ Кричать не нужно — спокойно попросите.", next: "end_bad" },
+          ],
+        },
+        end_good: {
+          speaker: "m", en: "Good. Someone is going to fix the heater today.", transcr: "Гуд. Самуан из гоуинг ту фикс зэ хитэ тудэй.", tr_ru: "Хорошо. Сегодня мастер починит обогреватель.",
+          outcome: "good", outcome_ru: "Вы спокойно объяснили проблему и вежливо попросили — менеджер пришлёт мастера. 👍 Если в жилье холодно или опасно (нет тепла, воды), сообщайте сразу.",
+        },
+        end_bad: {
+          speaker: "m", en: "Please do not shout. I can help you.", transcr: "Плиз ду нот шаут. Ай кэн хэлп ю.", tr_ru: "Пожалуйста, не кричите. Я могу помочь.",
+          outcome: "bad", outcome_ru: "Крик и злость не помогают. Спокойно опишите проблему и попросите починить — так быстрее получите помощь.",
+        },
+      },
+    },
   ];
 
   if (typeof module !== "undefined" && module.exports) module.exports = SCENARIOS;

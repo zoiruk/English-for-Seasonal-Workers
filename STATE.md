@@ -556,3 +556,11 @@
     sick note»; «fit» не в лексиконе A1–A2), outcome_ru добавлено: «fit note» + правило 7+ дней.
   - Превью: хаб→список→pay-сценарий пройден до `end_good`, ошибок консоли нет.
 - `CACHE_VERSION` esw-v68→**esw-v69** (`scenarios.js` добавлен в PRECACHE). `<script src="scenarios.js">` вшит в `index.html`.
+- **5-й сценарий (выбор владельца, 2026-06-24):** 🏠 «Проблема в кэмпе» (camp, 6 узлов, 2 исхода) — холодно,
+  сломан обогреватель, нет горячей воды → спокойно попросить менеджера кэмпа починить. Лексика L9
+  (room/heater/broken/cold/hot/water) + send/wait/angry/shout (L13–L14) + whitelist (someone/everything).
+  Слой 1: 8/8 зелёных. Слой 3+4 (адверсариальный ревью язык+safety): **SHIP, 0 BLOCK/WARN** — транскрипции
+  совпадают с каноном уроков, BrE натурален, safety чист (жильё — регулируемая зона, но ни одной правовой
+  claim: только нейтральное «I have a problem / please fix it», outcome_ru без «обязаны по закону»). Применена
+  1 NOTE-правка (fb_ru на n2: «общо»→«что именно сломано»). Превью: пройден до `end_good`, ошибок консоли нет.
+  `CACHE_VERSION` esw-v69→**esw-v70**. **🎉 Фаза 2 ПОЛНА: 5/5 сценариев (pay/agency/accident/nhs/camp).**
