@@ -59,6 +59,9 @@ const WHITELIST = {
     "someone","anyone","nobody","everybody","everyone","somebody",
     "somewhere","anywhere","nowhere","everywhere",
   ],
+  // L21 infinitive of purpose: "to" already in WHITELIST[1]; "why" (purpose
+  // question word) is introduced here for the first time.
+  21: ["why"],
 };
 const NAMES = ["ahmad","tom","sara","anna","john","ali","omar","rustam","fatima"];
 

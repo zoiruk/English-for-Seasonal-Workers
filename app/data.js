@@ -3296,6 +3296,7 @@
     {
       id: 20,
       title_ru: "В кэмпе: something / anything / nothing",
+      cefr: "A2 · something / anything / nothing · camp & home",
       grammar: {
         title_ru: "something / anything / nothing — неопределённые",
         intro_ru:
@@ -3458,6 +3459,176 @@
           { en: "Is there anything wrong with the heating?", transcr: "Из зэа энисинг ронг уис зэ хитинг?", ru: "С отоплением что-то не так?" },
           { en: "There is a notice near the entrance.", transcr: "Зэа из э ноутис ниэ зэ энтрэнс.", ru: "У входа есть объявление." },
           { en: "Nothing works in my room.", transcr: "Насинг уёкс ин май рум.", ru: "В моей комнате ничего не работает." },
+        ],
+      },
+    },
+
+    // ─── L21 ──────────────────────────────────────────────────────────────────
+    {
+      id: 21,
+      title_ru: "В городе: зачем я еду (to + глагол)",
+      cefr: "A2 · infinitive of purpose · town & services",
+      grammar: {
+        title_ru: "Инфинитив цели: I go to town to buy food.",
+        intro_ru:
+          '<b>to + глагол</b> после действия — показывает <b>зачем</b>:<br>' +
+          'I go to town <b>to buy</b> food. — Я еду в город <b>купить</b> еду.<br>' +
+          'They go to the bank <b>to change</b> money. — Они идут в банк <b>поменять</b> деньги.<br>' +
+          'В русском — «чтобы» или сразу инфинитив: иду <b>купить</b>.',
+        cultural_ru:
+          'В BrE «in order to» — формальная версия (<em>in order to change money</em>), ' +
+          'но в разговоре просто <b>to</b>: «I go to the bank to change money» — норма. ' +
+          'Тот же смысл, короче. ' +
+          'Для «чтобы не»: <b>not to</b> — понятно в BrE; более формально — <b>in order not to</b> / <b>so as not to</b> (уровень B1).',
+        note_ru:
+          '⚠️ Два «to» — разные функции:<br>' +
+          'I go <b>to</b> town (<em>предлог: куда?</em>) vs I go to town <b>to buy</b> food (<em>инфинитив: зачем?</em>).<br>' +
+          'Инфинитив-to всегда перед ГЛАГОЛОМ-ДЕЙСТВИЕМ; предлог-to — перед МЕСТОМ.',
+        forms: {
+          positive: {
+            label_ru: "✅ to + глагол → зачем?",
+            rule_ru:
+              'Подлежащее + глагол + (место) + <b>to</b> + инфинитив:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div>I go to town</div><div><b>to buy</b> food</div>' +
+              '<div>They go to the clinic</div><div><b>to visit</b> the nurse</div>' +
+              '<div>We go to the cashpoint</div><div><b>to take</b> money</div>' +
+              '</div>',
+            table: [
+              { subj: "я", verb: "go", example: "I go to town to buy food.", transcr: "Ай гоу ту таун ту бай фуд.", tr_ru: "Я еду в город купить еду." },
+              { subj: "они", verb: "go", example: "They go to the clinic to visit the nurse.", transcr: "Зэй гоу ту зэ клиник ту визит зэ нёс.", tr_ru: "Они идут в клинику навестить медсестру." },
+              { subj: "мы", verb: "go", example: "We go to the cashpoint to take money.", transcr: "Уи гоу ту зэ кэшпойнт ту тэйк мани.", tr_ru: "Мы идём к банкомату снять деньги." },
+            ],
+          },
+          negative: {
+            label_ru: "❌ not to + глагол → чтобы не",
+            rule_ru:
+              'Цель — избежать чего-то: + <b>not to</b> + инфинитив:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div>I leave early</div><div><b>not to</b> be late</div>' +
+              '<div>He eats at the canteen</div><div><b>not to</b> pay more</div>' +
+              '<div>I go to the dentist</div><div><b>not to</b> be in pain</div>' +
+              '</div>',
+            table: [
+              { subj: "я", verb: "leave early", example: "I leave early not to be late.", transcr: "Ай лив ёли нот ту би лэйт.", tr_ru: "Я ухожу рано, чтобы не опоздать." },
+              { subj: "он", verb: "eats", example: "He eats at the canteen not to pay more.", transcr: "Хи итс эт зэ кэнтин нот ту пэй мо.", tr_ru: "Он ест в столовой, чтобы не платить больше." },
+              { subj: "я", verb: "go", example: "I go to the dentist not to be in pain.", transcr: "Ай гоу ту зэ дэнтист нот ту би ин пэйн.", tr_ru: "Я иду к стоматологу, чтобы не болел зуб." },
+            ],
+          },
+          question: {
+            label_ru: "❓ Why...? → To + глагол.",
+            rule_ru:
+              '<b>Why</b> <span class="g-transcr">[уай]</span> = зачем? — новый вопросительный маркер цели:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><b>Why</b> do you go to town?</div><div>→ <b>To buy</b> food.</div>' +
+              '<div><b>Why</b> does she go to the clinic?</div><div>→ <b>To visit</b> the nurse.</div>' +
+              '<div>Краткий ответ:</div><div>To + инфинитив (без подлежащего)</div>' +
+              '</div>',
+            table: [
+              { subj: "ты", verb: "Why do you…?", example: "Why do you go to town?", transcr: "Уай ду ю гоу ту таун?", tr_ru: "Зачем ты едешь в город?" },
+              { subj: "она", verb: "Why does she…?", example: "Why does she go to the clinic?", transcr: "Уай дэз ши гоу ту зэ клиник?", tr_ru: "Зачем она идёт в клинику?" },
+              { subj: "ответ", verb: "To + verb.", example: "To change money.", transcr: "Ту чейндж мани.", tr_ru: "Чтобы поменять деньги." },
+            ],
+          },
+        },
+        examples: [
+          { en: "I go to town to buy food.", transcr: "Ай гоу ту таун ту бай фуд.", ru: "Я еду в город купить еду." },
+          { en: "They go to the clinic to visit the nurse.", transcr: "Зэй гоу ту зэ клиник ту визит зэ нёс.", ru: "Они идут в клинику навестить медсестру." },
+          { en: "We go to the cashpoint to take money.", transcr: "Уи гоу ту зэ кэшпойнт ту тэйк мани.", ru: "Мы идём к банкомату снять деньги." },
+          { en: "I go to the supermarket to buy bread.", transcr: "Ай гоу ту зэ супэмакит ту бай брэд.", ru: "Я иду в супермаркет купить хлеб." },
+          { en: "They go to the library to read.", transcr: "Зэй гоу ту зэ лайбрэри ту рид.", ru: "Они идут в библиотеку читать." },
+          { en: "I go to the post office to change currency.", transcr: "Ай гоу ту зэ поуст офис ту чейндж карэнси.", ru: "Я иду на почту обменять валюту." },
+          { en: "I leave early not to be late.", transcr: "Ай лив ёли нот ту би лэйт.", ru: "Я ухожу рано, чтобы не опоздать." },
+          { en: "She walks to work not to be late.", transcr: "Ши уокс ту уёк нот ту би лэйт.", ru: "Она ходит на работу пешком, чтобы не опоздать." },
+          { en: "He eats at the canteen not to pay more.", transcr: "Хи итс эт зэ кэнтин нот ту пэй мо.", ru: "Он ест в столовой, чтобы не платить больше." },
+          { en: "Why do you go to town?", transcr: "Уай ду ю гоу ту таун?", ru: "Зачем ты едешь в город?" },
+          { en: "Why does she go to the clinic?", transcr: "Уай дэз ши гоу ту зэ клиник?", ru: "Зачем она идёт в клинику?" },
+          { en: "Why do they go to the market?", transcr: "Уай ду зэй гоу ту зэ макит?", ru: "Зачем они едут на рынок?" },
+        ],
+        simple_ru: {
+          formula:
+            'I go to [место] + <b>to</b> + [глагол] = зачем? · <span class="g-transcr">I go to town to buy food.</span><br>' +
+            'Not to + [глагол] = чтобы НЕ · <span class="g-transcr">I leave early not to be late.</span>',
+          examples: [
+            { en: "I go to town to buy food.", transcr: "Ай гоу ту таун ту бай фуд.", ru: "to buy = зачем иду: купить еду. Инфинитив цели." },
+            { en: "Why do you go to town? — To change money.", transcr: "Уай ду ю гоу ту таун? — Ту чейндж мани.", ru: "Why? → To + глагол: краткий ответ о цели." },
+          ],
+        },
+        ytQuery: "инфинитив цели to infinitive purpose английский A2 для начинающих",
+      },
+
+      words: [
+        { e: "🏘️", en: "town", transcr: "таун", ru: "город (центр)", pn: "/taʊn/" },
+        { e: "🌆", en: "city", transcr: "сити", ru: "город (крупный)", pn: "/ˈsɪti/" },
+        { e: "🛖", en: "village", transcr: "вилидж", ru: "деревня", pn: "/ˈvɪlɪdʒ/" },
+        { e: "📍", en: "centre", transcr: "сэнтэ", ru: "центр", pn: "/ˈsentə/" },
+        { e: "📚", en: "library", transcr: "лайбрэри", ru: "библиотека", pn: "/ˈlaɪbrəri/" },
+        { e: "🏫", en: "school", transcr: "скул", ru: "школа", pn: "/skuːl/" },
+        { e: "⛪", en: "church", transcr: "чёч", ru: "церковь", pn: "/tʃɜːtʃ/" },
+        { e: "🕌", en: "mosque", transcr: "моск", ru: "мечеть", pn: "/mɒsk/" },
+        { e: "☕", en: "cafe", transcr: "кэфэй", ru: "кафе", pn: "/ˈkæfeɪ/" },
+        { e: "🍽️", en: "restaurant", transcr: "рэстрэнт", ru: "ресторан", pn: "/ˈrestrɒnt/" },
+        { e: "🍺", en: "pub", transcr: "паб", ru: "паб", pn: "/pʌb/" },
+        { e: "🛒", en: "supermarket", transcr: "супэмакит", ru: "супермаркет", pn: "/ˈsuːpəmɑːkɪt/" },
+        { e: "🏧", en: "cashpoint", transcr: "кэшпойнт", ru: "банкомат", pn: "/ˈkæʃpɔɪnt/" },
+        { e: "⛲", en: "square", transcr: "скуэа", ru: "площадь", pn: "/skweə/" },
+        { e: "🏭", en: "factory", transcr: "фэктэри", ru: "завод", pn: "/ˈfæktəri/" },
+        { e: "📦", en: "warehouse", transcr: "уэахаус", ru: "склад", pn: "/ˈweəhaʊs/" },
+        { e: "🅿️", en: "car park", transcr: "ка пак", ru: "парковка", pn: "/kɑː pɑːk/" },
+        { e: "🚏", en: "bus stop", transcr: "бас стоп", ru: "автобусная остановка", pn: "/bʌs stɒp/" },
+        { e: "🏛️", en: "town hall", transcr: "таун хол", ru: "ратуша, муниципалитет", pn: "/taʊn hɔːl/" },
+        { e: "🦷", en: "dentist", transcr: "дэнтист", ru: "стоматолог", pn: "/ˈdentɪst/" },
+        { e: "🏥", en: "clinic", transcr: "клиник", ru: "клиника", pn: "/ˈklɪnɪk/" },
+        { e: "💊", en: "pharmacy", transcr: "фамэси", ru: "аптека (официальн.)", pn: "/ˈfɑːməsi/" },
+        { e: "🧺", en: "launderette", transcr: "лондэрэт", ru: "прачечная самообсл.", pn: "/ˌlɔːndəˈret/" },
+        { e: "✂️", en: "hairdresser", transcr: "хэадрэсэ", ru: "парикмахер", pn: "/ˈheəˌdresə/" },
+        { e: "💱", en: "change", transcr: "чейндж", ru: "менять; сдача (от покупки)", pn: "/tʃeɪndʒ/" },
+        { e: "🤝", en: "meet", transcr: "мит", ru: "встречать, встречаться", pn: "/miːt/" },
+        { e: "👋", en: "visit", transcr: "визит", ru: "посещать, навещать", pn: "/ˈvɪzɪt/" },
+        { e: "📮", en: "post", transcr: "поуст", ru: "почта; отправить (письмо)", pn: "/pəʊst/" },
+        { e: "💰", en: "currency", transcr: "карэнси", ru: "валюта, деньги (иностр.)", pn: "/ˈkʌrənsi/" },
+        { e: "📬", en: "stamp", transcr: "стэмп", ru: "марка (почтовая)", pn: "/stæmp/" },
+      ],
+
+      dialogue: [
+        { s: "m", en: "Hello. Where are you going today?", transcr: "Хэлоу. Уэа ар ю гоуин тудэй?", ru: "Привет. Куда ты идёшь сегодня?" },
+        { s: "w", en: "I am going to town.", transcr: "Ай эм гоуин ту таун.", ru: "Я иду в город." },
+        { s: "m", en: "Why are you going to town?", transcr: "Уай ар ю гоуин ту таун?", ru: "Зачем ты идёшь в город?" },
+        { s: "w", en: "To take money at the cashpoint.", transcr: "Ту тэйк мани эт зэ кэшпойнт.", ru: "Снять деньги в банкомате." },
+        { s: "m", en: "Are you going to the supermarket?", transcr: "Ар ю гоуин ту зэ супэмакит?", ru: "Ты идёшь в супермаркет?" },
+        { s: "w", en: "Yes. I am going to the supermarket to buy food.", transcr: "Йес. Ай эм гоуин ту зэ супэмакит ту бай фуд.", ru: "Да. Я иду в супермаркет купить еду." },
+        { s: "m", en: "Is there a pharmacy near the town centre?", transcr: "Из зэа э фамэси ниэ зэ таун сэнтэ?", ru: "Рядом с центром города есть аптека?" },
+        { s: "w", en: "Yes. I go to the pharmacy to collect medicine.", transcr: "Йес. Ай гоу ту зэ фамэси ту кэлэкт мэдсэн.", ru: "Да. Я иду в аптеку забрать лекарство." },
+        { s: "m", en: "Do you go to the post office?", transcr: "Ду ю гоу ту зэ поуст офис?", ru: "Ты идёшь на почту?" },
+        { s: "w", en: "Yes. I go to the post office to send money.", transcr: "Йес. Ай гоу ту зэ поуст офис ту сэнд мани.", ru: "Да. Я иду на почту отправить деньги." },
+        { s: "m", en: "Is there a library in town?", transcr: "Из зэа э лайбрэри ин таун?", ru: "В городе есть библиотека?" },
+        { s: "w", en: "Yes. I go to the library to read.", transcr: "Йес. Ай гоу ту зэ лайбрэри ту рид.", ru: "Да. Я иду в библиотеку почитать." },
+      ],
+
+      quiz: [
+        { q: '[COMPLETE] "She visits the pharmacy ___ collect medicine."', opts: ["to", "not to", "and", "at"], c: 0, expl: "to collect — инфинитив цели: to + базовый глагол. Не «at», не «and».", hint_ru: "зачем? → to + глагол." },
+        { q: '[COMPLETE] "Why does she go there? — ___ visit the nurse."', opts: ["To", "Not to", "And", "What"], c: 0, expl: "To visit the nurse. — краткий ответ на Why? = To + глагол.", hint_ru: "краткий ответ: To + глагол." },
+        { q: '[TRANSLATE] "библиотека"', opts: ["library", "clinic", "factory", "pharmacy"], c: 0, expl: "library — библиотека.", hint_ru: "library." },
+        { q: '[TRANSLATE] "банкомат (брит.)"', opts: ["cashpoint", "supermarket", "warehouse", "square"], c: 0, expl: "cashpoint — банкомат в BrE. I go to the cashpoint to take money.", hint_ru: "cashpoint." },
+        { q: '[TRANSLATE] "менять (деньги)"', opts: ["change", "meet", "visit", "post"], c: 0, expl: "change — менять. I go to the bank to change currency.", hint_ru: "change." },
+        { q: '[CORRECT] Как правильно? (цель: навестить медсестру)', opts: ["They go to the clinic to visit the nurse.", "They go to the clinic visiting the nurse.", "They go to the clinic visit the nurse.", "They go to the clinic to visiting the nurse."], c: 0, expl: "to visit — to + базовый глагол. Не -ing после to.", hint_ru: "to + базовый глагол." },
+        { q: '[COMPLETE] "I leave early ___ be late." (чтобы не опоздать)', opts: ["not to", "to", "not", "and"], c: 0, expl: "not to be late — чтобы не опоздать. not to + базовый глагол.", hint_ru: "not to = чтобы не." },
+        { q: '[QUESTION] "___ do you go to the pharmacy?" (зачем?)', opts: ["Why", "Where", "When", "What"], c: 0, expl: "Why — зачем? Новый вопросительный маркер цели! Why + do/does?", hint_ru: "зачем? → Why?" },
+        { q: "[LISTEN] I go to the pharmacy to collect medicine.", opts: ["Я иду в аптеку забрать лекарство.", "Я иду в клинику.", "Я иду в аптеку работать.", "Я иду в супермаркет."], c: 0, expl: "pharmacy — аптека, collect medicine — забрать лекарство.", hint_ru: "" },
+        { q: "[GIST] По диалогу: какое место рабочий называет последним?", opts: ["Библиотеку.", "Аптеку.", "Супермаркет.", "Банкомат."], c: 0, expl: "«I go to the library to read.» — последнее место в диалоге — библиотека.", hint_ru: "Слушай последние реплики диалога." },
+        { q: '[BUILD] «Я иду в аптеку забрать лекарство.»', build: ["I", "go", "to", "the", "pharmacy", "to", "collect", "medicine"], expl: "I go to the pharmacy to collect medicine. — to + глагол = зачем? Два «to»: первое предлог (куда?), второе инфинитив (зачем?).", hint_ru: "I go to [место] to [глагол]." },
+        { q: '[TRANSLATE] "посещать, навещать"', opts: ["visit", "change", "meet", "stamp"], c: 0, expl: "visit — посещать, навещать. I go to the clinic to visit the doctor.", hint_ru: "visit." },
+      ],
+
+      everyday: {
+        title_ru: "В городе",
+        phrases: [
+          { en: "I go to town to change money.", transcr: "Ай гоу ту таун ту чейндж мани.", ru: "Я еду в город поменять деньги." },
+          { en: "Where is the cashpoint?", transcr: "Уэа из зэ кэшпойнт?", ru: "Где банкомат?" },
+          { en: "I go to the post office to send money.", transcr: "Ай гоу ту зэ поуст офис ту сэнд мани.", ru: "Я иду на почту отправить деньги." },
+          { en: "I need to go to the dentist.", transcr: "Ай нид ту гоу ту зэ дэнтист.", ru: "Мне нужно к стоматологу." },
+          { en: "Why do you go to town? — To meet a friend.", transcr: "Уай ду ю гоу ту таун? — Ту мит э фрэнд.", ru: "Зачем идёшь в город? — Встретить друга." },
+          { en: "Is there a pharmacy near here?", transcr: "Из зэа э фамэси ниэ хиэ?", ru: "Рядом есть аптека?" },
         ],
       },
     },

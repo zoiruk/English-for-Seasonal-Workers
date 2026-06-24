@@ -419,4 +419,34 @@
     BrE-формы «I haven't got anything» (BrE vs AmE «I don't have anything») — подтверждены; «Is there anything wrong
     with the heating?» = стандартная BrE-фраза (British Council workplace); «Nothing works» = валидный идиом;
     safety-фразы («The heating is broken», «Nothing works») — reporting-язык, защищает рабочих, не создаёт риска.
-  - `CACHE_VERSION` esw-v63→**esw-v64**. Осталось A2: L21–L23 (infinitive of purpose/take-get-have/Present Perfect).
+  - `CACHE_VERSION` esw-v63→**esw-v64**. Осталось A2: L22–L23 (take-get-have/Present Perfect).
+- **L21 готов (infinitive of purpose + TOWN/SERVICES) — 6-й урок A2.** Грамматика: инфинитив цели
+  `go/come/… + to + VERB` (I go to town to buy food), отрицание `not to` (с пометкой: реже в разговорном BrE;
+  `in order not to`/`so as not to` = B1), вопрос `Why? — To + verb…`. 3-форменный каркас с свободными ярлыками.
+  30 новых слов TOWN/SERVICES: town/city/village/centre/library/school/church/mosque/cafe/restaurant/pub/
+  supermarket/cashpoint/square/factory/warehouse/car park/bus stop/town hall/dentist/clinic/pharmacy/
+  launderette/hairdresser/change/meet/visit/post/currency/stamp. `WHITELIST[21]=["why"]` («why» — первое
+  введение для вопроса цели). Диалог «рабочий едет в город» (m↔w, 12 реплик). 12 quiz.
+  - **⚠️ Снежок:** `goes`→`goe` (неправильный стем стеммера) → все примеры переписаны на I/they/we вместо she/he
+    (исправлено до коммита). `for` вне scope → исправлен на `at` в quiz-дистракторе. `barn/fence/path` — фермерские,
+    не городские → заменены на `car park/bus stop/town hall`.
+  - **Слой 1 (audit):** 7/7 зелёные (audit/dedup/snowball/reader-audit/check-bre/check-transcr-safe/
+    check-transcr-consistency). Также исправлена транскрипция в `phrasebook.js`: `change` «чэйндж»→«чейндж»,
+    `pharmacy` «фармэси»→«фамэси» (дрейф от канона L21 words[]).
+  - **Слой 2 (verify):** verify-ipa — L21: `city` нотация `sɪtɪ` (Wiktionary слоговая), `centre` `sɛntəː`
+    (RP w/длинным шва), `launderette` `/lɔːnˈdɹɛt/` (Wiktionary нотация) — все мои BrE-нотации стандартны, приняты.
+    6 слов не найдено (library/cashpoint/warehouse/barn/hairdresser/currency/stamp) — IPA проставлены по Cambridge BrE.
+    verify-transcr — 0 флагов.
+  - **Слой 3 (адверсариальные ревьюеры язык/IPA + педагогика/контракт):** 5 правок — (1) answer-leak в quiz[0]/quiz[1]
+    (ответ «to» дублировался в вопросе) → изменены стебли вопросов; (2) `[GIST]` «после почты?» → «какое место рабочий
+    называет последним?» (ложная пресуппозиция «после»); (3) `[BUILD]` → цепочка с инфинитивом цели
+    («I go to the pharmacy to collect medicine»); (4) `not to + inf` бесспорно оставлен (British Council «normally
+    don't use» ≠ «never»; альтернативы B1+; note_ru добавлена пометка B1); (5) эмодзи-обманки исправлены.
+  - **🔴 Слой 4 (source-cited, 3 ревьюера + скептик):** **SHIP после 1 подтверждённой правки.**
+    Подтверждённая правка — **«cashpoint to change money» → «cashpoint to take money»** везде (grammar rule_ru/
+    table[2]/examples[2]/dialogue[3]/quiz[3] expl): банкомат не обменивает валюту (только выдаёт деньги со счёта);
+    `take` (L6) снежок-безопасен. Отклонены: `not to + inf` (ложный флаг, British Council «normally» ≠ «never»),
+    `change currency` (слово в L21 words[], педагогически верно), `collect medicine` (NHS phrase), `cashpoint` B1
+    (survival vocab), `town hall` A2+ (пассивный запас). В cultural_ru добавлена пометка: `not to` BrE понятно,
+    формальнее `in order not to`/`so as not to` (B1).
+  - `CACHE_VERSION` esw-v64→**esw-v65**. Осталось A2: L22–L23 (take-get-have/Present Perfect).
