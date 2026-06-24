@@ -8,6 +8,7 @@ const { escapeRe } = require("./lib");
 const LESSONS = require("../app/data.js");
 const PHRASEBOOK = safeReq("../app/phrasebook.js");
 const BOOKS = safeReq("../app/reader.js");
+const SCENARIOS = safeReq("../app/scenarios.js");
 function safeReq(p) { try { return require(p) || []; } catch (e) { return []; } }
 
 // American -> British. Whole word / whole phrase, case-insensitive.
@@ -55,6 +56,11 @@ PHRASEBOOK.forEach((c) => (c.phrases || []).forEach((p, i) => scan(`PB ${c.cat}[
 BOOKS.forEach((b) => (b.chapters || []).forEach((ch) => {
   (ch.sentences || []).forEach((s, i) => scan(`Book ${b.id} ch${ch.id} sent[${i}]`, s.en));
   (ch.glossary || []).forEach((gw, i) => scan(`Book ${b.id} ch${ch.id} gloss[${i}]`, gw.en));
+}));
+SCENARIOS.forEach((s) => Object.keys(s.nodes || {}).forEach((nid) => {
+  const n = s.nodes[nid];
+  scan(`SC ${s.id}.${nid}`, n.en);
+  (n.choices || []).forEach((c, i) => scan(`SC ${s.id}.${nid}.choices[${i}]`, c.en));
 }));
 
 if (!errors.length) { console.log("[check-bre] OK — 0 Americanisms"); process.exit(0); }

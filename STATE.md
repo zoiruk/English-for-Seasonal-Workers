@@ -532,3 +532,27 @@
   кнопка ведёт на `#cert-a2`). `CACHE_VERSION` esw-v67→**esw-v68**. Фазы 2–3 (сценарии выживания, ридер/разговорник A2) —
   впереди. **Живой A0-тест Б — снят с приоритета №1 решением владельца (2026-06-24);** НЕ проведён, остаётся открытым
   риском (визуал Фазы 1 особенно нуждается в проверке на реальном A0, но это больше не блокер).
+
+**2026-06-24 — A2 «level-up» Фаза 2: сценарии выживания. План — `plans/2026-06-24-a2-phase2-scenarios.md`.**
+Новый режим приложения (не урок) — ветвящийся role-play реальных стрессовых ситуаций.
+Снежок-exempt от одного урока, но весь английский — только из UNION words[] уроков 1–23 + whitelist + NAMES
+(проверено `scripts/scenario-audit.js`). Высокая зона ответственности: деньги/NHS/авария — только нейтральные
+реплики «I ask / I report / I request», без правовых/медицинских/визовых утверждений; 999/111 — только в
+`intro_ru`/`outcome_ru` (русский), не в английском тексте.
+- **4 сценария** (`app/scenarios.js`, `window.SCENARIOS`): 💷 «Мне не заплатили» (pay, 6 узлов), 📋 «Разговор
+  с агентством» (agency, 6 узлов), 🛑 «Авария и травма» (accident, 6 узлов), 🏥 «У врача NHS» (nhs, 5 узлов).
+  Неверный выбор — не тупик: даёт `fb_ru` и возвращает на текущий узел (учим, не наказываем).
+- **Движок** (`app/app.js`): хаб-тайл 🆘, `renderScenarioList()`, `renderScenario(id)`, `playScNode()`;
+  роутинг `#scenarios` / `#scenario/<id>`; спикеры m/w/a/d; TTS en-GB на реплику NPC.
+- **Аудит:**
+  - Слой 1 (`npm run audit`): 8/8 зелёных (audit/dedup/snowball/reader/scenario-audit/check-bre/transcr-safe/transcr-consistency).
+  - Слой 2 (чек-лист): ✅ фермерская лексика; ✅ RU-only UI; ✅ эмодзи по смыслу; ✅ безопасная зона (нет правовых/мед. claims).
+  - Слой 3 (адверсариальный ревью): исправлены 7 флагов — «Насин»→«насинг» (nothing BrE /ŋ/), все 5 экземпляров
+    «гоуин ту» (be going to future) →«гоуинг ту» (консистентность с L16), «He has a pain»→«He is in pain» (BrE);
+    остальные WARN/NOTE: «I stop the machine» — оставлено (A2-телеграфная речь, лекс. ограничение); agency-нарратив —
+    NOTE, не блокер.
+  - Слой 4 (source-cited, ACAS/HSE/NHS): pay ✅ (ACAS: payslip — правильный первый шаг); agency ✅ (нет нормативных
+    claims); accident — 999 уточнён в outcome_ru (тяжёлая травма); NHS — «sick note» оставлено (NHS «sometimes called
+    sick note»; «fit» не в лексиконе A1–A2), outcome_ru добавлено: «fit note» + правило 7+ дней.
+  - Превью: хаб→список→pay-сценарий пройден до `end_good`, ошибок консоли нет.
+- `CACHE_VERSION` esw-v68→**esw-v69** (`scenarios.js` добавлен в PRECACHE). `<script src="scenarios.js">` вшит в `index.html`.

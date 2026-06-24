@@ -6,6 +6,7 @@
   var PHRASEBOOK = window.PHRASEBOOK || [];
   var BOOKS = window.BOOKS || [];
   var READER = BOOKS.reduce(function (a, b) { return a.concat(b.chapters || []); }, []); // flat chapters (counts/lookups)
+  var SCENARIOS = window.SCENARIOS || [];
 
   /* ---------- UI strings (localization-ready: add UI.uz later) ---------- */
   var UI = {
@@ -96,6 +97,12 @@
       ms_a2_sub: "Вы прошли все {0} уроков уровня A2. Это большой шаг — поздравляем!",
       ms_a2_cert: "🏆 Открыть сертификат A2",
       ms_continue: "На главную",
+      sc_title: "Ситуации выживания",
+      sc_sub: "Что сказать в трудный момент",
+      sc_hint: "👇 Выберите ситуацию. Выбирайте ответ — и узнаете, что лучше сказать.",
+      sc_next: "Дальше →",
+      sc_retry: "🔄 Пройти снова",
+      sc_to_list: "К списку ситуаций",
       tags: {
         "[COMPLETE]": "✍️ Заполните пропуск",
         "[TRANSLATE]": "🗣️ Переведите",
@@ -216,6 +223,12 @@
         '<div class="body"><div class="t">' + t("phrasebook_title") + '</div><div class="s">' + t("phrasebook_sub") + "</div></div>" +
         '<div class="done" style="color:var(--text3)">›</div></div>';
     }
+    if (SCENARIOS.length) {
+      h += '<div class="lesson-card sc-entry" data-nav="scenarios">' +
+        '<div class="num">🆘</div>' +
+        '<div class="body"><div class="t">' + t("sc_title") + '</div><div class="s">' + t("sc_sub") + "</div></div>" +
+        '<div class="done" style="color:var(--text3)">›</div></div>';
+    }
     if (BOOKS.length) {
       h += '<div class="lesson-card" data-nav="library">' +
         '<div class="num">📚</div>' +
@@ -331,6 +344,103 @@
     app.querySelectorAll("[data-spk]").forEach(function (el) {
       el.addEventListener("click", function () { speak(el.dataset.spk); });
     });
+  }
+
+  /* ---------- SCENARIOS (survival role-plays) ---------- */
+  var SC_SPK = { m: "Менеджер", w: "Рабочий", c: "Кассир", d: "Доктор", a: "Агентство", n: "Медсестра" };
+
+  function renderScenarioList() {
+    setRoute("scenarios");
+    var h = backBtnHTML() +
+      '<div class="hub-head" style="padding-top:46px"><h1>🆘 ' + t("sc_title") + '</h1><p>' + t("sc_hint") + '</p></div>';
+    SCENARIOS.forEach(function (sc) {
+      h += '<div class="lesson-card sc-entry" data-sc="' + esc(sc.id) + '">' +
+        '<div class="num">' + esc(sc.icon) + '</div>' +
+        '<div class="body"><div class="t">' + esc(sc.title_ru) + '</div><div class="s">' + esc(sc.sub_ru) + '</div></div>' +
+        '<div class="done" style="color:var(--text3)">›</div></div>';
+    });
+    app.innerHTML = h;
+    document.getElementById("back").onclick = renderHub;
+    app.querySelectorAll("[data-sc]").forEach(function (el) {
+      el.onclick = function () { renderScenario(el.dataset.sc); };
+    });
+  }
+
+  function renderScenario(id) {
+    var sc = SCENARIOS.filter(function (x) { return x.id === id; })[0];
+    if (!sc) { renderScenarioList(); return; }
+    setRoute("scenario/" + id);
+    var h = backBtnHTML() +
+      '<div class="hub-head" style="padding-top:46px"><h1>' + esc(sc.icon) + ' ' + esc(sc.title_ru) + '</h1><p>' + esc(sc.sub_ru) + '</p></div>' +
+      '<div class="note sc-intro">' + esc(sc.intro_ru) + '</div>' +
+      '<div id="sc-play"></div>';
+    app.innerHTML = h;
+    document.getElementById("back").onclick = renderScenarioList;
+    playScNode(sc, sc.start);
+  }
+
+  function playScNode(sc, nid) {
+    var n = (sc.nodes || {})[nid];
+    if (!n) { renderScenarioList(); return; }
+    var play = document.getElementById("sc-play");
+    if (!play) return;
+    var bubbleH =
+      '<div class="sc-bubble">' +
+        '<div class="sc-spk-row"><div class="sc-speaker">' + esc(SC_SPK[n.speaker] || n.speaker || "") + '</div>' + spkBtn(n.en) + '</div>' +
+        '<div class="sc-en">' + esc(n.en) + '</div>' +
+        '<div class="sc-transcr">' + esc(n.transcr) + '</div>' +
+        '<div class="sc-ru">' + esc(n.tr_ru) + '</div>' +
+      '</div>';
+    if (n.outcome) {
+      var cls = "sc-outcome " + (n.outcome === "good" ? "good" : n.outcome === "bad" ? "bad" : "ok");
+      play.innerHTML = bubbleH +
+        '<div class="' + cls + '">' + esc(n.outcome_ru) + '</div>' +
+        '<div class="sc-actions">' +
+          '<button class="btn" id="sc-retry">' + t("sc_retry") + '</button>' +
+          '<button class="btn ghost" id="sc-back-list">' + t("sc_to_list") + '</button>' +
+        '</div>';
+      play.querySelector("[data-spk]").onclick = function () { speak(n.en); };
+      speak(n.en);
+      document.getElementById("sc-retry").onclick = function () {
+        var intro = app.querySelector(".sc-intro");
+        if (intro) intro.style.display = "";
+        play.innerHTML = "";
+        playScNode(sc, sc.start);
+      };
+      document.getElementById("sc-back-list").onclick = renderScenarioList;
+    } else {
+      var choicesH = (n.choices || []).map(function (c, i) {
+        return '<button class="sc-choice" data-ci="' + i + '">' +
+          '<div class="sc-c-en">' + esc(c.en) + '</div>' +
+          '<div class="sc-c-tr">' + esc(c.transcr) + ' — ' + esc(c.tr_ru) + '</div>' +
+          '</button>';
+      }).join("");
+      play.innerHTML = bubbleH +
+        '<div class="sc-choices">' + choicesH + '</div>' +
+        '<div class="sc-feedback" id="sc-fb" style="display:none"></div>' +
+        '<button class="btn" id="sc-next" style="display:none">' + t("sc_next") + '</button>';
+      play.querySelector("[data-spk]").onclick = function () { speak(n.en); };
+      speak(n.en);
+      var nextNid = null;
+      play.querySelectorAll(".sc-choice").forEach(function (btn) {
+        btn.onclick = function () {
+          var ci = +btn.dataset.ci;
+          var ch = (n.choices || [])[ci];
+          if (!ch) return;
+          nextNid = ch.next;
+          play.querySelectorAll(".sc-choice").forEach(function (b) { b.disabled = true; });
+          var fb = document.getElementById("sc-fb");
+          fb.textContent = ch.fb_ru;
+          fb.className = "sc-feedback " + (ch.ok ? "ok" : "warn");
+          fb.style.display = "";
+          var intro = app.querySelector(".sc-intro");
+          if (intro) intro.style.display = "none";
+          var nb = document.getElementById("sc-next");
+          nb.style.display = "";
+          nb.onclick = function () { playScNode(sc, nextNid); };
+        };
+      });
+    }
   }
 
   /* ---------- READER ("Книга про Ахмада") — graded story, snowball-bound ----------
@@ -1133,6 +1243,7 @@
       else if (nav.dataset.nav === "review") renderReview();
       else if (nav.dataset.nav === "cert") renderCertificate();
       else if (nav.dataset.nav === "cert-a2") renderCertificate("a2");
+      else if (nav.dataset.nav === "scenarios") renderScenarioList();
       return;
     }
     var card = e.target.closest("[data-lesson]");
@@ -1168,6 +1279,9 @@
     if (h === "review") { renderReview(); return; }
     if (h === "cert") { renderCertificate(); return; }
     if (h === "cert-a2") { renderCertificate("a2"); return; }
+    if (h === "scenarios") { renderScenarioList(); return; }
+    var scm = h.match(/^scenario\/([A-Za-z0-9_-]+)$/);
+    if (scm) { renderScenario(scm[1]); return; }
     renderHub();
   }
   window.addEventListener("hashchange", route);

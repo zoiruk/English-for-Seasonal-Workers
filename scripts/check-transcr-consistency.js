@@ -9,6 +9,7 @@
 const LESSONS = require("../app/data.js");
 const PHRASEBOOK = safeReq("../app/phrasebook.js");
 const BOOKS = safeReq("../app/reader.js");
+const SCENARIOS = safeReq("../app/scenarios.js");
 function safeReq(p) { try { return require(p) || []; } catch (e) { return []; } }
 
 function normCyr(t) { return String(t).toLowerCase().replace(/[\s'’\-.,!?;:«»"()…]/g, ""); }
@@ -52,6 +53,11 @@ LESSONS.forEach((l) => {
   if (l.everyday) (l.everyday.phrases || []).forEach((p, i) => check(`L${l.id} everyday[${i}]`, p.en, p.transcr));
 });
 PHRASEBOOK.forEach((c) => (c.phrases || []).forEach((p, i) => check(`PB ${c.cat}[${i}]`, p.en, p.transcr)));
+SCENARIOS.forEach((s) => Object.keys(s.nodes || {}).forEach((nid) => {
+  const n = s.nodes[nid];
+  check(`SC ${s.id}.${nid}`, n.en, n.transcr);
+  (n.choices || []).forEach((c, i) => check(`SC ${s.id}.${nid}.choices[${i}]`, c.en, c.transcr));
+}));
 
 if (!errors.length) { console.log("[check-transcr-consistency] OK — 0 drift"); process.exit(0); }
 console.error(`[check-transcr-consistency] ${errors.length} possible drift(s):`);
