@@ -84,6 +84,18 @@
       level_a1: "Уровень 1 · A0–A1 · с нуля",
       level_a2: "Уровень 2 · A2 · продолжение",
       level_a2_locked: "🔒 Откроется после Урока {0}",
+      journey_title: "🗺️ Ваш путь",
+      journey_l1: "Уровень 1",
+      journey_l2: "Уровень 2",
+      journey_here: "📍 вы здесь",
+      journey_done_all: "🎓 Оба уровня пройдены!",
+      cert_a2_title: "Сертификат A2",
+      cert_a2_sub: "{0} из {1} уроков уровня 2",
+      cert_a2_locked: "🔒 Пройдите все {0} уроков уровня 2 — и получите именной сертификат A2.",
+      ms_a2_title: "🎉 Уровень 2 пройден!",
+      ms_a2_sub: "Вы прошли все {0} уроков уровня A2. Это большой шаг — поздравляем!",
+      ms_a2_cert: "🏆 Открыть сертификат A2",
+      ms_continue: "На главную",
       tags: {
         "[COMPLETE]": "✍️ Заполните пропуск",
         "[TRANSLATE]": "🗣️ Переведите",
@@ -121,6 +133,9 @@
   var A1_MAX = 15;
   function a1Done() { return Object.keys(store.done).filter(function (k) { return +k <= A1_MAX; }).length; }
   function a1Complete() { return a1Done() >= Math.min(A1_MAX, LESSONS.length); }
+  function a2Total() { return Math.max(0, LESSONS.length - A1_MAX); }
+  function a2Done() { return Object.keys(store.done).filter(function (k) { return +k > A1_MAX && +k <= LESSONS.length; }).length; }
+  function a2Complete() { return a2Total() > 0 && a2Done() >= a2Total(); }
 
   /* ---------- storage ---------- */
   var KEY = "esw_progress_v1";
@@ -136,7 +151,9 @@
   store.last = store.last || "";
   store.srs = store.srs || {};         // Leitner SRS per word: { "<en>": { box: 1-5, due: <epoch-day int> } }
   store.certName = store.certName || "";
-  store.certDate = store.certDate || ""; // YYYY-M-D, set once when the course is completed (15/15)
+  store.certDate = store.certDate || ""; // YYYY-M-D, set once when the A0-A1 course is completed (15/15)
+  store.certDateA2 = store.certDateA2 || ""; // YYYY-M-D, set once when the A2 level is completed
+  store.msA2Shown = store.msA2Shown || false; // A2 celebration screen shown once
 
   function todayStr() { var d = new Date(); return d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate(); }
   function bumpStreak() {
@@ -192,6 +209,7 @@
       '<div class="stat"><div class="v">' + studiedWords() + '</div><div class="l">' + t("words_learned") + "</div></div>" +
       '<div class="stat"><div class="v">🔥 ' + store.streak + '</div><div class="l">' + t("streak") + "</div></div>" +
       '<div class="stat"><div class="v">' + done + "/" + LESSONS.length + '</div><div class="l">' + t("lessons_done") + "</div></div></div>";
+    if (LESSONS.length > A1_MAX) h += journeyHTML();
     if (PHRASEBOOK.length) {
       h += '<div class="lesson-card pb-entry" data-nav="phrasebook">' +
         '<div class="num">📒</div>' +
@@ -219,12 +237,19 @@
       '<div class="body"><div class="t">' + t("cert_hub_title") + '</div>' +
       '<div class="s">' + t("cert_hub_sub", a1Done(), Math.min(A1_MAX, LESSONS.length)) + '</div></div>' +
       '<div class="done" style="color:var(--text3)">›</div></div>';
+    if (LESSONS.length > A1_MAX && a1Complete()) {
+      h += '<div class="lesson-card a2" data-nav="cert-a2">' +
+        '<div class="num">🏆</div>' +
+        '<div class="body"><div class="t">' + t("cert_a2_title") + '</div>' +
+        '<div class="s">' + t("cert_a2_sub", a2Done(), a2Total()) + '</div></div>' +
+        '<div class="done" style="color:var(--text3)">›</div></div>';
+    }
     var hasA2 = LESSONS.length > A1_MAX; // only group into levels once A2 lessons exist
     var a2Open = a1Complete();
     LESSONS.forEach(function (les) {
       if (hasA2 && les.id === 1) h += '<div class="level-head">' + t("level_a1") + "</div>";
       if (hasA2 && les.id === A1_MAX + 1) {
-        h += '<div class="level-head">' + t("level_a2") +
+        h += '<div class="level-head a2">' + t("level_a2") +
           (a2Open ? "" : ' <span class="level-lock">' + t("level_a2_locked", A1_MAX) + "</span>") + "</div>";
       }
       if (les.id > A1_MAX && !a2Open) {
@@ -234,12 +259,40 @@
         return;
       }
       var isDone = store.done[les.id];
-      h += '<div class="lesson-card" data-lesson="' + les.id + '">' +
+      h += '<div class="lesson-card' + (les.id > A1_MAX ? " a2" : "") + '" data-lesson="' + les.id + '">' +
         '<div class="num">' + les.id + "</div>" +
         '<div class="body"><div class="t">' + esc(les.title_ru) + "</div></div>" +
         (isDone ? '<div class="done">✓</div>' : '<div class="done" style="color:var(--text3)">›</div>') + "</div>";
     });
     app.innerHTML = h;
+  }
+
+  /* Visual "path" A0–A1 → A2: two level stops with per-level % and a
+     "you are here" marker. Light CSS only (cheap-Android safe). */
+  function journeyHTML() {
+    var a1t = Math.min(A1_MAX, LESSONS.length), a1d = a1Done();
+    var a2t = a2Total(), a2d = a2Done();
+    var a1pct = a1t ? Math.round(a1d / a1t * 100) : 0;
+    var a2pct = a2t ? Math.round(a2d / a2t * 100) : 0;
+    var cur = !a1Complete() ? 1 : (!a2Complete() ? 2 : 0); // current level; 0 = all done
+    function step(n, label, sub, pct, frac, done, locked) {
+      var cls = "jstep lvl" + n + (done ? " done" : "") + (cur === n ? " current" : "") + (locked ? " locked" : "");
+      return '<div class="' + cls + '">' +
+        '<div class="jbadge">' + (done ? "✓" : (locked ? "🔒" : n)) + '</div>' +
+        '<div class="jname">' + label + (cur === n ? ' <span class="jhere">' + t("journey_here") + "</span>" : "") + "</div>" +
+        '<div class="jsub">' + sub + "</div>" +
+        '<div class="jbar"><i style="width:' + pct + '%"></i></div>' +
+        '<div class="jfrac">' + frac + (done ? " ✓" : "") + "</div></div>";
+    }
+    var locked2 = !a1Complete();
+    return '<div class="journey">' +
+      '<div class="jrny-title">' + t("journey_title") +
+        (cur === 0 ? ' <span class="jall">' + t("journey_done_all") + "</span>" : "") + "</div>" +
+      '<div class="jrny-track">' +
+        step(1, t("journey_l1"), "A0–A1", a1pct, a1d + "/" + a1t, a1Complete(), false) +
+        '<div class="jconn' + (a1Complete() ? " on" : "") + '"></div>' +
+        step(2, t("journey_l2"), "A2", a2pct, a2d + "/" + a2t, a2Complete(), locked2) +
+      "</div></div>";
   }
 
   /* ---------- PHRASEBOOK (reference, snowball-exempt) ---------- */
@@ -579,54 +632,62 @@
     var d = parseInt(p[2], 10), m = parseInt(p[1], 10) - 1;
     return d + " " + (CERT_MONTHS[m] || "") + " " + p[0];
   }
-  function certSealSVG() {
+  function certSealSVG(sealText, a2) {
+    var ringDark = a2 ? "#4a2fa0" : "#005bb0", ring = a2 ? "#6b46c1" : "#0075de";
     return '<svg class="cert-seal" viewBox="0 0 120 132" width="88" height="97" role="img" aria-label="Seal">' +
-      '<path d="M46 96 L34 130 L52 118 L60 132 L60 100 Z" fill="#005bb0"/>' +
-      '<path d="M74 96 L86 130 L68 118 L60 132 L60 100 Z" fill="#0075de"/>' +
+      '<path d="M46 96 L34 130 L52 118 L60 132 L60 100 Z" fill="' + ringDark + '"/>' +
+      '<path d="M74 96 L86 130 L68 118 L60 132 L60 100 Z" fill="' + ring + '"/>' +
       '<circle cx="60" cy="56" r="50" fill="#fff8e6" stroke="#c9a227" stroke-width="3"/>' +
       '<circle cx="60" cy="56" r="40" fill="#c9a227"/>' +
       '<circle cx="60" cy="56" r="40" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="1.5 4"/>' +
       '<path d="M42 57 L54 70 L80 42" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>' +
-      '<text x="60" y="92" text-anchor="middle" font-size="13" font-weight="800" fill="#fff" letter-spacing="2" font-family="Georgia, serif">A0–A1</text>' +
+      '<text x="60" y="92" text-anchor="middle" font-size="13" font-weight="800" fill="#fff" letter-spacing="2" font-family="Georgia, serif">' + sealText + '</text>' +
       '</svg>';
   }
 
-  function renderCertificate() {
-    setRoute("cert");
-    // Certificate scope = the A0-A1 course (lessons 1..A1_MAX), independent of any A2 lessons.
-    var total = Math.min(A1_MAX, LESSONS.length);
-    var done = a1Done();
+  // level: "a1" (A0-A1 course, lessons 1..A1_MAX) | "a2" (A2 level, lessons 16..end).
+  // Mirror screens; honest disclaimer, no fake serial number (see certificate-honest-completion-record).
+  function renderCertificate(level) {
+    var a2 = level === "a2";
+    setRoute(a2 ? "cert-a2" : "cert");
+    var total = a2 ? a2Total() : Math.min(A1_MAX, LESSONS.length);
+    var done = a2 ? a2Done() : a1Done();
     var isComplete = total > 0 && done >= total;
+    var dateKey = a2 ? "certDateA2" : "certDate";
+    var hubTitle = a2 ? t("cert_a2_title") : t("cert_hub_title");
+    var lockMsg = a2 ? t("cert_a2_locked", total) : t("cert_locked", total);
 
-    // Before the whole course is finished: show a Russian progress screen, certificate locked.
+    // Before the level is finished: Russian progress screen, certificate locked.
     if (!isComplete) {
       var pct = total ? Math.round(done / total * 100) : 0;
       app.innerHTML = backBtnHTML() +
-        '<div class="hub-head" style="padding-top:46px"><h1>🏆 ' + t("cert_hub_title") + '</h1></div>' +
+        '<div class="hub-head" style="padding-top:46px"><h1>🏆 ' + hubTitle + '</h1></div>' +
         '<div class="bar"><i style="width:' + pct + '%"></i></div>' +
         '<div class="card note" style="text-align:center">' + t("cert_body_progress", done, total) + '</div>' +
-        '<div class="cert-locked">' + t("cert_locked", total) + '</div>' +
+        '<div class="cert-locked">' + lockMsg + '</div>' +
         '<button class="btn ghost" id="cert-hub" style="margin-top:8px">' + t("to_hub") + '</button>';
       document.getElementById("back").onclick = renderHub;
       document.getElementById("cert-hub").onclick = renderHub;
       return;
     }
 
-    if (!store.certDate) { store.certDate = todayStr(); save(store); }
+    if (!store[dateKey]) { store[dateKey] = todayStr(); save(store); }
     var nameVal = store.certName || "";
     var words = studiedWords();
+    var levelLine = a2 ? "Elementary self-study course · CEFR A2 level" : "Beginner self-study course · CEFR A0–A1 level";
+    var courseLine = a2 ? "has completed the elementary self-study course" : "has completed the beginner self-study course";
     app.innerHTML = backBtnHTML() +
-      '<div class="cert cert-full"><div class="cert-frame">' +
-        certSealSVG() +
+      '<div class="cert cert-full' + (a2 ? " a2" : "") + '"><div class="cert-frame">' +
+        certSealSVG(a2 ? "A2" : "A0–A1", a2) +
         '<div class="cert-kicker">Certificate of Completion</div>' +
         '<div class="cert-present">This is to certify that</div>' +
         '<input class="cert-name" id="cert-name" type="text" autocomplete="name" ' +
           'placeholder="' + esc(t("cert_name_hint")) + '" value="' + esc(nameVal) + '">' +
-        '<div class="cert-present">has completed the beginner self-study course</div>' +
+        '<div class="cert-present">' + courseLine + '</div>' +
         '<div class="cert-course">' + esc(t("app_title")) + '</div>' +
-        '<div class="cert-level">Beginner self-study course · CEFR A0–A1 level</div>' +
+        '<div class="cert-level">' + levelLine + '</div>' +
         '<div class="cert-meta">' + total + ' lessons completed · ' + words + ' words learned</div>' +
-        '<div class="cert-foot"><div class="cert-foot-col"><div class="cert-foot-v">' + fmtCertDate(store.certDate) + '</div><div class="cert-foot-l">Date completed</div></div></div>' +
+        '<div class="cert-foot"><div class="cert-foot-col"><div class="cert-foot-v">' + fmtCertDate(store[dateKey]) + '</div><div class="cert-foot-l">Date completed</div></div></div>' +
         '<div class="cert-issuer">English for Seasonal Workers · Free self-study app</div>' +
         '<div class="cert-disc">A record of completing a free self-study course. Not an official language qualification, exam, or proof of English level.</div>' +
         '<div class="cert-disc cert-disc-ru">Отметка о прохождении бесплатного самостоятельного курса. Не официальная квалификация, не экзамен и не подтверждение уровня английского.</div>' +
@@ -642,6 +703,19 @@
       save(store);
     };
     document.getElementById("cert-print").onclick = function () { window.print(); };
+  }
+
+  /* Celebration screen shown once when the A2 level is completed (last lesson). */
+  function renderMilestone() {
+    setRoute("");
+    app.innerHTML =
+      '<div class="milestone"><div class="ms-burst">🎉</div>' +
+        '<h1>' + t("ms_a2_title") + '</h1>' +
+        '<p>' + t("ms_a2_sub", a2Total()) + '</p>' +
+        '<button class="btn" id="ms-cert">' + t("ms_a2_cert") + '</button>' +
+        '<button class="btn ghost" id="ms-hub">' + t("ms_continue") + '</button></div>';
+    document.getElementById("ms-cert").onclick = function () { renderCertificate("a2"); };
+    document.getElementById("ms-hub").onclick = renderHub;
   }
 
   /* ---------- LESSON ---------- */
@@ -1034,6 +1108,11 @@
     }
     function finishMastered() {
       store.done[les.id] = true; bumpStreak(); save(store);
+      // Completing the final A2 lesson → celebration screen (once).
+      if (les.id > A1_MAX && a2Complete() && !store.msA2Shown) {
+        store.msA2Shown = true; save(store);
+        renderMilestone(); return;
+      }
       root.innerHTML = '<div class="card result"><div class="score">🎉</div>' +
         "<h3>" + t("done_banner") + "</h3>" +
         '<div class="q-hint">' + t("mastered_note") + "</div>" +
@@ -1053,6 +1132,7 @@
       else if (nav.dataset.nav === "library") renderLibrary();
       else if (nav.dataset.nav === "review") renderReview();
       else if (nav.dataset.nav === "cert") renderCertificate();
+      else if (nav.dataset.nav === "cert-a2") renderCertificate("a2");
       return;
     }
     var card = e.target.closest("[data-lesson]");
@@ -1087,6 +1167,7 @@
     if (h === "phrasebook") { renderPhrasebook(); return; }
     if (h === "review") { renderReview(); return; }
     if (h === "cert") { renderCertificate(); return; }
+    if (h === "cert-a2") { renderCertificate("a2"); return; }
     renderHub();
   }
   window.addEventListener("hashchange", route);

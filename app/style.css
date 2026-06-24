@@ -9,6 +9,8 @@
   --border: #e8eaed;
   --accent: #0075de;
   --accent-soft: #eaf3fd;
+  --accent-a2: #6b46c1;        /* Level 2 (A2) accent — visually distinct from A0–A1 blue */
+  --accent-a2-soft: #f0ebfb;
   --ok: #1aaf5d;
   --ok-soft: #e7f7ee;
   --no: #e23b3b;
@@ -43,6 +45,50 @@ body {
 }
 .stat .v { font-size: 20px; font-weight: 700; }
 .stat .l { font-size: 11px; color: var(--text3); margin-top: 2px; }
+
+/* ---------- Journey ("Ваш путь": A0–A1 → A2) ---------- */
+.journey {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 14px 14px 16px; margin: 14px 0;
+  box-shadow: 0 1px 3px rgba(20,20,46,.05);
+}
+.jrny-title { font-size: 13px; font-weight: 800; color: var(--text2); margin-bottom: 12px; }
+.jall { font-weight: 700; color: var(--ok); }
+.jrny-track { display: flex; align-items: flex-start; }
+.jstep { flex: 1; min-width: 0; text-align: center; }
+.jconn { flex: 0 0 22px; height: 3px; border-radius: 99px; background: var(--border); margin-top: 18px; }
+.jconn.on { background: var(--ok); }
+.jbadge {
+  width: 38px; height: 38px; margin: 0 auto 6px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; font-weight: 800; color: #fff; background: var(--accent);
+}
+.jstep.lvl2 .jbadge { background: var(--accent-a2); }
+.jstep.done .jbadge { background: var(--ok); }
+.jstep.locked .jbadge { background: var(--text3); }
+.jstep.current .jbadge { box-shadow: 0 0 0 4px var(--accent-soft); }
+.jstep.lvl2.current .jbadge { box-shadow: 0 0 0 4px var(--accent-a2-soft); }
+.jname { font-size: 13px; font-weight: 700; }
+.jhere { display: inline-block; font-size: 10px; font-weight: 700; color: var(--accent); }
+.jstep.lvl2 .jhere { color: var(--accent-a2); }
+.jsub { font-size: 11px; color: var(--text3); margin: 1px 0 6px; }
+.jbar { height: 6px; background: var(--border); border-radius: 99px; overflow: hidden; margin: 0 8px; }
+.jbar > i { display: block; height: 100%; background: var(--accent); transition: width .5s; }
+.jstep.lvl2 .jbar > i { background: var(--accent-a2); }
+.jstep.done .jbar > i { background: var(--ok); }
+.jfrac { font-size: 11px; font-weight: 700; color: var(--text2); margin-top: 4px; }
+
+/* ---------- A2 level accent (Level 2 lessons & headings) ---------- */
+.level-head.a2 { color: var(--accent-a2); }
+.lesson-card.a2 { border-left-color: var(--accent-a2); }
+.lesson-card.a2 .num { background: var(--accent-a2-soft); color: var(--accent-a2); }
+
+/* ---------- Milestone (A2 level complete) ---------- */
+.milestone { text-align: center; padding: 40px 16px; }
+.ms-burst { font-size: 64px; line-height: 1; animation: ms-pop .5s ease-out; }
+@keyframes ms-pop { 0% { transform: scale(.4); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+.milestone h1 { font-size: 24px; margin: 14px 0 8px; color: var(--accent-a2); }
+.milestone p { color: var(--text2); font-size: 15px; margin: 0 0 22px; }
 
 .lesson-card {
   display: flex; align-items: center; gap: 12px; background: var(--card);
@@ -239,6 +285,7 @@ code { background: var(--accent-soft); color: var(--text); padding: 1px 5px; bor
   background: transparent; color: #1a1a2e; outline: none; display: block; margin: 6px 0 10px;
 }
 .cert-course { font-size: 20px; font-weight: 700; color: var(--accent); margin: 8px 0 2px; }
+.cert.a2 .cert-course { color: var(--accent-a2); }
 .cert-level { font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #b58a1b; margin-bottom: 12px; }
 .cert-meta { font-size: 13px; color: #4a4a57; margin-bottom: 16px; }
 .cert-foot { display: flex; justify-content: center; margin-top: 10px; border-top: 1px solid #ecdca0; padding-top: 12px; }
