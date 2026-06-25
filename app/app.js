@@ -156,6 +156,12 @@
     if (store.collapsed && typeof store.collapsed[level] === "boolean") return store.collapsed[level];
     return complete; // default: collapsed iff that level is fully done
   }
+  function lessonsWord(n) { // Russian plural for "урок"
+    var m10 = n % 10, m100 = n % 100;
+    if (m10 === 1 && m100 !== 11) return "урок";
+    if (m10 >= 2 && m10 <= 4 && (m100 < 12 || m100 > 14)) return "урока";
+    return "уроков";
+  }
 
   /* ---------- storage ---------- */
   var KEY = "esw_progress_v1";
@@ -288,8 +294,12 @@
       ];
       sections.forEach(function (sec) {
         var collapsed = levelCollapsed(sec.level, sec.complete);
-        h += '<div class="level-head lvl-toggle' + sec.cls + '" data-level="' + sec.level + '">' +
-          '<span class="lvl-chev">' + (collapsed ? "▸" : "▾") + "</span> " + sec.head + "</div>";
+        var count = sec.hi - sec.lo + 1;
+        h += '<div class="level-head lvl-toggle' + sec.cls + (collapsed ? "" : " open") + '" data-level="' + sec.level + '">' +
+          '<span class="lvl-chev">›</span>' +
+          '<span class="lvl-title">' + sec.head + "</span>" +
+          '<span class="lvl-count">' + count + " " + lessonsWord(count) + "</span>" +
+          "</div>";
         h += '<div class="level-group' + (collapsed ? " collapsed" : "") + '" data-group="' + sec.level + '">';
         LESSONS.forEach(function (les) { if (les.id >= sec.lo && les.id <= sec.hi) h += lessonCardHTML(les); });
         h += "</div>";
@@ -304,7 +314,7 @@
         var grp = app.querySelector('.level-group[data-group="' + level + '"]');
         if (!grp) return;
         var nowCollapsed = grp.classList.toggle("collapsed");
-        head.querySelector(".lvl-chev").textContent = nowCollapsed ? "▸" : "▾";
+        head.classList.toggle("open", !nowCollapsed);
         store.collapsed = store.collapsed || {};
         store.collapsed[level] = nowCollapsed;
         save(store);

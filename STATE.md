@@ -619,3 +619,8 @@
 пройденный уровень свёрнут по умолчанию, клик по заголовку (▸/▾) — тоггл, состояние в `store.collapsed[level]`**
 (`levelCollapsed()` + `.level-group.collapsed`/`.lvl-toggle` в `style.css`); уроки внутри обёртки кликабельны
 (делегирование `closest('[data-lesson]')`), проверено в превью + сохранение после перезагрузки, v76→**v77**.
+**(4) Стилизация аккордеона уровней (`.lvl-toggle` → карточка):** фон/рамка/скругление/hover (accent-soft, для A2 — accent-a2-soft),
+вращающийся шеврон `›`→90° (`.lvl-toggle.open .lvl-chev`; **грабля: `transform` на inline-`<span>` не действует → добавлен
+`display:inline-block`**), счётчик-бейдж «N уроков» (рус. плюрал `lessonsWord()`). Проверено: карточный вид, поворот шеврона,
+раскрытие, 0 ошибок консоли. v77→**v79** (v78 — стиль без `inline-block`-фикса). ⚠️ В превью SW кэширует `style.css` —
+для проверки CSS-правок нужен unregister SW + clear caches + hard reload (на реальном устройстве бамп `CACHE_VERSION` форсит).

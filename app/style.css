@@ -303,8 +303,27 @@ code { background: var(--accent-soft); color: var(--text); padding: 1px 5px; bor
 .lesson-card.locked .num { background: var(--border); color: var(--text3); }
 .level-head { font-size: 12px; font-weight: 800; color: var(--text2); text-transform: uppercase; letter-spacing: .05em; margin: 22px 2px 8px; }
 .level-lock { font-weight: 600; color: var(--text3); text-transform: none; letter-spacing: 0; }
-.lvl-toggle { cursor: pointer; user-select: none; display: flex; align-items: center; gap: 6px; min-height: 32px; }
-.lvl-chev { font-size: 10px; color: var(--text3); width: 12px; display: inline-block; }
+.lvl-toggle {
+  cursor: pointer; user-select: none; display: flex; align-items: center; gap: 9px;
+  background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+  padding: 12px 14px; margin: 18px 0 8px; box-shadow: 0 1px 3px rgba(20,20,46,.05);
+  transition: background .12s ease, box-shadow .12s ease;
+}
+.lvl-toggle:hover { background: var(--accent-soft); }
+.lvl-toggle.a2:hover { background: var(--accent-a2-soft); }
+.lvl-toggle:active { transform: scale(.992); }
+.lvl-chev {
+  font-size: 19px; font-weight: 800; line-height: 1; color: var(--accent);
+  width: 14px; text-align: center; display: inline-block; transition: transform .15s ease;
+}
+.lvl-toggle.a2 .lvl-chev { color: var(--accent-a2); }
+.lvl-toggle.open .lvl-chev { transform: rotate(90deg); }
+.lvl-title { flex: 1; }
+.lvl-count {
+  text-transform: none; letter-spacing: 0; font-size: 11px; font-weight: 700;
+  color: var(--accent); background: var(--accent-soft); border-radius: 999px; padding: 3px 10px;
+}
+.lvl-toggle.a2 .lvl-count { color: var(--accent-a2); background: var(--accent-a2-soft); }
 .level-group.collapsed { display: none; }
 
 .reader-text { padding: 4px 14px; }
