@@ -746,7 +746,6 @@
       '<circle cx="60" cy="56" r="40" fill="#c9a227"/>' +
       '<circle cx="60" cy="56" r="40" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="1.5 4"/>' +
       '<path d="M42 57 L54 70 L80 42" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>' +
-      '<text x="60" y="92" text-anchor="middle" font-size="13" font-weight="800" fill="#fff" letter-spacing="2" font-family="Georgia, serif">' + sealText + '</text>' +
       '</svg>';
   }
 
