@@ -92,6 +92,8 @@
       journey_done_all: "🎓 Оба уровня пройдены!",
       cert_a2_title: "Сертификат A2",
       cert_a2_sub: "{0} из {1} уроков уровня 2",
+      cert_see_a2: "🏆 Сертификат A2 (Уровень 2)",
+      cert_see_a1: "🏆 Сертификат A0–A1 (Уровень 1)",
       cert_a2_locked: "🔒 Пройдите все {0} уроков уровня 2 — и получите именной сертификат A2.",
       ms_a2_title: "🎉 Уровень 2 пройден!",
       ms_a2_sub: "Вы прошли все {0} уроков уровня A2. Это большой шаг — поздравляем!",
@@ -250,13 +252,6 @@
       '<div class="body"><div class="t">' + t("cert_hub_title") + '</div>' +
       '<div class="s">' + t("cert_hub_sub", a1Done(), Math.min(A1_MAX, LESSONS.length)) + '</div></div>' +
       '<div class="done" style="color:var(--text3)">›</div></div>';
-    if (LESSONS.length > A1_MAX && a1Complete()) {
-      h += '<div class="lesson-card a2" data-nav="cert-a2">' +
-        '<div class="num">🏆</div>' +
-        '<div class="body"><div class="t">' + t("cert_a2_title") + '</div>' +
-        '<div class="s">' + t("cert_a2_sub", a2Done(), a2Total()) + '</div></div>' +
-        '<div class="done" style="color:var(--text3)">›</div></div>';
-    }
     var hasA2 = LESSONS.length > A1_MAX; // only group into levels once A2 lessons exist
     var a2Open = a1Complete();
     LESSONS.forEach(function (les) {
@@ -766,6 +761,17 @@
     var dateKey = a2 ? "certDateA2" : "certDate";
     var hubTitle = a2 ? t("cert_a2_title") : t("cert_hub_title");
     var lockMsg = a2 ? t("cert_a2_locked", total) : t("cert_locked", total);
+    // Cross-link: from "Мой прогресс" (A0-A1) reach the A2 certificate, and back.
+    // A2 cert lives here now, not as its own hub tile.
+    var showCross = a2 ? true : (LESSONS.length > A1_MAX && a1Complete());
+    var crossBtnHTML = showCross
+      ? '<button class="btn ghost' + (a2 ? "" : " a2") + '" id="cert-cross" style="margin-top:8px">' +
+          t(a2 ? "cert_see_a1" : "cert_see_a2") + '</button>'
+      : "";
+    function wireCross() {
+      var cx = document.getElementById("cert-cross");
+      if (cx) cx.onclick = function () { renderCertificate(a2 ? undefined : "a2"); };
+    }
 
     // Before the level is finished: Russian progress screen, certificate locked.
     if (!isComplete) {
@@ -775,9 +781,11 @@
         '<div class="bar"><i style="width:' + pct + '%"></i></div>' +
         '<div class="card note" style="text-align:center">' + t("cert_body_progress", done, total) + '</div>' +
         '<div class="cert-locked">' + lockMsg + '</div>' +
+        crossBtnHTML +
         '<button class="btn ghost" id="cert-hub" style="margin-top:8px">' + t("to_hub") + '</button>';
       document.getElementById("back").onclick = renderHub;
       document.getElementById("cert-hub").onclick = renderHub;
+      wireCross();
       return;
     }
 
@@ -804,8 +812,10 @@
       '</div></div>' +
       '<div class="cert-hint-ru">' + t("cert_name_caption") + '</div>' +
       '<button class="btn" id="cert-print" style="margin-top:14px">' + t("cert_print") + '</button>' +
+      crossBtnHTML +
       '<button class="btn ghost" id="cert-hub" style="margin-top:8px">' + t("to_hub") + '</button>';
 
+    wireCross();
     document.getElementById("back").onclick = renderHub;
     document.getElementById("cert-hub").onclick = renderHub;
     document.getElementById("cert-name").oninput = function (e) {
