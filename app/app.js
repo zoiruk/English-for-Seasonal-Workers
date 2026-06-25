@@ -492,6 +492,14 @@
      store.words / SRS (passive recognition only). */
   function bookById(id) { return BOOKS.filter(function (b) { return b.id === id; })[0]; }
   function chapterIn(book, id) { return (book.chapters || []).filter(function (c) { return c.id === id; })[0]; }
+  // A book is either snowball-gated (chapter N unlocks after lesson N, default) or
+  // "fixed level": book.gate = the single lesson id that unlocks ALL its chapters at
+  // once (e.g. 15 = after A0-A1). read-tracking is book-scoped (store.read["<book>:<ch>"])
+  // so chapters that share an id across books don't collide.
+  function chGate(book, ch) { return book.gate != null ? book.gate : ch.id; }
+  function chUnlocked(book, ch) { return !!store.done[chGate(book, ch)]; }
+  function rKey(book, ch) { return book.id + ":" + ch.id; }
+  function chRead(book, ch) { return !!(store.read && store.read[rKey(book, ch)]); }
 
   /* gloss popup state (lives on <body>, so it survives app.innerHTML swaps -> close it explicitly) */
   var glossPop = null, glossDismiss = null;
@@ -556,8 +564,8 @@
     h += '<div class="card note">' + t("reader_lib_hint") + "</div>";
     BOOKS.forEach(function (bk) {
       var chs = bk.chapters || [];
-      var open = chs.filter(function (c) { return store.done[c.id]; }).length;
-      var readN = chs.filter(function (c) { return store.read && store.read[c.id]; }).length;
+      var open = chs.filter(function (c) { return chUnlocked(bk, c); }).length;
+      var readN = chs.filter(function (c) { return chRead(bk, c); }).length;
       var allRead = chs.length && readN === chs.length;
       h += '<div class="lesson-card" data-book="' + esc(bk.id) + '">' +
         '<div class="num">' + bk.emoji + "</div>" +
@@ -579,20 +587,20 @@
     var h = backBtnHTML() +
       '<div class="hub-head" style="padding-top:46px"><h1>📖 ' + esc(book.title_ru) + "</h1><p>" + esc(book.sub_ru || "") + "</p></div>";
     h += '<div class="card note">' + t("reader_hint_list") + "</div>";
-    (book.chapters || []).forEach(function (c) {
-      var unlocked = !!store.done[c.id];
-      var read = store.read && store.read[c.id];
+    (book.chapters || []).forEach(function (c, i) {
+      var unlocked = chUnlocked(book, c);
+      var read = chRead(book, c);
       if (unlocked) {
         h += '<div class="lesson-card" data-reader="' + c.id + '">' +
           '<div class="num">' + c.emoji + "</div>" +
           '<div class="body"><div class="t">' + esc(c.title_ru) + "</div>" +
-          '<div class="s">' + t("reader_chapter", c.id) + (read ? " · ✓ " + t("reader_read_badge") : "") + "</div></div>" +
+          '<div class="s">' + t("reader_chapter", i + 1) + (read ? " · ✓ " + t("reader_read_badge") : "") + "</div></div>" +
           (read ? '<div class="done">✓</div>' : '<div class="done" style="color:var(--text3)">›</div>') + "</div>";
       } else {
         h += '<div class="lesson-card locked">' +
           '<div class="num">🔒</div>' +
           '<div class="body"><div class="t">' + esc(c.title_ru) + "</div>" +
-          '<div class="s">' + t("reader_locked", c.id) + "</div></div>" +
+          '<div class="s">' + t("reader_locked", chGate(book, c)) + "</div></div>" +
           '<div class="done" style="color:var(--text3)">🔒</div></div>';
       }
     });
@@ -605,7 +613,7 @@
 
   function renderChapter(ch, book) {
     closeGloss();
-    if (!store.done[ch.id]) { renderReaderList(book); return; }   // locked chapters can't be opened directly
+    if (!chUnlocked(book, ch)) { renderReaderList(book); return; }   // locked chapters can't be opened directly
     setRoute("book/" + book.id + "/" + ch.id);
     var h = backBtnHTML() +
       '<div class="l-head"><span class="pos">' + ch.emoji + "</span>" +
@@ -686,12 +694,12 @@
   function finishChapter(ch, book) {
     closeGloss();
     store.read = store.read || {};
-    var first = !store.read[ch.id];
-    store.read[ch.id] = true;
+    var first = !chRead(book, ch);
+    store.read[rKey(book, ch)] = true;
     if (first) bumpStreak();
     save(store);
     setRoute("book/" + book.id + "/" + ch.id);
-    var next = (book.chapters || []).filter(function (c) { return c.id > ch.id && store.done[c.id]; })
+    var next = (book.chapters || []).filter(function (c) { return c.id > ch.id && chUnlocked(book, c); })
       .sort(function (a, b) { return a.id - b.id; })[0];
     var h = backBtnHTML() +
       '<div class="hub-head" style="padding-top:46px"><h1>🎉</h1><p>' + t("reader_done") + "</p></div>" +

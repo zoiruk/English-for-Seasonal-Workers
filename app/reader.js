@@ -776,8 +776,196 @@
     },
   ];
 
-  // Library = shelf of books. One book now ("История Ахмада"); the structure is
-  // ready to hold more later. Chapters keep id == lesson id (the unlock gate).
+  // Second book: a "fixed level" reader (book.gate = 15 unlocks ALL chapters at once,
+  // after the A0-A1 course; book.level = 15 = vocabulary cap = union of lessons 1..15).
+  // A parallel story about Fatima (a woman seasonal worker; "fatima" is in NAMES).
+  // Chapter ids are unique WITHIN this book (1..N); read-tracking is book-scoped.
+  const MADINA = [
+    {
+      id: 1,
+      emoji: "🧳",
+      title_ru: "Мадина приезжает",
+      title_en: "Madina arrives",
+      sentences: [
+        { en: "Hello! I am Madina.", ru: "Привет! Я — Мадина." },
+        { en: "I am from Tajikistan.", ru: "Я из Таджикистана." },
+        { en: "I am a worker.", ru: "Я рабочая." },
+        { en: "This is a big farm.", ru: "Это большая ферма." },
+        { en: "Tom is the manager.", ru: "Том — менеджер." },
+        { en: '"Good morning, Madina! Welcome!"', ru: "«Доброе утро, Мадина! Добро пожаловать!»" },
+        { en: "Madina is a new picker.", ru: "Мадина — новая сборщица." },
+        { en: "Anna is a packer.", ru: "Анна — упаковщица." },
+        { en: "Anna is her friend now.", ru: "Теперь Анна — её подруга." },
+        { en: "Madina looks at the big field.", ru: "Мадина смотрит на большое поле." },
+        { en: "The work is new here.", ru: "Работа здесь новая." },
+        { en: "Madina is happy.", ru: "Мадина рада." },
+        { en: '"You are welcome, Madina!"', ru: "«Тебе здесь рады, Мадина!»" },
+      ],
+      glossary: [
+        { en: "big", transcr: "биг", ru: "большой", pn: "/bɪɡ/" },
+        { en: "new", transcr: "нью", ru: "новый", pn: "/njuː/" },
+      ],
+      quiz: [
+        { q_ru: "Откуда приехала Мадина?", opts_ru: ["Из Таджикистана", "Из Британии", "Из Казахстана", "Из Узбекистана"], c: 0 },
+        { q_ru: "Кто Мадина на ферме?", opts_ru: ["Сборщица", "Менеджер", "Водитель", "Повар"], c: 0 },
+        { q_ru: "Кто стал её подругой?", opts_ru: ["Анна", "Том", "Джон", "Али"], c: 0 },
+      ],
+    },
+    {
+      id: 2,
+      emoji: "👨‍👩‍👧",
+      title_ru: "Семья Мадины",
+      title_en: "Madina's family",
+      sentences: [
+        { en: "Madina has a family in Tajikistan.", ru: "У Мадины семья в Таджикистане." },
+        { en: "Her mother is kind.", ru: "Её мама добрая." },
+        { en: "Her father is a farmer.", ru: "Её папа — фермер." },
+        { en: "Madina has one son and one daughter.", ru: "У Мадины один сын и одна дочь." },
+        { en: "Her son is small.", ru: "Её сын маленький." },
+        { en: "Madina works on the farm in Britain.", ru: "Мадина работает на ферме в Британии." },
+        { en: "She sends money to her family.", ru: "Она отправляет деньги семье." },
+        { en: '"I love my family!"', ru: "«Я люблю свою семью!»" },
+        { en: "Madina talks to her mother on the phone.", ru: "Мадина говорит с мамой по телефону." },
+        { en: '"Good morning, Mother!"', ru: "«Доброе утро, мама!»" },
+        { en: "Her mother is happy.", ru: "Её мама рада." },
+        { en: "Madina is a good mother.", ru: "Мадина — хорошая мать." },
+      ],
+      glossary: [
+        { en: "kind", transcr: "кайнд", ru: "добрый", pn: "/kaɪnd/" },
+        { en: "small", transcr: "смол", ru: "маленький", pn: "/smɔːl/" },
+      ],
+      quiz: [
+        { q_ru: "Где семья Мадины?", opts_ru: ["В Таджикистане", "В Британии", "В Казахстане", "На ферме"], c: 0 },
+        { q_ru: "Сколько детей у Мадины?", opts_ru: ["Сын и дочь", "Только сын", "Трое", "Нет детей"], c: 0 },
+        { q_ru: "Как Мадина говорит с мамой?", opts_ru: ["По телефону", "Письмом", "Лично", "Никак"], c: 0 },
+      ],
+    },
+    {
+      id: 3,
+      emoji: "🧺",
+      title_ru: "Первый рабочий день",
+      title_en: "The first work day",
+      sentences: [
+        { en: "Today is a work day.", ru: "Сегодня рабочий день." },
+        { en: "Madina picks berries in the field.", ru: "Мадина собирает ягоды в поле." },
+        { en: "She fills a punnet.", ru: "Она наполняет корзинку." },
+        { en: "The punnet is full.", ru: "Корзинка полная." },
+        { en: "Madina packs the boxes.", ru: "Мадина упаковывает коробки." },
+        { en: "Anna helps her.", ru: "Анна ей помогает." },
+        { en: '"You are fast, Madina!"', ru: "«Ты быстрая, Мадина!»" },
+        { en: "Madina lifts the crate.", ru: "Мадина поднимает ящик." },
+        { en: "The crate is heavy.", ru: "Ящик тяжёлый." },
+        { en: "She works quickly.", ru: "Она работает быстро." },
+        { en: "It is a long day.", ru: "Это долгий день." },
+        { en: "Madina is tired.", ru: "Мадина устала." },
+        { en: '"Good work, Madina!"', ru: "«Хорошая работа, Мадина!»" },
+      ],
+      glossary: [
+        { en: "fast", transcr: "фаст", ru: "быстрый", pn: "/fɑːst/" },
+        { en: "quickly", transcr: "куикли", ru: "быстро", pn: "/ˈkwɪkli/" },
+        { en: "long", transcr: "лонг", ru: "долгий, длинный", pn: "/lɒŋ/" },
+      ],
+      quiz: [
+        { q_ru: "Что собирает Мадина?", opts_ru: ["Ягоды", "Яблоки", "Картошку", "Цветы"], c: 0 },
+        { q_ru: "Кто помогает Мадине?", opts_ru: ["Анна", "Том", "Мама", "Джон"], c: 0 },
+        { q_ru: "Какой ящик?", opts_ru: ["Тяжёлый", "Пустой", "Маленький", "Сломанный"], c: 0 },
+      ],
+    },
+    {
+      id: 4,
+      emoji: "🛏️",
+      title_ru: "Комната Мадины",
+      title_en: "Madina's room",
+      sentences: [
+        { en: "Madina has a room in the camp.", ru: "У Мадины комната в кэмпе." },
+        { en: "There is a bed and a chair.", ru: "Там кровать и стул." },
+        { en: "There is a small heater.", ru: "Там маленький обогреватель." },
+        { en: "The room is cold.", ru: "В комнате холодно." },
+        { en: "Madina turns on the heater.", ru: "Мадина включает обогреватель." },
+        { en: "Now the room is warm.", ru: "Теперь в комнате тепло." },
+        { en: "There is a kettle and a fridge.", ru: "Там чайник и холодильник." },
+        { en: "Madina has tea.", ru: "Мадина пьёт чай." },
+        { en: "The room is clean and tidy.", ru: "Комната чистая и опрятная." },
+        { en: "Her bag is on the bed.", ru: "Её сумка на кровати." },
+        { en: '"I want to rest."', ru: "«Я хочу отдохнуть.»" },
+        { en: "The bed is warm.", ru: "Кровать тёплая." },
+        { en: "Madina is happy in her room.", ru: "Мадина рада в своей комнате." },
+      ],
+      glossary: [
+        { en: "small", transcr: "смол", ru: "маленький", pn: "/smɔːl/" },
+        { en: "warm", transcr: "уорм", ru: "тёплый", pn: "/wɔːm/" },
+        { en: "tidy", transcr: "тайди", ru: "опрятный, прибранный", pn: "/ˈtaɪdi/" },
+      ],
+      quiz: [
+        { q_ru: "Что Мадина включает?", opts_ru: ["Обогреватель", "Свет", "Телефон", "Чайник"], c: 0 },
+        { q_ru: "Какая комната после обогревателя?", opts_ru: ["Тёплая", "Холодная", "Грязная", "Пустая"], c: 0 },
+        { q_ru: "Что хочет Мадина?", opts_ru: ["Отдохнуть", "Работать", "Готовить", "Гулять"], c: 0 },
+      ],
+    },
+    {
+      id: 5,
+      emoji: "🛒",
+      title_ru: "В магазине",
+      title_en: "In the shop",
+      sentences: [
+        { en: "Madina is in the shop.", ru: "Мадина в магазине." },
+        { en: "She has a shopping list.", ru: "У неё список покупок." },
+        { en: "Madina buys bread and milk.", ru: "Мадина покупает хлеб и молоко." },
+        { en: "She buys rice and eggs.", ru: "Она покупает рис и яйца." },
+        { en: "The bread is fresh.", ru: "Хлеб свежий." },
+        { en: "Madina looks at the price.", ru: "Мадина смотрит на цену." },
+        { en: '"How much is the milk?"', ru: "«Сколько стоит молоко?»" },
+        { en: '"It is one pound."', ru: "«Один фунт.»" },
+        { en: "Madina gives the money.", ru: "Мадина отдаёт деньги." },
+        { en: "The food is cheap.", ru: "Еда недорогая." },
+        { en: "Madina takes the bag.", ru: "Мадина берёт сумку." },
+        { en: "She walks to the camp.", ru: "Она идёт в кэмп." },
+        { en: '"Thanks!"', ru: "«Спасибо!»" },
+      ],
+      glossary: [
+        { en: "fresh", transcr: "фрэш", ru: "свежий", pn: "/freʃ/" },
+        { en: "cheap", transcr: "чип", ru: "дешёвый, недорогой", pn: "/tʃiːp/" },
+      ],
+      quiz: [
+        { q_ru: "Что покупает Мадина?", opts_ru: ["Хлеб и молоко", "Мясо и рыбу", "Чай и кофе", "Овощи"], c: 0 },
+        { q_ru: "Какой хлеб?", opts_ru: ["Свежий", "Старый", "Дорогой", "Чёрствый"], c: 0 },
+        { q_ru: "Сколько стоит молоко?", opts_ru: ["Один фунт", "Два фунта", "Пять фунтов", "Бесплатно"], c: 0 },
+      ],
+    },
+    {
+      id: 6,
+      emoji: "🤝",
+      title_ru: "Хороший день",
+      title_en: "A good day",
+      sentences: [
+        { en: "It is Sunday.", ru: "Воскресенье." },
+        { en: "Madina is free today.", ru: "Сегодня Мадина свободна." },
+        { en: "Anna is her friend.", ru: "Анна — её подруга." },
+        { en: "They walk together.", ru: "Они гуляют вместе." },
+        { en: "Madina and Anna talk.", ru: "Мадина и Анна болтают." },
+        { en: '"I like this farm."', ru: "«Мне нравится эта ферма.»" },
+        { en: '"I like my friends."', ru: "«Мне нравятся мои друзья.»" },
+        { en: "They have tea together.", ru: "Они пьют чай вместе." },
+        { en: "The day is lovely.", ru: "День прекрасный." },
+        { en: "Madina is happy here.", ru: "Мадина счастлива здесь." },
+        { en: '"This is a good day!"', ru: "«Это хороший день!»" },
+        { en: "Madina learns English.", ru: "Мадина учит английский." },
+        { en: '"I am happy here!"', ru: "«Я счастлива здесь!»" },
+      ],
+      glossary: [
+        { en: "together", transcr: "тэгэзэ", ru: "вместе", pn: "/təˈɡeðə/" },
+        { en: "learn", transcr: "лён", ru: "учить, учиться", pn: "/lɜːn/" },
+      ],
+      quiz: [
+        { q_ru: "Какой это день?", opts_ru: ["Воскресенье", "Понедельник", "Рабочий день", "Пятница"], c: 0 },
+        { q_ru: "Что делают Мадина и Анна?", opts_ru: ["Гуляют и пьют чай", "Работают", "Спят", "Готовят"], c: 0 },
+        { q_ru: "Что учит Мадина?", opts_ru: ["Английский", "Математику", "Ничего", "Русский"], c: 0 },
+      ],
+    },
+  ];
+
+  // Library = shelf of books. Chapters keep a per-book id; "ahmad" is snowball-gated
+  // (chapter N unlocks after lesson N), "madina" is a fixed-level book (gate/level = 15).
   const BOOKS = [
     {
       id: "ahmad",
@@ -786,6 +974,16 @@
       title_en: "Ahmad's story",
       sub_ru: "Сезон на ферме — глава за главой",
       chapters: READER,
+    },
+    {
+      id: "madina",
+      emoji: "🧕",
+      title_ru: "История Мадины",
+      title_en: "Madina's story",
+      sub_ru: "Первый сезон Мадины · уровень A1",
+      gate: 15,   // unlocks as a whole after the A0-A1 course (lesson 15)
+      level: 15,  // vocabulary cap = union of lessons 1..15 (fixed A1)
+      chapters: MADINA,
     },
   ];
 

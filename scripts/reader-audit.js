@@ -16,8 +16,10 @@ function loadReader() {
     console.error("app/reader.js must module.exports an array of books");
     process.exit(1);
   }
-  // flatten the shelf -> chapters (the audit runs per chapter; id == lesson id)
-  return BOOKS.reduce((all, b) => all.concat(b.chapters || []), []);
+  // keep book context: each chapter's snowball cap is book.level (fixed-level book)
+  // or, by default, the chapter's own id (snowball-gated book like Ahmad's).
+  return BOOKS.reduce((all, b) =>
+    all.concat((b.chapters || []).map((c) => ({ ch: c, cap: b.level != null ? b.level : c.id, gate: b.gate != null ? b.gate : c.id }))), []);
 }
 
 const LESSONS = loadLessons();
@@ -25,17 +27,20 @@ const READER = loadReader();
 const errors = [];
 const push = (ch, field, msg) => errors.push({ lesson: ch, field, msg });
 
-for (const ch of READER) {
+for (const entry of READER) {
+  const ch = entry.ch;
   const id = ch.id;
+  const cap = entry.cap;   // vocabulary cap = lessons 1..cap
+  const gate = entry.gate; // lesson id whose completion unlocks this chapter
 
-  // --- vocabulary known up to and including lesson N (raw + stemmed) ---
+  // --- vocabulary known up to and including lesson `cap` (raw + stemmed) ---
   const known = new Set();
-  LESSONS.filter((l) => l.id <= id).forEach((l) =>
+  LESSONS.filter((l) => l.id <= cap).forEach((l) =>
     (l.words || []).forEach((x) =>
       tokenize(x.en).forEach((t) => { known.add(t); known.add(stem(t)); })
     )
   );
-  const wl = activeWhitelist(id);
+  const wl = activeWhitelist(cap);
 
   // --- glossary: <=5, full fields, single word, used in the story ---
   const gloss = ch.glossary || [];
@@ -60,7 +65,7 @@ for (const ch of READER) {
     if (!s.en) push(id, `sentences[${i}].en`, "missing");
     if (!s.ru) push(id, `sentences[${i}].ru`, "missing");
     tokenize(s.en).forEach((t) => {
-      if (!allowed(t)) push(id, `sentences[${i}]`, `unknown word "${t}" (not in lessons 1..${id} + whitelist + glossary)`);
+      if (!allowed(t)) push(id, `sentences[${i}]`, `unknown word "${t}" (not in lessons 1..${cap} + whitelist + glossary)`);
       if (glossSet.has(t) || glossSet.has(stem(t))) { usedGloss.add(t); usedGloss.add(stem(t)); }
     });
   });
@@ -82,8 +87,8 @@ for (const ch of READER) {
       push(id, `quiz[${i}].c`, `index ${x.c} out of range`);
   });
 
-  // --- unlock gate: a chapter must map to a real lesson id ---
-  if (!LESSONS.some((l) => l.id === id)) push(id, "id", `no lesson with id ${id} (unlock gate would never open)`);
+  // --- unlock gate: a chapter must unlock from a real lesson id ---
+  if (!LESSONS.some((l) => l.id === gate)) push(id, "id", `no lesson with id ${gate} (unlock gate would never open)`);
 }
 
 if (!errors.length) { console.log("[reader-audit] OK — 0 errors"); process.exit(0); }
