@@ -57,6 +57,7 @@
       again: "🔄 Ещё раз",
       cert_hub_title: "Мой прогресс",
       cert_hub_sub: "{0} из {1} уроков пройдено",
+      cert_hub_sub_both: "A0–A1: {0}/{1} · A2: {2}/{3}",
       cert_title: "Сертификат A0-A1",
       cert_body_done: "Курс успешно завершён ✓",
       cert_body_progress: "Пройдено уроков: {0} из {1}",
@@ -132,9 +133,13 @@
     },
   };
   var LANG = "ru";
-  function t(key, a, b) {
+  function t(key) {
     var s = (UI[LANG] && UI[LANG][key]) || (UI.ru[key]) || key;
-    return s.replace("{0}", a).replace("{1}", b);
+    var args = arguments; // t(key, a, b, c, ...) -> {0}=a, {1}=b, ...
+    return s.replace(/\{(\d+)\}/g, function (m, i) {
+      var v = args[+i + 1];
+      return v === undefined ? m : v;
+    });
   }
 
   /* Lessons 1..A1_MAX are the A0-A1 course (certificate scope); 16+ are A2,
@@ -250,7 +255,9 @@
     h += '<div class="lesson-card" data-nav="cert">' +
       '<div class="num">🏆</div>' +
       '<div class="body"><div class="t">' + t("cert_hub_title") + '</div>' +
-      '<div class="s">' + t("cert_hub_sub", a1Done(), Math.min(A1_MAX, LESSONS.length)) + '</div></div>' +
+      '<div class="s">' + (LESSONS.length > A1_MAX
+        ? t("cert_hub_sub_both", a1Done(), Math.min(A1_MAX, LESSONS.length), a2Done(), a2Total())
+        : t("cert_hub_sub", a1Done(), Math.min(A1_MAX, LESSONS.length))) + '</div></div>' +
       '<div class="done" style="color:var(--text3)">›</div></div>';
     var hasA2 = LESSONS.length > A1_MAX; // only group into levels once A2 lessons exist
     var a2Open = a1Complete();
