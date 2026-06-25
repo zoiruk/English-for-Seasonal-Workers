@@ -518,6 +518,39 @@
         { q_ru: "Что делают друзья в конце?", opts_ru: ["У них вечеринка", "Они работают", "Они спят", "Они уезжают утром"], c: 0 },
       ],
     },
+    {
+      id: 16,
+      emoji: "🌦️",
+      title_ru: "Второй сезон",
+      title_en: "The second season",
+      sentences: [
+        { en: "Ahmad is here again.", ru: "Ахмад снова здесь." },
+        { en: "This is his second season.", ru: "Это его второй сезон." },
+        { en: "He is happy to work.", ru: "Он рад работать." },
+        { en: "Tom is the manager again.", ru: "Том снова менеджер." },
+        { en: '"Hello, Ahmad! Welcome!"', ru: "«Привет, Ахмад! Добро пожаловать!»" },
+        { en: "Ahmad looks at the sky.", ru: "Ахмад смотрит на небо." },
+        { en: "The sky is grey today.", ru: "Небо сегодня серое." },
+        { en: "He checks the weather forecast.", ru: "Он проверяет прогноз погоды." },
+        { en: '"It is going to rain tomorrow."', ru: "«Завтра будет дождь.»" },
+        { en: '"Tomorrow is going to be cold."', ru: "«Завтра будет холодно.»" },
+        { en: "Ahmad is going to take his jacket.", ru: "Ахмад возьмёт свою куртку." },
+        { en: '"I am going to work in the shed."', ru: "«Я буду работать в сарае.»" },
+        { en: "The team is going to pick berries.", ru: "Команда будет собирать ягоды." },
+        { en: '"This season is going to be good."', ru: "«Этот сезон будет хорошим.»" },
+        { en: '"I am ready to work!"', ru: "«Я готов работать!»" },
+      ],
+      glossary: [
+        { en: "again", transcr: "эгэн", ru: "снова, опять", pn: "/əˈɡen/" },
+        { en: "second", transcr: "сэкэнд", ru: "второй", pn: "/ˈsekənd/" },
+        { en: "sky", transcr: "скай", ru: "небо", pn: "/skaɪ/" },
+      ],
+      quiz: [
+        { q_ru: "Какой сезон на ферме у Ахмада?", opts_ru: ["Второй", "Первый", "Третий", "Последний"], c: 0 },
+        { q_ru: "Что говорит прогноз погоды на завтра?", opts_ru: ["Будет дождь и холодно", "Будет жарко и солнечно", "Будет снег весь день", "Туман и ветер"], c: 0 },
+        { q_ru: "Что Ахмад собирается взять с собой?", opts_ru: ["Куртку", "Зонт", "Сапоги", "Шапку"], c: 0 },
+      ],
+    },
   ];
 
   // Library = shelf of books. One book now ("История Ахмада"); the structure is
