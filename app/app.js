@@ -150,6 +150,12 @@
   function a2Total() { return Math.max(0, LESSONS.length - A1_MAX); }
   function a2Done() { return Object.keys(store.done).filter(function (k) { return +k > A1_MAX && +k <= LESSONS.length; }).length; }
   function a2Complete() { return a2Total() > 0 && a2Done() >= a2Total(); }
+  // Hub level sections collapse once finished; the owner can re-open by tapping
+  // the header (manual choice is remembered in store.collapsed[level]).
+  function levelCollapsed(level, complete) {
+    if (store.collapsed && typeof store.collapsed[level] === "boolean") return store.collapsed[level];
+    return complete; // default: collapsed iff that level is fully done
+  }
 
   /* ---------- storage ---------- */
   var KEY = "esw_progress_v1";
@@ -261,25 +267,49 @@
       '<div class="done" style="color:var(--text3)">›</div></div>';
     var hasA2 = LESSONS.length > A1_MAX; // only group into levels once A2 lessons exist
     var a2Open = a1Complete();
-    LESSONS.forEach(function (les) {
-      if (hasA2 && les.id === 1) h += '<div class="level-head">' + t("level_a1") + "</div>";
-      if (hasA2 && les.id === A1_MAX + 1) {
-        h += '<div class="level-head a2">' + t("level_a2") +
-          (a2Open ? "" : ' <span class="level-lock">' + t("level_a2_locked", A1_MAX) + "</span>") + "</div>";
-      }
+    function lessonCardHTML(les) {
       if (les.id > A1_MAX && !a2Open) {
-        h += '<div class="lesson-card locked">' +
+        return '<div class="lesson-card locked">' +
           '<div class="num">🔒</div>' +
           '<div class="body"><div class="t">' + esc(les.title_ru) + "</div></div></div>";
-        return;
       }
       var isDone = store.done[les.id];
-      h += '<div class="lesson-card' + (les.id > A1_MAX ? " a2" : "") + '" data-lesson="' + les.id + '">' +
+      return '<div class="lesson-card' + (les.id > A1_MAX ? " a2" : "") + '" data-lesson="' + les.id + '">' +
         '<div class="num">' + les.id + "</div>" +
         '<div class="body"><div class="t">' + esc(les.title_ru) + "</div></div>" +
         (isDone ? '<div class="done">✓</div>' : '<div class="done" style="color:var(--text3)">›</div>') + "</div>";
-    });
+    }
+    if (hasA2) {
+      // Two collapsible level sections (header is a toggle).
+      var sections = [
+        { level: "a1", head: t("level_a1"), cls: "", complete: a1Complete(), lo: 1, hi: A1_MAX },
+        { level: "a2", head: t("level_a2") + (a2Open ? "" : ' <span class="level-lock">' + t("level_a2_locked", A1_MAX) + "</span>"),
+          cls: " a2", complete: a2Complete(), lo: A1_MAX + 1, hi: LESSONS.length }
+      ];
+      sections.forEach(function (sec) {
+        var collapsed = levelCollapsed(sec.level, sec.complete);
+        h += '<div class="level-head lvl-toggle' + sec.cls + '" data-level="' + sec.level + '">' +
+          '<span class="lvl-chev">' + (collapsed ? "▸" : "▾") + "</span> " + sec.head + "</div>";
+        h += '<div class="level-group' + (collapsed ? " collapsed" : "") + '" data-group="' + sec.level + '">';
+        LESSONS.forEach(function (les) { if (les.id >= sec.lo && les.id <= sec.hi) h += lessonCardHTML(les); });
+        h += "</div>";
+      });
+    } else {
+      LESSONS.forEach(function (les) { h += lessonCardHTML(les); });
+    }
     app.innerHTML = h;
+    [].forEach.call(app.querySelectorAll(".lvl-toggle"), function (head) {
+      head.onclick = function () {
+        var level = head.dataset.level;
+        var grp = app.querySelector('.level-group[data-group="' + level + '"]');
+        if (!grp) return;
+        var nowCollapsed = grp.classList.toggle("collapsed");
+        head.querySelector(".lvl-chev").textContent = nowCollapsed ? "▸" : "▾";
+        store.collapsed = store.collapsed || {};
+        store.collapsed[level] = nowCollapsed;
+        save(store);
+      };
+    });
   }
 
   /* Visual "path" A0–A1 → A2: two level stops with per-level % and a

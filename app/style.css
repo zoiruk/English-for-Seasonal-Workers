@@ -303,6 +303,9 @@ code { background: var(--accent-soft); color: var(--text); padding: 1px 5px; bor
 .lesson-card.locked .num { background: var(--border); color: var(--text3); }
 .level-head { font-size: 12px; font-weight: 800; color: var(--text2); text-transform: uppercase; letter-spacing: .05em; margin: 22px 2px 8px; }
 .level-lock { font-weight: 600; color: var(--text3); text-transform: none; letter-spacing: 0; }
+.lvl-toggle { cursor: pointer; user-select: none; display: flex; align-items: center; gap: 6px; min-height: 32px; }
+.lvl-chev { font-size: 10px; color: var(--text3); width: 12px; display: inline-block; }
+.level-group.collapsed { display: none; }
 
 .reader-text { padding: 4px 14px; }
 .read-sent { display: flex; align-items: flex-start; gap: 10px; padding: 12px 0; border-bottom: 1px solid var(--border); }
