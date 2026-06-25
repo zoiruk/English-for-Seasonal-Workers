@@ -72,7 +72,7 @@ const WHITELIST = {
   // since/for (duration) deliberately omitted — focus is experience + recent.
   23: ["ever", "yet", "just", "already", "been"],
 };
-const NAMES = ["ahmad","tom","sara","anna","john","ali","omar","rustam","fatima","madina"];
+const NAMES = ["ahmad","tom","sara","anna","john","ali","omar","rustam","fatima","madina","bobur"];
 
 function activeWhitelist(lessonId) {
   const set = new Set(NAMES);
