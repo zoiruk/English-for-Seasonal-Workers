@@ -1,14 +1,16 @@
 /*
- * Survival phrasebook for "English for Seasonal Workers" (RU-only, A0-A1).
+ * Survival phrasebook for "English for Seasonal Workers" (RU-only, A0-A2).
  * A REFERENCE screen (not a graded lesson): fixed memorized chunks, NOT bound by
  * the snowball vocabulary rule. Plain JS, file://-safe; dual export like data.js.
  *
  * Schema: window.PHRASEBOOK = [ { cat, icon, title_ru, phrases:[{en,transcr,ru}] } ]
  *
- * NOTE: high-responsibility categories (health / sos / documents) are authored
- * conservatively (standard, safe, verbatim phrases only — no medical/legal advice,
- * no visa/earnings claims; UK emergency number 999). They still owe an adversarial
- * safety-verification pass (see plans/) before being treated as "golden".
+ * NOTE: high-responsibility categories (health / sos / documents / banking / wages /
+ * agency) are authored conservatively (standard, safe, verbatim phrases only — no
+ * medical/legal advice, no visa/earnings claims; UK emergency number 999). They still
+ * owe an adversarial safety-verification pass (see plans/) before being treated as "golden".
+ * A2 categories (banking / wages / agency, 2026-06-24) reuse A2 admin/banking vocabulary;
+ * transcr matches the canonical lesson words[] (checked by check-transcr-consistency).
  */
 (function (root) {
   const PHRASEBOOK = [
@@ -114,6 +116,50 @@
         { en: "Someone is hurt.", transcr: "Самван из хёт.", ru: "Человек пострадал." },
         { en: "Please help me.", transcr: "Плиз хэлп ми.", ru: "Пожалуйста, помогите мне." },
         { en: "Stop!", transcr: "Стоп!", ru: "Стоп! / Стойте!" },
+      ],
+    },
+    {
+      cat: "banking",
+      icon: "🏦",
+      title_ru: "Банк и карта",
+      phrases: [
+        { en: "I want to open a bank account.", transcr: "Ай уонт ту оупэн э бэнк экаунт.", ru: "Я хочу открыть счёт в банке." },
+        { en: "Here is my passport.", transcr: "Хиэ из май паспорт.", ru: "Вот мой паспорт." },
+        { en: "Here is my address.", transcr: "Хиэ из май эдрэс.", ru: "Вот мой адрес." },
+        { en: "My card does not work.", transcr: "Май кад даз нот уёк.", ru: "Моя карта не работает." },
+        { en: "I forgot my PIN.", transcr: "Ай фэгот май пин.", ru: "Я забыл PIN-код." },
+        { en: "What is my balance?", transcr: "Уот из май бэлэнс?", ru: "Какой у меня баланс?" },
+        { en: "Where is the cash machine?", transcr: "Уэа из зэ кэш мэшин?", ru: "Где банкомат?" },
+        { en: "Can I have a new card, please?", transcr: "Кэн ай хэв э нью кад, плиз?", ru: "Можно новую карту, пожалуйста?" },
+      ],
+    },
+    {
+      cat: "wages",
+      icon: "💷",
+      title_ru: "Зарплата и оплата",
+      phrases: [
+        { en: "When do I get paid?", transcr: "Уэн ду ай гет пэйд?", ru: "Когда мне заплатят?" },
+        { en: "I have not been paid yet.", transcr: "Ай хэв нот бин пэйд йет.", ru: "Мне ещё не заплатили." },
+        { en: "Can I see my payslip?", transcr: "Кэн ай си май пэйслип?", ru: "Можно посмотреть расчётный лист?" },
+        { en: "How many hours did I work?", transcr: "Хау мэни ауэз дид ай уёк?", ru: "Сколько часов я отработал?" },
+        { en: "I think there is a mistake in my pay.", transcr: "Ай синк зэа из э мистэйк ин май пэй.", ru: "Кажется, в моей оплате ошибка." },
+        { en: "Is this before or after tax?", transcr: "Из зис бифо о афтэ тэкс?", ru: "Это до или после налога?" },
+        { en: "I worked overtime.", transcr: "Ай уёкт оувэтайм.", ru: "Я работал сверхурочно." },
+      ],
+    },
+    {
+      cat: "agency",
+      icon: "📋",
+      title_ru: "Агентство и смены",
+      phrases: [
+        { en: "Can I change my shift?", transcr: "Кэн ай чейндж май шифт?", ru: "Можно поменять смену?" },
+        { en: "I can work more hours.", transcr: "Ай кэн уёк мо ауэз.", ru: "Я могу работать больше часов." },
+        { en: "I cannot work tomorrow.", transcr: "Ай кэнот уёк тэмороу.", ru: "Я не могу работать завтра." },
+        { en: "I need a day off.", transcr: "Ай нид э дэй оф.", ru: "Мне нужен выходной." },
+        { en: "Can I see the rota?", transcr: "Кэн ай си зэ роутэ?", ru: "Можно посмотреть расписание смен?" },
+        { en: "Who is my manager?", transcr: "Ху из май мэниджэ?", ru: "Кто мой менеджер?" },
+        { en: "I have a problem in the camp.", transcr: "Ай хэв э проблэм ин зэ кэмп.", ru: "У меня проблема в кэмпе." },
+        { en: "Can you help me, please?", transcr: "Кэн ю хэлп ми, плиз?", ru: "Помогите, пожалуйста." },
       ],
     },
   ];
