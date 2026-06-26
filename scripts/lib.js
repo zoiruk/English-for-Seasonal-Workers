@@ -105,6 +105,17 @@ const WHITELIST = {
   // there (snowball MISS otherwise) — says/tells/saying stem to them. Receptive
   // discourse markers (actually/exactly/anyway/true/whether) live in lesson.glossary[].
   26: ["if"],
+  // L27 Present Perfect + for/since + How long? + PP vs Past Simple contrast. have/has=WL8,
+  // had=WL25; participles (been/had/known/felt/hurt) ride on the central PARTICIPLES list;
+  // markers ever/yet/just/already=WL23, never=WL6, how=WL4, when=WL12 are cumulative.
+  // NEW = the duration markers "for"/"since" (snowball MISS otherwise) + "long" (How long?).
+  // "for"/"since"/"long" are function words the stemmer leaves untouched. The Past-Simple
+  // contrast pulls only snowball-safe pasts: worked->work, was/were=WL12, had=WL25, felt
+  // (PARTICIPLES) — irregular came/rang/saw and silent-e -ed (lived->liv) are deliberately
+  // avoided. The lexical focus (HEALTH/BODY-3: ache/flu/dizzy/breathe/bandage/tablet/injection/
+  // feel/month/rib/ankle/elbow/wrist/rash) is the 14 words[]; receptive doctor's-visit words
+  // (matter/allergic/prescription/painful/recently) live in lesson.glossary[]. See plan L27.
+  27: ["for", "since", "long"],
 };
 const NAMES = ["ahmad","tom","sara","anna","john","ali","omar","rustam","fatima","madina","bobur"];
 

@@ -835,3 +835,50 @@ will→would, can→could, Past Simple/PP→Past Perfect) + правило **say
   предупреждений консоли. (Скриншот-инструмент харнесса дважды завис 30s — проверка выполнена DOM-инспекцией, рендерер отвечал мгновенно.)
 - `CACHE_VERSION` esw-v84→**esw-v85**. `scripts/lib.js`: `WHITELIST[26]=["if"]` добавлен. **L26 — 3-й из 13 (L24–L36).**
   НЕ запушено (ждёт явного разрешения владельца). Дальше — **L27 (Present Perfect for/since + at the doctor's, 🔴) за свежий чат** по плану.
+
+**2026-06-26 — ✅ L27 готов — 4-й урок B1. Present Perfect for/since + How long? + контраст PP vs Past Simple. 🔴 NHS-зона.**
+План — `plans/2026-06-26-b1-scope.md` (строка L27). Грамм-ядро: `have/has + 3-я форма` + **for** (срок: for two months) / **since**
+(точка старта: since last week / since the accident) + **How long…?** (как долго/как давно) + **контраст PP↔Past Simple**
+(незавершённое до сейчас «I have worked here for two months» ↔ завершённое «Last year I worked here for three months»).
+`grammar.visual_ru` — SVG-таймлайн (зелёная since-стрелка `since last week`, синяя for-стрелка `for two weeks`, обе до оранжевого
+маркера «сейчас» + зелёный/красный контраст-боксы «I have worked here / ещё работаю» ↔ «I worked here / уже ушёл»). Голос — 1-е лицо
+рабочего + врач (s:'d').
+- **Лекс-фокус (метрика B1):** `words[]` = **14 HEALTH/BODY-3** (ache/flu/dizzy/breathe/bandage/tablet/injection/feel/month/rib/ankle/
+  elbow/wrist/rash; все дедуп-уникальны через node-прогон). Часть тела L14 (hand/arm/leg/foot/eye/ear/tooth/finger) + neck/shoulder/
+  knee/chest/throat/back/sore/cold кумулятивно известны → новые = редкие фермерские травмы (ankle/wrist/elbow/rib) + симптомы/лечение
+  (ache/flu/dizzy/breathe/rash/bandage/tablet/injection) + опоры грамматики (feel/month). `glossary[]` = **5 рецептивных** (matter/
+  allergic/prescription/painful/recently — лексика визита к врачу; синие, тап→перевод+🔊, не в SRS/счётчике). `everyday` = «У врача и в
+  аптеке (the chemist's)» 6 фраз (Headway U4 «I've got a bad cold and a sore throat. Can you help me?» + EF F6 pharmacy: What's the
+  matter? / sore throat since Monday / Have you got anything for…? / How often do I take it? / nearest chemist's). quiz = 15
+  (2×`[BUILD]`, `[GIST]`, `[LISTEN]`, 4×`[TRANSLATE]`, остальные for/since/How long/PP↔PS — крен к продуктивным).
+- **Снежок (PP for/since-специфика):** `WHITELIST[27]=["for","since","long"]` (маркеры длительности + How long — снежок MISS иначе;
+  функц. слова, стеммер не трогает). have/has=WL8, had=WL25; причастия (been/had/known/felt/hurt) из центр. `PARTICIPLES` «просто
+  работают». **Past-Simple-контраст — только снежок-безопасные пасты**: worked→work, was/were=WL12, had=WL25, felt (PARTICIPLES);
+  иррегуляр came/rang/saw и силент-e -ed (lived→liv) избегнуты. Дни/месяцы как имена собственные (Monday/May) — снежок MISS → в
+  проверяемых полях «since last week / since the accident / since yesterday», конкретные даты только в everyday (вне снежка).
+  feel/month добавлены в words[] (снежок MISS как голые слова). Контракции (I've/he's/haven't) — только в everyday, полные формы в
+  снежок-полях (политика L8/L14/L25).
+- **4-слойный гейт:**
+  - **Слой 1 (`npm run audit`):** 8/8 зелёные **с первого прогона** (node-прогон known-статуса ВСЕХ токенов проверяемых полей до
+    написания → 0 правок снежка). После 2 «nice»-правок натуральности — снова 8/8.
+  - **Слой 2 (чек-лист):** фермерский/рабочий контекст ✓, RU-only ✓, реальные `expl` ✓, эмодзи по смыслу ✓.
+  - **Слой 3 (адверсариальные ревьюеры язык/IPA + педагогика/контракт/safety):** оба → **SHIP** (0 must-fix). Язык/IPA: времена/for/
+    since/BrE/IPA/transcr корректны; **2 nice внесены** — dialogue[0] «How can I help?»→«How can I help you?» (GP-регистр), dialogue[11]
+    «the chemist»→«the chemist's» (BrE-идиома + консистентность с everyday). Педагогика/safety: counts 12/14/14/15 ✓, NHS-нейтрально
+    (нет диагнозов/доз/999/111 в англ.), quiz 0 двойных ответов / 0 leak / c-ключи верны.
+  - **🔴 Слой 4 (`/lesson-naturalness-check L27`, source-cited против 5 источников, 2 ревьюера + скептик-проход):** все три — **SHIP, 0
+    правок**. Вербатим-якоря: PP+for/since = EF 7A «How long have you worked there? — I've worked there for five years» / «I've lived there
+    since 1990»; **PP↔Past Simple контраст** = EF 7B «Use the past simple + for to talk about a finished period… He was married for two
+    years. (= He's not married now.)» (санкционирует «Last year I worked here for three months»); «How long have you had this pain?» =
+    Headway «How long have you had this phobia?» (7458); chemist's = EF «US: pharmacy / UK: chemist's» (4372-4373); «I've got a bad cough.
+    Can you help me?» = Headway U4 (1908-1910). Скептик: доза НИГДЕ не называется (пациент только спрашивает «How often do I take it?»),
+    «Come back in two weeks» — расписание, не лечение; защитил валидный BrE («in two weeks» не «чинить» на «in two weeks' time»).
+  - **Слой 5 (`verify-ipa`/`verify-transcr` новых слов):** verify-transcr — **0 флагов** по словам L27. verify-ipa — `ankle /ˈæŋkl/` vs RP
+    `/ˈæŋkəl/` (нотация syllabic-l, класс broken/painful — принято); month/rib скрейпер не нашёл → сверены вручную (RP `/mʌnθ/`, `/rɪb/`
+    корректны). Остальные 12 слов + 5 глоссов — matched (Wiktionary RP).
+- **Превью (mobile 375×812, `done[1..26]`, SW unregister + caches.delete → свежий v86):** хаб-карточка L27 (`lesson-card b1`, разблок),
+  шапка «27/27» + title_ru + cefr без «undefined», 5 табов, SVG-таймлайн (все 10 меток: since/for-стрелки до «сейчас» + контраст-боксы),
+  14 реплик диалога, синий глосс `prescription` + попап (🔊 + «прискрипшэн» + «рецепт (на лекарство)»), тест Q1 опции перемешаны,
+  **0 ошибок/предупреждений консоли**. Скриншот grammar-таба подтвердил рендер.
+- `CACHE_VERSION` esw-v85→**esw-v86**. `scripts/lib.js`: `WHITELIST[27]=["for","since","long"]` добавлен. **L27 — 4-й из 13 (L24–L36).**
+  НЕ запушено (ждёт явного разрешения владельца). Дальше — **L28 (Present Perfect Continuous) за свежий чат** по плану.

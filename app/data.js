@@ -4544,6 +4544,203 @@
         ],
       },
     },
+
+    {
+      id: 27,
+      title_ru: "Как долго? Present Perfect с for / since (у врача)",
+      cefr: "B1 · Present Perfect for/since · How long? · health & body",
+      grammar: {
+        title_ru: "Present Perfect + for / since + How long? (сколько времени длится до сейчас)",
+        intro_ru:
+          'Present Perfect (<b>have/has</b> + 3-я форма) с <b>for</b> и <b>since</b> показывает, сколько времени ' +
+          'длится то, что началось в прошлом и <b>идёт сейчас</b>:<br>' +
+          '✅ <b>for</b> <span class="g-transcr">[фо]</span> — сколько времени (срок): ' +
+          'for two months <span class="g-transcr">[фо ту манс]</span> (два месяца), for a week (неделю).<br>' +
+          '✅ <b>since</b> <span class="g-transcr">[синс]</span> — с какого момента (точка старта): ' +
+          'since last week (с прошлой недели), since the accident (с той аварии).<br>' +
+          '❓ <b>How long…?</b> <span class="g-transcr">[хау лонг]</span> — «как долго / как давно?»: ' +
+          'How long have you worked here?',
+        cultural_ru:
+          '⚠️ Главное отличие от русского: по-русски мы говорим в <b>настоящем</b> времени — ' +
+          '«Я работаю здесь <b>два месяца</b>». По-английски это <b>Present Perfect</b>: ' +
+          '<b>I have worked</b> here <b>for two months</b>.<br>' +
+          '• <b>for</b> <span class="g-transcr">[фо]</span> + срок: for two days, for a week, for a month.<br>' +
+          '• <b>since</b> <span class="g-transcr">[синс]</span> + точка во времени: ' +
+          'since last week, since the accident, since yesterday.<br>' +
+          'Контраст: <b>have worked</b> (ещё работаю здесь) ↔ <b>worked</b> (Past Simple — уже не работаю): ' +
+          '«I <b>worked</b> here for three months <b>last year</b>.» (закончилось).',
+        note_ru:
+          '⚠️ Частая ошибка: <s>I work here for two months</s> — нельзя Present Simple про длительность до ' +
+          'сейчас. Правильно: <b>I have worked here for two months.</b><br>' +
+          '⚠️ В разговоре сокращают: I\'ve, he\'s, haven\'t. В заданиях и сборке фраз пиши ' +
+          '<b>полную</b> форму (I have, he has, have not); сокращения — только в «Фразах».',
+        visual_ru:
+          '<svg viewBox="0 0 340 252" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:360px;height:auto" role="img">' +
+          '<text x="14" y="18" font-size="13" fill="var(--text2)">for / since — длительность ДО «сейчас»</text>' +
+          '<line x1="278" y1="40" x2="278" y2="170" stroke="#ef6c00" stroke-width="2" stroke-dasharray="3 3"/>' +
+          '<text x="252" y="36" font-size="11" fill="#ef6c00">сейчас</text>' +
+          '<text x="14" y="60" font-size="11" fill="#2e7d32">since = с какого момента</text>' +
+          '<circle cx="58" cy="80" r="5" fill="#2e7d32"/>' +
+          '<line x1="58" y1="80" x2="278" y2="80" stroke="#2e7d32" stroke-width="2"/>' +
+          '<polygon points="278,80 268,75 268,85" fill="#2e7d32"/>' +
+          '<text x="36" y="99" font-size="10" fill="var(--text2)">since last week</text>' +
+          '<text x="14" y="128" font-size="11" fill="#1565c0">for = сколько времени</text>' +
+          '<line x1="150" y1="146" x2="278" y2="146" stroke="#1565c0" stroke-width="2"/>' +
+          '<line x1="150" y1="141" x2="150" y2="151" stroke="#1565c0" stroke-width="2"/>' +
+          '<polygon points="278,146 268,141 268,151" fill="#1565c0"/>' +
+          '<text x="150" y="165" font-size="10" fill="var(--text2)">for two weeks</text>' +
+          '<rect x="12" y="184" width="150" height="56" rx="8" fill="none" stroke="#2e7d32" stroke-width="2"/>' +
+          '<text x="20" y="206" font-size="11" fill="var(--text)">I have worked here.</text>' +
+          '<text x="20" y="227" font-size="10" fill="#2e7d32">(ещё работаю — сейчас)</text>' +
+          '<rect x="176" y="184" width="152" height="56" rx="8" fill="none" stroke="#c62828" stroke-width="2"/>' +
+          '<text x="184" y="206" font-size="11" fill="var(--text)">I worked here.</text>' +
+          '<text x="184" y="227" font-size="10" fill="#c62828">(уже ушёл — прошлое)</text>' +
+          '</svg>',
+        forms: {
+          positive: {
+            label_ru: "✅ have / has + 3-я форма + for / since",
+            rule_ru:
+              '<b>have/has</b> + 3-я форма, потом <b>for</b> (срок) или <b>since</b> (с какого момента):<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div>I <b>have worked</b> … <b>for</b> two months</div><div>я работаю здесь уже два месяца</div>' +
+              '<div>She <b>has had</b> … <b>since</b> last week</div><div>у неё … с прошлой недели</div>' +
+              '<div><b>for</b> + срок · <b>since</b> + точка</div><div>for a week · since the accident</div>' +
+              '</div>',
+            table: [
+              { subj: "я", verb: "have worked … for", example: "I have worked here for two months.", transcr: "Ай хэв уёкт хиэ фо ту манс.", tr_ru: "Я работаю здесь уже два месяца." },
+              { subj: "она", verb: "has had … since", example: "She has had a cough since last week.", transcr: "Ши хэз хэд э коф синс ласт уик.", tr_ru: "У неё кашель с прошлой недели." },
+              { subj: "моя спина", verb: "has been … since", example: "My back has been sore since the accident.", transcr: "Май бэк хэз бин со синс зэ эксидэнт.", tr_ru: "Спина болит со времени той аварии." },
+            ],
+          },
+          negative: {
+            label_ru: "❌ have not / has not + 3-я форма",
+            rule_ru:
+              'Отрицание — <b>have not</b> / <b>has not</b> + 3-я форма:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div>I <b>have not felt</b> well …</div><div>мне нехорошо …</div>' +
+              '<div>He <b>has not worked</b> here for long</div><div>он здесь работает недолго</div>' +
+              '<div>полная форма: have not / has not</div><div>в речи: haven\'t / hasn\'t</div>' +
+              '</div>',
+            table: [
+              { subj: "я", verb: "have not felt … since", example: "I have not felt well since last week.", transcr: "Ай хэв нот фэлт уэл синс ласт уик.", tr_ru: "Мне нехорошо с прошлой недели." },
+              { subj: "он", verb: "has not worked … for", example: "He has not worked here for long.", transcr: "Хи хэз нот уёкт хиэ фо лонг.", tr_ru: "Он работает здесь недолго." },
+              { subj: "мы", verb: "have not had … for", example: "We have not had lunch for six hours.", transcr: "Уи хэв нот хэд ланч фо сикс ауэз.", tr_ru: "Мы не ели обед уже шесть часов." },
+            ],
+          },
+          question: {
+            label_ru: "❓ How long…? / Have you…?",
+            rule_ru:
+              '<b>How long</b> + have/has + 3-я форма — «как долго / как давно?». Ответ: <b>For…</b> / <b>Since…</b>:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><b>How long have</b> you had…?</div><div>как давно у тебя…?</div>' +
+              '<div>— <b>For</b> a week. / <b>Since</b> last week.</div><div>— Неделю. / С прошлой недели.</div>' +
+              '<div>Have you had…?</div><div>да/нет вопрос</div>' +
+              '</div>',
+            table: [
+              { subj: "как долго", verb: "have you had…?", example: "How long have you had this pain?", transcr: "Хау лонг хэв ю хэд зис пэйн?", tr_ru: "Как долго у вас эта боль?" },
+              { subj: "как давно", verb: "have you worked…?", example: "How long have you worked here?", transcr: "Хау лонг хэв ю уёкт хиэ?", tr_ru: "Как давно ты здесь работаешь?" },
+              { subj: "ты", verb: "have you had…?", example: "Have you had this cough for long?", transcr: "Хэв ю хэд зис коф фо лонг?", tr_ru: "Этот кашель у тебя давно?" },
+            ],
+          },
+        },
+        examples: [
+          { en: "I have worked here for two months.", transcr: "Ай хэв уёкт хиэ фо ту манс.", ru: "Я работаю здесь уже два месяца. (for — срок)" },
+          { en: "She has had a cough since last week.", transcr: "Ши хэз хэд э коф синс ласт уик.", ru: "У неё кашель с прошлой недели. (since — точка старта)" },
+          { en: "How long have you had this pain?", transcr: "Хау лонг хэв ю хэд зис пэйн?", ru: "Как долго у вас эта боль? (How long…?)" },
+          { en: "My back has been sore since the accident.", transcr: "Май бэк хэз бин со синс зэ эксидэнт.", ru: "Спина болит со времени той аварии." },
+          { en: "I have not felt well since last week.", transcr: "Ай хэв нот фэлт уэл синс ласт уик.", ru: "Мне нехорошо с прошлой недели. (отрицание)" },
+          { en: "We have been in the camp for three weeks.", transcr: "Уи хэв бин ин зэ кэмп фо фри уикс.", ru: "Мы в лагере уже три недели." },
+          { en: "How long have you worked on the farm?", transcr: "Хау лонг хэв ю уёкт он зэ фарм?", ru: "Как давно ты работаешь на ферме?" },
+          { en: "He has had a headache for two days.", transcr: "Хи хэз хэд э хэдэйк фо ту дэйз.", ru: "У него голова болит уже два дня." },
+          { en: "I have had this ache in my wrist for a week.", transcr: "Ай хэв хэд зис эйк ин май рист фо э уик.", ru: "Запястье ноет уже неделю. (ache, wrist)" },
+          { en: "Have you had this rash for long?", transcr: "Хэв ю хэд зис рэш фо лонг?", ru: "Эта сыпь у тебя давно? (rash)" },
+          { en: "My elbow has hurt since the accident.", transcr: "Май элбоу хэз хёт синс зэ эксидэнт.", ru: "Локоть болит со времени той аварии. (elbow)" },
+          { en: "Last year I worked here for three months.", transcr: "Ласт йиэ ай уёкт хиэ фо фри манс.", ru: "В прошлом году я работал здесь три месяца. (Past Simple — закончилось)" },
+        ],
+        simple_ru: {
+          formula:
+            '<b>have/has + 3-я форма</b> + <b>for</b> (срок) или <b>since</b> (с какого момента). ' +
+            'Вопрос: <b>How long…?</b> По-русски — настоящее время, по-английски — Present Perfect.',
+          examples: [
+            { en: "I have had this pain for two days.", transcr: "Ай хэв хэд зис пэйн фо ту дэйз.", ru: "for — срок (два дня)." },
+            { en: "I have been here since last week.", transcr: "Ай хэв бин хиэ синс ласт уик.", ru: "since — точка старта (с прошлой недели)." },
+          ],
+        },
+        ytQuery: "present perfect for since how long английский для начинающих",
+      },
+
+      glossary: [
+        { en: "matter", transcr: "мэтэ", ru: "дело (What's the matter? = что случилось?)", pn: "/ˈmætə/" },
+        { en: "allergic", transcr: "элёджик", ru: "с аллергией (на что-то)", pn: "/əˈlɜːdʒɪk/" },
+        { en: "prescription", transcr: "прискрипшэн", ru: "рецепт (на лекарство)", pn: "/prɪˈskrɪpʃən/" },
+        { en: "painful", transcr: "пэйнфул", ru: "болезненный, болит", pn: "/ˈpeɪnfʊl/" },
+        { en: "recently", transcr: "рисэнтли", ru: "недавно", pn: "/ˈriːsntli/" },
+      ],
+
+      words: [
+        { e: "😣", en: "ache", transcr: "эйк", ru: "ноющая боль; ныть", pn: "/eɪk/" },
+        { e: "🤧", en: "flu", transcr: "флу", ru: "грипп", pn: "/fluː/" },
+        { e: "😵‍💫", en: "dizzy", transcr: "дизи", ru: "с головокружением", pn: "/ˈdɪzi/" },
+        { e: "🫁", en: "breathe", transcr: "бриз", ru: "дышать", pn: "/briːð/" },
+        { e: "🩹", en: "bandage", transcr: "бэндидж", ru: "бинт, повязка", pn: "/ˈbændɪdʒ/" },
+        { e: "🔵", en: "tablet", transcr: "тэблэт", ru: "таблетка", pn: "/ˈtæblət/" },
+        { e: "💉", en: "injection", transcr: "инджэкшэн", ru: "укол, инъекция", pn: "/ɪnˈdʒekʃən/" },
+        { e: "🤲", en: "feel", transcr: "фил", ru: "чувствовать (себя)", pn: "/fiːl/" },
+        { e: "🗓️", en: "month", transcr: "манс", ru: "месяц", pn: "/mʌnθ/" },
+        { e: "🦴", en: "rib", transcr: "риб", ru: "ребро", pn: "/rɪb/" },
+        { e: "🦵", en: "ankle", transcr: "энкл", ru: "лодыжка", pn: "/ˈæŋkl/" },
+        { e: "💪", en: "elbow", transcr: "элбоу", ru: "локоть", pn: "/ˈelbəʊ/" },
+        { e: "🤚", en: "wrist", transcr: "рист", ru: "запястье", pn: "/rɪst/" },
+        { e: "🔴", en: "rash", transcr: "рэш", ru: "сыпь", pn: "/ræʃ/" },
+      ],
+
+      dialogue: [
+        { s: "d", en: "Good morning. How can I help you?", transcr: "Гуд монинг. Хау кэн ай хэлп ю?", ru: "Доброе утро. Чем могу помочь?" },
+        { s: "w", en: "I have a pain in my back.", transcr: "Ай хэв э пэйн ин май бэк.", ru: "У меня болит спина." },
+        { s: "d", en: "How long have you had this pain?", transcr: "Хау лонг хэв ю хэд зис пэйн?", ru: "Как долго у вас эта боль?" },
+        { s: "w", en: "I have had it since the accident.", transcr: "Ай хэв хэд ит синс зэ эксидэнт.", ru: "С той аварии." },
+        { s: "d", en: "Does it hurt when you breathe?", transcr: "Даз ит хёт уэн ю бриз?", ru: "Больно, когда вы дышите?" },
+        { s: "w", en: "Yes, sometimes. And I feel dizzy.", transcr: "Йес, самтаймс. Энд ай фил дизи.", ru: "Да, иногда. И кружится голова." },
+        { s: "d", en: "Have you had a cough?", transcr: "Хэв ю хэд э коф?", ru: "Кашель есть?" },
+        { s: "w", en: "No. I feel tired and weak.", transcr: "Ноу. Ай фил тайэд энд уик.", ru: "Нет. Я устал и слабый." },
+        { s: "d", en: "How long have you felt weak?", transcr: "Хау лонг хэв ю фэлт уик?", ru: "Как давно вы чувствуете слабость?" },
+        { s: "w", en: "For two days now.", transcr: "Фо ту дэйз нау.", ru: "Уже два дня." },
+        { s: "d", en: "Here is a prescription for you.", transcr: "Хиэ из э прискрипшэн фо ю.", ru: "Вот вам рецепт." },
+        { s: "w", en: "Thank you. Take it to the chemist's?", transcr: "Сэнк ю. Тэйк ит ту зэ кэмист?", ru: "Спасибо. Отнести в аптеку?" },
+        { s: "d", en: "Yes. Come back in two weeks.", transcr: "Йес. Кам бэк ин ту уикс.", ru: "Да. Приходите через две недели." },
+        { s: "w", en: "Thank you, doctor.", transcr: "Сэнк ю, доктэ.", ru: "Спасибо, доктор." },
+      ],
+
+      quiz: [
+        { q: '[COMPLETE] "I have worked here ___ two months." (срок)', opts: ["for", "since", "ago", "at"], c: 0, expl: "for + срок (for two months). since — для точки старта (since last week).", hint_ru: "Срок → for." },
+        { q: '[COMPLETE] "She has had a cough ___ last week." (с какого момента)', opts: ["since", "for", "in", "ago"], c: 0, expl: "since + точка во времени (since last week). for — для срока (for a week).", hint_ru: "Точка старта → since." },
+        { q: '[COMPLETE] "___ have you had this pain?" (как долго?)', opts: ["How long", "How much", "How many", "What"], c: 0, expl: "How long…? — вопрос о длительности. How much/many — о количестве.", hint_ru: "Длительность → How long." },
+        { q: '[CORRECT] «Я работаю здесь уже два месяца.»', opts: ["I have worked here for two months.", "I work here for two months.", "I worked here two months.", "I am here for two months."], c: 0, expl: "Present Perfect (have worked) + for — длительность до сейчас. Present Simple/Past тут нельзя.", hint_ru: "have + 3-я форма + for." },
+        { q: '[COMPLETE] "My back ___ sore since the accident." (один — back)', opts: ["has been", "was", "is", "have been"], c: 0, expl: "back (он) → has been + since. was/is не показывают длительность до сейчас.", hint_ru: "back → has been." },
+        { q: '[NEGATIVE] "I ___ well since last week." (мне нехорошо)', opts: ["have not felt", "did not feel", "do not feel", "was not"], c: 0, expl: "have not felt — Present Perfect отрицание (длится до сейчас). felt — 3-я форма feel.", hint_ru: "have not + 3-я форма." },
+        { q: '[COMPLETE] "I have had this rash ___ three days." (срок)', opts: ["for", "since", "last", "ago"], c: 0, expl: "for + срок (for three days). since — для точки старта.", hint_ru: "Срок → for." },
+        { q: '[TRANSLATE] "лодыжка"', opts: ["ankle", "wrist", "elbow", "rib"], c: 0, expl: "ankle — лодыжка. wrist — запястье, elbow — локоть, rib — ребро.", hint_ru: "ankle." },
+        { q: '[TRANSLATE] "запястье"', opts: ["wrist", "ankle", "knee", "elbow"], c: 0, expl: "wrist — запястье. ankle — лодыжка, knee — колено, elbow — локоть.", hint_ru: "wrist." },
+        { q: '[TRANSLATE] "грипп"', opts: ["flu", "ache", "rash", "cough"], c: 0, expl: "flu — грипп. ache — ноющая боль, rash — сыпь, cough — кашель.", hint_ru: "flu." },
+        { q: '[TRANSLATE] "укол"', opts: ["injection", "tablet", "bandage", "medicine"], c: 0, expl: "injection — укол. tablet — таблетка, bandage — бинт, medicine — лекарство.", hint_ru: "injection." },
+        { q: "[LISTEN] How long have you had this pain?", opts: ["Как долго у вас эта боль?", "Где болит?", "У вас есть кашель?", "Вы устали?"], c: 0, expl: "How long have you had this pain? — как долго у вас эта боль?", hint_ru: "" },
+        { q: "[GIST] По диалогу: с какого момента у рабочего болит спина?", opts: ["С той аварии.", "Со вчерашнего дня.", "Уже год.", "С прошлого месяца."], c: 0, expl: "«I have had it since the accident.» — боль с той аварии.", hint_ru: "Слушай реплику про since." },
+        { q: '[BUILD] «Я работаю здесь уже два месяца.»', build: ["I", "have", "worked", "here", "for", "two", "months"], expl: "I have worked here for two months. — have + 3-я форма + for (срок).", hint_ru: "I have worked here for two months." },
+        { q: '[BUILD] «Как долго у вас эта боль?»', build: ["How", "long", "have", "you", "had", "this", "pain"], expl: "How long have you had this pain? — How long + have you + had.", hint_ru: "How long have you had this pain?" },
+      ],
+
+      everyday: {
+        title_ru: "У врача и в аптеке (the chemist's)",
+        phrases: [
+          { en: "What's the matter?", transcr: "Уотс зэ мэтэ?", ru: "Что вас беспокоит? (так спрашивает врач)" },
+          { en: "I've had a sore throat since Monday.", transcr: "Айв хэд э со сроут синс мандэй.", ru: "Горло болит с понедельника." },
+          { en: "I've got a bad cough. Can you help me?", transcr: "Айв гот э бэд коф. Кэн ю хэлп ми?", ru: "У меня сильный кашель. Можете помочь? (в аптеке)" },
+          { en: "Have you got anything for a headache?", transcr: "Хэв ю гот энисинг фо э хэдэйк?", ru: "Есть что-нибудь от головной боли?" },
+          { en: "How often do I take it?", transcr: "Хау офн ду ай тэйк ит?", ru: "Как часто это принимать?" },
+          { en: "Where's the nearest chemist's?", transcr: "Уэаз зэ ниэрэст кэмист?", ru: "Где ближайшая аптека?" },
+        ],
+      },
+    },
   ];
 
   if (typeof module !== "undefined" && module.exports) module.exports = LESSONS;
