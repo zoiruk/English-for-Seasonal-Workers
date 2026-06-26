@@ -11,7 +11,16 @@ for (const les of L) {
     tokenize(x.en).forEach((t) => { known.add(t); known.add(stem(t)); })
   );
   const wl = activeWhitelist(les.id);
-  const allowed = (t) => known.has(t) || known.has(stem(t)) || wl.has(t) || /^\d+$/.test(t);
+  // Receptive glossary (B1+): glossary[].en is "known" for THIS lesson only — like
+  // reader-audit's per-chapter glossary. It is NOT added to the cumulative `known`
+  // set (a gloss in lesson N must be re-glossed or promoted to words[] in N+1) and
+  // never enters the active word counter / SRS. Empty for A0–A2 -> no-op.
+  const glossSet = new Set();
+  (les.glossary || []).forEach((gw) =>
+    tokenize(gw.en).forEach((t) => { glossSet.add(t); glossSet.add(stem(t)); })
+  );
+  const allowed = (t) =>
+    known.has(t) || known.has(stem(t)) || wl.has(t) || glossSet.has(t) || glossSet.has(stem(t)) || /^\d+$/.test(t);
   const check = (text, field) =>
     tokenize(text).forEach((t) => {
       if (!allowed(t)) errors.push({ lesson: les.id, field, msg: `unknown word "${t}"` });

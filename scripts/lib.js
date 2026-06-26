@@ -71,11 +71,41 @@ const WHITELIST = {
   // (worked/signed/filled/finished/started) stem to known bases; "paid" is WL13.
   // since/for (duration) deliberately omitted — focus is experience + recent.
   23: ["ever", "yet", "just", "already", "been"],
+  // L24 Past Continuous + Past Simple contrast: was/were/when already WL12; -ing
+  // stems to the base verb. NEW = the narrative CONNECTORS (function words, recur in
+  // every B1 narration -> whitelist, not the 30 thematic words). "as" is 2 letters
+  // (not stemmed); "although" has no -er/-est/-ing/-ed/-s suffix so it passes the
+  // stemmer untouched; whitelist matches the RAW token, so stems never apply here.
+  // Narrative time adverbs (suddenly/then/later/luckily/unfortunately) are the
+  // LEXICAL FOCUS and live in lesson.glossary[] (receptive, blue-tappable) instead,
+  // so they get an on-tap translation on first exposure (see plan 2026-06-26-b1-scope).
+  // "stopped" = surface past of the known verb stop (L11); doubled consonant makes
+  // stem("stopped")="stopp"!=stop, so the form is whitelisted (doubling gotcha, like L17).
+  24: ["while", "as", "so", "because", "although", "stopped"],
 };
 const NAMES = ["ahmad","tom","sara","anna","john","ali","omar","rustam","fatima","madina","bobur"];
 
+/* Irregular PAST PARTICIPLES — always allowed (Passive / Present Perfect / Past
+   Perfect / reported backshift). The stemmer can't fold these to their base
+   (grown/taken/given/written…), so they would fall through snowball even when the
+   base verb is a known word. Generalises the L23 `been` precedent into one central
+   list instead of per-lesson WHITELIST entries. They never tighten snowball (only
+   add allowances), so adding them keeps every green lesson green. Forms whose
+   participle == base (put/cut/set/let/read/hurt/cost…) already stem to the base and
+   need no entry; this list is the stem!=base set. See plan 2026-06-26-b1-scope. */
+const PARTICIPLES = [
+  "been","done","gone","seen","made","taken","given","grown","known","shown",
+  "broken","written","driven","eaten","spoken","chosen","frozen","stolen","woken",
+  "fallen","flown","drawn","worn","torn","blown","thrown","ridden","hidden","beaten",
+  "forgotten","got","gotten","paid","built","sent","spent","kept","slept","felt",
+  "left","lost","met","told","sold","held","heard","found","stood","understood",
+  "brought","bought","thought","caught","taught","won","begun","drunk","swum","sung",
+  "run","come","become","meant","made","said","read","let","set","put","cut","hurt",
+];
+
 function activeWhitelist(lessonId) {
   const set = new Set(NAMES);
+  PARTICIPLES.forEach((w) => set.add(w));
   for (let i = 1; i <= lessonId; i++) (WHITELIST[i] || []).forEach((w) => set.add(w));
   return set;
 }
@@ -129,4 +159,4 @@ function report(name, errors) {
   return 1;
 }
 
-module.exports = { loadLessons, activeWhitelist, tokenize, stem, escapeRe, report, WHITELIST, NAMES };
+module.exports = { loadLessons, activeWhitelist, tokenize, stem, escapeRe, report, WHITELIST, NAMES, PARTICIPLES };

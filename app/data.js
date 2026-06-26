@@ -3972,6 +3972,191 @@
         ],
       },
     },
+
+    {
+      id: 24,
+      title_ru: "Что происходило на смене (рассказ)",
+      cefr: "B1 · Past Continuous & Past Simple · nature & small talk",
+      grammar: {
+        title_ru: "Past Continuous: was / were + …ing (что ДЛИЛОСЬ в прошлом)",
+        intro_ru:
+          '<b>was / were + …ing</b> — действие, которое ДЛИЛОСЬ в какой-то момент в прошлом (Past Continuous):<br>' +
+          'I <b>was picking</b> strawberries. — Я собирал клубнику (был в процессе).<br>' +
+          'Сравни с Past Simple (L13): I <b>picked</b> strawberries. — Я собрал (завершено).<br>' +
+          '<b>was</b> — для I/he/she/it · <b>were</b> — для you/we/they.',
+        cultural_ru:
+          'Главное правило B1 — <b>контраст</b>: длинное фоновое действие (Past Continuous) + короткое, ' +
+          'которое его прерывает (Past Simple).<br>' +
+          '<b>when</b> <span class="g-transcr">[уэн]</span> + короткое: I was working <b>when</b> the rain started.<br>' +
+          '<b>while</b> <span class="g-transcr">[уайл]</span> + длинное: <b>While</b> we were loading, Tom called.<br>' +
+          'Коннекторы рассказа: <b>so</b> <span class="g-transcr">[соу]</span> (поэтому = результат), ' +
+          '<b>because</b> <span class="g-transcr">[бикоз]</span> (потому что = причина), ' +
+          '<b>although</b> <span class="g-transcr">[олзоу]</span> (хотя = контраст), ' +
+          '<b>as</b> <span class="g-transcr">[эз]</span> (когда / так как).',
+        note_ru:
+          '⚠️ Частая ошибка — путать when и while. <b>when</b> идёт с коротким Past Simple ' +
+          '(when it started), <b>while</b> — с длинным Past Continuous (while we were working). ' +
+          'И не путай <b>so</b> (результат) с <b>because</b> (причина).',
+        visual_ru:
+          '<svg viewBox="0 0 340 250" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:360px;height:auto" role="img">' +
+          '<text x="14" y="24" font-size="13" fill="var(--text2)">Past Continuous (длилось) + Past Simple (прервало)</text>' +
+          '<text x="36" y="64" font-size="14" fill="var(--text)">I was picking…</text>' +
+          '<rect x="34" y="72" width="250" height="20" rx="10" fill="#2e7d32"/>' +
+          '<line x1="20" y1="150" x2="316" y2="150" stroke="var(--text2)" stroke-width="2"/>' +
+          '<polygon points="316,150 306,145 306,155" fill="var(--text2)"/>' +
+          '<text x="20" y="170" font-size="12" fill="var(--text2)">прошлое</text>' +
+          '<text x="262" y="170" font-size="12" fill="var(--text2)">сейчас</text>' +
+          '<line x1="178" y1="58" x2="178" y2="150" stroke="#c62828" stroke-width="3"/>' +
+          '<circle cx="178" cy="82" r="7" fill="#c62828"/>' +
+          '<text x="188" y="120" font-size="13" fill="#c62828">the rain started</text>' +
+          '<rect x="20" y="194" width="14" height="14" rx="3" fill="#2e7d32"/>' +
+          '<text x="42" y="206" font-size="12" fill="var(--text)">Past Continuous — was/were + …ing (фон)</text>' +
+          '<rect x="20" y="218" width="14" height="14" rx="3" fill="#c62828"/>' +
+          '<text x="42" y="230" font-size="12" fill="var(--text)">Past Simple — короткое, прерывает (when)</text>' +
+          '</svg>',
+        forms: {
+          positive: {
+            label_ru: "✅ was / were + …ing",
+            rule_ru:
+              '<b>I/he/she/it was</b> + …ing · <b>you/we/they were</b> + …ing:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div>I <b>was picking</b></div><div>я собирал (тогда)</div>' +
+              '<div>We <b>were working</b></div><div>мы работали (тогда)</div>' +
+              '<div>It <b>was raining</b></div><div>шёл дождь</div>' +
+              '</div>',
+            table: [
+              { subj: "я", verb: "was pulling", example: "I was pulling weeds.", transcr: "Ай уоз пулинг уидз.", tr_ru: "Я выдёргивал сорняки." },
+              { subj: "мы", verb: "were working", example: "We were working in the field.", transcr: "Уи уё уёкинг ин зэ филд.", tr_ru: "Мы работали в поле." },
+              { subj: "оно", verb: "was raining", example: "It was raining hard.", transcr: "Ит уоз рэйнинг хад.", tr_ru: "Шёл сильный дождь." },
+            ],
+          },
+          negative: {
+            label_ru: "❌ was not / were not + …ing",
+            rule_ru:
+              '<b>was not (wasn\'t) / were not (weren\'t)</b> + …ing:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div>I <b>was not working</b></div><div>я не работал (тогда)</div>' +
+              '<div>They <b>were not picking</b></div><div>они не собирали</div>' +
+              '<div>It <b>was not raining</b></div><div>дождя не было</div>' +
+              '</div>',
+            table: [
+              { subj: "я", verb: "was not working", example: "I was not working then.", transcr: "Ай уоз нот уёкинг зэн.", tr_ru: "Я тогда не работал." },
+              { subj: "они", verb: "were not picking", example: "They were not picking apples.", transcr: "Зэй уё нот пикинг эплз.", tr_ru: "Они не собирали яблоки." },
+              { subj: "оно", verb: "was not raining", example: "It was not raining.", transcr: "Ит уоз нот рэйнинг.", tr_ru: "Дождя не было." },
+            ],
+          },
+          question: {
+            label_ru: "❓ Was / Were …? + …ing",
+            rule_ru:
+              '<b>Was</b> he …ing? · <b>Were</b> you …ing? Краткий ответ: Yes, I was / No, I was not:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><b>Was</b> it <b>raining</b>?</div><div>шёл дождь?</div>' +
+              '<div><b>Were</b> you <b>working</b>?</div><div>ты работал?</div>' +
+              '<div>What <b>were</b> you <b>doing</b>?</div><div>что ты делал?</div>' +
+              '</div>',
+            table: [
+              { subj: "оно", verb: "Was … raining?", example: "Was it raining?", transcr: "Уоз ит рэйнинг?", tr_ru: "Шёл дождь?" },
+              { subj: "ты", verb: "Were … working?", example: "Were you working?", transcr: "Уё ю уёкинг?", tr_ru: "Ты работал?" },
+              { subj: "ты", verb: "What … doing?", example: "What were you doing?", transcr: "Уот уё ю дуинг?", tr_ru: "Что ты делал?" },
+            ],
+          },
+        },
+        examples: [
+          { en: "Yesterday I was working in the field.", transcr: "Йестэдэй ай уоз уёкинг ин зэ филд.", ru: "Вчера я работал в поле." },
+          { en: "I was picking strawberries when the rain started.", transcr: "Ай уоз пикинг стробэриз уэн зэ рэйн статид.", ru: "Я собирал клубнику, когда начался дождь." },
+          { en: "It was raining when we started work.", transcr: "Ит уоз рэйнинг уэн уи статид уёк.", ru: "Шёл дождь, когда мы начали работу." },
+          { en: "While we were loading the crates, Tom called us.", transcr: "Уайл уи уё лоудинг зэ крэйтс, Том колд ас.", ru: "Пока мы грузили ящики, Том позвал нас." },
+          { en: "Everyone was working hard when the manager called.", transcr: "Эвриуан уоз уёкинг хад уэн зэ мэниджэ колд.", ru: "Все усердно работали, когда менеджер позвал." },
+          { en: "I stopped because it was raining.", transcr: "Ай стопт бикоз ит уоз рэйнинг.", ru: "Я остановился, потому что шёл дождь." },
+          { en: "It was raining, so we stopped work.", transcr: "Ит уоз рэйнинг, соу уи стопт уёк.", ru: "Шёл дождь, поэтому мы прекратили работу." },
+          { en: "Although I was tired, I finished my row.", transcr: "Олзоу ай уоз тайэд, ай финишт май роу.", ru: "Хотя я устал, я закончил свой ряд." },
+          { en: "Suddenly, it started to rain.", transcr: "Саднли, ит статид ту рэйн.", ru: "Вдруг пошёл дождь." },
+          { en: "Luckily, it was hot and the crops were dry.", transcr: "Лакили, ит уоз хот энд зэ кропс уё драй.", ru: "К счастью, было жарко, и урожай был сухой." },
+          { en: "Unfortunately, I was late because the bus left.", transcr: "Анфочнэтли, ай уоз лэйт бикоз зэ бас лэфт.", ru: "К сожалению, я опоздал, потому что автобус ушёл." },
+          { en: "What were you doing then?", transcr: "Уот уё ю дуинг зэн?", ru: "Что ты делал тогда (в тот момент)?" },
+          { en: "Later, the rain stopped and we finished.", transcr: "Лэйтэ, зэ рэйн стопт энд уи финишт.", ru: "Позже дождь прекратился, и мы закончили." },
+        ],
+        simple_ru: {
+          formula:
+            '<b>was / were + …ing</b> = действие ДЛИЛОСЬ в прошлом. ' +
+            '<b>when</b> + короткое (Past Simple), <b>while</b> + длинное (Past Continuous).',
+          examples: [
+            { en: "I was picking when the rain started.", transcr: "Ай уоз пикинг уэн зэ рэйн статид.", ru: "was picking (длилось) + when + started (вдруг)." },
+            { en: "While we were working, Tom called.", transcr: "Уайл уи уё уёкинг, Том колд.", ru: "while + were working (длинное действие)." },
+          ],
+        },
+        ytQuery: "past continuous past simple when while английский для начинающих",
+      },
+
+      glossary: [
+        { en: "suddenly", transcr: "саднли", ru: "вдруг, внезапно", pn: "/ˈsʌdənli/" },
+        { en: "then", transcr: "зэн", ru: "тогда (в тот момент); потом", pn: "/ðen/" },
+        { en: "later", transcr: "лэйтэ", ru: "позже", pn: "/ˈleɪtə/" },
+        { en: "luckily", transcr: "лакили", ru: "к счастью", pn: "/ˈlʌkɪli/" },
+        { en: "unfortunately", transcr: "анфочнэтли", ru: "к сожалению", pn: "/ʌnˈfɔːtʃənətli/" },
+      ],
+
+      words: [
+        { e: "🐸", en: "frog", transcr: "фрог", ru: "лягушка", pn: "/frɒɡ/" },
+        { e: "🌱", en: "root", transcr: "рут", ru: "корень", pn: "/ruːt/" },
+        { e: "🌾", en: "crop", transcr: "кроп", ru: "урожай (на поле)", pn: "/krɒp/" },
+        { e: "🌰", en: "seed", transcr: "сид", ru: "семя, семена", pn: "/siːd/" },
+        { e: "🌿", en: "weed", transcr: "уид", ru: "сорняк", pn: "/wiːd/" },
+        { e: "🐛", en: "insect", transcr: "инсэкт", ru: "насекомое", pn: "/ˈɪnsekt/" },
+        { e: "🐝", en: "bee", transcr: "би", ru: "пчела", pn: "/biː/" },
+        { e: "🐜", en: "ant", transcr: "энт", ru: "муравей", pn: "/ænt/" },
+        { e: "🌊", en: "stream", transcr: "стрим", ru: "ручей", pn: "/striːm/" },
+        { e: "🏞️", en: "pond", transcr: "понд", ru: "пруд", pn: "/pɒnd/" },
+        { e: "💧", en: "flood", transcr: "флад", ru: "наводнение, потоп", pn: "/flʌd/" },
+        { e: "🌸", en: "flower", transcr: "флауэ", ru: "цветок", pn: "/ˈflaʊə/" },
+        { e: "🐦", en: "bird", transcr: "бёд", ru: "птица", pn: "/bɜːd/" },
+        { e: "🐌", en: "snail", transcr: "снэйл", ru: "улитка", pn: "/sneɪl/" },
+      ],
+
+      dialogue: [
+        { s: "m", en: "Good morning! Did you have a good weekend?", transcr: "Гуд монинг! Дид ю хэв э гуд уикэнд?", ru: "Доброе утро! Хорошо провёл выходные?" },
+        { s: "w", en: "Yes, it was lovely. And you?", transcr: "Йес, ит уоз лавли. Энд ю?", ru: "Да, отлично. А ты?" },
+        { s: "m", en: "Not bad. It was raining here yesterday.", transcr: "Нот бэд. Ит уоз рэйнинг хиэ йестэдэй.", ru: "Неплохо. Здесь вчера шёл дождь." },
+        { s: "w", en: "Yes. I was working near the pond.", transcr: "Йес. Ай уоз уёкинг ниэ зэ понд.", ru: "Да. Я работал у пруда." },
+        { s: "m", en: "What were you doing near the pond?", transcr: "Уот уё ю дуинг ниэ зэ понд?", ru: "Что ты делал у пруда?" },
+        { s: "w", en: "I was pulling weeds in the rain.", transcr: "Ай уоз пулинг уидз ин зэ рэйн.", ru: "Я выдёргивал сорняки под дождём." },
+        { s: "m", en: "Were the crops wet?", transcr: "Уё зэ кропс уэт?", ru: "Урожай был мокрый?" },
+        { s: "w", en: "Yes. A bee was on a flower.", transcr: "Йес. Э би уоз он э флауэ.", ru: "Да. На цветке сидела пчела." },
+        { s: "m", en: "And what did you do then?", transcr: "Энд уот дид ю ду зэн?", ru: "И что ты потом сделал?" },
+        { s: "w", en: "I stopped because it was raining hard.", transcr: "Ай стопт бикоз ит уоз рэйнинг хад.", ru: "Я остановился, потому что шёл сильный дождь." },
+        { s: "m", en: "Good. The sun is here now.", transcr: "Гуд. Зэ сан из хиэ нау.", ru: "Хорошо. Сейчас вышло солнце." },
+        { s: "w", en: "Great! Now we can work in the sun.", transcr: "Грэйт! Нау уи кэн уёк ин зэ сан.", ru: "Отлично! Теперь можно работать на солнце." },
+      ],
+
+      quiz: [
+        { q: '[COMPLETE] "I ___ picking strawberries." (я, в процессе)', opts: ["was", "were", "am", "did"], c: 0, expl: "I was picking — was + …ing (Past Continuous). I/he/she/it → was.", hint_ru: "I → was + …ing." },
+        { q: '[COMPLETE] "We ___ working in the field." (мы, в процессе)', opts: ["were", "was", "are", "do"], c: 0, expl: "We were working — you/we/they → were + …ing.", hint_ru: "we → were + …ing." },
+        { q: '[CORRECT] «Я собирал клубнику, когда начался дождь.»', opts: ["I was picking strawberries when the rain started.", "I picked strawberries when the rain was starting.", "I am picking strawberries when the rain started.", "I picking strawberries when the rain started."], c: 0, expl: "Past Continuous (was picking, длинный фон) + when + Past Simple (started, короткое прерывание).", hint_ru: "was picking … when … started." },
+        { q: '[COMPLETE] "___ we were loading the crates, Tom called." (длинное действие)', opts: ["While", "So", "Because", "Although"], c: 0, expl: "While + Past Continuous (длинное фоновое действие). so/because/although — логические связки (результат/причина/контраст), не время.", hint_ru: "время + длинное …ing → while." },
+        { q: '[COMPLETE] "It was raining, ___ we stopped work." (поэтому = результат)', opts: ["so", "because", "when", "although"], c: 0, expl: "so = результат (поэтому). Дождь → результат: остановились.", hint_ru: "результат → so." },
+        { q: '[COMPLETE] "We worked hard ___ the lorry was waiting." (потому что = причина)', opts: ["because", "so", "although", "when"], c: 0, expl: "because = причина (потому что). Грузовик ждал → причина спешки.", hint_ru: "причина → because." },
+        { q: '[COMPLETE] "___ I was tired, I finished my work." (хотя = контраст)', opts: ["Although", "Because", "So", "When"], c: 0, expl: "although = хотя (контраст). Устал, НО закончил.", hint_ru: "контраст → although." },
+        { q: '[QUESTION] "What ___ you doing yesterday?" (вопрос о прошлом действии)', opts: ["were", "was", "did", "are"], c: 0, expl: "What were you doing? — Past Continuous вопрос: were + you + …ing.", hint_ru: "What were you doing?" },
+        { q: '[NEGATIVE] Сделай отрицательным: «I was working.» → "I ___ working."', opts: ["was not", "were not", "did not", "do not"], c: 0, expl: "I was not working. Отрицание Past Continuous: was/were + not + …ing.", hint_ru: "was → was not." },
+        { q: '[TRANSLATE] "сорняк"', opts: ["weed", "seed", "crop", "bee"], c: 0, expl: "weed — сорняк. seed — семя, crop — урожай, bee — пчела.", hint_ru: "weed." },
+        { q: "[LISTEN] I was pulling weeds.", opts: ["Я выдёргивал сорняки.", "Я собирал клубнику.", "Я грузил ящики.", "Я водил трактор."], c: 0, expl: "I was pulling weeds — я выдёргивал сорняки (Past Continuous).", hint_ru: "" },
+        { q: "[GIST] По диалогу: что делал рабочий у пруда?", opts: ["Выдёргивал сорняки под дождём.", "Спал в вагончике.", "Ел обед.", "Водил трактор."], c: 0, expl: "«I was pulling weeds in the rain.» — рабочий выдёргивал сорняки.", hint_ru: "Слушай реплику про weeds." },
+        { q: '[BUILD] «Шёл дождь, когда мы начали работу.»', build: ["It", "was", "raining", "when", "we", "started", "work"], expl: "It was raining when we started work. — фон (was raining) + when + короткое действие (started).", hint_ru: "It was raining when…" },
+        { q: '[BUILD] «Пока мы грузили ящики, Том позвал нас.»', build: ["While", "we", "were", "loading", "the", "crates", "Tom", "called", "us"], expl: "While we were loading the crates, Tom called us. — while + Past Continuous (длинное действие).", hint_ru: "While we were loading…" },
+      ],
+
+      everyday: {
+        title_ru: "Светская беседа (small talk)",
+        phrases: [
+          { en: "Did you have a good weekend?", transcr: "Дид ю хэв э гуд уикэнд?", ru: "Как прошли выходные?" },
+          { en: "Yes, it was lovely. And you?", transcr: "Йес, ит уоз лавли. Энд ю?", ru: "Да, отлично. А у тебя?" },
+          { en: "Cold today, isn't it?", transcr: "Коулд тудэй, изнт ит?", ru: "Холодно сегодня, да? (разговор о погоде)" },
+          { en: "Pleased to meet you.", transcr: "Плизд ту мит ю.", ru: "Приятно познакомиться." },
+          { en: "Have a good day!", transcr: "Хэв э гуд дэй!", ru: "Хорошего дня!" },
+          { en: "Same to you!", transcr: "Сэйм ту ю!", ru: "И тебе того же!" },
+        ],
+      },
+    },
   ];
 
   if (typeof module !== "undefined" && module.exports) module.exports = LESSONS;

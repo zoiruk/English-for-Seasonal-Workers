@@ -11,6 +11,8 @@
   --accent-soft: #eaf3fd;
   --accent-a2: #6b46c1;        /* Level 2 (A2) accent — visually distinct from A0–A1 blue */
   --accent-a2-soft: #f0ebfb;
+  --accent-b1: #0f766e;        /* Level 3 (B1) accent — teal, distinct from blue (A1) & purple (A2) */
+  --accent-b1-soft: #e3f2ef;
   --ok: #1aaf5d;
   --ok-soft: #e7f7ee;
   --no: #e23b3b;
@@ -64,17 +66,21 @@ body {
   font-size: 16px; font-weight: 800; color: #fff; background: var(--accent);
 }
 .jstep.lvl2 .jbadge { background: var(--accent-a2); }
+.jstep.lvl3 .jbadge { background: var(--accent-b1); }
 .jstep.done .jbadge { background: var(--ok); }
 .jstep.locked .jbadge { background: var(--text3); }
 .jstep.current .jbadge { box-shadow: 0 0 0 4px var(--accent-soft); }
 .jstep.lvl2.current .jbadge { box-shadow: 0 0 0 4px var(--accent-a2-soft); }
+.jstep.lvl3.current .jbadge { box-shadow: 0 0 0 4px var(--accent-b1-soft); }
 .jname { font-size: 13px; font-weight: 700; }
 .jhere { display: inline-block; font-size: 10px; font-weight: 700; color: var(--accent); }
 .jstep.lvl2 .jhere { color: var(--accent-a2); }
+.jstep.lvl3 .jhere { color: var(--accent-b1); }
 .jsub { font-size: 11px; color: var(--text3); margin: 1px 0 6px; }
 .jbar { height: 6px; background: var(--border); border-radius: 99px; overflow: hidden; margin: 0 8px; }
 .jbar > i { display: block; height: 100%; background: var(--accent); transition: width .5s; }
 .jstep.lvl2 .jbar > i { background: var(--accent-a2); }
+.jstep.lvl3 .jbar > i { background: var(--accent-b1); }
 .jstep.done .jbar > i { background: var(--ok); }
 .jfrac { font-size: 11px; font-weight: 700; color: var(--text2); margin-top: 4px; }
 
@@ -82,6 +88,11 @@ body {
 .level-head.a2 { color: var(--accent-a2); }
 .lesson-card.a2 { border-left-color: var(--accent-a2); }
 .lesson-card.a2 .num { background: var(--accent-a2-soft); color: var(--accent-a2); }
+
+/* ---------- B1 level accent (Level 3 lessons & headings) ---------- */
+.level-head.b1 { color: var(--accent-b1); }
+.lesson-card.b1 { border-left-color: var(--accent-b1); }
+.lesson-card.b1 .num { background: var(--accent-b1-soft); color: var(--accent-b1); }
 
 /* ---------- Milestone (A2 level complete) ---------- */
 .milestone { text-align: center; padding: 40px 16px; }
@@ -311,12 +322,14 @@ code { background: var(--accent-soft); color: var(--text); padding: 1px 5px; bor
 }
 .lvl-toggle:hover { background: var(--accent-soft); }
 .lvl-toggle.a2:hover { background: var(--accent-a2-soft); }
+.lvl-toggle.b1:hover { background: var(--accent-b1-soft); }
 .lvl-toggle:active { transform: scale(.992); }
 .lvl-chev {
   font-size: 19px; font-weight: 800; line-height: 1; color: var(--accent);
   width: 14px; text-align: center; display: inline-block; transition: transform .15s ease;
 }
 .lvl-toggle.a2 .lvl-chev { color: var(--accent-a2); }
+.lvl-toggle.b1 .lvl-chev { color: var(--accent-b1); }
 .lvl-toggle.open .lvl-chev { transform: rotate(90deg); }
 .lvl-title { flex: 1; }
 .lvl-count {
@@ -324,6 +337,7 @@ code { background: var(--accent-soft); color: var(--text); padding: 1px 5px; bor
   color: var(--accent); background: var(--accent-soft); border-radius: 999px; padding: 3px 10px;
 }
 .lvl-toggle.a2 .lvl-count { color: var(--accent-a2); background: var(--accent-a2-soft); }
+.lvl-toggle.b1 .lvl-count { color: var(--accent-b1); background: var(--accent-b1-soft); }
 .level-group.collapsed { display: none; }
 
 .reader-text { padding: 4px 14px; }

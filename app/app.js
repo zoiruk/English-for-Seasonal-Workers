@@ -86,11 +86,14 @@
       level_a1: "Уровень 1 · A0–A1 · с нуля",
       level_a2: "Уровень 2 · A2 · продолжение",
       level_a2_locked: "🔒 Откроется после Урока {0}",
+      level_b1: "Уровень 3 · B1 · уверенный",
+      level_b1_locked: "🔒 Откроется после Урока {0}",
       journey_title: "🗺️ Ваш путь",
       journey_l1: "Уровень 1",
       journey_l2: "Уровень 2",
+      journey_l3: "Уровень 3",
       journey_here: "📍 вы здесь",
-      journey_done_all: "🎓 Оба уровня пройдены!",
+      journey_done_all: "🎓 Все уровни пройдены!",
       cert_a2_title: "Сертификат A2",
       cert_a2_sub: "{0} из {1} уроков уровня 2",
       cert_see_a2: "🏆 Сертификат A2 (Уровень 2)",
@@ -142,14 +145,22 @@
     });
   }
 
-  /* Lessons 1..A1_MAX are the A0-A1 course (certificate scope); 16+ are A2,
-     unlocked only after the A0-A1 course is finished (store.done[A1_MAX]). */
+  /* Course tiers by FIXED lesson-id boundaries (not array length): 1..A1_MAX = A0-A1
+     (certificate scope); A1_MAX+1..A2_MAX = A2; A2_MAX+1.. = B1. Fixed boundaries keep
+     A2's milestone/certificate firing at L23 even after B1 lessons are appended — the
+     B1 tier is decoupled from LESSONS.length. Each tier unlocks after the one below it
+     is finished. See plan 2026-06-26-b1-scope (Phase 0). */
   var A1_MAX = 15;
+  var A2_MAX = 23;
   function a1Done() { return Object.keys(store.done).filter(function (k) { return +k <= A1_MAX; }).length; }
   function a1Complete() { return a1Done() >= Math.min(A1_MAX, LESSONS.length); }
-  function a2Total() { return Math.max(0, LESSONS.length - A1_MAX); }
-  function a2Done() { return Object.keys(store.done).filter(function (k) { return +k > A1_MAX && +k <= LESSONS.length; }).length; }
+  function a2Total() { return Math.max(0, Math.min(A2_MAX, LESSONS.length) - A1_MAX); }
+  function a2Done() { return Object.keys(store.done).filter(function (k) { return +k > A1_MAX && +k <= A2_MAX; }).length; }
   function a2Complete() { return a2Total() > 0 && a2Done() >= a2Total(); }
+  function b1Total() { return Math.max(0, LESSONS.length - A2_MAX); }
+  function b1Done() { return Object.keys(store.done).filter(function (k) { return +k > A2_MAX && +k <= LESSONS.length; }).length; }
+  function b1Complete() { return b1Total() > 0 && b1Done() >= b1Total(); }
+  function hasB1() { return LESSONS.length > A2_MAX; }
   // Hub level sections collapse once finished; the owner can re-open by tapping
   // the header (manual choice is remembered in store.collapsed[level]).
   function levelCollapsed(level, complete) {
@@ -271,27 +282,35 @@
         ? t("cert_hub_sub_both", a1Done(), Math.min(A1_MAX, LESSONS.length), a2Done(), a2Total())
         : t("cert_hub_sub", a1Done(), Math.min(A1_MAX, LESSONS.length))) + '</div></div>' +
       '<div class="done" style="color:var(--text3)">›</div></div>';
-    var hasA2 = LESSONS.length > A1_MAX; // only group into levels once A2 lessons exist
-    var a2Open = a1Complete();
+    var hasLevels = LESSONS.length > A1_MAX; // only group into levels once A2 lessons exist
+    var a2Open = a1Complete();               // A2 unlocks after the A0–A1 course
+    var b1Open = a2Complete();               // B1 unlocks after the A2 level
     function lessonCardHTML(les) {
-      if (les.id > A1_MAX && !a2Open) {
+      var isB1 = les.id > A2_MAX, isA2 = les.id > A1_MAX && !isB1;
+      if ((isA2 && !a2Open) || (isB1 && !b1Open)) {
         return '<div class="lesson-card locked">' +
           '<div class="num">🔒</div>' +
           '<div class="body"><div class="t">' + esc(les.title_ru) + "</div></div></div>";
       }
       var isDone = store.done[les.id];
-      return '<div class="lesson-card' + (les.id > A1_MAX ? " a2" : "") + '" data-lesson="' + les.id + '">' +
+      var cls = isB1 ? " b1" : (isA2 ? " a2" : "");
+      return '<div class="lesson-card' + cls + '" data-lesson="' + les.id + '">' +
         '<div class="num">' + les.id + "</div>" +
         '<div class="body"><div class="t">' + esc(les.title_ru) + "</div></div>" +
         (isDone ? '<div class="done">✓</div>' : '<div class="done" style="color:var(--text3)">›</div>') + "</div>";
     }
-    if (hasA2) {
-      // Two collapsible level sections (header is a toggle).
+    if (hasLevels) {
+      // Collapsible level sections (header is a toggle). A2 always present once we
+      // have >15 lessons; B1 only once lessons 24+ exist (decoupled from array length).
       var sections = [
-        { level: "a1", head: t("level_a1"), cls: "", complete: a1Complete(), lo: 1, hi: A1_MAX },
+        { level: "a1", head: t("level_a1"), cls: "", complete: a1Complete(), lo: 1, hi: Math.min(A1_MAX, LESSONS.length) },
         { level: "a2", head: t("level_a2") + (a2Open ? "" : ' <span class="level-lock">' + t("level_a2_locked", A1_MAX) + "</span>"),
-          cls: " a2", complete: a2Complete(), lo: A1_MAX + 1, hi: LESSONS.length }
+          cls: " a2", complete: a2Complete(), lo: A1_MAX + 1, hi: Math.min(A2_MAX, LESSONS.length) }
       ];
+      if (hasB1()) sections.push(
+        { level: "b1", head: t("level_b1") + (b1Open ? "" : ' <span class="level-lock">' + t("level_b1_locked", A2_MAX) + "</span>"),
+          cls: " b1", complete: b1Complete(), lo: A2_MAX + 1, hi: LESSONS.length }
+      );
       sections.forEach(function (sec) {
         var collapsed = levelCollapsed(sec.level, sec.complete);
         var count = sec.hi - sec.lo + 1;
@@ -322,14 +341,18 @@
     });
   }
 
-  /* Visual "path" A0–A1 → A2: two level stops with per-level % and a
-     "you are here" marker. Light CSS only (cheap-Android safe). */
+  /* Visual "path" A0–A1 → A2 (→ B1 once those lessons exist): level stops with
+     per-level % and a "you are here" marker. Light CSS only (cheap-Android safe). */
   function journeyHTML() {
+    var b1 = hasB1();
     var a1t = Math.min(A1_MAX, LESSONS.length), a1d = a1Done();
     var a2t = a2Total(), a2d = a2Done();
+    var b1t = b1Total(), b1d = b1Done();
     var a1pct = a1t ? Math.round(a1d / a1t * 100) : 0;
     var a2pct = a2t ? Math.round(a2d / a2t * 100) : 0;
-    var cur = !a1Complete() ? 1 : (!a2Complete() ? 2 : 0); // current level; 0 = all done
+    var b1pct = b1t ? Math.round(b1d / b1t * 100) : 0;
+    // current level; 0 = all available levels done
+    var cur = !a1Complete() ? 1 : (!a2Complete() ? 2 : (b1 && !b1Complete() ? 3 : 0));
     function step(n, label, sub, pct, frac, done, locked) {
       var cls = "jstep lvl" + n + (done ? " done" : "") + (cur === n ? " current" : "") + (locked ? " locked" : "");
       return '<div class="' + cls + '">' +
@@ -339,15 +362,17 @@
         '<div class="jbar"><i style="width:' + pct + '%"></i></div>' +
         '<div class="jfrac">' + frac + (done ? " ✓" : "") + "</div></div>";
     }
-    var locked2 = !a1Complete();
-    return '<div class="journey">' +
+    var h = '<div class="journey">' +
       '<div class="jrny-title">' + t("journey_title") +
         (cur === 0 ? ' <span class="jall">' + t("journey_done_all") + "</span>" : "") + "</div>" +
       '<div class="jrny-track">' +
         step(1, t("journey_l1"), "A0–A1", a1pct, a1d + "/" + a1t, a1Complete(), false) +
         '<div class="jconn' + (a1Complete() ? " on" : "") + '"></div>' +
-        step(2, t("journey_l2"), "A2", a2pct, a2d + "/" + a2t, a2Complete(), locked2) +
-      "</div></div>";
+        step(2, t("journey_l2"), "A2", a2pct, a2d + "/" + a2t, a2Complete(), !a1Complete());
+    if (b1) h +=
+        '<div class="jconn' + (a2Complete() ? " on" : "") + '"></div>' +
+        step(3, t("journey_l3"), "B1", b1pct, b1d + "/" + b1t, b1Complete(), !a2Complete());
+    return h + "</div></div>";
   }
 
   /* ---------- PHRASEBOOK (reference, snowball-exempt) ---------- */
@@ -553,6 +578,15 @@
       closeGloss();
     };
     setTimeout(function () { if (glossDismiss) document.addEventListener("click", glossDismiss, true); }, 0);
+  }
+  // Wire blue glossary words inside `scope` to their popup. Shared by the reader
+  // (chapter glossary) and lessons (lesson.glossary). `src` is the object carrying
+  // .glossary (a chapter or a lesson). Safe to call after each re-render.
+  function wireGloss(scope, src) {
+    if (!scope) return;
+    scope.querySelectorAll(".g-new").forEach(function (el) {
+      el.onclick = function (e) { e.stopPropagation(); showGloss(el, src); };
+    });
   }
 
   // Library shelf: lists books (one now). Each card -> that book's chapter list.
@@ -901,6 +935,7 @@
   function tabLabel(x) { return t("tab_" + x); }
 
   function renderLesson(les, tab) {
+    closeGloss();                       // drop any popup left open when switching tabs
     tab = tab || "grammar";
     setRoute("l" + les.id + "/" + tab);
     var tabs = tabsFor(les);
@@ -919,6 +954,7 @@
     var body = document.getElementById("tabbody");
     body.innerHTML = bodyFor(les, tab);
     wireBody(les, tab);
+    wireGloss(body, les);               // blue receptive-glossary words (B1+); no-op without lesson.glossary
     // generic "Далее" button to the next tab (quiz manages its own flow)
     var idx = tabs.indexOf(tab);
     if (tab !== "quiz" && idx > -1 && idx < tabs.length - 1) {
@@ -1001,7 +1037,7 @@
     h += '<div class="card note">' + g.note_ru + "</div>";
     h += '<div class="card"><div class="g-h">' + t("examples") + "</div>";
     g.examples.forEach(function (ex) {
-      h += '<div class="ex-row">' + spkBtn(ex.en) + '<div><div class="en">' + esc(ex.en) +
+      h += '<div class="ex-row">' + spkBtn(ex.en) + '<div><div class="en">' + glossHTML(ex.en, les) +
         '</div><div class="tr">' + esc(ex.transcr) + '</div><div class="ru">' + esc(ex.ru) + "</div></div></div>";
     });
     h += "</div>";
@@ -1030,12 +1066,12 @@
     }
     return h + "</div></div>";
   }
-  function formTable(form) {
+  function formTable(form, les) {
     var h = form.rule_ru + '<div class="g-table-wrap"><table class="g-table" style="margin-top:10px">' +
       "<thead><tr><td>Кто</td><td>Глагол</td><td>Пример</td><td></td></tr></thead><tbody>";
     form.table.forEach(function (r) {
       h += '<tr><td class="sj">' + esc(r.subj) + '</td><td class="vb">' + esc(r.verb) + "</td>" +
-        '<td><div class="ex">' + esc(r.example) + '</div><div class="tr">' + esc(r.transcr) +
+        '<td><div class="ex">' + glossHTML(r.example, les) + '</div><div class="tr">' + esc(r.transcr) +
         '</div><div class="rt">' + esc(r.tr_ru) + "</div></td><td>" + spkBtn(r.example) + "</td></tr>";
     });
     return h + "</tbody></table></div>";
@@ -1054,7 +1090,7 @@
   function dialogueBody(les) {
     var h = "<button class='btn ghost' id='playall'>" + t("play_all") + "</button>";
     les.dialogue.forEach(function (d) {
-      h += '<div class="line ' + d.s + '">' + spkBtn(d.en) + '<div class="bubble"><div class="en">' + esc(d.en) +
+      h += '<div class="line ' + d.s + '">' + spkBtn(d.en) + '<div class="bubble"><div class="en">' + glossHTML(d.en, les) +
         '</div><div class="tr">' + esc(d.transcr) + '</div><div class="ru">' + esc(d.ru) + "</div></div></div>";
     });
     return h;
@@ -1071,8 +1107,9 @@
       var g = les.grammar;
       var box = document.getElementById("formbox");
       function showForm(f) {
-        box.innerHTML = formTable(g.forms[f]);
+        box.innerHTML = formTable(g.forms[f], les);
         box.querySelectorAll("[data-spk]").forEach(function (el) { el.onclick = function () { speak(el.dataset.spk); }; });
+        wireGloss(box, les);            // re-wire glosses inside the form table on each switch
       }
       showForm("positive");
       app.querySelectorAll(".formbtn").forEach(function (b) {
@@ -1282,8 +1319,10 @@
     }
     function finishMastered() {
       store.done[les.id] = true; bumpStreak(); save(store);
-      // Completing the final A2 lesson → celebration screen (once).
-      if (les.id > A1_MAX && a2Complete() && !store.msA2Shown) {
+      // Completing the lesson that finishes the A2 level → celebration screen (once).
+      // Scoped to the A2 id-range so finishing a B1 lesson never (re)fires it.
+      // (B1 milestone/certificate is a deferred package — see plan "Отложено".)
+      if (les.id > A1_MAX && les.id <= A2_MAX && a2Complete() && !store.msA2Shown) {
         store.msA2Shown = true; save(store);
         renderMilestone(); return;
       }

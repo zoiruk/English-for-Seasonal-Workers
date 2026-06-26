@@ -31,6 +31,7 @@ function scan(loc, transcr) {
 LESSONS.forEach((l) => {
   const g = l.grammar || {};
   (l.words || []).forEach((w, i) => scan(`L${l.id} words[${i}] (${w.en})`, w.transcr));
+  (l.glossary || []).forEach((gw, i) => scan(`L${l.id} glossary[${i}] (${gw.en})`, gw.transcr));
   (g.examples || []).forEach((x, i) => scan(`L${l.id} grammar.examples[${i}]`, x.transcr));
   ((g.simple_ru && g.simple_ru.examples) || []).forEach((x, i) => scan(`L${l.id} simple_ru[${i}]`, x.transcr));
   ["positive", "negative", "question"].forEach((f) =>

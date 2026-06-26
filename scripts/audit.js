@@ -7,14 +7,32 @@ const TAGS = ["[COMPLETE]", "[TRANSLATE]", "[NEGATIVE]", "[CORRECT]", "[QUESTION
 for (const les of L) {
   const id = les.id;
 
-  // --- words: >=30, full fields, no grouping ---
+  // B1 lessons carry a "B1 ·" prefix in their cefr subtitle (mirrors the existing
+  // "A2 ·" convention). The "≥30 new words" rule is an A0–A1 vocab-building metric;
+  // for B1 the focus shifts to collocations on known words, so it drops to ≥12 active
+  // items (see plan 2026-06-26-b1-scope §"Метрика полноты B1"). Snowball/dedup unchanged.
+  const isB1 = /^\s*B1\b/i.test(String(les.cefr || ""));
+
+  // --- words: >=30 (>=12 for B1), full fields, no grouping ---
   const w = les.words || [];
-  if (w.length < 30) errors.push({ lesson: id, field: "words", msg: `need >=30, got ${w.length}` });
+  const minWords = isB1 ? 12 : 30;
+  if (w.length < minWords) errors.push({ lesson: id, field: "words", msg: `need >=${minWords}, got ${w.length}` });
   w.forEach((x, i) => {
     ["e", "en", "transcr", "ru", "pn"].forEach((k) => {
       if (!x[k]) errors.push({ lesson: id, field: `words[${i}].${k}`, msg: "missing" });
     });
     if (x.en && /[,/]/.test(x.en)) errors.push({ lesson: id, field: `words[${i}].en`, msg: `grouped word "${x.en}"` });
+  });
+
+  // --- glossary (optional, B1+ receptive layer): <=8, full fields, single word ---
+  // Mirrors the reader's chapter glossary. Not snowball/SRS/counter — receptive only.
+  const gl = les.glossary || [];
+  if (gl.length > 8) errors.push({ lesson: id, field: "glossary", msg: `need <=8, got ${gl.length}` });
+  gl.forEach((gw, i) => {
+    ["en", "transcr", "ru", "pn"].forEach((k) => {
+      if (!gw[k]) errors.push({ lesson: id, field: `glossary[${i}].${k}`, msg: "missing" });
+    });
+    if (gw.en && /\s/.test(gw.en.trim())) errors.push({ lesson: id, field: `glossary[${i}].en`, msg: `must be a single word, got "${gw.en}"` });
   });
 
   // --- dialogue: >=10, speakers, alternation, length, transcr, no repeated lines ---

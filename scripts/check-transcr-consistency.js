@@ -23,6 +23,7 @@ function addCanon(en, transcr) {
   if (k.length >= MIN) canon[k] = { norm: normCyr(transcr), raw: String(transcr) };
 }
 LESSONS.forEach((l) => (l.words || []).forEach((w) => addCanon(w.en, w.transcr)));
+LESSONS.forEach((l) => (l.glossary || []).forEach((g) => addCanon(g.en, g.transcr)));
 BOOKS.forEach((b) => (b.chapters || []).forEach((ch) => (ch.glossary || []).forEach((g) => addCanon(g.en, g.transcr))));
 
 const errors = [];
