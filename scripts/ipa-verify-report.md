@@ -1,6 +1,6 @@
 # IPA verification report (Wiktionary RP anchor)
 
-Total words: 862 · matched: 758 · divergent: 83 · not found: 21
+Total words: 875 · matched: 771 · divergent: 83 · not found: 21
 
 Normalized away (kept length ː): ɹ↔r, ɡ↔g, ɛ↔e (DRESS vowel), tie-bars & allophonic diacritics, optional (…) segments, stress, syllable dots.
 Divergences below are for OWNER ACCEPTANCE — review each: is our `pn` wrong, or a valid variant?
