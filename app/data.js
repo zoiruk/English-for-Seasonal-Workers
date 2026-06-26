@@ -6185,6 +6185,217 @@
         ],
       },
     },
+
+    {
+      id: 35,
+      title_ru: "Глагол + to / -ing · фразовые: put it on",
+      cefr: "B1 · verb + to / verb + -ing · manage to · phrasal verbs (put it on)",
+      grammar: {
+        title_ru: "После глагола: to + база (want to do) или -ing (enjoy doing) · фразовые: put it on / take them off",
+        intro_ru:
+          'После одних глаголов идёт <b>to + база</b>, после других — <b>-ing</b>:<br>' +
+          '❌ Не так: <s>I want working</s> · <s>I enjoy to work</s><br>' +
+          '✅ Так: <b>I <u>want to</u> work.</b> <span class="g-transcr">[ай уонт ту уёк]</span> (хочу работать)<br>' +
+          '✅ Так: <b>I <u>enjoy</u> work<u>ing</u>.</b> <span class="g-transcr">[ай инджой уёкинг]</span> (люблю работать)<br>' +
+          '<b>+ to + база:</b> want · need · hope · try · decide · <b>manage to</b> (получилось, удалось с трудом).<br>' +
+          '<b>+ -ing:</b> enjoy · stop · finish · keep (like / love / hate + -ing ты уже знаешь из L15).',
+        cultural_ru:
+          '🔗 <b>Фразовые глаголы</b> — глагол + маленькое слово (on / off / up / in), вместе новый смысл:<br>' +
+          '<div style="display:grid;grid-template-columns:auto 1fr;gap:4px 8px">' +
+          '<div><b>put on</b></div><div>надеть — Put on your gloves <span class="g-transcr">[пут он ёр главз]</span></div>' +
+          '<div><b>take off</b></div><div>снять — Take off your coat <span class="g-transcr">[тэйк оф ёр коут]</span></div>' +
+          '<div><b>turn on / off</b></div><div>включить / выключить — Turn on the machine <span class="g-transcr">[тён он зэ мэшин]</span></div>' +
+          '<div><b>fill in</b></div><div>заполнить — Fill in this form <span class="g-transcr">[фил ин зис фом]</span></div>' +
+          '</div>' +
+          '⚠️ <b>it / them</b> (его / их) ставим <b>МЕЖДУ</b> словами: <b>Put it on</b> ✅ <span class="g-transcr">[пут ит он]</span> — ' +
+          'а не <s>Put on it</s>. <b>Take them off</b> ✅ — а не <s>Take off them</s>.',
+        note_ru:
+          '⚠️ <b>want / need / hope / try / manage</b> + <b>to</b> + база (не -ing): I want <u>to work</u>, не <s>I want working</s>.<br>' +
+          '⚠️ <b>enjoy / stop / finish / keep</b> + <b>-ing</b> (не to): I enjoy <u>working</u>, не <s>I enjoy to work</s>.<br>' +
+          '⚠️ Фразовый: <b>it / them</b> — в середине (Put it on), а не в конце (<s>Put on it</s>).<br>' +
+          '⚠️ <b>-ed</b> и <b>-ing</b> прилагательные: <b>-ed</b> = что Я ЧУВСТВУЮ, <b>-ing</b> = КАКОЙ предмет / работа:<br>' +
+          '<div style="display:grid;grid-template-columns:1fr 1fr;gap:2px 10px">' +
+          '<div>I am <b>bored</b> <span class="g-transcr">[ай эм бод]</span> — мне скучно</div><div>a <b>boring</b> job — скучная работа</div>' +
+          '<div>I am <b>tired</b> <span class="g-transcr">[ай эм тайэд]</span> — я устал</div><div><b>tiring</b> work — утомительная работа</div>' +
+          '<div>I am <b>interested</b> — мне интересно</div><div>an <b>interesting</b> book — интересная книга</div>' +
+          '</div>',
+        visual_ru:
+          '<svg viewBox="0 0 340 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:360px;height:auto" role="img">' +
+          '<text x="10" y="14" font-size="11" fill="var(--text2)">После глагола: to + база ИЛИ -ing?</text>' +
+          '<rect x="8" y="20" width="152" height="92" rx="8" fill="none" stroke="#1565c0" stroke-width="2"/>' +
+          '<text x="16" y="38" font-size="11" font-weight="bold" fill="#1565c0">глагол + to + база</text>' +
+          '<text x="16" y="55" font-size="10" fill="var(--text2)">want · need · hope</text>' +
+          '<text x="16" y="69" font-size="10" fill="var(--text2)">try · manage to</text>' +
+          '<text x="16" y="90" font-size="11" fill="#1565c0">I want to work</text>' +
+          '<text x="16" y="104" font-size="9" fill="var(--text2)">(хочу работать)</text>' +
+          '<rect x="170" y="20" width="162" height="92" rx="8" fill="none" stroke="#2e7d32" stroke-width="2"/>' +
+          '<text x="178" y="38" font-size="11" font-weight="bold" fill="#2e7d32">глагол + -ing</text>' +
+          '<text x="178" y="55" font-size="10" fill="var(--text2)">enjoy · stop · finish</text>' +
+          '<text x="178" y="69" font-size="10" fill="var(--text2)">keep · like · love</text>' +
+          '<text x="178" y="90" font-size="11" fill="#2e7d32">I enjoy working</text>' +
+          '<text x="178" y="104" font-size="9" fill="var(--text2)">(люблю работать)</text>' +
+          '<text x="10" y="132" font-size="11" fill="var(--text2)">Фразовый глагол: куда поставить it / them?</text>' +
+          '<text x="14" y="150" font-size="10" fill="var(--text)">put on · take off · turn on / off · fill in</text>' +
+          '<rect x="8" y="158" width="324" height="34" rx="8" fill="none" stroke="#2e7d32" stroke-width="2"/>' +
+          '<text x="16" y="176" font-size="11" fill="#2e7d32">✅ Put it on. · Take them off.</text>' +
+          '<text x="16" y="188" font-size="9" fill="var(--text2)">it / them — МЕЖДУ глаголом и частицей</text>' +
+          '<rect x="8" y="198" width="324" height="24" rx="8" fill="none" stroke="#c62828" stroke-width="2"/>' +
+          '<text x="16" y="214" font-size="11" fill="#c62828">❌ Put on it. · Take off them.</text>' +
+          '<text x="10" y="242" font-size="10" fill="#e65100">⚠️ -ed = что я чувствую: I am bored (мне скучно)</text>' +
+          '<text x="10" y="260" font-size="10" fill="#e65100">⚠️ -ing = какой предмет: a boring job (скучная работа)</text>' +
+          '<text x="10" y="282" font-size="9" fill="var(--text2)">у каждого глагола свой путь · it / them в середине</text>' +
+          '</svg>',
+        forms: {
+          positive: {
+            label_ru: "✅ глагол + to / + -ing · фразовый (put it on)",
+            rule_ru:
+              'После глагола — <b>to + база</b> или <b>-ing</b>; фразовый = глагол + маленькое слово:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div>I <b>want to</b> work.</div><div>хочу работать</div>' +
+              '<div>I <b>enjoy</b> work<b>ing</b>.</div><div>люблю работать</div>' +
+              '<div>I <b>managed to</b> finish.</div><div>мне удалось закончить</div>' +
+              '<div><b>Put</b> your gloves <b>on</b>.</div><div>надень перчатки</div>' +
+              '</div>',
+            table: [
+              { subj: "+ to", verb: "want to + база", example: "I want to work hard.", transcr: "Ай уонт ту уёк хад.", tr_ru: "Я хочу работать усердно." },
+              { subj: "+ -ing", verb: "enjoy + -ing", example: "I enjoy working on the farm.", transcr: "Ай инджой уёкинг он зэ фарм.", tr_ru: "Мне нравится работать на ферме." },
+              { subj: "manage to", verb: "managed to + база", example: "I managed to pick many boxes.", transcr: "Ай мэниджд ту пик мэни боксиз.", tr_ru: "Мне удалось собрать много ящиков." },
+              { subj: "фразовый", verb: "put on / put it on", example: "Put your gloves on. Put them on.", transcr: "Пут ёр главз он. Пут зэм он.", tr_ru: "Надень перчатки. Надень их." },
+            ],
+          },
+          negative: {
+            label_ru: "❌ do not want to / do not enjoy + -ing",
+            rule_ru:
+              'Отрицание — через <b>do not / did not</b>, дальше тот же путь (to или -ing):<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div>I <b>do not want to</b> work late.</div><div>не хочу работать допоздна</div>' +
+              '<div>I <b>do not enjoy</b> working in the rain.</div><div>не люблю работать под дождём</div>' +
+              '<div>He <b>did not manage to</b> finish.</div><div>ему не удалось закончить</div>' +
+              '</div>',
+            table: [
+              { subj: "не хочу", verb: "do not want to", example: "I do not want to work late.", transcr: "Ай ду нот уонт ту уёк лэйт.", tr_ru: "Я не хочу работать допоздна." },
+              { subj: "не люблю", verb: "do not enjoy + -ing", example: "I do not enjoy working in the rain.", transcr: "Ай ду нот инджой уёкинг ин зэ рэйн.", tr_ru: "Мне не нравится работать под дождём." },
+              { subj: "не удалось", verb: "did not manage to", example: "He did not manage to finish his work.", transcr: "Хи дид нот мэнидж ту финиш хиз уёк.", tr_ru: "Ему не удалось закончить работу." },
+            ],
+          },
+          question: {
+            label_ru: "❓ Do you want to…? · What do you enjoy…? · Can you turn it off?",
+            rule_ru:
+              '<b>Do you</b> + want to / enjoy…?; фразовый вопрос — it / them в середине:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><b>Do</b> you <b>want to</b> start now?</div><div>хочешь начать сейчас?</div>' +
+              '<div><b>What do</b> you <b>enjoy</b> doing?</div><div>что тебе нравится делать?</div>' +
+              '<div><b>Can</b> you <b>turn it off</b>?</div><div>можешь это выключить?</div>' +
+              '</div>',
+            table: [
+              { subj: "да/нет?", verb: "Do you want to…?", example: "Do you want to start now?", transcr: "Ду ю уонт ту старт нау?", tr_ru: "Ты хочешь начать сейчас?" },
+              { subj: "что?", verb: "What do you enjoy…?", example: "What do you enjoy doing here?", transcr: "Уот ду ю инджой дуинг хиэ?", tr_ru: "Что тебе нравится здесь делать?" },
+              { subj: "фразовый?", verb: "Can you turn it off?", example: "Can you turn it off, please?", transcr: "Кэн ю тён ит оф, плиз?", tr_ru: "Можешь это выключить, пожалуйста?" },
+            ],
+          },
+        },
+        examples: [
+          { en: "I want to work hard.", transcr: "Ай уонт ту уёк хад.", ru: "Я хочу работать усердно." },
+          { en: "I need to start early.", transcr: "Ай нид ту старт ёли.", ru: "Мне нужно начать рано." },
+          { en: "I hope to finish today.", transcr: "Ай хоуп ту финиш тудэй.", ru: "Надеюсь закончить сегодня." },
+          { en: "I try to learn English.", transcr: "Ай трай ту лён инглиш.", ru: "Я стараюсь учить английский." },
+          { en: "I managed to pick many boxes.", transcr: "Ай мэниджд ту пик мэни боксиз.", ru: "Мне удалось собрать много ящиков." },
+          { en: "I enjoy working on the farm.", transcr: "Ай инджой уёкинг он зэ фарм.", ru: "Мне нравится работать на ферме." },
+          { en: "I finished packing the crates.", transcr: "Ай финишт пэкинг зэ крэйтс.", ru: "Я закончил упаковывать ящики." },
+          { en: "I keep working when it is cold.", transcr: "Ай кип уёкинг уэн ит из коулд.", ru: "Я продолжаю работать, когда холодно." },
+          { en: "Please stop working now.", transcr: "Плиз стоп уёкинг нау.", ru: "Пожалуйста, перестань работать сейчас." },
+          { en: "Put on your gloves and boots.", transcr: "Пут он ёр главз энд бутс.", ru: "Надень перчатки и ботинки." },
+          { en: "Put them on. It is cold.", transcr: "Пут зэм он. Ит из коулд.", ru: "Надень их. Холодно." },
+          { en: "Take off your wet coat.", transcr: "Тэйк оф ёр уэт коут.", ru: "Сними мокрое пальто." },
+          { en: "Take it off. It is warm here.", transcr: "Тэйк ит оф. Ит из уом хиэ.", ru: "Сними его. Здесь тепло." },
+          { en: "Pick up the box. Pick it up.", transcr: "Пик ап зэ бокс. Пик ит ап.", ru: "Подними ящик. Подними его." },
+          { en: "Turn it off when you finish work.", transcr: "Тён ит оф уэн ю финиш уёк.", ru: "Выключи это, когда закончишь работу." },
+          { en: "I need to fill in this form.", transcr: "Ай нид ту фил ин зис фом.", ru: "Мне нужно заполнить эту форму." },
+          { en: "Write down your hours.", transcr: "Райт даун ёр ауэз.", ru: "Запиши свои часы." },
+          { en: "The work is hard. It is not boring.", transcr: "Зэ уёк из хад. Ит из нот боринг.", ru: "Работа тяжёлая. Она не скучная." },
+          { en: "I am interested in this job.", transcr: "Ай эм интрэстид ин зис джоб.", ru: "Мне интересна эта работа." },
+          { en: "Working in the cold is tiring.", transcr: "Уёкинг ин зэ коулд из тайэринг.", ru: "Работать на холоде утомительно." },
+        ],
+        simple_ru: {
+          formula:
+            '<b>Глагол + to</b> (want / need / hope / try / manage to) ИЛИ <b>глагол + -ing</b> (enjoy / stop / finish / keep). ' +
+            'Фразовый: маленькое слово после глагола (put <b>on</b>, take <b>off</b>); <b>it / them</b> — в середине: Put it on.',
+          examples: [
+            { en: "I want to work.", transcr: "Ай уонт ту уёк.", ru: "хочу работать (want + to)." },
+            { en: "I enjoy working.", transcr: "Ай инджой уёкинг.", ru: "люблю работать (enjoy + -ing)." },
+            { en: "Put them on.", transcr: "Пут зэм он.", ru: "надень их (it / them — в середине)." },
+          ],
+        },
+        ytQuery: "verb patterns gerund infinitive want to enjoy doing phrasal verbs separable put it on for beginners",
+      },
+
+      glossary: [
+        { en: "boring", transcr: "боринг", ru: "скучный", pn: "/ˈbɔːrɪŋ/" },
+        { en: "interested", transcr: "интрэстид", ru: "которому интересно", pn: "/ˈɪntrəstɪd/" },
+        { en: "tiring", transcr: "тайэринг", ru: "утомительный", pn: "/ˈtaɪərɪŋ/" },
+      ],
+
+      words: [
+        { e: "🙏", en: "need", transcr: "нид", ru: "нужно (надо)", pn: "/niːd/" },
+        { e: "✅", en: "manage", transcr: "мэнидж", ru: "суметь, справиться", pn: "/ˈmænɪdʒ/" },
+        { e: "🎯", en: "try", transcr: "трай", ru: "пытаться, стараться", pn: "/traɪ/" },
+        { e: "🔁", en: "keep", transcr: "кип", ru: "продолжать (делать)", pn: "/kiːp/" },
+        { e: "📚", en: "learn", transcr: "лён", ru: "учить, учиться", pn: "/lɜːn/" },
+        { e: "🧤", en: "put on", transcr: "пут он", ru: "надевать", pn: "/ˌpʊt ˈɒn/" },
+        { e: "🧥", en: "take off", transcr: "тэйк оф", ru: "снимать", pn: "/ˌteɪk ˈɒf/" },
+        { e: "⬆️", en: "pick up", transcr: "пик ап", ru: "поднимать, забирать", pn: "/ˌpɪk ˈʌp/" },
+        { e: "🟢", en: "turn on", transcr: "тён он", ru: "включать", pn: "/ˌtɜːn ˈɒn/" },
+        { e: "🔴", en: "turn off", transcr: "тён оф", ru: "выключать", pn: "/ˌtɜːn ˈɒf/" },
+        { e: "✍️", en: "fill in", transcr: "фил ин", ru: "заполнять (форму)", pn: "/ˌfɪl ˈɪn/" },
+        { e: "📝", en: "write down", transcr: "райт даун", ru: "записывать", pn: "/ˌraɪt ˈdaʊn/" },
+      ],
+
+      dialogue: [
+        { s: "w", en: "Tom, do you want me to start now?", transcr: "Том, ду ю уонт ми ту старт нау?", ru: "Том, ты хочешь, чтобы я начал сейчас?" },
+        { s: "m", en: "Yes. Put on your gloves and boots.", transcr: "Йес. Пут он ёр главз энд бутс.", ru: "Да. Надень перчатки и ботинки." },
+        { s: "w", en: "I will put them on. It is cold today.", transcr: "Ай уил пут зэм он. Ит из коулд тудэй.", ru: "Я их надену. Сегодня холодно." },
+        { s: "m", en: "Good. Take off your wet coat, please.", transcr: "Гуд. Тэйк оф ёр уэт коут, плиз.", ru: "Хорошо. Сними мокрое пальто, пожалуйста." },
+        { s: "w", en: "I enjoy working here. I do not want to stop.", transcr: "Ай инджой уёкинг хиэ. Ай ду нот уонт ту стоп.", ru: "Мне нравится тут работать. Не хочу останавливаться." },
+        { s: "m", en: "Did you manage to finish your work?", transcr: "Дид ю мэнидж ту финиш ёр уёк?", ru: "Ты успел закончить свою работу?" },
+        { s: "w", en: "Yes, I managed to pick many boxes.", transcr: "Йес, ай мэниджд ту пик мэни боксиз.", ru: "Да, мне удалось собрать много ящиков." },
+        { s: "m", en: "Well done. Now turn on the machine.", transcr: "Уэл дан. Нау тён он зэ мэшин.", ru: "Молодец. Теперь включи машину." },
+        { s: "w", en: "I need to fill in this form now.", transcr: "Ай нид ту фил ин зис фом нау.", ru: "Мне нужно сейчас заполнить эту форму." },
+        { s: "m", en: "Fill it in and turn it on.", transcr: "Фил ит ин энд тён ит он.", ru: "Заполни её и включи машину." },
+        { s: "w", en: "The work is hard. It is not boring.", transcr: "Зэ уёк из хад. Ит из нот боринг.", ru: "Работа тяжёлая. Но не скучная." },
+        { s: "m", en: "You are a good worker. I am happy.", transcr: "Ю ар э гуд уёкэ. Ай эм хэпи.", ru: "Ты хороший работник. Я доволен." },
+      ],
+
+      quiz: [
+        { q: '[COMPLETE] "I want ___ work hard." (хочу работать)', opts: ["to", "working", "work", "for"], c: 0, expl: "want + to + база: I want to work. После want идёт to, не -ing.", hint_ru: "want + to + база." },
+        { q: '[COMPLETE] "I enjoy ___ here." (люблю работать)', opts: ["working", "to work", "work to", "to working"], c: 0, expl: "enjoy + -ing: I enjoy working. После enjoy идёт -ing, не to.", hint_ru: "enjoy + -ing." },
+        { q: "[CORRECT] «Мне нравится работать на ферме.»", opts: ["I enjoy working on the farm.", "I enjoy to work on the farm.", "I enjoy work on the farm.", "I am enjoy working on the farm."], c: 0, expl: "I enjoy working on the farm. — enjoy + -ing (working). «enjoy to work» неверно.", hint_ru: "enjoy + -ing." },
+        { q: "[CORRECT] «Надень их (перчатки).»", opts: ["Put them on.", "Put on them.", "Put they on.", "Put on it."], c: 0, expl: "Put them on. — it / them ставим МЕЖДУ глаголом и частицей. «Put on them» неверно.", hint_ru: "them — в середине." },
+        { q: '[COMPLETE] "Turn ___ the machine, please." (включи)', opts: ["on", "off", "up", "in"], c: 0, expl: "turn on — включить. turn off — выключить. Маленькое слово меняет смысл.", hint_ru: "включить = turn on." },
+        { q: '[COMPLETE] "I need to ___ in this form." (заполнить)', opts: ["fill", "clean", "check", "pick"], c: 0, expl: "fill in — заполнить форму или бланк. fill in this form / fill it in.", hint_ru: "заполнить = fill in." },
+        { q: '[TRANSLATE] "продолжать (делать)"', opts: ["keep", "stop", "finish", "start"], c: 0, expl: "keep + -ing — продолжать делать: keep working. stop — остановиться, finish — закончить.", hint_ru: "keep." },
+        { q: '[TRANSLATE] "суметь, справиться"', opts: ["manage", "want", "need", "try"], c: 0, expl: "manage to — суметь, получилось с трудом: I managed to finish. try — пытаться.", hint_ru: "manage to." },
+        { q: '[NEGATIVE] "I ___ want to work late." (не хочу)', opts: ["don't", "not", "didn't", "am not"], c: 0, expl: "don't want to — не хочу (настоящее). I don't want to work late.", hint_ru: "don't + want." },
+        { q: '[QUESTION] "___ you want to start now?"', opts: ["Do", "Are", "Did", "Does"], c: 0, expl: "Do you want to…? — вопрос в настоящем. Did — прошлое, Are — с -ing.", hint_ru: "Do you want to…?" },
+        { q: "[LISTEN] I managed to finish my work.", opts: ["Мне удалось закончить работу.", "Я хочу закончить работу.", "Я не закончил работу.", "Мне нравится моя работа."], c: 0, expl: "I managed to finish my work. — managed to = удалось, получилось закончить.", hint_ru: "" },
+        { q: "[GIST] По диалогу: что Том сказал надеть?", opts: ["Перчатки и ботинки.", "Куртку и шапку.", "Только форму.", "Сапоги и плащ."], c: 0, expl: "Том говорит: «Put on your gloves and boots» — перчатки и ботинки.", hint_ru: "Слушай, что Том просит надеть." },
+        { q: "[GIST] По диалогу: рабочему скучно на работе?", opts: ["Нет, ему не скучно.", "Да, очень скучно.", "Он хочет уйти домой.", "Он очень устал."], c: 0, expl: "Рабочий говорит: «The work is hard. It is not boring» — не скучно.", hint_ru: "Слушай про работу: скучно или нет." },
+        { q: "[BUILD] «Мне нравится работать здесь.»", build: ["I", "enjoy", "working", "here"], expl: "I enjoy working here. — enjoy + -ing (working).", hint_ru: "I enjoy working here." },
+        { q: "[BUILD] «Сними их (ботинки).»", build: ["Take", "them", "off"], expl: "Take them off. — it / them ставим МЕЖДУ глаголом и частицей (не «Take off them»).", hint_ru: "Take them off." },
+        { q: "[BUILD] «Мне нужно заполнить эту форму.»", build: ["I", "need", "to", "fill", "in", "this", "form"], expl: "I need to fill in this form. — need + to + база; fill in — заполнить.", hint_ru: "I need to fill in this form." },
+      ],
+
+      everyday: {
+        title_ru: "Горячие глаголы: make / do · speak / talk",
+        phrases: [
+          { en: "Don't make a mistake.", transcr: "Доунт мэйк э мистэйк.", ru: "Не допусти ошибку. (make a mistake — сделать ошибку)" },
+          { en: "I do my job well.", transcr: "Ай ду май джоб уэл.", ru: "Я хорошо делаю свою работу. (do a job — выполнять работу)" },
+          { en: "Can I speak to the manager?", transcr: "Кэн ай спик ту зэ мэниджэ?", ru: "Можно поговорить с менеджером? (speak to — обратиться к)" },
+          { en: "We talk about work at lunch.", transcr: "Уи ток эбаут уёк эт ланч.", ru: "Мы говорим о работе в обед. (talk about — обсуждать)" },
+          { en: "Can you do me a favour?", transcr: "Кэн ю ду ми э фэйвэ?", ru: "Сделаешь мне одолжение? (do a favour)" },
+          { en: "I have to make a phone call.", transcr: "Ай хэв ту мэйк э фоун кол.", ru: "Мне нужно позвонить. (make a phone call)" },
+        ],
+      },
+    },
   ];
 
   if (typeof module !== "undefined" && module.exports) module.exports = LESSONS;

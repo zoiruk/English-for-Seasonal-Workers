@@ -216,6 +216,24 @@ const WHITELIST = {
   // Past-Simple contrast (used to vs one-time) is shown in note_ru (unchecked prose); the
   // checked Past Simple form "worked" stems to "work". See plan 2026-06-26-b1-scope L34.
   34: ["used", "use", "who"],
+  // L35 verb patterns (verb + to / verb + -ing, manage to) + separable phrasal verbs
+  // (put it on / take them off) + -ed/-ing adjectives. NO new whitelist needed: every
+  // particle and base rides on a words[] PHRASAL CHUNK. snowball adds tokenize(words.en)
+  // (raw + stem) to `known` BEFORE checking the lesson, so the chunks "pick up", "turn
+  // on/off", "take off", "fill in", "write down" make their tokens up/off/turn/fill/
+  // write/down all known — no per-particle WHITELIST entry (the L19 empty-entry pattern).
+  // on/in are already WL5; "put" is in PARTICIPLES; "take" is a known words[] item.
+  // Verb-pattern complements ride on cumulative vocab: want=L15, hope=L30, decide=L29,
+  // finish=L6 (TAKEN — used freely, NOT re-added to words[]), stop=L11, enjoy=L15; the
+  // NEW pattern verbs (need/manage/try/keep/learn) are words[] items. -ing forms stem to
+  // the base (working->work, packing->pack) — silent-e/doubling forms are AVOIDED, not
+  // whitelisted. The -ed/-ing adjective PAIR collapses to one stem (bored/boring->bor),
+  // so it can't be contrasted in snowball — the contrast lives in note_ru (unchecked
+  // prose); one -ing form per pair (boring/tiring) + "interested" are receptive
+  // glossary[] items (glossing one form lets both pass via the shared stem). "but" is
+  // still NOT used (base conjunction never introduced). Hot verbs make/do/speak/talk
+  // live in everyday (not snowball-checked). See plan 2026-06-26-b1-scope L35.
+  35: [],
 };
 const NAMES = ["ahmad","tom","sara","anna","john","ali","omar","rustam","fatima","madina","bobur"];
 
