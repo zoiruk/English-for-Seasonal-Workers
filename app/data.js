@@ -5143,6 +5143,211 @@
         ],
       },
     },
+
+    {
+      id: 30,
+      title_ru: "Если пойдёт дождь…: First conditional + may / might (планы и условия)",
+      cefr: "B1 · First conditional · future time clauses · may / might",
+      grammar: {
+        title_ru: "First conditional: if + настоящее → will / might · when / until + настоящее · may / might (возможность)",
+        intro_ru:
+          'Когда одно <b>зависит</b> от другого в будущем — берём <b>First conditional</b>: ' +
+          '<b>if</b> + настоящее время, … <b>will</b> + глагол.<br>' +
+          '✅ <b>If it rains, we will work in the shed.</b> ' +
+          '<span class="g-transcr">[иф ит рэйнз, уи уил уёк ин зэ шед]</span> ' +
+          '(если пойдёт дождь — будем работать в сарае)<br>' +
+          '⚠️ Часть с <b>if</b> — всегда <b>настоящее</b>, даже про будущее: ' +
+          '<s>If it will rain</s> → <b>If it rains</b>.<br>' +
+          '❓ Если не уверены — вместо will берём <b>might</b> / <b>may</b> (может быть): ' +
+          '<b>If the ground is wet, we might stop.</b> ' +
+          '<span class="g-transcr">[иф зэ граунд из уэт, уи майт стоп]</span> (может, остановимся)',
+        cultural_ru:
+          '⚠️ После слов времени <b>when</b> (когда), <b>as soon as</b> (как только), <b>while</b> (пока), ' +
+          '<b>until</b> (пока не) — тоже <b>настоящее</b> время, НЕ will (хотя смысл про будущее):<br>' +
+          '• <b>When</b> the lorry <b>is</b> here, we <b>will</b> load it. ' +
+          '<span class="g-transcr">[уэн зэ лори из хиэ, уи уил лоуд ит]</span><br>' +
+          '• <b>As soon as</b> you <b>finish</b>, take a break. ' +
+          '<span class="g-transcr">[эз сун эз ю финиш, тэйк э брэйк]</span><br>' +
+          '• We can\'t start <b>until</b> the field <b>is</b> dry. ' +
+          '<span class="g-transcr">[уи кант старт антил зэ филд из драй]</span><br>' +
+          '⚠️ В русском будущее ставят в обе части («когда <u>приедет</u> … <u>загрузим</u>»); ' +
+          'в английском после if / when / until — <b>настоящее</b>.',
+        note_ru:
+          '⚠️ Никакого <b>will</b> после if / when / until: <s>If it will rain</s> → <b>If it rains</b>.<br>' +
+          '⚠️ <b>may</b> / <b>might</b> = <b>возможность</b> (менее уверенно, чем will), глагол <b>без to и без -s</b>: ' +
+          '<s>It mights rain</s> / <s>It might to rain</s> → <b>It might rain.</b><br>' +
+          '⚠️ Отрицание возможности — <b>might not</b> / <b>may not</b> (два слова, не сливаются): ' +
+          '<b>The lorry might not come today.</b> ' +
+          '<span class="g-transcr">[зэ лори майт нот кам тудэй]</span><br>' +
+          '⚠️ <b>will</b> — почти уверен; <b>might / may</b> — может быть. ' +
+          '«It will rain» (точно) ≠ «It might rain» (возможно).',
+        visual_ru:
+          '<svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:360px;height:auto" role="img">' +
+          '<text x="12" y="18" font-size="12" fill="var(--text2)">if + настоящее → will (точно) или might (может быть)</text>' +
+          '<rect x="10" y="34" width="124" height="120" rx="9" fill="none" stroke="#1565c0" stroke-width="2"/>' +
+          '<text x="22" y="62" font-size="18">🌧️</text>' +
+          '<text x="50" y="60" font-size="12" fill="#1565c0">условие</text>' +
+          '<text x="22" y="88" font-size="12" fill="var(--text)">if it rains</text>' +
+          '<text x="22" y="110" font-size="10" fill="var(--text2)">настоящее</text>' +
+          '<text x="22" y="128" font-size="10" fill="#c62828">не «if it will»</text>' +
+          '<line x1="136" y1="94" x2="170" y2="94" stroke="var(--text2)" stroke-width="2"/>' +
+          '<polygon points="170,88 182,94 170,100" fill="var(--text2)"/>' +
+          '<rect x="186" y="40" width="144" height="50" rx="8" fill="none" stroke="#2e7d32" stroke-width="2"/>' +
+          '<text x="196" y="62" font-size="13" fill="#2e7d32">✅ we will stop</text>' +
+          '<text x="196" y="80" font-size="10" fill="var(--text2)">точно (≈100%)</text>' +
+          '<rect x="186" y="100" width="144" height="50" rx="8" fill="none" stroke="#e65100" stroke-width="2" stroke-dasharray="5 4"/>' +
+          '<text x="196" y="122" font-size="13" fill="#e65100">❓ we might stop</text>' +
+          '<text x="196" y="140" font-size="10" fill="var(--text2)">может быть (≈50%)</text>' +
+          '</svg>',
+        forms: {
+          positive: {
+            label_ru: "✅ if + настоящее → will / might (результат)",
+            rule_ru:
+              'Часть с <b>if</b> — настоящее; результат — <b>will</b> (точно) или <b>might</b> (может быть):<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><b>If</b> it <b>rains</b>, we <b>will</b> stop.</div><div>точно остановимся</div>' +
+              '<div><b>If</b> it <b>rains</b>, we <b>might</b> stop.</div><div>может, остановимся</div>' +
+              '<div>часть с if = <b>настоящее</b></div><div>не «if it will»</div>' +
+              '</div>',
+            table: [
+              { subj: "если дождь", verb: "will stop", example: "If it rains, we will stop.", transcr: "Иф ит рэйнз, уи уил стоп.", tr_ru: "Если пойдёт дождь, мы остановимся. (точно)" },
+              { subj: "если полные", verb: "will tell", example: "If the boxes are full, I will tell Tom.", transcr: "Иф зэ боксиз ар фул, ай уил тэл Том.", tr_ru: "Если ящики полные, я скажу Тому." },
+              { subj: "может быть", verb: "might leave", example: "If you finish early, you might leave.", transcr: "Иф ю финиш ёли, ю майт лив.", tr_ru: "Если закончишь рано, можешь уйти. (возможно)" },
+            ],
+          },
+          negative: {
+            label_ru: "❌ if … not / will not / might not",
+            rule_ru:
+              'Отрицание в любой части. Частое: <b>will not</b> (won\'t) и <b>might not</b>:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><b>If</b> it <b>does not</b> rain, we will work.</div><div>если не будет дождя…</div>' +
+              '<div>I <b>will not</b> be late.</div><div>я не опоздаю</div>' +
+              '<div>The lorry <b>might not</b> come.</div><div>может не приехать</div>' +
+              '</div>',
+            table: [
+              { subj: "если НЕ дождь", verb: "will work", example: "If it does not rain, we will work in the field.", transcr: "Иф ит даз нот рэйн, уи уил уёк ин зэ филд.", tr_ru: "Если дождя не будет, будем работать в поле." },
+              { subj: "не опоздаю", verb: "will not be", example: "If you help me, I will not be late.", transcr: "Иф ю хэлп ми, ай уил нот би лэйт.", tr_ru: "Если поможешь мне, я не опоздаю." },
+              { subj: "может не приехать", verb: "might not come", example: "The lorry might not come today.", transcr: "Зэ лори майт нот кам тудэй.", tr_ru: "Грузовик, возможно, сегодня не приедет." },
+            ],
+          },
+          question: {
+            label_ru: "❓ What will you do if…? / Shall I…?",
+            rule_ru:
+              'Главная часть — обычный вопрос с <b>will</b>; часть с <b>if</b> — настоящее:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><b>What will</b> we do <b>if</b> it rains?</div><div>что будем, если дождь?</div>' +
+              '<div><b>Will</b> we stop <b>if</b> it rains?</div><div>остановимся, если дождь?</div>' +
+              '<div><b>Shall I</b> help if you are slow?</div><div>помочь, если не успеваешь?</div>' +
+              '</div>',
+            table: [
+              { subj: "что будем?", verb: "will we do?", example: "What will we do if it rains?", transcr: "Уот уил уи ду иф ит рэйнз?", tr_ru: "Что мы будем делать, если пойдёт дождь?" },
+              { subj: "остановимся?", verb: "will we stop?", example: "If it rains, will we stop?", transcr: "Иф ит рэйнз, уил уи стоп?", tr_ru: "Если пойдёт дождь, мы остановимся?" },
+              { subj: "предложу помощь", verb: "shall I help?", example: "Shall I help if you are slow?", transcr: "Шэл ай хэлп иф ю ар слоу?", tr_ru: "Помочь, если ты не успеваешь?" },
+            ],
+          },
+        },
+        examples: [
+          { en: "If it rains, we will work in the shed.", transcr: "Иф ит рэйнз, уи уил уёк ин зэ шед.", ru: "Если пойдёт дождь, будем работать в сарае." },
+          { en: "If the boxes are full, I will tell Tom.", transcr: "Иф зэ боксиз ар фул, ай уил тэл Том.", ru: "Если ящики полные, я скажу Тому." },
+          { en: "We might stop if the ground is wet.", transcr: "Уи майт стоп иф зэ граунд из уэт.", ru: "Мы можем остановиться, если земля мокрая." },
+          { en: "When the lorry is here, we will load it.", transcr: "Уэн зэ лори из хиэ, уи уил лоуд ит.", ru: "Когда грузовик будет здесь, мы его загрузим." },
+          { en: "As soon as you finish, take a break.", transcr: "Эз сун эз ю финиш, тэйк э брэйк.", ru: "Как только закончишь, сделай перерыв." },
+          { en: "We can't start until the field is dry.", transcr: "Уи кант старт антил зэ филд из драй.", ru: "Не можем начать, пока поле не высохнет." },
+          { en: "Wait here until I come back.", transcr: "Уэйт хиэ антил ай кам бэк.", ru: "Подожди здесь, пока я не вернусь." },
+          { en: "It might rain tonight, so take your raincoat.", transcr: "Ит майт рэйн тунайт, соу тэйк ё рэйнкоут.", ru: "Возможно, вечером пойдёт дождь, возьми дождевик." },
+          { en: "There may be more work tomorrow.", transcr: "Зэа мэй би мо уёк тэмороу.", ru: "Возможно, завтра будет больше работы." },
+          { en: "Tom may cancel the shift if it snows.", transcr: "Том мэй кэнсл зэ шифт иф ит сноуз.", ru: "Том может отменить смену, если пойдёт снег." },
+          { en: "Perhaps the lorry will be late.", transcr: "Пэхэпс зэ лори уил би лэйт.", ru: "Возможно, грузовик опоздает." },
+          { en: "If it rains, the field will be muddy.", transcr: "Иф ит рэйнз, зэ филд уил би мади.", ru: "Если пойдёт дождь, поле будет грязным." },
+          { en: "If the road is icy, we will stop.", transcr: "Иф зэ роуд из айси, уи уил стоп.", ru: "Если дорога обледенелая, мы остановимся." },
+          { en: "Take your raincoat, otherwise you will get wet.", transcr: "Тэйк ё рэйнкоут, азэуайз ю уил гет уэт.", ru: "Возьми дождевик, иначе промокнешь." },
+          { en: "If the floor is wet, it will be slippery.", transcr: "Иф зэ фло из уэт, ит уил би слипэри.", ru: "Если пол мокрый, он будет скользким." },
+          { en: "The lorry may be late, so expect a delay.", transcr: "Зэ лори мэй би лэйт, соу икспэкт э дилэй.", ru: "Грузовик может опоздать, так что ожидай задержку." },
+          { en: "There is a chance of rain tonight.", transcr: "Зэа из э чанс ов рэйн тунайт.", ru: "Сегодня вечером возможен дождь (есть шанс)." },
+        ],
+        simple_ru: {
+          formula:
+            '<b>if + настоящее</b>, … <b>will + глагол</b> (точно) или <b>might / may + глагол</b> (может быть). ' +
+            'После <b>if / when / until</b> — настоящее, НЕ will.',
+          examples: [
+            { en: "If it rains, we will stop.", transcr: "Иф ит рэйнз, уи уил стоп.", ru: "точно остановимся → will." },
+            { en: "It might rain tomorrow.", transcr: "Ит майт рэйн тэмороу.", ru: "возможно → might." },
+          ],
+        },
+        ytQuery: "first conditional if will might английский для начинающих",
+      },
+
+      glossary: [
+        { en: "rota", transcr: "роутэ", ru: "график смен (BrE)", pn: "/ˈrəʊtə/" },
+        { en: "muddy", transcr: "мади", ru: "грязный (после дождя)", pn: "/ˈmʌdi/" },
+        { en: "icy", transcr: "айси", ru: "ледяной, обледенелый", pn: "/ˈaɪsi/" },
+        { en: "otherwise", transcr: "азэуайз", ru: "иначе, а то", pn: "/ˈʌðəwaɪz/" },
+      ],
+
+      words: [
+        { e: "🎲", en: "chance", transcr: "чанс", ru: "шанс, вероятность", pn: "/tʃɑːns/" },
+        { e: "❔", en: "possible", transcr: "посэбл", ru: "возможный", pn: "/ˈpɒsəbl/" },
+        { e: "🤔", en: "perhaps", transcr: "пэхэпс", ru: "возможно, может быть", pn: "/pəˈhæps/" },
+        { e: "👍", en: "sure", transcr: "шуэ", ru: "уверенный (I'm sure — я уверен)", pn: "/ʃʊə/" },
+        { e: "🔮", en: "expect", transcr: "икспэкт", ru: "ожидать, предполагать", pn: "/ɪkˈspekt/" },
+        { e: "🤞", en: "hope", transcr: "хоуп", ru: "надеяться", pn: "/həʊp/" },
+        { e: "💭", en: "guess", transcr: "гес", ru: "догадка; полагать (I guess so)", pn: "/ɡes/" },
+        { e: "🟫", en: "ground", transcr: "граунд", ru: "земля, грунт", pn: "/ɡraʊnd/" },
+        { e: "💨", en: "dusty", transcr: "дасти", ru: "пыльный", pn: "/ˈdʌsti/" },
+        { e: "⚠️", en: "slippery", transcr: "слипэри", ru: "скользкий", pn: "/ˈslɪpəri/" },
+        { e: "⏳", en: "delay", transcr: "дилэй", ru: "задержка; задерживать", pn: "/dɪˈleɪ/" },
+        { e: "🚫", en: "cancel", transcr: "кэнсл", ru: "отменить", pn: "/ˈkænsl/" },
+        { e: "🟰", en: "same", transcr: "сэйм", ru: "тот же, такой же", pn: "/seɪm/" },
+        { e: "🙅", en: "disagree", transcr: "дисэгри", ru: "не соглашаться", pn: "/ˌdɪsəˈɡriː/" },
+      ],
+
+      dialogue: [
+        { s: "w", en: "Tom, what will we do if it rains today?", transcr: "Том, уот уил уи ду иф ит рэйнз тудэй?", ru: "Том, что мы будем делать, если сегодня пойдёт дождь?" },
+        { s: "m", en: "If it rains, we will work in the shed.", transcr: "Иф ит рэйнз, уи уил уёк ин зэ шед.", ru: "Если пойдёт дождь, будем работать в сарае." },
+        { s: "w", en: "And if the ground is wet?", transcr: "Энд иф зэ граунд из уэт?", ru: "А если земля мокрая?" },
+        { s: "m", en: "We might stop and clean the warehouse.", transcr: "Уи майт стоп энд клин зэ уэахаус.", ru: "Можем остановиться и убрать склад." },
+        { s: "w", en: "When will the lorry come?", transcr: "Уэн уил зэ лори кам?", ru: "Когда приедет грузовик?" },
+        { s: "m", en: "As soon as it is here, we will load it.", transcr: "Эз сун эз ит из хиэ, уи уил лоуд ит.", ru: "Как только он будет здесь, загрузим его." },
+        { s: "w", en: "I might be slow today. My back hurts.", transcr: "Ай майт би слоу тудэй. Май бэк хётс.", ru: "Я, возможно, буду медленным сегодня. Спина болит." },
+        { s: "m", en: "No problem. Wait here until you feel better.", transcr: "Ноу проблэм. Уэйт хиэ антил ю фил бэтэ.", ru: "Ничего страшного. Подожди здесь, пока не станет легче." },
+        { s: "w", en: "Thanks. Will Anna help if I am slow?", transcr: "Сэнкс. Уил Анна хэлп иф ай эм слоу?", ru: "Спасибо. Анна поможет, если я не успеваю?" },
+        { s: "m", en: "Yes. We might finish early if the sun is hot.", transcr: "Йес. Уи майт финиш ёли иф зэ сан из хот.", ru: "Да. Можем закончить рано, если будет жарко." },
+        { s: "w", en: "I think it will rain this evening.", transcr: "Ай синк ит уил рэйн зис ивнинг.", ru: "Думаю, вечером пойдёт дождь." },
+        { s: "m", en: "So do I. Take your raincoat.", transcr: "Соу ду ай. Тэйк ё рэйнкоут.", ru: "Я тоже так думаю. Возьми дождевик." },
+        { s: "w", en: "I will. I won't get wet this time.", transcr: "Ай уил. Ай уоунт гет уэт зис тайм.", ru: "Возьму. В этот раз не промокну." },
+        { s: "m", en: "Well done today. Check the rota for tomorrow.", transcr: "Уэл дан тудэй. Чек зэ роутэ фо тэмороу.", ru: "Молодец сегодня. Посмотри график смен на завтра." },
+      ],
+
+      quiz: [
+        { q: '[COMPLETE] "If it ___, we will work in the shed." (после if — настоящее)', opts: ["rains", "will rain", "rained", "is raining"], c: 0, expl: "После if — настоящее время: If it rains… Будущее (will) ставим во вторую часть, не после if.", hint_ru: "После if → настоящее." },
+        { q: '[CORRECT] «Если пойдёт дождь, мы остановимся.»', opts: ["If it rains, we will stop.", "If it will rain, we will stop.", "If it rains, we stop.", "When it will rain, we stop."], c: 0, expl: "If it rains, we will stop. — после if настоящее (rains), результат — will + глагол. Никогда «if it will».", hint_ru: "if + настоящее, … will." },
+        { q: '[COMPLETE] "When you ___, we will load the lorry." (время в будущем)', opts: ["finish", "will finish", "finished", "are finishing"], c: 0, expl: "После when (о будущем) — настоящее: When you finish… Не «will finish».", hint_ru: "when + настоящее." },
+        { q: '[COMPLETE] "We can\'t start ___ the field is dry." (не начнём, пока не высохнет)', opts: ["until", "when", "if", "while"], c: 0, expl: "until = (до тех пор) пока не: We can't start until the field is dry. После until — настоящее.", hint_ru: "until = пока не." },
+        { q: '[COMPLETE] "It ___ rain tonight. I am not sure." (возможность)', opts: ["might", "will", "won't", "does"], c: 0, expl: "might = возможно (менее уверенно, чем will): It might rain tonight.", hint_ru: "может быть → might." },
+        { q: '[CORRECT] «Том, может быть, отменит смену.»', opts: ["Tom may cancel the shift.", "Tom may cancels the shift.", "Tom may to cancel the shift.", "Tom cancel the shift."], c: 0, expl: "may + глагол без -s и без to: Tom may cancel the shift. (may = возможность).", hint_ru: "may + глагол (без to, без -s)." },
+        { q: '[QUESTION] Сделай вопрос: «Что мы будем делать, если пойдёт дождь?»', opts: ["What will we do if it rains?", "What we will do if it rains?", "What will we do if it will rain?", "What do we will if it rains?"], c: 0, expl: "Главная часть — вопрос (What will we do), часть с if — настоящее (rains): What will we do if it rains?", hint_ru: "What will we do if it rains?" },
+        { q: '[TRANSLATE] "шанс, вероятность"', opts: ["chance", "delay", "ground", "guess"], c: 0, expl: "chance — шанс. delay — задержка, ground — земля, guess — догадка.", hint_ru: "chance." },
+        { q: '[TRANSLATE] "отменить"', opts: ["cancel", "delay", "expect", "hope"], c: 0, expl: "cancel — отменить. delay — задержать, expect — ожидать, hope — надеяться.", hint_ru: "cancel." },
+        { q: '[TRANSLATE] "скользкий"', opts: ["slippery", "dusty", "muddy", "wet"], c: 0, expl: "slippery — скользкий. dusty — пыльный, muddy — грязный, wet — мокрый.", hint_ru: "slippery." },
+        { q: '[TRANSLATE] "возможно (может быть)"', opts: ["perhaps", "sure", "same", "chance"], c: 0, expl: "perhaps — возможно. sure — уверенный, same — тот же, chance — шанс.", hint_ru: "perhaps." },
+        { q: "[LISTEN] It might rain tonight.", opts: ["Возможно, сегодня вечером пойдёт дождь.", "Сегодня вечером точно пойдёт дождь.", "Вчера вечером шёл дождь.", "Дождя сегодня не будет."], c: 0, expl: "It might rain tonight. — Возможно, вечером пойдёт дождь (might = не точно).", hint_ru: "" },
+        { q: "[GIST] По диалогу: что они сделают, если земля мокрая?", opts: ["Остановятся и уберут склад.", "Поедут домой.", "Будут собирать быстрее.", "Отменят смену."], c: 0, expl: "«We might stop and clean the warehouse» — остановятся и уберут склад.", hint_ru: "Слушай реплику про wet ground." },
+        { q: '[BUILD] «Если пойдёт дождь, мы остановимся.»', build: ["If", "it", "rains", "we", "will", "stop"], expl: "If it rains, we will stop. — if + настоящее (rains), результат — will + глагол.", hint_ru: "If it rains, we will stop." },
+        { q: '[BUILD] «Я тоже.» (соглашаюсь с «I think…»)', build: ["So", "do", "I"], expl: "So do I. — согласие с утверждением (I think… → So do I).", hint_ru: "So do I." },
+      ],
+
+      everyday: {
+        title_ru: "Согласиться и не согласиться (So do I / Neither do I)",
+        phrases: [
+          { en: "So do I.", transcr: "Соу ду ай.", ru: "И я тоже. (согласие с «I like…/I work…»)" },
+          { en: "Neither do I.", transcr: "Найзэ ду ай.", ru: "И я нет. (согласие с «I don't…»)" },
+          { en: "So am I.", transcr: "Соу эм ай.", ru: "И я тоже. (согласие с «I'm tired/ready»)" },
+          { en: "Neither am I.", transcr: "Найзэ эм ай.", ru: "И я тоже нет. (согласие с «I'm not…»)" },
+          { en: "I agree with you.", transcr: "Ай эгри уиз ю.", ru: "Я с тобой согласен." },
+          { en: "I don't agree.", transcr: "Ай доунт эгри.", ru: "Я не согласен." },
+        ],
+      },
+    },
   ];
 
   if (typeof module !== "undefined" && module.exports) module.exports = LESSONS;

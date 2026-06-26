@@ -140,6 +140,22 @@ const WHITELIST = {
   // stems to "even" (the -ing strip) but is self-consistent (its words[] entry and any use both fold to
   // "even"). See plan 2026-06-26-b1-scope L29.
   29: ["will", "shall"],
+  // L30 First conditional (if + present, … will/might) + future time clauses + may/might.
+  // The conditional/time CONJUNCTIONS are already cumulative: if=WL26, when=WL12,
+  // while/as/because/although=WL24, will/shall=WL29, soon=WL7 (so "as soon as" =
+  // as+soon+as just works). NEW = the modal "might" + the conjunction "until" (both
+  // plain tokens the stemmer leaves untouched, snowball MISS otherwise). "may" is
+  // already a known word (the month "May"), but it is listed here too to document the
+  // modal's introduction. "may not"/"might not" are two plain tokens (not"=WL1) — no
+  // contraction. Note: only "come" (base) rides the central PARTICIPLES list; inflected
+  // "comes"/"came" fall through (allowed() doesn't stem the whitelist), so present-tense
+  // when-clauses use a words[] verb (finish) or "is here" instead. The lexical focus
+  // (contingency/possibility: chance/possible/perhaps/sure/expect/hope/guess/ground/
+  // dusty/slippery/delay/cancel/same/disagree) is the 14 words[]; receptive condition
+  // words (rota/muddy/icy/otherwise) live in lesson.glossary[]. The agree/disagree
+  // function (So do I / Neither do I) lives in everyday (not snowball-checked) — "neither"
+  // is intentionally NOT whitelisted (unused in any checked field). See plan L30.
+  30: ["may", "might", "until"],
 };
 const NAMES = ["ahmad","tom","sara","anna","john","ali","omar","rustam","fatima","madina","bobur"];
 

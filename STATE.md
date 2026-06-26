@@ -971,4 +971,43 @@ plans / suggestions**.
   **3 синих глосса** (probably/spare/worry) + 1 в грамматике (definitely), тест Q1 [COMPLETE]→«✍️ Заполните пропуск» опции перемешаны (will не
   на 0), **0 ошибок/предупреждений консоли**.
 - `CACHE_VERSION` esw-v87→**esw-v88**. `scripts/lib.js`: `WHITELIST[29]=["will","shall"]` добавлен. **L29 — 6-й из 13 (L24–L36).**
-  НЕ запушено (ждёт явного разрешения владельца). Дальше — **L30 (First conditional + future time clauses + may/might) за свежий чат** по плану.
+  ✅ **Запушено 2026-06-26** (`2ce1689..2cf2c6d`, по явному разрешению владельца перед стартом L30). L24–L29 теперь все на `origin/master`.
+
+**2026-06-26 — ✅ L30 готов — 7-й урок B1. First conditional (if + настоящее → will/might) + future time clauses (when/as soon as/while/until + настоящее, НЕ will) + may/might (возможность).**
+План — `plans/2026-06-26-b1-scope.md` (строка L30). Грамм-ядро: `if` + настоящее, … `will` + глагол (точно) / `might` + глагол (может быть) ·
+будущее-временны́е clauses **when / as soon as / while / until + настоящее** (порядок clause обратим) · **may / might + база** (возможность; `might not` /
+`may not` — два слова, не сливаются). Кардинальное правило урока: **после if / when / until — настоящее, НЕ will**. `grammar.visual_ru` — SVG-мост:
+🌧️ «if it rains» (условие, настоящее, «не if it will») → ✅ «we will stop» (точно ≈100%) / ❓ «we might stop» (может быть ≈50%, пунктир). Голос — 1-е
+лицо рабочего + бригадир Tom (`NAMES`) + Anna. Everyday-функция — **agreeing / disagreeing (So do I / Neither do I)**.
+- **Лекс-фокус (метрика B1):** `words[]` = **14 contingency/возможность** (chance/possible/perhaps/sure/expect/hope/guess/ground/dusty/slippery/delay/
+  cancel/same/disagree; все дедуп-уникальны через node-прогон — «contingency + conjunctions» поле по плану; союзы if/when/until — whitelist, не в счётчике).
+  `glossary[]` = **4 рецептивных** (rota=график-смен-BrE / muddy / icy / otherwise — синие, тап→перевод+🔊, не в SRS/счётчике; rota в диалоге, muddy/icy/
+  otherwise в grammar-examples). `everyday` = «Согласиться и не согласиться (So do I / Neither do I)» 6 фраз (So/Neither + do/am + аукс по образцу EF 8D).
+  quiz = **15** (2×`[BUILD]` вкл. «So do I», `[GIST]`, `[LISTEN]`, 4×`[TRANSLATE]`, 3×`[COMPLETE]`, 2×`[CORRECT]` if-present↔if-will / may+база, `[QUESTION]`;
+  крен к продуктивным, реш. грилла C).
+- **Снежок (conditional-специфика):** `WHITELIST[30]=["may","might","until"]` (might/until — НОВЫЕ плейн-токены, стеммер не трогает; may уже известен как месяц «May»,
+  внесён для документации модала). Союзы уже кумулятивны: if=WL26, when=WL12, while/as/because/although=WL24, will/shall=WL29, soon=WL7 (→ «as soon as»
+  = as+soon+as). **Ловушка:** только база `come` едет на центр. `PARTICIPLES`, а инфлекции `comes`/`came` падают (`allowed()` не стеммит whitelist) → when-clause
+  взял глагол из words[] (`finish`) и «is here» вместо «comes». may not / might not — два плейн-токена (`not`=WL1). Контракции (won't→will, I'll→i) сворачиваются
+  токенайзером → полные формы в таблицах/examples, естественные в диалоге; «Neither» НЕ вайтлистился (только в everyday, вне снежка). Канон транскрипций (node-прогон):
+  guess=«гес» (класс get/gate/game — «ге» для /ɡe/), floor=«фло», lorry=«лори», otherwise=«азэуайз».
+- **4-слойный гейт:**
+  - **Слой 1 (`npm run audit`):** 8/8 зелёные **с первого прогона** (pre-write node-прогон known-статуса всех токенов проверяемых полей → 0 правок снежка; поймал
+    `comes`/`came` ДО записи в data.js). После 2 «nice»-правок — снова 8/8.
+  - **Слой 2 (чек-лист):** фермерский/рабочий контекст ✓, RU-only ✓, реальные `expl` ✓, эмодзи — 2 правки (expect 📈→🔮 «график вводил в заблуждение»; dusty 🌫️→💨 «туман≠пыль»).
+  - **Слой 3 (адверсариальные ревьюеры язык/IPA + педагогика/контракт/safety):** оба → **SHIP, 0 must-fix**. Кардинальное правило чисто (НЕТ `will` после if/when/until ни в
+    одной реальной фразе; «When will the lorry come?» — прямой вопрос, не time-clause; «When you will finish» — заведомо неверный дистрактор). may/might+база, might-not-два-слова,
+    So/Neither-аукс верны; counts 14/4/14/15 ✓, safety нейтрально (нет диагнозов/999/111 в англ.), quiz 0 leak / c-ключи верны. **Конвергентный nice-to-have обоих:** часть новых
+    слов не смоделирована в контексте → добавил 3 examples (slippery / expect+delay / chance) + снял orphan `expect`.
+  - **🔴 Слой 4 (`/lesson-naturalness-check L30`, source-cited против 5 источников, 2 ревьюера + скептик):** **SHIP, 0 правок.** Вербатим-якоря: first conditional = EF File 6A
+    «if + present, will + infinitive» / «What will you do if it rains?»; future time clauses = Headway U9 «as soon as, when, while, until» + digest FARM «As soon as I get my
+    payslip… / I'll wait until the shift finishes»; may/might = EF File 6C «It might rain = It's possible that it will rain» / «might not, may not aren't usually contracted»;
+    So-do-I/Neither-do-I = EF File 8D «A I don't smoke. Neither do I.» / «So am I. NOT So I am.»; «Well done» = BrE. Скептик: 0 флагов для отклонения (3 borderline — Shall I как
+    review-vocab L29, shed/warehouse вариация, «So do I» эхо к «I think» — самозащищены цитатами). Нет утечки 2-го conditional / have-to / passive.
+  - **Слой 5 (`verify-ipa`/`verify-transcr` новых слов):** verify-transcr — 1 флаг `guess` «гес» vs derived «гэс» = **принятый класс** («ге» для /ɡe/, как get/gate/game). verify-ipa — 2
+    флага: `possible /ˈpɒsəbl/` (слоговая /l̩/, класс L28 panel/nozzle) и `sure /ʃʊə/` vs `/ʃɔː/` (оба валидные RP-варианта; транскр «шуэ» матчит выбранный). Остальные matched RP.
+- **Превью (mobile 375×812, `done[1..29]`, SW unregister + caches.delete → свежий v89):** хаб «Уровень 3 · B1 = 6/7» + 📍 вы здесь, карточка L30 (`lesson-card b1`,
+  разблок), шапка «30/30» + title_ru + cefr без «undefined», 5 табов, SVG-мост (все 10 меток: if it rains/настоящее/«не if it will» → ✅ will ≈100% / ❓ might ≈50%), 14 реплик
+  диалога, синий глосс `rota` в диалоге + `muddy`/`icy`/`otherwise` в грамматике (тап→перевод+🔊), тест «1 из 15» опции перемешаны (rains не на 0), **0 ошибок/предупреждений консоли**.
+- `CACHE_VERSION` esw-v88→**esw-v89**. `scripts/lib.js`: `WHITELIST[30]=["may","might","until"]` добавлен. **L30 — 7-й из 13 (L24–L36).**
+  НЕ запушено (ждёт явного разрешения владельца). Дальше — **L31 (have to / don't have to / must / mustn't / should + rules & safety + dependent prepositions) за свежий чат** по плану.
