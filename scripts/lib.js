@@ -185,6 +185,23 @@ const WHITELIST = {
   // pay-passive is kept neutral ("workers are paid weekly", no rate/promise). See plan
   // 2026-06-26-b1-scope L32. [[snowball-whitelist-not-stemmed-inflections]]
   32: ["by"],
+  // L33 Second conditional (if + past, … would + base) + "If I were you" advice. The
+  // whole structure rides on already-cumulative tokens: if=WL26, would=WL10, could=WL18,
+  // might=WL30, were/was=WL12, had=WL25; wouldn't/couldn't have their n't stripped by
+  // tokenize() -> would/could; the contraction 'd is stripped ('I'd'->i) so contracted
+  // result clauses ride on known pronouns (BUILD keeps "I'd" as one tile). Hypothetical
+  // if-clause pasts are drawn ONLY from snowball-safe forms: were/was=WL12, had=WL25, and
+  // the irregular pasts that are ALSO participles in the central list (found/got/lost/paid/
+  // won/made/said/left/sold/told/heard/felt) — these "just work"; regular -ed pasts stem
+  // to known bases (rained->rain, worked->work, offered->offer). Avoided in checked fields:
+  // irregular simple pasts NOT in PARTICIPLES (came/went/saw/knew/took/gave/spoke) and
+  // silent-e/doubling -ed. NEW = the determiner "another" (stay another season / another
+  // job) — a plain function word the stemmer leaves untouched, snowball MISS otherwise. The
+  // lexical focus (hypothetical/advice/decisions: dream/future/rich/win/choose/choice/home/
+  // stay/accept/refuse/speak/lucky/idea) is the 13 words[]; receptive words (lottery/abroad/
+  // imagine/instead) live in lesson.glossary[]. Little new vocab is expected here — the B1
+  // metric is grammar + collocations on known words (see plan 2026-06-26-b1-scope L33).
+  33: ["another"],
 };
 const NAMES = ["ahmad","tom","sara","anna","john","ali","omar","rustam","fatima","madina","bobur"];
 

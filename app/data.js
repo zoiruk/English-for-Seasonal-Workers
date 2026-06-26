@@ -5787,6 +5787,201 @@
         ],
       },
     },
+
+    {
+      id: 33,
+      title_ru: "Если бы…: второй conditional (If I were you, I'd talk to Tom)",
+      cefr: "B1 · Second conditional (if + past, would) · giving advice",
+      grammar: {
+        title_ru: "Second conditional: if + прошедшее, … would + база (нереальное «если бы»)",
+        intro_ru:
+          'Иногда мы говорим о том, чего <b>нет на самом деле</b> — воображаем: «<b>если бы</b> у меня были деньги…».<br>' +
+          '❌ Не так: <s>If I will have money…</s><br>' +
+          '✅ Так: <b>If I <u>had</u> money, I <u>would</u> go home.</b> ' +
+          '<span class="g-transcr">[иф ай хэд мани, ай уд гоу хоум]</span> (если бы у меня были деньги, я бы поехал домой)<br>' +
+          'Формула: <b>if + прошедшее</b> (had / were / won…), <b>… would + база</b>. ' +
+          '⚠️ Главное правило: <b>would НЕ ставим в часть с if</b>.',
+        cultural_ru:
+          '🔀 <b>Первый и второй conditional — реально это или нет:</b><br>' +
+          '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+          '<div><b>1-й</b> (реально, может быть): If it <b>rains</b>, we <b>will</b> stop.</div>' +
+          '<div>дождь возможен → точно остановимся</div>' +
+          '<div><b>2-й</b> (воображаю, вряд ли): If I <b>won</b> the lottery, I <b>would</b> stop.</div>' +
+          '<div>выигрыш почти нереален → «я бы остановился»</div>' +
+          '</div>' +
+          '💬 <b>Совет — «If I were you, I\'d …»</b> (на твоём месте я бы…): ' +
+          '<b>If I were you, I\'d talk to Tom.</b> <span class="g-transcr">[иф ай уё ю, айд ток ту Том]</span> — готовая фраза для совета.',
+        note_ru:
+          '⚠️ <b>would НЕ в части с if!</b> <s>If I would have money…</s> → <b>If I had money…</b><br>' +
+          '⚠️ В результате — <b>could</b>, не «can»: <s>I\'d can help</s> → <b>I could help.</b><br>' +
+          '⚠️ С глаголом <b>be</b> — <b>were</b> для всех лиц: <b>If I <u>were</u> you</b> (не «was»), If he <u>were</u> here…<br>' +
+          '⚠️ <b>\'d = would</b> здесь: I\'d = I would, he\'d = he would. Сокращение одно для всех лиц.<br>' +
+          '⚠️ Это про <b>воображаемое сейчас</b>, не про вчера: «If I had…» = «если бы сейчас было».',
+        visual_ru:
+          '<svg viewBox="0 0 340 224" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:360px;height:auto" role="img">' +
+          '<text x="10" y="14" font-size="11" fill="var(--text2)">Реально, может быть — 1-й conditional:</text>' +
+          '<rect x="8" y="20" width="150" height="58" rx="8" fill="none" stroke="#2e7d32" stroke-width="2"/>' +
+          '<text x="16" y="40" font-size="11" fill="var(--text)">If it rains,</text>' +
+          '<text x="16" y="58" font-size="11" fill="#2e7d32">we will stop.</text>' +
+          '<text x="16" y="72" font-size="9" fill="var(--text2)">дождь возможен</text>' +
+          '<text x="170" y="46" font-size="13" fill="#2e7d32">→ will ✅</text>' +
+          '<text x="170" y="64" font-size="9" fill="var(--text2)">почти точно</text>' +
+          '<text x="10" y="104" font-size="11" fill="var(--text2)">Воображаемое, вряд ли — 2-й conditional:</text>' +
+          '<rect x="8" y="110" width="150" height="58" rx="8" fill="none" stroke="#6a1b9a" stroke-width="2"/>' +
+          '<text x="16" y="130" font-size="11" fill="var(--text)">If I won money,</text>' +
+          '<text x="16" y="148" font-size="11" fill="#6a1b9a">I\'d go home.</text>' +
+          '<text x="16" y="162" font-size="9" fill="var(--text2)">почти нереально</text>' +
+          '<text x="170" y="136" font-size="13" fill="#6a1b9a">→ would 💭</text>' +
+          '<text x="170" y="154" font-size="9" fill="var(--text2)">«я бы…»</text>' +
+          '<text x="10" y="196" font-size="11" fill="var(--text)">if + <tspan fill="#6a1b9a">прошедшее</tspan> → <tspan fill="#6a1b9a">would</tspan> + база</text>' +
+          '<text x="10" y="214" font-size="10" fill="#e65100">⚠️ would НЕ в части с if · \'d = would</text>' +
+          '</svg>',
+        forms: {
+          positive: {
+            label_ru: "✅ if + прошедшее, … would + база",
+            rule_ru:
+              'Воображаемое «если бы» — нереально сейчас:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div>If I <b>were</b> you, I<b>\'d</b> talk to Tom.</div><div>на твоём месте я бы…</div>' +
+              '<div>If I <b>had</b> more money, I<b>\'d</b> go home.</div><div>если бы было больше денег</div>' +
+              '<div>If I <b>won</b> some money, I<b>\'d</b> stay here.</div><div>если бы выиграл</div>' +
+              '<div>If the pay <b>were</b> better, I<b>\'d</b> stay.</div><div>если бы платили лучше</div>' +
+              '</div>',
+            table: [
+              { subj: "совет", verb: "If I were you", example: "If I were you, I'd talk to Tom.", transcr: "Иф ай уё ю, айд ток ту Том.", tr_ru: "На твоём месте я бы поговорил с Томом." },
+              { subj: "деньги", verb: "If I had…", example: "If I had more money, I'd go home.", transcr: "Иф ай хэд мо мани, айд гоу хоум.", tr_ru: "Если бы у меня было больше денег, я бы поехал домой." },
+              { subj: "выигрыш", verb: "If I won…", example: "If I won some money, I'd stay here.", transcr: "Иф ай уан сам мани, айд стэй хиэ.", tr_ru: "Если бы я выиграл денег, я бы остался здесь." },
+              { subj: "работа", verb: "would + база", example: "If the pay were better, I'd stay another season.", transcr: "Иф зэ пэй уё бэтэ, айд стэй эназэ сизн.", tr_ru: "Если бы платили лучше, я бы остался ещё на сезон." },
+            ],
+          },
+          negative: {
+            label_ru: "❌ … wouldn't + база · в if — didn't + база",
+            rule_ru:
+              '<b>wouldn\'t</b> (= would not) в результате; в части с if — <b>didn\'t</b> + база:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div>If I were you, I <b>wouldn\'t</b> accept it.</div><div>я бы не соглашался</div>' +
+              '<div>If I <b>didn\'t</b> work here, I\'d go home.</div><div>если бы не работал тут</div>' +
+              '<div>I <b>wouldn\'t</b> refuse a better job.</div><div>не отказался бы</div>' +
+              '</div>',
+            table: [
+              { subj: "совет", verb: "wouldn't + база", example: "If I were you, I wouldn't accept it.", transcr: "Иф ай уё ю, ай ууднт эксэпт ит.", tr_ru: "На твоём месте я бы не соглашался." },
+              { subj: "if-часть", verb: "didn't + база", example: "If I didn't work here, I'd go home.", transcr: "Иф ай диднт уёк хиэ, айд гоу хоум.", tr_ru: "Если бы я не работал здесь, я бы поехал домой." },
+              { subj: "результат", verb: "wouldn't", example: "I wouldn't refuse a better job.", transcr: "Ай ууднт рифьюз э бэтэ джоб.", tr_ru: "Я бы не отказался от работы получше." },
+            ],
+          },
+          question: {
+            label_ru: "❓ What would you do if…? · Would you …?",
+            rule_ru:
+              '<b>would</b> выходит вперёд; в части с if — прошедшее:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><b>What would</b> you do if you won?</div><div>что бы ты сделал, если бы выиграл?</div>' +
+              '<div><b>Would</b> you stay if the pay were better?</div><div>остался бы, если бы платили лучше?</div>' +
+              '<div><b>What would</b> you buy if you were rich?</div><div>что бы купил, если бы был богат?</div>' +
+              '</div>',
+            table: [
+              { subj: "что?", verb: "What would…do", example: "What would you do if you won?", transcr: "Уот уд ю ду иф ю уан?", tr_ru: "Что бы ты сделал, если бы выиграл?" },
+              { subj: "да/нет?", verb: "Would you…?", example: "Would you stay if the pay were better?", transcr: "Уд ю стэй иф зэ пэй уё бэтэ?", tr_ru: "Остался бы ты, если бы платили лучше?" },
+              { subj: "что купить?", verb: "What would…buy", example: "What would you buy if you were rich?", transcr: "Уот уд ю бай иф ю уё рич?", tr_ru: "Что бы ты купил, если бы был богат?" },
+            ],
+          },
+        },
+        examples: [
+          { en: "If I were you, I'd talk to Tom.", transcr: "Иф ай уё ю, айд ток ту Том.", ru: "На твоём месте я бы поговорил с Томом." },
+          { en: "If I had more money, I'd send it home.", transcr: "Иф ай хэд мо мани, айд сэнд ит хоум.", ru: "Если бы у меня было больше денег, я бы отправил их домой." },
+          { en: "If I won the lottery, I'd buy a farm.", transcr: "Иф ай уан зэ лотэри, айд бай э фарм.", ru: "Если бы я выиграл в лотерею, я бы купил ферму." },
+          { en: "If I had a car, I could drive to town.", transcr: "Иф ай хэд э ка, ай куд драйв ту таун.", ru: "Если бы у меня была машина, я бы мог ездить в город." },
+          { en: "If the pay were better, I'd stay another season.", transcr: "Иф зэ пэй уё бэтэ, айд стэй эназэ сизн.", ru: "Если бы платили лучше, я бы остался ещё на сезон." },
+          { en: "If I lost my passport, I'd tell the manager.", transcr: "Иф ай лост май паспорт, айд тэл зэ мэниджэ.", ru: "Если бы я потерял паспорт, я бы сказал менеджеру." },
+          { en: "If I could speak better English, I'd ask for more work.", transcr: "Иф ай куд спик бэтэ инглиш, айд аск фо мо уёк.", ru: "Если бы я лучше говорил по-английски, я бы попросил больше работы." },
+          { en: "What would you do if you lost your job?", transcr: "Уот уд ю ду иф ю лост ё джоб?", ru: "Что бы ты сделал, если бы потерял работу?" },
+          { en: "If I were rich, I wouldn't work here.", transcr: "Иф ай уё рич, ай ууднт уёк хиэ.", ru: "Если бы я был богат, я бы здесь не работал." },
+          { en: "If I found a better job, I'd accept it.", transcr: "Иф ай фаунд э бэтэ джоб, айд эксэпт ит.", ru: "Если бы я нашёл работу получше, я бы согласился." },
+          { en: "I wouldn't refuse more hours.", transcr: "Ай ууднт рифьюз мо ауэз.", ru: "Я бы не отказался от лишних часов." },
+          { en: "If I were you, I'd go to the doctor's.", transcr: "Иф ай уё ю, айд гоу ту зэ доктэз.", ru: "На твоём месте я бы сходил к врачу." },
+          { en: "If I had a holiday, I'd go abroad.", transcr: "Иф ай хэд э холидэй, айд гоу эброд.", ru: "Если бы у меня был отпуск, я бы поехал за границу." },
+          { en: "My dream is to get a better job.", transcr: "Май дрим из ту гет э бэтэ джоб.", ru: "Моя мечта — получить работу получше." },
+          { en: "I have plans for the future.", transcr: "Ай хэв плэнз фо зэ фьючэ.", ru: "У меня есть планы на будущее." },
+        ],
+        simple_ru: {
+          formula:
+            '<b>Воображаемое «если бы» = if + прошедшее, … would + база.</b> «If I <b>had</b> money, I <b>would</b> go.» ' +
+            'Совет: «<b>If I were you, I\'d</b> …» (на твоём месте я бы…). ⚠️ would НЕ в часть с if.',
+          examples: [
+            { en: "If I were you, I'd talk to Tom.", transcr: "Иф ай уё ю, айд ток ту Том.", ru: "совет: на твоём месте…" },
+            { en: "If I had money, I'd go home.", transcr: "Иф ай хэд мани, айд гоу хоум.", ru: "if + had → would + база." },
+            { en: "If I were lucky, I would win.", transcr: "Иф ай уё лаки, ай уд уин.", ru: "if + прошедшее (were), … would + база." },
+          ],
+        },
+        ytQuery: "second conditional if I were you would английский для начинающих",
+      },
+
+      glossary: [
+        { en: "lottery", transcr: "лотэри", ru: "лотерея", pn: "/ˈlɒtəri/" },
+        { en: "abroad", transcr: "эброд", ru: "за границей, за границу", pn: "/əˈbrɔːd/" },
+        { en: "imagine", transcr: "имэджин", ru: "представить, вообразить", pn: "/ɪˈmædʒɪn/" },
+      ],
+
+      words: [
+        { e: "💭", en: "dream", transcr: "дрим", ru: "мечта", pn: "/driːm/" },
+        { e: "🔮", en: "future", transcr: "фьючэ", ru: "будущее", pn: "/ˈfjuːtʃə/" },
+        { e: "💰", en: "rich", transcr: "рич", ru: "богатый", pn: "/rɪtʃ/" },
+        { e: "🏆", en: "win", transcr: "уин", ru: "выиграть", pn: "/wɪn/" },
+        { e: "☑️", en: "choose", transcr: "чуз", ru: "выбирать", pn: "/tʃuːz/" },
+        { e: "🤔", en: "choice", transcr: "чойс", ru: "выбор", pn: "/tʃɔɪs/" },
+        { e: "🏠", en: "home", transcr: "хоум", ru: "дом, домой", pn: "/həʊm/" },
+        { e: "🏕️", en: "stay", transcr: "стэй", ru: "остаться", pn: "/steɪ/" },
+        { e: "🤝", en: "accept", transcr: "эксэпт", ru: "согласиться, принять", pn: "/əkˈsept/" },
+        { e: "🙅", en: "refuse", transcr: "рифьюз", ru: "отказаться", pn: "/rɪˈfjuːz/" },
+        { e: "🗣️", en: "speak", transcr: "спик", ru: "говорить (на языке)", pn: "/spiːk/" },
+        { e: "🍀", en: "lucky", transcr: "лаки", ru: "везучий, удачливый", pn: "/ˈlʌki/" },
+        { e: "💡", en: "idea", transcr: "айдиэ", ru: "мысль, идея", pn: "/aɪˈdɪə/" },
+      ],
+
+      dialogue: [
+        { s: "w", en: "Tom, can I ask you something?", transcr: "Том, кэн ай аск ю самсинг?", ru: "Том, можно тебя спросить?" },
+        { s: "m", en: "Yes. What is the problem?", transcr: "Йес. Уот из зэ проблэм?", ru: "Да. В чём проблема?" },
+        { s: "w", en: "I am tired. What would you do if you were me?", transcr: "Ай эм тайэд. Уот уд ю ду иф ю уё ми?", ru: "Я устал. Что бы ты сделал на моём месте?" },
+        { s: "m", en: "If I were you, I'd stay. The pay is good.", transcr: "Иф ай уё ю, айд стэй. Зэ пэй из гуд.", ru: "На твоём месте я бы остался. Платят хорошо." },
+        { s: "w", en: "I want to go home now.", transcr: "Ай уонт ту гоу хоум нау.", ru: "Я хочу домой сейчас." },
+        { s: "m", en: "Imagine you had more money. What would you do?", transcr: "Имэджин ю хэд мо мани. Уот уд ю ду?", ru: "Представь, что у тебя больше денег. Что бы ты сделал?" },
+        { s: "w", en: "If I had more money, I'd send it home.", transcr: "Иф ай хэд мо мани, айд сэнд ит хоум.", ru: "Если бы было больше денег, я бы отправил их домой." },
+        { s: "m", en: "You should speak to the manager today.", transcr: "Ю шуд спик ту зэ мэниджэ тудэй.", ru: "Тебе стоит поговорить с менеджером сегодня." },
+        { s: "w", en: "Good idea. If my English were better, I'd ask for more work.", transcr: "Гуд айдиэ. Иф май инглиш уё бэтэ, айд аск фо мо уёк.", ru: "Хорошая мысль. Если бы я лучше знал английский, я бы попросил больше работы." },
+        { s: "m", en: "Your English is good. If I were you, I'd ask now.", transcr: "Ё инглиш из гуд. Иф ай уё ю, айд аск нау.", ru: "Твой английский хороший. На твоём месте я бы спросил сейчас." },
+        { s: "w", en: "Thank you, Tom. If I won some money, I would go home.", transcr: "Сэнк ю, Том. Иф ай уан сам мани, ай уд гоу хоум.", ru: "Спасибо, Том. Если бы я выиграл денег, я бы поехал домой." },
+        { s: "m", en: "Good luck! If I were you, I'd stay another season.", transcr: "Гуд лак! Иф ай уё ю, айд стэй эназэ сизн.", ru: "Удачи! На твоём месте я бы остался ещё на сезон." },
+      ],
+
+      quiz: [
+        { q: '[COMPLETE] "If I ___ you, I\'d talk to Tom." (на твоём месте)', opts: ["were", "was", "am", "would"], c: 0, expl: "If I WERE you — во 2-м conditional с be ставим were для всех лиц (готовая фраза совета). was — обычное прошлое; would не ставим в if; am — настоящее.", hint_ru: "Совет: If I were you…" },
+        { q: '[COMPLETE] "If I had more money, I ___ go home." (я бы поехал)', opts: ["would", "will", "am", "did"], c: 0, expl: "2-й conditional: if + прошедшее (had), … WOULD + база. will — это 1-й conditional (реально); would — воображаемое.", hint_ru: "if + had → would." },
+        { q: '[CORRECT] «На твоём месте я бы поговорил с менеджером.»', opts: ["If I were you, I'd talk to the manager.", "If I would be you, I talk to the manager.", "If I am you, I'd talk to the manager.", "If I were you, I will talk to the manager."], c: 0, expl: "If I were you, I'd talk… — were (не would) в части с if, would (I'd) в результате. «If I would be» неверно (would не в if); «I will» — это 1-й conditional.", hint_ru: "If I were you, I'd…" },
+        { q: '[COMPLETE] "If I ___ the lottery, I\'d buy a farm." (выиграл бы)', opts: ["won", "win", "would win", "will win"], c: 0, expl: "В части с if — прошедшее: won (прош. от win). «If I won…, I'd buy» — воображаемое. would/will в часть с if не ставим.", hint_ru: "if + прошедшее (won)." },
+        { q: '[CORRECT] «Если бы я лучше говорил по-английски, я бы попросил больше часов.»', opts: ["If I could speak better English, I'd ask for more hours.", "If I can speak better English, I ask for more hours.", "If I speak better English, I'd ask for more hours.", "If I could speak better English, I will ask for more hours."], c: 0, expl: "If I could speak…, I'd ask — could (не can) + would (I'd). Это воображаемое. can/will — для реального (1-й conditional).", hint_ru: "could … I'd …" },
+        { q: '[COMPLETE] "What ___ you do if you lost your job?" (что бы ты сделал)', opts: ["would", "will", "are", "did"], c: 0, expl: "What WOULD you do if…? — вопрос 2-го conditional: would + you + база, а в части с if — прошедшее (lost).", hint_ru: "What would you do if…?" },
+        { q: '[NEGATIVE] "If I were you, I ___ accept that job." (не соглашался бы)', opts: ["wouldn't", "won't", "don't", "am not"], c: 0, expl: "I WOULDN'T accept — отрицание во 2-м conditional: wouldn't + база. won't — это 1-й conditional (will not); don't — настоящее.", hint_ru: "wouldn't + база." },
+        { q: '[COMPLETE] "If the pay ___ better, I\'d stay another season." (если бы платили лучше)', opts: ["were", "is", "will be", "would be"], c: 0, expl: "В части с if — прошедшее: WERE (с be во 2-м conditional were для всех лиц). is — настоящее (1-й тип); would/will в if не ставим.", hint_ru: "if + were." },
+        { q: '[QUESTION] Сделай вопрос: «Что бы ты купил, если бы выиграл деньги?»', opts: ["What would you buy if you won some money?", "What you would buy if you won some money?", "What would you buy if you would win some money?", "What did you buy if you won money?"], c: 0, expl: "What would you buy if you won…? — would + you + buy; в части с if — прошедшее (won), без would.", hint_ru: "What would you + база … if + прошедшее?" },
+        { q: '[TRANSLATE] "мечта"', opts: ["dream", "future", "choice", "idea"], c: 0, expl: "dream — мечта. future — будущее, choice — выбор, idea — мысль/идея.", hint_ru: "dream." },
+        { q: '[TRANSLATE] "согласиться, принять"', opts: ["accept", "refuse", "choose", "speak"], c: 0, expl: "accept — согласиться/принять. refuse — отказаться (наоборот!), choose — выбирать, speak — говорить.", hint_ru: "accept." },
+        { q: "[LISTEN] If I were you, I'd go to the doctor.", opts: ["На твоём месте я бы сходил к врачу.", "На твоём месте я бы остался дома.", "Я пойду к врачу завтра.", "Тебе нужно поговорить с врачом."], c: 0, expl: "If I were you, I'd go to the doctor. — совет: на твоём месте я бы пошёл к врачу.", hint_ru: "" },
+        { q: "[GIST] По диалогу: что Том советует рабочему в конце?", opts: ["Остаться ещё на сезон.", "Уехать домой завтра.", "Не говорить с менеджером.", "Купить ферму."], c: 0, expl: "Том говорит: «If I were you, I'd stay another season» — остаться ещё на сезон.", hint_ru: "Слушай совет Тома в конце диалога." },
+        { q: '[BUILD] «На твоём месте я бы поговорил с Томом.»', build: ["If", "I", "were", "you", "I'd", "talk", "to", "Tom"], expl: "If I were you, I'd talk to Tom. — совет: were в части с if, I'd (would) в результате.", hint_ru: "If I were you, I'd talk to Tom." },
+        { q: '[BUILD] «Если бы у меня было больше денег, я бы поехал домой.»', build: ["If", "I", "had", "more", "money", "I'd", "go", "home"], expl: "If I had more money, I'd go home. — 2-й conditional: if + had (прошедшее), I'd (would) + база.", hint_ru: "If I had more money, I'd go home." },
+      ],
+
+      everyday: {
+        title_ru: "Совет: на твоём месте… (If I were you…)",
+        phrases: [
+          { en: "If I were you, I'd talk to the manager.", transcr: "Иф ай уё ю, айд ток ту зэ мэниджэ.", ru: "На твоём месте я бы поговорил с менеджером." },
+          { en: "If I were you, I'd see a doctor.", transcr: "Иф ай уё ю, айд си э доктэ.", ru: "На твоём месте я бы сходил к врачу." },
+          { en: "What would you do?", transcr: "Уот уд ю ду?", ru: "А ты бы что сделал?" },
+          { en: "I wouldn't worry about it.", transcr: "Ай ууднт уари эбаут ит.", ru: "Я бы не переживал из-за этого." },
+          { en: "You should ask for help.", transcr: "Ю шуд аск фо хэлп.", ru: "Тебе стоит попросить о помощи." },
+          { en: "If I were you, I'd stay.", transcr: "Иф ай уё ю, айд стэй.", ru: "На твоём месте я бы остался." },
+        ],
+      },
+    },
   ];
 
   if (typeof module !== "undefined" && module.exports) module.exports = LESSONS;
