@@ -156,6 +156,21 @@ const WHITELIST = {
   // function (So do I / Neither do I) lives in everyday (not snowball-checked) — "neither"
   // is intentionally NOT whitelisted (unused in any checked field). See plan L30.
   30: ["may", "might", "until"],
+  // L31 have to / don't have to + must / mustn't + should / shouldn't (obligation,
+  // prohibition, advice) + dependent prepositions. have to = have(WL8)+to(WL1); the
+  // negatives/questions ride on do/does(WL6) via the n't strip (don't->do, doesn't->
+  // does). NEW = the two modals "must" and "should" — brand-new short tokens the
+  // stemmer leaves untouched; mustn't/shouldn't have their n't stripped by tokenize()
+  // -> must/should, so whitelisting the bases covers the contracted forms (BUILD keeps
+  // "mustn't"/"shouldn't" as one tile). The dependent-preposition collocations sit on
+  // already-known prepositions (depend ON=WL5, afraid OF=WL10, wait FOR=WL27, good AT=
+  // WL11, responsible FOR=WL27, protect FROM=WL1); the verbs/adjs are words[] (depend,
+  // responsible, protect) or reused (afraid L19, wait L6). The lexical focus (SAFETY/
+  // RULES: rule/safety/wear/careful/danger/warn/protect/allow/follow/smoke/fire/alarm/
+  // depend/responsible) is the 14 words[]; receptive safety words (equipment/forklift/
+  // forbidden/instructions/uniform) live in lesson.glossary[]. "must"/"should" pair
+  // with the already-taught "can't"(L11) prohibition synonym. See plan L31.
+  31: ["must", "should"],
 };
 const NAMES = ["ahmad","tom","sara","anna","john","ali","omar","rustam","fatima","madina","bobur"];
 

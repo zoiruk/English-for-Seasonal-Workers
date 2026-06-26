@@ -5348,6 +5348,227 @@
         ],
       },
     },
+
+    {
+      id: 31,
+      title_ru: "Правила и безопасность: have to / must / should (обязанность, запрет, совет)",
+      cefr: "B1 · have to / must / mustn't / should · rules & safety · dependent prepositions",
+      grammar: {
+        title_ru: "have to / don't have to · must / mustn't · should / shouldn't — обязанность, запрет, совет",
+        intro_ru:
+          'Правила на ферме — это <b>обязанность</b>, <b>запрет</b> и <b>совет</b>. У каждого свой глагол:<br>' +
+          '📋 <b>have to</b> (надо, таково правило): <b>You have to wear gloves.</b> ' +
+          '<span class="g-transcr">[ю хэв ту уэа главз]</span> (надо носить перчатки)<br>' +
+          '🆓 <b>don\'t have to</b> (не обязан, но можно): <b>You don\'t have to come early.</b> ' +
+          '<span class="g-transcr">[ю доунт хэв ту кам ёли]</span> (рано приходить не обязательно)<br>' +
+          '⛔ <b>mustn\'t</b> (нельзя, запрещено): <b>You mustn\'t smoke here.</b> ' +
+          '<span class="g-transcr">[ю масэнт смоук хиэ]</span> (курить здесь нельзя)<br>' +
+          '💡 <b>should</b> (совет): <b>You should drink more water.</b> ' +
+          '<span class="g-transcr">[ю шуд дринк мо уотэ]</span> (стоит пить больше воды)',
+        cultural_ru:
+          '🔗 <b>Предлог «приклеен» к слову (dependent prepositions).</b> В английском к глаголу или ' +
+          'прилагательному часто «приклеен» свой предлог — его учим вместе со словом, не переводя дословно ' +
+          'с русского:<br>' +
+          '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+          '<div><b>depend <u>on</u></b> <span class="g-transcr">[дипэнд он]</span></div><div>зависеть от</div>' +
+          '<div><b>afraid <u>of</u></b> <span class="g-transcr">[эфрэйд ов]</span></div><div>бояться (чего-то)</div>' +
+          '<div><b>wait <u>for</u></b> <span class="g-transcr">[уэйт фо]</span></div><div>ждать (кого/что)</div>' +
+          '<div><b>good <u>at</u></b> <span class="g-transcr">[гуд эт]</span></div><div>хорош в (чём-то)</div>' +
+          '<div><b>responsible <u>for</u></b> <span class="g-transcr">[риспонсэбл фо]</span></div><div>отвечать за</div>' +
+          '<div><b>worried <u>about</u></b> <span class="g-transcr">[уарид эбаут]</span></div><div>переживать о</div>' +
+          '<div><b>listen <u>to</u></b> <span class="g-transcr">[лисэн ту]</span></div><div>слушать (кого-то)</div>' +
+          '</div>' +
+          '⚠️ Говорят «It depends <b>on</b> the weather», а не «depends from». Предлог запоминаем вместе со словом.',
+        note_ru:
+          '⚠️ <b>mustn\'t ≠ don\'t have to!</b> ' +
+          '<b>You mustn\'t smoke</b> = курить <u>нельзя</u> (запрет). ' +
+          '<b>You don\'t have to work on Sunday</b> = в воскресенье работать <u>не обязан</u> (но можно). ' +
+          'Это совершенно разные вещи.<br>' +
+          '⚠️ <b>have to</b> — правило извне (так заведено на ферме / таков закон); <b>must</b> — говорящий ' +
+          'настаивает или это строгое правило/знак. В плюсе часто взаимозаменяемы.<br>' +
+          '⚠️ Вопрос и отрицание <b>have to</b> — через <b>do/does</b>: <b>Do I have to work?</b> ' +
+          '(НЕ <s>Have I to work?</s>); <b>He doesn\'t have to stay.</b> И не сокращай: <b>I have to go</b> ' +
+          '(НЕ <s>I\'ve to go</s>).<br>' +
+          '⚠️ После <b>must</b> / <b>should</b> — глагол <b>без to и без -s</b>: <b>He should rest</b> ' +
+          '(НЕ <s>He shoulds</s> / <s>He should to rest</s>).<br>' +
+          '⚠️ Произношение: <b>must</b> [маст], <b>mustn\'t</b> [масэнт] (t немой), <b>should</b> [шуд] (l немой).',
+        visual_ru:
+          '<svg viewBox="0 0 340 222" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:360px;height:auto" role="img">' +
+          '<text x="10" y="15" font-size="11" fill="var(--text2)">Сила: must / have to (надо) · should (совет)</text>' +
+          '<rect x="10" y="24" width="152" height="46" rx="8" fill="none" stroke="#c62828" stroke-width="2"/>' +
+          '<text x="20" y="46" font-size="13" fill="#c62828">🔴 must / have to</text>' +
+          '<text x="20" y="63" font-size="10" fill="var(--text2)">надо — это правило</text>' +
+          '<rect x="178" y="24" width="152" height="46" rx="8" fill="none" stroke="#2e7d32" stroke-width="2"/>' +
+          '<text x="188" y="46" font-size="13" fill="#2e7d32">🟢 should</text>' +
+          '<text x="188" y="63" font-size="10" fill="var(--text2)">совет — лучше так</text>' +
+          '<text x="10" y="92" font-size="11" fill="var(--text2)">Запрет ≠ нет обязанности:</text>' +
+          '<rect x="10" y="100" width="148" height="52" rx="8" fill="none" stroke="#c62828" stroke-width="2"/>' +
+          '<text x="20" y="122" font-size="13" fill="#c62828">⛔ mustn\'t</text>' +
+          '<text x="20" y="142" font-size="10" fill="var(--text2)">нельзя (запрещено)</text>' +
+          '<text x="166" y="131" font-size="17" fill="var(--text)" text-anchor="middle">≠</text>' +
+          '<rect x="182" y="100" width="148" height="52" rx="8" fill="none" stroke="#1565c0" stroke-width="2"/>' +
+          '<text x="192" y="122" font-size="13" fill="#1565c0">🆓 don\'t have to</text>' +
+          '<text x="192" y="142" font-size="10" fill="var(--text2)">не обязан (но можно)</text>' +
+          '<text x="10" y="174" font-size="10" fill="var(--text)">You mustn\'t smoke. — курить нельзя.</text>' +
+          '<text x="10" y="192" font-size="10" fill="var(--text)">You don\'t have to come early. — рано не обязан.</text>' +
+          '<text x="10" y="210" font-size="10" fill="var(--text)">You should drink water. — стоит пить воду.</text>' +
+          '</svg>',
+        forms: {
+          positive: {
+            label_ru: "✅ have to / must / should + глагол (обязанность, совет)",
+            rule_ru:
+              'Обязанность и совет в плюсе:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div>You <b>have to</b> wear gloves.</div><div>надо (правило)</div>' +
+              '<div>You <b>must</b> wash your hands.</div><div>обязательно (сильно)</div>' +
+              '<div>You <b>should</b> drink more water.</div><div>стоит (совет)</div>' +
+              '</div>',
+            table: [
+              { subj: "правило", verb: "have to wear", example: "You have to wear gloves in the field.", transcr: "Ю хэв ту уэа главз ин зэ филд.", tr_ru: "В поле надо носить перчатки." },
+              { subj: "сильно", verb: "must wash", example: "You must wash your hands.", transcr: "Ю маст уош ё хэндз.", tr_ru: "Руки мыть обязательно." },
+              { subj: "совет", verb: "should drink", example: "You should drink more water.", transcr: "Ю шуд дринк мо уотэ.", tr_ru: "Тебе стоит пить больше воды." },
+            ],
+          },
+          negative: {
+            label_ru: "❌ don't have to (не обязан) · mustn't (нельзя) · shouldn't (не стоит)",
+            rule_ru:
+              'Главное — не путать <b>не обязан</b> и <b>нельзя</b>:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div>You <b>don\'t have to</b> come early.</div><div>не обязан (но можно)</div>' +
+              '<div>You <b>mustn\'t</b> smoke here.</div><div>нельзя (запрет)</div>' +
+              '<div>You <b>shouldn\'t</b> lift heavy boxes.</div><div>не стоит (совет)</div>' +
+              '</div>',
+            table: [
+              { subj: "не обязан", verb: "don't have to", example: "You don't have to come early tomorrow.", transcr: "Ю доунт хэв ту кам ёли тэмороу.", tr_ru: "Завтра рано приходить не обязательно." },
+              { subj: "нельзя", verb: "mustn't smoke", example: "You mustn't smoke near the field.", transcr: "Ю масэнт смоук ниэ зэ филд.", tr_ru: "Возле поля курить нельзя." },
+              { subj: "не стоит", verb: "shouldn't lift", example: "You shouldn't lift heavy boxes.", transcr: "Ю шудэнт лифт хэви боксиз.", tr_ru: "Не стоит поднимать тяжёлые ящики." },
+            ],
+          },
+          question: {
+            label_ru: "❓ Do I have to…? · Should I…?",
+            rule_ru:
+              'Вопрос <b>have to</b> — через <b>do/does</b>; совет — <b>Should I…?</b>:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><b>Do I have to</b> work at the weekend?</div><div>надо ли работать?</div>' +
+              '<div><b>Should I</b> wear a helmet?</div><div>стоит ли надеть каску?</div>' +
+              '<div><b>Do we have to</b> start at six?</div><div>надо ли начинать в шесть?</div>' +
+              '</div>',
+            table: [
+              { subj: "надо?", verb: "do…have to", example: "Do I have to work at the weekend?", transcr: "Ду ай хэв ту уёк эт зэ уикэнд?", tr_ru: "Мне надо работать в выходные?" },
+              { subj: "стоит?", verb: "should I wear", example: "Should I wear a helmet here?", transcr: "Шуд ай уэа э хэлмит хиэ?", tr_ru: "Мне стоит надеть каску здесь?" },
+              { subj: "надо?", verb: "do we have to", example: "Do we have to start at six?", transcr: "Ду уи хэв ту старт эт сикс?", tr_ru: "Нам надо начинать в шесть?" },
+            ],
+          },
+        },
+        examples: [
+          { en: "You have to wear gloves in the field.", transcr: "Ю хэв ту уэа главз ин зэ филд.", ru: "В поле надо носить перчатки." },
+          { en: "You have to follow the safety rules.", transcr: "Ю хэв ту фолоу зэ сэйфти рулз.", ru: "Надо соблюдать правила безопасности." },
+          { en: "You don't have to wear a uniform here.", transcr: "Ю доунт хэв ту уэа э юнифом хиэ.", ru: "Здесь форму носить не обязательно." },
+          { en: "You must wear a helmet near the machine.", transcr: "Ю маст уэа э хэлмит ниэ зэ мэшин.", ru: "Возле машины надо надевать каску." },
+          { en: "You must wear safety equipment.", transcr: "Ю маст уэа сэйфти икуипмэнт.", ru: "Надо носить защитное снаряжение." },
+          { en: "You mustn't smoke near the machine.", transcr: "Ю масэнт смоук ниэ зэ мэшин.", ru: "Нельзя курить рядом с машиной." },
+          { en: "You mustn't leave the gate open.", transcr: "Ю масэнт лив зэ гейт оупэн.", ru: "Нельзя оставлять ворота открытыми." },
+          { en: "It is forbidden to smoke here.", transcr: "Ит из фэбидн ту смоук хиэ.", ru: "Здесь курить запрещено." },
+          { en: "You should drink more water in hot weather.", transcr: "Ю шуд дринк мо уотэ ин хот уэзэ.", ru: "В жару стоит пить больше воды." },
+          { en: "You shouldn't carry heavy boxes.", transcr: "Ю шудэнт кэри хэви боксиз.", ru: "Не стоит таскать тяжёлые ящики." },
+          { en: "You should wait for the supervisor.", transcr: "Ю шуд уэйт фо зэ супэвайзэ.", ru: "Стоит подождать бригадира." },
+          { en: "Safety depends on everyone.", transcr: "Сэйфти дипэндз он эвриуан.", ru: "Безопасность зависит от каждого." },
+          { en: "You are responsible for your tools.", transcr: "Ю ар риспонсэбл фо ё тулз.", ru: "Ты отвечаешь за свои инструменты." },
+          { en: "I am afraid of the heavy machine.", transcr: "Ай эм эфрэйд ов зэ хэви мэшин.", ru: "Я боюсь тяжёлой машины." },
+          { en: "Gloves protect your hands.", transcr: "Главз прэтэкт ё хэндз.", ru: "Перчатки защищают руки." },
+          { en: "Be careful — the floor is wet.", transcr: "Би кэафул — зэ фло из уэт.", ru: "Осторожно — пол мокрый." },
+          { en: "Read the danger sign.", transcr: "Рид зэ дэйнджэ сайн.", ru: "Прочитай знак опасности." },
+          { en: "You are not allowed to start that machine.", transcr: "Ю ар нот элауд ту старт зэт мэшин.", ru: "Тебе нельзя запускать ту машину." },
+          { en: "We must check the fire alarm.", transcr: "Уи маст чек зэ файэ элам.", ru: "Надо проверять пожарную сигнализацию." },
+          { en: "Follow the instructions on the sign.", transcr: "Фолоу зэ инстракшнз он зэ сайн.", ru: "Следуй инструкциям на табличке." },
+          { en: "If there is a fire, warn everyone.", transcr: "Иф зэа из э файэ, уон эвриуан.", ru: "Если есть пожар, предупреди всех." },
+        ],
+        simple_ru: {
+          formula:
+            '<b>have to</b> = надо (правило) · <b>don\'t have to</b> = не обязан · ' +
+            '<b>mustn\'t</b> = нельзя (запрет) · <b>should</b> = совет. После <b>must / should</b> — глагол без to.',
+          examples: [
+            { en: "You must wear gloves.", transcr: "Ю маст уэа главз.", ru: "надо (сильно) → must." },
+            { en: "You don't have to come.", transcr: "Ю доунт хэв ту кам.", ru: "не обязан → don't have to." },
+            { en: "You should rest.", transcr: "Ю шуд рэст.", ru: "совет → should." },
+          ],
+        },
+        ytQuery: "have to must mustn't should английский для начинающих",
+      },
+
+      glossary: [
+        { en: "equipment", transcr: "икуипмэнт", ru: "оборудование, снаряжение", pn: "/ɪˈkwɪpmənt/" },
+        { en: "forklift", transcr: "фоклифт", ru: "погрузчик", pn: "/ˈfɔːklɪft/" },
+        { en: "forbidden", transcr: "фэбидн", ru: "запрещённый", pn: "/fəˈbɪdn/" },
+        { en: "instructions", transcr: "инстракшнз", ru: "инструкции, указания", pn: "/ɪnˈstrʌkʃnz/" },
+        { en: "uniform", transcr: "юнифом", ru: "форма (одежда)", pn: "/ˈjuːnɪfɔːm/" },
+      ],
+
+      words: [
+        { e: "📋", en: "rule", transcr: "рул", ru: "правило", pn: "/ruːl/" },
+        { e: "🦺", en: "safety", transcr: "сэйфти", ru: "безопасность", pn: "/ˈseɪfti/" },
+        { e: "🧤", en: "wear", transcr: "уэа", ru: "носить, надевать", pn: "/weə/" },
+        { e: "⚠️", en: "careful", transcr: "кэафул", ru: "осторожный (be careful — будь осторожен)", pn: "/ˈkeəfʊl/" },
+        { e: "☠️", en: "danger", transcr: "дэйнджэ", ru: "опасность", pn: "/ˈdeɪndʒə/" },
+        { e: "📢", en: "warn", transcr: "уон", ru: "предупреждать", pn: "/wɔːn/" },
+        { e: "🛡️", en: "protect", transcr: "прэтэкт", ru: "защищать", pn: "/prəˈtekt/" },
+        { e: "🆗", en: "allow", transcr: "элау", ru: "разрешать", pn: "/əˈlaʊ/" },
+        { e: "👣", en: "follow", transcr: "фолоу", ru: "следовать, соблюдать (follow the rules)", pn: "/ˈfɒləʊ/" },
+        { e: "🚬", en: "smoke", transcr: "смоук", ru: "курить; дым", pn: "/sməʊk/" },
+        { e: "🔥", en: "fire", transcr: "файэ", ru: "пожар, огонь", pn: "/ˈfaɪə/" },
+        { e: "🚨", en: "alarm", transcr: "элам", ru: "сигнализация, тревога", pn: "/əˈlɑːm/" },
+        { e: "🔗", en: "depend", transcr: "дипэнд", ru: "зависеть (depend on — зависеть от)", pn: "/dɪˈpend/" },
+        { e: "🫡", en: "responsible", transcr: "риспонсэбл", ru: "ответственный (responsible for — отвечать за)", pn: "/rɪˈspɒnsəbl/" },
+      ],
+
+      dialogue: [
+        { s: "m", en: "Good morning. These are the safety rules.", transcr: "Гуд монинг. Зиз а зэ сэйфти рулз.", ru: "Доброе утро. Вот правила безопасности." },
+        { s: "w", en: "What do I have to do?", transcr: "Уот ду ай хэв ту ду?", ru: "Что мне надо делать?" },
+        { s: "m", en: "You have to wear gloves at work.", transcr: "Ю хэв ту уэа главз эт уёк.", ru: "На работе надо носить перчатки." },
+        { s: "w", en: "Do I have to wear a helmet?", transcr: "Ду ай хэв ту уэа э хэлмит?", ru: "Мне надо надеть каску?" },
+        { s: "m", en: "Yes. And you mustn't smoke near the field.", transcr: "Йес. Энд ю масэнт смоук ниэ зэ филд.", ru: "Да. И нельзя курить рядом с полем." },
+        { s: "w", en: "Tom, do I have to start at six?", transcr: "Том, ду ай хэв ту старт эт сикс?", ru: "Том, мне надо начинать в шесть?" },
+        { s: "m", en: "Yes, at six. You don't have to wear a uniform.", transcr: "Йес, эт сикс. Ю доунт хэв ту уэа э юнифом.", ru: "Да, в шесть. А форму носить не обязательно." },
+        { s: "w", en: "I am afraid of the heavy machine.", transcr: "Ай эм эфрэйд ов зэ хэви мэшин.", ru: "Я боюсь тяжёлой машины." },
+        { s: "m", en: "It is dangerous. You mustn't start it.", transcr: "Ит из дэйнджэрэс. Ю масэнт старт ит.", ru: "Она опасная. Нельзя её запускать." },
+        { s: "w", en: "Should I wear a mask here?", transcr: "Шуд ай уэа э маск хиэ?", ru: "Мне надеть маску здесь?" },
+        { s: "m", en: "Yes, you should. And be careful near the forklift.", transcr: "Йес, ю шуд. Энд би кэафул ниэ зэ фоклифт.", ru: "Да, стоит. И будь осторожен рядом с погрузчиком." },
+        { s: "w", en: "Do I have to wait for you in the morning?", transcr: "Ду ай хэв ту уэйт фо ю ин зэ монинг?", ru: "Мне надо ждать тебя утром?" },
+        { s: "m", en: "Yes. If there is a fire, warn everyone.", transcr: "Йес. Иф зэа из э файэ, уон эвриуан.", ru: "Да. Если пожар — предупреди всех." },
+        { s: "w", en: "Thank you. Safety depends on everyone.", transcr: "Сэнк ю. Сэйфти дипэндз он эвриуан.", ru: "Спасибо. Безопасность зависит от каждого." },
+        { s: "m", en: "Well done. Follow the rules and you will be fine.", transcr: "Уэл дан. Фолоу зэ рулз энд ю уил би файн.", ru: "Молодец. Соблюдай правила — и всё будет хорошо." },
+      ],
+
+      quiz: [
+        { q: '[COMPLETE] "You ___ wear gloves in the field." (это правило)', opts: ["have to", "don't have to", "mustn't", "shouldn't"], c: 0, expl: "have to = надо (правило): You have to wear gloves. Остальные — про отсутствие обязанности, запрет или совет.", hint_ru: "надо (правило) → have to." },
+        { q: '[CORRECT] «Курить здесь нельзя.» (запрет)', opts: ["You mustn't smoke here.", "You don't have to smoke here.", "You should smoke here.", "You can smoke here."], c: 0, expl: "mustn't = запрет (нельзя). don't have to = не обязан (а это другое!), should = совет, can = можно.", hint_ru: "нельзя (запрет) → mustn't." },
+        { q: '[COMPLETE] "You ___ come early." (рано приходить не обязательно)', opts: ["don't have to", "mustn't", "must", "have to"], c: 0, expl: "don't have to = не обязан (можно, но не нужно). НЕ путай с mustn't (нельзя)!", hint_ru: "не обязан → don't have to." },
+        { q: '[COMPLETE] "Safety depends ___ everyone." (предлог)', opts: ["on", "of", "from", "at"], c: 0, expl: "depend ON — зависеть от. Говорят «depends on», не «depends from».", hint_ru: "depend ON." },
+        { q: '[COMPLETE] "I am afraid ___ the heavy machine." (предлог)', opts: ["of", "from", "on", "for"], c: 0, expl: "afraid OF — бояться (чего-то): afraid of the machine.", hint_ru: "afraid OF." },
+        { q: '[COMPLETE] "You must wait ___ the supervisor." (предлог)', opts: ["for", "to", "on", "at"], c: 0, expl: "wait FOR — ждать (кого/что): wait for the supervisor.", hint_ru: "wait FOR." },
+        { q: '[COMPLETE] "You should ___ your hands." (после should — глагол в базовой форме)', opts: ["wash", "washes", "to wash", "washing"], c: 0, expl: "После should — глагол в базовой форме: should wash. Не «should washes / should to wash».", hint_ru: "should + базовая форма." },
+        { q: '[QUESTION] Сделай вопрос: «Мне надо работать в выходные?»', opts: ["Do I have to work at the weekend?", "Have I to work at the weekend?", "Do I must work at the weekend?", "I have to work at the weekend?"], c: 0, expl: "Вопрос have to — через do: Do I have to…? (НЕ «Have I to», НЕ «Do I must»).", hint_ru: "Do I have to…?" },
+        { q: '[TRANSLATE] "правило"', opts: ["rule", "danger", "alarm", "tool"], c: 0, expl: "rule — правило. danger — опасность, alarm — сигнализация, tool — инструмент.", hint_ru: "rule." },
+        { q: '[TRANSLATE] "опасность"', opts: ["danger", "safety", "fire", "rule"], c: 0, expl: "danger — опасность. safety — безопасность, fire — пожар, rule — правило.", hint_ru: "danger." },
+        { q: '[TRANSLATE] "зависеть (от)"', opts: ["depend", "protect", "follow", "allow"], c: 0, expl: "depend — зависеть (depend on). protect — защищать, follow — соблюдать, allow — разрешать.", hint_ru: "depend." },
+        { q: "[LISTEN] You mustn't smoke here.", opts: ["Здесь нельзя курить.", "Здесь можно курить.", "Ты не обязан курить.", "Тебе стоит курить."], c: 0, expl: "You mustn't smoke here. — Здесь курить нельзя (mustn't = запрет). «Не обязан» — это don't have to.", hint_ru: "" },
+        { q: "[GIST] По диалогу: что Том сказал про форму (uniform)?", opts: ["Носить форму не обязательно.", "Форму носить обязательно.", "Форму нельзя носить.", "Форму выдаёт ферма."], c: 0, expl: "«you don't have to wear a uniform» — форму носить не обязательно.", hint_ru: "Слушай реплику про uniform." },
+        { q: '[BUILD] «Нельзя курить рядом с полем.»', build: ["You", "mustn't", "smoke", "near", "the", "field"], expl: "You mustn't smoke near the field. — mustn't = запрет (нельзя).", hint_ru: "You mustn't smoke near the field." },
+        { q: '[BUILD] «Тебе стоит подождать бригадира.»', build: ["You", "should", "wait", "for", "the", "supervisor"], expl: "You should wait for the supervisor. — should = совет; wait FOR — ждать кого-то.", hint_ru: "You should wait for the supervisor." },
+      ],
+
+      everyday: {
+        title_ru: "Правила и безопасность (инструктаж)",
+        phrases: [
+          { en: "Safety first!", transcr: "Сэйфти фёст!", ru: "Безопасность прежде всего!" },
+          { en: "You must wear a hi-vis vest.", transcr: "Ю маст уэа э хай-вис вэст.", ru: "Надо носить светоотражающий жилет (hi-vis)." },
+          { en: "You mustn't smoke in the packhouse.", transcr: "Ю масэнт смоук ин зэ пакхаус.", ru: "В пакхаусе курить нельзя." },
+          { en: "You don't have to bring your own tools.", transcr: "Ю доунт хэв ту бринг ё оун тулз.", ru: "Свои инструменты приносить не обязательно." },
+          { en: "Follow the instructions.", transcr: "Фолоу зэ инстракшнз.", ru: "Следуй инструкциям." },
+          { en: "If there is a fire, leave the building.", transcr: "Иф зэа из э файэ, лив зэ билдинг.", ru: "Если пожар — выйди из здания." },
+        ],
+      },
+    },
   ];
 
   if (typeof module !== "undefined" && module.exports) module.exports = LESSONS;
