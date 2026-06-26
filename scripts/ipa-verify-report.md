@@ -1,6 +1,6 @@
 # IPA verification report (Wiktionary RP anchor)
 
-Total words: 821 · matched: 726 · divergent: 81 · not found: 14
+Total words: 834 · matched: 738 · divergent: 82 · not found: 14
 
 Normalized away (kept length ː): ɹ↔r, ɡ↔g, ɛ↔e (DRESS vowel), tie-bars & allophonic diacritics, optional (…) segments, stress, syllable dots.
 Divergences below are for OWNER ACCEPTANCE — review each: is our `pn` wrong, or a valid variant?
@@ -90,6 +90,7 @@ Divergences below are for OWNER ACCEPTANCE — review each: is our `pn` wrong, o
 | 31 | careful | `/ˈkeəfʊl/` | `/ˈkɛːfl̩/` |
 | 31 | responsible | `/rɪˈspɒnsəbl/` | `/ɹɪˈspɒn.sə.bəl/` |
 | 32 | metal | `/ˈmetl/` | `/ˈmɛ.təl/` |
+| 33 | future | `/ˈfjuːtʃə/` | `/ˈfjuː.t͡ʃəː/` |
 
 ## Not found on Wiktionary (no en RP IPA parsed — verify manually)
 
