@@ -1,6 +1,6 @@
 # IPA verification report (Wiktionary RP anchor)
 
-Total words: 765 · matched: 676 · divergent: 76 · not found: 13
+Total words: 821 · matched: 726 · divergent: 81 · not found: 14
 
 Normalized away (kept length ː): ɹ↔r, ɡ↔g, ɛ↔e (DRESS vowel), tie-bars & allophonic diacritics, optional (…) segments, stress, syllable dots.
 Divergences below are for OWNER ACCEPTANCE — review each: is our `pn` wrong, or a valid variant?
@@ -85,6 +85,11 @@ Divergences below are for OWNER ACCEPTANCE — review each: is our `pn` wrong, o
 | 27 | ankle | `/ˈæŋkl/` | `/ˈæŋ.kəl/` |
 | 28 | panel | `/ˈpænl/` | `/ˈpænəl/` |
 | 28 | nozzle | `/ˈnɒzl/` | `/ˈnɒzəl/` |
+| 30 | possible | `/ˈpɒsəbl/` | `/ˈpɒs.ə.bəl/` |
+| 30 | sure | `/ʃʊə/` | `/ʃɔː/` |
+| 31 | careful | `/ˈkeəfʊl/` | `/ˈkɛːfl̩/` |
+| 31 | responsible | `/rɪˈspɒnsəbl/` | `/ɹɪˈspɒn.sə.bəl/` |
+| 32 | metal | `/ˈmetl/` | `/ˈmɛ.təl/` |
 
 ## Not found on Wiktionary (no en RP IPA parsed — verify manually)
 
@@ -101,3 +106,4 @@ Divergences below are for OWNER ACCEPTANCE — review each: is our `pn` wrong, o
 - L21 **town hall** (`/taʊn hɔːl/`)
 - L21 **hairdresser** (`/ˈheəˌdresə/`)
 - L22 **sweetcorn** (`/ˈswiːtkɔːn/`)
+- L29 **favour** (`/ˈfeɪvə/`)

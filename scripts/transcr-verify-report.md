@@ -1,6 +1,6 @@
 # Transcr self-consistency report (cyrillic vs IPA-derived)
 
-Total: 765 · consistent: 727 · divergent: 38
+Total: 821 · consistent: 779 · divergent: 42
 
 Expected = mechanical phoneme→cyrillic from our `pn` (course convention).
 Divergences are for OWNER ACCEPTANCE: a real transcr error, or a deliberate
@@ -47,3 +47,7 @@ map doesn't cover. Not a pass/fail — a review list of where crutch ≠ sound.
 | 21 | change | `/tʃeɪndʒ/` | чейндж | чэйндж |
 | 22 | cucumber | `/ˈkjuːkʌmbə/` | кьюкамбэ | кйукамбэ |
 | 23 | document | `/ˈdɒkjumənt/` | докьюмэнт | докйумэнт |
+| 29 | tonight | `/təˈnaɪt/` | тунайт | тэнайт |
+| 30 | guess | `/ɡes/` | гес | гэс |
+| 32 | wood | `/wʊd/` | уд | ууд |
+| 32 | wool | `/wʊl/` | ул | уул |
