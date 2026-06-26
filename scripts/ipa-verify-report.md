@@ -1,6 +1,6 @@
 # IPA verification report (Wiktionary RP anchor)
 
-Total words: 723 · matched: 638 · divergent: 72 · not found: 13
+Total words: 737 · matched: 649 · divergent: 73 · not found: 15
 
 Normalized away (kept length ː): ɹ↔r, ɡ↔g, ɛ↔e (DRESS vowel), tie-bars & allophonic diacritics, optional (…) segments, stress, syllable dots.
 Divergences below are for OWNER ACCEPTANCE — review each: is our `pn` wrong, or a valid variant?
@@ -81,6 +81,7 @@ Divergences below are for OWNER ACCEPTANCE — review each: is our `pn` wrong, o
 | 23 | document | `/ˈdɒkjumənt/` | `/ˈdɒkjʊmənt/` |
 | 23 | parcel | `/ˈpɑːsl/` | `/ˈpɑɹsəl/` |
 | 25 | postcard | `/ˈpəʊstkɑːd/` | `/ˈpoʊstˌkɑɹd/` |
+| 26 | mention | `/ˈmenʃən/` | `/ˈmɛnʃn̩/` |
 
 ## Not found on Wiktionary (no en RP IPA parsed — verify manually)
 
@@ -97,3 +98,5 @@ Divergences below are for OWNER ACCEPTANCE — review each: is our `pn` wrong, o
 - L21 **town hall** (`/taʊn hɔːl/`)
 - L21 **hairdresser** (`/ˈheəˌdresə/`)
 - L22 **sweetcorn** (`/ˈswiːtkɔːn/`)
+- L26 **whisper** (`/ˈwɪspə/`)
+- L26 **voice** (`/vɔɪs/`)

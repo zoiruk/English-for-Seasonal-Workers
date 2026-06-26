@@ -792,3 +792,46 @@ SVG-таймлайн (1. «had started» зелёный, раньше → 2. «I
   опции перемешаны, 0 ошибок консоли.
 - `CACHE_VERSION` esw-v83→**esw-v84**. `scripts/lib.js`: `WHITELIST[25]=["had"]` добавлен. **L25 — 2-й из 13 (L24–L36).**
   НЕ запушено (ждёт явного разрешения владельца). Дальше — **L26 (Reported speech) за свежий чат** по плану.
+
+**2026-06-26 — ✅ L26 готов — 3-й урок B1. Reported speech (said/told + backshift) + say/tell/ask + «по телефону».**
+План — `plans/2026-06-26-b1-scope.md` (строка L26, 🔴 зона повышенной ответственности). Грамм-ядро: пересказ чужих слов
+через **said / told** (3 формы: ✅ said/told+кому · ❌ said/told…not · ❓ asked + if/where) + **сдвиг времени** (am/is/are→was/were,
+will→would, can→could, Past Simple/PP→Past Perfect) + правило **say** (без человека) / **tell** (нужен человек: NOT «He said me») /
+**ask** (для вопросов: asked if/where). `grammar.visual_ru` — SVG «прямая речь» (зелёная коробка «I am tired./I will help.») →
+стрелка «said/told» → «Пересказ» (красная коробка «He said he was tired.») + список сдвигов. Голос — 1-е лицо рабочего + менеджер Tom.
+- **Лекс-фокус (метрика B1):** `words[]` = **14 communication verbs** (say/tell/explain/repeat/promise/agree/reply/mention/describe/
+  complain/whisper/voice/word/advice; все дедуп-уникальны, emoji ≤Unicode 10). **Базы say/tell — снежок MISS → в words[]** (дедуп-чисты;
+  says/tells/saying стеммятся к базе); said/told — из центр. `PARTICIPLES`. `glossary[]` = **5 рецептивных** (true/exactly/actually/anyway/
+  whether — дискурс-маркеры пересказа/телефона; синие, тап→перевод+🔊, не в SRS/счётчике). `everyday` = «По телефону (звонок в офис/
+  агентство)» 6 фраз (EF F8 «On the phone» + Headway U13: Is that…? / Can I speak to… / I'm afraid he's out / Tell him Ahmad called /
+  wrong number / Hold on). quiz = 14 (2×`[BUILD]`, `[GIST]`, `[LISTEN]`, 3×`[TRANSLATE]`, остальные say/tell/backshift — крен к продуктивным).
+- **Снежок (reported-speech-специфика):** `WHITELIST[26]=["if"]` (для reported yes/no «He asked if…»; функц. слово, стеммер не трогает).
+  said/told — `PARTICIPLES`; asked→ask(WL13/words), that=WL1, would=WL10, could=WL18, when=WL12, had=WL25 — кумулятивны. **bare «will» НЕ
+  вводится (это L29!)** → прямая речь с will показана только в непроверяемой прозе (intro/cultural); в проверяемых полях — только backshifted
+  (would/could/was/past). Силент-e -глаголы (promise→promis, agree→agre, reply→repli, describe→describ) использованы только в БАЗЕ (вне -ed),
+  иррегуляр-паст вне списка (came/rang/spoke) избегнуты. Контракции he'd/she'd/I'll — только в everyday, полные формы в снежок-полях.
+- **4-слойный гейт:**
+  - **Слой 1 (`npm run audit`):** 8/8 зелёные. 1 правка до зелёного: убрано англ. «will» из текста quiz #5 (вводится L29) → RU-формулировка.
+  - **Слой 2 (чек-лист):** фермерский/рабочий контекст ✓, RU-only ✓, реальные `expl` ✓, эмодзи по смыслу ✓.
+  - **Слой 3 (адверсариальные ревьюеры язык/IPA + педагогика/контракт/safety):** язык/IPA → 0 must-fix (say/tell/ask и backshift корректны
+    везде, transcr/IPA выверены). Педагогика → **1 must-fix внесён:** quiz #2 «He ___ that he was tired» имел ДВА верных ответа («said» и
+    «told me» оба грамматичны) → «told me»→«talked» (теперь только «said» верен). +2 nice внесены: диалог «asked me to call» (непреподанный
+    ask+to-inf) → «said I could call» (преподанный паттерн); LISTEN RU «что был занят»→«что занят» (консистентно с examples[1]).
+  - **🔴 Слой 4 (`/lesson-naturalness-check L26`, source-cited, 2 ревьюера + скептик):** оба ревьюера — **SHIP 0 правок** (вербатим-цитаты:
+    backshift = EF Grammar Bank 9B «He told me he would phone me»/«He told me he had met a girl»; say/tell/ask = EF 9B «can't use said with an
+    object… must use told with an object»; телефон = EF F8 «Tell her Allie Gray called. I'll call back»/«Sorry, you've got the wrong number» +
+    Headway U13 «Is that Mike?/I'm afraid he's out»; safety = 0 рисковых, нейтральный пересказ pay/shifts/contract, без earnings/rate/legal/visa,
+    999/111 отсутствуют). **Скептик-проход (обратный) — 1 правка внесена:** «good work today» обходит блок-лист check-bre по строке «good job»,
+    но проект стандартизирован на **«Well done»** ([[bre-praise-good-job-vs-well-done]]; EF: «Well done!», «good work» 0 вхождений) → диалог
+    «Anyway, good work today.»→«Anyway, well done today.». **Отклонено:** «the bus left at six» (скептик сам снял — это чистый backshift
+    present→past «leaves»→«left», по правилу урока, а не Past-Simple-без-сдвига).
+  - **Слой 5 (`verify-ipa`/`verify-transcr` новых слов):** verify-transcr — 1 флаг `mention` «мэншн» vs derived «мэншэн» → правлено на **«мэншэн»**
+    (прецедент curtain→«кётэн»: вставка гласной для слогового согласного). verify-ipa — `mention /ˈmenʃən/` vs RP `/ˈmɛnʃn̩/` (нотация /e/↔/ɛ/,
+    наш = Cambridge/OUP BrE, класс L9 broken — принято); whisper `/ˈwɪspə/` + voice `/vɔɪs/` в «not found» (скрейпер) → сверены вручную по
+    Cambridge BrE (оба корректны). Остальные 12 слов + 4 глосса — matched.
+- **Превью (mobile, `done[1..25]`, SW-кэш сброшен → свежий v85):** хаб-секция «УРОВЕНЬ 3 · B1» (3 урока, открыта), карточка L26 (разблок,
+  `lesson-card b1`), шапка «26/26» + title_ru + cefr без «undefined», 5 табов, backshift-SVG (все 12 меток: коробки «Прямая речь»→«Пересказ» +
+  сдвиги), 5 синих глоссов (whether на Грамматике; true/exactly/actually/anyway в диалоге), 14 реплик («well done» на месте), 0 ошибок/
+  предупреждений консоли. (Скриншот-инструмент харнесса дважды завис 30s — проверка выполнена DOM-инспекцией, рендерер отвечал мгновенно.)
+- `CACHE_VERSION` esw-v84→**esw-v85**. `scripts/lib.js`: `WHITELIST[26]=["if"]` добавлен. **L26 — 3-й из 13 (L24–L36).**
+  НЕ запушено (ждёт явного разрешения владельца). Дальше — **L27 (Present Perfect for/since + at the doctor's, 🔴) за свежий чат** по плану.

@@ -4348,6 +4348,202 @@
         ],
       },
     },
+
+    {
+      id: 26,
+      title_ru: "Что сказал другой человек: пересказ (said / told)",
+      cefr: "B1 · Reported speech (said/told) · communication verbs",
+      grammar: {
+        title_ru: "Reported speech: said / told + сдвиг времени (пересказ чужих слов)",
+        intro_ru:
+          'Когда ты <b>пересказываешь</b> чужие слова, глагол «сдвигается назад» во времени ' +
+          '(это reported speech):<br>' +
+          'Прямая речь: «I <b>am</b> tired.» (я устал) → He <b>said</b> that he <b>was</b> tired.<br>' +
+          'Прямая речь: «I <b>will</b> help.» → He <b>said</b> that he <b>would</b> help.<br>' +
+          'Прямая речь: «I <b>can</b> come.» → He <b>said</b> that he <b>could</b> come.<br>' +
+          'Главное правило выбора глагола:<br>' +
+          '✅ <b>say</b> <span class="g-transcr">[сэй]</span> — БЕЗ человека: He <b>said</b> (that)…<br>' +
+          '✅ <b>tell</b> <span class="g-transcr">[тэл]</span> — С человеком (кому): He <b>told</b> <b>me</b> (that)…<br>' +
+          '❌ Нельзя: <s>He said me…</s> и <s>He told that…</s>',
+        cultural_ru:
+          'Три глагола пересказа:<br>' +
+          '• <b>say</b> <span class="g-transcr">[сэй]</span> / <b>said</b> <span class="g-transcr">[сэд]</span> — ' +
+          'сказать (без человека): He <b>said</b> (that) it was cold.<br>' +
+          '• <b>tell</b> <span class="g-transcr">[тэл]</span> / <b>told</b> <span class="g-transcr">[тоулд]</span> — ' +
+          'сказать/рассказать <b>кому-то</b> (нужен человек: me / him / us): He <b>told me</b> (that)…<br>' +
+          '• <b>ask</b> <span class="g-transcr">[аск]</span> / <b>asked</b> <span class="g-transcr">[аскт]</span> — ' +
+          'для пересказа <b>вопроса</b>: He <b>asked if</b> I was ready · He <b>asked where</b> the office was.<br>' +
+          'Сдвиг времени: <b>am/is/are → was/were</b>, <b>will → would</b>, <b>can → could</b>, ' +
+          'Past Simple/Present Perfect → Past Perfect (had + 3-я форма).',
+        note_ru:
+          '⚠️ Частая ошибка: <s>He said me</s> — НЕЛЬЗЯ. Либо <b>He said (that)…</b> (без человека), ' +
+          'либо <b>He told me (that)…</b> (с человеком).<br>' +
+          '⚠️ В разговоре сокращают: he\'d, she\'d (= he had / she would). В заданиях и сборке фраз пиши ' +
+          '<b>полную</b> форму (he had / he would); сокращения — только в «Фразах».',
+        visual_ru:
+          '<svg viewBox="0 0 340 248" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:360px;height:auto" role="img">' +
+          '<text x="14" y="20" font-size="13" fill="var(--text2)">Пересказ: глагол «сдвигается назад»</text>' +
+          '<rect x="12" y="34" width="150" height="80" rx="8" fill="none" stroke="#2e7d32" stroke-width="2"/>' +
+          '<text x="20" y="52" font-size="11" fill="#2e7d32">Прямая речь</text>' +
+          '<text x="20" y="74" font-size="12" fill="var(--text)">"I am tired."</text>' +
+          '<text x="20" y="94" font-size="12" fill="var(--text)">"I will help."</text>' +
+          '<line x1="166" y1="74" x2="196" y2="74" stroke="var(--text2)" stroke-width="2"/>' +
+          '<polygon points="196,74 186,69 186,79" fill="var(--text2)"/>' +
+          '<text x="148" y="128" font-size="10" fill="var(--text2)">said / told</text>' +
+          '<rect x="200" y="34" width="128" height="80" rx="8" fill="none" stroke="#c62828" stroke-width="2"/>' +
+          '<text x="208" y="52" font-size="11" fill="#c62828">Пересказ</text>' +
+          '<text x="208" y="74" font-size="12" fill="var(--text)">He said he</text>' +
+          '<text x="208" y="92" font-size="12" fill="var(--text)">was tired.</text>' +
+          '<text x="20" y="152" font-size="12" fill="var(--text)">am / is / are → was / were</text>' +
+          '<text x="20" y="174" font-size="12" fill="var(--text)">will → would · can → could</text>' +
+          '<text x="20" y="196" font-size="12" fill="var(--text)">say (без кого) · tell + кому</text>' +
+          '<text x="20" y="220" font-size="11" fill="var(--text2)">вопрос → He asked if / where…</text>' +
+          '</svg>',
+        forms: {
+          positive: {
+            label_ru: "✅ said (без человека) / told + кому",
+            rule_ru:
+              '<b>say/said</b> — без человека; <b>tell/told</b> — нужен человек (me/him/us):<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div>He <b>said</b> (that)…</div><div>он сказал, что… (без человека)</div>' +
+              '<div>He <b>told me</b> (that)…</div><div>он сказал мне, что… (+ человек)</div>' +
+              '<div>«that» можно опустить</div><div>He said (that) he was tired.</div>' +
+              '</div>',
+            table: [
+              { subj: "он сказал", verb: "said (that)…", example: "He said that he was tired.", transcr: "Хи сэд зэт хи уоз тайэд.", tr_ru: "Он сказал, что устал. (без человека)" },
+              { subj: "он сказал мне", verb: "told me (that)…", example: "He told me that he was busy.", transcr: "Хи тоулд ми зэт хи уоз бизи.", tr_ru: "Он сказал мне, что занят. (+ человек)" },
+              { subj: "менеджер", verb: "said (that)…", example: "The manager said that the bus left at six.", transcr: "Зэ мэниджэ сэд зэт зэ бас лэфт эт сикс.", tr_ru: "Менеджер сказал, что автобус ушёл в шесть." },
+            ],
+          },
+          negative: {
+            label_ru: "❌ said / told … not",
+            rule_ru:
+              'Отрицание стоит в пересказанной части (could not / had not / did not):<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div>He said he <b>could not</b>…</div><div>он сказал, что не может…</div>' +
+              '<div>She told me she <b>had not</b>…</div><div>она сказала мне, что ещё не…</div>' +
+              '<div>I <b>did not</b> say that</div><div>я этого не говорил</div>' +
+              '</div>',
+            table: [
+              { subj: "он сказал", verb: "said … could not", example: "He said that he could not come.", transcr: "Хи сэд зэт хи куд нот кам.", tr_ru: "Он сказал, что не сможет прийти." },
+              { subj: "она сказала мне", verb: "told me … had not", example: "She told me that she had not finished.", transcr: "Ши тоулд ми зэт ши хэд нот финишт.", tr_ru: "Она сказала мне, что ещё не закончила." },
+              { subj: "я", verb: "did not say", example: "I did not say that.", transcr: "Ай дид нот сэй зэт.", tr_ru: "Я этого не говорил." },
+            ],
+          },
+          question: {
+            label_ru: "❓ asked + if / where (пересказ вопроса)",
+            rule_ru:
+              'Вопрос пересказываем через <b>ask</b>: <b>if</b> (да/нет) или where/what (что/где):<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div>He <b>asked if</b>…</div><div>он спросил, … ли (да/нет)</div>' +
+              '<div>He <b>asked where</b>…</div><div>он спросил, где…</div>' +
+              '<div>порядок слов — как в утверждении</div><div>He asked where the office was.</div>' +
+              '</div>',
+            table: [
+              { subj: "он спросил", verb: "asked if…", example: "He asked if I was ready.", transcr: "Хи аскт иф ай уоз рэди.", tr_ru: "Он спросил, готов ли я." },
+              { subj: "она спросила меня", verb: "asked me if…", example: "She asked me if I had a contract.", transcr: "Ши аскт ми иф ай хэд э контрэкт.", tr_ru: "Она спросила меня, есть ли у меня контракт." },
+              { subj: "он спросил", verb: "asked where…", example: "He asked where the office was.", transcr: "Хи аскт уэа зэ офис уоз.", tr_ru: "Он спросил, где офис." },
+            ],
+          },
+        },
+        examples: [
+          { en: "He said that he was tired.", transcr: "Хи сэд зэт хи уоз тайэд.", ru: "Он сказал, что устал. (say — без человека)" },
+          { en: "He told me that he was busy.", transcr: "Хи тоулд ми зэт хи уоз бизи.", ru: "Он сказал мне, что занят. (tell — нужен человек)" },
+          { en: "The manager said that the bus left at six.", transcr: "Зэ мэниджэ сэд зэт зэ бас лэфт эт сикс.", ru: "Менеджер сказал, что автобус ушёл в шесть." },
+          { en: "He told me that I could start on Monday.", transcr: "Хи тоулд ми зэт ай куд старт он мандэй.", ru: "Он сказал мне, что я могу начать в понедельник. (can → could)" },
+          { en: "She said that she had finished her row.", transcr: "Ши сэд зэт ши хэд финишт хё роу.", ru: "Она сказала, что закончила свой ряд." },
+          { en: "He said that he would phone me soon.", transcr: "Хи сэд зэт хи уд фоун ми сун.", ru: "Он сказал, что скоро позвонит мне. (will → would)" },
+          { en: "The supervisor told us that we would get paid on Friday.", transcr: "Зэ супэвайзэ тоулд ас зэт уи уд гэт пэйд он фрайдэй.", ru: "Бригадир сказал нам, что нам заплатят в пятницу." },
+          { en: "She asked me if I had a contract.", transcr: "Ши аскт ми иф ай хэд э контрэкт.", ru: "Она спросила меня, есть ли у меня контракт." },
+          { en: "He asked where the office was.", transcr: "Хи аскт уэа зэ офис уоз.", ru: "Он спросил, где офис." },
+          { en: "He told me that he had lost his phone.", transcr: "Хи тоулд ми зэт хи хэд лост хиз фоун.", ru: "Он сказал мне, что потерял телефон." },
+          { en: "I asked whether the bus had gone.", transcr: "Ай аскт уэзэ зэ бас хэд гон.", ru: "Я спросил, ушёл ли автобус. (whether = if)" },
+          { en: "She said that she could not come today.", transcr: "Ши сэд зэт ши куд нот кам тудэй.", ru: "Она сказала, что не сможет прийти сегодня." },
+        ],
+        simple_ru: {
+          formula:
+            '<b>said / told</b> = пересказ слов. <b>say</b> — без человека (He said that…); ' +
+            '<b>tell</b> — нужен человек (He told <b>me</b> that…). Времена сдвигаются назад: ' +
+            'am → was, will → would, can → could.',
+          examples: [
+            { en: "He said that he was busy.", transcr: "Хи сэд зэт хи уоз бизи.", ru: "said (that) — без человека." },
+            { en: "He told me that he would phone soon.", transcr: "Хи тоулд ми зэт хи уд фоун сун.", ru: "told me (that) — нужен человек; will → would." },
+          ],
+        },
+        ytQuery: "reported speech said told косвенная речь английский для начинающих",
+      },
+
+      glossary: [
+        { en: "true", transcr: "тру", ru: "правда, верно", pn: "/truː/" },
+        { en: "exactly", transcr: "игзэктли", ru: "точно, именно", pn: "/ɪɡˈzæktli/" },
+        { en: "actually", transcr: "экчуэли", ru: "на самом деле, вообще-то", pn: "/ˈæktʃuəli/" },
+        { en: "anyway", transcr: "эниуэй", ru: "в любом случае; ну ладно", pn: "/ˈeniweɪ/" },
+        { en: "whether", transcr: "уэзэ", ru: "ли (то же, что if в вопросе)", pn: "/ˈweðə/" },
+      ],
+
+      words: [
+        { e: "🗣️", en: "say", transcr: "сэй", ru: "сказать (без человека)", pn: "/seɪ/" },
+        { e: "🗨️", en: "tell", transcr: "тэл", ru: "сказать кому-то, рассказать", pn: "/tel/" },
+        { e: "📖", en: "explain", transcr: "иксплэйн", ru: "объяснить", pn: "/ɪkˈspleɪn/" },
+        { e: "🔁", en: "repeat", transcr: "рипит", ru: "повторить", pn: "/rɪˈpiːt/" },
+        { e: "🤝", en: "promise", transcr: "промис", ru: "обещать", pn: "/ˈprɒmɪs/" },
+        { e: "👍", en: "agree", transcr: "эгри", ru: "согласиться", pn: "/əˈɡriː/" },
+        { e: "↩️", en: "reply", transcr: "риплай", ru: "ответить (на сообщение)", pn: "/rɪˈplaɪ/" },
+        { e: "💬", en: "mention", transcr: "мэншэн", ru: "упомянуть", pn: "/ˈmenʃən/" },
+        { e: "📝", en: "describe", transcr: "дискрайб", ru: "описать", pn: "/dɪˈskraɪb/" },
+        { e: "😤", en: "complain", transcr: "кэмплэйн", ru: "жаловаться", pn: "/kəmˈpleɪn/" },
+        { e: "🤫", en: "whisper", transcr: "уиспэ", ru: "шептать", pn: "/ˈwɪspə/" },
+        { e: "🎙️", en: "voice", transcr: "войс", ru: "голос", pn: "/vɔɪs/" },
+        { e: "🔤", en: "word", transcr: "уёд", ru: "слово", pn: "/wɜːd/" },
+        { e: "💡", en: "advice", transcr: "эдвайс", ru: "совет", pn: "/ədˈvaɪs/" },
+      ],
+
+      dialogue: [
+        { s: "m", en: "Good morning. Did you phone the office?", transcr: "Гуд монинг. Дид ю фоун зэ офис?", ru: "Доброе утро. Ты звонил в офис?" },
+        { s: "w", en: "Yes. I called this morning.", transcr: "Йес. Ай колд зис монинг.", ru: "Да. Я звонил утром." },
+        { s: "m", en: "Good. What did they say?", transcr: "Гуд. Уот дид зэй сэй?", ru: "Хорошо. Что они сказали?" },
+        { s: "w", en: "They said that the bus would come at seven.", transcr: "Зэй сэд зэт зэ бас уд кам эт сэвн.", ru: "Они сказали, что автобус придёт в семь." },
+        { s: "m", en: "And the pay?", transcr: "Энд зэ пэй?", ru: "А зарплата?" },
+        { s: "w", en: "They told me that we would get paid on Friday.", transcr: "Зэй тоулд ми зэт уи уд гэт пэйд он фрайдэй.", ru: "Они сказали мне, что нам заплатят в пятницу." },
+        { s: "m", en: "Is that true?", transcr: "Из зэт тру?", ru: "Это точно?" },
+        { s: "w", en: "Yes, exactly. They told me on the phone.", transcr: "Йес, игзэктли. Зэй тоулд ми он зэ фоун.", ru: "Да, именно. Они сказали мне по телефону." },
+        { s: "m", en: "Good. And the contract?", transcr: "Гуд. Энд зэ контрэкт?", ru: "Хорошо. А контракт?" },
+        { s: "w", en: "I asked, and actually they said Monday.", transcr: "Ай аскт, энд экчуэли зэй сэд мандэй.", ru: "Я спросил, и вообще-то они сказали — в понедельник." },
+        { s: "m", en: "Anyway, well done today.", transcr: "Эниуэй, уэл дан тудэй.", ru: "Ну ладно, сегодня молодец." },
+        { s: "w", en: "Thank you. They said I could call on Friday.", transcr: "Сэнк ю. Зэй сэд ай куд кол он фрайдэй.", ru: "Спасибо. Они сказали, что я могу позвонить в пятницу." },
+        { s: "m", en: "Good. Tell them I said hello.", transcr: "Гуд. Тэл зэм ай сэд хэлоу.", ru: "Хорошо. Передай им, что я передаю привет." },
+        { s: "w", en: "Yes. I told them you were happy.", transcr: "Йес. Ай тоулд зэм ю уё хэпи.", ru: "Да. Я сказал им, что вы довольны." },
+      ],
+
+      quiz: [
+        { q: '[COMPLETE] "He ___ me that the bus left at six." (рассказал мне)', opts: ["told", "said", "asked", "talked"], c: 0, expl: "told me — tell нужен человек (told me). say нельзя с человеком (He said that…, без me).", hint_ru: "С человеком (me) → told." },
+        { q: '[COMPLETE] "He ___ that he was tired." (сказал — без человека)', opts: ["said", "told", "talked", "asked"], c: 0, expl: "said — say без человека (He said that…). told требует объект (NOT He told that…); talked/asked здесь не подходят.", hint_ru: "Без человека → said." },
+        { q: '[CORRECT] «Он сказал мне, что позвонит.»', opts: ["He told me that he would phone.", "He said me that he would phone.", "He told that he would phone.", "He asked me that he would phone."], c: 0, expl: "told me — tell + человек; say нельзя с местоимением (NOT He said me); told нужен объект (NOT He told that).", hint_ru: "told + me." },
+        { q: '[QUESTION] "She asked me ___ I had a contract." (да/нет вопрос)', opts: ["if", "that", "what", "so"], c: 0, expl: "asked if — пересказ вопроса да/нет ставим через if (или whether). that — для утверждений.", hint_ru: "да/нет вопрос → if." },
+        { q: '[COMPLETE] "He said he ___ phone me on Friday." (пересказ слова «буду»)', opts: ["would", "was", "had", "could"], c: 0, expl: "will → would в пересказе: «I will phone» → He said he would phone. Времена сдвигаются назад.", hint_ru: "will → would." },
+        { q: '[COMPLETE] "He told me that I ___ start on Monday." (can → ?)', opts: ["could", "was", "did", "would"], c: 0, expl: "can → could в пересказе: He told me I could start.", hint_ru: "can → could." },
+        { q: '[NEGATIVE] "She told me that she ___ finished." (ещё не — раньше)', opts: ["had not", "did not", "was not", "has not"], c: 0, expl: "had not finished — пересказ Past Perfect: had + not + 3-я форма.", hint_ru: "had not + 3-я форма." },
+        { q: '[TRANSLATE] "объяснить"', opts: ["explain", "repeat", "promise", "describe"], c: 0, expl: "explain — объяснить. repeat — повторить, promise — обещать, describe — описать.", hint_ru: "explain." },
+        { q: '[TRANSLATE] "пообещать"', opts: ["promise", "agree", "reply", "mention"], c: 0, expl: "promise — обещать. agree — согласиться, reply — ответить, mention — упомянуть.", hint_ru: "promise." },
+        { q: '[TRANSLATE] "жаловаться"', opts: ["complain", "whisper", "agree", "reply"], c: 0, expl: "complain — жаловаться. whisper — шептать, agree — согласиться, reply — ответить.", hint_ru: "complain." },
+        { q: "[LISTEN] He told me that he was busy.", opts: ["Он сказал мне, что занят.", "Он спросил, готов ли я.", "Он обещал позвонить.", "Он не согласился."], c: 0, expl: "He told me that he was busy — он сказал мне, что занят.", hint_ru: "" },
+        { q: "[GIST] По диалогу: когда рабочим заплатят (по звонку)?", opts: ["В пятницу.", "В понедельник.", "Сегодня.", "В семь."], c: 0, expl: "«They told me that we would get paid on Friday.» — заплатят в пятницу.", hint_ru: "Слушай реплику про pay." },
+        { q: '[BUILD] «Он сказал мне, что автобус ушёл.»', build: ["He", "told", "me", "that", "the", "bus", "had", "gone"], expl: "He told me that the bus had gone. — told + me (человек), had gone (раньше).", hint_ru: "He told me that the bus had gone." },
+        { q: '[BUILD] «Она спросила, есть ли у меня контракт.»', build: ["She", "asked", "if", "I", "had", "a", "contract"], expl: "She asked if I had a contract. — asked if (пересказ вопроса да/нет).", hint_ru: "She asked if I had a contract." },
+      ],
+
+      everyday: {
+        title_ru: "По телефону (звонок в офис / агентство)",
+        phrases: [
+          { en: "Hello. Is that the office?", transcr: "Хэлоу. Из зэт зэ офис?", ru: "Алло. Это офис? (BrE: Is that…?, не Is this…?)" },
+          { en: "Can I speak to the manager, please?", transcr: "Кэн ай спик ту зэ мэниджэ, плиз?", ru: "Можно поговорить с менеджером?" },
+          { en: "I'm afraid he's out. Can I take a message?", transcr: "Айм эфрэйд хиз аут. Кэн ай тэйк э мэсидж?", ru: "Боюсь, его нет. Передать сообщение?" },
+          { en: "Yes. Tell him Ahmad called. I'll call back later.", transcr: "Йес. Тэл хим Ахмад колд. Айл кол бэк лэйтэ.", ru: "Да. Передайте, что звонил Ахмад. Я перезвоню позже." },
+          { en: "Sorry, you've got the wrong number.", transcr: "Сори, юв гот зэ ронг намбэ.", ru: "Извините, вы ошиблись номером." },
+          { en: "Just a moment. Hold on, please.", transcr: "Джаст э момэнт. Хоулд он, плиз.", ru: "Минутку. Подождите, пожалуйста." },
+        ],
+      },
+    },
   ];
 
   if (typeof module !== "undefined" && module.exports) module.exports = LESSONS;

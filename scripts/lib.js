@@ -93,6 +93,18 @@ const WHITELIST = {
   // words[]; receptive narrative words (earlier/finally/abroad/engaged/wonderful/
   // congratulations) live in lesson.glossary[]. See plan 2026-06-26-b1-scope L25.
   25: ["had"],
+  // L26 Reported speech (said/told + backshift) + say/tell/ask. said/told are in
+  // the central PARTICIPLES list (so they "just work"); asked->ask (WL13), that=WL1,
+  // would=WL10, could=WL18, when=WL12, had=WL25 are all cumulatively available, and
+  // backshift only ever PRODUCES past forms (present->past stems to base, will->would,
+  // can->could) — bare "will" is NOT introduced (that is L29), shown only in unchecked
+  // prose (intro/cultural). NEW = "if" for reported yes/no questions (He asked IF I…),
+  // a function word the stemmer leaves untouched. The lexical focus (communication
+  // verbs: say/tell/explain/repeat/promise/agree/reply/mention/describe/complain/
+  // whisper/voice/word/advice) is the 14 words[]; the bases "say" and "tell" are added
+  // there (snowball MISS otherwise) — says/tells/saying stem to them. Receptive
+  // discourse markers (actually/exactly/anyway/true/whether) live in lesson.glossary[].
+  26: ["if"],
 };
 const NAMES = ["ahmad","tom","sara","anna","john","ali","omar","rustam","fatima","madina","bobur"];
 
