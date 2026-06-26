@@ -5982,6 +5982,209 @@
         ],
       },
     },
+
+    {
+      id: 34,
+      title_ru: "Раньше я…: used to + кто/который/где",
+      cefr: "B1 · used to / didn't use to · who / which / where · describing people",
+      grammar: {
+        title_ru: "used to: раньше было так (а теперь нет) · человек, КОТОРЫЙ… (who / which / where)",
+        intro_ru:
+          'Говорим о том, что было <b>раньше</b> (привычка или состояние) — а сейчас уже нет:<br>' +
+          '❌ Не так: <s>I worked there, now no</s> (непонятно)<br>' +
+          '✅ Так: <b>I <u>used to</u> work in a factory.</b> ' +
+          '<span class="g-transcr">[ай юст ту уёк ин э фэктэри]</span> (раньше я работал на заводе — а теперь нет)<br>' +
+          'Формула: <b>used to + база</b> (раньше регулярно/долго). ' +
+          '⚠️ В вопросе и отрицании — <b>use</b> (без d): Did you <u>use</u> to…? / I didn\'t <u>use</u> to…',
+        cultural_ru:
+          '🔗 <b>«человек, КОТОРЫЙ…»</b> — соединяем два кусочка одним словом:<br>' +
+          '<div style="display:grid;grid-template-columns:auto 1fr;gap:4px 8px">' +
+          '<div>👤 о людях →</div><div><b>who</b>: the worker <b>who</b> works here (рабочий, <i>который</i> тут работает)</div>' +
+          '<div>📦 о вещах →</div><div><b>which / that</b>: the box <b>which</b> is heavy (ящик, <i>который</i> тяжёлый)</div>' +
+          '<div>📍 о местах →</div><div><b>where</b>: the farm <b>where</b> I work (ферма, <i>где</i> я работаю)</div>' +
+          '</div>' +
+          '💬 Спросить про человека: <b>What is he like?</b> <span class="g-transcr">[уот из хи лайк]</span> — какой он? ' +
+          '(это про характер, а не «что он любит»).',
+        note_ru:
+          '⚠️ <b>used to</b> — только о ПРОШЛОМ (нет «will used to»). В вопросе/отрицании <b>use</b> без d: ' +
+          'Did you <u>use</u> to…? / I didn\'t <u>use</u> to… (как did + база).<br>' +
+          '⚠️ <b>used to</b> (раньше регулярно) ≠ Past Simple (один раз): «I <u>used to</u> work nights» = раньше так было; ' +
+          '«I <u>worked</u> late yesterday» = один вечер.<br>' +
+          '⚠️ <b>who</b> — о людях, <b>which / that</b> — о вещах, <b>where</b> — о местах. that можно вместо who/which.<br>' +
+          '⚠️ Не повторяем подлежащее: the worker who <s>he</s> works here → the worker who works here.',
+        visual_ru:
+          '<svg viewBox="0 0 340 286" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:360px;height:auto" role="img">' +
+          '<text x="10" y="14" font-size="11" fill="var(--text2)">Раньше было — used to (а теперь нет):</text>' +
+          '<rect x="8" y="20" width="150" height="54" rx="8" fill="none" stroke="#6a1b9a" stroke-width="2"/>' +
+          '<text x="16" y="38" font-size="11" fill="var(--text)">РАНЬШЕ:</text>' +
+          '<text x="16" y="55" font-size="11" fill="#6a1b9a">I used to work</text>' +
+          '<text x="16" y="68" font-size="9" fill="var(--text2)">in a factory</text>' +
+          '<text x="166" y="44" font-size="20" fill="var(--text2)">→</text>' +
+          '<text x="194" y="38" font-size="11" fill="var(--text)">СЕЙЧАС:</text>' +
+          '<text x="194" y="55" font-size="11" fill="#2e7d32">on a farm</text>' +
+          '<text x="194" y="68" font-size="9" fill="var(--text2)">(больше не на заводе)</text>' +
+          '<text x="10" y="100" font-size="11" fill="var(--text2)">«человек, КОТОРЫЙ…» — who / which / where:</text>' +
+          '<text x="14" y="128" font-size="18">👤</text>' +
+          '<text x="40" y="122" font-size="11" fill="var(--text)">люди → <tspan fill="#6a1b9a" font-weight="bold">who</tspan></text>' +
+          '<text x="40" y="138" font-size="10" fill="var(--text2)">the worker <tspan fill="#6a1b9a">who</tspan> works here</text>' +
+          '<text x="14" y="172" font-size="18">📦</text>' +
+          '<text x="40" y="166" font-size="11" fill="var(--text)">вещи → <tspan fill="#6a1b9a" font-weight="bold">which / that</tspan></text>' +
+          '<text x="40" y="182" font-size="10" fill="var(--text2)">the box <tspan fill="#6a1b9a">which</tspan> is heavy</text>' +
+          '<text x="14" y="216" font-size="18">📍</text>' +
+          '<text x="40" y="210" font-size="11" fill="var(--text)">места → <tspan fill="#6a1b9a" font-weight="bold">where</tspan></text>' +
+          '<text x="40" y="226" font-size="10" fill="var(--text2)">the farm <tspan fill="#6a1b9a">where</tspan> I work</text>' +
+          '<text x="10" y="258" font-size="10" fill="#e65100">⚠️ who = люди · which/that = вещи · where = места</text>' +
+          '<text x="10" y="276" font-size="10" fill="#e65100">⚠️ вопрос/отрицание: use (без d) — Did you use to…?</text>' +
+          '</svg>',
+        forms: {
+          positive: {
+            label_ru: "✅ used to + база (раньше так было)",
+            rule_ru:
+              'Привычка или состояние в прошлом, которого больше нет:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div>I <b>used to</b> work in a factory.</div><div>раньше работал на заводе</div>' +
+              '<div>I <b>used to</b> live in a city.</div><div>раньше жил в городе</div>' +
+              '<div>I <b>used to</b> be shy.</div><div>раньше был застенчивым</div>' +
+              '<div>We <b>used to</b> start early.</div><div>раньше начинали рано</div>' +
+              '</div>',
+            table: [
+              { subj: "работа", verb: "used to + база", example: "I used to work in a factory.", transcr: "Ай юст ту уёк ин э фэктэри.", tr_ru: "Раньше я работал на заводе." },
+              { subj: "жильё", verb: "used to live", example: "I used to live in a city.", transcr: "Ай юст ту лив ин э сити.", tr_ru: "Раньше я жил в городе." },
+              { subj: "состояние", verb: "used to be", example: "I used to be shy.", transcr: "Ай юст ту би шай.", tr_ru: "Раньше я был застенчивым." },
+              { subj: "привычка", verb: "used to + база", example: "We used to start work early.", transcr: "Уи юст ту старт уёк ёли.", tr_ru: "Раньше мы начинали работу рано." },
+            ],
+          },
+          negative: {
+            label_ru: "❌ didn't use to + база (раньше НЕ так)",
+            rule_ru:
+              '<b>didn\'t use to</b> + база (use без d, как did + база):<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div>I <b>didn\'t use to</b> speak English.</div><div>раньше не говорил по-английски</div>' +
+              '<div>I <b>didn\'t use to</b> like the cold.</div><div>раньше не любил холод</div>' +
+              '<div>He <b>didn\'t use to</b> work so hard.</div><div>раньше не работал так усердно</div>' +
+              '</div>',
+            table: [
+              { subj: "язык", verb: "didn't use to", example: "I didn't use to speak English.", transcr: "Ай диднт юс ту спик инглиш.", tr_ru: "Раньше я не говорил по-английски." },
+              { subj: "погода", verb: "didn't use to like", example: "I didn't use to like the cold.", transcr: "Ай диднт юс ту лайк зэ коулд.", tr_ru: "Раньше я не любил холод." },
+              { subj: "работа", verb: "didn't use to", example: "He didn't use to work so hard.", transcr: "Хи диднт юс ту уёк соу хард.", tr_ru: "Раньше он не работал так усердно." },
+            ],
+          },
+          question: {
+            label_ru: "❓ Did you use to…? · What did you use to…?",
+            rule_ru:
+              '<b>Did</b> + you + <b>use to</b> + база (use без d — did уже показывает прошлое):<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><b>Did</b> you <b>use to</b> work here?</div><div>ты раньше тут работал?</div>' +
+              '<div><b>Did</b> you <b>use to</b> live in a city?</div><div>ты раньше жил в городе?</div>' +
+              '<div><b>What did</b> you <b>use to</b> do?</div><div>чем ты раньше занимался?</div>' +
+              '</div>',
+            table: [
+              { subj: "да/нет?", verb: "Did you use to…?", example: "Did you use to work in a factory?", transcr: "Дид ю юс ту уёк ин э фэктэри?", tr_ru: "Ты раньше работал на заводе?" },
+              { subj: "где?", verb: "Did you use to live…?", example: "Did you use to live in a city?", transcr: "Дид ю юс ту лив ин э сити?", tr_ru: "Ты раньше жил в городе?" },
+              { subj: "что?", verb: "What did you use to…?", example: "What did you use to do?", transcr: "Уот дид ю юс ту ду?", tr_ru: "Чем ты раньше занимался?" },
+            ],
+          },
+        },
+        examples: [
+          { en: "I used to work in a factory in my city.", transcr: "Ай юст ту уёк ин э фэктэри ин май сити.", ru: "Раньше я работал на заводе в своём городе." },
+          { en: "I didn't use to speak English.", transcr: "Ай диднт юс ту спик инглиш.", ru: "Раньше я не говорил по-английски." },
+          { en: "Omar is the worker who works here.", transcr: "Омар из зэ уёкэ ху уёкс хиэ.", ru: "Омар — рабочий, который здесь работает." },
+          { en: "He is the driver who drives the tractor.", transcr: "Хи из зэ драйвэ ху драйвз зэ трэктэ.", ru: "Он водитель, который водит трактор." },
+          { en: "The box which is heavy is full.", transcr: "Зэ бокс уич из хэви из фул.", ru: "Ящик, который тяжёлый, — полный." },
+          { en: "This is the machine that is broken.", transcr: "Зис из зэ мэшин зэт из броукэн.", ru: "Это та машина, которая сломана." },
+          { en: "The farm where I work is good.", transcr: "Зэ фарм уэ ай уёк из гуд.", ru: "Ферма, где я работаю, — хорошая." },
+          { en: "The camp where I live is quiet.", transcr: "Зэ кэмп уэ ай лив из куайэт.", ru: "Лагерь, где я живу, — тихий." },
+          { en: "What is he like? He is kind and polite.", transcr: "Уот из хи лайк? Хи из кайнд энд пэлайт.", ru: "Какой он? Он добрый и вежливый." },
+          { en: "He is honest and hardworking.", transcr: "Хи из онист энд хадуёкинг.", ru: "Он честный и трудолюбивый." },
+          { en: "The city where I used to live was noisy and crowded.", transcr: "Зэ сити уэ ай юст ту лив уоз нойзи энд краудид.", ru: "Город, где я раньше жил, был шумным и многолюдным." },
+          { en: "Our camp is modern and comfortable.", transcr: "Ауэ кэмп из модэн энд камфтэбл.", ru: "Наш лагерь современный и удобный." },
+          { en: "He is a kind person.", transcr: "Хи из э кайнд пёсэн.", ru: "Он добрый человек." },
+          { en: "He has a good character.", transcr: "Хи хэз э гуд кэрэктэ.", ru: "У него хороший характер." },
+          { en: "It was a bad habit.", transcr: "Ит уоз э бэд хэбит.", ru: "Это была плохая привычка." },
+        ],
+        simple_ru: {
+          formula:
+            '<b>Раньше так было = used to + база.</b> «I <b>used to</b> work…» (а теперь нет). ' +
+            'Вопрос/нет → <b>use</b> без d: «Did you <b>use to</b>…?», «I didn\'t <b>use to</b>…». ' +
+            'Который: <b>who</b> (люди) · <b>which</b> (вещи) · <b>where</b> (места).',
+          examples: [
+            { en: "I used to work in a factory.", transcr: "Ай юст ту уёк ин э фэктэри.", ru: "раньше работал (а теперь нет)." },
+            { en: "The worker who works here is kind.", transcr: "Зэ уёкэ ху уёкс хиэ из кайнд.", ru: "рабочий, КОТОРЫЙ тут работает." },
+            { en: "The farm where I work is good.", transcr: "Зэ фарм уэ ай уёк из гуд.", ru: "ферма, ГДЕ я работаю." },
+          ],
+        },
+        ytQuery: "used to past habit defining relative clauses who which where for beginners",
+      },
+
+      glossary: [
+        { en: "person", transcr: "пёсэн", ru: "человек", pn: "/ˈpɜːsən/" },
+        { en: "character", transcr: "кэрэктэ", ru: "характер", pn: "/ˈkærəktə/" },
+      ],
+
+      words: [
+        { e: "🤗", en: "kind", transcr: "кайнд", ru: "добрый", pn: "/kaɪnd/" },
+        { e: "☝️", en: "strict", transcr: "стрикт", ru: "строгий", pn: "/strɪkt/" },
+        { e: "😴", en: "lazy", transcr: "лэйзи", ru: "ленивый", pn: "/ˈleɪzi/" },
+        { e: "🤝", en: "honest", transcr: "онист", ru: "честный", pn: "/ˈɒnɪst/" },
+        { e: "🙇", en: "polite", transcr: "пэлайт", ru: "вежливый", pn: "/pəˈlaɪt/" },
+        { e: "🙄", en: "rude", transcr: "руд", ru: "грубый", pn: "/ruːd/" },
+        { e: "🙈", en: "shy", transcr: "шай", ru: "застенчивый", pn: "/ʃaɪ/" },
+        { e: "💪", en: "hardworking", transcr: "хадуёкинг", ru: "трудолюбивый", pn: "/ˌhɑːdˈwɜːkɪŋ/" },
+        { e: "🔊", en: "noisy", transcr: "нойзи", ru: "шумный", pn: "/ˈnɔɪzi/" },
+        { e: "👥", en: "crowded", transcr: "краудид", ru: "многолюдный", pn: "/ˈkraʊdɪd/" },
+        { e: "🏢", en: "modern", transcr: "модэн", ru: "современный", pn: "/ˈmɒdən/" },
+        { e: "🛋️", en: "comfortable", transcr: "камфтэбл", ru: "удобный", pn: "/ˈkʌmftəbəl/" },
+        { e: "🚶", en: "stranger", transcr: "стрэйнджэ", ru: "незнакомец", pn: "/ˈstreɪndʒə/" },
+        { e: "🔁", en: "habit", transcr: "хэбит", ru: "привычка", pn: "/ˈhæbɪt/" },
+        { e: "📍", en: "place", transcr: "плэйс", ru: "место", pn: "/pleɪs/" },
+        { e: "🏡", en: "live", transcr: "лив", ru: "жить", pn: "/lɪv/" },
+      ],
+
+      dialogue: [
+        { s: "w", en: "Tom, who is that new worker?", transcr: "Том, ху из зэт нью уёкэ?", ru: "Том, кто этот новый рабочий?" },
+        { s: "m", en: "That is Omar. He works on the farm now.", transcr: "Зэт из Омар. Хи уёкс он зэ фарм нау.", ru: "Это Омар. Он теперь работает на ферме." },
+        { s: "w", en: "What is he like?", transcr: "Уот из хи лайк?", ru: "Какой он (по характеру)?" },
+        { s: "m", en: "He is kind and hardworking. All the workers like him.", transcr: "Хи из кайнд энд хадуёкинг. Ол зэ уёкэз лайк хим.", ru: "Он добрый и трудолюбивый. Все рабочие его любят." },
+        { s: "w", en: "Good. The last worker was lazy.", transcr: "Гуд. Зэ ласт уёкэ уоз лэйзи.", ru: "Хорошо. Прошлый рабочий был ленивый." },
+        { s: "m", en: "Did you use to work on a farm?", transcr: "Дид ю юс ту уёк он э фарм?", ru: "Ты раньше работал на ферме?" },
+        { s: "w", en: "No. I used to work in a factory in my city.", transcr: "Ноу. Ай юст ту уёк ин э фэктэри ин май сити.", ru: "Нет. Раньше я работал на заводе в своём городе." },
+        { s: "m", en: "Is the farm better than the factory?", transcr: "Из зэ фарм бэтэ зэн зэ фэктэри?", ru: "Ферма лучше завода?" },
+        { s: "w", en: "Yes! The farm is a place where I am happy.", transcr: "Йес! Зэ фарм из э плэйс уэ ай эм хэпи.", ru: "Да! Ферма — это место, где я счастлив." },
+        { s: "m", en: "Omar is the one who can help you.", transcr: "Омар из зэ уан ху кэн хэлп ю.", ru: "Омар — тот, кто может тебе помочь." },
+        { s: "w", en: "Thank you. I didn't use to speak English here.", transcr: "Сэнк ю. Ай диднт юс ту спик инглиш хиэ.", ru: "Спасибо. Раньше я тут не говорил по-английски." },
+        { s: "m", en: "Now you speak well. You are a good worker.", transcr: "Нау ю спик уэл. Ю ар э гуд уёкэ.", ru: "Теперь ты хорошо говоришь. Ты хороший рабочий." },
+      ],
+
+      quiz: [
+        { q: '[COMPLETE] "I ___ to work in a factory." (раньше)', opts: ["used", "use", "work", "am"], c: 0, expl: "used to + база — привычка/состояние в прошлом, которого больше нет. use (без d) — только в вопросе/отрицании.", hint_ru: "used to + база." },
+        { q: '[COMPLETE] "Did you ___ to live in a city?" (раньше)', opts: ["use", "used", "do", "were"], c: 0, expl: "В вопросе — use (без d): Did you use to…? Слово did уже показывает прошлое, поэтому d не нужно.", hint_ru: "Did you use to…?" },
+        { q: '[NEGATIVE] "I ___ use to speak English." (раньше не говорил)', opts: ["didn't", "don't", "wasn't", "am not"], c: 0, expl: "didn't use to + база — раньше НЕ было привычки. В отрицании use без d (как did + база). don't — настоящее.", hint_ru: "didn't use to…" },
+        { q: '[CORRECT] «Раньше я работал на заводе (а теперь нет).»', opts: ["I used to work in a factory.", "I use to work in a factory.", "I used to working in a factory.", "I am used to work in a factory."], c: 0, expl: "used to + база (work). «use to» (без d) — только в вопросе/отрицании; «used to working» неверно — нужна база.", hint_ru: "used to + база." },
+        { q: '[COMPLETE] "The worker ___ works here is Omar." (который — человек)', opts: ["who", "which", "where", "what"], c: 0, expl: "who — о людях (рабочий, КОТОРЫЙ…). which — для вещей, where — для мест.", hint_ru: "человек → who." },
+        { q: '[COMPLETE] "The box ___ is heavy is full." (который — вещь)', opts: ["which", "who", "where", "when"], c: 0, expl: "which (или that) — о вещах. who — о людях, where — о местах.", hint_ru: "вещь → which/that." },
+        { q: '[COMPLETE] "The farm ___ I work is good." (где)', opts: ["where", "who", "which", "that"], c: 0, expl: "where — о местах (ферма, ГДЕ я работаю). who — люди, which — вещи.", hint_ru: "место → where." },
+        { q: '[CORRECT] «Какой он (по характеру)?»', opts: ["What is he like?", "What does he like?", "How is he like?", "What he is like?"], c: 0, expl: "What is he like? — спрашиваем ОПИСАНИЕ (какой он). «What does he like?» = что он ЛЮБИТ — другой смысл.", hint_ru: "What is he like?" },
+        { q: '[TRANSLATE] "честный"', opts: ["honest", "polite", "lazy", "rude"], c: 0, expl: "honest — честный. polite — вежливый, lazy — ленивый, rude — грубый.", hint_ru: "honest." },
+        { q: '[TRANSLATE] "застенчивый"', opts: ["shy", "strict", "kind", "noisy"], c: 0, expl: "shy — застенчивый. strict — строгий, kind — добрый, noisy — шумный.", hint_ru: "shy." },
+        { q: "[LISTEN] He used to live in a noisy city.", opts: ["Раньше он жил в шумном городе.", "Он живёт в тихом городе.", "Он хочет жить в городе.", "Раньше он работал в городе."], c: 0, expl: "He used to live in a noisy city. — раньше он жил (а теперь нет) в шумном городе.", hint_ru: "" },
+        { q: "[GIST] По диалогу: какой новый рабочий Омар?", opts: ["Добрый и трудолюбивый.", "Ленивый и грубый.", "Строгий и тихий.", "Шумный и застенчивый."], c: 0, expl: "Том говорит: «He is kind and hardworking» — добрый и трудолюбивый.", hint_ru: "Слушай, что Том говорит про Омара." },
+        { q: "[GIST] По диалогу: где рабочий работал раньше?", opts: ["На заводе в своём городе.", "На ферме в деревне.", "В магазине у дома.", "Он раньше не работал."], c: 0, expl: "Рабочий говорит: «I used to work in a factory in my city» — на заводе в своём городе.", hint_ru: "Слушай ответ про прошлую работу." },
+        { q: '[BUILD] «Раньше я работал на заводе.»', build: ["I", "used", "to", "work", "in", "a", "factory"], expl: "I used to work in a factory. — used to + база (work): раньше работал, а теперь нет.", hint_ru: "I used to work in a factory." },
+        { q: '[BUILD] «Рабочий, который здесь работает, — Омар.»', build: ["The", "worker", "who", "works", "here", "is", "Omar"], expl: "The worker who works here is Omar. — who о людях; works (он, 3-е лицо).", hint_ru: "The worker who works here is Omar." },
+      ],
+
+      everyday: {
+        title_ru: "Описать человека и место (What is he like?)",
+        phrases: [
+          { en: "What is he like?", transcr: "Уот из хи лайк?", ru: "Какой он (по характеру)?" },
+          { en: "He is friendly and easy to talk to.", transcr: "Хи из фрэндли энд изи ту ток ту.", ru: "Он дружелюбный, с ним легко общаться." },
+          { en: "What is the place like?", transcr: "Уот из зэ плэйс лайк?", ru: "Какое там место?" },
+          { en: "It's a quiet place where I feel safe.", transcr: "Итс э куайэт плэйс уэ ай фил сэйф.", ru: "Это тихое место, где я чувствую себя спокойно." },
+          { en: "I used to live in a big city.", transcr: "Ай юст ту лив ин э биг сити.", ru: "Раньше я жил в большом городе." },
+          { en: "He's the man who runs the farm.", transcr: "Хиз зэ мэн ху ранз зэ фарм.", ru: "Это человек, который управляет фермой." },
+        ],
+      },
+    },
   ];
 
   if (typeof module !== "undefined" && module.exports) module.exports = LESSONS;

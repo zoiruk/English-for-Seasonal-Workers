@@ -202,6 +202,20 @@ const WHITELIST = {
   // imagine/instead) live in lesson.glossary[]. Little new vocab is expected here — the B1
   // metric is grammar + collocations on known words (see plan 2026-06-26-b1-scope L33).
   33: ["another"],
+  // L34 used to / didn't use to + defining relative clauses (who/which/that/where).
+  // Relative pronouns are already cumulative: which=WL11, that=WL1, where=WL5; did=WL13
+  // covers "Did you use to…?" and "didn't"->n't strip->did. NEW = "used", "use", and
+  // "who". snowball checks the RAW token, so "used" needs its own entry (stem("used")=
+  // "us" would match WL6 only via stem, but the check tests wl.has(raw) — so the past
+  // form "I used to…" MISSes without it) and "use" (the bare base in "I didn't use to…")
+  // also MISSes (no words[] entry); both are added. "who" is a brand-new question/relative
+  // pronoun the stemmer leaves untouched. "whose" is intentionally NOT added (unused in any
+  // checked field). The lexical focus (character & places: kind/strict/lazy/honest/polite/
+  // rude/shy/hardworking/noisy/crowded/modern/comfortable/stranger/habit/place/live) is the
+  // 16 words[]; receptive description words (person/character) live in lesson.glossary[].
+  // Past-Simple contrast (used to vs one-time) is shown in note_ru (unchecked prose); the
+  // checked Past Simple form "worked" stems to "work". See plan 2026-06-26-b1-scope L34.
+  34: ["used", "use", "who"],
 };
 const NAMES = ["ahmad","tom","sara","anna","john","ali","omar","rustam","fatima","madina","bobur"];
 
