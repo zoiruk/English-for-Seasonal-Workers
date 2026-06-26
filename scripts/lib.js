@@ -128,6 +128,18 @@ const WHITELIST = {
   // nozzle/grease/handle/adjust/inspect) is the 14 words[]; receptive shift words (production/faulty/
   // lately/maintenance) live in lesson.glossary[]. See plan 2026-06-26-b1-scope L28.
   28: ["all"],
+  // L29 will/won't + Shall I? + going-to vs will + Present Continuous future. NEW = the two modals
+  // "will" and "shall" (brand-new, the stemmer leaves them untouched). The tokenizer already folds the
+  // contractions: won't->will, shan't->shall, I'll/he'll->i/he (known pronouns) — so contracted surface
+  // forms in any field ride on known bases (B1 quality decision, plan line 15). going to = going->go
+  // (known) + to (WL1); Present Continuous future (am/is/are + -ing) is L7. Per policy the grammar
+  // TABLES/examples use full forms (I will / will not / Shall I) for clarity; natural contractions
+  // (I'll/won't/he'll) live in the dialogue + [BUILD] tiles + everyday. The lexical focus (plans/offers:
+  // offer/lend/borrow/swap/extra/favour/arrange/decide/maybe/think/umbrella/raincoat/tonight/evening) is
+  // the 14 words[]; receptive words (probably/spare/worry/definitely) live in lesson.glossary[]. "evening"
+  // stems to "even" (the -ing strip) but is self-consistent (its words[] entry and any use both fold to
+  // "even"). See plan 2026-06-26-b1-scope L29.
+  29: ["will", "shall"],
 };
 const NAMES = ["ahmad","tom","sara","anna","john","ali","omar","rustam","fatima","madina","bobur"];
 

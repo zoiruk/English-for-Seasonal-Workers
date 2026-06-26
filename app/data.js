@@ -4941,6 +4941,208 @@
         ],
       },
     },
+
+    {
+      id: 29,
+      title_ru: "Я помогу, я сделаю: will / won't + Shall I…? (планы и предложения)",
+      cefr: "B1 · will / won't · going to vs will · making plans",
+      grammar: {
+        title_ru: "will / won't + глагол — обещание, предложение, решение и предсказание · Shall I…?",
+        intro_ru:
+          'Когда мы решаем что-то <b>прямо сейчас</b>, обещаем, предлагаем помощь или предсказываем будущее — ' +
+          'берём <b>will</b> + глагол (без частицы to). Отрицание — <b>will not</b> (в речи коротко <b>won\'t</b>):<br>' +
+          '✅ <b>I will help you.</b> <span class="g-transcr">[ай уил хэлп ю]</span> (я помогу — решил сейчас)<br>' +
+          '✅ <b>I think it will rain.</b> <span class="g-transcr">[ай синк ит уил рэйн]</span> (думаю, пойдёт дождь — предсказание)<br>' +
+          '❌ <b>I will not be late.</b> <span class="g-transcr">[ай уил нот би лэйт]</span> (я не опоздаю — обещание)<br>' +
+          '❓ Предложить помощь вопросом — <b>Shall I…?</b> <span class="g-transcr">[шэл ай]</span>: ' +
+          '<b>Shall I carry that crate?</b> (мне понести ящик?)',
+        cultural_ru:
+          '⚠️ <b>will</b> и <b>going to</b> — оба про будущее, но выбор зависит от того, <b>когда</b> приняли решение:<br>' +
+          '• <b>going to</b> — план <b>решён ЗАРАНЕЕ</b> (до разговора): «Next year <b>I am going to</b> work here» ' +
+          '(я уже решил раньше).<br>' +
+          '• <b>will</b> — решение <b>в момент речи</b>, спонтанно: «These crates are heavy. <b>I will</b> carry them» ' +
+          '(решил только что).<br>' +
+          '• Предсказание можно и так, и так: по факту/очевидности — <b>going to</b> («It is cloudy — it is going to rain»), ' +
+          'по мнению — <b>will</b> («I think it will rain»).<br>' +
+          '⚠️ В русском будущее — одно слово («помогу», «пойдёт дождь»); в английском выбираем <b>will / going to</b> по смыслу.',
+        note_ru:
+          '⚠️ После <b>will</b> — глагол <b>без to</b> и без -s: <s>I will to help</s> / <s>He will helps</s> → ' +
+          '<b>I will help</b> / <b>He will help</b>.<br>' +
+          '⚠️ Предложить помощь — это <b>will</b>, а не Present Simple: <s>I help you.</s> → <b>I will help you.</b><br>' +
+          '⚠️ BrE: «думаю, что НЕ…» говорят <b>I do not think … will</b> (а не «I think … won\'t»): ' +
+          '<b>I do not think the manager will be angry.</b><br>' +
+          '⚠️ В речи сокращают: <b>I\'ll</b> [айл], <b>he\'ll</b> [хил], <b>won\'t</b> [уоунт]. Это нормально — ' +
+          'в «Фразах» и сборке фраз увидишь сокращения.',
+        visual_ru:
+          '<svg viewBox="0 0 340 244" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:360px;height:auto" role="img">' +
+          '<text x="12" y="18" font-size="12.5" fill="var(--text2)">Когда приняли решение? → going to или will</text>' +
+          '<rect x="10" y="30" width="156" height="204" rx="9" fill="none" stroke="#1565c0" stroke-width="2"/>' +
+          '<text x="22" y="56" font-size="20">📋</text>' +
+          '<text x="54" y="52" font-size="13" fill="#1565c0">going to</text>' +
+          '<text x="22" y="74" font-size="10" fill="var(--text2)">план — решил РАНЬШЕ</text>' +
+          '<text x="22" y="104" font-size="11" fill="var(--text)">Next year</text>' +
+          '<text x="22" y="122" font-size="11" fill="var(--text)">I\'m going to</text>' +
+          '<text x="22" y="140" font-size="11" fill="var(--text)">work here.</text>' +
+          '<text x="22" y="168" font-size="10" fill="var(--text2)">(решил заранее)</text>' +
+          '<text x="22" y="198" font-size="10" fill="#1565c0">очевидно → It\'s</text>' +
+          '<text x="22" y="214" font-size="10" fill="#1565c0">going to rain.</text>' +
+          '<rect x="174" y="30" width="156" height="204" rx="9" fill="none" stroke="#e65100" stroke-width="2"/>' +
+          '<text x="186" y="56" font-size="18">⚡</text>' +
+          '<text x="214" y="52" font-size="13" fill="#e65100">will / I\'ll</text>' +
+          '<text x="186" y="74" font-size="10" fill="var(--text2)">решаю СЕЙЧАС</text>' +
+          '<text x="186" y="104" font-size="11" fill="var(--text)">These crates</text>' +
+          '<text x="186" y="122" font-size="11" fill="var(--text)">are heavy.</text>' +
+          '<text x="186" y="140" font-size="11" fill="var(--text)">I\'ll carry them.</text>' +
+          '<text x="186" y="168" font-size="10" fill="var(--text2)">(решил только что)</text>' +
+          '<text x="186" y="198" font-size="10" fill="#e65100">мнение → I think</text>' +
+          '<text x="186" y="214" font-size="10" fill="#e65100">it will rain.</text>' +
+          '</svg>',
+        forms: {
+          positive: {
+            label_ru: "✅ will + глагол (обещание / решение / предсказание)",
+            rule_ru:
+              '<b>will</b> + глагол — один на все лица, без to и без -s:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div>I / you / he / we <b>will help</b></div><div>я/ты/он/мы помогу(-жет)</div>' +
+              '<div><b>will</b> + глагол</div><div>одинаково для всех лиц</div>' +
+              '<div>в речи коротко: <b>I\'ll, he\'ll, we\'ll</b></div><div>= I will, he will…</div>' +
+              '</div>',
+            table: [
+              { subj: "я", verb: "will help", example: "I will help you.", transcr: "Ай уил хэлп ю.", tr_ru: "Я помогу тебе. (решил сейчас)" },
+              { subj: "он", verb: "will be", example: "He will be tired tonight.", transcr: "Хи уил би тайэд тунайт.", tr_ru: "Он устанет сегодня вечером. (предсказание)" },
+              { subj: "они", verb: "will arrange", example: "They will arrange it tomorrow.", transcr: "Зэй уил эрэйндж ит тэмороу.", tr_ru: "Они устроят это завтра." },
+            ],
+          },
+          negative: {
+            label_ru: "❌ will not / won't + глагол",
+            rule_ru:
+              'Отрицание — <b>will not</b> (в речи <b>won\'t</b> [уоунт]) + глагол:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div>I <b>will not be</b> late</div><div>я не опоздаю</div>' +
+              '<div>It <b>will not</b> rain</div><div>дождя не будет</div>' +
+              '<div>полная форма: <b>will not</b></div><div>коротко: <b>won\'t</b></div>' +
+              '</div>',
+            table: [
+              { subj: "я", verb: "will not be", example: "I will not be late tomorrow.", transcr: "Ай уил нот би лэйт тэмороу.", tr_ru: "Я не опоздаю завтра. (обещание)" },
+              { subj: "дождь", verb: "will not", example: "It will not rain today.", transcr: "Ит уил нот рэйн тудэй.", tr_ru: "Сегодня дождя не будет." },
+              { subj: "он", verb: "will not be", example: "He will not be angry.", transcr: "Хи уил нот би энгри.", tr_ru: "Он не будет злиться." },
+            ],
+          },
+          question: {
+            label_ru: "❓ Will you…? / Shall I…? (предложить помощь)",
+            rule_ru:
+              '<b>Will</b> + кто + глагол? — вопрос о будущем. Предложить помощь — <b>Shall I…? / Shall we…?</b>:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><b>Will you be</b> here tonight?</div><div>ты будешь здесь вечером?</div>' +
+              '<div>— Yes, I <b>will</b>. / No, I <b>won\'t</b>.</div><div>— Да. / Нет.</div>' +
+              '<div><b>Shall I</b> carry it?</div><div>мне понести? (предлагаю)</div>' +
+              '</div>',
+            table: [
+              { subj: "ты", verb: "will you be?", example: "Will you be here tonight?", transcr: "Уил ю би хиэ тунайт?", tr_ru: "Ты будешь здесь сегодня вечером?" },
+              { subj: "я (предлагаю)", verb: "shall I carry?", example: "Shall I carry that crate?", transcr: "Шэл ай кэри зэт крэйт?", tr_ru: "Мне понести тот ящик? (предлагаю помощь)" },
+              { subj: "мы (предлагаю)", verb: "shall we swap?", example: "Shall we swap shifts on Sunday?", transcr: "Шэл уи суоп шифтс он сандэй?", tr_ru: "Поменяемся сменами в воскресенье?" },
+            ],
+          },
+        },
+        examples: [
+          { en: "I will definitely help you.", transcr: "Ай уил дэфинитли хэлп ю.", ru: "Я точно тебе помогу. (предложение)" },
+          { en: "I will lend you my gloves.", transcr: "Ай уил лэнд ю май главз.", ru: "Я одолжу тебе свои перчатки." },
+          { en: "Shall I carry that crate?", transcr: "Шэл ай кэри зэт крэйт?", ru: "Мне понести тот ящик? (предлагаю помощь)" },
+          { en: "Shall we swap shifts?", transcr: "Шэл уи суоп шифтс?", ru: "Поменяемся сменами?" },
+          { en: "I will not be late tomorrow.", transcr: "Ай уил нот би лэйт тэмороу.", ru: "Я не опоздаю завтра. (обещание)" },
+          { en: "I think it will rain today.", transcr: "Ай синк ит уил рэйн тудэй.", ru: "Думаю, сегодня пойдёт дождь. (предсказание)" },
+          { en: "I do not think the manager will be angry.", transcr: "Ай ду нот синк зэ мэниджэ уил би энгри.", ru: "Не думаю, что бригадир разозлится. (BrE-отрицание)" },
+          { en: "There will be more work tomorrow.", transcr: "Зэа уил би мо уёк тэмороу.", ru: "Завтра будет больше работы." },
+          { en: "You will be tired tonight.", transcr: "Ю уил би тайэд тунайт.", ru: "Ты устанешь сегодня вечером." },
+          { en: "Next year I am going to work here.", transcr: "Нэкст йиэ ай эм гоуин ту уёк хиэ.", ru: "В следующем году я буду работать здесь. (план — решил заранее → going to)" },
+          { en: "These crates are heavy. I will carry them.", transcr: "Зиз крэйтс ар хэви. Ай уил кэри зэм.", ru: "Эти ящики тяжёлые. Я их понесу. (решение сейчас → will)" },
+          { en: "It is going to rain. Take an umbrella.", transcr: "Ит из гоуин ту рэйн. Тэйк эн амбрэлэ.", ru: "Будет дождь. Возьми зонт. (очевидно → going to)" },
+          { en: "I will decide tonight.", transcr: "Ай уил дисайд тунайт.", ru: "Я решу сегодня вечером." },
+          { en: "Maybe I will arrange it tomorrow.", transcr: "Мэйби ай уил эрэйндж ит тэмороу.", ru: "Может, я устрою это завтра." },
+        ],
+        simple_ru: {
+          formula:
+            '<b>will + глагол</b> — решение / обещание / предсказание В МОМЕНТ речи. ' +
+            '<b>be going to + глагол</b> — план, решённый ЗАРАНЕЕ.',
+          examples: [
+            { en: "I will help you.", transcr: "Ай уил хэлп ю.", ru: "решил сейчас → will." },
+            { en: "Next year I am going to work here.", transcr: "Нэкст йиэ ай эм гоуин ту уёк хиэ.", ru: "решил заранее → going to." },
+          ],
+        },
+        ytQuery: "will going to разница английский для начинающих",
+      },
+
+      glossary: [
+        { en: "probably", transcr: "пробэбли", ru: "вероятно, наверное", pn: "/ˈprɒbəbli/" },
+        { en: "spare", transcr: "спэа", ru: "запасной, лишний (a spare pair — запасная пара)", pn: "/speə/" },
+        { en: "worry", transcr: "уари", ru: "волноваться (Don't worry — не волнуйся)", pn: "/ˈwʌri/" },
+        { en: "definitely", transcr: "дэфинитли", ru: "точно, обязательно", pn: "/ˈdefɪnətli/" },
+      ],
+
+      words: [
+        { e: "🙋", en: "offer", transcr: "офэ", ru: "предложить (помощь)", pn: "/ˈɒfə/" },
+        { e: "🤲", en: "lend", transcr: "лэнд", ru: "одолжить (дать в долг)", pn: "/lend/" },
+        { e: "🫴", en: "borrow", transcr: "бороу", ru: "взять в долг (у кого-то)", pn: "/ˈbɒrəʊ/" },
+        { e: "🔁", en: "swap", transcr: "суоп", ru: "поменяться (сменами)", pn: "/swɒp/" },
+        { e: "➕", en: "extra", transcr: "экстрэ", ru: "дополнительный (extra hours)", pn: "/ˈekstrə/" },
+        { e: "🙏", en: "favour", transcr: "фэйвэ", ru: "одолжение (ask a favour)", pn: "/ˈfeɪvə/" },
+        { e: "📅", en: "arrange", transcr: "эрэйндж", ru: "договориться, устроить", pn: "/əˈreɪndʒ/" },
+        { e: "✅", en: "decide", transcr: "дисайд", ru: "решить", pn: "/dɪˈsaɪd/" },
+        { e: "🤷", en: "maybe", transcr: "мэйби", ru: "может быть", pn: "/ˈmeɪbi/" },
+        { e: "💭", en: "think", transcr: "синк", ru: "думать, считать (I think… — я думаю, что…)", pn: "/θɪŋk/" },
+        { e: "☂️", en: "umbrella", transcr: "амбрэлэ", ru: "зонт", pn: "/ʌmˈbrelə/" },
+        { e: "🧥", en: "raincoat", transcr: "рэйнкоут", ru: "дождевик, плащ", pn: "/ˈreɪnkəʊt/" },
+        { e: "🌙", en: "tonight", transcr: "тунайт", ru: "сегодня вечером", pn: "/təˈnaɪt/" },
+        { e: "🌆", en: "evening", transcr: "ивнинг", ru: "вечер", pn: "/ˈiːvnɪŋ/" },
+      ],
+
+      dialogue: [
+        { s: "w", en: "Those boxes are heavy, Tom. I'll carry them for you.", transcr: "Зоуз боксиз ар хэви, Том. Айл кэри зэм фо ю.", ru: "Те коробки тяжёлые, Том. Я их донесу." },
+        { s: "m", en: "Thanks. It's going to rain today.", transcr: "Сэнкс. Итс гоуин ту рэйн тудэй.", ru: "Спасибо. Сегодня будет дождь." },
+        { s: "w", en: "Yes, I think it'll probably rain. I'll take my raincoat.", transcr: "Йес, ай синк итл пробэбли рэйн. Айл тэйк май рэйнкоут.", ru: "Да, думаю, наверное пойдёт дождь. Возьму дождевик." },
+        { s: "m", en: "Good. Will you be here tonight?", transcr: "Гуд. Уил ю би хиэ тунайт?", ru: "Хорошо. Ты будешь здесь сегодня вечером?" },
+        { s: "w", en: "Yes, I will. Shall I do the late shift?", transcr: "Йес, ай уил. Шэл ай ду зэ лэйт шифт?", ru: "Да, буду. Мне выйти в позднюю смену?" },
+        { s: "m", en: "No, that's fine. Anna will do it.", transcr: "Ноу, зэтс файн. Анна уил ду ит.", ru: "Нет, всё в порядке. Это сделает Анна." },
+        { s: "w", en: "Shall we swap on Sunday? I want to call my family.", transcr: "Шэл уи суоп он сандэй? Ай уонт ту кол май фэмили.", ru: "Поменяемся в воскресенье? Хочу позвонить семье." },
+        { s: "m", en: "Good. I'll arrange it.", transcr: "Гуд. Айл эрэйндж ит.", ru: "Хорошо. Я устрою это." },
+        { s: "w", en: "Thank you. I won't be late, I promise.", transcr: "Сэнк ю. Ай уоунт би лэйт, ай промис.", ru: "Спасибо. Я не опоздаю, обещаю." },
+        { s: "m", en: "Have you got gloves? It'll be cold.", transcr: "Хэв ю гот главз? Итл би коулд.", ru: "У тебя есть перчатки? Будет холодно." },
+        { s: "w", en: "No. Can I borrow some spare gloves?", transcr: "Ноу. Кэн ай бороу сам спэа главз?", ru: "Нет. Можно одолжить запасные перчатки?" },
+        { s: "m", en: "Yes. I'll lend you these.", transcr: "Йес. Айл лэнд ю зиз.", ru: "Да. Я одолжу тебе вот эти." },
+        { s: "w", en: "Thanks. I'll get some tonight.", transcr: "Сэнкс. Айл гет сам тунайт.", ru: "Спасибо. Я куплю сегодня вечером." },
+        { s: "m", en: "Don't worry. Well done today!", transcr: "Доунт уари. Уэл дан тудэй!", ru: "Не переживай. Молодец сегодня!" },
+      ],
+
+      quiz: [
+        { q: '[COMPLETE] "Those boxes are heavy. I ___ carry them." (решаю помочь сейчас)', opts: ["will", "am", "do", "have"], c: 0, expl: "Спонтанное решение / предложение в момент речи → will + глагол: I will carry them (I'll).", hint_ru: "Решил сейчас → will." },
+        { q: '[CORRECT] «Эти ящики тяжёлые. Я их понесу.» (решил только что)', opts: ["I'll carry them.", "I'm going to carry them.", "I carry them.", "I carrying them."], c: 0, expl: "I'll carry them. — спонтанное решение → will. going to = план, решённый заранее; I carry (Present Simple) не годится для решения сейчас.", hint_ru: "Решение в момент речи → will / I'll." },
+        { q: '[CORRECT] «В следующем году я буду работать здесь.» (план, решил заранее)', opts: ["Next year I'm going to work here.", "Next year I'll work here.", "Next year I work here.", "Next year I working here."], c: 0, expl: "Next year I'm going to work here. — план, решённый ЗАРАНЕЕ → be going to. will — для решений в момент речи.", hint_ru: "План заранее → going to." },
+        { q: '[COMPLETE] "___ I carry that crate for you?" (предлагаю помощь)', opts: ["Shall", "Will", "Do", "Am"], c: 0, expl: "Предложить помощь вопросом → Shall I…? (BrE): Shall I carry that crate?", hint_ru: "Предложить помощь → Shall I…?" },
+        { q: '[NEGATIVE] "I ___ be late, I promise." (обещаю: не опоздаю)', opts: ["will not", "am not", "do not", "have not"], c: 0, expl: "Обещание в будущем → will not (won't) + глагол: I will not be late.", hint_ru: "won't = will not." },
+        { q: '[COMPLETE] "I ___ think the manager will be angry." («не думаю, что…»)', opts: ["do not", "will not", "am not", "have not"], c: 0, expl: "В английском говорят I do not think … will (а не «I think … won't»): I don't think the manager will be angry. Это привычный британский порядок.", hint_ru: "«Не думаю, что…» → I don't think … will." },
+        { q: '[QUESTION] Сделай вопрос: «Ты будешь здесь сегодня вечером?»', opts: ["Will you be here tonight?", "You will be here tonight?", "Do you be here tonight?", "Are you be here tonight?"], c: 0, expl: "Вопрос с will: Will + кто + глагол? → Will you be here tonight?", hint_ru: "Will + you + be…?" },
+        { q: '[TRANSLATE] "предложить (помощь)"', opts: ["offer", "lend", "borrow", "swap"], c: 0, expl: "offer — предложить. lend — одолжить (дать), borrow — взять в долг, swap — поменяться.", hint_ru: "offer." },
+        { q: '[TRANSLATE] "одолжить (дать кому-то)"', opts: ["lend", "borrow", "arrange", "decide"], c: 0, expl: "lend — одолжить, дать в долг. borrow — наоборот, взять в долг у кого-то.", hint_ru: "lend." },
+        { q: '[TRANSLATE] "поменяться (сменами)"', opts: ["swap", "favour", "offer", "decide"], c: 0, expl: "swap — поменяться. favour — одолжение, offer — предложить, decide — решить.", hint_ru: "swap." },
+        { q: '[TRANSLATE] "зонт"', opts: ["umbrella", "raincoat", "favour", "evening"], c: 0, expl: "umbrella — зонт. raincoat — дождевик, evening — вечер.", hint_ru: "umbrella." },
+        { q: "[LISTEN] Shall I help you?", opts: ["Помочь тебе? (предлагаю)", "Ты мне поможешь?", "Где помощь?", "Я помог тебе."], c: 0, expl: "Shall I help you? — Мне помочь тебе? (предложение помощи).", hint_ru: "" },
+        { q: "[GIST] По диалогу: что рабочий предложил сделать в воскресенье?", opts: ["Поменяться сменами.", "Уехать домой.", "Купить зонт.", "Взять выходной."], c: 0, expl: "«Shall we swap on Sunday?» — рабочий предложил поменяться сменами.", hint_ru: "Слушай реплику про Sunday." },
+        { q: '[BUILD] «Я помогу тебе.»', build: ["I'll", "help", "you"], expl: "I'll help you. — will для решения / предложения; I'll = I will (в речи).", hint_ru: "I'll help you." },
+        { q: '[BUILD] «В следующем году я буду работать здесь.» (план)', build: ["Next", "year", "I'm", "going", "to", "work", "here"], expl: "Next year I'm going to work here. — план, решённый заранее → be going to.", hint_ru: "Next year I'm going to work here." },
+      ],
+
+      everyday: {
+        title_ru: "Договориться и предложить (планы и помощь)",
+        phrases: [
+          { en: "Shall I give you a hand?", transcr: "Шэл ай гив ю э хэнд?", ru: "Помочь тебе? (досл. «дать руку»)" },
+          { en: "I'll do it, don't worry.", transcr: "Айл ду ит, доунт уари.", ru: "Я сделаю, не волнуйся." },
+          { en: "Let's swap shifts this week.", transcr: "Летс суоп шифтс зис уик.", ru: "Давай поменяемся сменами на этой неделе." },
+          { en: "It'll probably rain — take your raincoat.", transcr: "Итл пробэбли рэйн — тэйк ё рэйнкоут.", ru: "Наверное, будет дождь — возьми дождевик." },
+          { en: "What are you doing tonight?", transcr: "Уот ар ю дуин тунайт?", ru: "Что ты делаешь сегодня вечером? (план)" },
+          { en: "I'm meeting Tom at six.", transcr: "Айм митин Том эт сикс.", ru: "Я встречаюсь с Томом в шесть. (договорённость)" },
+        ],
+      },
+    },
   ];
 
   if (typeof module !== "undefined" && module.exports) module.exports = LESSONS;
