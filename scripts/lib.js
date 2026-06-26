@@ -171,6 +171,20 @@ const WHITELIST = {
   // forbidden/instructions/uniform) live in lesson.glossary[]. "must"/"should" pair
   // with the already-taught "can't"(L11) prohibition synonym. See plan L31.
   31: ["must", "should"],
+  // L32 Passive (present & past) + made of/from/by + materials. is/are=WL1, was/were=
+  // WL12 already; the irregular participles (made/built/grown/frozen/paid…) ride the
+  // central PARTICIPLES list and regular ones stem to known bases (packed->pack,
+  // loaded->load, washed->wash, weighed->weigh, sorted->sort, checked->check). made
+  // of (of=WL10) / made from (from=WL1) just work. NEW = the passive AGENT preposition
+  // "by" (made by machine / picked by hand / by the workers) — a plain function word
+  // the stemmer leaves untouched, snowball MISS otherwise. The lexical focus (MATERIALS:
+  // wood/metal/steel/plastic/rubber/glass/paper/cardboard/cotton/wool/leather/brick/
+  // concrete/stone) is the 14 words[]; receptive description words (weekly/greenhouse/
+  // waterproof/tough) live in lesson.glossary[]. Avoided in checked fields: silent-e -ed
+  // (used->us, produced->produc, stored->stor) and the deliver->deliv mismatch; the
+  // pay-passive is kept neutral ("workers are paid weekly", no rate/promise). See plan
+  // 2026-06-26-b1-scope L32. [[snowball-whitelist-not-stemmed-inflections]]
+  32: ["by"],
 };
 const NAMES = ["ahmad","tom","sara","anna","john","ali","omar","rustam","fatima","madina","bobur"];
 

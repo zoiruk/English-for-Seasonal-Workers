@@ -5569,6 +5569,224 @@
         ],
       },
     },
+
+    {
+      id: 32,
+      title_ru: "Из чего это сделано: пассив (the boxes are packed · made of wood)",
+      cefr: "B1 · Passive (present & past) · made of / from / by · materials",
+      grammar: {
+        title_ru: "Passive: is/are + 3-я форма (наст.) · was/were + 3-я форма (прош.) · made of / from / by",
+        intro_ru:
+          'На ферме часто описывают <b>процессы</b>: что с чем делают. Тогда важно <b>ЧТО</b> происходит, ' +
+          'а не кто. Для этого нужен <b>пассив</b> — <b>be + 3-я форма глагола (V3)</b>:<br>' +
+          '🔵 <b>Актив</b> (кто делает): <b>They pack the boxes.</b> ' +
+          '<span class="g-transcr">[зэй пак зэ боксиз]</span> (они пакуют ящики)<br>' +
+          '🟢 <b>Пассив</b> (что сделано): <b>The boxes are packed.</b> ' +
+          '<span class="g-transcr">[зэ боксиз а пакт]</span> (ящики пакуют / упакованы)<br>' +
+          'Настоящее: <b>is / are + V3</b> — <b>The fruit is grown here.</b> ' +
+          '<span class="g-transcr">[зэ фрут из гроун хиэ]</span>. Прошлое: <b>was / were + V3</b> — ' +
+          '<b>The wall was built last year.</b> <span class="g-transcr">[зэ уол уоз билт ласт йиэ]</span>.',
+        cultural_ru:
+          '🧱 <b>Из чего сделано — made of / made from / made by:</b><br>' +
+          '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+          '<div><b>made <u>of</u></b> <span class="g-transcr">[мэйд ов]</span></div>' +
+          '<div>материал <b>виден</b>: a box made of wood (ящик из дерева)</div>' +
+          '<div><b>made <u>from</u></b> <span class="g-transcr">[мэйд фром]</span></div>' +
+          '<div>материал <b>изменили</b>: paper made from wood (бумагу сделали из дерева)</div>' +
+          '<div><b>made <u>by</u></b> <span class="g-transcr">[мэйд бай]</span></div>' +
+          '<div><b>кто/чем</b> делает: made by machine · by hand · by the workers</div>' +
+          '</div>' +
+          '⚠️ Пассив в английском очень частый — в описаниях, инструкциях, на табличках. По-русски тут часто «-ют / -ся».',
+        note_ru:
+          '⚠️ <b>Пассив = be + 3-я форма.</b> Без <b>be</b> (am/is/are/was/were) пассива нет: ' +
+          '<s>The boxes packed.</s> → <b>The boxes are packed.</b><br>' +
+          '⚠️ <b>is paid ≠ pays!</b> <b>He is paid weekly</b> = ему платят (пассив). ' +
+          '<b>He pays weekly</b> = он платит (актив). Это разный смысл — не путай.<br>' +
+          '⚠️ Кто/чем делает — через <b>by</b>: <b>made by machine</b>, <b>picked by hand</b>.<br>' +
+          '⚠️ <b>made of</b> (материал виден) vs <b>made from</b> (материал изменён): ' +
+          'a box made <b>of</b> wood, paper made <b>from</b> wood.<br>' +
+          '⚠️ 3-я форма часто нерегулярна: make→<b>made</b>, build→<b>built</b>, grow→<b>grown</b>, ' +
+          'freeze→<b>frozen</b>. Регулярные: pack→<b>packed</b>, load→<b>loaded</b>.',
+        visual_ru:
+          '<svg viewBox="0 0 340 214" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:360px;height:auto" role="img">' +
+          '<defs><marker id="a32" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto">' +
+          '<path d="M0,0 L6,3 L0,6 Z" fill="#e65100"/></marker></defs>' +
+          '<text x="10" y="14" font-size="11" fill="var(--text2)">Актив — важно, КТО делает:</text>' +
+          '<rect x="10" y="22" width="56" height="30" rx="7" fill="none" stroke="#1565c0" stroke-width="2"/>' +
+          '<text x="38" y="41" font-size="12" fill="#1565c0" text-anchor="middle">They</text>' +
+          '<text x="74" y="41" font-size="12" fill="var(--text)">pack</text>' +
+          '<rect x="116" y="22" width="98" height="30" rx="7" fill="none" stroke="#e65100" stroke-width="2"/>' +
+          '<text x="165" y="41" font-size="12" fill="#e65100" text-anchor="middle">the boxes</text>' +
+          '<text x="222" y="33" font-size="9" fill="var(--text2)">кто</text>' +
+          '<text x="288" y="41" font-size="9" fill="var(--text2)">что</text>' +
+          '<path d="M165 52 C 120 74, 60 74, 48 88" fill="none" stroke="#e65100" stroke-width="2" stroke-dasharray="4 3" marker-end="url(#a32)"/>' +
+          '<text x="118" y="80" font-size="9" fill="#e65100">«что» выходит вперёд</text>' +
+          '<text x="10" y="110" font-size="11" fill="var(--text2)">Пассив — важно, ЧТО сделано:</text>' +
+          '<rect x="10" y="118" width="98" height="30" rx="7" fill="none" stroke="#e65100" stroke-width="2"/>' +
+          '<text x="59" y="137" font-size="12" fill="#e65100" text-anchor="middle">The boxes</text>' +
+          '<rect x="118" y="118" width="118" height="30" rx="7" fill="none" stroke="#2e7d32" stroke-width="2"/>' +
+          '<text x="177" y="137" font-size="12" fill="#2e7d32" text-anchor="middle">are packed</text>' +
+          '<text x="244" y="137" font-size="10" fill="var(--text2)">be + V3</text>' +
+          '<text x="10" y="172" font-size="10" fill="var(--text)">They pack the boxes. — Они пакуют ящики.</text>' +
+          '<text x="10" y="190" font-size="10" fill="var(--text)">The boxes are packed. — Ящики пакуют.</text>' +
+          '<text x="10" y="208" font-size="10" fill="var(--text2)">are = be · packed = 3-я форма (V3)</text>' +
+          '</svg>',
+        forms: {
+          positive: {
+            label_ru: "✅ is/are + 3-я форма (наст.) · was/were + 3-я форма (прош.)",
+            rule_ru:
+              'Что-то делают / сделали — без «кто»:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div>The boxes <b>are packed</b> here.</div><div>ящики пакуют (наст.)</div>' +
+              '<div>Strawberries <b>are grown</b> on this farm.</div><div>клубнику выращивают</div>' +
+              '<div>This crate <b>is made of</b> wood.</div><div>ящик из дерева</div>' +
+              '<div>The wall <b>was built</b> last year.</div><div>стену построили (прош.)</div>' +
+              '</div>',
+            table: [
+              { subj: "наст. мн.", verb: "are packed", example: "The boxes are packed here.", transcr: "Зэ боксиз а пакт хиэ.", tr_ru: "Ящики пакуют здесь." },
+              { subj: "наст. мн.", verb: "are grown", example: "Strawberries are grown on this farm.", transcr: "Стробэриз а гроун он зис фарм.", tr_ru: "Клубнику выращивают на этой ферме." },
+              { subj: "из чего", verb: "is made of", example: "This crate is made of wood.", transcr: "Зис крэйт из мэйд ов уд.", tr_ru: "Этот ящик сделан из дерева." },
+              { subj: "прош.", verb: "was built", example: "The wall was built last year.", transcr: "Зэ уол уоз билт ласт йиэ.", tr_ru: "Стену построили в прошлом году." },
+            ],
+          },
+          negative: {
+            label_ru: "❌ is/are not + 3-я форма · was/were not + 3-я форма",
+            rule_ru:
+              '<b>not</b> ставим после <b>be</b>:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div>The boxes <b>are not packed</b> by hand.</div><div>не пакуют руками</div>' +
+              '<div>This crate <b>is not made of</b> metal.</div><div>не из металла</div>' +
+              '<div>The shed <b>was not built</b> this year.</div><div>сарай не в этом году</div>' +
+              '</div>',
+            table: [
+              { subj: "наст.", verb: "are not packed", example: "The boxes are not packed by hand.", transcr: "Зэ боксиз а нот пакт бай хэнд.", tr_ru: "Ящики не пакуют руками." },
+              { subj: "из чего", verb: "is not made of", example: "This crate is not made of metal.", transcr: "Зис крэйт из нот мэйд ов мэтл.", tr_ru: "Этот ящик не из металла." },
+              { subj: "прош.", verb: "was not built", example: "The shed was not built this year.", transcr: "Зэ шэд уоз нот билт зис йиэ.", tr_ru: "Этот сарай построили не в этом году." },
+            ],
+          },
+          question: {
+            label_ru: "❓ Are…packed? · What is…made of? · When was…built?",
+            rule_ru:
+              '<b>be</b> выходит вперёд:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><b>Are</b> the boxes <b>packed</b> here?</div><div>ящики пакуют здесь?</div>' +
+              '<div>What <b>is</b> the crate <b>made of</b>?</div><div>из чего ящик?</div>' +
+              '<div>When <b>was</b> the wall <b>built</b>?</div><div>когда построили стену?</div>' +
+              '</div>',
+            table: [
+              { subj: "наст.?", verb: "Are…packed", example: "Are the boxes packed here?", transcr: "А зэ боксиз пакт хиэ?", tr_ru: "Ящики пакуют здесь?" },
+              { subj: "из чего?", verb: "is…made of", example: "What is the crate made of?", transcr: "Уот из зэ крэйт мэйд ов?", tr_ru: "Из чего сделан этот ящик?" },
+              { subj: "прош.?", verb: "was…built", example: "When was the wall built?", transcr: "Уэн уоз зэ уол билт?", tr_ru: "Когда построили стену?" },
+            ],
+          },
+        },
+        examples: [
+          { en: "The boxes are packed here.", transcr: "Зэ боксиз а пакт хиэ.", ru: "Ящики пакуют здесь." },
+          { en: "Strawberries are grown on this farm.", transcr: "Стробэриз а гроун он зис фарм.", ru: "Клубнику выращивают на этой ферме." },
+          { en: "Apples are picked by hand.", transcr: "Эплз а пикт бай хэнд.", ru: "Яблоки собирают руками." },
+          { en: "The crates are washed and checked here.", transcr: "Зэ крэйтс а уошт энд чект хиэ.", ru: "Крейты моют и проверяют здесь." },
+          { en: "The apples are weighed and sorted.", transcr: "Зэ эплз а уэйд энд сотид.", ru: "Яблоки взвешивают и сортируют." },
+          { en: "The boxes are loaded on the lorry.", transcr: "Зэ боксиз а лоудид он зэ лори.", ru: "Ящики грузят в грузовик." },
+          { en: "The workers are paid weekly.", transcr: "Зэ уёкэз а пэйд уикли.", ru: "Рабочим платят раз в неделю." },
+          { en: "This crate is made of wood.", transcr: "Зис крэйт из мэйд ов уд.", ru: "Этот ящик сделан из дерева." },
+          { en: "The greenhouse is made of glass and metal.", transcr: "Зэ гринхаус из мэйд ов глас энд мэтл.", ru: "Теплица сделана из стекла и металла." },
+          { en: "The old gate is made of steel.", transcr: "Зэ оулд гейт из мэйд ов стил.", ru: "Старые ворота из стали." },
+          { en: "Paper is made from wood.", transcr: "Пэйпэ из мэйд фром уд.", ru: "Бумагу делают из дерева." },
+          { en: "These boots are made of rubber.", transcr: "Зиз бутс а мэйд ов рабэ.", ru: "Эти сапоги сделаны из резины." },
+          { en: "The gloves are made of strong leather.", transcr: "Зэ главз а мэйд ов стронг лэзэ.", ru: "Перчатки сделаны из прочной кожи." },
+          { en: "Leather is tough and strong.", transcr: "Лэзэ из таф энд стронг.", ru: "Кожа прочная и крепкая." },
+          { en: "The wall is made of brick and stone.", transcr: "Зэ уол из мэйд ов брик энд стоун.", ru: "Стена сделана из кирпича и камня." },
+          { en: "The floor is made of concrete.", transcr: "Зэ фло из мэйд ов конкрит.", ru: "Пол сделан из бетона." },
+          { en: "The wall was built last year.", transcr: "Зэ уол уоз билт ласт йиэ.", ru: "Стену построили в прошлом году." },
+          { en: "The food was frozen here yesterday.", transcr: "Зэ фуд уоз фроузн хиэ йестэдэй.", ru: "Еду заморозили здесь вчера." },
+          { en: "The boxes are made by machine, not by hand.", transcr: "Зэ боксиз а мэйд бай мэшин, нот бай хэнд.", ru: "Ящики делают машиной, а не руками." },
+          { en: "These bags are made of plastic.", transcr: "Зиз бэгз а мэйд ов плэстик.", ru: "Эти пакеты сделаны из пластика." },
+        ],
+        simple_ru: {
+          formula:
+            '<b>Пассив = be + 3-я форма (V3).</b> Настоящее: <b>is/are + V3</b> (the boxes <b>are packed</b>). ' +
+            'Прошлое: <b>was/were + V3</b> (the wall <b>was built</b>). «Из чего» — <b>made of</b> (виден) / <b>made from</b> (изменён).',
+          examples: [
+            { en: "The boxes are packed here.", transcr: "Зэ боксиз а пакт хиэ.", ru: "наст.: are + packed." },
+            { en: "This crate is made of wood.", transcr: "Зис крэйт из мэйд ов уд.", ru: "из чего: made of (дерево видно)." },
+            { en: "The wall was built last year.", transcr: "Зэ уол уоз билт ласт йиэ.", ru: "прош.: was + built." },
+          ],
+        },
+        ytQuery: "passive voice present past is are made of английский для начинающих",
+      },
+
+      glossary: [
+        { en: "weekly", transcr: "уикли", ru: "еженедельно, раз в неделю", pn: "/ˈwiːkli/" },
+        { en: "greenhouse", transcr: "гринхаус", ru: "теплица", pn: "/ˈɡriːnhaʊs/" },
+        { en: "waterproof", transcr: "уотэпруф", ru: "водонепроницаемый", pn: "/ˈwɔːtəpruːf/" },
+        { en: "tough", transcr: "таф", ru: "прочный, жёсткий", pn: "/tʌf/" },
+      ],
+
+      words: [
+        { e: "🪵", en: "wood", transcr: "уд", ru: "дерево, древесина", pn: "/wʊd/" },
+        { e: "🔩", en: "metal", transcr: "мэтл", ru: "металл", pn: "/ˈmetl/" },
+        { e: "⚙️", en: "steel", transcr: "стил", ru: "сталь (твёрдый металл)", pn: "/stiːl/" },
+        { e: "🧴", en: "plastic", transcr: "плэстик", ru: "пластик", pn: "/ˈplæstɪk/" },
+        { e: "🥾", en: "rubber", transcr: "рабэ", ru: "резина (сапоги, шланг)", pn: "/ˈrʌbə/" },
+        { e: "🪟", en: "glass", transcr: "глас", ru: "стекло", pn: "/ɡlɑːs/" },
+        { e: "📄", en: "paper", transcr: "пэйпэ", ru: "бумага", pn: "/ˈpeɪpə/" },
+        { e: "📦", en: "cardboard", transcr: "кадбод", ru: "картон", pn: "/ˈkɑːdbɔːd/" },
+        { e: "👕", en: "cotton", transcr: "котн", ru: "хлопок (ткань)", pn: "/ˈkɒtn/" },
+        { e: "🧶", en: "wool", transcr: "ул", ru: "шерсть", pn: "/wʊl/" },
+        { e: "🧥", en: "leather", transcr: "лэзэ", ru: "кожа (материал)", pn: "/ˈleðə/" },
+        { e: "🧱", en: "brick", transcr: "брик", ru: "кирпич", pn: "/brɪk/" },
+        { e: "🏗️", en: "concrete", transcr: "конкрит", ru: "бетон", pn: "/ˈkɒnkriːt/" },
+        { e: "🪨", en: "stone", transcr: "стоун", ru: "камень", pn: "/stəʊn/" },
+      ],
+
+      dialogue: [
+        { s: "m", en: "Good morning. Welcome to the farm.", transcr: "Гуд монинг. Уэлкэм ту зэ фарм.", ru: "Доброе утро. Добро пожаловать на ферму." },
+        { s: "w", en: "Thank you. What is the work like here?", transcr: "Сэнк ю. Уот из зэ уёк лайк хиэ?", ru: "Спасибо. Какая здесь работа?" },
+        { s: "m", en: "It's good. The strawberries are picked by hand.", transcr: "Итс гуд. Зэ стробэриз а пикт бай хэнд.", ru: "Хорошая. Клубнику собирают руками." },
+        { s: "w", en: "And the boxes? Are they packed here?", transcr: "Энд зэ боксиз? А зэй пакт хиэ?", ru: "А ящики? Их пакуют здесь?" },
+        { s: "m", en: "Yes. The boxes are packed and loaded here.", transcr: "Йес. Зэ боксиз а пакт энд лоудид хиэ.", ru: "Да. Ящики пакуют и грузят здесь." },
+        { s: "w", en: "What are the crates made of?", transcr: "Уот а зэ крэйтс мэйд ов?", ru: "Из чего сделаны крейты?" },
+        { s: "m", en: "They are made of plastic. They are strong.", transcr: "Зэй а мэйд ов плэстик. Зэй а стронг.", ru: "Они из пластика. Прочные." },
+        { s: "w", en: "And these gloves? Are they made of leather?", transcr: "Энд зиз главз? А зэй мэйд ов лэзэ?", ru: "А эти перчатки? Они из кожи?" },
+        { s: "m", en: "Yes, leather. These boots are made of rubber.", transcr: "Йес, лэзэ. Зиз бутс а мэйд ов рабэ.", ru: "Да, из кожи. А эти сапоги из резины." },
+        { s: "w", en: "Good. Are the boots waterproof?", transcr: "Гуд. А зэ бутс уотэпруф?", ru: "Хорошо. Сапоги водонепроницаемые?" },
+        { s: "m", en: "Yes, they are. The floor is wet sometimes.", transcr: "Йес, зэй а. Зэ фло из уэт самтаймз.", ru: "Да. Пол иногда мокрый." },
+        { s: "w", en: "What is the camp like?", transcr: "Уот из зэ кэмп лайк?", ru: "А какой кэмп?" },
+        { s: "m", en: "It's clean and quiet. You will like it.", transcr: "Итс клин энд куайэт. Ю уил лайк ит.", ru: "Чисто и тихо. Тебе понравится." },
+        { s: "w", en: "Good, thanks. When are the workers paid?", transcr: "Гуд, сэнкс. Уэн а зэ уёкэз пэйд?", ru: "Спасибо. Когда платят рабочим?" },
+        { s: "m", en: "Workers are paid weekly. Follow the rules.", transcr: "Уёкэз а пэйд уикли. Фолоу зэ рулз.", ru: "Рабочим платят раз в неделю. Соблюдай правила." },
+      ],
+
+      quiz: [
+        { q: '[COMPLETE] "The boxes ___ packed here." (пассив, наст.)', opts: ["are", "is", "were", "do"], c: 0, expl: "are + 3-я форма (packed) = пассив (наст., мн.ч.). is — для ед.ч., were — прошлое, do — это не пассив.", hint_ru: "boxes (мн.ч.) → are + packed." },
+        { q: '[CORRECT] «Клубнику выращивают на этой ферме.» (её выращивают — пассив)', opts: ["Strawberries are grown on this farm.", "Strawberries grow on this farm.", "Strawberries are grow on this farm.", "Strawberries growing on this farm."], c: 0, expl: "Пассив: are + grown (3-я форма) — клубнику выращивают. «grow» — сами растут (актив); «are grow / growing» — неверная форма.", hint_ru: "are + 3-я форма (grown)." },
+        { q: '[COMPLETE] "This crate is made ___ wood." (материал видно)', opts: ["of", "from", "by", "at"], c: 0, expl: "made OF — материал видно (ящик из дерева). made FROM — когда материал изменили. by — кто/чем делает.", hint_ru: "видно материал → made of." },
+        { q: '[COMPLETE] "Paper is made ___ wood." (из дерева сделали бумагу)', opts: ["from", "of", "by", "in"], c: 0, expl: "made FROM — материал изменили (из дерева сделали бумагу). made OF — материал видно (стол из дерева).", hint_ru: "материал изменён → made from." },
+        { q: '[COMPLETE] "The boxes are made ___ machine." (чем делают)', opts: ["by", "of", "from", "in"], c: 0, expl: "made BY — кто/чем делает: by machine, by hand, by the workers. made of / from — это про материал.", hint_ru: "кто/чем делает → made by." },
+        { q: '[CORRECT] «Рабочим платят раз в неделю.» (им платят — пассив)', opts: ["The workers are paid weekly.", "The workers pay weekly.", "The workers are paying weekly.", "The workers paid the rent."], c: 0, expl: "«Рабочим платят» = пассив: are paid (им платят). «The workers pay» = рабочие сами платят (актив) — другой смысл!", hint_ru: "им платят → are paid." },
+        { q: '[COMPLETE] "The wall ___ built last year." (пассив, прош.)', opts: ["was", "is", "are", "were"], c: 0, expl: "Прошлый пассив: was/were + 3-я форма. wall — ед.ч. → was built. were — для мн.ч.", hint_ru: "ед.ч. + прошлое → was built." },
+        { q: '[QUESTION] Сделай вопрос: «Из чего сделан этот ящик?»', opts: ["What is this crate made of?", "What this crate is made of?", "What does this crate made of?", "What is made this crate of?"], c: 0, expl: "What is … made of? — порядок: What + is + подлежащее + made of. (НЕ «What does … made», НЕ «What this crate is made»).", hint_ru: "What is … made of?" },
+        { q: '[TRANSLATE] "дерево (материал)"', opts: ["wood", "metal", "glass", "stone"], c: 0, expl: "wood — дерево (древесина). metal — металл, glass — стекло, stone — камень.", hint_ru: "wood." },
+        { q: '[TRANSLATE] "металл"', opts: ["metal", "wood", "paper", "wool"], c: 0, expl: "metal — металл. wood — дерево, paper — бумага, wool — шерсть.", hint_ru: "metal." },
+        { q: '[TRANSLATE] "кожа (материал)"', opts: ["leather", "cotton", "rubber", "brick"], c: 0, expl: "leather — кожа. cotton — хлопок, rubber — резина, brick — кирпич.", hint_ru: "leather." },
+        { q: "[LISTEN] These boots are made of rubber.", opts: ["Эти сапоги сделаны из резины.", "Эти сапоги сделаны из кожи.", "Эти сапоги новые.", "Эти ящики из резины."], c: 0, expl: "These boots are made of rubber. — Эти сапоги сделаны из резины (made of — материал).", hint_ru: "" },
+        { q: "[GIST] По диалогу: из чего сделаны крейты (crates)?", opts: ["Из пластика.", "Из дерева.", "Из стекла.", "Из картона."], c: 0, expl: "«They are made of plastic» — крейты сделаны из пластика.", hint_ru: "Слушай реплику про crates." },
+        { q: '[BUILD] «Эти ящики сделаны из картона.»', build: ["These", "boxes", "are", "made", "of", "cardboard"], expl: "These boxes are made of cardboard. — пассив: are made of + материал (картон).", hint_ru: "These boxes are made of cardboard." },
+        { q: '[BUILD] «Стену построили в прошлом году.»', build: ["The", "wall", "was", "built", "last", "year"], expl: "The wall was built last year. — прошлый пассив: was + built (3-я форма).", hint_ru: "The wall was built last year." },
+      ],
+
+      everyday: {
+        title_ru: "Описания: какой он? (what … like?)",
+        phrases: [
+          { en: "What's the camp like?", transcr: "Уотс зэ кэмп лайк?", ru: "Какой кэмп (как там)?" },
+          { en: "It's clean and comfortable.", transcr: "Итс клин энд камфтэбл.", ru: "Чисто и удобно." },
+          { en: "What are the people like?", transcr: "Уот а зэ пипл лайк?", ru: "Какие там люди?" },
+          { en: "They're friendly and helpful.", transcr: "Зэар фрэндли энд хэлпфул.", ru: "Дружелюбные и отзывчивые." },
+          { en: "What's it made of?", transcr: "Уотс ит мэйд ов?", ru: "Из чего это сделано?" },
+          { en: "It's made of plastic.", transcr: "Итс мэйд ов плэстик.", ru: "Это из пластика." },
+        ],
+      },
+    },
   ];
 
   if (typeof module !== "undefined" && module.exports) module.exports = LESSONS;
