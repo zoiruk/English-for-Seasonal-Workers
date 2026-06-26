@@ -116,6 +116,18 @@ const WHITELIST = {
   // feel/month/rib/ankle/elbow/wrist/rash) is the 14 words[]; receptive doctor's-visit words
   // (matter/allergic/prescription/painful/recently) live in lesson.glossary[]. See plan L27.
   27: ["for", "since", "long"],
+  // L28 Present Perfect Continuous (have/has been + V-ing) + simple-vs-continuous contrast.
+  // have/has=WL8, "been" rides the central PARTICIPLES list, for/since/long=WL27 -> PPC + for/since
+  // ("I have been working here for two months") is snowball-clean. -ing forms stem to their base
+  // (picking->pick, cleaning->clean, working->work, adjusting->adjust) so any consonant-ending base
+  // verb in words[] just works; silent-e (making->mak) and doubling (running->runn) -ing forms are
+  // deliberately AVOIDED, not whitelisted. The PP-simple contrast pulls only regular participles
+  // (picked->pick, checked->check, loaded->load). NEW = the duration quantifier "all" (all morning /
+  // all the trays) — a function word the stemmer leaves untouched, snowball MISS otherwise. The lexical
+  // focus (MACHINERY-3 + process verbs: line/conveyor/roller/panel/screen/sensor/scanner/gauge/valve/
+  // nozzle/grease/handle/adjust/inspect) is the 14 words[]; receptive shift words (production/faulty/
+  // lately/maintenance) live in lesson.glossary[]. See plan 2026-06-26-b1-scope L28.
+  28: ["all"],
 };
 const NAMES = ["ahmad","tom","sara","anna","john","ali","omar","rustam","fatima","madina","bobur"];
 

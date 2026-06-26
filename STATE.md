@@ -881,4 +881,43 @@ will→would, can→could, Past Simple/PP→Past Perfect) + правило **say
   14 реплик диалога, синий глосс `prescription` + попап (🔊 + «прискрипшэн» + «рецепт (на лекарство)»), тест Q1 опции перемешаны,
   **0 ошибок/предупреждений консоли**. Скриншот grammar-таба подтвердил рендер.
 - `CACHE_VERSION` esw-v85→**esw-v86**. `scripts/lib.js`: `WHITELIST[27]=["for","since","long"]` добавлен. **L27 — 4-й из 13 (L24–L36).**
-  НЕ запушено (ждёт явного разрешения владельца). Дальше — **L28 (Present Perfect Continuous) за свежий чат** по плану.
+  ✅ **Запушено 2026-06-26** (вместе со стартом L28, `9e45c71..7cf4f8e`). L24–L27 теперь все на `origin/master`.
+
+**2026-06-26 — ✅ L28 готов — 5-й урок B1. Present Perfect Continuous (have/has been + V-ing) + контраст PP-simple vs continuous.**
+План — `plans/2026-06-26-b1-scope.md` (строка L28). Грамм-ядро: `have/has been + …ing` (процесс/длительность «I have been picking
+all morning» — как долго) ↔ контраст с PP-simple-результатом (`have/has + 3-я форма`, «I have picked ten trays» — сколько готово).
+`grammar.visual_ru` — SVG «Процесс (↻ длится, How long?) ↔ Результат (✓ готово, How many?)»: синяя пунктир-стрелка have-been-…ing +
+зелёный бар-с-маркером ✓10 + два контраст-бокса (I have been picking / I have picked ten trays). Голос — 1-е лицо рабочего +
+бригадир Tom (`NAMES`). Everyday-функция — **clock-in / отчёт смены** на упаковочной линии.
+- **Лекс-фокус (метрика B1):** `words[]` = **14 MACHINERY-3 + process-глаголы** (line/conveyor/roller/panel/screen/sensor/scanner/gauge/
+  valve/nozzle/grease/handle/adjust/inspect; все дедуп-уникальны через node-прогон — WORKPLACE-PROCESS-поле тонкое, добрано из богатого
+  MACHINERY-3). `glossary[]` = **4 рецептивных** (production/faulty/lately/maintenance — синие, тап→перевод+🔊, не в SRS/счётчике;
+  5-й глосс `non-stop` СНЯТ на превью — движок `glossWordRe` вырезает дефис → дефисный глосс не подсвечивался; заменён цитируемым
+  каркасом в dialogue[1]). `everyday` = «Отметиться на смену и доложить (clock-in)» 6 фраз. quiz = 15 (3×`[BUILD]`, `[GIST]`, `[LISTEN]`,
+  3×`[TRANSLATE]`, 2×`[CORRECT]` process↔result, остальные have-been/-ing/How long — крен к продуктивным, реш. грилла C).
+- **Снежок (PPC-специфика):** `WHITELIST[28]=["all"]` (квантификатор all morning / all the trays — снежок MISS иначе; функц. слово,
+  стеммер не трогает). have/has=WL8, `been`/`done` из центр. `PARTICIPLES`, for/since/long=WL27 кумулятивно. **-ing только чистые
+  согласные-глаголы** (picking→pick, cleaning→clean, working→work, adjusting→adjust, checking/loading/packing) — силент-e (making→mak)
+  и удвоение (running→runn) ИЗБЕГНУТЫ, не вайтлистились. PP-simple-контраст — только регуляр-причастия (picked→pick, checked→check,
+  loaded→load). Числа: `ten`(known) в снежок-полях; `hundred/twenty` только в everyday (вне снежка). `today`=«тудэй» (канон, не «тэдэй» —
+  поймал check-transcr-consistency). Контракции (I've/she's been) — только в everyday, полные формы в снежок-полях (политика L8/L14/L25/L27).
+- **4-слойный гейт:**
+  - **Слой 1 (`npm run audit`):** 8/8 зелёные. 3 правки по ходу (снежок `too`/`also` MISS в dialogue[9] → `here`; `today` транскр «тэдэй»→«тудэй» ×3).
+  - **Слой 2 (чек-лист):** фермерский/рабочий контекст ✓, RU-only ✓, реальные `expl` ✓, эмодзи по смыслу ✓ (gauge 🌡️→⏲️ по ревью — циферблат честнее термометра).
+  - **Слой 3 (адверсариальные ревьюеры язык/IPA + педагогика/контракт/safety):** оба → **SHIP** (0 must-fix). Времена/PPC↔PP-simple/BrE/IPA
+    корректны; **2 nice внесены** — dialogue[9] «the maintenance»→«some maintenance» (mass-noun натуральнее), gauge-эмодзи. counts 14/4/12/14/15 ✓,
+    clock-in нейтрально (нет pay/rights/visa-claims), quiz 0 leak / c-ключи верны / опции перемешиваются.
+  - **🔴 Слой 4 (`/lesson-naturalness-check L28`, source-cited против 5 источников, 2 ревьюера + скептик):** **SHIP, 0 правок контента.**
+    Якоря: Headway **U13 «Earning a living»** PPC «I've been living on the streets for a year» / «How long have you been selling…?» /
+    минимальная пара «He's been running. / He's run five miles.»; EF «How long have you been married? I've been married for 10 years.»;
+    `b1_digest.md` несёт готовую ФЕРМ-адаптацию U13 (строки 116–133: «I've been picking all morning» ↔ «I've picked thirty crates»,
+    «I've just clocked in», machinery-набор) — урок повторяет почти построчно. Скептик защитил флаг `non-stop` цитатой Cambridge
+    («He has worked nonstop…») как валидный BrE; но слово всё равно снято на превью по технической причине (дефис в `glossWordRe`), не по натуральности.
+  - **Слой 5 (`verify-ipa`/`verify-transcr` новых слов):** verify-transcr — **0 флагов**. verify-ipa — 2 флага (`panel /ˈpænl/`, `nozzle /ˈnɒzl/`)
+    класс syllabic-l-нотации (как принятые `ankle/cable/button` — пишем слоговую /l̩/ без schwa); остальные 12 совпали с Wiktionary RP.
+- **Превью (mobile 375×812, `done[1..27]`, SW unregister + caches.delete → свежий v87):** хаб «Уровень 3 · B1 = 4/5» + 📍 вы здесь,
+  карточка L28 (`lesson-card b1`, разблок), шапка «28/28» + title_ru + cefr без «undefined», 5 табов, SVG-контраст (все 14 меток:
+  ↻ have-been-…ing/How long + ✓ have+3-форма/How many + 2 бокса), 14 реплик диалога, **4 синих глосса** (faulty/lately/production/maintenance)
+  + попап (🔊 + «фолти» + «неисправный»), dialogue[1] исправлен, тест Q1 опции перемешаны (been не на 0), **0 ошибок/предупреждений консоли**.
+- `CACHE_VERSION` esw-v86→**esw-v87**. `scripts/lib.js`: `WHITELIST[28]=["all"]` добавлен. **L28 — 5-й из 13 (L24–L36).**
+  НЕ запушено (ждёт явного разрешения владельца). Дальше — **L29 (will/won't + Shall I? + going-to vs will) за свежий чат** по плану.

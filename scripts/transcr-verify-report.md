@@ -1,6 +1,6 @@
 # Transcr self-consistency report (cyrillic vs IPA-derived)
 
-Total: 751 · consistent: 713 · divergent: 38
+Total: 765 · consistent: 727 · divergent: 38
 
 Expected = mechanical phoneme→cyrillic from our `pn` (course convention).
 Divergences are for OWNER ACCEPTANCE: a real transcr error, or a deliberate

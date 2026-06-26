@@ -4741,6 +4741,206 @@
         ],
       },
     },
+
+    {
+      id: 28,
+      title_ru: "Я работаю всё утро: Present Perfect Continuous (отчёт смены)",
+      cefr: "B1 · Present Perfect Continuous · process vs result · machinery",
+      grammar: {
+        title_ru: "have / has been + …ing — действие ДЛИТСЯ (процесс) ↔ have + 3-я форма (результат)",
+        intro_ru:
+          'Present Perfect Continuous (<b>have/has been</b> + глагол<b>-ing</b>) показывает <b>длительное действие</b>, ' +
+          'которое началось в прошлом и <b>идёт сейчас</b> (или только что закончилось) — важна сама <b>работа</b> и ' +
+          '<b>как долго</b> она идёт:<br>' +
+          '✅ <b>I have been working</b> <span class="g-transcr">[ай хэв бин уёкин]</span> since six o\'clock. ' +
+          '(я работаю с шести — процесс длится)<br>' +
+          '✅ <b>How long</b> <span class="g-transcr">[хау лонг]</span> have you been working? (как долго ты работаешь?)<br>' +
+          '⚠️ Сравни с результатом: <b>have/has + 3-я форма</b> — что <b>сделано</b> (сколько?): ' +
+          '<b>I have picked ten trays.</b> (я собрал десять лотков — результат).',
+        cultural_ru:
+          '⚠️ Главное отличие от русского: по-русски «Я <b>работаю</b> всё утро» — настоящее время. ' +
+          'По-английски это <b>have been + …ing</b>: <b>I have been working all morning.</b><br>' +
+          '<b>Два времени — два смысла:</b><br>' +
+          '• <b>have been + …ing</b> — <b>ПРОЦЕСС / как долго</b>: «I have been picking <b>all morning</b>» ' +
+          '(важно само действие, оно ещё идёт).<br>' +
+          '• <b>have + 3-я форма</b> — <b>РЕЗУЛЬТАТ / сколько</b>: «I have picked <b>ten trays</b>» ' +
+          '(важен итог, действие закончено).<br>' +
+          'Поэтому в отчёте смены: «How long have you been working?» (как долго) — но «How many boxes ' +
+          'have you packed?» (сколько готово).',
+        note_ru:
+          '⚠️ Частая ошибка: <s>I work since six o\'clock</s> — нельзя Present Simple про длительность до сейчас. ' +
+          'Правильно: <b>I have been working since six o\'clock.</b><br>' +
+          '⚠️ Не теряй <b>-ing</b>: <s>I have been work</s> → <b>I have been working</b>. ' +
+          'И не теряй <b>been</b>: <s>I have working</s> → <b>I have been working</b>.<br>' +
+          '⚠️ В разговоре сокращают: I\'ve been, she\'s been, hasn\'t been. В заданиях и сборке фраз пиши ' +
+          '<b>полную</b> форму (I have been, she has been); сокращения — только в «Фразах».',
+        visual_ru:
+          '<svg viewBox="0 0 340 256" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:360px;height:auto" role="img">' +
+          '<text x="14" y="18" font-size="13" fill="var(--text2)">Процесс (длится) ↔ Результат (готово)</text>' +
+          '<text x="14" y="46" font-size="18">↻</text>' +
+          '<text x="36" y="44" font-size="12" fill="#1565c0">have been + …ing — действие ДЛИТСЯ</text>' +
+          '<text x="36" y="61" font-size="10" fill="var(--text2)">вопрос: How long? (как долго)</text>' +
+          '<line x1="36" y1="74" x2="300" y2="74" stroke="#1565c0" stroke-width="2" stroke-dasharray="4 3"/>' +
+          '<polygon points="300,74 290,69 290,79" fill="#1565c0"/>' +
+          '<text x="14" y="108" font-size="16">✓</text>' +
+          '<text x="36" y="106" font-size="12" fill="#2e7d32">have + 3-я форма — РЕЗУЛЬТАТ</text>' +
+          '<text x="36" y="123" font-size="10" fill="var(--text2)">вопрос: How many? (сколько)</text>' +
+          '<line x1="36" y1="136" x2="240" y2="136" stroke="#2e7d32" stroke-width="2"/>' +
+          '<line x1="240" y1="130" x2="240" y2="142" stroke="#2e7d32" stroke-width="3"/>' +
+          '<text x="250" y="140" font-size="11" fill="#2e7d32">✓ 10</text>' +
+          '<rect x="12" y="166" width="156" height="78" rx="8" fill="none" stroke="#1565c0" stroke-width="2"/>' +
+          '<text x="22" y="190" font-size="11" fill="var(--text)">I have been picking.</text>' +
+          '<text x="22" y="211" font-size="10" fill="#1565c0">↻ всё утро (процесс)</text>' +
+          '<text x="22" y="231" font-size="10" fill="var(--text2)">как долго работаю</text>' +
+          '<rect x="180" y="166" width="148" height="78" rx="8" fill="none" stroke="#2e7d32" stroke-width="2"/>' +
+          '<text x="190" y="190" font-size="11" fill="var(--text)">I have picked</text>' +
+          '<text x="190" y="207" font-size="11" fill="var(--text)">ten trays.</text>' +
+          '<text x="190" y="231" font-size="10" fill="#2e7d32">✓ результат (сколько)</text>' +
+          '</svg>',
+        forms: {
+          positive: {
+            label_ru: "✅ have / has been + …ing (процесс)",
+            rule_ru:
+              '<b>have/has been</b> + глагол<b>-ing</b> — действие идёт уже какое-то время:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div>I <b>have been working</b> since six</div><div>я работаю с шести</div>' +
+              '<div>She <b>has been cleaning</b> the line</div><div>она моет линию (уже долго)</div>' +
+              '<div>они: <b>have been</b> · он/она: <b>has been</b></div><div>+ глагол с -ing</div>' +
+              '</div>',
+            table: [
+              { subj: "я", verb: "have been working", example: "I have been working since six o'clock.", transcr: "Ай хэв бин уёкин синс сикс эклок.", tr_ru: "Я работаю с шести часов. (процесс длится)" },
+              { subj: "она", verb: "has been cleaning", example: "She has been cleaning the line all morning.", transcr: "Ши хэз бин клинин зэ лайн ол монинг.", tr_ru: "Она моет линию всё утро." },
+              { subj: "они", verb: "have been loading", example: "They have been loading boxes for two hours.", transcr: "Зэй хэв бин лоудин боксиз фо ту ауэз.", tr_ru: "Они грузят коробки уже два часа." },
+            ],
+          },
+          negative: {
+            label_ru: "❌ have not / has not been + …ing",
+            rule_ru:
+              'Отрицание — <b>have not</b> / <b>has not been</b> + глагол<b>-ing</b>:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div>I <b>have not been working</b> long</div><div>я работаю недолго</div>' +
+              '<div>The line <b>has not been working</b></div><div>линия не работает (всё это время)</div>' +
+              '<div>полная форма: have not / has not</div><div>в речи: haven\'t / hasn\'t</div>' +
+              '</div>',
+            table: [
+              { subj: "я", verb: "have not been working", example: "I have not been working long.", transcr: "Ай хэв нот бин уёкин лонг.", tr_ru: "Я работаю недолго." },
+              { subj: "линия", verb: "has not been working", example: "The line has not been working well.", transcr: "Зэ лайн хэз нот бин уёкин уэл.", tr_ru: "Линия работает неважно." },
+              { subj: "мы", verb: "have not been picking", example: "We have not been picking today.", transcr: "Уи хэв нот бин пикин тудэй.", tr_ru: "Сегодня мы не собирали." },
+            ],
+          },
+          question: {
+            label_ru: "❓ How long…? / Have you been…?",
+            rule_ru:
+              '<b>How long</b> + have/has been + …ing — «как долго?». Ответ: <b>For…</b> / <b>Since…</b>:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><b>How long have</b> you been working?</div><div>как давно ты работаешь?</div>' +
+              '<div>— <b>For</b> two hours. / <b>Since</b> six.</div><div>— Два часа. / С шести.</div>' +
+              '<div>Have you been…?</div><div>да/нет вопрос</div>' +
+              '</div>',
+            table: [
+              { subj: "как долго", verb: "have you been working?", example: "How long have you been working here?", transcr: "Хау лонг хэв ю бин уёкин хиэ?", tr_ru: "Как давно ты здесь работаешь?" },
+              { subj: "как долго", verb: "has she been cleaning?", example: "How long has she been cleaning the line?", transcr: "Хау лонг хэз ши бин клинин зэ лайн?", tr_ru: "Как долго она моет линию?" },
+              { subj: "ты", verb: "have you been checking?", example: "Have you been checking the sensor?", transcr: "Хэв ю бин чекин зэ сэнсэ?", tr_ru: "Ты проверял датчик?" },
+            ],
+          },
+        },
+        examples: [
+          { en: "I have been working since six o'clock.", transcr: "Ай хэв бин уёкин синс сикс эклок.", ru: "Я работаю с шести часов. (процесс — как долго)" },
+          { en: "She has been cleaning the line all morning.", transcr: "Ши хэз бин клинин зэ лайн ол монинг.", ru: "Она моет линию всё утро." },
+          { en: "How long have you been picking?", transcr: "Хау лонг хэв ю бин пикин?", ru: "Как давно ты собираешь? (как долго)" },
+          { en: "I have been picking for two hours.", transcr: "Ай хэв бин пикин фо ту ауэз.", ru: "Я собираю уже два часа." },
+          { en: "I have picked ten trays.", transcr: "Ай хэв пикт тэн трэйз.", ru: "Я собрал десять лотков. (результат — сколько)" },
+          { en: "He has been checking the sensor.", transcr: "Хи хэз бин чекин зэ сэнсэ.", ru: "Он проверяет датчик. (процесс)" },
+          { en: "I have checked all the gauges.", transcr: "Ай хэв чект ол зэ гэйджиз.", ru: "Я проверил все измерители. (результат)" },
+          { en: "The line has not been working well.", transcr: "Зэ лайн хэз нот бин уёкин уэл.", ru: "Линия работает неважно. (отрицание)" },
+          { en: "Have you been adjusting the valve?", transcr: "Хэв ю бин эджастин зэ вэлв?", ru: "Ты регулируешь клапан?" },
+          { en: "I have been cleaning the rollers for an hour.", transcr: "Ай хэв бин клинин зэ роулэз фо эн ауэ.", ru: "Я чищу ролики уже час." },
+          { en: "I have loaded all the boxes.", transcr: "Ай хэв лоудид ол зэ боксиз.", ru: "Я загрузил все коробки. (результат)" },
+          { en: "How long have you been working on the line?", transcr: "Хау лонг хэв ю бин уёкин он зэ лайн?", ru: "Как давно ты работаешь на линии?" },
+        ],
+        simple_ru: {
+          formula:
+            '<b>have/has been + глагол-ing</b> — действие ДЛИТСЯ (процесс, «как долго?»). ' +
+            '<b>have/has + 3-я форма</b> — РЕЗУЛЬТАТ (готово, «сколько?»).',
+          examples: [
+            { en: "I have been picking all morning.", transcr: "Ай хэв бин пикин ол монинг.", ru: "процесс — как долго (всё утро)." },
+            { en: "I have picked ten trays.", transcr: "Ай хэв пикт тэн трэйз.", ru: "результат — сколько (десять лотков)." },
+          ],
+        },
+        ytQuery: "present perfect continuous have been doing английский для начинающих",
+      },
+
+      glossary: [
+        { en: "production", transcr: "прэдакшн", ru: "производство (the production line — производственная линия)", pn: "/prəˈdʌkʃn/" },
+        { en: "faulty", transcr: "фолти", ru: "неисправный, с дефектом", pn: "/ˈfɔːlti/" },
+        { en: "lately", transcr: "лэйтли", ru: "в последнее время", pn: "/ˈleɪtli/" },
+        { en: "maintenance", transcr: "мэйнтэнэнс", ru: "техобслуживание, ремонт", pn: "/ˈmeɪntənəns/" },
+      ],
+
+      words: [
+        { e: "🏭", en: "line", transcr: "лайн", ru: "(производственная) линия", pn: "/laɪn/" },
+        { e: "📦", en: "conveyor", transcr: "кэнвэйэ", ru: "конвейер (лента)", pn: "/kənˈveɪə/" },
+        { e: "🛞", en: "roller", transcr: "роулэ", ru: "ролик, валик", pn: "/ˈrəʊlə/" },
+        { e: "🎛️", en: "panel", transcr: "пэнл", ru: "панель управления", pn: "/ˈpænl/" },
+        { e: "🖥️", en: "screen", transcr: "скрин", ru: "экран", pn: "/skriːn/" },
+        { e: "📡", en: "sensor", transcr: "сэнсэ", ru: "датчик, сенсор", pn: "/ˈsensə/" },
+        { e: "📷", en: "scanner", transcr: "скэнэ", ru: "сканер (этикеток)", pn: "/ˈskænə/" },
+        { e: "⏲️", en: "gauge", transcr: "гэйдж", ru: "измеритель, манометр", pn: "/ɡeɪdʒ/" },
+        { e: "🚰", en: "valve", transcr: "вэлв", ru: "клапан, вентиль", pn: "/vælv/" },
+        { e: "🚿", en: "nozzle", transcr: "нозл", ru: "форсунка, насадка", pn: "/ˈnɒzl/" },
+        { e: "🛢️", en: "grease", transcr: "грис", ru: "смазка", pn: "/ɡriːs/" },
+        { e: "🕹️", en: "handle", transcr: "хэндл", ru: "ручка, рукоятка", pn: "/ˈhændl/" },
+        { e: "🔧", en: "adjust", transcr: "эджаст", ru: "настроить, регулировать", pn: "/əˈdʒʌst/" },
+        { e: "🔍", en: "inspect", transcr: "инспэкт", ru: "осматривать, проверять", pn: "/ɪnˈspekt/" },
+      ],
+
+      dialogue: [
+        { s: "m", en: "Good morning. How long have you been working?", transcr: "Гуд монинг. Хау лонг хэв ю бин уёкин?", ru: "Доброе утро. Как давно ты работаешь?" },
+        { s: "w", en: "I have been working here since six o'clock.", transcr: "Ай хэв бин уёкин хиэ синс сикс эклок.", ru: "Я работаю здесь с шести часов." },
+        { s: "m", en: "Good. What have you been doing?", transcr: "Гуд. Уот хэв ю бин дуин?", ru: "Хорошо. Что ты делал?" },
+        { s: "w", en: "I have been cleaning the rollers all morning.", transcr: "Ай хэв бин клинин зэ роулэз ол монинг.", ru: "Я чистил ролики всё утро." },
+        { s: "m", en: "Has the line been faulty lately?", transcr: "Хэз зэ лайн бин фолти лэйтли?", ru: "Линия в последнее время барахлит?" },
+        { s: "w", en: "Yes. I have been checking the sensor.", transcr: "Йес. Ай хэв бин чекин зэ сэнсэ.", ru: "Да. Я проверял датчик." },
+        { s: "m", en: "How many boxes have you packed?", transcr: "Хау мэни боксиз хэв ю пэкт?", ru: "Сколько коробок ты упаковал?" },
+        { s: "w", en: "I have packed ten boxes today.", transcr: "Ай хэв пэкт тэн боксиз тудэй.", ru: "Сегодня я упаковал десять коробок." },
+        { s: "m", en: "Good. The production line is busy today.", transcr: "Гуд. Зэ прэдакшн лайн из бизи тудэй.", ru: "Хорошо. Производственная линия сегодня загружена." },
+        { s: "w", en: "I have done some maintenance here.", transcr: "Ай хэв дан сам мэйнтэнэнс хиэ.", ru: "Я сделал тут немного техобслуживания." },
+        { s: "m", en: "Have you been near the conveyor?", transcr: "Хэв ю бин ниэ зэ кэнвэйэ?", ru: "Ты был у конвейера?" },
+        { s: "w", en: "Yes. I have been adjusting the nozzle.", transcr: "Йес. Ай хэв бин эджастин зэ нозл.", ru: "Да. Я регулировал форсунку." },
+        { s: "m", en: "Well done. Take a break now.", transcr: "Уэл дан. Тэйк э брэйк нау.", ru: "Молодец. Сделай перерыв." },
+        { s: "w", en: "Thank you, Tom.", transcr: "Сэнк ю, Том.", ru: "Спасибо, Том." },
+      ],
+
+      quiz: [
+        { q: '[COMPLETE] "I have ___ working since six o\'clock." (процесс длится)', opts: ["been", "be", "am", "was"], c: 0, expl: "have been + …ing — Present Perfect Continuous. been + working = процесс, который длится.", hint_ru: "have ___ working → been." },
+        { q: '[COMPLETE] "I have been ___ all morning." (собирать — процесс)', opts: ["picking", "picked", "pick", "picks"], c: 0, expl: "after been → глагол с -ing: been picking. picked — это 3-я форма (для результата).", hint_ru: "been + …ing." },
+        { q: '[CORRECT] «Я собрал десять лотков.» (результат — сколько)', opts: ["I have picked ten trays.", "I have been picking ten trays.", "I am picking ten trays.", "I picking ten trays."], c: 0, expl: "Результат (сколько готово) → have + 3-я форма: have picked. been + …ing — для процесса, не для итога.", hint_ru: "Результат → have + 3-я форма." },
+        { q: '[CORRECT] «Я собираю всё утро.» (процесс — как долго)', opts: ["I have been picking all morning.", "I have picked all morning.", "I picked all morning.", "I am picked all morning."], c: 0, expl: "Процесс / как долго → have been + …ing: have been picking. have picked — это результат.", hint_ru: "Процесс → have been + …ing." },
+        { q: '[COMPLETE] "How ___ have you been working?" (как долго?)', opts: ["long", "many", "much", "old"], c: 0, expl: "How long…? — о длительности. How many/much — о количестве.", hint_ru: "Длительность → How long." },
+        { q: '[COMPLETE] "She ___ been cleaning the line." (она)', opts: ["has", "have", "do", "did"], c: 0, expl: "she/he/it → has been. I/you/we/they → have been.", hint_ru: "She → has." },
+        { q: '[NEGATIVE] "The line ___ been working well." (не работала)', opts: ["has not", "have not", "did not", "is not"], c: 0, expl: "The line (он) → has not been + …ing. have not — для I/you/we/they.", hint_ru: "line → has not been." },
+        { q: '[TRANSLATE] "датчик, сенсор"', opts: ["sensor", "gauge", "valve", "nozzle"], c: 0, expl: "sensor — датчик. gauge — измеритель, valve — клапан, nozzle — форсунка.", hint_ru: "sensor." },
+        { q: '[TRANSLATE] "клапан, вентиль"', opts: ["valve", "sensor", "roller", "handle"], c: 0, expl: "valve — клапан. sensor — датчик, roller — ролик, handle — ручка.", hint_ru: "valve." },
+        { q: '[TRANSLATE] "форсунка, насадка"', opts: ["nozzle", "panel", "screen", "grease"], c: 0, expl: "nozzle — форсунка. panel — панель, screen — экран, grease — смазка.", hint_ru: "nozzle." },
+        { q: "[LISTEN] How long have you been working?", opts: ["Как давно ты работаешь?", "Где ты работаешь?", "Что ты делаешь?", "Ты устал?"], c: 0, expl: "How long have you been working? — как давно / как долго ты работаешь?", hint_ru: "" },
+        { q: "[GIST] По диалогу: с какого времени рабочий работает?", opts: ["С шести часов.", "С восьми часов.", "Со вчерашнего дня.", "С обеда."], c: 0, expl: "«I have been working non-stop since six o'clock.» — с шести часов.", hint_ru: "Слушай реплику про since." },
+        { q: '[BUILD] «Я работаю с шести часов.»', build: ["I", "have", "been", "working", "since", "six", "o'clock"], expl: "I have been working since six o'clock. — have been + …ing + since.", hint_ru: "I have been working since six o'clock." },
+        { q: '[BUILD] «Как давно ты здесь работаешь?»', build: ["How", "long", "have", "you", "been", "working", "here"], expl: "How long have you been working here? — How long + have you been + …ing.", hint_ru: "How long have you been working here?" },
+        { q: '[BUILD] «Я проверил все датчики.»', build: ["I", "have", "checked", "all", "the", "sensors"], expl: "I have checked all the sensors. — результат → have + 3-я форма (checked).", hint_ru: "I have checked all the sensors." },
+      ],
+
+      everyday: {
+        title_ru: "Отметиться на смену и доложить (clock-in)",
+        phrases: [
+          { en: "I need to clock in.", transcr: "Ай нид ту клок ин.", ru: "Мне нужно отметиться (на входе)." },
+          { en: "I've been working since six.", transcr: "Айв бин уёкин синс сикс.", ru: "Я работаю с шести." },
+          { en: "I've been on the line all morning.", transcr: "Айв бин он зэ лайн ол монинг.", ru: "Я на линии всё утро." },
+          { en: "I've packed two hundred boxes.", transcr: "Айв пэкт ту хандрэд боксиз.", ru: "Я упаковал двести коробок." },
+          { en: "The line has been faulty all day.", transcr: "Зэ лайн хэз бин фолти ол дэй.", ru: "Линия неисправна весь день." },
+          { en: "How long have you been here?", transcr: "Хау лонг хэв ю бин хиэ?", ru: "Как давно ты здесь?" },
+        ],
+      },
+    },
   ];
 
   if (typeof module !== "undefined" && module.exports) module.exports = LESSONS;
