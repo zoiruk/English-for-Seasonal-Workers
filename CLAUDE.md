@@ -47,6 +47,13 @@ could+adverbs · have got · compounds · infinitive of purpose · take/get/have
 `plans/2026-06-23-a2-scope.md`; пер-урочные отчёты — `STATE.md`. **A2 «level-up» закрыт целиком (Фазы 1–3,
 `plans/2026-06-24-a2-levelup.md`):** A2-сертификат + хаб-«путь» A0→A1→A2 + веха · 5 сценариев выживания ·
 A2-разговорник (banking/wages/agency) · **ридер-главы 16–23 «второй сезон» (книга «История Ахмада» 23/23)**.
+**🎉 B1 (Pre-Intermediate) ПОЛОН — L24–L36 (13/13)** построены через 4-слойный гейт (план `plans/2026-06-26-b1-scope.md`):
+Past Continuous · Past Perfect · reported speech · PP for/since · PP Continuous · will/won't · 1st conditional ·
+have to/must/should · Passive · 2nd conditional · used to + relatives · verb patterns + phrasal verbs ·
+**L36 as…as/quantity/articles + so/such**. Метрика B1 = грамм-ядро + лекс-фокус (свежее поле ИЛИ коллокации) +
+рецептивные глоссы (`glossary[]`) + центр. список причастий (`PARTICIPLES` в `lib.js`); снежок/дедуп/гейты целы.
+**Отложено (после уроков, отдельными пакетами — план «Открытые вопросы #7»):** ридер-главы B1 · B1-сценарии ·
+B1-разговорник · B1-сертификат/веха «Уровень 3» — в уроках НЕ делать. Пер-урочные отчёты — `STATE.md`.
 **Охват CEFR A0–A1 закрыт ретрофитом (2026-06-20):** числа 11–100 (L4), правило мн.ч. -s/-es (L3), алфавит+«по
 буквам» (L1), заказ в столовой (L15), советы Why don't you (L14), языки (L1) — детали `STATE.md` + `plans/2026-06-20-cefr-coverage-gap-closure.md`.
 **Полный разбор уроков + отчёты verify-* + история naturalness-check → `STATE.md`.**

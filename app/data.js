@@ -6396,6 +6396,216 @@
         ],
       },
     },
+
+    {
+      id: 36,
+      title_ru: "Сравнение as…as · сколько (too much / a few) · артикли a/the",
+      cefr: "B1 · as…as / not as…as / less than · a few / a little / too much / enough · articles",
+      grammar: {
+        title_ru: "Сравнение: as heavy as (равны) / not as cold as / less than · сколько: a few / a little / too much / enough · артикли a/the/—",
+        intro_ru:
+          'Сравниваем размер и количество. <b>as … as</b> — равны; <b>not as … as / less than</b> — меньше:<br>' +
+          '❌ Не так: <s>This box is as heavier as that one</s> (в as…as — <b>базовое</b> прилагательное!)<br>' +
+          '✅ Так: <b>This box is <u>as heavy as</u> that one.</b> <span class="g-transcr">[зис бокс из эз хэви эз зэт уан]</span> (такой же тяжёлый)<br>' +
+          '✅ Так: <b>Today is <u>not as cold as</u> yesterday.</b> <span class="g-transcr">[тудэй из нот эз коулд эз йестэдэй]</span> (не так холодно)<br>' +
+          '<b>Сколько:</b> a few (счётные) · a little (несчётные) · a lot of (много) · too much / too many (слишком) · (not) enough ((не) хватает).',
+        cultural_ru:
+          '📰 <b>Артикли a / the / — </b> (в русском их нет, в английском важны):<br>' +
+          '<div style="display:grid;grid-template-columns:auto 1fr;gap:4px 8px">' +
+          '<div><b>a / an</b></div><div>один из многих (любой): I am <b>a</b> picker. <span class="g-transcr">[ай эм э пикэ]</span> · There is <b>a</b> tractor near the gate.</div>' +
+          '<div><b>the</b></div><div>тот самый, известный: <b>The</b> supervisor is in <b>the</b> field. <span class="g-transcr">[зэ супэвайзэ из ин зэ филд]</span></div>' +
+          '<div><b>— (нет)</b></div><div>мн.ч. / несчётное / общее: I go to <b>work</b> by <b>bus</b>. <span class="g-transcr">[ай гоу ту уёк бай бас]</span> · We have <b>lunch</b> in the canteen.</div>' +
+          '</div>⚠️ Говорят <b>go to work</b>, <b>by bus</b>, <b>have lunch</b> — без артикля.',
+        note_ru:
+          '⚠️ В <b>as … as</b> — <b>базовое</b> прилагательное: <b>as heavy as</b> ✅, не <s>as heavier as</s>.<br>' +
+          '⚠️ <b>much / too much</b> — для несчётного (work, water); <b>many / too many</b> — для счётного (boxes, crates).<br>' +
+          '⚠️ <b>a little</b> — несчётное (a little water); <b>a few</b> — счётное (a few crates).<br>' +
+          '⚠️ <b>less</b> — для несчётного (less work); для счётного — <b>fewer</b> (fewer boxes).<br>' +
+          '⚠️ <b>enough</b> идёт <b>перед</b> существительным (enough water), но <b>после</b> прилагательного (big enough).',
+        visual_ru:
+          '<svg viewBox="0 0 340 312" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:360px;height:auto" role="img">' +
+          '<text x="10" y="14" font-size="11" fill="var(--text2)">Сравнение: равны или меньше?</text>' +
+          '<rect x="8" y="20" width="324" height="80" rx="8" fill="none" stroke="#2e7d32" stroke-width="2"/>' +
+          '<text x="16" y="38" font-size="11" font-weight="bold" fill="#2e7d32">равны: as … as</text>' +
+          '<rect x="40" y="46" width="40" height="34" rx="3" fill="none" stroke="var(--text2)" stroke-width="1.5"/>' +
+          '<text x="90" y="69" font-size="16" fill="#2e7d32">=</text>' +
+          '<rect x="108" y="46" width="40" height="34" rx="3" fill="none" stroke="var(--text2)" stroke-width="1.5"/>' +
+          '<text x="165" y="60" font-size="10" fill="var(--text)">This box is</text>' +
+          '<text x="165" y="74" font-size="10" fill="var(--text)">as heavy as that one.</text>' +
+          '<text x="16" y="94" font-size="9" fill="var(--text2)">базовое прилагательное: as heavy as (не heavier)</text>' +
+          '<rect x="8" y="106" width="324" height="76" rx="8" fill="none" stroke="#c62828" stroke-width="2"/>' +
+          '<text x="16" y="124" font-size="11" font-weight="bold" fill="#c62828">меньше: not as … as · less than</text>' +
+          '<rect x="40" y="132" width="40" height="20" rx="3" fill="none" stroke="var(--text2)" stroke-width="1.5"/>' +
+          '<text x="92" y="150" font-size="16" fill="#c62828">‹</text>' +
+          '<rect x="108" y="132" width="40" height="34" rx="3" fill="none" stroke="var(--text2)" stroke-width="1.5"/>' +
+          '<text x="165" y="146" font-size="10" fill="var(--text)">Today is not as</text>' +
+          '<text x="165" y="160" font-size="10" fill="var(--text)">cold as yesterday.</text>' +
+          '<text x="16" y="178" font-size="9" fill="var(--text2)">not as … as / less than = меньше</text>' +
+          '<text x="10" y="200" font-size="11" font-weight="bold" fill="var(--text2)">Сколько?</text>' +
+          '<text x="14" y="218" font-size="10" fill="#2e7d32">a little / a few — немного</text>' +
+          '<text x="14" y="234" font-size="10" fill="var(--text)">a lot of — много</text>' +
+          '<text x="14" y="250" font-size="10" fill="#e65100">too much / too many — слишком много</text>' +
+          '<text x="14" y="266" font-size="10" fill="#1565c0">(not) enough — (не) хватает</text>' +
+          '<text x="10" y="288" font-size="9" fill="var(--text2)">счёт: a few · too many · How many → boxes</text>' +
+          '<text x="10" y="302" font-size="9" fill="var(--text2)">несчёт: a little · too much · How much → work</text>' +
+          '</svg>',
+        forms: {
+          positive: {
+            label_ru: "✅ равны и сколько: as … as · a lot of / a few / a little",
+            rule_ru:
+              '<b>as + прилагательное + as</b> = равны; <b>a lot of</b> = много; <b>a few</b> (счётные) / <b>a little</b> (несчётные):<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div>This box is <b>as heavy as</b> that one.</div><div>такой же тяжёлый</div>' +
+              '<div>There is <b>a lot of</b> work today.</div><div>сегодня много работы</div>' +
+              '<div>I need <b>a few</b> more crates.</div><div>ещё несколько ящиков</div>' +
+              '<div>There is <b>a little</b> water here.</div><div>немного воды</div>' +
+              '</div>',
+            table: [
+              { subj: "равны", verb: "as + heavy + as", example: "This box is as heavy as that one.", transcr: "Зис бокс из эз хэви эз зэт уан.", tr_ru: "Этот ящик такой же тяжёлый, как тот." },
+              { subj: "много", verb: "a lot of + work", example: "There is a lot of work today.", transcr: "Зэа из э лот ов уёк тудэй.", tr_ru: "Сегодня много работы." },
+              { subj: "немного (счёт)", verb: "a few + crates", example: "I need a few more crates.", transcr: "Ай нид э фью мо крэйтс.", tr_ru: "Мне нужно ещё несколько ящиков." },
+              { subj: "немного (несчёт)", verb: "a little + water", example: "There is a little water here.", transcr: "Зэа из э литл уотэ хиэ.", tr_ru: "Здесь немного воды." },
+            ],
+          },
+          negative: {
+            label_ru: "❌ меньше: not as … as · less than · too much/many · not enough",
+            rule_ru:
+              '<b>not as … as / less than</b> = меньше; <b>too much/many</b> = слишком; <b>not enough</b> = не хватает:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div>Today is <b>not as cold as</b> yesterday.</div><div>не так холодно, как вчера</div>' +
+              '<div>There is <b>less</b> work <b>than</b> yesterday.</div><div>работы меньше, чем вчера</div>' +
+              '<div>I have <b>too much</b> work this week.</div><div>слишком много работы</div>' +
+              '<div>We do not have <b>enough</b> crates.</div><div>не хватает ящиков</div>' +
+              '</div>',
+            table: [
+              { subj: "не так… как", verb: "not as + cold + as", example: "Today is not as cold as yesterday.", transcr: "Тудэй из нот эз коулд эз йестэдэй.", tr_ru: "Сегодня не так холодно, как вчера." },
+              { subj: "меньше, чем", verb: "less + work + than", example: "There is less work than yesterday.", transcr: "Зэа из лес уёк зэн йестэдэй.", tr_ru: "Работы меньше, чем вчера." },
+              { subj: "слишком (несчёт)", verb: "too much + work", example: "I have too much work this week.", transcr: "Ай хэв ту мач уёк зис уик.", tr_ru: "На этой неделе у меня слишком много работы." },
+              { subj: "слишком (счёт)", verb: "too many + boxes", example: "There are too many boxes to carry.", transcr: "Зэа а ту мэни боксиз ту кэри.", tr_ru: "Слишком много ящиков, чтобы их нести." },
+              { subj: "не хватает", verb: "not + enough + crates", example: "We do not have enough crates.", transcr: "Уи ду нот хэв инаф крэйтс.", tr_ru: "Нам не хватает ящиков." },
+            ],
+          },
+          question: {
+            label_ru: "❓ How much / How many …? · Is there enough …?",
+            rule_ru:
+              '<b>How much</b> (несчётное) / <b>How many</b> (счётное) …?; <b>Is there enough …?</b>:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><b>How much</b> work is there?</div><div>сколько работы?</div>' +
+              '<div><b>How many</b> boxes did you pack?</div><div>сколько ящиков?</div>' +
+              '<div><b>Is there enough</b> water?</div><div>хватает ли воды?</div>' +
+              '</div>',
+            table: [
+              { subj: "сколько? (несчёт)", verb: "How much + work?", example: "How much work is there today?", transcr: "Хау мач уёк из зэа тудэй?", tr_ru: "Сколько сегодня работы?" },
+              { subj: "сколько? (счёт)", verb: "How many + boxes?", example: "How many boxes did you pack?", transcr: "Хау мэни боксиз дид ю пэк?", tr_ru: "Сколько ящиков ты упаковал?" },
+              { subj: "хватает?", verb: "Is there enough…?", example: "Is there enough water for everyone?", transcr: "Из зэа инаф уотэ фо эвриуан?", tr_ru: "Хватает ли воды на всех?" },
+              { subj: "так же…?", verb: "Is it as … as…?", example: "Is this box as heavy as that one?", transcr: "Из зис бокс эз хэви эз зэт уан?", tr_ru: "Этот ящик такой же тяжёлый, как тот?" },
+            ],
+          },
+        },
+        examples: [
+          { en: "This box is as heavy as that one.", transcr: "Зис бокс из эз хэви эз зэт уан.", ru: "Этот ящик такой же тяжёлый, как тот." },
+          { en: "Today is not as cold as yesterday.", transcr: "Тудэй из нот эз коулд эз йестэдэй.", ru: "Сегодня не так холодно, как вчера." },
+          { en: "This sack is heavier than that basket.", transcr: "Зис сэк из хэвиэ зэн зэт баскит.", ru: "Этот мешок тяжелее той корзины." },
+          { en: "There is less work than yesterday.", transcr: "Зэа из лес уёк зэн йестэдэй.", ru: "Работы меньше, чем вчера." },
+          { en: "I packed a lot of boxes today.", transcr: "Ай пэкт э лот ов боксиз тудэй.", ru: "Сегодня я упаковал много ящиков." },
+          { en: "I need a few more crates.", transcr: "Ай нид э фью мо крэйтс.", ru: "Мне нужно ещё несколько ящиков." },
+          { en: "There is a little water here.", transcr: "Зэа из э литл уотэ хиэ.", ru: "Здесь немного воды." },
+          { en: "I have too much work this week.", transcr: "Ай хэв ту мач уёк зис уик.", ru: "На этой неделе у меня слишком много работы." },
+          { en: "There are too many boxes to carry.", transcr: "Зэа а ту мэни боксиз ту кэри.", ru: "Слишком много ящиков, чтобы их нести." },
+          { en: "We do not have enough crates.", transcr: "Уи ду нот хэв инаф крэйтс.", ru: "Нам не хватает ящиков." },
+          { en: "Is there enough water for everyone?", transcr: "Из зэа инаф уотэ фо эвриуан?", ru: "Хватает ли воды на всех?" },
+          { en: "The two boxes are exactly the same size.", transcr: "Зэ ту боксиз а игзэктли зэ сэйм сайз.", ru: "Эти два ящика точно одного размера." },
+          { en: "We have the same amount of work as yesterday.", transcr: "Уи хэв зэ сэйм эмаунт ов уёк эз йестэдэй.", ru: "У нас столько же работы, сколько вчера." },
+          { en: "This box and that box have the same weight.", transcr: "Зис бокс энд зэт бокс хэв зэ сэйм уэйт.", ru: "Этот ящик и тот ящик одного веса." },
+          { en: "I packed a dozen eggs this morning.", transcr: "Ай пэкт э дазэн эгз зис монинг.", ru: "Утром я упаковал дюжину яиц." },
+          { en: "I picked a bunch of grapes.", transcr: "Ай пикт э банч ов грэйпс.", ru: "Я сорвал гроздь винограда." },
+          { en: "I need a new pair of gloves.", transcr: "Ай нид э нью пэа ов главз.", ru: "Мне нужна новая пара перчаток." },
+          { en: "Can you measure this box for me?", transcr: "Кэн ю межэ зис бокс фо ми?", ru: "Можешь измерить мне этот ящик?" },
+          { en: "We have plenty of crates today.", transcr: "Уи хэв пленти ов крэйтс тудэй.", ru: "Сегодня у нас полно ящиков." },
+          { en: "The carrots are fresh, not rotten.", transcr: "Зэ кэрэтс а фрэш, нот ротн.", ru: "Морковь свежая, не гнилая." },
+          { en: "There is a pile of empty crates here.", transcr: "Зэа из э пайл ов эмпти крэйтс хиэ.", ru: "Здесь куча пустых ящиков." },
+          { en: "The basket is almost full.", transcr: "Зэ баскит из олмоуст фул.", ru: "Корзина почти полная." },
+        ],
+        simple_ru: {
+          formula:
+            '<b>as + прилаг. + as</b> = равны (as heavy as). <b>not as … as / less than</b> = меньше. ' +
+            'Сколько: <b>a few</b> (счётные: crates) · <b>a little</b> (несчётные: water) · <b>too much / too many</b> (слишком) · <b>(not) enough</b> ((не) хватает).',
+          examples: [
+            { en: "It is as cold as yesterday.", transcr: "Ит из эз коулд эз йестэдэй.", ru: "Так же холодно, как вчера (as…as = равны)." },
+            { en: "I need a few more crates.", transcr: "Ай нид э фью мо крэйтс.", ru: "Несколько ящиков (a few — счётные)." },
+            { en: "There is too much work.", transcr: "Зэа из ту мач уёк.", ru: "Слишком много работы (too much — несчётное)." },
+          ],
+        },
+        ytQuery: "as as comparison not as as less than too much too many a few a little enough articles a the zero for beginners ESL",
+      },
+
+      glossary: [
+        { en: "almost", transcr: "олмоуст", ru: "почти", pn: "/ˈɔːlməʊst/" },
+        { en: "exactly", transcr: "игзэктли", ru: "точно, ровно", pn: "/ɪɡˈzæktli/" },
+      ],
+
+      words: [
+        { e: "⚖️", en: "weight", transcr: "уэйт", ru: "вес", pn: "/weɪt/" },
+        { e: "📏", en: "size", transcr: "сайз", ru: "размер", pn: "/saɪz/" },
+        { e: "🔢", en: "amount", transcr: "эмаунт", ru: "количество", pn: "/əˈmaʊnt/" },
+        { e: "📚", en: "pile", transcr: "пайл", ru: "куча, стопка", pn: "/paɪl/" },
+        { e: "🍇", en: "bunch", transcr: "банч", ru: "пучок, гроздь", pn: "/bʌntʃ/" },
+        { e: "🧤", en: "pair", transcr: "пэа", ru: "пара", pn: "/peə/" },
+        { e: "🥚", en: "dozen", transcr: "дазэн", ru: "дюжина (12)", pn: "/ˈdʌzən/" },
+        { e: "🛍️", en: "sack", transcr: "сэк", ru: "мешок", pn: "/sæk/" },
+        { e: "🧺", en: "basket", transcr: "баскит", ru: "корзина", pn: "/ˈbɑːskɪt/" },
+        { e: "➕", en: "plenty", transcr: "пленти", ru: "много, вдоволь", pn: "/ˈplenti/" },
+        { e: "🤢", en: "rotten", transcr: "ротн", ru: "гнилой", pn: "/ˈrɒtn/" },
+        { e: "🌿", en: "fresh", transcr: "фрэш", ru: "свежий", pn: "/freʃ/" },
+        { e: "📐", en: "measure", transcr: "межэ", ru: "измерять, мерить", pn: "/ˈmeʒə/" },
+      ],
+
+      dialogue: [
+        { s: "w", en: "Tom, there is a lot of work today.", transcr: "Том, зэа из э лот ов уёк тудэй.", ru: "Том, сегодня много работы." },
+        { s: "m", en: "Yes. It is not as cold as yesterday.", transcr: "Йес. Ит из нот эз коулд эз йестэдэй.", ru: "Да. Не так холодно, как вчера." },
+        { s: "w", en: "This box is as heavy as a sack of carrots.", transcr: "Зис бокс из эз хэви эз э сэк ов кэрэтс.", ru: "Этот ящик тяжёлый, как мешок моркови." },
+        { s: "m", en: "Be careful. There are too many boxes here.", transcr: "Би кэафул. Зэа а ту мэни боксиз хиэ.", ru: "Осторожно. Здесь слишком много ящиков." },
+        { s: "w", en: "I need a few more crates, please.", transcr: "Ай нид э фью мо крэйтс, плиз.", ru: "Мне нужно ещё несколько ящиков, пожалуйста." },
+        { s: "m", en: "Here. We have plenty of crates today.", transcr: "Хиэ. Уи хэв пленти ов крэйтс тудэй.", ru: "Вот. Сегодня у нас полно ящиков." },
+        { s: "w", en: "How many boxes did you pack this morning?", transcr: "Хау мэни боксиз дид ю пэк зис монинг?", ru: "Сколько ящиков ты упаковал утром?" },
+        { s: "m", en: "A dozen. We have too much work now.", transcr: "Э дазэн. Уи хэв ту мач уёк нау.", ru: "Дюжину. У нас сейчас слишком много работы." },
+        { s: "w", en: "There is less work than yesterday, I think.", transcr: "Зэа из лес уёк зэн йестэдэй, ай синк.", ru: "Работы меньше, чем вчера, я думаю." },
+        { s: "m", en: "We do not have enough time today.", transcr: "Уи ду нот хэв инаф тайм тудэй.", ru: "У нас не хватает времени сегодня." },
+        { s: "w", en: "What a long day! It is so cold now.", transcr: "Уот э лонг дэй! Ит из соу коулд нау.", ru: "Какой длинный день! Сейчас так холодно." },
+        { s: "m", en: "Well done. You are a good worker.", transcr: "Уэл дан. Ю а э гуд уёкэ.", ru: "Молодец. Ты хороший работник." },
+      ],
+
+      quiz: [
+        { q: "[CORRECT] «Этот ящик такой же тяжёлый, как тот.»", opts: ["This box is as heavy as that one.", "This box is as heavier as that one.", "This box is as heavy than that one.", "This box is so heavy as that one."], c: 0, expl: "This box is as heavy as that one. — as + БАЗОВОЕ прилагательное + as (не «as heavier as»). Это значит «равны».", hint_ru: "as + heavy + as (равны)." },
+        { q: '[COMPLETE] "I have too ___ work this week." (несчётное)', opts: ["much", "many", "few", "little"], c: 0, expl: "too much + несчётное (work): too much work. too many — для счётных (boxes).", hint_ru: "work — несчётное → much." },
+        { q: '[COMPLETE] "There are too ___ boxes to carry." (счётные)', opts: ["many", "much", "little", "less"], c: 0, expl: "too many + счётные (boxes): too many boxes. too much — для несчётных (work).", hint_ru: "boxes — счётные → many." },
+        { q: '[COMPLETE] "I need a ___ more crates." (несколько, счётные)', opts: ["few", "little", "much", "lot"], c: 0, expl: "a few + счётные (crates): a few crates. a little — для несчётных (water).", hint_ru: "crates — счётные → a few." },
+        { q: '[COMPLETE] "There is a ___ water here." (немного, несчётное)', opts: ["little", "few", "many", "lot"], c: 0, expl: "a little + несчётное (water): a little water. a few — для счётных (crates).", hint_ru: "water — несчётное → a little." },
+        { q: "[CORRECT] «У нас не хватает ящиков.»", opts: ["We do not have enough crates.", "We do not have crates enough.", "We do not have too crates.", "We do not have many enough crates."], c: 0, expl: "We do not have enough crates. — enough идёт ПЕРЕД существительным: enough crates.", hint_ru: "enough + crates." },
+        { q: "[CORRECT] «Сегодня работы меньше, чем вчера.»", opts: ["There is less work than yesterday.", "There is less work as yesterday.", "There is too much work than yesterday.", "There is a little work than yesterday."], c: 0, expl: "There is less work than yesterday. — less + несчётное + than. Сравниваем количество: меньше, чем.", hint_ru: "less … than." },
+        { q: '[QUESTION] "___ much work is there today?"', opts: ["How", "What", "Are", "Do"], c: 0, expl: "How much work…? — спрашиваем количество несчётного (work). How many — для счётных.", hint_ru: "How much + несчётное." },
+        { q: '[QUESTION] "___ many boxes did you pack?"', opts: ["How", "What", "Did", "Are"], c: 0, expl: "How many boxes…? — количество счётного (boxes). How much — для несчётного.", hint_ru: "How many + счётное." },
+        { q: '[COMPLETE] "Is there ___ water for everyone?" (хватает)', opts: ["enough", "too", "less", "many"], c: 0, expl: "enough water — достаточно воды. enough = хватает, всё необходимое.", hint_ru: "enough = хватает." },
+        { q: '[TRANSLATE] "мешок"', opts: ["sack", "basket", "pile", "bunch"], c: 0, expl: "sack — мешок (a sack of carrots). basket — корзина.", hint_ru: "sack." },
+        { q: '[TRANSLATE] "измерять"', opts: ["measure", "weigh", "carry", "fill"], c: 0, expl: "measure — измерять, мерить (measure the box). weigh — взвешивать.", hint_ru: "measure." },
+        { q: "[LISTEN] This sack is as heavy as that one.", opts: ["Этот мешок такой же тяжёлый, как тот.", "Этот мешок тяжелее того.", "Этот мешок не такой тяжёлый.", "Этот мешок лёгкий."], c: 0, expl: "This sack is as heavy as that one. — as heavy as = такой же тяжёлый (равны).", hint_ru: "" },
+        { q: "[GIST] По диалогу: сегодня холоднее, чем вчера?", opts: ["Нет, не так холодно, как вчера.", "Да, холоднее, чем вчера.", "Да, идёт снег.", "Очень жарко."], c: 0, expl: "Том говорит: «It is not as cold as yesterday» — сегодня НЕ так холодно, как вчера.", hint_ru: "Слушай, что Том сказал про холод." },
+        { q: "[BUILD] «Так же холодно, как вчера.»", build: ["It", "is", "as", "cold", "as", "yesterday"], expl: "It is as cold as yesterday. — as + прилагательное + as = равны (такой же).", hint_ru: "It is as cold as yesterday." },
+        { q: "[BUILD] «У нас слишком много работы.»", build: ["We", "have", "too", "much", "work"], expl: "We have too much work. — too much + несчётное (work) = слишком много.", hint_ru: "We have too much work." },
+        { q: "[BUILD] «Мне нужно ещё несколько ящиков.»", build: ["I", "need", "a", "few", "more", "crates"], expl: "I need a few more crates. — a few + счётные (crates).", hint_ru: "I need a few more crates." },
+      ],
+
+      everyday: {
+        title_ru: "Восклицания: so / such · What a…!",
+        phrases: [
+          { en: "It is so cold today!", transcr: "Ит из соу коулд тудэй!", ru: "Так холодно сегодня! (so + прилагательное)" },
+          { en: "This box is so heavy!", transcr: "Зис бокс из соу хэви!", ru: "Этот ящик такой тяжёлый! (so + прилагательное)" },
+          { en: "What a long day!", transcr: "Уот э лонг дэй!", ru: "Какой длинный день! (What a + прилаг. + сущ.)" },
+          { en: "It is such hard work!", transcr: "Ит из сач хад уёк!", ru: "Какая тяжёлая работа! (such + несчётное, без a)" },
+          { en: "You are such a good worker!", transcr: "Ю а сач э гуд уёкэ!", ru: "Ты такой хороший работник! (such a + прилаг. + сущ.)" },
+        ],
+      },
+    },
   ];
 
   if (typeof module !== "undefined" && module.exports) module.exports = LESSONS;

@@ -234,6 +234,31 @@ const WHITELIST = {
   // still NOT used (base conjunction never introduced). Hot verbs make/do/speak/talk
   // live in everyday (not snowball-checked). See plan 2026-06-26-b1-scope L35.
   35: [],
+  // L36 (FINAL B1) comparison as…as / not as…as / less…than + quantity (a few / a
+  // little / a lot of / too much / too many / (not) enough) + articles a/the/zero.
+  // The comparison rides on cumulative tokens: as=WL24 (so "as heavy as" = as+adj+as
+  // just works with KNOWN base adjectives heavy/cold/warm/hard/clean/full/empty/long),
+  // than=WL17, more/most=WL17. Articles a/an/the are WL1 — taught systematically in
+  // PROSE (cultural_ru, unchecked), no new token. NEW = the quantity function words
+  // "less","few","little","enough","too","lot" — all snowball MISS otherwise (snowball
+  // checks the RAW token; the stemmer leaves them untouched: less≠[^s]s$, few/too ≤3
+  // letters, little/enough have no -er/-est/-ing/-ed/-s suffix). "a lot of" = a(WL1)+
+  // lot+of(WL10); "a few"/"a little" = a + few/little; "too much"/"too many" = too +
+  // much(WL4)/many(WL10); "(not) enough" = not(WL1)+enough. CRITICAL ≤3-letter plural
+  // trap (digest, L9 case): quantity nouns must be ≥4 letters (crates/boxes/workers/
+  // carrots), never "beds"/"jobs". "fewer"→stem "few" is NOT known (stem matches the
+  // `known` set, not the whitelist) so "fewer" MISSes — avoided in checked fields (less
+  // vs fewer contrast shown in note_ru prose). The exclamation function so/such + What a…!
+  // lives in everyday + cultural_ru (UNCHECKED): "so" is WL24, "What a" = what+a (WL1);
+  // "such" is intentionally NOT whitelisted (used only in unchecked everyday/cultural —
+  // "such hard work" / "such a good worker", BrE-verified vs British Council so/such +
+  // Headway U9). The lexical focus (MEASURES & AMOUNTS: weight/size/amount/pile/bunch/
+  // pair/dozen/sack/basket/plenty/rotten/fresh/measure) is the 13 words[]; receptive
+  // precision adverbs (almost/exactly) live in lesson.glossary[]. Known base adjectives
+  // for as…as: heavy/cold/warm/hard/clean/full/empty/long (NOT big/small/fast/cheap —
+  // those are snowball MISS, per memory [[b1-common-words-not-in-known-set]]). See plan
+  // 2026-06-26-b1-scope L36 (FINAL — closes B1, 13/13).
+  36: ["less", "few", "little", "enough", "too", "lot"],
 };
 const NAMES = ["ahmad","tom","sara","anna","john","ali","omar","rustam","fatima","madina","bobur"];
 
