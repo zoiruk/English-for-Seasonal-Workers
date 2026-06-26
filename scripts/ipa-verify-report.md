@@ -1,6 +1,6 @@
 # IPA verification report (Wiktionary RP anchor)
 
-Total words: 695 · matched: 611 · divergent: 71 · not found: 13
+Total words: 723 · matched: 638 · divergent: 72 · not found: 13
 
 Normalized away (kept length ː): ɹ↔r, ɡ↔g, ɛ↔e (DRESS vowel), tie-bars & allophonic diacritics, optional (…) segments, stress, syllable dots.
 Divergences below are for OWNER ACCEPTANCE — review each: is our `pn` wrong, or a valid variant?
@@ -80,6 +80,7 @@ Divergences below are for OWNER ACCEPTANCE — review each: is our `pn` wrong, o
 | 23 | insurance | `/ɪnˈʃʊərəns/` | `/ɪnˈʃɔː.ɹəns/` |
 | 23 | document | `/ˈdɒkjumənt/` | `/ˈdɒkjʊmənt/` |
 | 23 | parcel | `/ˈpɑːsl/` | `/ˈpɑɹsəl/` |
+| 25 | postcard | `/ˈpəʊstkɑːd/` | `/ˈpoʊstˌkɑɹd/` |
 
 ## Not found on Wiktionary (no en RP IPA parsed — verify manually)
 

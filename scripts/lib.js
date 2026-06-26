@@ -82,6 +82,17 @@ const WHITELIST = {
   // "stopped" = surface past of the known verb stop (L11); doubled consonant makes
   // stem("stopped")="stopp"!=stop, so the form is whitelisted (doubling gotcha, like L17).
   24: ["while", "as", "so", "because", "although", "stopped"],
+  // L25 Past Perfect (had + past participle): was/were/when already WL12; the
+  // connectors (while/as/so/because/although) ride on WL24. NEW = the auxiliary
+  // "had" — it is NOT "have" (WL8) and NOT in PARTICIPLES, so the past-perfect
+  // auxiliary would otherwise fall through snowball. hadn't -> tokenizer strips
+  // n't -> "had" (same entry). Irregular participles (gone/begun/forgotten/lost/
+  // sent/won/seen/eaten/left/got/paid…) are in the central PARTICIPLES list and
+  // "just work"; regular ones (started/finished/worked/rained) stem to known bases.
+  // The lexical focus (life-events & news: wedding/ring/prize/package…) is the 14
+  // words[]; receptive narrative words (earlier/finally/abroad/engaged/wonderful/
+  // congratulations) live in lesson.glossary[]. See plan 2026-06-26-b1-scope L25.
+  25: ["had"],
 };
 const NAMES = ["ahmad","tom","sara","anna","john","ali","omar","rustam","fatima","madina","bobur"];
 

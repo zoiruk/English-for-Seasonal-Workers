@@ -4157,6 +4157,197 @@
         ],
       },
     },
+    {
+      id: 25,
+      title_ru: "Что случилось РАНЬШЕ (рассказ и новости)",
+      cefr: "B1 · Past Perfect · life-events & news",
+      grammar: {
+        title_ru: "Past Perfect: had + 3-я форма (что случилось РАНЬШЕ другого прошлого)",
+        intro_ru:
+          '<b>had + 3-я форма глагола</b> (past participle) — действие, которое случилось РАНЬШЕ ' +
+          'другого действия в прошлом (Past Perfect):<br>' +
+          'When I <b>got</b> to the field, everyone <b>had</b> already <b>started</b>. — ' +
+          'Когда я пришёл в поле, все уже начали (начали ДО того, как я пришёл).<br>' +
+          'Порядок: сначала «had started» (раньше), потом «got» (позже).<br>' +
+          '<b>had</b> — одинаково для всех: I / you / he / she / we / they <b>had</b>.',
+        cultural_ru:
+          'Главное: Past Perfect — это <b>«прошлое до прошлого»</b>. Когда ты уже рассказываешь о прошлом ' +
+          'и хочешь назвать ещё более раннее действие — бери <b>had + 3-я форма</b>.<br>' +
+          '<b>already</b> <span class="g-transcr">[олрэди]</span> часто стоит между had и глаголом: ' +
+          'I had <b>already</b> finished.<br>' +
+          'Рядом обычно Past Simple (L13) — для более позднего действия: ' +
+          '<b>When</b> she got there, the bus <b>had gone</b>. (сначала ушёл автобус, потом она пришла).',
+        note_ru:
+          '⚠️ В разговоре «had» часто сокращают: I\'d, he\'d (= I had, he had); пишут hadn\'t (= had not). ' +
+          'В заданиях и сборке фраз пиши <b>полную</b> форму «I had», сокращения — только в «Фразах».<br>' +
+          '⚠️ Не путай: Past Simple (started) — одно прошлое действие; Past Perfect (had started) — ' +
+          'действие ещё РАНЬШЕ него.',
+        visual_ru:
+          '<svg viewBox="0 0 340 252" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:360px;height:auto" role="img">' +
+          '<text x="14" y="22" font-size="13" fill="var(--text2)">Past Perfect = «прошлое до прошлого»</text>' +
+          '<line x1="20" y1="150" x2="316" y2="150" stroke="var(--text2)" stroke-width="2"/>' +
+          '<polygon points="316,150 306,145 306,155" fill="var(--text2)"/>' +
+          '<text x="20" y="170" font-size="12" fill="var(--text2)">прошлое</text>' +
+          '<text x="276" y="170" font-size="12" fill="var(--text2)">сейчас</text>' +
+          '<circle cx="92" cy="150" r="7" fill="#2e7d32"/>' +
+          '<line x1="92" y1="126" x2="92" y2="150" stroke="#2e7d32" stroke-width="2"/>' +
+          '<text x="40" y="118" font-size="13" fill="#2e7d32">1. had started</text>' +
+          '<text x="58" y="102" font-size="11" fill="var(--text2)">(раньше)</text>' +
+          '<circle cx="214" cy="150" r="7" fill="#c62828"/>' +
+          '<line x1="214" y1="126" x2="214" y2="150" stroke="#c62828" stroke-width="2"/>' +
+          '<text x="170" y="118" font-size="13" fill="#c62828">2. I got there</text>' +
+          '<text x="184" y="102" font-size="11" fill="var(--text2)">(позже)</text>' +
+          '<text x="20" y="206" font-size="12" fill="var(--text)">Сначала «had started», потом «got».</text>' +
+          '<text x="20" y="226" font-size="12" fill="var(--text)">Более раннее действие → had + 3-я форма.</text>' +
+          '</svg>',
+        forms: {
+          positive: {
+            label_ru: "✅ had + 3-я форма",
+            rule_ru:
+              '<b>had</b> + 3-я форма — одинаково для всех лиц:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div>I <b>had finished</b></div><div>я (уже) закончил</div>' +
+              '<div>They <b>had gone</b></div><div>они (уже) ушли</div>' +
+              '<div>She <b>had left</b></div><div>она (уже) уехала</div>' +
+              '</div>',
+            table: [
+              { subj: "я", verb: "had finished", example: "I had finished my row.", transcr: "Ай хэд финишт май роу.", tr_ru: "Я (уже) закончил свой ряд." },
+              { subj: "они", verb: "had gone", example: "They had gone to lunch.", transcr: "Зэй хэд гон ту ланч.", tr_ru: "Они (уже) ушли на обед." },
+              { subj: "она", verb: "had left", example: "She had left early.", transcr: "Ши хэд лэфт ёли.", tr_ru: "Она (уже) уехала рано." },
+            ],
+          },
+          negative: {
+            label_ru: "❌ had not (hadn't) + 3-я форма",
+            rule_ru:
+              '<b>had not (hadn\'t)</b> + 3-я форма:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div>I <b>had not eaten</b></div><div>я (ещё) не ел</div>' +
+              '<div>We <b>had not finished</b></div><div>мы (ещё) не закончили</div>' +
+              '<div>It <b>had not started</b></div><div>оно (ещё) не началось</div>' +
+              '</div>',
+            table: [
+              { subj: "я", verb: "had not eaten", example: "I had not eaten lunch.", transcr: "Ай хэд нот итн ланч.", tr_ru: "Я (ещё) не ел обед." },
+              { subj: "мы", verb: "had not finished", example: "We had not finished the boxes.", transcr: "Уи хэд нот финишт зэ боксиз.", tr_ru: "Мы (ещё) не закончили ящики." },
+              { subj: "оно", verb: "had not started", example: "The shift had not started.", transcr: "Зэ шифт хэд нот статид.", tr_ru: "Смена (ещё) не началась." },
+            ],
+          },
+          question: {
+            label_ru: "❓ Had …? + 3-я форма",
+            rule_ru:
+              '<b>Had</b> you …? Краткий ответ: Yes, I had / No, I had not:<br>' +
+              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">' +
+              '<div><b>Had</b> you <b>finished</b>?</div><div>ты (уже) закончил?</div>' +
+              '<div><b>Had</b> the bus <b>gone</b>?</div><div>автобус (уже) ушёл?</div>' +
+              '<div><b>Had</b> they <b>left</b>?</div><div>они (уже) уехали?</div>' +
+              '</div>',
+            table: [
+              { subj: "ты", verb: "Had … finished?", example: "Had you finished work?", transcr: "Хэд ю финишт уёк?", tr_ru: "Ты (уже) закончил работу?" },
+              { subj: "автобус", verb: "Had … gone?", example: "Had the bus gone?", transcr: "Хэд зэ бас гон?", tr_ru: "Автобус (уже) ушёл?" },
+              { subj: "они", verb: "Had … left?", example: "Had they left early?", transcr: "Хэд зэй лэфт ёли?", tr_ru: "Они (уже) уехали рано?" },
+            ],
+          },
+        },
+        examples: [
+          { en: "When I got to the field, everyone had already started.", transcr: "Уэн ай гот ту зэ филд, эвриуан хэд олрэди статид.", ru: "Когда я пришёл в поле, все уже начали (начали раньше)." },
+          { en: "When I met her, she had already worked abroad.", transcr: "Уэн ай мэт хё, ши хэд олрэди уёкт эброд.", ru: "Когда я встретил её, она уже (раньше) работала за границей." },
+          { en: "I had lost my ring, so I was not happy.", transcr: "Ай хэд лост май ринг, соу ай уоз нот хэпи.", ru: "Я (до этого) потерял кольцо, поэтому был не рад." },
+          { en: "When she got there, the bus had already gone.", transcr: "Уэн ши гот зэа, зэ бас хэд олрэди гон.", ru: "Когда она пришла, автобус уже ушёл (ушёл раньше)." },
+          { en: "I had forgotten my gloves, so my hands were cold.", transcr: "Ай хэд фэготн май главз, соу май хэндз уё коулд.", ru: "Я (до этого) забыл перчатки, поэтому руки замёрзли." },
+          { en: "When I got there, the season had already begun.", transcr: "Уэн ай гот зэа, зэ сизн хэд олрэди биган.", ru: "Когда я приехал, сезон уже начался (начался раньше)." },
+          { en: "When I got back, they had sent me a package.", transcr: "Уэн ай гот бэк, зэй хэд сэнт ми э пэкидж.", ru: "Когда я вернулся, они уже прислали мне посылку." },
+          { en: "When I got to work, she had won a prize.", transcr: "Уэн ай гот ту уёк, ши хэд уан э прайз.", ru: "Когда я пришёл на работу, она уже выиграла приз." },
+          { en: "We had not finished the boxes when the manager called.", transcr: "Уи хэд нот финишт зэ боксиз уэн зэ мэниджэ колд.", ru: "Мы ещё не закончили ящики, когда менеджер позвал." },
+          { en: "It had rained, so the field was wet.", transcr: "Ит хэд рэйнд, соу зэ филд уоз уэт.", ru: "(Раньше) прошёл дождь, поэтому поле было мокрое." },
+          { en: "When the manager called, had you finished your row?", transcr: "Уэн зэ мэниджэ колд, хэд ю финишт ё роу?", ru: "Когда менеджер позвал, ты уже закончил свой ряд?" },
+          { en: "I had already eaten, so I was not hungry.", transcr: "Ай хэд олрэди итн, соу ай уоз нот хангри.", ru: "Я уже (до этого) поел, поэтому не был голоден." },
+          { en: "I had seen the message earlier, so I was ready.", transcr: "Ай хэд син зэ мэсидж ёлиэ, соу ай уоз рэди.", ru: "Я видел это сообщение раньше, поэтому был готов." },
+          { en: "Finally, the season finished and we were happy.", transcr: "Файнэли, зэ сизн финишт энд уи уё хэпи.", ru: "Наконец сезон закончился, и мы были рады." },
+          { en: "The wedding had begun when we got there.", transcr: "Зэ уэдинг хэд биган уэн уи гот зэа.", ru: "Свадьба уже началась, когда мы пришли." },
+          { en: "When I got back, the children had eaten the cake.", transcr: "Уэн ай гот бэк, зэ чилдрэн хэд итн зэ кэйк.", ru: "Когда я вернулся, дети уже съели торт." },
+        ],
+        simple_ru: {
+          formula:
+            '<b>had + 3-я форма</b> = действие случилось РАНЬШЕ другого прошлого. ' +
+            'Часто: When + Past Simple (позже), … had + 3-я форма (раньше).',
+          examples: [
+            { en: "When I got there, the bus had gone.", transcr: "Уэн ай гот зэа, зэ бас хэд гон.", ru: "got (позже) + had gone (раньше: автобус ушёл первым)." },
+            { en: "I had already eaten.", transcr: "Ай хэд олрэди итн.", ru: "had + already + 3-я форма (eaten)." },
+          ],
+        },
+        ytQuery: "past perfect had прошедшее совершенное английский для начинающих",
+      },
+
+      glossary: [
+        { en: "earlier", transcr: "ёлиэ", ru: "раньше, ранее (более раннее)", pn: "/ˈɜːliə/" },
+        { en: "finally", transcr: "файнэли", ru: "наконец", pn: "/ˈfaɪnəli/" },
+        { en: "abroad", transcr: "эброд", ru: "за границей, за границу", pn: "/əˈbrɔːd/" },
+        { en: "engaged", transcr: "ингэйджд", ru: "помолвлен(а), обручён(а)", pn: "/ɪnˈɡeɪdʒd/" },
+        { en: "wonderful", transcr: "уандэфул", ru: "чудесно, замечательно", pn: "/ˈwʌndəfʊl/" },
+        { en: "congratulations", transcr: "кэнгрэчулэйшнз", ru: "поздравляю!; поздравления", pn: "/kənˌɡrætʃʊˈleɪʃnz/" },
+      ],
+
+      words: [
+        { e: "💬", en: "message", transcr: "мэсидж", ru: "сообщение", pn: "/ˈmesɪdʒ/" },
+        { e: "💒", en: "wedding", transcr: "уэдинг", ru: "свадьба", pn: "/ˈwedɪŋ/" },
+        { e: "💍", en: "ring", transcr: "ринг", ru: "кольцо", pn: "/rɪŋ/" },
+        { e: "🎁", en: "gift", transcr: "гифт", ru: "подарок", pn: "/ɡɪft/" },
+        { e: "🏆", en: "prize", transcr: "прайз", ru: "приз, награда", pn: "/praɪz/" },
+        { e: "🧳", en: "trip", transcr: "трип", ru: "поездка", pn: "/trɪp/" },
+        { e: "📋", en: "plan", transcr: "плэн", ru: "план", pn: "/plæn/" },
+        { e: "🍀", en: "luck", transcr: "лак", ru: "удача", pn: "/lʌk/" },
+        { e: "🎂", en: "cake", transcr: "кэйк", ru: "торт", pn: "/keɪk/" },
+        { e: "👵", en: "grandmother", transcr: "грэнмазэ", ru: "бабушка", pn: "/ˈɡrænmʌðə/" },
+        { e: "👴", en: "grandfather", transcr: "грэндфазэ", ru: "дедушка", pn: "/ˈɡrændfɑːðə/" },
+        { e: "🧒", en: "children", transcr: "чилдрэн", ru: "дети", pn: "/ˈtʃɪldrən/" },
+        { e: "📦", en: "package", transcr: "пэкидж", ru: "посылка", pn: "/ˈpækɪdʒ/" },
+        { e: "📬", en: "postcard", transcr: "поусткад", ru: "открытка", pn: "/ˈpəʊstkɑːd/" },
+      ],
+
+      dialogue: [
+        { s: "m", en: "Good morning! You are happy today.", transcr: "Гуд монинг! Ю а хэпи тудэй.", ru: "Доброе утро! Ты сегодня радостный." },
+        { s: "w", en: "Yes! I had good news last weekend.", transcr: "Йес! Ай хэд гуд ньюз ласт уикэнд.", ru: "Да! У меня были хорошие новости в прошлые выходные." },
+        { s: "m", en: "That is great! What was the news?", transcr: "Зэт из грэйт! Уот уоз зэ ньюз?", ru: "Отлично! Что за новость?" },
+        { s: "w", en: "My sister got engaged!", transcr: "Май систэ гот ингэйджд!", ru: "Моя сестра обручилась!" },
+        { s: "m", en: "Wonderful! Send her my congratulations!", transcr: "Уандэфул! Сэнд хё май кэнгрэчулэйшнз!", ru: "Чудесно! Передай ей мои поздравления!" },
+        { s: "w", en: "When I got the news, she had already chosen the date.", transcr: "Уэн ай гот зэ ньюз, ши хэд олрэди чоузн зэ дэйт.", ru: "Когда я узнал новость, она уже выбрала дату." },
+        { s: "m", en: "Lovely! Have you seen the ring?", transcr: "Лавли! Хэв ю син зэ ринг?", ru: "Прелесть! Ты (уже) видел кольцо?" },
+        { s: "w", en: "Yes. They sent it last week.", transcr: "Йес. Зэй сэнт ит ласт уик.", ru: "Да. Они прислали его на прошлой неделе." },
+        { s: "m", en: "Did you have any more news?", transcr: "Дид ю хэв эни мо ньюз?", ru: "Были ещё новости?" },
+        { s: "w", en: "My grandmother was ill.", transcr: "Май грэнмазэ уоз ил.", ru: "Моя бабушка болела." },
+        { s: "m", en: "I am sorry. Is she better now?", transcr: "Ай эм сори. Из ши бэтэ нау?", ru: "Сочувствую. Ей сейчас лучше?" },
+        { s: "w", en: "Yes, thank you. She is better now.", transcr: "Йес, сэнк ю. Ши из бэтэ нау.", ru: "Да, спасибо. Сейчас ей лучше." },
+        { s: "m", en: "Good. Have you started your row?", transcr: "Гуд. Хэв ю статид ё роу?", ru: "Хорошо. Ты уже начал свой ряд?" },
+        { s: "w", en: "Not yet. I have just got here.", transcr: "Нот йет. Ай хэв джаст гот хиэ.", ru: "Ещё нет. Я только что пришёл." },
+      ],
+
+      quiz: [
+        { q: '[COMPLETE] "When I got there, the bus ___ already gone." (раньше)', opts: ["had", "has", "was", "did"], c: 0, expl: "had gone — Past Perfect: had + 3-я форма (gone). had — одинаково для всех лиц.", hint_ru: "had + 3-я форма." },
+        { q: '[COMPLETE] "When I left, they ___ not finished the boxes." (раньше)', opts: ["had", "were", "did", "have"], c: 0, expl: "had not finished — отрицание Past Perfect: had not + 3-я форма (на момент, когда я ушёл, ящики ещё не были готовы).", hint_ru: "had not + 3-я форма." },
+        { q: '[CORRECT] «Когда она пришла, автобус уже ушёл.»', opts: ["When she got there, the bus had already gone.", "When she got there, the bus has already gone.", "When she got there, the bus have already gone.", "When she got there, the bus was already gone."], c: 0, expl: "had already gone — более раннее действие (автобус ушёл ДО того, как она пришла). has/have/was — неверно.", hint_ru: "had + already + gone." },
+        { q: '[COMPLETE] "I had ___ eaten, so I was not hungry." (между had и глаголом)', opts: ["already", "yet", "ever", "now"], c: 0, expl: "had already eaten — already часто стоит между had и 3-й формой.", hint_ru: "had ___ eaten → already." },
+        { q: '[QUESTION] "___ you finished work?" (вопрос: раньше)', opts: ["Had", "Did", "Have", "Was"], c: 0, expl: "Had you finished? — вопрос Past Perfect: Had + подлежащее + 3-я форма.", hint_ru: "Had you …?" },
+        { q: '[NEGATIVE] Сделай отрицательным: «I had finished.» → "I ___ finished."', opts: ["had not", "did not", "have not", "was not"], c: 0, expl: "I had not finished. Отрицание Past Perfect: had + not + 3-я форма.", hint_ru: "had → had not." },
+        { q: '[COMPLETE] "___ she got there, the bus had gone." (когда)', opts: ["When", "Because", "So", "Although"], c: 0, expl: "When = когда (момент позже). so/because/although — логические связки, не время.", hint_ru: "момент во времени → when." },
+        { q: '[TRANSLATE] "свадьба"', opts: ["wedding", "prize", "package", "ring"], c: 0, expl: "wedding — свадьба. prize — приз, package — посылка, ring — кольцо.", hint_ru: "wedding." },
+        { q: '[TRANSLATE] "приз"', opts: ["prize", "gift", "luck", "cake"], c: 0, expl: "prize — приз, награда. gift — подарок, luck — удача, cake — торт.", hint_ru: "prize." },
+        { q: "[LISTEN] They sent us a postcard.", opts: ["Они прислали нам открытку.", "Они потеряли посылку.", "Они купили подарок.", "Они забыли кольцо."], c: 0, expl: "They sent us a postcard — они прислали нам открытку.", hint_ru: "" },
+        { q: "[GIST] По диалогу: какая хорошая новость у рабочего?", opts: ["Его сестра обручилась.", "Он купил новый трактор.", "Он закончил работу рано.", "Автобус опоздал."], c: 0, expl: "«My sister got engaged.» — сестра рабочего обручилась.", hint_ru: "Слушай реплику про sister." },
+        { q: '[BUILD] «Когда я пришёл в поле, все уже начали.»', build: ["When", "I", "got", "to", "the", "field", "everyone", "had", "already", "started"], expl: "When I got to the field, everyone had already started. — got (позже) + had already started (раньше).", hint_ru: "When I got … everyone had already started." },
+        { q: '[BUILD] «Я потерял кольцо, поэтому я был не рад.»', build: ["I", "had", "lost", "my", "ring", "so", "I", "was", "not", "happy"], expl: "I had lost my ring, so I was not happy. — had lost (раньше) + so (результат).", hint_ru: "I had lost my ring, so…" },
+      ],
+
+      everyday: {
+        title_ru: "Сообщить и принять новость (good / bad news)",
+        phrases: [
+          { en: "Guess what? I've got some good news!", transcr: "Гес уот? Айв гот сам гуд ньюз!", ru: "Знаешь что? У меня хорошая новость!" },
+          { en: "That's great! Well done!", transcr: "Зэтс грэйт! Уэл дан!", ru: "Здорово! Молодец!" },
+          { en: "Congratulations!", transcr: "Кэнгрэчулэйшнз!", ru: "Поздравляю!" },
+          { en: "I'm sorry to hear that.", transcr: "Айм сори ту хиэ зэт.", ru: "Жаль это слышать. (на плохую новость)" },
+          { en: "Have a safe journey home!", transcr: "Хэв э сэйф джёни хоум!", ru: "Счастливого пути домой!" },
+          { en: "Thank you for everything.", transcr: "Сэнк ю фо эврисинг.", ru: "Спасибо за всё." },
+        ],
+      },
+    },
   ];
 
   if (typeof module !== "undefined" && module.exports) module.exports = LESSONS;
