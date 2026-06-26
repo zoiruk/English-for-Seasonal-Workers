@@ -1,6 +1,6 @@
 # IPA verification report (Wiktionary RP anchor)
 
-Total words: 850 · matched: 752 · divergent: 83 · not found: 15
+Total words: 862 · matched: 758 · divergent: 83 · not found: 21
 
 Normalized away (kept length ː): ɹ↔r, ɡ↔g, ɛ↔e (DRESS vowel), tie-bars & allophonic diacritics, optional (…) segments, stress, syllable dots.
 Divergences below are for OWNER ACCEPTANCE — review each: is our `pn` wrong, or a valid variant?
@@ -110,3 +110,9 @@ Divergences below are for OWNER ACCEPTANCE — review each: is our `pn` wrong, o
 - L22 **sweetcorn** (`/ˈswiːtkɔːn/`)
 - L29 **favour** (`/ˈfeɪvə/`)
 - L34 **hardworking** (`/ˌhɑːdˈwɜːkɪŋ/`)
+- L35 **take off** (`/ˌteɪk ˈɒf/`)
+- L35 **pick up** (`/ˌpɪk ˈʌp/`)
+- L35 **turn on** (`/ˌtɜːn ˈɒn/`)
+- L35 **turn off** (`/ˌtɜːn ˈɒf/`)
+- L35 **fill in** (`/ˌfɪl ˈɪn/`)
+- L35 **write down** (`/ˌraɪt ˈdaʊn/`)
