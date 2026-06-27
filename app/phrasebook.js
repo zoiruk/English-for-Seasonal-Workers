@@ -11,6 +11,10 @@
  * owe an adversarial safety-verification pass (see plans/) before being treated as "golden".
  * A2 categories (banking / wages / agency, 2026-06-24) reuse A2 admin/banking vocabulary;
  * transcr matches the canonical lesson words[] (checked by check-transcr-consistency).
+ * B1 categories (phone / complaint / smalltalk / appointment, 2026-06-27) are functional
+ * "survival English" chunks anchored to EF "Practical English: On the phone" / Headway
+ * "Everyday English" / Headway-EF "At the doctor's" + NHS/ACAS (neutral, no medical/legal
+ * advice, no diagnosis; 999/111 only inside a RU gloss). transcr matches canonical words[].
  */
 (function (root) {
   const PHRASEBOOK = [
@@ -160,6 +164,69 @@
         { en: "Who is my manager?", transcr: "Ху из май мэниджэ?", ru: "Кто мой менеджер?" },
         { en: "I have a problem in the camp.", transcr: "Ай хэв э проблэм ин зэ кэмп.", ru: "У меня проблема в кэмпе." },
         { en: "Can you help me, please?", transcr: "Кэн ю хэлп ми, плиз?", ru: "Помогите, пожалуйста." },
+      ],
+    },
+    {
+      cat: "phone",
+      icon: "📞",
+      title_ru: "На телефоне",
+      phrases: [
+        { en: "Hello, this is Ahmad.", transcr: "Хэлоу, зис из Ахмад.", ru: "Здравствуйте, это Ахмад." },
+        { en: "Can I speak to the manager?", transcr: "Кэн ай спик ту зэ мэниджэ?", ru: "Можно поговорить с менеджером?" },
+        { en: "I'd like to book an appointment.", transcr: "Айд лайк ту бук эн эпойнтмэнт.", ru: "Я хочу записаться на приём." },
+        { en: "Can you call me back?", transcr: "Кэн ю кол ми бэк?", ru: "Можете перезвонить мне?" },
+        { en: "I'll call back later.", transcr: "Айл кол бэк лэйтэ.", ru: "Я перезвоню позже." },
+        { en: "Can I leave a message?", transcr: "Кэн ай лив э мэсидж?", ru: "Можно оставить сообщение?" },
+        { en: "Sorry, wrong number.", transcr: "Сори, ронг намбэ.", ru: "Извините, неправильный номер." },
+        { en: "Could you spell that?", transcr: "Куд ю спэл зэт?", ru: "Можете продиктовать по буквам?" },
+        { en: "Can you hear me?", transcr: "Кэн ю хиэ ми?", ru: "Вы меня слышите?" },
+      ],
+    },
+    {
+      cat: "complaint",
+      icon: "⚠️",
+      title_ru: "Жалоба и проблема",
+      phrases: [
+        { en: "There's a problem with my room.", transcr: "Зэаз э проблэм уиз май рум.", ru: "Есть проблема с комнатой." },
+        { en: "It's not working.", transcr: "Итс нот уёкинг.", ru: "Не работает." },
+        { en: "I'd like to complain.", transcr: "Айд лайк ту кэмплэйн.", ru: "Я хочу пожаловаться." },
+        { en: "This isn't right.", transcr: "Зис изнт райт.", ru: "Это неправильно." },
+        { en: "Can you fix it, please?", transcr: "Кэн ю фикс ит, плиз?", ru: "Можете починить, пожалуйста?" },
+        { en: "I've already told the manager.", transcr: "Айв олрэди толд зэ мэниджэ.", ru: "Я уже сказал менеджеру." },
+        { en: "Can we sort this out, please?", transcr: "Кэн уи сорт зис аут, плиз?", ru: "Можем это уладить, пожалуйста?" },
+        { en: "Thank you for your help.", transcr: "Сэнк ю фо ё хэлп.", ru: "Спасибо за помощь." },
+      ],
+    },
+    {
+      cat: "smalltalk",
+      icon: "💬",
+      title_ru: "Светская беседа",
+      phrases: [
+        { en: "How's it going?", transcr: "Хауз ит гоуинг?", ru: "Как дела?" },
+        { en: "Not bad, thanks.", transcr: "Нот бэд, сэнкс.", ru: "Неплохо, спасибо." },
+        { en: "How was your weekend?", transcr: "Хау уоз ё уикэнд?", ru: "Как прошли выходные?" },
+        { en: "That's good news.", transcr: "Зэтс гуд ньюз.", ru: "Это хорошая новость." },
+        { en: "Cold today, isn't it?", transcr: "Коулд тудэй, изнт ит?", ru: "Холодно сегодня, правда?" },
+        { en: "See you tomorrow.", transcr: "Си ю тэмороу.", ru: "Увидимся завтра." },
+        { en: "Take care.", transcr: "Тэйк кэа.", ru: "Береги себя." },
+        { en: "Have a good day.", transcr: "Хэв э гуд дэй.", ru: "Хорошего дня." },
+        { en: "Nice to see you.", transcr: "Найс ту си ю.", ru: "Приятно тебя видеть." },
+      ],
+    },
+    {
+      cat: "appointment",
+      icon: "📅",
+      title_ru: "У врача: запись и приём",
+      phrases: [
+        { en: "I'd like to make an appointment.", transcr: "Айд лайк ту мэйк эн эпойнтмэнт.", ru: "Я хочу записаться на приём (к врачу)." },
+        { en: "I need to see a doctor today.", transcr: "Ай нид ту си э доктэ тудэй.", ru: "Мне нужно к врачу сегодня. (Опасно для жизни — звоните 999; срочный совет — NHS 111.)" },
+        { en: "When is the next appointment?", transcr: "Уэн из зэ нэкст эпойнтмэнт?", ru: "Когда ближайшая запись?" },
+        { en: "I can't come tomorrow.", transcr: "Ай кант кам тэмороу.", ru: "Я не смогу прийти завтра." },
+        { en: "It started a week ago.", transcr: "Ит стартид э уик эгоу.", ru: "Это началось неделю назад." },
+        { en: "I've had this pain for a few days.", transcr: "Айв хэд зис пэйн фо э фью дэйз.", ru: "Эта боль у меня уже несколько дней." },
+        { en: "How long have you had it?", transcr: "Хау лонг хэв ю хэд ит?", ru: "(врач спросит) «Как давно это у вас?»" },
+        { en: "Can I have a fit note, please?", transcr: "Кэн ай хэв э фит ноут, плиз?", ru: "Можно больничный лист (справку)? (Иногда говорят «sick note».)" },
+        { en: "Can I have an interpreter, please?", transcr: "Кэн ай хэв эн интёпритэ, плиз?", ru: "Можно переводчика, пожалуйста? (NHS — бесплатно, попросите заранее.)" },
       ],
     },
   ];
