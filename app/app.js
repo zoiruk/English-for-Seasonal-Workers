@@ -426,7 +426,7 @@
   }
 
   /* ---------- SCENARIOS (survival role-plays) ---------- */
-  var SC_SPK = { m: "Менеджер", w: "Рабочий", c: "Кассир", d: "Доктор", a: "Агентство", n: "Медсестра" };
+  var SC_SPK = { m: "Менеджер", w: "Рабочий", c: "Кассир", d: "Доктор", a: "Агентство", n: "Медсестра", r: "Регистратор" };
 
   function renderScenarioList() {
     setRoute("scenarios");
