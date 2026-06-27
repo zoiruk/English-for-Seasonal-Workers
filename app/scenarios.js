@@ -67,7 +67,7 @@
           choices: [
             { en: "Can you fix it, please? When can you pay me?", transcr: "Кэн ю фикс ит, плиз? Уэн кэн ю пэй ми?", tr_ru: "Можете исправить, пожалуйста? Когда мне заплатят?",
               ok: true, fb_ru: "✅ Попросили исправить и спросили срок — отлично.", next: "end_good" },
-            { en: "You did not pay me. I am not going to work.", transcr: "Ю дид нот пэй ми. Ай эм нот гоуинг ту вёк.", tr_ru: "Вы мне не заплатили. Я не буду работать.",
+            { en: "You did not pay me. I am not going to work.", transcr: "Ю дид нот пэй ми. Ай эм нот гоуинг ту уёк.", tr_ru: "Вы мне не заплатили. Я не буду работать.",
               ok: false, fb_ru: "⚠️ Угроза только мешает. Спокойно попросите исправить.", next: "end_bad" },
           ],
         },
@@ -104,7 +104,7 @@
         n2: {
           speaker: "a", en: "I am sorry. What is the problem?", transcr: "Ай эм сори. Уот из зэ проблэм?", tr_ru: "Извините. В чём проблема?",
           choices: [
-            { en: "I work many hours. I am tired.", transcr: "Ай вёк мэни ауэз. Ай эм тайэд.", tr_ru: "Я работаю много часов. Я устал.",
+            { en: "I work many hours. I am tired.", transcr: "Ай уёк мэни ауэз. Ай эм тайэд.", tr_ru: "Я работаю много часов. Я устал.",
               ok: true, fb_ru: "✅ Чётко: много часов, устаёте.", next: "n3" },
             { en: "I do not like my shift.", transcr: "Ай ду нот лайк май шифт.", tr_ru: "Мне не нравится моя смена.",
               ok: false, fb_ru: "⚠️ Слишком общо. Скажите: слишком много часов.", next: "n2" },
@@ -167,7 +167,7 @@
           ],
         },
         n3: {
-          speaker: "m", en: "Stop the machine. Do not work now.", transcr: "Стоп зэ мэшин. Ду нот вёк нау.", tr_ru: "Останови машину. Не работай сейчас.",
+          speaker: "m", en: "Stop the machine. Do not work now.", transcr: "Стоп зэ мэшин. Ду нот уёк нау.", tr_ru: "Останови машину. Не работай сейчас.",
           choices: [
             { en: "Yes. I stop the machine. Can you call an ambulance?", transcr: "Йес. Ай стоп зэ мэшин. Кэн ю кол эн эмбьюлэнс?", tr_ru: "Да. Я останавливаю машину. Вызовите скорую?",
               ok: true, fb_ru: "✅ Остановили технику и попросили вызвать скорую.", next: "n4" },
@@ -185,7 +185,7 @@
           ],
         },
         end_good: {
-          speaker: "m", en: "Good. I am going to call 999 and the mechanic. Do not work now.", transcr: "Гуд. Ай эм гоуинг ту кол найн-найн-найн энд зэ мэкэник. Ду нот вёк нау.", tr_ru: "Хорошо. Я вызову 999 и механика. Не работайте сейчас.",
+          speaker: "m", en: "Good. I am going to call 999 and the mechanic. Do not work now.", transcr: "Гуд. Ай эм гоуинг ту кол найн-найн-найн энд зэ мэкэник. Ду нот уёк нау.", tr_ru: "Хорошо. Я вызову 999 и механика. Не работайте сейчас.",
           outcome: "good", outcome_ru: "Вы остановили технику, сообщили боссу и попросили вызвать скорую — это правильно. 👍 Не чините машину сами и не работайте, пока не разрешат. 999 — при тяжёлой травме (сильное кровотечение, потеря сознания).",
         },
         end_bad: {
@@ -227,7 +227,7 @@
           choices: [
             { en: "Thank you. Can I have a sick note?", transcr: "Сэнк ю. Кэн ай хэв э сик ноут?", tr_ru: "Спасибо. Можно больничный?",
               ok: true, fb_ru: "✅ Поблагодарили и попросили больничный — это правильно.", next: "end_good" },
-            { en: "I do not want to rest. I want to work.", transcr: "Ай ду нот уонт ту рэст. Ай уонт ту вёк.", tr_ru: "Я не хочу отдыхать. Я хочу работать.",
+            { en: "I do not want to rest. I want to work.", transcr: "Ай ду нот уонт ту рэст. Ай уонт ту уёк.", tr_ru: "Я не хочу отдыхать. Я хочу работать.",
               ok: false, fb_ru: "⚠️ Болеть и работать опасно. Сначала отдохните.", next: "end_ok" },
           ],
         },
