@@ -99,6 +99,7 @@ body {
 .ms-burst { font-size: 64px; line-height: 1; animation: ms-pop .5s ease-out; }
 @keyframes ms-pop { 0% { transform: scale(.4); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
 .milestone h1 { font-size: 24px; margin: 14px 0 8px; color: var(--accent-a2); }
+.milestone.b1 h1 { color: var(--accent-b1); }
 .milestone p { color: var(--text2); font-size: 15px; margin: 0 0 22px; }
 
 .lesson-card {
@@ -297,6 +298,7 @@ code { background: var(--accent-soft); color: var(--text); padding: 1px 5px; bor
 }
 .cert-course { font-size: 20px; font-weight: 700; color: var(--accent); margin: 8px 0 2px; }
 .cert.a2 .cert-course { color: var(--accent-a2); }
+.cert.b1 .cert-course { color: var(--accent-b1); }
 .cert-level { font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #b58a1b; margin-bottom: 12px; }
 .cert-meta { font-size: 13px; color: #4a4a57; margin-bottom: 16px; }
 .cert-foot { display: flex; justify-content: center; margin-top: 10px; border-top: 1px solid #ecdca0; padding-top: 12px; }

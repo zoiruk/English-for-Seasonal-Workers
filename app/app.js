@@ -58,6 +58,7 @@
       cert_hub_title: "Мой прогресс",
       cert_hub_sub: "{0} из {1} уроков пройдено",
       cert_hub_sub_both: "A0–A1: {0}/{1} · A2: {2}/{3}",
+      cert_hub_sub_three: "A0–A1: {0}/{1} · A2: {2}/{3} · B1: {4}/{5}",
       cert_title: "Сертификат A0-A1",
       cert_body_done: "Курс успешно завершён ✓",
       cert_body_progress: "Пройдено уроков: {0} из {1}",
@@ -102,6 +103,13 @@
       ms_a2_title: "🎉 Уровень 2 пройден!",
       ms_a2_sub: "Вы прошли все {0} уроков уровня A2. Это большой шаг — поздравляем!",
       ms_a2_cert: "🏆 Открыть сертификат A2",
+      cert_b1_title: "Сертификат B1",
+      cert_b1_sub: "{0} из {1} уроков уровня 3",
+      cert_see_b1: "🏆 Сертификат B1 (Уровень 3)",
+      cert_b1_locked: "🔒 Пройдите все {0} уроков уровня 3 — и получите именной сертификат B1.",
+      ms_b1_title: "🎉 Уровень 3 пройден!",
+      ms_b1_sub: "Вы прошли все {0} уроков уровня B1. Отличная работа — поздравляем!",
+      ms_b1_cert: "🏆 Открыть сертификат B1",
       ms_continue: "На главную",
       sc_title: "Ситуации выживания",
       sc_sub: "Что сказать в трудный момент",
@@ -191,6 +199,8 @@
   store.certDate = store.certDate || ""; // YYYY-M-D, set once when the A0-A1 course is completed (15/15)
   store.certDateA2 = store.certDateA2 || ""; // YYYY-M-D, set once when the A2 level is completed
   store.msA2Shown = store.msA2Shown || false; // A2 celebration screen shown once
+  store.certDateB1 = store.certDateB1 || ""; // YYYY-M-D, set once when the B1 level is completed
+  store.msB1Shown = store.msB1Shown || false; // B1 celebration screen shown once
 
   function todayStr() { var d = new Date(); return d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate(); }
   function bumpStreak() {
@@ -278,7 +288,9 @@
     h += '<div class="lesson-card" data-nav="cert">' +
       '<div class="num">🏆</div>' +
       '<div class="body"><div class="t">' + t("cert_hub_title") + '</div>' +
-      '<div class="s">' + (LESSONS.length > A1_MAX
+      '<div class="s">' + (hasB1()
+        ? t("cert_hub_sub_three", a1Done(), Math.min(A1_MAX, LESSONS.length), a2Done(), a2Total(), b1Done(), b1Total())
+        : LESSONS.length > A1_MAX
         ? t("cert_hub_sub_both", a1Done(), Math.min(A1_MAX, LESSONS.length), a2Done(), a2Total())
         : t("cert_hub_sub", a1Done(), Math.min(A1_MAX, LESSONS.length))) + '</div></div>' +
       '<div class="done" style="color:var(--text3)">›</div></div>';
@@ -826,8 +838,9 @@
     var d = parseInt(p[2], 10), m = parseInt(p[1], 10) - 1;
     return d + " " + (CERT_MONTHS[m] || "") + " " + p[0];
   }
-  function certSealSVG(sealText, a2) {
-    var ringDark = a2 ? "#4a2fa0" : "#005bb0", ring = a2 ? "#6b46c1" : "#0075de";
+  function certSealSVG(sealText, lvl) {
+    var ringDark = lvl === "b1" ? "#0b5a54" : lvl === "a2" ? "#4a2fa0" : "#005bb0",
+        ring = lvl === "b1" ? "#0f766e" : lvl === "a2" ? "#6b46c1" : "#0075de";
     return '<svg class="cert-seal" viewBox="0 0 120 132" width="88" height="97" role="img" aria-label="Seal">' +
       '<path d="M46 96 L34 130 L52 118 L60 132 L60 100 Z" fill="' + ringDark + '"/>' +
       '<path d="M74 96 L86 130 L68 118 L60 132 L60 100 Z" fill="' + ring + '"/>' +
@@ -838,27 +851,33 @@
       '</svg>';
   }
 
-  // level: "a1" (A0-A1 course, lessons 1..A1_MAX) | "a2" (A2 level, lessons 16..end).
+  // level: undefined/"a1" (A0-A1 course, lessons 1..A1_MAX) | "a2" (A2 level) | "b1" (B1 level).
   // Mirror screens; honest disclaimer, no fake serial number (see certificate-honest-completion-record).
   function renderCertificate(level) {
-    var a2 = level === "a2";
-    setRoute(a2 ? "cert-a2" : "cert");
-    var total = a2 ? a2Total() : Math.min(A1_MAX, LESSONS.length);
-    var done = a2 ? a2Done() : a1Done();
+    var lvl = level === "a2" ? "a2" : level === "b1" ? "b1" : "a1";
+    var isA2 = lvl === "a2", isB1 = lvl === "b1";
+    setRoute(isB1 ? "cert-b1" : isA2 ? "cert-a2" : "cert");
+    var total = isB1 ? b1Total() : isA2 ? a2Total() : Math.min(A1_MAX, LESSONS.length);
+    var done = isB1 ? b1Done() : isA2 ? a2Done() : a1Done();
     var isComplete = total > 0 && done >= total;
-    var dateKey = a2 ? "certDateA2" : "certDate";
-    var hubTitle = a2 ? t("cert_a2_title") : t("cert_hub_title");
-    var lockMsg = a2 ? t("cert_a2_locked", total) : t("cert_locked", total);
-    // Cross-link: from "Мой прогресс" (A0-A1) reach the A2 certificate, and back.
-    // A2 cert lives here now, not as its own hub tile.
-    var showCross = a2 ? true : (LESSONS.length > A1_MAX && a1Complete());
-    var crossBtnHTML = showCross
-      ? '<button class="btn ghost' + (a2 ? "" : " a2") + '" id="cert-cross" style="margin-top:8px">' +
-          t(a2 ? "cert_see_a1" : "cert_see_a2") + '</button>'
-      : "";
+    var dateKey = isB1 ? "certDateB1" : isA2 ? "certDateA2" : "certDate";
+    var hubTitle = isB1 ? t("cert_b1_title") : isA2 ? t("cert_a2_title") : t("cert_hub_title");
+    var lockMsg = isB1 ? t("cert_b1_locked", total) : isA2 ? t("cert_a2_locked", total) : t("cert_locked", total);
+    // Cross-links between the three certificate levels (triple navigation:
+    // Мой прогресс A0–A1 ↔ A2 ↔ B1). The A2/B1 certs live inside this screen,
+    // not as their own hub tiles. A higher level isn't dangled until the
+    // previous one is complete (mirrors the journey-path gating).
+    var crossDefs = [];
+    if (lvl !== "a1") crossDefs.push({ to: "", key: "cert_see_a1", cls: "" });
+    if (lvl !== "a2" && LESSONS.length > A1_MAX && a1Complete()) crossDefs.push({ to: "a2", key: "cert_see_a2", cls: " a2" });
+    if (lvl !== "b1" && hasB1() && a2Complete()) crossDefs.push({ to: "b1", key: "cert_see_b1", cls: " b1" });
+    var crossBtnHTML = crossDefs.map(function (d) {
+      return '<button class="btn ghost' + d.cls + '" data-cross="' + d.to + '" style="margin-top:8px">' + t(d.key) + '</button>';
+    }).join("");
     function wireCross() {
-      var cx = document.getElementById("cert-cross");
-      if (cx) cx.onclick = function () { renderCertificate(a2 ? undefined : "a2"); };
+      Array.prototype.forEach.call(document.querySelectorAll("[data-cross]"), function (b) {
+        b.onclick = function () { renderCertificate(b.dataset.cross || undefined); };
+      });
     }
 
     // Before the level is finished: Russian progress screen, certificate locked.
@@ -880,11 +899,15 @@
     if (!store[dateKey]) { store[dateKey] = todayStr(); save(store); }
     var nameVal = store.certName || "";
     var words = studiedWords();
-    var levelLine = a2 ? "Elementary self-study course · CEFR A2 level" : "Beginner self-study course · CEFR A0–A1 level";
-    var courseLine = a2 ? "has completed the elementary self-study course" : "has completed the beginner self-study course";
+    var levelLine = isB1 ? "Pre-intermediate self-study course · CEFR B1 level"
+                  : isA2 ? "Elementary self-study course · CEFR A2 level"
+                  : "Beginner self-study course · CEFR A0–A1 level";
+    var courseLine = isB1 ? "has completed the pre-intermediate self-study course"
+                   : isA2 ? "has completed the elementary self-study course"
+                   : "has completed the beginner self-study course";
     app.innerHTML = backBtnHTML() +
-      '<div class="cert cert-full' + (a2 ? " a2" : "") + '"><div class="cert-frame">' +
-        certSealSVG(a2 ? "A2" : "A0–A1", a2) +
+      '<div class="cert cert-full' + (isA2 ? " a2" : isB1 ? " b1" : "") + '"><div class="cert-frame">' +
+        certSealSVG(isB1 ? "B1" : isA2 ? "A2" : "A0–A1", lvl) +
         '<div class="cert-kicker">Certificate of Completion</div>' +
         '<div class="cert-present">This is to certify that</div>' +
         '<input class="cert-name" id="cert-name" type="text" autocomplete="name" ' +
@@ -913,16 +936,17 @@
     document.getElementById("cert-print").onclick = function () { window.print(); };
   }
 
-  /* Celebration screen shown once when the A2 level is completed (last lesson). */
-  function renderMilestone() {
+  /* Celebration screen shown once when a level is completed (last lesson of A2 or B1). */
+  function renderMilestone(level) {
+    var isB1 = level === "b1";
     setRoute("");
     app.innerHTML =
-      '<div class="milestone"><div class="ms-burst">🎉</div>' +
-        '<h1>' + t("ms_a2_title") + '</h1>' +
-        '<p>' + t("ms_a2_sub", a2Total()) + '</p>' +
-        '<button class="btn" id="ms-cert">' + t("ms_a2_cert") + '</button>' +
+      '<div class="milestone' + (isB1 ? " b1" : "") + '"><div class="ms-burst">🎉</div>' +
+        '<h1>' + t(isB1 ? "ms_b1_title" : "ms_a2_title") + '</h1>' +
+        '<p>' + t(isB1 ? "ms_b1_sub" : "ms_a2_sub", isB1 ? b1Total() : a2Total()) + '</p>' +
+        '<button class="btn" id="ms-cert">' + t(isB1 ? "ms_b1_cert" : "ms_a2_cert") + '</button>' +
         '<button class="btn ghost" id="ms-hub">' + t("ms_continue") + '</button></div>';
-    document.getElementById("ms-cert").onclick = function () { renderCertificate("a2"); };
+    document.getElementById("ms-cert").onclick = function () { renderCertificate(isB1 ? "b1" : "a2"); };
     document.getElementById("ms-hub").onclick = renderHub;
   }
 
@@ -1319,12 +1343,15 @@
     }
     function finishMastered() {
       store.done[les.id] = true; bumpStreak(); save(store);
-      // Completing the lesson that finishes the A2 level → celebration screen (once).
-      // Scoped to the A2 id-range so finishing a B1 lesson never (re)fires it.
-      // (B1 milestone/certificate is a deferred package — see plan "Отложено".)
+      // Completing the lesson that finishes a level → celebration screen (once).
+      // Scoped by id-range so each level's milestone fires only on its own range.
       if (les.id > A1_MAX && les.id <= A2_MAX && a2Complete() && !store.msA2Shown) {
         store.msA2Shown = true; save(store);
-        renderMilestone(); return;
+        renderMilestone("a2"); return;
+      }
+      if (les.id > A2_MAX && b1Complete() && !store.msB1Shown) {
+        store.msB1Shown = true; save(store);
+        renderMilestone("b1"); return;
       }
       root.innerHTML = '<div class="card result"><div class="score">🎉</div>' +
         "<h3>" + t("done_banner") + "</h3>" +
@@ -1346,6 +1373,7 @@
       else if (nav.dataset.nav === "review") renderReview();
       else if (nav.dataset.nav === "cert") renderCertificate();
       else if (nav.dataset.nav === "cert-a2") renderCertificate("a2");
+      else if (nav.dataset.nav === "cert-b1") renderCertificate("b1");
       else if (nav.dataset.nav === "scenarios") renderScenarioList();
       return;
     }
@@ -1382,6 +1410,7 @@
     if (h === "review") { renderReview(); return; }
     if (h === "cert") { renderCertificate(); return; }
     if (h === "cert-a2") { renderCertificate("a2"); return; }
+    if (h === "cert-b1") { renderCertificate("b1"); return; }
     if (h === "scenarios") { renderScenarioList(); return; }
     var scm = h.match(/^scenario\/([A-Za-z0-9_-]+)$/);
     if (scm) { renderScenario(scm[1]); return; }
