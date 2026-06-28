@@ -7,6 +7,7 @@
   var BOOKS = window.BOOKS || [];
   var READER = BOOKS.reduce(function (a, b) { return a.concat(b.chapters || []); }, []); // flat chapters (counts/lookups)
   var SCENARIOS = window.SCENARIOS || [];
+  var PHONETICS = window.PHONETICS || [];
 
   /* ---------- UI strings (localization-ready: add UI.uz later) ---------- */
   var UI = {
@@ -17,6 +18,16 @@
       phrasebook_sub: "Готовые фразы на каждый день",
       phrasebook_hint: "👇 Выберите ситуацию. Нажмите 🔊, чтобы услышать.",
       phrasebook_count: "{0} фраз",
+      phonetics_title: "Звуки и слух",
+      phonetics_sub: "Трудные звуки и ударение — тренируй ухо",
+      phonetics_hint: "👇 Выберите звук. Слушайте 🔊 и повторяйте вслух. Это тренировка уха и образец — оценить ваше произношение приложение не может.",
+      ph_model: "Послушай и повтори",
+      ph_drill: "Что прозвучало?",
+      ph_stress_drill: "Где ударение? Нажмите громкий слог",
+      ph_listen: "▶ Послушать",
+      ph_correct: "✅ Верно!",
+      ph_wrong: "❌ Правильно: {0}",
+      ph_again: "🔁 Ещё раз",
       words_learned: "слов изучено",
       streak: "дней подряд",
       lessons_done: "уроков пройдено",
@@ -263,6 +274,12 @@
         '<div class="body"><div class="t">' + t("phrasebook_title") + '</div><div class="s">' + t("phrasebook_sub") + "</div></div>" +
         '<div class="done" style="color:var(--text3)">›</div></div>';
     }
+    if (PHONETICS.length) {
+      h += '<div class="lesson-card" data-nav="phonetics">' +
+        '<div class="num">🗣️</div>' +
+        '<div class="body"><div class="t">' + t("phonetics_title") + '</div><div class="s">' + t("phonetics_sub") + "</div></div>" +
+        '<div class="done" style="color:var(--text3)">›</div></div>';
+    }
     if (SCENARIOS.length) {
       h += '<div class="lesson-card sc-entry" data-nav="scenarios">' +
         '<div class="num">🆘</div>' +
@@ -422,6 +439,132 @@
     document.getElementById("back").onclick = function () { renderPhrasebook(); };
     app.querySelectorAll("[data-spk]").forEach(function (el) {
       el.addEventListener("click", function () { speak(el.dataset.spk); });
+    });
+  }
+
+  /* ---------- PHONETICS (pronunciation / listening trainer, snowball-exempt) ----------
+     A training screen like the phrasebook: model (listen + repeat, no scoring) plus a
+     receptive drill for the contrasts the Phase-0 probe confirmed the voice renders.
+     No streak/done tracking — mastery practice, not an exam. ---------- */
+  function renderPhonetics() {
+    setRoute("phonetics");
+    var h = backBtnHTML() +
+      '<div class="hub-head" style="padding-top:46px"><h1>🗣️ ' + t("phonetics_title") + "</h1><p>" + t("phonetics_sub") + "</p></div>";
+    h += '<div class="card note">' + t("phonetics_hint") + "</div>";
+    PHONETICS.forEach(function (s) {
+      h += '<div class="lesson-card" data-ph="' + esc(s.id) + '">' +
+        '<div class="num">' + s.icon + "</div>" +
+        '<div class="body"><div class="t">' + esc(s.title_ru) + '</div><div class="s">' + esc(s.goal_ru) + "</div></div>" +
+        '<div class="done" style="color:var(--text3)">›</div></div>';
+    });
+    app.innerHTML = h;
+    document.getElementById("back").onclick = function () { renderHub(); };
+    app.querySelectorAll("[data-ph]").forEach(function (el) {
+      el.onclick = function () { renderPhoneticsUnit(el.dataset.ph); };
+    });
+  }
+
+  function renderPhoneticsUnit(id) {
+    var s = PHONETICS.filter(function (x) { return x.id === id; })[0];
+    if (!s) return renderPhonetics();
+    setRoute("phonetics/" + id);
+    var h = backBtnHTML() +
+      '<div class="l-head"><span class="pos">' + s.icon + '</span>' +
+      '<div class="htitle"><div class="ttl">' + esc(s.title_ru) + '</div><div class="sub">' + t("phonetics_title") + "</div></div></div>";
+    h += '<div class="card note">' + esc(s.intro_ru) + "</div>";
+    if (s.model && s.model.length) {
+      h += '<div class="ph-sec">' + t("ph_model") + '</div><div class="card">';
+      s.model.forEach(function (w) {
+        h += '<div class="ex-row">' + spkBtn(w.en) + '<div><div class="en">' + esc(w.en) +
+          '</div><div class="tr">' + esc(w.transcr) + '</div><div class="ru">' + esc(w.ru) + "</div></div></div>";
+      });
+      h += "</div>";
+    }
+    if (s.kind === "pairs") {
+      h += '<div class="ph-sec">' + t("ph_drill") + "</div>";
+      s.pairs.forEach(function (p, i) {
+        h += '<div class="card ph-pair" data-i="' + i + '">' +
+          '<button class="btn ghost ph-play" data-i="' + i + '">' + t("ph_listen") + "</button>" +
+          '<div class="ph-opts">' +
+          '<button class="opt" data-i="' + i + '" data-side="a">' + esc(p.a.en) + " <small>" + esc(p.a.transcr) + "</small></button>" +
+          '<button class="opt" data-i="' + i + '" data-side="b">' + esc(p.b.en) + " <small>" + esc(p.b.transcr) + "</small></button>" +
+          '</div><div class="q-fb ph-fb" data-i="' + i + '"></div></div>';
+      });
+    } else if (s.kind === "stress") {
+      h += '<div class="ph-sec">' + t("ph_stress_drill") + "</div>";
+      s.stress.forEach(function (w, i) {
+        var chips = w.syll.map(function (sy, j) {
+          return '<button class="opt ph-syll" data-i="' + i + '" data-j="' + j + '">' + esc(sy) + "</button>";
+        }).join("");
+        h += '<div class="card ph-stress" data-i="' + i + '">' +
+          '<div class="ex-row">' + spkBtn(w.en) + '<div><div class="en">' + esc(w.en) +
+          '</div><div class="ru">' + esc(w.ru) + "</div></div></div>" +
+          '<div class="ph-sylls">' + chips + "</div>" +
+          '<div class="q-fb ph-fb" data-i="' + i + '"></div></div>';
+      });
+    }
+    app.innerHTML = h;
+    document.getElementById("back").onclick = function () { renderPhonetics(); };
+    app.querySelectorAll("[data-spk]").forEach(function (el) {
+      el.addEventListener("click", function () { speak(el.dataset.spk); });
+    });
+    if (s.kind === "pairs") wirePhPairs(s);
+    if (s.kind === "stress") wirePhStress(s);
+  }
+
+  function phAgainBtn(card, id) {
+    var again = document.createElement("button");
+    again.className = "btn ghost ph-again";
+    again.textContent = t("ph_again");
+    again.onclick = function () { renderPhoneticsUnit(id); };
+    card.appendChild(again);
+  }
+
+  function wirePhPairs(s) {
+    s.pairs.forEach(function (p, i) {
+      var card = app.querySelector('.ph-pair[data-i="' + i + '"]');
+      if (!card) return;
+      var answer = Math.random() < 0.5 ? "a" : "b"; // which member is "heard"
+      card.querySelector(".ph-play").onclick = function () { speak(p[answer].en); };
+      var fb = card.querySelector(".ph-fb");
+      var answered = false;
+      card.querySelectorAll(".opt").forEach(function (b) {
+        b.onclick = function () {
+          if (answered) return; answered = true;
+          var right = b.dataset.side === answer;
+          card.querySelectorAll(".opt").forEach(function (x) {
+            x.style.pointerEvents = "none";
+            if (x.dataset.side === answer) x.classList.add("correct");
+            else if (x === b) x.classList.add("wrong");
+          });
+          fb.className = "q-fb ph-fb " + (right ? "ok" : "no");
+          fb.textContent = right ? t("ph_correct") : t("ph_wrong", p[answer].en);
+          phAgainBtn(card, s.id);
+        };
+      });
+    });
+  }
+
+  function wirePhStress(s) {
+    s.stress.forEach(function (w, i) {
+      var card = app.querySelector('.ph-stress[data-i="' + i + '"]');
+      if (!card) return;
+      var fb = card.querySelector(".ph-fb");
+      var answered = false;
+      card.querySelectorAll(".ph-syll").forEach(function (b) {
+        b.onclick = function () {
+          if (answered) return; answered = true;
+          var j = +b.dataset.j, right = j === w.hit;
+          card.querySelectorAll(".ph-syll").forEach(function (x) {
+            x.style.pointerEvents = "none";
+            if (+x.dataset.j === w.hit) x.classList.add("correct");
+            else if (x === b) x.classList.add("wrong");
+          });
+          fb.className = "q-fb ph-fb " + (right ? "ok" : "no");
+          fb.textContent = right ? t("ph_correct") : t("ph_wrong", w.syll[w.hit].toUpperCase());
+          phAgainBtn(card, s.id);
+        };
+      });
     });
   }
 
@@ -1375,6 +1518,7 @@
       else if (nav.dataset.nav === "cert-a2") renderCertificate("a2");
       else if (nav.dataset.nav === "cert-b1") renderCertificate("b1");
       else if (nav.dataset.nav === "scenarios") renderScenarioList();
+      else if (nav.dataset.nav === "phonetics") renderPhonetics();
       return;
     }
     var card = e.target.closest("[data-lesson]");
@@ -1414,6 +1558,9 @@
     if (h === "scenarios") { renderScenarioList(); return; }
     var scm = h.match(/^scenario\/([A-Za-z0-9_-]+)$/);
     if (scm) { renderScenario(scm[1]); return; }
+    if (h === "phonetics") { renderPhonetics(); return; }
+    var phm = h.match(/^phonetics\/([A-Za-z0-9_-]+)$/);
+    if (phm) { renderPhoneticsUnit(phm[1]); return; }
     renderHub();
   }
   window.addEventListener("hashchange", route);

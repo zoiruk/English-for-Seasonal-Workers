@@ -232,6 +232,16 @@ code { background: var(--accent-soft); color: var(--text); padding: 1px 5px; bor
 .q-fb.no { background: var(--no-soft); color: var(--no); }
 .q-label { font-size: 15px; font-weight: 600; color: var(--accent); text-align: center; padding: 6px 0 8px; }
 .spk-listen { font-size: 18px; padding: 20px 14px; margin-top: 8px; letter-spacing: .02em; }
+/* phonetics / listening trainer */
+.ph-sec { font-weight: 700; color: var(--text3); font-size: 12px; text-transform: uppercase; letter-spacing: .04em; margin: 16px 2px 6px; }
+.ph-play { width: 100%; }
+.ph-opts { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+.ph-opts .opt { text-align: center; }
+.ph-opts .opt small { display: block; color: var(--text3); font-size: 12px; margin-top: 2px; }
+.ph-sylls { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.ph-sylls .opt { min-width: 56px; text-align: center; font-weight: 700; }
+.ph-fb:empty { display: none; }
+.ph-again { width: 100%; margin-top: 10px; }
 /* tap-to-build production task */
 .build-line { min-height: 48px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; padding: 10px; margin: 4px 0 12px; border: 1.5px dashed var(--accent); border-radius: 12px; background: var(--accent-soft); }
 .build-ph { color: var(--text3); font-size: 14px; }

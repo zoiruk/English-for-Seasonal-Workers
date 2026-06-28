@@ -10,6 +10,7 @@ const LESSONS = require("../app/data.js");
 const PHRASEBOOK = safeReq("../app/phrasebook.js");
 const BOOKS = safeReq("../app/reader.js");
 const SCENARIOS = safeReq("../app/scenarios.js");
+const PHONETICS = safeReq("../app/phonetics.js");
 function safeReq(p) { try { return require(p) || []; } catch (e) { return []; } }
 
 function normCyr(t) { return String(t).toLowerCase().replace(/[\s'’\-.,!?;:«»"()…]/g, ""); }
@@ -59,6 +60,15 @@ SCENARIOS.forEach((s) => Object.keys(s.nodes || {}).forEach((nid) => {
   check(`SC ${s.id}.${nid}`, n.en, n.transcr);
   (n.choices || []).forEach((c, i) => check(`SC ${s.id}.${nid}.choices[${i}]`, c.en, c.transcr));
 }));
+// phonetics trainer: NOT a canonical source — its transcr must MATCH the lexicon's
+PHONETICS.forEach((s) => {
+  (s.model || []).forEach((w, i) => check(`PH ${s.id} model[${i}]`, w.en, w.transcr));
+  (s.pairs || []).forEach((p, i) => {
+    check(`PH ${s.id} pairs[${i}].a`, p.a.en, p.a.transcr);
+    check(`PH ${s.id} pairs[${i}].b`, p.b.en, p.b.transcr);
+  });
+  (s.stress || []).forEach((w, i) => check(`PH ${s.id} stress[${i}]`, w.en, w.transcr));
+});
 
 if (!errors.length) { console.log("[check-transcr-consistency] OK — 0 drift"); process.exit(0); }
 console.error(`[check-transcr-consistency] ${errors.length} possible drift(s):`);

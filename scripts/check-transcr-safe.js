@@ -8,6 +8,7 @@ const LESSONS = require("../app/data.js");
 const PHRASEBOOK = safeReq("../app/phrasebook.js");
 const BOOKS = safeReq("../app/reader.js");
 const SCENARIOS = safeReq("../app/scenarios.js");
+const PHONETICS = safeReq("../app/phonetics.js");
 function safeReq(p) { try { return require(p) || []; } catch (e) { return []; } }
 
 // Offensive Russian stems. Tight list (high-severity, low false-positive).
@@ -49,6 +50,14 @@ SCENARIOS.forEach((s) => Object.keys(s.nodes || {}).forEach((nid) => {
   scan(`SC ${s.id}.${nid}`, n.transcr);
   (n.choices || []).forEach((c, i) => scan(`SC ${s.id}.${nid}.choices[${i}]`, c.transcr));
 }));
+PHONETICS.forEach((s) => {
+  (s.model || []).forEach((w, i) => scan(`PH ${s.id} model[${i}] (${w.en})`, w.transcr));
+  (s.pairs || []).forEach((p, i) => {
+    scan(`PH ${s.id} pairs[${i}].a (${p.a.en})`, p.a.transcr);
+    scan(`PH ${s.id} pairs[${i}].b (${p.b.en})`, p.b.transcr);
+  });
+  (s.stress || []).forEach((w, i) => scan(`PH ${s.id} stress[${i}] (${w.en})`, w.transcr));
+});
 
 if (!errors.length) { console.log("[check-transcr-safe] OK — 0 offensive transcr"); process.exit(0); }
 console.error(`[check-transcr-safe] ${errors.length} offensive transcr(s):`);
