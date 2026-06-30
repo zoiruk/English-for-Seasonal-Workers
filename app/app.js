@@ -147,6 +147,26 @@
       mistakes_answer: "Правильно:",
       drill_btn: "Потренировать ошибки ({0}) →",
       mastered_note: "Все ответы верны — урок засчитан. 👏",
+      ai_title: "ИИ-учитель",
+      ai_chat_btn: "🤖 Поговорить с учителем",
+      ai_placeholder: "Напишите сообщение…",
+      ai_send: "Отправить",
+      ai_thinking: "Учитель печатает…",
+      ai_err: "Ошибка: {0}",
+      ai_settings_title: "Настройки ИИ-учителя",
+      ai_settings_sub: "Подключите любой OpenAI-совместимый сервис (Groq, Ollama, OpenRouter…)",
+      ai_settings_help: "💡 Быстрый старт: зайдите на groq.com, создайте бесплатный аккаунт, скопируйте API ключ. Адрес: https://api.groq.com/openai/v1  Модель: llama-3.3-70b-versatile",
+      ai_url_label: "Адрес API",
+      ai_url_ph: "https://api.groq.com/openai/v1",
+      ai_key_label: "API ключ",
+      ai_key_ph: "gsk_…",
+      ai_model_label: "Модель",
+      ai_model_ph: "llama-3.3-70b-versatile",
+      ai_save: "Сохранить",
+      ai_saved: "✓ Сохранено",
+      ai_save_err: "Заполните адрес API и название модели",
+      ai_hub_sub_on: "Подключён · нажмите для изменения",
+      ai_hub_sub_off: "Не настроен · нажмите для настройки",
       help_toggle: "🤔 Не поняли? Нажмите — объясню проще",
       help_formula: "Запомните формулу:",
       help_yt: "Всё ещё непонятно? Видео на YouTube ▶",
@@ -162,6 +182,88 @@
       var v = args[+i + 1];
       return v === undefined ? m : v;
     });
+  }
+
+  /* ---------- AI teacher config (stored in localStorage esw_ai) ---------- */
+  function getAIConfig() {
+    try { return JSON.parse(localStorage.getItem("esw_ai") || "{}"); } catch (e) { return {}; }
+  }
+  function saveAIConfig(cfg) {
+    try { localStorage.setItem("esw_ai", JSON.stringify(cfg)); } catch (e) {}
+  }
+  function aiConfigured() {
+    var c = getAIConfig(); return !!(c.url && c.model);
+  }
+  /* callAI: two modes depending on URL.
+     - Ollama native (/api/chat): auto-detected when URL ends with /v1 pointing at local Ollama.
+       Uses think:false to suppress reasoning output — nemotron-3-super:cloud works correctly.
+     - OpenAI-compatible (/v1/chat/completions): used for Groq, OpenRouter, etc. */
+  function callAI(messages, onSuccess, onError) {
+    var cfg = getAIConfig();
+    var baseUrl = cfg.url.replace(/\/+$/, "");
+    var isOllama = /localhost|127\.0\.0\.1/.test(baseUrl);
+
+    if (isOllama) {
+      // Native Ollama API — think:false forces direct answer, no reasoning monologue
+      var ollamaBase = baseUrl.replace(/\/v1$/, "");
+      fetch(ollamaBase + "/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          model: cfg.model,
+          messages: messages,
+          think: false,
+          stream: false,
+          options: { temperature: 0.7, num_predict: 600 }
+        })
+      }).then(function (res) {
+        if (!res.ok) return res.text().then(function (b) { onError("HTTP " + res.status + " — " + b.slice(0, 200)); });
+        return res.json().then(function (data) {
+          var content = data.message && data.message.content;
+          if (content && content.trim()) onSuccess(content.trim());
+          else onError("Пустой ответ от Ollama. Попробуйте ещё раз.");
+        });
+      }).catch(function (e) { onError(e.message || "Ошибка сети"); });
+      return;
+    }
+
+    // OpenAI-compatible streaming (Groq, OpenRouter, etc.)
+    fetch(baseUrl + "/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer " + (cfg.key || "none")
+      },
+      body: JSON.stringify({ model: cfg.model, messages: messages, stream: true, max_tokens: 600, temperature: 0.7 })
+    }).then(function (res) {
+      if (!res.ok) return res.text().then(function (b) { onError("HTTP " + res.status + " — " + b.slice(0, 200)); });
+      var reader = res.body.getReader();
+      var decoder = new TextDecoder();
+      var buf = "";
+      var text = "";
+      function pump() {
+        return reader.read().then(function (r) {
+          if (r.done) {
+            var out = text.replace(/<think>[\s\S]*?<\/think>/gi, "").trim();
+            if (out) onSuccess(out); else onError("Пустой ответ от сервера.");
+            return;
+          }
+          buf += decoder.decode(r.value, { stream: true });
+          var lines = buf.split("\n"); buf = lines.pop();
+          lines.forEach(function (line) {
+            line = line.trim();
+            if (!line || line === "data: [DONE]" || line.indexOf("data: ") !== 0) return;
+            try {
+              var d = JSON.parse(line.slice(6));
+              var delta = d.choices && d.choices[0] && d.choices[0].delta;
+              if (delta && typeof delta.content === "string") text += delta.content;
+            } catch (e) {}
+          });
+          return pump();
+        });
+      }
+      return pump();
+    }).catch(function (e) { onError(e.message || "Ошибка сети"); });
   }
 
   /* Course tiers by FIXED lesson-id boundaries (not array length): 1..A1_MAX = A0-A1
@@ -302,6 +404,11 @@
         '<div class="s">' + (due ? t("review_count", due) : t("review_count_zero")) + '</div></div>' +
         '<div class="done" style="color:var(--text3)">›</div></div>';
     }
+    h += '<div class="lesson-card" data-nav="ai-settings">' +
+      '<div class="num">🤖</div>' +
+      '<div class="body"><div class="t">' + t("ai_title") + '</div>' +
+      '<div class="s">' + (aiConfigured() ? t("ai_hub_sub_on") : t("ai_hub_sub_off")) + '</div></div>' +
+      '<div class="done" style="color:var(--text3)">›</div></div>';
     h += '<div class="lesson-card" data-nav="cert">' +
       '<div class="num">🏆</div>' +
       '<div class="body"><div class="t">' + t("cert_hub_title") + '</div>' +
@@ -1357,8 +1464,8 @@
   /* ---------- quiz trainer (mastery: drill your mistakes until none remain) ---------- */
   function runQuiz(les) {
     var root = document.getElementById("quizroot");
-    var fullQuiz = les.quiz, round, idx, wrong, roundCorrect;
-    function markWrong(q) { if (wrong.indexOf(q) < 0) wrong.push(q); }
+    var fullQuiz = les.quiz, round, idx, wrong, roundCorrect, allWrong = [];
+    function markWrong(q) { if (wrong.indexOf(q) < 0) wrong.push(q); if (allWrong.indexOf(q) < 0) allWrong.push(q); }
     function next() { idx++; if (idx < round.length) show(); else roundEnd(); }
     function startRound(items) { round = items; idx = 0; wrong = []; roundCorrect = 0; show(); }
     function show() {
@@ -1499,12 +1606,213 @@
       root.innerHTML = '<div class="card result"><div class="score">🎉</div>' +
         "<h3>" + t("done_banner") + "</h3>" +
         '<div class="q-hint">' + t("mastered_note") + "</div>" +
+        (aiConfigured() ? '<button class="btn ai-chat-btn" id="ai-chat">' + t("ai_chat_btn") + "</button>" : "") +
         '<button class="btn" id="rt">' + t("retry") + "</button>" +
         '<button class="btn ghost" id="hb">' + t("to_hub") + "</button></div>";
+      if (aiConfigured()) {
+        var snap = allWrong.slice();
+        document.getElementById("ai-chat").onclick = function () { renderAIChat(les, snap); };
+      }
       document.getElementById("rt").onclick = function () { runQuiz(les); };
       document.getElementById("hb").onclick = function () { renderHub(); };
     }
     startRound(fullQuiz.slice());
+  }
+
+  /* ---------- AI settings screen ---------- */
+  function renderAISettings() {
+    var cfg = getAIConfig();
+    var configured = !!(cfg.url && cfg.model);
+    setRoute("ai-settings");
+    app.innerHTML =
+      '<button class="float-back" id="back"><span class="fb-arrow">‹</span> Назад</button>' +
+      '<div class="hub-head" style="padding-top:46px"><h1>🤖 ' + t("ai_settings_title") + '</h1>' +
+      '<p>' + t("ai_settings_sub") + '</p></div>' +
+      '<div class="card ai-settings-form">' +
+        '<div class="ai-field"><label>' + t("ai_url_label") + '</label>' +
+        '<input id="ai-url" type="url" placeholder="' + t("ai_url_ph") + '" value="' + esc(cfg.url || "") + '"/></div>' +
+        '<div class="ai-field"><label>' + t("ai_key_label") + '</label>' +
+        '<input id="ai-key" type="password" placeholder="' + t("ai_key_ph") + '" value="' + esc(cfg.key || "") + '"/></div>' +
+        '<div class="ai-field"><label>' + t("ai_model_label") + '</label>' +
+        '<input id="ai-model" type="text" placeholder="' + t("ai_model_ph") + '" value="' + esc(cfg.model || "") + '"/></div>' +
+        '<div id="ai-status" class="ai-status"></div>' +
+        '<button class="btn" id="ai-save">' + t("ai_save") + '</button>' +
+      '</div>' +
+      (configured
+        ? '<button class="btn ai-chat-btn" id="ai-pick">🤖 ' + t("ai_chat_btn") + '</button>'
+        : '') +
+      '<div class="card note">' + t("ai_settings_help") + '</div>';
+    document.getElementById("back").onclick = renderHub;
+    document.getElementById("ai-save").onclick = function () {
+      var url = document.getElementById("ai-url").value.trim();
+      var key = document.getElementById("ai-key").value.trim();
+      var model = document.getElementById("ai-model").value.trim();
+      var st = document.getElementById("ai-status");
+      if (!url || !model) { st.textContent = t("ai_save_err"); st.className = "ai-status err"; return; }
+      saveAIConfig({ url: url, key: key, model: model });
+      st.textContent = t("ai_saved"); st.className = "ai-status ok";
+      // show chat button after first save
+      if (!document.getElementById("ai-pick")) {
+        var btn = document.createElement("button");
+        btn.className = "btn ai-chat-btn"; btn.id = "ai-pick";
+        btn.textContent = "🤖 " + t("ai_chat_btn");
+        btn.onclick = renderAILessonPicker;
+        document.querySelector(".card.note").before(btn);
+      }
+    };
+    if (configured) document.getElementById("ai-pick").onclick = renderAILessonPicker;
+  }
+
+  /* ---------- AI lesson picker ---------- */
+  function renderAILessonPicker() {
+    setRoute("ai-pick");
+    var lvlLabels = { a1: "A0–A1", a2: "A2", b1: "B1" };
+    function lesLevel(les) {
+      if (les.id <= A1_MAX) return "a1";
+      if (les.id <= A2_MAX) return "a2";
+      return "b1";
+    }
+    var groups = [
+      { key: "a1", label: "Уровень 1 · A0–A1", accent: "var(--accent)" },
+      { key: "a2", label: "Уровень 2 · A2", accent: "var(--accent-a2)" },
+      { key: "b1", label: "Уровень 3 · B1", accent: "var(--accent-b1)" }
+    ];
+    var h = '<button class="float-back" id="back"><span class="fb-arrow">‹</span> Назад</button>' +
+      '<div class="hub-head" style="padding-top:46px"><h1>🤖 Выберите урок</h1>' +
+      '<p>Учитель обсудит с вами любой урок</p></div>';
+    groups.forEach(function (g) {
+      var lessons = LESSONS.filter(function (l) { return lesLevel(l) === g.key; });
+      if (!lessons.length) return;
+      h += '<div class="level-head ' + g.key + '">' + g.label + '</div>';
+      lessons.forEach(function (les) {
+        h += '<div class="lesson-card ai-pick-card" data-ai-les="' + les.id + '">' +
+          '<div class="num" style="background:none;color:' + g.accent + ';font-weight:800">' + les.id + '</div>' +
+          '<div class="body"><div class="t">' + esc(les.title_ru || "") + '</div>' +
+          '<div class="s">' + esc(les.cefr || "") + (les.grammar && les.grammar.rule_ru ? " · " + esc(les.grammar.rule_ru.slice(0, 40)) : "") + '</div></div>' +
+          '<div class="done" style="color:var(--text3)">›</div></div>';
+      });
+    });
+    app.innerHTML = h;
+    document.getElementById("back").onclick = renderAISettings;
+    app.querySelectorAll("[data-ai-les]").forEach(function (card) {
+      card.onclick = function () {
+        var id = +card.dataset.aiLes;
+        var les = LESSONS.filter(function (l) { return l.id === id; })[0];
+        if (les) renderAIChat(les, []);
+      };
+    });
+  }
+
+  /* ---------- AI chat screen ---------- */
+  function renderAIChat(les, mistakes) {
+    var history = []; // assistant/user turns after the initial seed
+
+    function buildSystem() {
+      var words = (les.words || []).slice(0, 12).map(function (w) { return w.en + " — " + w.ru; }).join(", ");
+      var rule = les.grammar && les.grammar.rule_ru ? les.grammar.rule_ru : "";
+      var missed = mistakes && mistakes.length
+        ? mistakes.map(function (q) {
+            var qt = q.q.replace(/\[[A-Z]+\]\s*/, "");
+            var ans = q.opts ? q.opts[q.c] : (q.build || []).join(" ");
+            return qt + " → " + ans;
+          }).join("; ")
+        : null;
+      return "You are a patient English teacher. Reply ONLY in Russian. Be direct — give your response immediately, no meta-commentary.\n\n" +
+        "Student: farm worker from CIS countries in the UK, beginner English level.\n" +
+        "Lesson: \"" + (les.title_ru || "") + "\" (CEFR " + (les.cefr || "A0-A1") + ")\n" +
+        "Grammar topic: " + rule + "\n" +
+        "Lesson vocabulary (English — Russian): " + words + "\n" +
+        (missed ? "Test mistakes: " + missed + "\n" : "") +
+        "\nINSTRUCTIONS:\n" +
+        "1. Always reply in Russian, 2-3 sentences max.\n" +
+        "2. No grammar jargon — say 'настоящее время' not 'Present Simple'.\n" +
+        "3. Give ONE simple exercise: ask student to translate a phrase, fill a gap, or answer a question using lesson words.\n" +
+        "4. Build exercises from the lesson vocabulary listed above.\n" +
+        "5. If student writes in English — praise them warmly and gently correct.\n" +
+        "6. Start with a brief greeting, then give your first exercise immediately.\n" +
+        "Output your Russian response directly. Do not explain your reasoning.";
+    }
+
+    setRoute("ai-chat");
+    app.innerHTML =
+      '<button class="float-back" id="back"><span class="fb-arrow">‹</span> Назад</button>' +
+      '<div class="hub-head" style="padding-top:46px"><h1>🤖 ' + t("ai_title") + '</h1>' +
+      '<p>' + esc(les.title_ru || "") + '</p></div>' +
+      '<div class="ai-messages" id="ai-msgs"></div>' +
+      '<div class="ai-input-bar">' +
+        '<input type="text" class="ai-input" id="ai-inp" placeholder="' + t("ai_placeholder") + '" />' +
+        '<button class="ai-send-btn" id="ai-send" aria-label="' + t("ai_send") + '">&#10148;</button>' +
+      '</div>';
+
+    var msgsEl = document.getElementById("ai-msgs");
+    var inputEl = document.getElementById("ai-inp");
+    var sendEl  = document.getElementById("ai-send");
+    var busy    = false;
+
+    document.getElementById("back").onclick = renderHub;
+
+    function addBubble(role, text) {
+      var wrap = document.createElement("div");
+      wrap.className = "ai-msg " + role;
+      var b = document.createElement("div");
+      b.className = "ai-bubble";
+      b.textContent = text;
+      wrap.appendChild(b);
+      msgsEl.appendChild(wrap);
+      wrap.scrollIntoView({ behavior: "smooth", block: "end" });
+      return b;
+    }
+
+    function showThinking() {
+      var wrap = document.createElement("div");
+      wrap.className = "ai-msg ai ai-thinking";
+      wrap.id = "ai-think";
+      var b = document.createElement("div");
+      b.className = "ai-bubble";
+      b.textContent = t("ai_thinking");
+      wrap.appendChild(b);
+      msgsEl.appendChild(wrap);
+      wrap.scrollIntoView({ behavior: "smooth", block: "end" });
+    }
+    function hideThinking() { var el = document.getElementById("ai-think"); if (el) el.remove(); }
+
+    function setLocked(v) {
+      busy = v;
+      sendEl.disabled = v;
+      inputEl.disabled = v;
+    }
+
+    function ask(userText, showUserBubble) {
+      if (busy) return;
+      if (userText && showUserBubble) addBubble("user", userText);
+      if (userText) history.push({ role: "user", content: userText });
+      setLocked(true);
+      showThinking();
+      var msgs = [{ role: "system", content: buildSystem() }].concat(history);
+      callAI(msgs, function (reply) {
+        hideThinking();
+        history.push({ role: "assistant", content: reply });
+        addBubble("ai", reply);
+        setLocked(false);
+        inputEl.focus();
+      }, function (err) {
+        hideThinking();
+        addBubble("ai", "⚠️ " + t("ai_err", err));
+        setLocked(false);
+      });
+    }
+
+    sendEl.onclick = function () {
+      var text = inputEl.value.trim();
+      if (text) { inputEl.value = ""; ask(text, true); }
+    };
+    inputEl.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); sendEl.onclick(); }
+    });
+
+    // Auto-start: seed first turn so AI greets without visible user bubble
+    history.push({ role: "user", content: "Привет! Я только что прошёл урок и тест." });
+    ask(null, false);
   }
 
   /* ---------- start ---------- */
@@ -1519,6 +1827,7 @@
       else if (nav.dataset.nav === "cert-b1") renderCertificate("b1");
       else if (nav.dataset.nav === "scenarios") renderScenarioList();
       else if (nav.dataset.nav === "phonetics") renderPhonetics();
+      else if (nav.dataset.nav === "ai-settings") renderAISettings();
       return;
     }
     var card = e.target.closest("[data-lesson]");
