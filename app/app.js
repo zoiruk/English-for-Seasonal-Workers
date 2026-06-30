@@ -185,8 +185,16 @@
   }
 
   /* ---------- AI teacher config (stored in localStorage esw_ai) ---------- */
+  // Build-time defaults: CI (pages.yml) replaces __GROQ_KEY__ with the GitHub secret.
+  // User's manual settings (localStorage) always override these defaults.
+  var AI_DEFAULTS = { url: "https://api.groq.com/openai/v1", key: "__GROQ_KEY__", model: "openai/gpt-oss-120b" };
   function getAIConfig() {
-    try { return JSON.parse(localStorage.getItem("esw_ai") || "{}"); } catch (e) { return {}; }
+    try {
+      var s = JSON.parse(localStorage.getItem("esw_ai") || "{}");
+      if (s.url && s.model) return s;
+      if (AI_DEFAULTS.key && AI_DEFAULTS.key.indexOf("__") !== 0) return AI_DEFAULTS;
+      return {};
+    } catch (e) { return {}; }
   }
   function saveAIConfig(cfg) {
     try { localStorage.setItem("esw_ai", JSON.stringify(cfg)); } catch (e) {}

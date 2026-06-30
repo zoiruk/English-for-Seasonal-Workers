@@ -2,6 +2,9 @@
 # Setup (once, on github.com): repo Settings -> Pages -> Source = "GitHub Actions".
 # Free GitHub Pages requires a PUBLIC repo. App is served at https://<user>.github.io/<repo>/
 # (all paths in app/ are relative, so the subpath works). Book A0-A1/ stays gitignored.
+#
+# AI teacher: add GROQ_API_KEY to repo Secrets (Settings -> Secrets -> Actions).
+# The sed step below injects it into app.js at build time so users need no manual setup.
 name: Deploy PWA to GitHub Pages
 
 on:
@@ -26,6 +29,13 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+
+      - name: Inject Groq API key
+        env:
+          GROQ_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: |
+          sed -i "s|__GROQ_KEY__|${GROQ_KEY}|g" app/app.js
+
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
