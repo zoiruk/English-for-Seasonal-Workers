@@ -22,6 +22,8 @@
       phonetics_title: "Звуки и слух",
       phonetics_sub: "Трудные звуки и ударение — тренируй ухо",
       phonetics_hint: "👇 Выберите звук. Слушайте 🔊 и повторяйте вслух. Это тренировка уха и образец — оценить ваше произношение приложение не может.",
+      sound_title: "Звуки и чтение",
+      sound_sub: "Произношение на слух и чтение по буквам",
       ph_model: "Послушай и повтори",
       ph_drill: "Что прозвучало?",
       ph_stress_drill: "Где ударение? Нажмите громкий слог",
@@ -397,16 +399,10 @@
         '<div class="body"><div class="t">' + t("phrasebook_title") + '</div><div class="s">' + t("phrasebook_sub") + "</div></div>" +
         '<div class="done" style="color:var(--text3)">›</div></div>';
     }
-    if (PHONETICS.length) {
-      h += '<div class="lesson-card" data-nav="phonetics">' +
+    if (PHONETICS.length || READING_RULES.length) {
+      h += '<div class="lesson-card" data-nav="sound">' +
         '<div class="num">🗣️</div>' +
-        '<div class="body"><div class="t">' + t("phonetics_title") + '</div><div class="s">' + t("phonetics_sub") + "</div></div>" +
-        '<div class="done" style="color:var(--text3)">›</div></div>';
-    }
-    if (READING_RULES.length) {
-      h += '<div class="lesson-card" data-nav="reading">' +
-        '<div class="num">🔤</div>' +
-        '<div class="body"><div class="t">' + t("reading_title") + '</div><div class="s">' + t("reading_sub") + "</div></div>" +
+        '<div class="body"><div class="t">' + t("sound_title") + '</div><div class="s">' + t("sound_sub") + "</div></div>" +
         '<div class="done" style="color:var(--text3)">›</div></div>';
     }
     if (SCENARIOS.length) {
@@ -580,23 +576,62 @@
      A training screen like the phrasebook: model (listen + repeat, no scoring) plus a
      receptive drill for the contrasts the Phase-0 probe confirmed the voice renders.
      No streak/done tracking — mastery practice, not an exam. ---------- */
-  function renderPhonetics() {
-    setRoute("phonetics");
+  /* ---------- SOUND & READING (one hub entry, two sub-tabs) ----------
+     "Звуки и слух" (phonetics.js, ear-training) + "Чтение по буквам" (reading.js,
+     decoding) live under a single hub card with a segmented sub-tab bar. Deep links
+     #phonetics[/id] and #reading[/id] still resolve; renderPhonetics/renderReading are
+     thin wrappers so every unit's back button lands on the correct sub-tab. ---------- */
+  function renderSound(tab) {
+    var tabs = [];
+    if (PHONETICS.length) tabs.push("phonetics");
+    if (READING_RULES.length) tabs.push("reading");
+    if (!tabs.length) return renderHub();
+    if (tabs.indexOf(tab) < 0) tab = tabs[0];
+    setRoute(tab); // reload restores the same sub-tab; keeps #phonetics/#reading deep links valid
+    var isRd = tab === "reading";
     var h = backBtnHTML() +
-      '<div class="hub-head" style="padding-top:46px"><h1>🗣️ ' + t("phonetics_title") + "</h1><p>" + t("phonetics_sub") + "</p></div>";
-    h += '<div class="card note">' + t("phonetics_hint") + "</div>";
-    PHONETICS.forEach(function (s) {
-      h += '<div class="lesson-card" data-ph="' + esc(s.id) + '">' +
-        '<div class="num">' + s.icon + "</div>" +
-        '<div class="body"><div class="t">' + esc(s.title_ru) + '</div><div class="s">' + esc(s.goal_ru) + "</div></div>" +
-        '<div class="done" style="color:var(--text3)">›</div></div>';
-    });
+      '<div class="hub-head" style="padding-top:46px"><h1>' +
+      (isRd ? "🔤 " + t("reading_title") : "🗣️ " + t("phonetics_title")) + "</h1><p>" +
+      (isRd ? t("reading_sub") : t("phonetics_sub")) + "</p></div>";
+    if (tabs.length > 1) {
+      h += '<div class="tabs">' +
+        '<button class="tab' + (isRd ? "" : " on") + '" data-sound="phonetics">🗣️ ' + t("phonetics_title") + "</button>" +
+        '<button class="tab' + (isRd ? " on" : "") + '" data-sound="reading">🔤 ' + t("reading_title") + "</button>" +
+        "</div>";
+    }
+    h += '<div class="card note">' + (isRd ? t("reading_hint") : t("phonetics_hint")) + "</div>";
+    if (isRd) {
+      READING_RULES.forEach(function (blk) {
+        var sub = blk.kind === "reference"
+          ? t("rd_ref")
+          : t("rd_count", (blk.patterns || []).length + (blk.check || []).length);
+        h += '<div class="lesson-card" data-rd="' + esc(blk.id) + '">' +
+          '<div class="num">' + blk.icon + "</div>" +
+          '<div class="body"><div class="t">' + esc(blk.title_ru) + '</div><div class="s">' + sub + "</div></div>" +
+          '<div class="done" style="color:var(--text3)">›</div></div>';
+      });
+    } else {
+      PHONETICS.forEach(function (s) {
+        h += '<div class="lesson-card" data-ph="' + esc(s.id) + '">' +
+          '<div class="num">' + s.icon + "</div>" +
+          '<div class="body"><div class="t">' + esc(s.title_ru) + '</div><div class="s">' + esc(s.goal_ru) + "</div></div>" +
+          '<div class="done" style="color:var(--text3)">›</div></div>';
+      });
+    }
     app.innerHTML = h;
     document.getElementById("back").onclick = function () { renderHub(); };
+    app.querySelectorAll("[data-sound]").forEach(function (el) {
+      el.onclick = function () { renderSound(el.dataset.sound); };
+    });
     app.querySelectorAll("[data-ph]").forEach(function (el) {
       el.onclick = function () { renderPhoneticsUnit(el.dataset.ph); };
     });
+    app.querySelectorAll("[data-rd]").forEach(function (el) {
+      el.onclick = function () { renderReadingUnit(el.dataset.rd); };
+    });
   }
+
+  function renderPhonetics() { renderSound("phonetics"); }
 
   function renderPhoneticsUnit(id) {
     var s = PHONETICS.filter(function (x) { return x.id === id; })[0];
@@ -708,26 +743,7 @@
      (no scoring); "check" items are a tap-to-choose transcr drill (decoys pulled from
      other words in the same block) — audio is revealed only AFTER the learner answers,
      so it can't be used as a shortcut. ---------- */
-  function renderReading() {
-    setRoute("reading");
-    var h = backBtnHTML() +
-      '<div class="hub-head" style="padding-top:46px"><h1>🔤 ' + t("reading_title") + "</h1><p>" + t("reading_sub") + "</p></div>";
-    h += '<div class="card note">' + t("reading_hint") + "</div>";
-    READING_RULES.forEach(function (blk) {
-      var sub = blk.kind === "reference"
-        ? t("rd_ref")
-        : t("rd_count", (blk.patterns || []).length + (blk.check || []).length);
-      h += '<div class="lesson-card" data-rd="' + esc(blk.id) + '">' +
-        '<div class="num">' + blk.icon + "</div>" +
-        '<div class="body"><div class="t">' + esc(blk.title_ru) + '</div><div class="s">' + sub + "</div></div>" +
-        '<div class="done" style="color:var(--text3)">›</div></div>';
-    });
-    app.innerHTML = h;
-    document.getElementById("back").onclick = function () { renderHub(); };
-    app.querySelectorAll("[data-rd]").forEach(function (el) {
-      el.onclick = function () { renderReadingUnit(el.dataset.rd); };
-    });
-  }
+  function renderReading() { renderSound("reading"); }
 
   function renderReadingUnit(id) {
     var blk = READING_RULES.filter(function (x) { return x.id === id; })[0];
@@ -1999,6 +2015,7 @@
       else if (nav.dataset.nav === "cert-a2") renderCertificate("a2");
       else if (nav.dataset.nav === "cert-b1") renderCertificate("b1");
       else if (nav.dataset.nav === "scenarios") renderScenarioList();
+      else if (nav.dataset.nav === "sound") renderSound();
       else if (nav.dataset.nav === "phonetics") renderPhonetics();
       else if (nav.dataset.nav === "reading") renderReading();
       else if (nav.dataset.nav === "ai-settings") renderAISettings();
@@ -2041,6 +2058,7 @@
     if (h === "scenarios") { renderScenarioList(); return; }
     var scm = h.match(/^scenario\/([A-Za-z0-9_-]+)$/);
     if (scm) { renderScenario(scm[1]); return; }
+    if (h === "sound") { renderSound(); return; }
     if (h === "phonetics") { renderPhonetics(); return; }
     var phm = h.match(/^phonetics\/([A-Za-z0-9_-]+)$/);
     if (phm) { renderPhoneticsUnit(phm[1]); return; }
