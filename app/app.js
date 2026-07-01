@@ -731,14 +731,14 @@
       '<div class="l-head"><span class="pos">' + blk.icon + '</span>' +
       '<div class="htitle"><div class="ttl">' + esc(blk.title_ru) + '</div><div class="sub">' + t("reading_title") + "</div></div></div>";
     h += '<div class="card note">' + esc(blk.rule_ru) + "</div>";
-    h += '<div class="ph-sec">' + t("rd_patterns") + '</div><div class="g-table-wrap"><table class="g-table">' +
+    h += '<div class="ph-sec">' + t("rd_patterns") + '</div><div class="card"><div class="g-table-wrap"><table class="g-table">' +
       "<thead><tr><td>Буквы</td><td>Звук</td><td>Пример</td><td></td></tr></thead><tbody>";
     (blk.patterns || []).forEach(function (p) {
       h += '<tr><td class="sj">' + esc(p.label) + '</td><td class="rt">' + esc(p.sound_ru) + "</td>" +
         '<td><div class="ex">' + esc(p.example.en) + '</div><div class="tr">' + esc(p.example.transcr) +
         '</div><div class="rt">' + esc(p.example.ru) + "</div></td><td>" + spkBtn(p.example.en) + "</td></tr>";
     });
-    h += "</tbody></table></div>";
+    h += "</tbody></table></div></div>";
     h += '<div class="ph-sec">' + t("rd_check") + "</div>";
     (blk.check || []).forEach(function (c, i) {
       var opts = rdOptions(blk, i);
