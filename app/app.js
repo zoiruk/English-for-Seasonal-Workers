@@ -8,6 +8,7 @@
   var READER = BOOKS.reduce(function (a, b) { return a.concat(b.chapters || []); }, []); // flat chapters (counts/lookups)
   var SCENARIOS = window.SCENARIOS || [];
   var PHONETICS = window.PHONETICS || [];
+  var READING_RULES = window.READING_RULES || [];
 
   /* ---------- UI strings (localization-ready: add UI.uz later) ---------- */
   var UI = {
@@ -28,6 +29,14 @@
       ph_correct: "✅ Верно!",
       ph_wrong: "❌ Правильно: {0}",
       ph_again: "🔁 Ещё раз",
+      reading_title: "Чтение по буквам",
+      reading_sub: "Учись читать новое слово сам — по буквосочетаниям",
+      reading_hint: "👇 Выберите правило. Сначала примеры — послушайте 🔊. Потом «Прочитай сам»: выберите, как читается слово, ДО того, как услышите его вслух.",
+      rd_count: "{0} слов",
+      rd_examples: "Примеры",
+      rd_check: "Прочитай сам",
+      rd_correct: "✅ Верно! Так и читается.",
+      rd_wrong: "❌ Читается: {0}",
       words_learned: "слов изучено",
       streak: "дней подряд",
       lessons_done: "уроков пройдено",
@@ -390,6 +399,12 @@
         '<div class="body"><div class="t">' + t("phonetics_title") + '</div><div class="s">' + t("phonetics_sub") + "</div></div>" +
         '<div class="done" style="color:var(--text3)">›</div></div>';
     }
+    if (READING_RULES.length) {
+      h += '<div class="lesson-card" data-nav="reading">' +
+        '<div class="num">🔤</div>' +
+        '<div class="body"><div class="t">' + t("reading_title") + '</div><div class="s">' + t("reading_sub") + "</div></div>" +
+        '<div class="done" style="color:var(--text3)">›</div></div>';
+    }
     if (SCENARIOS.length) {
       h += '<div class="lesson-card sc-entry" data-nav="scenarios">' +
         '<div class="num">🆘</div>' +
@@ -681,6 +696,122 @@
         };
       });
     });
+  }
+
+  /* ---------- READING (phonics / decoding trainer, snowball-exempt) ----------
+     Companion to PHONETICS: teaches letter-combination -> sound RULES so the learner
+     can decode a NEW word, not just recall memorised transcr. Examples are model+listen
+     (no scoring); "check" items are a tap-to-choose transcr drill (decoys pulled from
+     other words in the same block) — audio is revealed only AFTER the learner answers,
+     so it can't be used as a shortcut. ---------- */
+  function renderReading() {
+    setRoute("reading");
+    var h = backBtnHTML() +
+      '<div class="hub-head" style="padding-top:46px"><h1>🔤 ' + t("reading_title") + "</h1><p>" + t("reading_sub") + "</p></div>";
+    h += '<div class="card note">' + t("reading_hint") + "</div>";
+    READING_RULES.forEach(function (blk) {
+      var count = (blk.examples || []).length + (blk.check || []).length;
+      h += '<div class="lesson-card" data-rd="' + esc(blk.id) + '">' +
+        '<div class="num">' + blk.icon + "</div>" +
+        '<div class="body"><div class="t">' + esc(blk.title_ru) + '</div><div class="s">' + t("rd_count", count) + "</div></div>" +
+        '<div class="done" style="color:var(--text3)">›</div></div>';
+    });
+    app.innerHTML = h;
+    document.getElementById("back").onclick = function () { renderHub(); };
+    app.querySelectorAll("[data-rd]").forEach(function (el) {
+      el.onclick = function () { renderReadingUnit(el.dataset.rd); };
+    });
+  }
+
+  function renderReadingUnit(id) {
+    var blk = READING_RULES.filter(function (x) { return x.id === id; })[0];
+    if (!blk) return renderReading();
+    setRoute("reading/" + id);
+    var h = backBtnHTML() +
+      '<div class="l-head"><span class="pos">' + blk.icon + '</span>' +
+      '<div class="htitle"><div class="ttl">' + esc(blk.title_ru) + '</div><div class="sub">' + t("reading_title") + "</div></div></div>";
+    h += '<div class="card note">' + esc(blk.rule_ru) + "</div>";
+    h += '<div class="ph-sec">' + t("rd_examples") + '</div><div class="card">';
+    (blk.examples || []).forEach(function (w) {
+      h += '<div class="ex-row">' + spkBtn(w.en) + '<div><div class="en">' + esc(w.en) +
+        '</div><div class="tr">' + esc(w.transcr) + '</div><div class="ru">' + esc(w.ru) + "</div></div></div>";
+    });
+    h += "</div>";
+    h += '<div class="ph-sec">' + t("rd_check") + "</div>";
+    (blk.check || []).forEach(function (c, i) {
+      var opts = rdOptions(blk, i);
+      h += '<div class="card rd-check" data-i="' + i + '">' +
+        '<div class="en">' + esc(c.word.en) + "</div>" +
+        '<div class="ph-opts">' + opts.map(function (o) {
+          return '<button class="opt" data-i="' + i + '" data-t="' + esc(o) + '">' + esc(o) + "</button>";
+        }).join("") + "</div>" +
+        '<div class="q-fb ph-fb" data-i="' + i + '"></div></div>';
+    });
+    app.innerHTML = h;
+    document.getElementById("back").onclick = function () { renderReading(); };
+    app.querySelectorAll("[data-spk]").forEach(function (el) {
+      el.addEventListener("click", function () { speak(el.dataset.spk); });
+    });
+    wireRdCheck(blk);
+  }
+
+  // Build 3 shuffled transcr options (1 correct + 2 decoys from other words in the block).
+  function rdOptions(blk, i) {
+    var c = blk.check[i];
+    var pool = (blk.examples || []).concat((blk.check || []).map(function (x) { return x.word; }));
+    var seenTranscr = {};
+    var decoyPool = pool.filter(function (w) {
+      if (w.en === c.word.en || w.transcr === c.word.transcr) return false;
+      if (seenTranscr[w.transcr]) return false; // homophones (meet/meat "мит") must not both become decoys
+      seenTranscr[w.transcr] = 1;
+      return true;
+    });
+    var decoys = [];
+    while (decoys.length < 2 && decoyPool.length) {
+      var idx = Math.floor(Math.random() * decoyPool.length);
+      decoys.push(decoyPool.splice(idx, 1)[0].transcr);
+    }
+    var opts = [c.word.transcr].concat(decoys);
+    for (var j = opts.length - 1; j > 0; j--) {
+      var k = Math.floor(Math.random() * (j + 1));
+      var tmp = opts[j]; opts[j] = opts[k]; opts[k] = tmp;
+    }
+    return opts;
+  }
+
+  function wireRdCheck(blk) {
+    (blk.check || []).forEach(function (c, i) {
+      var card = app.querySelector('.rd-check[data-i="' + i + '"]');
+      if (!card) return;
+      var fb = card.querySelector(".ph-fb");
+      var answered = false;
+      card.querySelectorAll(".opt").forEach(function (b) {
+        b.onclick = function () {
+          if (answered) return; answered = true;
+          var right = b.dataset.t === c.word.transcr;
+          card.querySelectorAll(".opt").forEach(function (x) {
+            x.style.pointerEvents = "none";
+            if (x.dataset.t === c.word.transcr) x.classList.add("correct");
+            else if (x === b) x.classList.add("wrong");
+          });
+          fb.className = "q-fb ph-fb " + (right ? "ok" : "no");
+          fb.textContent = (right ? t("rd_correct") : t("rd_wrong", c.word.transcr)) + " " + c.hint_ru;
+          var spk = document.createElement("button");
+          spk.className = "spk"; spk.textContent = "🔊";
+          spk.onclick = function () { speak(c.word.en); };
+          fb.appendChild(spk);
+          rdAgainBtn(card, blk.id);
+        };
+      });
+    });
+  }
+
+  function rdAgainBtn(card, id) {
+    var again = document.createElement("button");
+    again.className = "btn ghost ph-again";
+    again.textContent = t("ph_again");
+    again.onclick = function () { renderReadingUnit(id); };
+    card.appendChild(again);
   }
 
   /* ---------- SCENARIOS (survival role-plays) ---------- */
@@ -1835,6 +1966,7 @@
       else if (nav.dataset.nav === "cert-b1") renderCertificate("b1");
       else if (nav.dataset.nav === "scenarios") renderScenarioList();
       else if (nav.dataset.nav === "phonetics") renderPhonetics();
+      else if (nav.dataset.nav === "reading") renderReading();
       else if (nav.dataset.nav === "ai-settings") renderAISettings();
       return;
     }
@@ -1878,6 +2010,9 @@
     if (h === "phonetics") { renderPhonetics(); return; }
     var phm = h.match(/^phonetics\/([A-Za-z0-9_-]+)$/);
     if (phm) { renderPhoneticsUnit(phm[1]); return; }
+    if (h === "reading") { renderReading(); return; }
+    var rdm = h.match(/^reading\/([A-Za-z0-9_-]+)$/);
+    if (rdm) { renderReadingUnit(rdm[1]); return; }
     renderHub();
   }
   window.addEventListener("hashchange", route);

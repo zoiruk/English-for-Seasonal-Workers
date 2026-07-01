@@ -11,6 +11,7 @@ const PHRASEBOOK = safeReq("../app/phrasebook.js");
 const BOOKS = safeReq("../app/reader.js");
 const SCENARIOS = safeReq("../app/scenarios.js");
 const PHONETICS = safeReq("../app/phonetics.js");
+const READING = safeReq("../app/reading.js");
 function safeReq(p) { try { return require(p) || []; } catch (e) { return []; } }
 
 function normCyr(t) { return String(t).toLowerCase().replace(/[\s'’\-.,!?;:«»"()…]/g, ""); }
@@ -68,6 +69,11 @@ PHONETICS.forEach((s) => {
     check(`PH ${s.id} pairs[${i}].b`, p.b.en, p.b.transcr);
   });
   (s.stress || []).forEach((w, i) => check(`PH ${s.id} stress[${i}]`, w.en, w.transcr));
+});
+// reading trainer: NOT a canonical source either — its transcr must MATCH the lexicon's
+READING.forEach((blk) => {
+  (blk.examples || []).forEach((w, i) => check(`RD ${blk.id} examples[${i}]`, w.en, w.transcr));
+  (blk.check || []).forEach((c, i) => check(`RD ${blk.id} check[${i}]`, c.word.en, c.word.transcr));
 });
 
 if (!errors.length) { console.log("[check-transcr-consistency] OK — 0 drift"); process.exit(0); }

@@ -9,6 +9,7 @@ const PHRASEBOOK = safeReq("../app/phrasebook.js");
 const BOOKS = safeReq("../app/reader.js");
 const SCENARIOS = safeReq("../app/scenarios.js");
 const PHONETICS = safeReq("../app/phonetics.js");
+const READING = safeReq("../app/reading.js");
 function safeReq(p) { try { return require(p) || []; } catch (e) { return []; } }
 
 // Offensive Russian stems. Tight list (high-severity, low false-positive).
@@ -57,6 +58,10 @@ PHONETICS.forEach((s) => {
     scan(`PH ${s.id} pairs[${i}].b (${p.b.en})`, p.b.transcr);
   });
   (s.stress || []).forEach((w, i) => scan(`PH ${s.id} stress[${i}] (${w.en})`, w.transcr));
+});
+READING.forEach((blk) => {
+  (blk.examples || []).forEach((w, i) => scan(`RD ${blk.id} examples[${i}] (${w.en})`, w.transcr));
+  (blk.check || []).forEach((c, i) => scan(`RD ${blk.id} check[${i}] (${c.word.en})`, c.word.transcr));
 });
 
 if (!errors.length) { console.log("[check-transcr-safe] OK — 0 offensive transcr"); process.exit(0); }

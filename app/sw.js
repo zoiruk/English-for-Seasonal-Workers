@@ -1,7 +1,7 @@
 /* Service worker — offline-first for budget Androids with no field internet.
    Bump CACHE_VERSION to force-refresh after data/code changes (kill-switch). */
-const CACHE_VERSION = "esw-v106";
-const PRECACHE = ["./", "index.html", "style.css", "app.js", "data.js", "phrasebook.js", "reader.js", "scenarios.js", "phonetics.js", "manifest.json", "icon.svg"];
+const CACHE_VERSION = "esw-v107";
+const PRECACHE = ["./", "index.html", "style.css", "app.js", "data.js", "phrasebook.js", "reader.js", "scenarios.js", "phonetics.js", "reading.js", "manifest.json", "icon.svg"];
 
 self.addEventListener("install", (e) => {
   self.skipWaiting();
