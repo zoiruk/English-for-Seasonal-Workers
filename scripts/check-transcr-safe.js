@@ -60,7 +60,7 @@ PHONETICS.forEach((s) => {
   (s.stress || []).forEach((w, i) => scan(`PH ${s.id} stress[${i}] (${w.en})`, w.transcr));
 });
 READING.forEach((blk) => {
-  (blk.examples || []).forEach((w, i) => scan(`RD ${blk.id} examples[${i}] (${w.en})`, w.transcr));
+  (blk.patterns || []).forEach((p, i) => scan(`RD ${blk.id} patterns[${i}] (${p.example.en})`, p.example.transcr));
   (blk.check || []).forEach((c, i) => scan(`RD ${blk.id} check[${i}] (${c.word.en})`, c.word.transcr));
 });
 

@@ -72,7 +72,7 @@ PHONETICS.forEach((s) => {
 });
 // reading trainer: NOT a canonical source either — its transcr must MATCH the lexicon's
 READING.forEach((blk) => {
-  (blk.examples || []).forEach((w, i) => check(`RD ${blk.id} examples[${i}]`, w.en, w.transcr));
+  (blk.patterns || []).forEach((p, i) => check(`RD ${blk.id} patterns[${i}]`, p.example.en, p.example.transcr));
   (blk.check || []).forEach((c, i) => check(`RD ${blk.id} check[${i}]`, c.word.en, c.word.transcr));
 });
 
