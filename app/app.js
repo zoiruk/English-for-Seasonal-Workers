@@ -24,6 +24,11 @@
       phonetics_hint: "👇 Выберите звук. Слушайте 🔊 и повторяйте вслух. Это тренировка уха и образец — оценить ваше произношение приложение не может.",
       sound_title: "Звуки и чтение",
       sound_sub: "Произношение на слух и чтение по буквам",
+      practice_title: "Разговор и книги",
+      practice_sub: "Фразы, ситуации и истории для чтения",
+      practice_tab_pb: "📒 Фразы",
+      practice_tab_sc: "🆘 Ситуации",
+      practice_tab_lib: "📚 Книги",
       ph_model: "Послушай и повтори",
       ph_drill: "Что прозвучало?",
       ph_stress_drill: "Где ударение? Нажмите громкий слог",
@@ -393,29 +398,16 @@
       '<div class="stat"><div class="v">🔥 ' + store.streak + '</div><div class="l">' + t("streak") + "</div></div>" +
       '<div class="stat"><div class="v">' + done + "/" + LESSONS.length + '</div><div class="l">' + t("lessons_done") + "</div></div></div>";
     if (LESSONS.length > A1_MAX) h += journeyHTML();
-    if (PHRASEBOOK.length) {
-      h += '<div class="lesson-card pb-entry" data-nav="phrasebook">' +
-        '<div class="num">📒</div>' +
-        '<div class="body"><div class="t">' + t("phrasebook_title") + '</div><div class="s">' + t("phrasebook_sub") + "</div></div>" +
-        '<div class="done" style="color:var(--text3)">›</div></div>';
-    }
     if (PHONETICS.length || READING_RULES.length) {
       h += '<div class="lesson-card" data-nav="sound">' +
         '<div class="num">🗣️</div>' +
         '<div class="body"><div class="t">' + t("sound_title") + '</div><div class="s">' + t("sound_sub") + "</div></div>" +
         '<div class="done" style="color:var(--text3)">›</div></div>';
     }
-    if (SCENARIOS.length) {
-      h += '<div class="lesson-card sc-entry" data-nav="scenarios">' +
-        '<div class="num">🆘</div>' +
-        '<div class="body"><div class="t">' + t("sc_title") + '</div><div class="s">' + t("sc_sub") + "</div></div>" +
-        '<div class="done" style="color:var(--text3)">›</div></div>';
-    }
-    if (BOOKS.length) {
-      h += '<div class="lesson-card" data-nav="library">' +
-        '<div class="num">📚</div>' +
-        '<div class="body"><div class="t">' + t("reader_lib_title") + '</div>' +
-        '<div class="s">' + t("reader_lib_sub") + '</div></div>' +
+    if (PHRASEBOOK.length || SCENARIOS.length || BOOKS.length) {
+      h += '<div class="lesson-card" data-nav="practice">' +
+        '<div class="num">💬</div>' +
+        '<div class="body"><div class="t">' + t("practice_title") + '</div><div class="s">' + t("practice_sub") + "</div></div>" +
         '<div class="done" style="color:var(--text3)">›</div></div>';
     }
     var pool = reviewPool();
@@ -535,23 +527,79 @@
   }
 
   /* ---------- PHRASEBOOK (reference, snowball-exempt) ---------- */
-  function renderPhrasebook() {
-    setRoute("phrasebook");
+  /* ---------- PRACTICE (one hub entry, three sub-tabs) ----------
+     "Разговорник" (phrasebook.js) + "Ситуации" (scenarios.js) + "Книги" (reader.js)
+     live under a single hub card with a segmented sub-tab bar. Deep links #phrasebook,
+     #scenarios (+ #scenario/id) and #library (+ #book/...) still resolve; the three
+     render* functions below are thin wrappers so every inner back button lands on the
+     correct sub-tab. Inner screens (category / scenario play / book / chapter) untouched. */
+  function renderPractice(tab) {
+    closeGloss();
+    var tabs = [];
+    if (PHRASEBOOK.length) tabs.push("phrasebook");
+    if (SCENARIOS.length) tabs.push("scenarios");
+    if (BOOKS.length) tabs.push("library");
+    if (!tabs.length) return renderHub();
+    if (tabs.indexOf(tab) < 0) tab = tabs[0];
+    setRoute(tab); // reload restores the same sub-tab; keeps #phrasebook/#scenarios/#library deep links valid
+    var head = tab === "phrasebook" ? ["📒 " + t("phrasebook_title"), t("phrasebook_sub")]
+      : tab === "scenarios" ? ["🆘 " + t("sc_title"), t("sc_hint")]
+      : ["📚 " + t("reader_lib_title"), t("reader_lib_sub")];
     var h = backBtnHTML() +
-      '<div class="hub-head" style="padding-top:46px"><h1>📒 ' + t("phrasebook_title") + "</h1><p>" + t("phrasebook_sub") + "</p></div>";
-    h += '<div class="card note">' + t("phrasebook_hint") + "</div>";
-    PHRASEBOOK.forEach(function (c) {
-      h += '<div class="lesson-card" data-cat="' + esc(c.cat) + '">' +
-        '<div class="num">' + c.icon + "</div>" +
-        '<div class="body"><div class="t">' + esc(c.title_ru) + '</div><div class="s">' + t("phrasebook_count", c.phrases.length) + "</div></div>" +
-        '<div class="done" style="color:var(--text3)">›</div></div>';
-    });
+      '<div class="hub-head" style="padding-top:46px"><h1>' + head[0] + "</h1><p>" + head[1] + "</p></div>";
+    if (tabs.length > 1) {
+      h += '<div class="tabs">';
+      if (PHRASEBOOK.length) h += '<button class="tab' + (tab === "phrasebook" ? " on" : "") + '" data-practice="phrasebook">' + t("practice_tab_pb") + "</button>";
+      if (SCENARIOS.length) h += '<button class="tab' + (tab === "scenarios" ? " on" : "") + '" data-practice="scenarios">' + t("practice_tab_sc") + "</button>";
+      if (BOOKS.length) h += '<button class="tab' + (tab === "library" ? " on" : "") + '" data-practice="library">' + t("practice_tab_lib") + "</button>";
+      h += "</div>";
+    }
+    if (tab === "phrasebook") {
+      h += '<div class="card note">' + t("phrasebook_hint") + "</div>";
+      PHRASEBOOK.forEach(function (c) {
+        h += '<div class="lesson-card" data-cat="' + esc(c.cat) + '">' +
+          '<div class="num">' + c.icon + "</div>" +
+          '<div class="body"><div class="t">' + esc(c.title_ru) + '</div><div class="s">' + t("phrasebook_count", c.phrases.length) + "</div></div>" +
+          '<div class="done" style="color:var(--text3)">›</div></div>';
+      });
+    } else if (tab === "scenarios") {
+      SCENARIOS.forEach(function (sc) {
+        h += '<div class="lesson-card sc-entry" data-sc="' + esc(sc.id) + '">' +
+          '<div class="num">' + esc(sc.icon) + "</div>" +
+          '<div class="body"><div class="t">' + esc(sc.title_ru) + '</div><div class="s">' + esc(sc.sub_ru) + "</div></div>" +
+          '<div class="done" style="color:var(--text3)">›</div></div>';
+      });
+    } else {
+      h += '<div class="card note">' + t("reader_lib_hint") + "</div>";
+      BOOKS.forEach(function (bk) {
+        var chs = bk.chapters || [];
+        var open = chs.filter(function (c) { return chUnlocked(bk, c); }).length;
+        var readN = chs.filter(function (c) { return chRead(bk, c); }).length;
+        var allRead = chs.length && readN === chs.length;
+        h += '<div class="lesson-card" data-book="' + esc(bk.id) + '">' +
+          '<div class="num">' + bk.emoji + "</div>" +
+          '<div class="body"><div class="t">' + esc(bk.title_ru) + "</div>" +
+          '<div class="s">' + t("reader_book_sub", open, chs.length) + "</div></div>" +
+          (allRead ? '<div class="done">✓</div>' : '<div class="done" style="color:var(--text3)">›</div>') + "</div>";
+      });
+    }
     app.innerHTML = h;
     document.getElementById("back").onclick = function () { renderHub(); };
+    app.querySelectorAll("[data-practice]").forEach(function (el) {
+      el.onclick = function () { renderPractice(el.dataset.practice); };
+    });
     app.querySelectorAll("[data-cat]").forEach(function (el) {
       el.onclick = function () { renderPhraseCategory(el.dataset.cat); };
     });
+    app.querySelectorAll("[data-sc]").forEach(function (el) {
+      el.onclick = function () { renderScenario(el.dataset.sc); };
+    });
+    app.querySelectorAll("[data-book]").forEach(function (el) {
+      el.onclick = function () { var bk = bookById(el.dataset.book); if (bk) renderReaderList(bk); };
+    });
   }
+
+  function renderPhrasebook() { renderPractice("phrasebook"); }
 
   function renderPhraseCategory(cat) {
     var c = PHRASEBOOK.filter(function (x) { return x.cat === cat; })[0];
@@ -867,22 +915,7 @@
   /* ---------- SCENARIOS (survival role-plays) ---------- */
   var SC_SPK = { m: "Менеджер", w: "Рабочий", c: "Кассир", d: "Доктор", a: "Агентство", n: "Медсестра", r: "Регистратор" };
 
-  function renderScenarioList() {
-    setRoute("scenarios");
-    var h = backBtnHTML() +
-      '<div class="hub-head" style="padding-top:46px"><h1>🆘 ' + t("sc_title") + '</h1><p>' + t("sc_hint") + '</p></div>';
-    SCENARIOS.forEach(function (sc) {
-      h += '<div class="lesson-card sc-entry" data-sc="' + esc(sc.id) + '">' +
-        '<div class="num">' + esc(sc.icon) + '</div>' +
-        '<div class="body"><div class="t">' + esc(sc.title_ru) + '</div><div class="s">' + esc(sc.sub_ru) + '</div></div>' +
-        '<div class="done" style="color:var(--text3)">›</div></div>';
-    });
-    app.innerHTML = h;
-    document.getElementById("back").onclick = renderHub;
-    app.querySelectorAll("[data-sc]").forEach(function (el) {
-      el.onclick = function () { renderScenario(el.dataset.sc); };
-    });
-  }
+  function renderScenarioList() { renderPractice("scenarios"); }
 
   function renderScenario(id) {
     var sc = SCENARIOS.filter(function (x) { return x.id === id; })[0];
@@ -1041,29 +1074,7 @@
   }
 
   // Library shelf: lists books (one now). Each card -> that book's chapter list.
-  function renderLibrary() {
-    closeGloss();
-    setRoute("library");
-    var h = backBtnHTML() +
-      '<div class="hub-head" style="padding-top:46px"><h1>📚 ' + t("reader_lib_title") + "</h1><p>" + t("reader_lib_sub") + "</p></div>";
-    h += '<div class="card note">' + t("reader_lib_hint") + "</div>";
-    BOOKS.forEach(function (bk) {
-      var chs = bk.chapters || [];
-      var open = chs.filter(function (c) { return chUnlocked(bk, c); }).length;
-      var readN = chs.filter(function (c) { return chRead(bk, c); }).length;
-      var allRead = chs.length && readN === chs.length;
-      h += '<div class="lesson-card" data-book="' + esc(bk.id) + '">' +
-        '<div class="num">' + bk.emoji + "</div>" +
-        '<div class="body"><div class="t">' + esc(bk.title_ru) + "</div>" +
-        '<div class="s">' + t("reader_book_sub", open, chs.length) + "</div></div>" +
-        (allRead ? '<div class="done">✓</div>' : '<div class="done" style="color:var(--text3)">›</div>') + "</div>";
-    });
-    app.innerHTML = h;
-    document.getElementById("back").onclick = renderHub;
-    app.querySelectorAll("[data-book]").forEach(function (el) {
-      el.onclick = function () { var bk = bookById(el.dataset.book); if (bk) renderReaderList(bk); };
-    });
-  }
+  function renderLibrary() { renderPractice("library"); }
 
   function renderReaderList(book) {
     closeGloss();
@@ -2008,7 +2019,8 @@
   app.addEventListener("click", function (e) {
     var nav = e.target.closest("[data-nav]");
     if (nav) {
-      if (nav.dataset.nav === "phrasebook") renderPhrasebook();
+      if (nav.dataset.nav === "practice") renderPractice();
+      else if (nav.dataset.nav === "phrasebook") renderPhrasebook();
       else if (nav.dataset.nav === "library") renderLibrary();
       else if (nav.dataset.nav === "review") renderReview();
       else if (nav.dataset.nav === "cert") renderCertificate();
@@ -2050,6 +2062,7 @@
       if (ch && store.done[ch.id]) { bm[3] ? renderChapterQuiz(ch, bk) : renderChapter(ch, bk); return; }
       renderReaderList(bk); return;
     }
+    if (h === "practice") { renderPractice(); return; }
     if (h === "phrasebook") { renderPhrasebook(); return; }
     if (h === "review") { renderReview(); return; }
     if (h === "cert") { renderCertificate(); return; }
