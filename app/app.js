@@ -342,6 +342,7 @@
   store.last = store.last || "";
   store.srs = store.srs || {};         // Leitner SRS per word: { "<en>": { box: 1-5, due: <epoch-day int> } }
   store.srs_snd = store.srs_snd || {}; // Leitner SRS per SOUND/READING drill item ("rd:blk:i" / "ph:blk:pair:i" / "ph:blk:stress:i")
+  store.seen_snd = store.seen_snd || {}; // sound/reading BLOCKS the learner has opened ("rd:<blkId>" / "ph:<blkId>") — gates the sound-review pool, like store.seen gates words
   store.certName = store.certName || "";
   store.certDate = store.certDate || ""; // YYYY-M-D, set once when the A0-A1 course is completed (15/15)
   store.certDateA2 = store.certDateA2 || ""; // YYYY-M-D, set once when the A2 level is completed
@@ -690,6 +691,7 @@
     var s = PHONETICS.filter(function (x) { return x.id === id; })[0];
     if (!s) return renderPhonetics();
     setRoute("phonetics/" + id);
+    markSoundSeen("ph:" + s.id); // opened a sound block -> its pairs/stress join the review pool
     var h = backBtnHTML() +
       '<div class="l-head"><span class="pos">' + s.icon + '</span>' +
       '<div class="htitle"><div class="ttl">' + esc(s.title_ru) + '</div><div class="sub">' + t("phonetics_title") + "</div></div></div>";
@@ -803,6 +805,7 @@
     if (!blk) return renderReading();
     setRoute("reading/" + id);
     if (blk.kind === "reference") return renderReadingReference(blk);
+    markSoundSeen("rd:" + blk.id); // opened a decoding block -> its checks join the review pool
     var h = backBtnHTML() +
       '<div class="l-head"><span class="pos">' + blk.icon + '</span>' +
       '<div class="htitle"><div class="ttl">' + esc(blk.title_ru) + '</div><div class="sub">' + t("reading_title") + "</div></div></div>";
@@ -1786,15 +1789,23 @@
      (pairs / stress — "listen"-only model rows have no objective answer, excluded) and
      reading.js (decoding checks). Each item carries a stable key for its own SRS bucket
      (store.srs_snd), so a reading "shop" never collides with a lesson word "shop". ---- */
+  // Mark a sound/reading block as opened so its drills join the review pool (mirrors
+  // how opening a lesson's Words tab adds that lesson's words via store.seen).
+  function markSoundSeen(blockKey) {
+    if (!store.seen_snd) store.seen_snd = {};
+    if (!store.seen_snd[blockKey]) { store.seen_snd[blockKey] = true; save(store); }
+  }
   function soundItems() {
-    var items = [];
+    var items = [], seen = store.seen_snd || {};
     READING_RULES.forEach(function (blk) {
       if (blk.kind === "reference") return;
+      if (!seen["rd:" + blk.id]) return; // only blocks the learner has opened
       (blk.check || []).forEach(function (c, i) {
         items.push({ key: "rd:" + blk.id + ":" + i, type: "rd", blk: blk, i: i });
       });
     });
     PHONETICS.forEach(function (s) {
+      if (!seen["ph:" + s.id]) return; // only blocks the learner has opened
       if (s.kind === "pairs") (s.pairs || []).forEach(function (p, i) {
         items.push({ key: "ph:" + s.id + ":pair:" + i, type: "pair", s: s, i: i });
       });
