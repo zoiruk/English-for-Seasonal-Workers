@@ -74,6 +74,7 @@ PHONETICS.forEach((s) => {
 READING.forEach((blk) => {
   (blk.patterns || []).forEach((p, i) => check(`RD ${blk.id} patterns[${i}]`, p.example.en, p.example.transcr));
   (blk.check || []).forEach((c, i) => check(`RD ${blk.id} check[${i}]`, c.word.en, c.word.transcr));
+  (blk.ipa || []).forEach((r, i) => check(`RD ${blk.id} ipa[${i}]`, r.en, r.transcr)); // reference chart
 });
 
 if (!errors.length) { console.log("[check-transcr-consistency] OK — 0 drift"); process.exit(0); }

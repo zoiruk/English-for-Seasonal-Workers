@@ -33,8 +33,12 @@
       reading_sub: "Учись читать новое слово сам — по буквосочетаниям",
       reading_hint: "👇 Выберите правило. Сначала примеры — послушайте 🔊. Потом «Прочитай сам»: выберите, как читается слово, ДО того, как услышите его вслух.",
       rd_count: "{0} слов",
+      rd_ref: "📖 справка · без теста",
       rd_patterns: "Буква → звук",
       rd_check: "Прочитай сам",
+      rd_sym: "Звук",
+      rd_word: "Слово",
+      rd_type: "Тип",
       rd_correct: "✅ Верно! Так и читается.",
       rd_wrong: "❌ Читается: {0}",
       words_learned: "слов изучено",
@@ -710,10 +714,12 @@
       '<div class="hub-head" style="padding-top:46px"><h1>🔤 ' + t("reading_title") + "</h1><p>" + t("reading_sub") + "</p></div>";
     h += '<div class="card note">' + t("reading_hint") + "</div>";
     READING_RULES.forEach(function (blk) {
-      var count = (blk.examples || []).length + (blk.check || []).length;
+      var sub = blk.kind === "reference"
+        ? t("rd_ref")
+        : t("rd_count", (blk.patterns || []).length + (blk.check || []).length);
       h += '<div class="lesson-card" data-rd="' + esc(blk.id) + '">' +
         '<div class="num">' + blk.icon + "</div>" +
-        '<div class="body"><div class="t">' + esc(blk.title_ru) + '</div><div class="s">' + t("rd_count", count) + "</div></div>" +
+        '<div class="body"><div class="t">' + esc(blk.title_ru) + '</div><div class="s">' + sub + "</div></div>" +
         '<div class="done" style="color:var(--text3)">›</div></div>';
     });
     app.innerHTML = h;
@@ -727,6 +733,7 @@
     var blk = READING_RULES.filter(function (x) { return x.id === id; })[0];
     if (!blk) return renderReading();
     setRoute("reading/" + id);
+    if (blk.kind === "reference") return renderReadingReference(blk);
     var h = backBtnHTML() +
       '<div class="l-head"><span class="pos">' + blk.icon + '</span>' +
       '<div class="htitle"><div class="ttl">' + esc(blk.title_ru) + '</div><div class="sub">' + t("reading_title") + "</div></div></div>";
@@ -755,6 +762,30 @@
       el.addEventListener("click", function () { speak(el.dataset.spk); });
     });
     wireRdCheck(blk);
+  }
+
+  // Reference block (kind:"reference"): the full IPA table, view-only — no "read it
+  // yourself" drill, just symbol / keyword+🔊 / type. Additive path; does not touch the
+  // patterns+check renderer above or the lesson quiz engine.
+  function renderReadingReference(blk) {
+    var h = backBtnHTML() +
+      '<div class="l-head"><span class="pos">' + blk.icon + '</span>' +
+      '<div class="htitle"><div class="ttl">' + esc(blk.title_ru) + '</div><div class="sub">' + t("reading_title") + "</div></div></div>";
+    h += '<div class="card note">' + esc(blk.rule_ru) + "</div>";
+    h += '<div class="card"><div class="g-table-wrap"><table class="g-table">' +
+      "<thead><tr><td>" + t("rd_sym") + "</td><td>" + t("rd_word") + "</td><td>" + t("rd_type") + "</td><td></td></tr></thead><tbody>";
+    (blk.ipa || []).forEach(function (r) {
+      h += '<tr><td class="sj">' + esc(r.sym) + "</td>" +
+        '<td><div class="ex">' + esc(r.en) + '</div><div class="tr">' + esc(r.transcr) +
+        '</div><div class="rt">' + esc(r.ru) + "</div></td>" +
+        '<td class="rt">' + esc(r.type_ru) + "</td><td>" + spkBtn(r.en) + "</td></tr>";
+    });
+    h += "</tbody></table></div></div>";
+    app.innerHTML = h;
+    document.getElementById("back").onclick = function () { renderReading(); };
+    app.querySelectorAll("[data-spk]").forEach(function (el) {
+      el.addEventListener("click", function () { speak(el.dataset.spk); });
+    });
   }
 
   // Build 3 shuffled transcr options (1 correct + 2 decoys from other words in the block).
