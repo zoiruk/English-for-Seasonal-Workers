@@ -1,6 +1,6 @@
 # План: модуль «Чтение» — Пакет 2 (расширение охвата до полной фоники)
 
-Дата: 2026-07-01 · Статус: ✅ ИСПОЛНЕН 2026-07-01 (все фазы 0–4, audit 8/8, слои 3+4 SHIP, esw-v108; ждёт push-разрешения владельца)
+Дата: 2026-07-01 · Статус: ✅ ИСПОЛНЕН + ЗАПУШЕН 2026-07-01 (все фазы 0–4, audit 8/8, слои 3+4 SHIP, esw-v108; `111095f..c263563` → origin/master)
 Связано: `plans/2026-07-01-phonics-reading-module.md` (Пакет 1 — ИСПОЛНЕН, 6 блоков ядра),
 `app/reading.js` (модуль, `window.READING_RULES`), `app/app.js` (`renderReading`/`renderReadingUnit`),
 [[naturalness-check-is-mandatory-gate]], [[lesson-content-naturalness-anchor]].
