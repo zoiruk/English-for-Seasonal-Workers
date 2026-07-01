@@ -77,12 +77,17 @@
       done_low: "Повторите урок и попробуйте снова.",
       no_voice: "Нет голоса или интернета — звук недоступен",
       storage_full: "Не удалось сохранить прогресс (память браузера заполнена)",
-      review_title: "Повторение слов",
-      review_count: "{0} слов на сегодня",
+      review_title: "Повторение",
+      review_count: "{0} на сегодня",
       review_count_zero: "✓ На сегодня всё повторено",
       review_progress: "Осталось: {0}",
       review_done: "На сегодня всё повторено! 🎉",
       review_none_due: "На сегодня всё повторено. Возвращайтесь завтра 👍",
+      review_tab_words: "Слова",
+      review_tab_sounds: "Звуки",
+      review_sub_words: "Карточки: вспомни слово",
+      review_sub_sounds: "Тренируй звуки и чтение по буквам",
+      review_next: "Дальше →",
       show_card: "Показать перевод",
       know: "✓ Знаю",
       again: "🔄 Ещё раз",
@@ -336,6 +341,7 @@
   store.streak = store.streak || 0;
   store.last = store.last || "";
   store.srs = store.srs || {};         // Leitner SRS per word: { "<en>": { box: 1-5, due: <epoch-day int> } }
+  store.srs_snd = store.srs_snd || {}; // Leitner SRS per SOUND/READING drill item ("rd:blk:i" / "ph:blk:pair:i" / "ph:blk:stress:i")
   store.certName = store.certName || "";
   store.certDate = store.certDate || ""; // YYYY-M-D, set once when the A0-A1 course is completed (15/15)
   store.certDateA2 = store.certDateA2 || ""; // YYYY-M-D, set once when the A2 level is completed
@@ -410,9 +416,8 @@
         '<div class="body"><div class="t">' + t("practice_title") + '</div><div class="s">' + t("practice_sub") + "</div></div>" +
         '<div class="done" style="color:var(--text3)">›</div></div>';
     }
-    var pool = reviewPool();
-    if (pool.length) {
-      var due = dueReviewWords().length;
+    if (reviewPool().length || soundItems().length) {
+      var due = dueReviewWords().length + dueSoundItems().length;
       h += '<div class="lesson-card" data-nav="review">' +
         '<div class="num">🔁</div>' +
         '<div class="body"><div class="t">' + t("review_title") + '</div>' +
@@ -1208,74 +1213,190 @@
     document.getElementById("r-list").onclick = function () { renderReaderList(book); };
   }
 
-  /* ---------- REVIEW ---------- */
-  function renderReview() {
-    setRoute("review");
-    if (!reviewPool().length) { renderHub(); return; }
-    var queue = shuffle(dueReviewWords());
-    if (!queue.length) { showNothingDue(); return; }
-    var total = queue.length;
+  /* ---------- REVIEW (one card, two sub-tabs: Слова | Звуки) ----------
+     "Слова" = self-rated Leitner flashcards (meaning can't be auto-checked offline).
+     "Звуки" = auto-graded drills resurfaced from phonetics.js (pairs / stress) and
+     reading.js (decoding checks) on a separate SRS bucket (store.srs_snd). Same
+     Leitner schedule, same in-session "wrong → back of queue" loop as the words. ---------- */
+  function reviewDoneHTML(msg) {
+    return '<div style="text-align:center;margin-top:22px"><div style="font-size:44px">🎉</div>' +
+      '<p style="color:var(--text2);margin:6px 0 12px">' + msg + "</p></div>" +
+      '<div class="bar"><i style="width:100%"></i></div>';
+  }
+  function rvProgressHTML(left, total) {
+    var pct = total ? Math.round((total - left) / total * 100) : 0;
+    return '<p style="color:var(--text3);font-size:13px;margin:0 0 8px">' + t("review_progress", left) + "</p>" +
+      '<div class="bar"><i style="width:' + pct + '%"></i></div>';
+  }
+  function reviewTabs() {
+    var tabs = [];
+    if (reviewPool().length) tabs.push("words");
+    if (soundItems().length) tabs.push("sounds");
+    return tabs;
+  }
+  function renderReviewHub(tab) {
+    var tabs = reviewTabs();
+    if (!tabs.length) { renderHub(); return; }
+    if (tabs.indexOf(tab) < 0) tab = tabs[0];
+    var isSnd = tab === "sounds";
+    setRoute(isSnd ? "review/sounds" : "review");
+    var h = backBtnHTML() +
+      '<div class="hub-head" style="padding-top:46px"><h1>🔁 ' + t("review_title") + "</h1><p>" +
+      (isSnd ? t("review_sub_sounds") : t("review_sub_words")) + "</p></div>";
+    if (tabs.length > 1) {
+      h += '<div class="tabs">' +
+        '<button class="tab' + (isSnd ? "" : " on") + '" data-review="words">📖 ' + t("review_tab_words") + "</button>" +
+        '<button class="tab' + (isSnd ? " on" : "") + '" data-review="sounds">🗣️ ' + t("review_tab_sounds") + "</button>" +
+        "</div>";
+    }
+    h += '<div id="rv-body"></div>';
+    app.innerHTML = h;
+    document.getElementById("back").onclick = renderHub;
+    app.querySelectorAll("[data-review]").forEach(function (el) {
+      el.onclick = function () { renderReviewHub(el.dataset.review); };
+    });
+    var body = document.getElementById("rv-body");
+    if (isSnd) runSoundReview(body); else runWordReview(body);
+  }
+  function renderReview() { renderReviewHub("words"); }
 
+  // Words: self-rated flashcards (know -> box up, again -> box 1 + requeue this session).
+  function runWordReview(body) {
+    var queue = shuffle(dueReviewWords());
+    var total = queue.length;
+    if (!total) { body.innerHTML = reviewDoneHTML(t("review_none_due")); return; }
     function draw() {
       var w = queue[0];
-      var pct = Math.round((total - queue.length) / total * 100);
-      var h = backBtnHTML() +
-        '<div class="hub-head" style="padding-top:46px"><h1>🔁 ' + t("review_title") + '</h1>' +
-        '<p>' + t("review_progress", queue.length) + '</p></div>' +
-        '<div class="bar"><i style="width:' + pct + '%"></i></div>' +
+      body.innerHTML = rvProgressHTML(queue.length, total) +
         '<div class="flashcard"><div class="fc-e">' + w.e + '</div>' +
-        '<div class="fc-ru">' + esc(w.ru) + '</div></div>' +
-        '<button class="btn" id="fc-show">' + t("show_card") + '</button>';
-      app.innerHTML = h;
-      document.getElementById("back").onclick = renderHub;
+        '<div class="fc-ru">' + esc(w.ru) + "</div></div>" +
+        '<button class="btn" id="fc-show">' + t("show_card") + "</button>";
       document.getElementById("fc-show").onclick = function () {
-        app.querySelector(".flashcard").innerHTML =
-          '<div class="fc-e">' + w.e + '</div>' +
+        body.querySelector(".flashcard").innerHTML =
+          '<div class="fc-e">' + w.e + "</div>" +
           '<button class="spk" id="fc-spk" style="margin:0 auto">🔊</button>' +
-          '<div class="fc-en">' + esc(w.en) + '</div>' +
-          '<div class="fc-tr">' + esc(w.transcr) + '</div>' +
-          '<div class="fc-ru">' + esc(w.ru) + '</div>';
+          '<div class="fc-en">' + esc(w.en) + "</div>" +
+          '<div class="fc-tr">' + esc(w.transcr) + "</div>" +
+          '<div class="fc-ru">' + esc(w.ru) + "</div>";
         document.getElementById("fc-spk").onclick = function () { speak(w.en); };
         speak(w.en);
-        var showBtn = document.getElementById("fc-show");
         var btns = document.createElement("div");
         btns.className = "review-btns";
         btns.innerHTML =
-          '<button class="btn" id="fc-know">' + t("know") + '</button>' +
-          '<button class="btn ghost" id="fc-again">' + t("again") + '</button>';
-        showBtn.replaceWith(btns);
+          '<button class="btn" id="fc-know">' + t("know") + "</button>" +
+          '<button class="btn ghost" id="fc-again">' + t("again") + "</button>";
+        document.getElementById("fc-show").replaceWith(btns);
         document.getElementById("fc-know").onclick = function () {
-          srsRate(w.en, true);
-          queue.shift();
-          if (queue.length) draw(); else showDone();
+          srsRate(w.en, true); queue.shift();
+          if (queue.length) draw(); else body.innerHTML = reviewDoneHTML(t("review_done"));
         };
         document.getElementById("fc-again").onclick = function () {
-          srsRate(w.en, false);
-          queue.push(queue.shift());
-          draw();
+          srsRate(w.en, false); queue.push(queue.shift()); draw();
         };
       };
     }
+    draw();
+  }
 
-    function showDone() {
-      app.innerHTML = backBtnHTML() +
-        '<div class="hub-head" style="padding-top:46px"><h1>🎉</h1>' +
-        '<p>' + t("review_done") + '</p></div>' +
-        '<div class="bar"><i style="width:100%"></i></div>' +
-        '<button class="btn" id="rv-hub" style="margin-top:24px">' + t("to_hub") + '</button>';
-      document.getElementById("back").onclick = renderHub;
-      document.getElementById("rv-hub").onclick = renderHub;
+  // Sounds: auto-graded. Each item renders its native drill (reading decoding check /
+  // phonetics minimal-pair / phonetics stress); correct -> box up + drop, wrong -> box 1
+  // + requeue. A "Дальше →" button advances so the learner sees the right answer first.
+  function runSoundReview(body) {
+    var queue = shuffle(dueSoundItems());
+    var total = queue.length;
+    if (!total) { body.innerHTML = reviewDoneHTML(t("review_none_due")); return; }
+    function advance(right) {
+      if (right) queue.shift(); else queue.push(queue.shift());
+      if (queue.length) draw(); else body.innerHTML = reviewDoneHTML(t("review_done"));
     }
-
-    function showNothingDue() {
-      app.innerHTML = backBtnHTML() +
-        '<div class="hub-head" style="padding-top:46px"><h1>✅</h1>' +
-        '<p>' + t("review_none_due") + '</p></div>' +
-        '<button class="btn" id="rv-hub" style="margin-top:24px">' + t("to_hub") + '</button>';
-      document.getElementById("back").onclick = renderHub;
-      document.getElementById("rv-hub").onclick = renderHub;
+    function finish(card, fb, right, wrongMsg, speakEn) {
+      srsRateSnd(queue[0].key, right);
+      fb.className = "q-fb ph-fb " + (right ? "ok" : "no");
+      fb.textContent = right ? t("ph_correct") : wrongMsg;
+      if (speakEn) {
+        var spk = document.createElement("button");
+        spk.className = "spk"; spk.textContent = "🔊";
+        spk.onclick = function () { speak(speakEn); };
+        fb.appendChild(spk);
+      }
+      var nx = document.createElement("button");
+      nx.className = "btn ph-again"; nx.textContent = t("review_next");
+      nx.onclick = function () { advance(right); };
+      card.appendChild(nx);
     }
-
+    function draw() {
+      var it = queue[0];
+      var h = rvProgressHTML(queue.length, total);
+      if (it.type === "rd") {
+        var c = it.blk.check[it.i], opts = rdOptions(it.blk, it.i);
+        h += '<div class="card rd-check"><div class="en">' + esc(c.word.en) + "</div>" +
+          '<div class="ph-opts">' + opts.map(function (o) {
+            return '<button class="opt" data-t="' + esc(o) + '">' + esc(o) + "</button>";
+          }).join("") + '</div><div class="q-fb ph-fb"></div></div>';
+        body.innerHTML = h;
+        var card = body.querySelector(".rd-check"), fb = card.querySelector(".ph-fb"), done = false;
+        card.querySelectorAll(".opt").forEach(function (b) {
+          b.onclick = function () {
+            if (done) return; done = true;
+            var right = b.dataset.t === c.word.transcr;
+            card.querySelectorAll(".opt").forEach(function (x) {
+              x.style.pointerEvents = "none";
+              if (x.dataset.t === c.word.transcr) x.classList.add("correct");
+              else if (x === b) x.classList.add("wrong");
+            });
+            finish(card, fb, right, t("rd_wrong", c.word.transcr) + " " + c.hint_ru, c.word.en);
+          };
+        });
+      } else if (it.type === "pair") {
+        var p = it.s.pairs[it.i];
+        h += '<div class="card ph-pair"><button class="btn ghost ph-play">' + t("ph_listen") + "</button>" +
+          '<div class="ph-opts">' +
+          '<button class="opt" data-side="a">' + esc(p.a.en) + " <small>" + esc(p.a.transcr) + "</small></button>" +
+          '<button class="opt" data-side="b">' + esc(p.b.en) + " <small>" + esc(p.b.transcr) + "</small></button>" +
+          '</div><div class="q-fb ph-fb"></div></div>';
+        body.innerHTML = h;
+        var pcard = body.querySelector(".ph-pair"), pfb = pcard.querySelector(".ph-fb"), pdone = false;
+        var ans = Math.random() < 0.5 ? "a" : "b";
+        pcard.querySelector(".ph-play").onclick = function () { speak(p[ans].en); };
+        pcard.querySelectorAll(".opt").forEach(function (b) {
+          b.onclick = function () {
+            if (pdone) return; pdone = true;
+            var right = b.dataset.side === ans;
+            pcard.querySelectorAll(".opt").forEach(function (x) {
+              x.style.pointerEvents = "none";
+              if (x.dataset.side === ans) x.classList.add("correct");
+              else if (x === b) x.classList.add("wrong");
+            });
+            finish(pcard, pfb, right, t("ph_wrong", p[ans].en), p[ans].en);
+          };
+        });
+      } else {
+        var w = it.s.stress[it.i];
+        var chips = w.syll.map(function (sy, j) {
+          return '<button class="opt ph-syll" data-j="' + j + '">' + esc(sy) + "</button>";
+        }).join("");
+        h += '<div class="card ph-stress"><div class="ex-row">' + spkBtn(w.en) +
+          '<div><div class="en">' + esc(w.en) + '</div><div class="ru">' + esc(w.ru) + "</div></div></div>" +
+          '<div class="ph-sylls">' + chips + '</div><div class="q-fb ph-fb"></div></div>';
+        body.innerHTML = h;
+        var scard = body.querySelector(".ph-stress"), sfb = scard.querySelector(".ph-fb"), sdone = false;
+        scard.querySelectorAll("[data-spk]").forEach(function (el) {
+          el.addEventListener("click", function () { speak(el.dataset.spk); });
+        });
+        scard.querySelectorAll(".ph-syll").forEach(function (b) {
+          b.onclick = function () {
+            if (sdone) return; sdone = true;
+            var j = +b.dataset.j, right = j === w.hit;
+            scard.querySelectorAll(".ph-syll").forEach(function (x) {
+              x.style.pointerEvents = "none";
+              if (+x.dataset.j === w.hit) x.classList.add("correct");
+              else if (x === b) x.classList.add("wrong");
+            });
+            finish(scard, sfb, right, t("ph_wrong", w.syll[w.hit].toUpperCase()), w.en);
+          };
+        });
+      }
+    }
     draw();
   }
 
@@ -1658,6 +1779,43 @@
     return reviewPool().filter(function (w) {
       var s = store.srs[w.en];
       return !s || s.due <= today; // never-rated or due today/overdue
+    });
+  }
+
+  /* ---- SOUND/READING review pool: the auto-gradeable drill items from phonetics.js
+     (pairs / stress — "listen"-only model rows have no objective answer, excluded) and
+     reading.js (decoding checks). Each item carries a stable key for its own SRS bucket
+     (store.srs_snd), so a reading "shop" never collides with a lesson word "shop". ---- */
+  function soundItems() {
+    var items = [];
+    READING_RULES.forEach(function (blk) {
+      if (blk.kind === "reference") return;
+      (blk.check || []).forEach(function (c, i) {
+        items.push({ key: "rd:" + blk.id + ":" + i, type: "rd", blk: blk, i: i });
+      });
+    });
+    PHONETICS.forEach(function (s) {
+      if (s.kind === "pairs") (s.pairs || []).forEach(function (p, i) {
+        items.push({ key: "ph:" + s.id + ":pair:" + i, type: "pair", s: s, i: i });
+      });
+      else if (s.kind === "stress") (s.stress || []).forEach(function (w, i) {
+        items.push({ key: "ph:" + s.id + ":stress:" + i, type: "stress", s: s, i: i });
+      });
+    });
+    return items;
+  }
+  function srsRateSnd(key, known) {
+    var s = store.srs_snd[key] || { box: 1 };
+    s.box = known ? Math.min((s.box || 1) + 1, 5) : 1;
+    s.due = todayNum() + SRS_INTERVAL[s.box];
+    store.srs_snd[key] = s;
+    save(store);
+  }
+  function dueSoundItems() {
+    var today = todayNum();
+    return soundItems().filter(function (it) {
+      var s = store.srs_snd[it.key];
+      return !s || s.due <= today;
     });
   }
 
@@ -2065,6 +2223,7 @@
     if (h === "practice") { renderPractice(); return; }
     if (h === "phrasebook") { renderPhrasebook(); return; }
     if (h === "review") { renderReview(); return; }
+    if (h === "review/sounds") { renderReviewHub("sounds"); return; }
     if (h === "cert") { renderCertificate(); return; }
     if (h === "cert-a2") { renderCertificate("a2"); return; }
     if (h === "cert-b1") { renderCertificate("b1"); return; }
