@@ -63,6 +63,7 @@ READING.forEach((blk) => {
   (blk.patterns || []).forEach((p, i) => scan(`RD ${blk.id} patterns[${i}] (${p.example.en})`, p.example.transcr));
   (blk.check || []).forEach((c, i) => scan(`RD ${blk.id} check[${i}] (${c.word.en})`, c.word.transcr));
   (blk.ipa || []).forEach((r, i) => scan(`RD ${blk.id} ipa[${i}] (${r.en})`, r.transcr)); // reference chart
+  (blk.letters || []).forEach((r, i) => scan(`RD ${blk.id} letters[${i}] (${r.L})`, r.name)); // alphabet reference
 });
 
 if (!errors.length) { console.log("[check-transcr-safe] OK — 0 offensive transcr"); process.exit(0); }

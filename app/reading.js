@@ -70,9 +70,37 @@
  *    source): `all /ɔɪ/ ball` on scan p.5 is WRONG — RP is /bɔːl/ → «бол» (sound «о»),
  *    never «ойл»; scan p.7 uses US notation (/oʊ/ rose, /ɑː/) — kept BrE: OA/əʊ = «оу»
  *    (rose «роуз», boat «боут»), matching home «хоум» from Package 1.
+ *
+ * ALPHABET reference (2026-07-01): `id:"alphabet"`, `kind:"reference"`, `letters[]` (view-
+ * only, first block). Letter NAMES copied VERBATIM from the L1 alphabet grid in data.js
+ * (BrE: R «ар», Z «зэд» not US «зи», W «дабл-ю»). Second reference table alongside ipa_chart.
  */
 (function (root) {
   const READING_RULES = [
+    {
+      // Alphabet reference (view-only, no drill) — parallels the ipa_chart. Letter NAMES
+      // (how you say the letter when spelling), copied VERBATIM from the L1 alphabet grid
+      // in data.js (already vetted, BrE: R «ар», Z «зэд» not US «зи», W «дабл-ю»).
+      id: "alphabet",
+      kind: "reference",
+      icon: "🔤",
+      title_ru: "Алфавит — все буквы и их названия (справка)",
+      rule_ru:
+        "Как называется каждая буква по-английски. Так диктуют имя по буквам " +
+        "(Ahmad = эй-эйч-эм-эй-ди). Это не тест — смотри и слушай 🔊. " +
+        "⚠️ Z по-британски «зэд» (не «зи»).",
+      letters: [
+        { L: "A", name: "эй" }, { L: "B", name: "би" }, { L: "C", name: "си" },
+        { L: "D", name: "ди" }, { L: "E", name: "и" }, { L: "F", name: "эф" },
+        { L: "G", name: "джи" }, { L: "H", name: "эйч" }, { L: "I", name: "ай" },
+        { L: "J", name: "джей" }, { L: "K", name: "кей" }, { L: "L", name: "эл" },
+        { L: "M", name: "эм" }, { L: "N", name: "эн" }, { L: "O", name: "оу" },
+        { L: "P", name: "пи" }, { L: "Q", name: "кью" }, { L: "R", name: "ар" },
+        { L: "S", name: "эс" }, { L: "T", name: "ти" }, { L: "U", name: "ю" },
+        { L: "V", name: "ви" }, { L: "W", name: "дабл-ю" }, { L: "X", name: "экс" },
+        { L: "Y", name: "уай" }, { L: "Z", name: "зэд" },
+      ],
+    },
     {
       id: "short_vowels",
       icon: "🔡",

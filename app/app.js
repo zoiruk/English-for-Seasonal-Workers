@@ -46,6 +46,8 @@
       rd_sym: "Звук",
       rd_word: "Слово",
       rd_type: "Тип",
+      rd_letter: "Буква",
+      rd_name: "Как называется",
       rd_correct: "✅ Верно! Так и читается.",
       rd_wrong: "❌ Читается: {0}",
       words_learned: "слов изучено",
@@ -836,22 +838,32 @@
     wireRdCheck(blk);
   }
 
-  // Reference block (kind:"reference"): the full IPA table, view-only — no "read it
-  // yourself" drill, just symbol / keyword+🔊 / type. Additive path; does not touch the
-  // patterns+check renderer above or the lesson quiz engine.
+  // Reference block (kind:"reference"): view-only table, no "read it yourself" drill.
+  // Two shapes — blk.ipa (all sounds: symbol / keyword+🔊 / type) and blk.letters (the
+  // alphabet: letter / its name+🔊). Additive path; does not touch the patterns+check
+  // renderer above or the lesson quiz engine.
   function renderReadingReference(blk) {
     var h = backBtnHTML() +
       '<div class="l-head"><span class="pos">' + blk.icon + '</span>' +
       '<div class="htitle"><div class="ttl">' + esc(blk.title_ru) + '</div><div class="sub">' + t("reading_title") + "</div></div></div>";
     h += '<div class="card note">' + esc(blk.rule_ru) + "</div>";
-    h += '<div class="card"><div class="g-table-wrap"><table class="g-table">' +
-      "<thead><tr><td>" + t("rd_sym") + "</td><td>" + t("rd_word") + "</td><td>" + t("rd_type") + "</td><td></td></tr></thead><tbody>";
-    (blk.ipa || []).forEach(function (r) {
-      h += '<tr><td class="sj">' + esc(r.sym) + "</td>" +
-        '<td><div class="ex">' + esc(r.en) + '</div><div class="tr">' + esc(r.transcr) +
-        '</div><div class="rt">' + esc(r.ru) + "</div></td>" +
-        '<td class="rt">' + esc(r.type_ru) + "</td><td>" + spkBtn(r.en) + "</td></tr>";
-    });
+    h += '<div class="card"><div class="g-table-wrap"><table class="g-table">';
+    if (blk.letters) {
+      h += "<thead><tr><td>" + t("rd_letter") + "</td><td>" + t("rd_name") + "</td><td></td></tr></thead><tbody>";
+      blk.letters.forEach(function (r) {
+        h += '<tr><td class="sj">' + esc(r.L) + "</td>" +
+          '<td><div class="tr">' + esc(r.name) + "</div></td>" +
+          "<td>" + spkBtn(r.L) + "</td></tr>";
+      });
+    } else {
+      h += "<thead><tr><td>" + t("rd_sym") + "</td><td>" + t("rd_word") + "</td><td>" + t("rd_type") + "</td><td></td></tr></thead><tbody>";
+      (blk.ipa || []).forEach(function (r) {
+        h += '<tr><td class="sj">' + esc(r.sym) + "</td>" +
+          '<td><div class="ex">' + esc(r.en) + '</div><div class="tr">' + esc(r.transcr) +
+          '</div><div class="rt">' + esc(r.ru) + "</div></td>" +
+          '<td class="rt">' + esc(r.type_ru) + "</td><td>" + spkBtn(r.en) + "</td></tr>";
+      });
+    }
     h += "</tbody></table></div></div>";
     app.innerHTML = h;
     document.getElementById("back").onclick = function () { renderReading(); };
