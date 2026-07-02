@@ -24,7 +24,7 @@
       grammar: {
         title_ru: "Глагол TO BE: am / is / are",
         intro_ru:
-          '<div style="line-height:1.6">Так говорить — ошибка:<br>❌ <b>I worker</b><br>Правильно:<br>✅ <b>I am a worker</b> <span class="g-transcr">[ай эм э уёкэ]</span> (я рабочий)<br>👉 Между «кто» и «какой» всегда ставим <b>am / is / are</b>.</div>',
+          '<div style="line-height:1.6">Так говорить — ошибка:<br>❌ <b>I worker</b> (я рабочий)<br>Правильно:<br>✅ <b>I am a worker</b> <span class="g-transcr">[ай эм э уёкэ]</span> (я рабочий)<br>👉 Между «кто» и «какой» всегда ставим <b>am / is / are</b>.</div>',
         cultural_ru:
           "В русском мы говорим «Я рабочий» без глагола. В английском глагол <b>am/is/are</b> (быть) ОБЯЗАТЕЛЕН — его нельзя пропускать.",
         note_ru: '⚠️ НЕ говорите «I is» или «He am». I → <b>am</b>, he/she/it → <b>is</b>, you/we/they → <b>are</b>.',
@@ -222,7 +222,7 @@
       grammar: {
         title_ru: "Притяжательные: my / your / his / her",
         intro_ru:
-          '<div style="line-height:1.6">Так говорить — ошибка:<br>❌ <b>bag my</b><br>Правильно:<br>✅ <b>my bag</b> <span class="g-transcr">[май бэг]</span> (моя сумка)<br>👉 Слово «чей» всегда ставим <b>перед</b> предметом.</div>',
+          '<div style="line-height:1.6">Так говорить — ошибка:<br>❌ <b>bag my</b> (моя сумка)<br>Правильно:<br>✅ <b>my bag</b> <span class="g-transcr">[май бэг]</span> (моя сумка)<br>👉 Слово «чей» всегда ставим <b>перед</b> предметом.</div>',
         cultural_ru:
           "В английском <b>his</b> = принадлежит мужчине, <b>her</b> = женщине — независимо от самого предмета. В русском «его/её» мы выбираем иначе.",
         note_ru: '⚠️ Не путать: <b>his</b> (его — о мужчине) и <b>her</b> (её — о женщине).',
@@ -377,7 +377,7 @@
       grammar: {
         title_ru: "Это и эти: This is a / These are",
         intro_ru:
-          '<div style="line-height:1.6">Так говорить — ошибка:<br>❌ <b>This crate</b><br>Правильно:<br>✅ <b>This is a crate</b> <span class="g-transcr">[зис из э крэйт]</span> (это ящик)<br>👉 С предметом всегда <b>is</b> + артикль <b>a</b>.</div>',
+          '<div style="line-height:1.6">Так говорить — ошибка:<br>❌ <b>This crate</b> (это ящик)<br>Правильно:<br>✅ <b>This is a crate</b> <span class="g-transcr">[зис из э крэйт]</span> (это ящик)<br>👉 С предметом всегда <b>is</b> + артикль <b>a</b>.</div>',
         cultural_ru:
           "В русском «это ящик» — без глагола. В английском нужны <b>is</b> и артикль <b>a/an</b>. Много предметов → <b>These are</b> (эти)." +
           '<div style="margin-top:12px"><div style="font-weight:700;margin-bottom:4px">➕ Множественное число (много)</div>' +
@@ -537,7 +537,7 @@
       grammar: {
         title_ru: "Который час? It is seven o'clock",
         intro_ru:
-          '<div style="line-height:1.6">Так говорить — ошибка:<br>❌ <b>It seven o\'clock</b><br>Правильно:<br>✅ <b>It is seven o\'clock</b> <span class="g-transcr">[ит из сэвн эклок]</span> (сейчас 7 часов)<br>👉 О времени, дне и цене всегда говорим <b>It is…</b> — глагол <b>is</b> нельзя пропускать.</div>',
+          '<div style="line-height:1.6">Так говорить — ошибка:<br>❌ <b>It seven o\'clock</b> (сейчас 7 часов)<br>Правильно:<br>✅ <b>It is seven o\'clock</b> <span class="g-transcr">[ит из сэвн эклок]</span> (сейчас 7 часов)<br>👉 О времени, дне и цене всегда говорим <b>It is…</b> — глагол <b>is</b> нельзя пропускать.</div>',
         visual_ru:
           '<svg viewBox="0 0 280 528" xmlns="http://www.w3.org/2000/svg" role="img" font-family="-apple-system, system-ui, Roboto, sans-serif" aria-label="Время: o\'clock (ровно) и half past (:30)">' +
           '<title>Время: o\'clock и half past</title>' +
@@ -754,7 +754,7 @@
       grammar: {
         title_ru: "Где это? Where is… + in / on / under",
         intro_ru:
-          '<div style="line-height:1.6">Так спрашивать — ошибка:<br>❌ <b>Toilet where?</b><br>Правильно:<br>✅ <b>Where is the toilet?</b> <span class="g-transcr">[уэа из зэ тойлет]</span> (где туалет?)<br>👉 Вопрос о месте всегда начинаем с <b>Where is…?</b></div>',
+          '<div style="line-height:1.6">Так спрашивать — ошибка:<br>❌ <b>Toilet where?</b> (где туалет?)<br>Правильно:<br>✅ <b>Where is the toilet?</b> <span class="g-transcr">[уэа из зэ тойлет]</span> (где туалет?)<br>👉 Вопрос о месте всегда начинаем с <b>Where is…?</b></div>',
         visual_ru:
           '<svg viewBox="56 12 364 550" xmlns="http://www.w3.org/2000/svg" role="img" font-family="-apple-system, system-ui, Roboto, sans-serif" aria-label="Предлоги места в 3D: in, on, under, behind, near, next to">' +
           '<title>Предлоги места в 3D</title>' +
@@ -976,7 +976,7 @@
       grammar: {
         title_ru: "Я собираю, она собирает: Present Simple",
         intro_ru:
-          '<div style="line-height:1.6">Так говорить — ошибка:<br>❌ <b>I working</b> / ❌ <b>She pick</b><br>Правильно:<br>✅ <b>I pick</b> <span class="g-transcr">[ай пик]</span> (я собираю)<br>✅ <b>She picks</b> <span class="g-transcr">[ши пикс]</span> (она собирает)<br>👉 С <b>he/she/it</b> к глаголу добавляем <b>-s</b>.</div>',
+          '<div style="line-height:1.6">Так говорить — ошибка:<br>❌ <b>I working</b> (я собираю) / ❌ <b>She pick</b> (она собирает)<br>Правильно:<br>✅ <b>I pick</b> <span class="g-transcr">[ай пик]</span> (я собираю)<br>✅ <b>She picks</b> <span class="g-transcr">[ши пикс]</span> (она собирает)<br>👉 С <b>he/she/it</b> к глаголу добавляем <b>-s</b>.</div>',
         cultural_ru:
           'После глагола местоимение МЕНЯЕТСЯ:' +
           '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:6px">' +
@@ -1136,7 +1136,7 @@
       grammar: {
         title_ru: "Я работаю СЕЙЧАС: am / is / are + …ing",
         intro_ru:
-          '<div style="line-height:1.6">Так говорить — ошибка:<br>❌ <b>I working</b> / ❌ <b>I work now</b><br>Правильно:<br>✅ <b>I am working</b> <span class="g-transcr">[ай эм уёкинг]</span> (я работаю прямо сейчас)<br>👉 Действие ПРЯМО СЕЙЧАС = <b>am / is / are</b> + глагол + <b>-ing</b>.</div>',
+          '<div style="line-height:1.6">Так говорить — ошибка:<br>❌ <b>I working</b> / ❌ <b>I work now</b> (я работаю прямо сейчас)<br>Правильно:<br>✅ <b>I am working</b> <span class="g-transcr">[ай эм уёкинг]</span> (я работаю прямо сейчас)<br>👉 Действие ПРЯМО СЕЙЧАС = <b>am / is / are</b> + глагол + <b>-ing</b>.</div>',
         cultural_ru:
           'В русском «я работаю» — и «вообще», и «сейчас». В английском это РАЗНЫЕ времена:' +
           '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:6px">' +
@@ -1294,7 +1294,7 @@
       grammar: {
         title_ru: "У меня есть…: have / has",
         intro_ru:
-          '<div style="line-height:1.6">Так говорить — ошибка:<br>❌ <b>I has boots</b> / ❌ <b>He have a cap</b><br>Правильно:<br>✅ <b>I have boots</b> <span class="g-transcr">[ай хэв бутс]</span> (у меня есть ботинки)<br>✅ <b>He has a cap</b> <span class="g-transcr">[хи хэз э кэп]</span> (у него есть кепка)<br>👉 «У меня есть…» = <b>have</b>. Для <b>he / she / it</b> → <b>has</b>.</div>',
+          '<div style="line-height:1.6">Так говорить — ошибка:<br>❌ <b>I has boots</b> (у меня есть ботинки) / ❌ <b>He have a cap</b> (у него есть кепка)<br>Правильно:<br>✅ <b>I have boots</b> <span class="g-transcr">[ай хэв бутс]</span> (у меня есть ботинки)<br>✅ <b>He has a cap</b> <span class="g-transcr">[хи хэз э кэп]</span> (у него есть кепка)<br>👉 «У меня есть…» = <b>have</b>. Для <b>he / she / it</b> → <b>has</b>.</div>',
         cultural_ru:
           'В русском «у меня есть ботинки» — без глагола. В английском всегда нужен <b>have / has</b>:' +
           '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:6px">' +
@@ -1454,7 +1454,7 @@
       grammar: {
         title_ru: "Есть / находится: there is / there are",
         intro_ru:
-          '<div style="line-height:1.6">Так сказать нельзя:<br>❌ <b>In the room a bed</b> / ❌ <b>The room has a bed</b><br>Правильно:<br>✅ <b>There is a bed in the room</b> <span class="g-transcr">[зэа из э бэд ин зэ рум]</span> (в комнате есть кровать)<br>👉 «Есть / находится» = <b>There is</b> (один предмет) / <b>There are</b> (много).</div>',
+          '<div style="line-height:1.6">Так сказать нельзя:<br>❌ <b>In the room a bed</b> / ❌ <b>The room has a bed</b> (в комнате есть кровать)<br>Правильно:<br>✅ <b>There is a bed in the room</b> <span class="g-transcr">[зэа из э бэд ин зэ рум]</span> (в комнате есть кровать)<br>👉 «Есть / находится» = <b>There is</b> (один предмет) / <b>There are</b> (много).</div>',
         cultural_ru:
           'В русском «в комнате кровать» — без глагола. В английском всегда нужно <b>There is / There are</b>:' +
           '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:6px">' +
@@ -2654,7 +2654,7 @@
       grammar: {
         title_ru: "План и прогноз: am / is / are + going to + глагол",
         intro_ru:
-          '<div style="line-height:1.6">Так сказать про план — ошибка:<br>❌ <b>I go to work tomorrow</b><br>Правильно:<br>✅ <b>I am going to work tomorrow</b> <span class="g-transcr">[ай эм гоуинг ту уёк тэмороу]</span> (я собираюсь работать завтра).<br>👉 План на будущее или прогноз = <b>am / is / are</b> + <b>going to</b> + глагол.</div>',
+          '<div style="line-height:1.6">Так сказать про план — ошибка:<br>❌ <b>I go to work tomorrow</b> (я собираюсь работать завтра)<br>Правильно:<br>✅ <b>I am going to work tomorrow</b> <span class="g-transcr">[ай эм гоуинг ту уёк тэмороу]</span> (я собираюсь работать завтра).<br>👉 План на будущее или прогноз = <b>am / is / are</b> + <b>going to</b> + глагол.</div>',
         cultural_ru:
           'В русском «собираюсь» — это намерение. В английском <b>going to</b> — и план, и прогноз (когда уже видно, что будет):' +
           '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:6px">' +
@@ -2809,7 +2809,7 @@
       grammar: {
         title_ru: "Сравнить: -er + than / the -est / more · most",
         intro_ru:
-          '<div style="line-height:1.6">Сравнить два предмета — ошибка:<br>❌ <b>This crate is more heavy</b><br>Правильно:<br>✅ <b>This crate is heavier</b> <span class="g-transcr">[зис крэйт из хэвиэ]</span> (этот ящик тяжелее).<br>👉 Короткое слово + <b>-er</b> + <b>than</b> (чем). Длинное слово + <b>more</b>. «Самый» = <b>the</b> + <b>-est</b>.</div>',
+          '<div style="line-height:1.6">Сравнить два предмета — ошибка:<br>❌ <b>This crate is more heavy</b> (этот ящик тяжелее)<br>Правильно:<br>✅ <b>This crate is heavier</b> <span class="g-transcr">[зис крэйт из хэвиэ]</span> (этот ящик тяжелее).<br>👉 Короткое слово + <b>-er</b> + <b>than</b> (чем). Длинное слово + <b>more</b>. «Самый» = <b>the</b> + <b>-est</b>.</div>',
         cultural_ru:
           'В русском «тяжелее / самый сильный» — одно слово. В английском два пути по длине слова:' +
           '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:6px">' +
@@ -2978,7 +2978,7 @@
       grammar: {
         title_ru: "could (мог) + наречие «как»: -ly",
         intro_ru:
-          '<div style="line-height:1.6">Прошлое от <b>can</b> (мочь, уметь) — это <b>could</b>:<br>❌ <b>Yesterday I can start it</b><br>✅ <b>Yesterday I could start it</b> <span class="g-transcr">[йестэдэй ай куд старт ит]</span> (вчера я смог это завести).<br>👉 <b>could</b> = мог / умел / смог (прошлое). Не смог = <b>could not / couldn’t</b>.<br>🛠️ А <b>как</b> ты делаешь работу? Прилагательное + <b>-ly</b>: careful → <b>carefully</b> <span class="g-transcr">[кэафул → кэафули]</span> (осторожно).</div>',
+          '<div style="line-height:1.6">Прошлое от <b>can</b> (мочь, уметь) — это <b>could</b>:<br>❌ <b>Yesterday I can start it</b> (вчера я смог это завести)<br>✅ <b>Yesterday I could start it</b> <span class="g-transcr">[йестэдэй ай куд старт ит]</span> (вчера я смог это завести).<br>👉 <b>could</b> = мог / умел / смог (прошлое). Не смог = <b>could not / couldn’t</b>.<br>🛠️ А <b>как</b> ты делаешь работу? Прилагательное + <b>-ly</b>: careful → <b>carefully</b> <span class="g-transcr">[кэафул → кэафули]</span> (осторожно).</div>',
         cultural_ru:
           '<b>could</b> покрывает русские «мог», «умел», «смог». Это же слово — вежливая просьба: <b>Could you help me?</b> <span class="g-transcr">[куд ю хэлп ми]</span> (не могли бы вы помочь?).' +
           '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:6px">' +
@@ -4364,7 +4364,7 @@
           'Главное правило выбора глагола:<br>' +
           '✅ <b>say</b> <span class="g-transcr">[сэй]</span> — БЕЗ человека: He <b>said</b> (that)…<br>' +
           '✅ <b>tell</b> <span class="g-transcr">[тэл]</span> — С человеком (кому): He <b>told</b> <b>me</b> (that)…<br>' +
-          '❌ Нельзя: <s>He said me…</s> и <s>He told that…</s>',
+          '❌ Нельзя: <s>He said me…</s> (он сказал мне) и <s>He told that…</s> (он сказал, что)',
         cultural_ru:
           'Три глагола пересказа:<br>' +
           '• <b>say</b> <span class="g-transcr">[сэй]</span> / <b>said</b> <span class="g-transcr">[сэд]</span> — ' +
@@ -5796,7 +5796,7 @@
         title_ru: "Second conditional: if + прошедшее, … would + база (нереальное «если бы»)",
         intro_ru:
           'Иногда мы говорим о том, чего <b>нет на самом деле</b> — воображаем: «<b>если бы</b> у меня были деньги…».<br>' +
-          '❌ Не так: <s>If I will have money…</s><br>' +
+          '❌ Не так: <s>If I will have money…</s> (если бы у меня были деньги)<br>' +
           '✅ Так: <b>If I <u>had</u> money, I <u>would</u> go home.</b> ' +
           '<span class="g-transcr">[иф ай хэд мани, ай уд гоу хоум]</span> (если бы у меня были деньги, я бы поехал домой)<br>' +
           'Формула: <b>if + прошедшее</b> (had / were / won…), <b>… would + база</b>. ' +
@@ -6194,7 +6194,7 @@
         title_ru: "После глагола: to + база (want to do) или -ing (enjoy doing) · фразовые: put it on / take them off",
         intro_ru:
           'После одних глаголов идёт <b>to + база</b>, после других — <b>-ing</b>:<br>' +
-          '❌ Не так: <s>I want working</s> · <s>I enjoy to work</s><br>' +
+          '❌ Не так: <s>I want working</s> (хочу работать) · <s>I enjoy to work</s> (люблю работать)<br>' +
           '✅ Так: <b>I <u>want to</u> work.</b> <span class="g-transcr">[ай уонт ту уёк]</span> (хочу работать)<br>' +
           '✅ Так: <b>I <u>enjoy</u> work<u>ing</u>.</b> <span class="g-transcr">[ай инджой уёкинг]</span> (люблю работать)<br>' +
           '<b>+ to + база:</b> want · need · hope · try · decide · <b>manage to</b> (получилось, удалось с трудом).<br>' +
