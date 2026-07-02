@@ -1324,10 +1324,12 @@
       if (right) queue.shift(); else queue.push(queue.shift());
       if (queue.length) draw(); else body.innerHTML = reviewDoneHTML(t("review_done"));
     }
-    function finish(card, fb, right, wrongMsg, speakEn) {
+    function finish(card, fb, right, wrongMsg, speakEn, hintRu) {
       srsRateSnd(queue[0].key, right);
       fb.className = "q-fb ph-fb " + (right ? "ok" : "no");
-      fb.textContent = right ? t("ph_correct") : wrongMsg;
+      // show the rule hint after BOTH outcomes (mirrors wireRdCheck) — the learner
+      // always sees WHY (e.g. "IGH — «ай», GH молчит"), not just верно/неверно
+      fb.textContent = (right ? t("ph_correct") : wrongMsg) + (hintRu ? " " + hintRu : "");
       if (speakEn) {
         var spk = document.createElement("button");
         spk.className = "spk"; spk.textContent = "🔊";
@@ -1339,12 +1341,20 @@
       nx.onclick = function () { advance(right); };
       card.appendChild(nx);
     }
+    // Small context line at the top of each card: which rule family the item drills
+    // (e.g. "🚣 Ещё гласные команды: OA · UE · IGH · ALL"). Names the rule group without
+    // leaking which option is correct — the exact rule (hint_ru) comes in the feedback.
+    function ctxHTML(icon, title) {
+      return '<div class="rv-ctx" style="color:var(--text3);font-size:12px;margin:0 0 8px">' +
+        icon + " " + esc(title) + "</div>";
+    }
     function draw() {
       var it = queue[0];
       var h = rvProgressHTML(queue.length, total);
       if (it.type === "rd") {
         var c = it.blk.check[it.i], opts = rdOptions(it.blk, it.i);
-        h += '<div class="card rd-check"><div class="en">' + esc(c.word.en) + "</div>" +
+        h += '<div class="card rd-check">' + ctxHTML(it.blk.icon, it.blk.title_ru) +
+          '<div class="en">' + esc(c.word.en) + "</div>" +
           '<div class="ph-opts">' + opts.map(function (o) {
             return '<button class="opt" data-t="' + esc(o) + '">' + esc(o) + "</button>";
           }).join("") + '</div><div class="q-fb ph-fb"></div></div>';
@@ -1359,12 +1369,13 @@
               if (x.dataset.t === c.word.transcr) x.classList.add("correct");
               else if (x === b) x.classList.add("wrong");
             });
-            finish(card, fb, right, t("rd_wrong", c.word.transcr) + " " + c.hint_ru, c.word.en);
+            finish(card, fb, right, t("rd_wrong", c.word.transcr), c.word.en, c.hint_ru);
           };
         });
       } else if (it.type === "pair") {
         var p = it.s.pairs[it.i];
-        h += '<div class="card ph-pair"><button class="btn ghost ph-play">' + t("ph_listen") + "</button>" +
+        h += '<div class="card ph-pair">' + ctxHTML(it.s.icon, it.s.title_ru) +
+          '<button class="btn ghost ph-play">' + t("ph_listen") + "</button>" +
           '<div class="ph-opts">' +
           '<button class="opt" data-side="a">' + esc(p.a.en) + " <small>" + esc(p.a.transcr) + "</small></button>" +
           '<button class="opt" data-side="b">' + esc(p.b.en) + " <small>" + esc(p.b.transcr) + "</small></button>" +
@@ -1390,7 +1401,8 @@
         var chips = w.syll.map(function (sy, j) {
           return '<button class="opt ph-syll" data-j="' + j + '">' + esc(sy) + "</button>";
         }).join("");
-        h += '<div class="card ph-stress"><div class="ex-row">' + spkBtn(w.en) +
+        h += '<div class="card ph-stress">' + ctxHTML(it.s.icon, it.s.title_ru) +
+          '<div class="ex-row">' + spkBtn(w.en) +
           '<div><div class="en">' + esc(w.en) + '</div><div class="ru">' + esc(w.ru) + "</div></div></div>" +
           '<div class="ph-sylls">' + chips + '</div><div class="q-fb ph-fb"></div></div>';
         body.innerHTML = h;
