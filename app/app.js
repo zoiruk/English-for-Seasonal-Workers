@@ -1353,8 +1353,12 @@
       var h = rvProgressHTML(queue.length, total);
       if (it.type === "rd") {
         var c = it.blk.check[it.i], opts = rdOptions(it.blk, it.i);
+        // Owner decision (2026-07-02): decoding cards show the word's OWN rule hint
+        // up front (e.g. "💡 IGH — «ай», GH молчит") — the deck drills APPLYING the
+        // rule to the word, not recalling which rule it is.
         h += '<div class="card rd-check">' + ctxHTML(it.blk.icon, it.blk.title_ru) +
           '<div class="en">' + esc(c.word.en) + "</div>" +
+          '<div class="rv-hint" style="color:var(--text2);font-size:13px;margin:4px 0 8px">💡 ' + esc(c.hint_ru) + "</div>" +
           '<div class="ph-opts">' + opts.map(function (o) {
             return '<button class="opt" data-t="' + esc(o) + '">' + esc(o) + "</button>";
           }).join("") + '</div><div class="q-fb ph-fb"></div></div>';
